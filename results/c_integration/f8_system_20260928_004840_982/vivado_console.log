@@ -1,0 +1,1569 @@
+
+****** Vivado v2020.2.2 (64-bit)
+  **** SW Build 3118627 on Tue Feb  9 05:14:06 MST 2021
+  **** IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-1239] XILINX_LOCAL_USER_DATA is set to 'no'.
+source Z:/results/c_integration/f8_system_20260928_004840_982/source/hardware/kv260_f8/create_system.tcl
+# foreach key {F8_RUN_DIR F8_BOARD_REPO F8_IP_DIR F8_SOURCE_DIR F8_TAG0 F8_TAG1 F8_BUILD} {
+#     if {![info exists ::env($key)] || $::env($key) eq ""} {error "$key is required"}
+# }
+# if {[version -short] ne "2020.2.2"} {error "Validated Vivado 2020.2.2 is required"}
+# set run_dir [file normalize $::env(F8_RUN_DIR)]
+# set source_dir [file normalize $::env(F8_SOURCE_DIR)]
+# set part xck26-sfvc784-2LV-c
+# set_param board.repoPaths [list [file normalize $::env(F8_BOARD_REPO)]]
+# proc mark {name value} {
+#     set f [open [file join $::run_dir $name] w]; puts $f $value; close $f
+# }
+# cd $run_dir
+# create_project status_sim [file join $run_dir status_sim] -part $part
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:23 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# add_files [file join $source_dir f8_status.v]
+# add_files -fileset sim_1 [file join $source_dir tb_f8_status.sv]
+# set_property top tb_f8_status [get_filesets sim_1]
+# set_property xsim.simulate.runtime all [get_filesets sim_1]
+# launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Z:/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_f8_status' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Z:/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_f8_status_vlog.prj"
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "Z:/results/c_integration/f8_system_20260928_004840_982/source/hardware/kv260_f8/f8_status.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module f8_status
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "Z:/results/c_integration/f8_system_20260928_004840_982/source/hardware/kv260_f8/tb_f8_status.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module tb_f8_status
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "Z:/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module glbl
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1006.949 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '8' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Z:/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim'
+"xelab -wto c3a162c01c484a8bba7e1bd24b13458b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_f8_status_behav xil_defaultlib.tb_f8_status xil_defaultlib.glbl -log elaborate.log"
+
+Vivado Simulator v2020.2.2
+
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto c3a162c01c484a8bba7e1bd24b13458b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_f8_status_behav xil_defaultlib.tb_f8_status xil_defaultlib.glbl -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Pass Through NonSizing Optimizer
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+WARNING: [XSIM 43-4099] "Z:/results/c_integration/f8_system_20260928_004840_982/source/hardware/kv260_f8/f8_status.v" Line 3. Module f8_status(BUILD_TAG0=32'b010010001101000101011001111000,BUILD_TAG1=32'b10101011110011010000000100100011) doesn't have a timescale but at least one module in design has a timescale.
+
+WARNING: [XSIM 43-4099] "Z:/results/c_integration/f8_system_20260928_004840_982/source/hardware/kv260_f8/f8_status.v" Line 3. Module f8_status(BUILD_TAG0=32'b010010001101000101011001111000,BUILD_TAG1=32'b10101011110011010000000100100011) doesn't have a timescale but at least one module in design has a timescale.
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling module xil_defaultlib.f8_status(BUILD_TAG0=32'b0100100...
+
+Compiling module xil_defaultlib.tb_f8_status
+
+Compiling module xil_defaultlib.glbl
+
+Built simulation snapshot tb_f8_status_behav
+
+
+
+****** Webtalk v2020.2.2 (64-bit)
+
+  **** SW Build 3118627 on Tue Feb  9 05:14:06 MST 2021
+
+  **** IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+
+
+source Z:/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim/xsim.dir/tb_f8_status_behav/webtalk/xsim_webtalk.tcl -notrace
+
+INFO: [Common 17-206] Exiting Webtalk at Mon Sep 28 00:50:14 2026...
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:24 . Memory (MB): peak = 1006.949 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '24' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'Z:/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_f8_status_behav -key {Behavioral:sim_1:Functional:tb_f8_status} -tclbatch {tb_f8_status.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator v2020.2.2
+Time resolution is 1 ps
+source tb_f8_status.tcl
+## current_wave_config
+F8_STATUS_RTL_PASS checks=114
+$finish called at time : 2580 ns : File "Z:/results/c_integration/f8_system_20260928_004840_982/source/hardware/kv260_f8/tb_f8_status.sv" Line 99
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_f8_status_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for all
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:42 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# set log [file join $run_dir status_sim status_sim.sim sim_1 behav xsim simulate.log]
+# set f [open $log r];
+# set body [read $f];
+# close $f
+# if {[string first "F8_STATUS_RTL_PASS" $body] < 0 || [regexp -nocase {fatal:|error:} $body]} {
+#     error "Status RTL simulation failed"
+# }
+# mark status_rtl_pass.txt "F8_STATUS_RTL_PASS"
+# close_project
+# create_project f8_kv260 [file join $run_dir project] -part $part
+# set_property board_part xilinx.com:kv260:part0:1.1 [current_project]
+# set_property target_language Verilog [current_project]
+# set_property ip_repo_paths [list [file normalize $::env(F8_IP_DIR)]] [current_project]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/results/c_integration/f8_system_20260928_004840_982/source/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# add_files [file join $source_dir f8_status.v]
+# update_compile_order -fileset sources_1
+# create_bd_design kv260_f8
+Wrote  : <Z:\results\c_integration\f8_system_20260928_004840_982\project\f8_kv260.srcs\sources_1\bd\kv260_f8\kv260_f8.bd> 
+create_bd_design: Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 1006.949 ; gain = 0.000
+create_bd_cell: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# set ps [create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e ps]
+# apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1"} $ps
+apply_bd_automation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# set_property -dict [list \
+#     CONFIG.PSU__USE__M_AXI_GP0 {1} CONFIG.PSU__USE__M_AXI_GP1 {0} CONFIG.PSU__USE__M_AXI_GP2 {0} \
+#     CONFIG.PSU__MAXIGP0__DATA_WIDTH {128} \
+#     CONFIG.PSU__USE__S_AXI_GP0 {0} CONFIG.PSU__USE__S_AXI_GP1 {0} CONFIG.PSU__USE__S_AXI_GP2 {1} \
+#     CONFIG.PSU__SAXIGP2__DATA_WIDTH {128} \
+#     CONFIG.PSU__USE__S_AXI_GP3 {0} CONFIG.PSU__USE__S_AXI_GP4 {0} CONFIG.PSU__USE__S_AXI_GP5 {0} CONFIG.PSU__USE__S_AXI_GP6 {0} \
+#     CONFIG.PSU__USE__IRQ0 {0} CONFIG.PSU__USE__IRQ1 {0} \
+#     CONFIG.PSU__FPGA_PL0_ENABLE {1} CONFIG.PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ {100}] $ps
+# create_bd_cell -type ip -vlnv xilinx.com:hls:gemm_top:1.0 gemm
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aclk' of definition 'xilinx.com:signal:clock:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI' of definition 'xilinx.com:interface:aximm:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI' of definition 'xilinx.com:interface:aximm:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'S_AXI'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI': Added interface parameter 'PROTOCOL' with value 'AXI4LITE'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI': Added interface parameter 'DATA_WIDTH' with value '32'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI': Added interface parameter 'ADDR_WIDTH' with value '7'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI': Added interface parameter 'READ_WRITE_MODE' with value 'READ_WRITE'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/results/c_integration/f8_system_20260928_004840_982/source/ip'.
+# set status [create_bd_cell -type module -reference f8_status status]
+# set_property -dict [list CONFIG.BUILD_TAG0 [expr {wide($::env(F8_TAG0))}] CONFIG.BUILD_TAG1 [expr {wide($::env(F8_TAG1))}]] $status
+# set ctrl [create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect ctrl]
+# set_property -dict [list CONFIG.NUM_SI {1} CONFIG.NUM_MI {2}] $ctrl
+# set data [create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect data]
+# set_property -dict [list CONFIG.NUM_SI {3} CONFIG.NUM_MI {1}] $data
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+# set rst [create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset reset]
+# set one [create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant one]
+# set_property -dict [list CONFIG.CONST_WIDTH {1} CONFIG.CONST_VAL {1}] $one
+# connect_bd_intf_net [get_bd_intf_pins ps/M_AXI_HPM0_FPD] [get_bd_intf_pins ctrl/S00_AXI]
+# connect_bd_intf_net [get_bd_intf_pins ctrl/M00_AXI] [get_bd_intf_pins gemm/s_axi_control]
+# connect_bd_intf_net [get_bd_intf_pins ctrl/M01_AXI] [get_bd_intf_pins status/S_AXI]
+# foreach {index prefix} {0 x 1 w 2 y} {
+#     connect_bd_intf_net [get_bd_intf_pins gemm/m_axi_gmem$index] [get_bd_intf_pins data/S0${index}_AXI]
+#     set signals [expr {$index < 2 ? {arvalid arready rvalid rready rlast rresp} : {awvalid awready wvalid wready bvalid bready bresp}}]
+#     foreach signal $signals {
+#         # A scalar net overrides its interface member in IPI. Include BOTH
+#         # original endpoints when adding the passive third observer.
+#         set master_pin [get_bd_pins gemm/m_axi_gmem${index}_[string toupper $signal]]
+#         set fabric_pin [get_bd_pins data/S0${index}_AXI_${signal}]
+#         set monitor_pin [get_bd_pins status/${prefix}_${signal}]
+#         if {[llength $fabric_pin] != 1} {error "Missing SmartConnect pin for $index/$signal"}
+#         connect_bd_net $master_pin $fabric_pin $monitor_pin
+#         set attached [get_bd_pins -of_objects [get_bd_nets -of_objects $monitor_pin]]
+#         if {[llength $attached] != 3 || [llength [filter $attached {DIR == O}]] != 1} {
+#             error "Invalid three-endpoint AXI observation net: $attached"
+#         }
+#     }
+# }
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem0_ARVALID> is being overridden by the user with net <gemm_m_axi_gmem0_ARVALID>. This pin will not be connected as a part of interface connection <m_axi_gmem0>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S00_AXI_arvalid> is being overridden by the user with net <gemm_m_axi_gmem0_ARVALID>. This pin will not be connected as a part of interface connection <S00_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem0_ARREADY> is being overridden by the user with net <data_S00_AXI_arready>. This pin will not be connected as a part of interface connection <m_axi_gmem0>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S00_AXI_arready> is being overridden by the user with net <data_S00_AXI_arready>. This pin will not be connected as a part of interface connection <S00_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem0_RVALID> is being overridden by the user with net <data_S00_AXI_rvalid>. This pin will not be connected as a part of interface connection <m_axi_gmem0>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S00_AXI_rvalid> is being overridden by the user with net <data_S00_AXI_rvalid>. This pin will not be connected as a part of interface connection <S00_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem0_RREADY> is being overridden by the user with net <gemm_m_axi_gmem0_RREADY>. This pin will not be connected as a part of interface connection <m_axi_gmem0>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S00_AXI_rready> is being overridden by the user with net <gemm_m_axi_gmem0_RREADY>. This pin will not be connected as a part of interface connection <S00_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem0_RLAST> is being overridden by the user with net <data_S00_AXI_rlast>. This pin will not be connected as a part of interface connection <m_axi_gmem0>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S00_AXI_rlast> is being overridden by the user with net <data_S00_AXI_rlast>. This pin will not be connected as a part of interface connection <S00_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem0_RRESP> is being overridden by the user with net <data_S00_AXI_rresp>. This pin will not be connected as a part of interface connection <m_axi_gmem0>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S00_AXI_rresp> is being overridden by the user with net <data_S00_AXI_rresp>. This pin will not be connected as a part of interface connection <S00_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem1_ARVALID> is being overridden by the user with net <gemm_m_axi_gmem1_ARVALID>. This pin will not be connected as a part of interface connection <m_axi_gmem1>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S01_AXI_arvalid> is being overridden by the user with net <gemm_m_axi_gmem1_ARVALID>. This pin will not be connected as a part of interface connection <S01_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem1_ARREADY> is being overridden by the user with net <data_S01_AXI_arready>. This pin will not be connected as a part of interface connection <m_axi_gmem1>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S01_AXI_arready> is being overridden by the user with net <data_S01_AXI_arready>. This pin will not be connected as a part of interface connection <S01_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem1_RVALID> is being overridden by the user with net <data_S01_AXI_rvalid>. This pin will not be connected as a part of interface connection <m_axi_gmem1>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S01_AXI_rvalid> is being overridden by the user with net <data_S01_AXI_rvalid>. This pin will not be connected as a part of interface connection <S01_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem1_RREADY> is being overridden by the user with net <gemm_m_axi_gmem1_RREADY>. This pin will not be connected as a part of interface connection <m_axi_gmem1>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S01_AXI_rready> is being overridden by the user with net <gemm_m_axi_gmem1_RREADY>. This pin will not be connected as a part of interface connection <S01_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem1_RLAST> is being overridden by the user with net <data_S01_AXI_rlast>. This pin will not be connected as a part of interface connection <m_axi_gmem1>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S01_AXI_rlast> is being overridden by the user with net <data_S01_AXI_rlast>. This pin will not be connected as a part of interface connection <S01_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem1_RRESP> is being overridden by the user with net <data_S01_AXI_rresp>. This pin will not be connected as a part of interface connection <m_axi_gmem1>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S01_AXI_rresp> is being overridden by the user with net <data_S01_AXI_rresp>. This pin will not be connected as a part of interface connection <S01_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem2_AWVALID> is being overridden by the user with net <gemm_m_axi_gmem2_AWVALID>. This pin will not be connected as a part of interface connection <m_axi_gmem2>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S02_AXI_awvalid> is being overridden by the user with net <gemm_m_axi_gmem2_AWVALID>. This pin will not be connected as a part of interface connection <S02_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem2_AWREADY> is being overridden by the user with net <data_S02_AXI_awready>. This pin will not be connected as a part of interface connection <m_axi_gmem2>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S02_AXI_awready> is being overridden by the user with net <data_S02_AXI_awready>. This pin will not be connected as a part of interface connection <S02_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem2_WVALID> is being overridden by the user with net <gemm_m_axi_gmem2_WVALID>. This pin will not be connected as a part of interface connection <m_axi_gmem2>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S02_AXI_wvalid> is being overridden by the user with net <gemm_m_axi_gmem2_WVALID>. This pin will not be connected as a part of interface connection <S02_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem2_WREADY> is being overridden by the user with net <data_S02_AXI_wready>. This pin will not be connected as a part of interface connection <m_axi_gmem2>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S02_AXI_wready> is being overridden by the user with net <data_S02_AXI_wready>. This pin will not be connected as a part of interface connection <S02_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem2_BVALID> is being overridden by the user with net <data_S02_AXI_bvalid>. This pin will not be connected as a part of interface connection <m_axi_gmem2>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S02_AXI_bvalid> is being overridden by the user with net <data_S02_AXI_bvalid>. This pin will not be connected as a part of interface connection <S02_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem2_BREADY> is being overridden by the user with net <gemm_m_axi_gmem2_BREADY>. This pin will not be connected as a part of interface connection <m_axi_gmem2>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S02_AXI_bready> is being overridden by the user with net <gemm_m_axi_gmem2_BREADY>. This pin will not be connected as a part of interface connection <S02_AXI>.
+WARNING: [BD 41-1306] The connection to interface pin </gemm/m_axi_gmem2_BRESP> is being overridden by the user with net <data_S02_AXI_bresp>. This pin will not be connected as a part of interface connection <m_axi_gmem2>.
+WARNING: [BD 41-1306] The connection to interface pin </data/S02_AXI_bresp> is being overridden by the user with net <data_S02_AXI_bresp>. This pin will not be connected as a part of interface connection <S02_AXI>.
+# connect_bd_intf_net [get_bd_intf_pins data/M00_AXI] [get_bd_intf_pins ps/S_AXI_HP0_FPD]
+# connect_bd_net [get_bd_pins ps/pl_clk0] [get_bd_pins {ps/maxihpm0_fpd_aclk ps/saxihp0_fpd_aclk ctrl/aclk data/aclk gemm/ap_clk status/aclk reset/slowest_sync_clk}]
+# connect_bd_net [get_bd_pins ps/pl_resetn0] [get_bd_pins reset/ext_reset_in]
+# connect_bd_net [get_bd_pins one/dout] [get_bd_pins reset/dcm_locked]
+# connect_bd_net [get_bd_pins reset/peripheral_aresetn] [get_bd_pins {ctrl/aresetn data/aresetn gemm/ap_rst_n status/aresetn}]
+# assign_bd_address -offset 0xA0000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps/Data] [get_bd_addr_segs gemm/s_axi_control/Reg]
+Slave segment '/gemm/s_axi_control/Reg' is being assigned into address space '/ps/Data' at <0xA000_0000 [ 64K ]>.
+# set status_segs [get_bd_addr_segs -of_objects [get_bd_intf_pins status/S_AXI]]
+# if {[llength $status_segs] != 1} {error "Expected one status register segment: $status_segs"}
+# assign_bd_address -offset 0xA0010000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps/Data] $status_segs
+Slave segment '/status/S_AXI/reg0' is being assigned into address space '/ps/Data' at <0xA001_0000 [ 64K ]>.
+# foreach index {0 1 2} {
+#     set space [get_bd_addr_spaces gemm/Data_m_axi_gmem$index]
+#     assign_bd_address -offset 0 -range 0x80000000 -target_address_space $space [get_bd_addr_segs ps/SAXIGP2/HP0_DDR_LOW]
+#     assign_bd_address -target_address_space $space [get_bd_addr_segs ps/SAXIGP2/HP0_DDR_HIGH]
+# }
+Slave segment '/ps/SAXIGP2/HP0_DDR_LOW' is being assigned into address space '/gemm/Data_m_axi_gmem0' at <0x0000_0000 [ 2G ]>.
+Slave segment '/ps/SAXIGP2/HP0_DDR_HIGH' is being assigned into address space '/gemm/Data_m_axi_gmem0' at <0x8_0000_0000 [ 32G ]>.
+Slave segment '/ps/SAXIGP2/HP0_DDR_LOW' is being assigned into address space '/gemm/Data_m_axi_gmem1' at <0x0000_0000 [ 2G ]>.
+Slave segment '/ps/SAXIGP2/HP0_DDR_HIGH' is being assigned into address space '/gemm/Data_m_axi_gmem1' at <0x8_0000_0000 [ 32G ]>.
+Slave segment '/ps/SAXIGP2/HP0_DDR_LOW' is being assigned into address space '/gemm/Data_m_axi_gmem2' at <0x0000_0000 [ 2G ]>.
+Slave segment '/ps/SAXIGP2/HP0_DDR_HIGH' is being assigned into address space '/gemm/Data_m_axi_gmem2' at <0x8_0000_0000 [ 32G ]>.
+# validate_bd_design
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] kv260_f8_ctrl_0: IP kv260_f8_ctrl_0 is configured in Low area mode as all propagated traffic is low-bandwidth (AXI4LITE). One of the SIs has property HAS_BURST == 1. This will be ignored. If wrap transactions are required then turn off Low area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /kv260_f8_ctrl_0]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1006.949 ; gain = 0.000
+xit::source_ipfile: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1006.949 ; gain = 0.000
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps/S_AXI_HP0_FPD(1) and /data/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps/S_AXI_HP0_FPD(1) and /data/M00_AXI(0)
+WARNING: [BD 41-927] Following properties on pin /gemm/ap_clk have been updated from connected ip, but BD cell '/gemm' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 99999001 
+Please resolve any mismatches by directly setting properties on BD cell </gemm> to completely resolve these warnings.
+WARNING: [BD 41-1271] The connection to the pin: /data/S00_AXI_arready has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem0_RREADY has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem0_ARVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /data/S00_AXI_rlast has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /data/S00_AXI_rresp has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /data/S00_AXI_rvalid has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /data/S01_AXI_arready has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem1_RREADY has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem1_ARVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /data/S01_AXI_rlast has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /data/S01_AXI_rresp has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /data/S01_AXI_rvalid has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /data/S02_AXI_bresp has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /data/S02_AXI_wready has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem2_WVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem2_BREADY has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /data/S02_AXI_awready has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem2_AWVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /data/S02_AXI_bvalid has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+validate_bd_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# if {[get_property CONFIG.C_EXT_RESET_HIGH $rst] ne "0"} {error "Unexpected reset polarity"}
+# save_bd_design
+Wrote  : <Z:\results\c_integration\f8_system_20260928_004840_982\project\f8_kv260.srcs\sources_1\bd\kv260_f8\kv260_f8.bd> 
+save_bd_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# write_bd_tcl [file join $run_dir generated_bd.tcl]
+INFO: [BD 5-148] Tcl file written out <Z:/results/c_integration/f8_system_20260928_004840_982/generated_bd.tcl>.
+
+# report_property -all $ps -file [file join $run_dir ps_properties.txt]
+# set f [open [file join $run_dir address_map.txt] w]
+# foreach space [get_bd_addr_spaces] {
+#     puts $f "SPACE $space"
+#     foreach seg [get_bd_addr_segs -of_objects $space] {puts $f "$seg OFFSET=[get_property OFFSET $seg] RANGE=[get_property RANGE $seg]"}
+# }
+# close $f
+# set bd [get_files kv260_f8.bd]
+# generate_target all $bd
+INFO: [BD 41-1662] The design 'kv260_f8.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-1271] The connection to the pin: /data/S00_AXI_arready has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem0_RREADY has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem0_ARVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /data/S00_AXI_rlast has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /data/S00_AXI_rresp has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /data/S00_AXI_rvalid has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem0 
+WARNING: [BD 41-1271] The connection to the pin: /data/S01_AXI_arready has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem1_RREADY has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem1_ARVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /data/S01_AXI_rlast has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /data/S01_AXI_rresp has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /data/S01_AXI_rvalid has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem1 
+WARNING: [BD 41-1271] The connection to the pin: /data/S02_AXI_bresp has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /data/S02_AXI_wready has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem2_WVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem2_BREADY has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /data/S02_AXI_awready has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /gemm/m_axi_gmem2_AWVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-1271] The connection to the pin: /data/S02_AXI_bvalid has been overridden by the user. This pin will not be connected as a part of the interface connection: gemm_m_axi_gmem2 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/data/S00_AXI_arlock'(1) to pin: '/gemm/m_axi_gmem0_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/data/S01_AXI_arlock'(1) to pin: '/gemm/m_axi_gmem1_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/data/S02_AXI_awlock'(1) to pin: '/gemm/m_axi_gmem2_AWLOCK'(2) - Only lower order bits will be connected.
+VHDL Output written to : Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/data/S00_AXI_arlock'(1) to pin: '/gemm/m_axi_gmem0_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/data/S01_AXI_arlock'(1) to pin: '/gemm/m_axi_gmem1_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/data/S02_AXI_awlock'(1) to pin: '/gemm/m_axi_gmem2_AWLOCK'(2) - Only lower order bits will be connected.
+VHDL Output written to : Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/sim/kv260_f8.v
+VHDL Output written to : Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/hdl/kv260_f8_wrapper.v
+INFO: [xilinx.com:ip:zynq_ultra_ps_e:3.3-0] kv260_f8_ps_0: 
+Changes in your design (including the PCW configuration settings) are not automatically exported from Vivado to Xilinx's SDK, Petalinux or Yocto.
+This is by design to avoid disrupting existing embedded development efforts. To have any changes of your design taking effect in the embedded software flow please export your
+design by going through Vivado's main menu, click on File, then Export finally select Export Hardware, please ensure you click on the Include BitStream option.
+The auto-generated HDF file is all you need to import in Xilinx's SDK, Petalinux or Yocto for your changes to be reflected in the Embedded Software Flow.
+For more information, please consult PG201, section: Exporting PCW Settings to Embedded Software Flows
+INFO: [PSU-0] Address Range of DDR (0x7ff00000 to 0x7fffffff) is reserved by PMU for internal purpose.
+WARNING: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_HPM0_FPD'. A default connection has been created.
+WARNING: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI_HP0_FPD'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block gemm .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block status .
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/s00_nodes/s00_ar_node/s_sc_payld'(172) to pin: '/s00_nodes/S_SC_AR_payld'(168) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/s00_nodes/s00_aw_node/s_sc_payld'(172) to pin: '/s00_nodes/S_SC_AW_payld'(168) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m00_nodes/m00_r_node/s_sc_payld'(57) to pin: '/m00_nodes/S_SC_R_payld'(55) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m00_nodes/m00_b_node/s_sc_payld'(11) to pin: '/m00_nodes/S_SC_B_payld'(9) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m01_nodes/m01_r_node/s_sc_payld'(57) to pin: '/m01_nodes/S_SC_R_payld'(55) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m01_nodes/m01_b_node/s_sc_payld'(11) to pin: '/m01_nodes/S_SC_B_payld'(9) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/s00_axi2sc/s_sc_r_payld'(55) to pin: '/s00_nodes/M_SC_R_payld'(57) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/s00_axi2sc/s_sc_b_payld'(9) to pin: '/s00_nodes/M_SC_B_payld'(11) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m00_sc2axi/s_sc_ar_payld'(168) to pin: '/m00_nodes/M_SC_AR_payld'(172) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m00_sc2axi/s_sc_aw_payld'(168) to pin: '/m00_nodes/M_SC_AW_payld'(172) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m01_sc2axi/s_sc_ar_payld'(168) to pin: '/m01_nodes/M_SC_AR_payld'(172) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m01_sc2axi/s_sc_aw_payld'(168) to pin: '/m01_nodes/M_SC_AW_payld'(172) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/s00_nodes/s00_ar_node/s_sc_payld'(172) to pin: '/s00_nodes/S_SC_AR_payld'(168) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/s00_nodes/s00_aw_node/s_sc_payld'(172) to pin: '/s00_nodes/S_SC_AW_payld'(168) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m00_nodes/m00_r_node/s_sc_payld'(57) to pin: '/m00_nodes/S_SC_R_payld'(55) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m00_nodes/m00_b_node/s_sc_payld'(11) to pin: '/m00_nodes/S_SC_B_payld'(9) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m01_nodes/m01_r_node/s_sc_payld'(57) to pin: '/m01_nodes/S_SC_R_payld'(55) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m01_nodes/m01_b_node/s_sc_payld'(11) to pin: '/m01_nodes/S_SC_B_payld'(9) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/s00_axi2sc/s_sc_r_payld'(55) to pin: '/s00_nodes/M_SC_R_payld'(57) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/s00_axi2sc/s_sc_b_payld'(9) to pin: '/s00_nodes/M_SC_B_payld'(11) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m00_sc2axi/s_sc_ar_payld'(168) to pin: '/m00_nodes/M_SC_AR_payld'(172) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m00_sc2axi/s_sc_aw_payld'(168) to pin: '/m00_nodes/M_SC_AW_payld'(172) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m01_sc2axi/s_sc_ar_payld'(168) to pin: '/m01_nodes/M_SC_AR_payld'(172) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/m01_sc2axi/s_sc_aw_payld'(168) to pin: '/m01_nodes/M_SC_AW_payld'(172) - Only lower order bits will be connected.
+Exporting to file z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/bd_0/hw_handoff/kv260_f8_ctrl_0.hwh
+Generated Block Design Tcl file z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/bd_0/hw_handoff/kv260_f8_ctrl_0_bd.tcl
+Generated Hardware Definition File z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/bd_0/synth/kv260_f8_ctrl_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ctrl .
+Exporting to file z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/bd_0/hw_handoff/kv260_f8_data_0.hwh
+Generated Block Design Tcl file z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/bd_0/hw_handoff/kv260_f8_data_0_bd.tcl
+Generated Hardware Definition File z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/bd_0/synth/kv260_f8_data_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block data .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block reset .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block one .
+Exporting to file Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/hw_handoff/kv260_f8.hwh
+Generated Block Design Tcl file Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/hw_handoff/kv260_f8_bd.tcl
+Generated Hardware Definition File Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.hwdef
+generate_target: Time (s): cpu = 00:01:22 ; elapsed = 00:02:15 . Memory (MB): peak = 1006.949 ; gain = 0.000
+# add_files -norecurse [make_wrapper -files $bd -top]
+# set_property top kv260_f8_wrapper [current_fileset]
+# update_compile_order -fileset sources_1
+# mark bd_pass.txt "F8_BD_PASS"
+# if {$::env(F8_BUILD) eq "1"} {
+#     launch_runs synth_1 -jobs 4
+#     wait_on_run synth_1
+#     if {[get_property PROGRESS [get_runs synth_1]] ne "100%"} {error "Synthesis incomplete"}
+#     set f [open [file join $run_dir project f8_kv260.runs synth_1 runme.log] r]
+#     set synthesis_log [read $f]; close $f
+#     if {[regexp {CRITICAL WARNING:.*unconnected pin} $synthesis_log]} {error "Unconnected synthesis pin"}
+#     set_property STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE true [get_runs impl_1]
+#     launch_runs impl_1 -to_step write_bitstream -jobs 4
+#     wait_on_run impl_1
+#     if {[get_property PROGRESS [get_runs impl_1]] ne "100%"} {error "Implementation incomplete"}
+#     open_run impl_1
+#     report_timing_summary -delay_type min_max -report_unconstrained -file [file join $run_dir timing_summary.rpt]
+#     report_drc -file [file join $run_dir drc.rpt]
+#     report_utilization -file [file join $run_dir utilization.rpt]
+#     report_route_status -file [file join $run_dir route_status.rpt]
+#     set setup [get_property SLACK [get_timing_paths -delay_type max -max_paths 1]]
+#     set hold [get_property SLACK [get_timing_paths -delay_type min -max_paths 1]]
+#     if {$setup eq "" || $hold eq "" || $setup < 0 || $hold < 0} {error "Timing failed: $setup / $hold"}
+#     if {[llength [get_drc_violations -quiet -filter {SEVERITY == Error}]]} {error "DRC errors remain"}
+#     file mkdir [file join $run_dir artifacts]
+#     foreach ext {bit bin} {
+#         file copy [file join $run_dir project f8_kv260.runs impl_1 kv260_f8_wrapper.$ext] [file join $run_dir artifacts kv260_f8.$ext]
+#     }
+#     set hwh [file join $run_dir project f8_kv260.gen sources_1 bd kv260_f8 hw_handoff kv260_f8.hwh]
+#     if {![file exists $hwh]} {set hwh [file join $run_dir project f8_kv260.srcs sources_1 bd kv260_f8 hw_handoff kv260_f8.hwh]}
+#     file copy $hwh [file join $run_dir artifacts kv260_f8.hwh]
+#     write_hw_platform -fixed -include_bit [file join $run_dir artifacts kv260_f8.xsa]
+#     mark build_pass.txt "F8_BUILD_PASS setup_slack_ns=$setup hold_slack_ns=$hold"
+# }
+INFO: [IP_Flow 19-7066] Running IP cache check for IP kv260_f8_ctrl_0
+INFO: [IP_Flow 19-7066] Running IP cache check for IP kv260_f8_data_0
+INFO: [IP_Flow 19-7066] Running IP cache check for IP kv260_f8_gemm_0
+INFO: [IP_Flow 19-7066] Running IP cache check for IP kv260_f8_ps_0
+INFO: [IP_Flow 19-7066] Running IP cache check for IP kv260_f8_reset_0
+[Mon Sep 28 00:54:43 2026] Launched kv260_f8_gemm_0_synth_1, kv260_f8_ctrl_0_synth_1, kv260_f8_ps_0_synth_1, kv260_f8_status_0_synth_1, kv260_f8_reset_0_synth_1, kv260_f8_data_0_synth_1...
+Run output will be captured here:
+kv260_f8_gemm_0_synth_1: Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/kv260_f8_gemm_0_synth_1/runme.log
+kv260_f8_ctrl_0_synth_1: Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/kv260_f8_ctrl_0_synth_1/runme.log
+kv260_f8_ps_0_synth_1: Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/kv260_f8_ps_0_synth_1/runme.log
+kv260_f8_status_0_synth_1: Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/kv260_f8_status_0_synth_1/runme.log
+kv260_f8_reset_0_synth_1: Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/kv260_f8_reset_0_synth_1/runme.log
+kv260_f8_data_0_synth_1: Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/kv260_f8_data_0_synth_1/runme.log
+[Mon Sep 28 00:54:43 2026] Launched synth_1...
+Run output will be captured here: Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1006.949 ; gain = 0.000
+[Mon Sep 28 00:54:43 2026] Waiting for synth_1 to finish...
+
+
+*** Running vivado
+    with args -log kv260_f8_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source kv260_f8_wrapper.tcl
+
+
+
+****** Vivado v2020.2.2 (64-bit)
+  **** SW Build 3118627 on Tue Feb  9 05:14:06 MST 2021
+  **** IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-1239] XILINX_LOCAL_USER_DATA is set to 'no'.
+source kv260_f8_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/results/c_integration/f8_system_20260928_004840_982/source/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1006.762 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:11 ; elapsed = 00:00:25 . Memory (MB): peak = 1006.762 ; gain = 0.000
+Command: synth_design -top kv260_f8_wrapper -part xck26-sfvc784-2LV-c
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 87680
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1500.887 ; gain = 112.672
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8_wrapper' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/hdl/kv260_f8_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:13]
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8_ctrl_0' [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_ctrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8_ctrl_0' (1#1) [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_ctrl_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'kv260_f8_ctrl_0' is unconnected for instance 'ctrl' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:183]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'kv260_f8_ctrl_0' is unconnected for instance 'ctrl' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:183]
+WARNING: [Synth 8-7023] instance 'ctrl' of module 'kv260_f8_ctrl_0' has 79 connections declared, but only 77 given [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:183]
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8_data_0' [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_data_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8_data_0' (2#1) [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_data_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8_gemm_0' [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_gemm_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8_gemm_0' (3#1) [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_gemm_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'interrupt' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_ARREGION' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWADDR' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWBURST' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWCACHE' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWLEN' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWLOCK' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWPROT' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWQOS' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWREGION' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWSIZE' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_AWVALID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_BREADY' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_WDATA' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_WID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_WLAST' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_WSTRB' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem0_WVALID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_ARREGION' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWADDR' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWBURST' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWCACHE' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWLEN' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWLOCK' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWPROT' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWQOS' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWREGION' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWSIZE' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_AWVALID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_BREADY' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_WDATA' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_WID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_WLAST' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_WSTRB' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem1_WVALID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARADDR' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARBURST' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARCACHE' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARLEN' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARLOCK' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARPROT' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARQOS' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARREGION' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARSIZE' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_ARVALID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_AWREGION' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_RREADY' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7071] port 'm_axi_gmem2_WID' of module 'kv260_f8_gemm_0' is unconnected for instance 'gemm' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+WARNING: [Synth 8-7023] instance 'gemm' of module 'kv260_f8_gemm_0' has 140 connections declared, but only 89 given [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:351]
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8_one_0' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_one_0/synth/kv260_f8_one_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 1'b1 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (4#1) [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8_one_0' (5#1) [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_one_0/synth/kv260_f8_one_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8_ps_0' [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_ps_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8_ps_0' (6#1) [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_ps_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'saxigp2_bid' of module 'kv260_f8_ps_0' is unconnected for instance 'ps' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:443]
+WARNING: [Synth 8-7071] port 'saxigp2_rid' of module 'kv260_f8_ps_0' is unconnected for instance 'ps' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:443]
+WARNING: [Synth 8-7071] port 'pl_clk1' of module 'kv260_f8_ps_0' is unconnected for instance 'ps' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:443]
+WARNING: [Synth 8-7023] instance 'ps' of module 'kv260_f8_ps_0' has 83 connections declared, but only 80 given [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:443]
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8_reset_0' [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_reset_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8_reset_0' (7#1) [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_reset_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'kv260_f8_reset_0' is unconnected for instance 'reset' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:524]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'kv260_f8_reset_0' is unconnected for instance 'reset' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:524]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'kv260_f8_reset_0' is unconnected for instance 'reset' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:524]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'kv260_f8_reset_0' is unconnected for instance 'reset' [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:524]
+WARNING: [Synth 8-7023] instance 'reset' of module 'kv260_f8_reset_0' has 10 connections declared, but only 6 given [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:524]
+INFO: [Synth 8-6157] synthesizing module 'kv260_f8_status_0' [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_status_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8_status_0' (8#1) [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/.Xil/Vivado-77736-qiaoxinliang/realtime/kv260_f8_status_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8' (9#1) [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/synth/kv260_f8.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'kv260_f8_wrapper' (10#1) [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/hdl/kv260_f8_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1558.688 ; gain = 170.473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1576.613 ; gain = 188.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1576.613 ; gain = 188.398
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1576.613 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ps_0/kv260_f8_ps_0/kv260_f8_ps_0_in_context.xdc] for cell 'kv260_f8_i/ps'
+create_clock: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1606.316 ; gain = 4.977
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ps_0/kv260_f8_ps_0/kv260_f8_ps_0_in_context.xdc] for cell 'kv260_f8_i/ps'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_gemm_0/kv260_f8_gemm_0/kv260_f8_gemm_0_in_context.xdc] for cell 'kv260_f8_i/gemm'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_gemm_0/kv260_f8_gemm_0/kv260_f8_gemm_0_in_context.xdc] for cell 'kv260_f8_i/gemm'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_status_0/kv260_f8_status_0/kv260_f8_status_0_in_context.xdc] for cell 'kv260_f8_i/status'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_status_0/kv260_f8_status_0/kv260_f8_status_0_in_context.xdc] for cell 'kv260_f8_i/status'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/kv260_f8_ctrl_0/kv260_f8_ctrl_0_in_context.xdc] for cell 'kv260_f8_i/ctrl'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/kv260_f8_ctrl_0/kv260_f8_ctrl_0_in_context.xdc] for cell 'kv260_f8_i/ctrl'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/kv260_f8_data_0/kv260_f8_data_0_in_context.xdc] for cell 'kv260_f8_i/data'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/kv260_f8_data_0/kv260_f8_data_0_in_context.xdc] for cell 'kv260_f8_i/data'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_reset_0/kv260_f8_reset_0/kv260_f8_reset_0_in_context.xdc] for cell 'kv260_f8_i/reset'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_reset_0/kv260_f8_reset_0/kv260_f8_reset_0_in_context.xdc] for cell 'kv260_f8_i/reset'
+Parsing XDC File [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1606.316 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1606.316 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1606.316 ; gain = 218.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xck26-sfvc784-2LV-c
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1606.316 ; gain = 218.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for kv260_f8_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kv260_f8_i/ps. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kv260_f8_i/gemm. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kv260_f8_i/status. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kv260_f8_i/ctrl. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kv260_f8_i/data. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kv260_f8_i/reset. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kv260_f8_i/one. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1606.316 ; gain = 218.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1606.316 ; gain = 218.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1248 (col length:96)
+BRAMs: 288 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:41 . Memory (MB): peak = 1606.316 ; gain = 218.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:04 . Memory (MB): peak = 2208.426 ; gain = 820.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:01:04 . Memory (MB): peak = 2208.555 ; gain = 820.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:01:05 . Memory (MB): peak = 2228.062 ; gain = 839.848
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:01:15 . Memory (MB): peak = 2233.828 ; gain = 845.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:01:15 . Memory (MB): peak = 2233.828 ; gain = 845.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:15 . Memory (MB): peak = 2233.828 ; gain = 845.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:15 . Memory (MB): peak = 2233.828 ; gain = 845.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:01:15 . Memory (MB): peak = 2233.828 ; gain = 845.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:01:15 . Memory (MB): peak = 2233.828 ; gain = 845.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------+----------+
+|      |BlackBox name     |Instances |
++------+------------------+----------+
+|1     |kv260_f8_ctrl_0   |         1|
+|2     |kv260_f8_data_0   |         1|
+|3     |kv260_f8_gemm_0   |         1|
+|4     |kv260_f8_ps_0     |         1|
+|5     |kv260_f8_reset_0  |         1|
+|6     |kv260_f8_status_0 |         1|
++------+------------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |kv260_f8_ctrl   |     1|
+|2     |kv260_f8_data   |     1|
+|3     |kv260_f8_gemm   |     1|
+|4     |kv260_f8_ps     |     1|
+|5     |kv260_f8_reset  |     1|
+|6     |kv260_f8_status |     1|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:01:15 . Memory (MB): peak = 2233.828 ; gain = 845.613
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:01:02 . Memory (MB): peak = 2233.828 ; gain = 815.910
+Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:15 . Memory (MB): peak = 2233.828 ; gain = 845.613
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 2233.828 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2271.074 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:20 ; elapsed = 00:01:55 . Memory (MB): peak = 2276.082 ; gain = 1269.320
+INFO: [Common 17-1381] The checkpoint 'Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/synth_1/kv260_f8_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file kv260_f8_wrapper_utilization_synth.rpt -pb kv260_f8_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 28 01:09:40 2026...
+[Mon Sep 28 01:09:46 2026] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:07 ; elapsed = 00:15:03 . Memory (MB): peak = 1006.949 ; gain = 0.000
+[Mon Sep 28 01:10:03 2026] Launched impl_1...
+Run output will be captured here: Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 1006.949 ; gain = 0.000
+[Mon Sep 28 01:10:03 2026] Waiting for impl_1 to finish...
+
+
+*** Running vivado
+    with args -log kv260_f8_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source kv260_f8_wrapper.tcl -notrace
+
+
+
+****** Vivado v2020.2.2 (64-bit)
+  **** SW Build 3118627 on Tue Feb  9 05:14:06 MST 2021
+  **** IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-1239] XILINX_LOCAL_USER_DATA is set to 'no'.
+source kv260_f8_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/results/c_integration/f8_system_20260928_004840_982/source/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1006.645 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1006.645 ; gain = 0.000
+Command: link_design -top kv260_f8_wrapper -part xck26-sfvc784-2LV-c
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+INFO: [Project 1-454] Reading design checkpoint 'z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/kv260_f8_ctrl_0.dcp' for cell 'kv260_f8_i/ctrl'
+INFO: [Project 1-454] Reading design checkpoint 'z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/kv260_f8_data_0.dcp' for cell 'kv260_f8_i/data'
+INFO: [Project 1-454] Reading design checkpoint 'z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_gemm_0/kv260_f8_gemm_0.dcp' for cell 'kv260_f8_i/gemm'
+INFO: [Project 1-454] Reading design checkpoint 'z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ps_0/kv260_f8_ps_0.dcp' for cell 'kv260_f8_i/ps'
+INFO: [Project 1-454] Reading design checkpoint 'z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_reset_0/kv260_f8_reset_0.dcp' for cell 'kv260_f8_i/reset'
+INFO: [Project 1-454] Reading design checkpoint 'z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_status_0/kv260_f8_status_0.dcp' for cell 'kv260_f8_i/status'
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.981 . Memory (MB): peak = 1393.344 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 319 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ps_0/kv260_f8_ps_0.xdc] for cell 'kv260_f8_i/ps/inst'
+create_clock: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1566.148 ; gain = 29.586
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ps_0/kv260_f8_ps_0.xdc] for cell 'kv260_f8_i/ps/inst'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/bd_0/ip/ip_1/bd_1eeb_psr_aclk_0_board.xdc] for cell 'kv260_f8_i/ctrl/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/bd_0/ip/ip_1/bd_1eeb_psr_aclk_0_board.xdc] for cell 'kv260_f8_i/ctrl/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/bd_0/ip/ip_1/bd_1eeb_psr_aclk_0.xdc] for cell 'kv260_f8_i/ctrl/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_ctrl_0/bd_0/ip/ip_1/bd_1eeb_psr_aclk_0.xdc] for cell 'kv260_f8_i/ctrl/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/bd_0/ip/ip_1/bd_2176_psr_aclk_0_board.xdc] for cell 'kv260_f8_i/data/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/bd_0/ip/ip_1/bd_2176_psr_aclk_0_board.xdc] for cell 'kv260_f8_i/data/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/bd_0/ip/ip_1/bd_2176_psr_aclk_0.xdc] for cell 'kv260_f8_i/data/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_data_0/bd_0/ip/ip_1/bd_2176_psr_aclk_0.xdc] for cell 'kv260_f8_i/data/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_reset_0/kv260_f8_reset_0_board.xdc] for cell 'kv260_f8_i/reset/U0'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_reset_0/kv260_f8_reset_0_board.xdc] for cell 'kv260_f8_i/reset/U0'
+Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_reset_0/kv260_f8_reset_0.xdc] for cell 'kv260_f8_i/reset/U0'
+Finished Parsing XDC File [z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.gen/sources_1/bd/kv260_f8/ip/kv260_f8_reset_0/kv260_f8_reset_0.xdc] for cell 'kv260_f8_i/reset/U0'
+INFO: [Project 1-1715] 2 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1569.109 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 113 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 4 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 2 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 107 instances
+
+17 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:57 . Memory (MB): peak = 1569.109 ; gain = 562.465
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xck26'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1605.016 ; gain = 35.906
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: f4dafe2d
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1905.789 ; gain = 300.773
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 110 inverter(s) to 2789 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1d6c2decc
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2138.141 ; gain = 0.090
+INFO: [Opt 31-389] Phase Retarget created 76 cells and removed 463 cells
+INFO: [Opt 31-1021] In phase Retarget, 99 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 19 inverter(s) to 39 load pin(s).
+Phase 2 Constant propagation | Checksum: 192175f9f
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2138.141 ; gain = 0.090
+INFO: [Opt 31-389] Phase Constant propagation created 275 cells and removed 1536 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 131 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: fdc03c43
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2138.141 ; gain = 0.090
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 314 cells
+INFO: [Opt 31-1021] In phase Sweep, 167 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 4 BUFG optimization | Checksum: fdc03c43
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2138.141 ; gain = 0.090
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: fdc03c43
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2138.141 ; gain = 0.090
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 18c9a727f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2138.141 ; gain = 0.090
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 3 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 114 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              76  |             463  |                                             99  |
+|  Constant propagation         |             275  |            1536  |                                            131  |
+|  Sweep                        |               0  |             314  |                                            167  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               3  |                                            114  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 2138.141 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 188ea257a
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2138.141 ; gain = 0.090
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 2 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 2 Total Ports: 4
+Ending PowerOpt Patch Enables Task | Checksum: fee23e15
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.167 . Memory (MB): peak = 2741.004 ; gain = 0.000
+Ending Power Optimization Task | Checksum: fee23e15
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:19 . Memory (MB): peak = 2741.004 ; gain = 602.863
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: fee23e15
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2741.004 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2741.004 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 13da3e9ea
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2741.004 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+44 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:38 . Memory (MB): peak = 2741.004 ; gain = 1171.895
+INFO: [Timing 38-480] Writing timing data to binary archive.
+INFO: [Common 17-1381] The checkpoint 'Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/impl_1/kv260_f8_wrapper_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2741.004 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file kv260_f8_wrapper_drc_opted.rpt -pb kv260_f8_wrapper_drc_opted.pb -rpx kv260_f8_wrapper_drc_opted.rpx
+Command: report_drc -file kv260_f8_wrapper_drc_opted.rpt -pb kv260_f8_wrapper_drc_opted.pb -rpx kv260_f8_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/impl_1/kv260_f8_wrapper_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 3753.832 ; gain = 1012.828
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xck26'
+WARNING: [Vivado_Tcl 4-1400] -ultrathreads option currently only supported on multi-SLR devices. Continuing placement in regular mode.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: dd2d0384
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: c29d709a
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: f37fa147
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: f37fa147
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: f37fa147
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 1a56f41cd
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:23 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 18bd18e54
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 18bd18e54
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:25 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: ddfd7ef0
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:27 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: ddfd7ef0
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:27 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 2.1.1 Partition Driven Placement | Checksum: ddfd7ef0
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:27 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 2.1 Floorplanning | Checksum: 16cb1439d
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:27 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 16cb1439d
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:27 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.3 Global Placement Core
+
+Phase 2.3.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 517 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-775] End 1 Pass. Optimized 183 nets or cells. Created 0 new cell, deleted 183 existing cells and moved 0 existing cell
+INFO: [Physopt 32-1030] Pass 1. Identified 3 candidate driver sets for equivalent driver rewiring.
+INFO: [Physopt 32-661] Optimized 3 nets.  Re-placed 50 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 3 nets or cells. Created 0 new cell, deleted 6 existing cells and moved 50 existing cells
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.658 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            183  |                   183  |           0  |           1  |  00:00:01  |
+|  Equivalent Driver Rewiring                       |            0  |              6  |                     3  |           0  |           1  |  00:00:01  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            189  |                   186  |           0  |           4  |  00:00:02  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.3.1 Physical Synthesis In Placer | Checksum: 15d066a46
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:56 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 2.3 Global Placement Core | Checksum: 897fffd7
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:57 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 897fffd7
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:57 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 11068e64b
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:58 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 139488884
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:01:03 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 16e7d3137
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:01:06 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 3.3.2 Flow Legalize Slice Clusters
+Phase 3.3.2 Flow Legalize Slice Clusters | Checksum: 132219c66
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:07 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 3.3.3 Slice Area Swap
+Phase 3.3.3 Slice Area Swap | Checksum: 1474adf0f
+
+Time (s): cpu = 00:01:26 ; elapsed = 00:01:11 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 3.3 Small Shape DP | Checksum: 1128e662c
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:15 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: cd190c2f
+
+Time (s): cpu = 00:01:34 ; elapsed = 00:01:18 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 133c5e78f
+
+Time (s): cpu = 00:01:34 ; elapsed = 00:01:18 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 133c5e78f
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:01:18 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 111fa551a
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=4.079 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 153cafd8d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.767 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Place 46-35] Processed net kv260_f8_i/reset/U0/peripheral_aresetn[0], inserted BUFG to drive 2135 loads.
+INFO: [Place 46-45] Replicated bufg driver kv260_f8_i/reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_replica
+INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 1, Replicated BUFG Driver: 1, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 207c0ab66
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1d6826b40
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:29 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=4.079. For the most accurate timing information please run report_timing.
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:29 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 153f121c6
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:01:29 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.139 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 18bbee551
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:01:32 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                2x2|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                2x2|
+|___________|___________________|___________________|___________________|
+|       East|                4x4|                1x1|                8x8|
+|___________|___________________|___________________|___________________|
+|       West|                2x2|                1x1|                8x8|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 18bbee551
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:32 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 18bbee551
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:33 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:33 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1d12d8656
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:33 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Ending Placer Task | Checksum: 1b01e9bc4
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:33 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+84 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:00 ; elapsed = 00:01:37 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/impl_1/kv260_f8_wrapper_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_io -file kv260_f8_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file kv260_f8_wrapper_utilization_placed.rpt -pb kv260_f8_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file kv260_f8_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.167 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xck26'
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+93 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/impl_1/kv260_f8_wrapper_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xck26'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: a79266f5 ConstDB: 0 ShapeSum: d0be7144 RouteDB: 37cdc38b
+
+Phase 1 Build RT Design
+Nodegraph reading from file.  Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 1 Build RT Design | Checksum: bf7bd2f6
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Post Restoration Checksum: NetGraph: aeb45534 NumContArr: 410f57e3 Constraints: f5e6890a Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 1e5aa3621
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 1e5aa3621
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 1e5aa3621
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.4 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.4 Global Clock Net Routing | Checksum: 2b5c5afb1
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 2.5 Update Timing
+Phase 2.5 Update Timing | Checksum: 222b07375
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:19 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.365  | TNS=0.000  | WHS=-0.086 | THS=-135.836|
+
+Phase 2 Router Initialization | Checksum: 1dfc44c5f
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:26 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 15569
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 13746
+  Number of Partially Routed Nets     = 1823
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 1dfc44c5f
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:27 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 3 Initial Routing | Checksum: 1e0c4e7cf
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:32 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 2413
+ Number of Nodes with overlaps = 111
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.091  | TNS=0.000  | WHS=-0.046 | THS=-0.197 |
+
+Phase 4.1 Global Iteration 0 | Checksum: 257f4705c
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.091  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1e8df42d1
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:58 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 4 Rip-up And Reroute | Checksum: 1e8df42d1
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:58 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 27a4df11b
+
+Time (s): cpu = 00:01:31 ; elapsed = 00:01:02 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.373  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 5.1 Delay CleanUp | Checksum: 27a4df11b
+
+Time (s): cpu = 00:01:31 ; elapsed = 00:01:02 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 27a4df11b
+
+Time (s): cpu = 00:01:31 ; elapsed = 00:01:02 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 5 Delay and Skew Optimization | Checksum: 27a4df11b
+
+Time (s): cpu = 00:01:31 ; elapsed = 00:01:03 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1ea9b3eaa
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:01:05 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.373  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 24852d710
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:01:06 . Memory (MB): peak = 3753.832 ; gain = 0.000
+Phase 6 Post Hold Fix | Checksum: 24852d710
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:01:06 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.35545 %
+  Global Horizontal Routing Utilization  = 1.66435 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 219f0abd2
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:01:06 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 219f0abd2
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:01:06 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 219f0abd2
+
+Time (s): cpu = 00:01:39 ; elapsed = 00:01:10 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=3.373  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 219f0abd2
+
+Time (s): cpu = 00:01:39 ; elapsed = 00:01:10 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:01:39 ; elapsed = 00:01:10 . Memory (MB): peak = 3753.832 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+109 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:49 ; elapsed = 00:01:16 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:09 ; elapsed = 00:00:03 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/impl_1/kv260_f8_wrapper_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file kv260_f8_wrapper_drc_routed.rpt -pb kv260_f8_wrapper_drc_routed.pb -rpx kv260_f8_wrapper_drc_routed.rpx
+Command: report_drc -file kv260_f8_wrapper_drc_routed.rpt -pb kv260_f8_wrapper_drc_routed.pb -rpx kv260_f8_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/impl_1/kv260_f8_wrapper_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:22 ; elapsed = 00:00:13 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_methodology -file kv260_f8_wrapper_methodology_drc_routed.rpt -pb kv260_f8_wrapper_methodology_drc_routed.pb -rpx kv260_f8_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file kv260_f8_wrapper_methodology_drc_routed.rpt -pb kv260_f8_wrapper_methodology_drc_routed.pb -rpx kv260_f8_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file Z:/results/c_integration/f8_system_20260928_004840_982/project/f8_kv260.runs/impl_1/kv260_f8_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_power -file kv260_f8_wrapper_power_routed.rpt -pb kv260_f8_wrapper_power_summary_routed.pb -rpx kv260_f8_wrapper_power_routed.rpx
+Command: report_power -file kv260_f8_wrapper_power_routed.rpt -pb kv260_f8_wrapper_power_summary_routed.pb -rpx kv260_f8_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+121 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_route_status -file kv260_f8_wrapper_route_status.rpt -pb kv260_f8_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file kv260_f8_wrapper_timing_summary_routed.rpt -pb kv260_f8_wrapper_timing_summary_routed.pb -rpx kv260_f8_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2LV, Temperature grade: C, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file kv260_f8_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file kv260_f8_wrapper_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file kv260_f8_wrapper_bus_skew_routed.rpt -pb kv260_f8_wrapper_bus_skew_routed.pb -rpx kv260_f8_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2LV, Temperature grade: C, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+
+WARNING::74 - Unsupported FPGA device name 'xck26-sfvc784-2LV-c'. Verify that the specified device is a valid customer supported device.
+-p xck26-sfvc784-2LV-c
+   ^
+
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/s02_nodes/s02_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/s02_nodes/s02_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/s02_nodes/s02_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/s02_nodes/s02_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/s02_nodes/s02_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/s02_nodes/s02_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/s02_nodes/s02_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/s02_nodes/s02_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/s01_nodes/s01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/s01_nodes/s01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/s01_nodes/s01_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/s01_nodes/s01_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/m00_nodes/m00_w_node/inst/inst_si_handler/gen_si_handler.gen_request_fifos.gen_req_fifo[2].inst_req_fifo/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/m00_nodes/m00_w_node/inst/inst_si_handler/gen_si_handler.gen_request_fifos.gen_req_fifo[2].inst_req_fifo/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block kv260_f8_i/data/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the kv260_f8_i/data/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+Command: write_bitstream -force kv260_f8_wrapper.bit -bin_file
+Attempting to get a license for feature 'Implementation' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xck26'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC DPOP-4] MREG Output pipelining: DSP kv260_f8_i/gemm/inst/mac_muladd_8s_8s_16s_17_4_1_U5/gemm_top_mac_muladd_8s_8s_16s_17_4_1_DSP48_0_U/m_reg_reg multiplier stage kv260_f8_i/gemm/inst/mac_muladd_8s_8s_16s_17_4_1_U5/gemm_top_mac_muladd_8s_8s_16s_17_4_1_DSP48_0_U/m_reg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-4] MREG Output pipelining: DSP kv260_f8_i/gemm/inst/mac_muladd_8s_8s_16s_17_4_1_U6/gemm_top_mac_muladd_8s_8s_16s_17_4_1_DSP48_0_U/m_reg_reg multiplier stage kv260_f8_i/gemm/inst/mac_muladd_8s_8s_16s_17_4_1_U6/gemm_top_mac_muladd_8s_8s_16s_17_4_1_DSP48_0_U/m_reg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-4] MREG Output pipelining: DSP kv260_f8_i/gemm/inst/mac_muladd_8s_8s_16s_17_4_1_U7/gemm_top_mac_muladd_8s_8s_16s_17_4_1_DSP48_0_U/m_reg_reg multiplier stage kv260_f8_i/gemm/inst/mac_muladd_8s_8s_16s_17_4_1_U7/gemm_top_mac_muladd_8s_8s_16s_17_4_1_DSP48_0_U/m_reg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-4] MREG Output pipelining: DSP kv260_f8_i/gemm/inst/mac_muladd_8s_8s_16s_17_4_1_U8/gemm_top_mac_muladd_8s_8s_16s_17_4_1_DSP48_0_U/m_reg_reg multiplier stage kv260_f8_i/gemm/inst/mac_muladd_8s_8s_16s_17_4_1_U8/gemm_top_mac_muladd_8s_8s_16s_17_4_1_DSP48_0_U/m_reg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC RTSTAT-10] No routable loads: 15 net(s) have no routable loads. The problem bus(es) and/or net(s) are kv260_f8_i/ctrl/inst/s00_nodes/s00_ar_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m00_nodes/m00_ar_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m00_nodes/m00_b_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m00_nodes/m00_aw_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m01_nodes/m01_ar_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/s00_nodes/s00_w_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/s00_nodes/s00_r_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m01_nodes/m01_w_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m00_nodes/m00_r_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/s00_nodes/s00_b_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m01_nodes/m01_r_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m01_nodes/m01_aw_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/m00_nodes/m00_w_node/inst/mi_handler_m_sc_areset_pipe, kv260_f8_i/ctrl/inst/s00_nodes/s00_aw_node/inst/mi_handler_m_sc_areset_pipe, and kv260_f8_i/ctrl/inst/m01_nodes/m01_b_node/inst/mi_handler_m_sc_areset_pipe.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 5 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./kv260_f8_wrapper.bit...
+Writing bitstream ./kv260_f8_wrapper.bin...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+28 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 3753.832 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 28 01:18:35 2026...
+[Mon Sep 28 01:18:40 2026] impl_1 finished
+wait_on_run: Time (s): cpu = 00:00:03 ; elapsed = 00:08:38 . Memory (MB): peak = 1006.949 ; gain = 0.000
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.989 . Memory (MB): peak = 1769.258 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 319 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2110.488 ; gain = 17.844
+Restored from archive | CPU: 3.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2110.488 ; gain = 17.844
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2573.723 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 113 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 4 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 2 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 107 instances
+
+open_run: Time (s): cpu = 00:00:43 ; elapsed = 00:00:57 . Memory (MB): peak = 2573.723 ; gain = 1566.773
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2LV, Temperature grade: C, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 2663.477 ; gain = 89.754
+Command: report_drc -file Z:/results/c_integration/f8_system_20260928_004840_982/drc.rpt
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file Z:/results/c_integration/f8_system_20260928_004840_982/drc.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 2751.027 ; gain = 87.551
+INFO: [Vivado 12-4895] Creating Hardware Platform: Z:/results/c_integration/f8_system_20260928_004840_982/artifacts/kv260_f8.xsa ...
+INFO: [Hsi 55-2053] elapsed time for repository (C:/Xilinx/Vivado/2020.2/data\embeddedsw) loading 3 seconds
+INFO: [Vivado 12-12467] The Hardware Platform can be used for Hardware
+INFO: [Vivado 12-4896] Successfully created Hardware Platform: Z:/results/c_integration/f8_system_20260928_004840_982/artifacts/kv260_f8.xsa
+write_hw_platform: Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 2892.645 ; gain = 141.617
+# close_project
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 28 01:20:26 2026...

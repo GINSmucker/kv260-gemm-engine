@@ -1,0 +1,71 @@
+[258992.823418] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[258994.871049] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[258995.895440] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259021.495001] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259022.519398] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259024.567066] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259027.639437] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259028.663014] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259029.687454] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259030.711063] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259031.736405] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259032.759101] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259033.783436] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259041.975054] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259042.999394] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259049.143048] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259050.167441] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259052.215064] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259053.239442] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259054.263026] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259056.311439] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259112.631064] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259113.655412] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259140.279070] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259142.327507] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259158.711051] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259159.735447] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[259163.830998] kria kernel: macb ff0e0000.ethernet eth0: Link is Down
+[259164.855445] kria kernel: macb ff0e0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control tx
+[260054.040449] kria kernel: OF: overlay: WARNING: memory leak will occur if overlay removed, property: /fpga-region/firmware-name
+[260054.050959] kria kernel: OF: overlay: WARNING: memory leak will occur if overlay removed, property: /fpga-region/resets
+[260054.062842] kria kernel: [drm] Probing for xlnx,zocl
+[260054.062879] kria kernel: zocl-drm axi:zyxclmm_drm: error -ENXIO: IRQ index 0 not found
+[260054.070223] kria kernel: [drm] FPGA programming device pcap founded.
+[260054.070277] kria kernel: [drm] PR[0] Isolation addr 0x0
+[260054.071830] kria kernel: [drm] Initialized zocl 2.18.0 20260924 for axi:zyxclmm_drm on minor 1
+[260054.162619] kria kernel: zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(221502), ret: 0
+[260054.162776] kria kernel: zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(221502)
+[260054.163206] kria kernel: zocl-drm axi:zyxclmm_drm: zocl_create_client: created KDS client for pid(221502), ret: 0
+[260054.186232] kria kernel: [drm] Found free Slot-0 is selected for xclbin 
+[260054.186260] kria kernel: [drm]  Allocated slot 0 to load xclbin in device
+                             .
+[260054.186276] kria kernel: [drm] skip kind 29(AIE_RESOURCES) return code: -22
+[260054.186287] kria kernel: [drm] disable partial bitstream download, axlf flags is 0
+[260054.186294] kria kernel: [drm] found kind 8(IP_LAYOUT)
+[260054.186308] kria kernel: [drm] skip kind 9(DEBUG_IP_LAYOUT) return code: -22
+[260054.186316] kria kernel: [drm] skip kind 25(AIE_METADATA) return code: -22
+[260054.186322] kria kernel: [drm] found kind 7(CONNECTIVITY)
+[260054.186336] kria kernel: [drm] found kind 6(MEM_TOPOLOGY)
+[260054.186508] kria kernel: [drm] Memory 0 is not reserved in device tree. Will allocate memory from CMA
+[260054.186568] kria kernel: [drm] Memory 1 is not reserved in device tree. Will allocate memory from CMA
+[260054.187391] kria kernel: cu_drv CU.2.auto: cu_probe: CU[0] created
+[260054.188070] kria kernel: cu_drv CU.3.auto: cu_probe: CU[1] created
+[260054.188160] kria kernel: cu_drv CU.2.auto:  ffff00083f1a9810 kds_cfg_legacy_update: CU(0) doesnt support interrupt, running polling thread for all cus
+[260054.188376] kria kernel: [drm] zocl_xclbin_read_axlf 60654440-aa58-0a12-72bd-22128d64ec2c ret: 0
+[260054.201341] kria kernel: [drm] bitstream 60654440-aa58-0a12-72bd-22128d64ec2c locked, ref=1
+[260054.201428] kria kernel: zocl-drm axi:zyxclmm_drm:  ffff000802e17c10 kds_add_context: Client pid(221502) add context Domain(65535) CU(0xffff) shared(true)
+[260054.201488] kria kernel: zocl-drm axi:zyxclmm_drm:  ffff000802e17c10 kds_del_context: Client pid(221502) del context Domain(65535) CU(0xffff)
+[260054.201515] kria kernel: [drm] bitstream 60654440-aa58-0a12-72bd-22128d64ec2c unlocked, ref=0
+[260054.239291] kria kernel: [drm] bitstream 60654440-aa58-0a12-72bd-22128d64ec2c locked, ref=1
+[260054.239367] kria kernel: zocl-drm axi:zyxclmm_drm:  ffff000802e17c10 kds_add_context: Client pid(221502) add context Domain(0) CU(0x0) shared(false)
+[260054.239764] kria kernel: zocl-drm axi:zyxclmm_drm:  ffff000802e17c10 kds_add_context: Client pid(221502) add context Domain(0) CU(0x1) shared(false)
+[260054.239995] kria kernel: zocl-drm axi:zyxclmm_drm:  ffff000802e17c10 kds_del_context: Client pid(221502) del context Domain(0) CU(0x1)
+[260054.240043] kria kernel: zocl-drm axi:zyxclmm_drm:  ffff000802e17c10 kds_del_context: Client pid(221502) del context Domain(0) CU(0x0)
+[260054.240075] kria kernel: [drm] bitstream 60654440-aa58-0a12-72bd-22128d64ec2c unlocked, ref=0
+[260054.243083] kria kernel: zocl-drm axi:zyxclmm_drm: zocl_destroy_client: client exits pid(221502)
+[260054.376342] kria kernel: cu_drv CU.2.auto: cu_remove: CU[0] removed
+[260054.376579] kria kernel: cu_drv CU.3.auto: cu_remove: CU[1] removed
+[260054.378156] kria kernel: OF: ERROR: memory leak, expected refcount 1 instead of 2, of_node_get()/of_node_put() unbalanced - destroy cset entry: attach overlay node /axi/zyxclmm_drm
+[260054.582964] kria kernel: OF: overlay: WARNING: memory leak will occur if overlay removed, property: /fpga-region/firmware-name
+[260054.595744] kria kernel: OF: overlay: WARNING: memory leak will occur if overlay removed, property: /fpga-region/resets

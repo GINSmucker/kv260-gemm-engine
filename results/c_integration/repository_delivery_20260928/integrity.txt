@@ -1,0 +1,15 @@
+{
+  "schema": "f8_repository_delivery_check_v1",
+  "status": "PASS",
+  "checks": {
+    "bundle_file_hashes": 31,
+    "runtime_and_platform_sources": 17,
+    "hardware_build_inputs": 4,
+    "original_ip_extracted_files": 31,
+    "official_board_files": 15,
+    "raw_board_logs": 3
+  },
+  "board_execution_this_command": "NOT_RUN",
+  "formal_acceptance": "NOT_RUN",
+  "archived_board_run_id": "262414267686403"
+}

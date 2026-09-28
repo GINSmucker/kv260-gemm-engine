@@ -1,0 +1,25 @@
+test_close_is_idempotent_and_prohibits_later_run (test_f8_host.F8HostTests.test_close_is_idempotent_and_prohibits_later_run) ... ok
+test_concurrent_call_and_close_are_rejected (test_f8_host.F8HostTests.test_concurrent_call_and_close_are_rejected) ... ok
+test_continue_not_clearing_done_enters_fault (test_f8_host.F8HostTests.test_continue_not_clearing_done_enters_fault) ... ok
+test_fpga_backend_remains_unavailable_without_real_adapter (test_f8_host.F8HostTests.test_fpga_backend_remains_unavailable_without_real_adapter) ... ok
+test_identity_and_control_ownership_mismatch_rejected (test_f8_host.F8HostTests.test_identity_and_control_ownership_mismatch_rejected) ... ok
+test_invalid_buffers_rejected_before_io (test_f8_host.F8HostTests.test_invalid_buffers_rejected_before_io) ... ok
+test_invalid_timeout_is_rejected_before_io (test_f8_host.F8HostTests.test_invalid_timeout_is_rejected_before_io) ... ok
+test_output_software_failures_still_acknowledge_and_allow_next_call (test_f8_host.F8HostTests.test_output_software_failures_still_acknowledge_and_allow_next_call) ... ok
+test_repeated_calls_reconfigure_all_addresses_and_acknowledge_done (test_f8_host.F8HostTests.test_repeated_calls_reconfigure_all_addresses_and_acknowledge_done) ... ok
+test_shape_dtype_layout_mode_rejected_before_io (test_f8_host.F8HostTests.test_shape_dtype_layout_mode_rejected_before_io) ... ok
+test_stale_done_and_auto_restart_are_never_reused (test_f8_host.F8HostTests.test_stale_done_and_auto_restart_are_never_reused) ... ok
+test_timeout_retains_buffers_and_blocks_resubmission_and_close (test_f8_host.F8HostTests.test_timeout_retains_buffers_and_blocks_resubmission_and_close) ... ok
+test_uncertain_start_write_retains_buffers (test_f8_host.F8HostTests.test_uncertain_start_write_retains_buffers) ... ok
+test_capability_matches_published_ip_registers_and_widths (test_f8_host.F8ReleaseContractTests.test_capability_matches_published_ip_registers_and_widths) ... ok
+test_backend_requires_explicit_runtime_configuration (test_f8_runtime.RuntimeBoundaryTests.test_backend_requires_explicit_runtime_configuration) ... ok
+test_fault_without_recovery_proof_retains_session (test_f8_runtime.RuntimeBoundaryTests.test_fault_without_recovery_proof_retains_session) ... ok
+test_fragmented_reply_and_device_error_not_substituted_with_cpu (test_f8_runtime.RuntimeBoundaryTests.test_fragmented_reply_and_device_error_not_substituted_with_cpu) ... ok
+test_native_error_is_propagated (test_f8_runtime.RuntimeBoundaryTests.test_native_error_is_propagated) ... ok
+test_recovery_failure_stays_fault_and_success_checks_ctrl (test_f8_runtime.RuntimeBoundaryTests.test_recovery_failure_stays_fault_and_success_checks_ctrl) ... ok
+test_timeout_discards_stream_and_rejects_followup (test_f8_runtime.RuntimeBoundaryTests.test_timeout_discards_stream_and_rejects_followup) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.466s
+
+OK

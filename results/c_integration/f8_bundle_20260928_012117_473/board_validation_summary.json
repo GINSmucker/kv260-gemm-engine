@@ -1,0 +1,153 @@
+{
+  "schema": "f8_board_development_result_v1",
+  "host_date": "2026-09-28",
+  "timezone": "Asia/Shanghai",
+  "board_run_id": "262414267686403",
+  "bundle_manifest_sha256": "bafb429c5262cea3d6c53b8eac9f86e9e37d18540839cbb050a638bf4e06734d",
+  "result": {
+    "pl_development_checks": "PASS",
+    "rollback": "PASS",
+    "error": null,
+    "rollback_errors": [],
+    "formal_acceptance": "NOT_RUN"
+  },
+  "smoke_result": {
+    "status": "PASS",
+    "compared_tasks": 9,
+    "compared_outputs": 576,
+    "disconnect_tasks": 1,
+    "acceptance": "NOT_RUN",
+    "kernel_latency_measured": false
+  },
+  "owner": {
+    "pid": 224571,
+    "uid": 1000,
+    "socket": "/home/ubuntu/fpga_project/deploy/f8_bundle_20260928_012117_473/f8.sock"
+  },
+  "buffers": {
+    "X": {
+      "address": 35549921280,
+      "capacity": 4096,
+      "device_read": true,
+      "device_write": false,
+      "runtime_verified": true,
+      "offset": 0,
+      "address_hex": "0x846f0c000"
+    },
+    "W": {
+      "address": 35524923392,
+      "capacity": 4096,
+      "device_read": true,
+      "device_write": false,
+      "runtime_verified": true,
+      "offset": 0,
+      "address_hex": "0x845735000"
+    },
+    "Y": {
+      "address": 35549941760,
+      "capacity": 4096,
+      "device_read": false,
+      "device_write": true,
+      "runtime_verified": true,
+      "offset": 0,
+      "address_hex": "0x846f11000"
+    }
+  },
+  "axi_per_task": {
+    "ctrl": 4,
+    "errors": 0,
+    "x_pending": 0,
+    "w_pending": 0,
+    "y_pending": 0,
+    "x_ar": 64,
+    "x_r": 128,
+    "w_ar": 512,
+    "w_r": 512,
+    "y_aw": 4,
+    "y_w": 64,
+    "y_b": 4,
+    "quiet": 1,
+    "submitted": 0,
+    "quarantined": 0
+  },
+  "client_disconnect_recovery": {
+    "status": "PASS",
+    "owner_pid": 224571,
+    "proof": {
+      "before": "4 0 0 0 0 64 128 512 512 4 64 4 1 1 1",
+      "after": {
+        "ctrl": 4,
+        "errors": 0,
+        "x_pending": 0,
+        "w_pending": 0,
+        "y_pending": 0,
+        "x_ar": 0,
+        "x_r": 0,
+        "w_ar": 0,
+        "w_r": 0,
+        "y_aw": 0,
+        "y_w": 0,
+        "y_b": 0,
+        "quiet": 1,
+        "submitted": 0,
+        "quarantined": 0
+      }
+    }
+  },
+  "board_call_us_range": [
+    17012.47,
+    17858.899
+  ],
+  "kernel_latency_measured": false,
+  "loaded": {
+    "kernel": "6.8.0-1015-xilinx",
+    "ps_fabric_widths": {
+      "raw": {
+        "FPD_SLCR_AFI_FS": "0xa00",
+        "HP0_RDCTRL": "0x3b0",
+        "HP0_WRCTRL": "0x3b0"
+      },
+      "hpm0_bits": 128,
+      "hp0_read_bits": 128,
+      "hp0_write_bits": 128
+    },
+    "overlays": [
+      "kv260-f8_image_1"
+    ],
+    "module_loaded": true,
+    "render_nodes": [
+      "/dev/dri/renderD128"
+    ],
+    "fpga_state": "operating",
+    "pl0_enable_count": 1,
+    "pl0_rate_hz": 99999999,
+    "dfx_active": "active"
+  },
+  "restored": {
+    "kernel": "6.8.0-1015-xilinx",
+    "ps_fabric_widths": {
+      "raw": {
+        "FPD_SLCR_AFI_FS": "0xa00",
+        "HP0_RDCTRL": "0x3b0",
+        "HP0_WRCTRL": "0x3b0"
+      },
+      "hpm0_bits": 128,
+      "hp0_read_bits": 128,
+      "hp0_write_bits": 128
+    },
+    "overlays": [
+      "k26-starter-kits_image_1"
+    ],
+    "module_loaded": false,
+    "render_nodes": [],
+    "fpga_state": "operating",
+    "pl0_enable_count": 0,
+    "pl0_rate_hz": 99999999,
+    "dfx_active": "active"
+  },
+  "raw_files_sha256": {
+    "board_load_262414267686403.jsonl": "73ba56b501e82f6cda4f4f6ed26e3e4bb14dbe399a828d7221603d7465894907",
+    "board_smoke_262414267686403.jsonl": "bd0b16481e8f3e2090a852a1432409b1034e32ac0f003d58ec5e933f637c74d1",
+    "native_owner_262414267686403.log": "a604870e1c7c9008fef4e780014fdae6d1de18931db876bf43e6982733fe61c4"
+  }
+}

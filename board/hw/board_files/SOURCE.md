@@ -1,0 +1,9 @@
+# KV260 board data provenance
+
+The `kv260/1.1` and `k26c/1.1` directories are copied without modification from the official [XilinxBoardStore 2020.2.2 branch](https://github.com/Xilinx/XilinxBoardStore/tree/2020.2.2/boards/Xilinx), commit `4f0fb5bf8aa5afe17a666a2dd8d35cf3b347016e`. The source `LICENSE` files are included. `sha256.json` records the SHA-256 digest of each of the 15 copied files; every digest was compared with the pinned source checkout on 2026-09-24.
+
+The KV260 board definition identifies `XCK26-SFVC784-2LV-C` as its FPGA part. The target's `xmutil boardid` identified a commercial K26 SOM (`SMK-K26-XCL2G`, rev 2) and KV260 carrier (`SCK-KV-G`, rev 2). The official [Kria platform 2020.2.2 reference](https://github.com/Xilinx/kria-vitis-platforms/tree/xilinx-v2020.2.2-k26/platforms/vivado), commit `f46e63e9a0c10c9718208623d77132eb630ca5b4`, independently uses the same part and contains a PS/block-design reference. This correspondence is board-identification evidence; the reference design has not been built against the current Ubuntu 24.04 image.
+
+Run `board/hw/probe_kv260_part.tcl` in Vivado with an ASCII workspace alias if needed. It sets `board.repoPaths` only for that Vivado process and reports both `get_parts xck26*` and `get_board_parts *:kv260:*`. Board XML alone does not add K26 silicon support: Vivado 2020.2.2 and the Zynq UltraScale+ MPSoC device family are prerequisites.
+
+This delivery uses `xck26-sfvc784-2LV-c` and `xilinx.com:kv260:part0:1.1`. Its actual F8 implementation and board evidence are in the [2026-09-28 result](../../../results/c_integration/f8_runtime_20260928_RESULT.md). Historical C2/C3 environment-installation records remain in the separate local development workspace and are not part of this F8 delivery.

@@ -25,3 +25,36 @@
 # Generated FPGA binaries
 *.bin
 *.pdi
+
+# Local Python, Vivado intermediates and future hardware runs
+__pycache__/
+*.pyc
+.venv/
+/results/c_integration/test_tmp/
+/results/c_integration/f8_bundle_*/
+!/results/c_integration/f8_bundle_20260928_012117_473/
+!/results/c_integration/f8_bundle_20260928_003336_214/
+/results/c_integration/f8_system_*/
+!/results/c_integration/f8_system_20260928_004840_982/
+/results/c_integration/f8_system_*/project/
+/results/c_integration/f8_system_*/artifacts/
+/results/c_integration/f8_system_*/source/
+/results/c_integration/f8_system_*/temp/
+/results/c_integration/f8_system_*/.Xil/
+/results/c_integration/f8_system_*/status_sim/*
+!/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/
+/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/*
+!/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/
+/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/*
+!/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/
+/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/*
+!/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim/
+/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim/*
+
+# Exact, bounded development delivery: retain its paired image and raw evidence.
+!/results/c_integration/f8_bundle_20260928_012117_473/kv260-f8.bit.bin
+!/results/c_integration/f8_bundle_20260928_012117_473/bootgen.log
+!/results/c_integration/f8_bundle_20260928_012117_473/native_owner_262414267686403.log
+!/results/c_integration/f8_bundle_20260928_003336_214/native_owner.log
+!/results/c_integration/f8_system_20260928_004840_982/vivado_console.log
+!/results/c_integration/f8_system_20260928_004840_982/status_sim/status_sim.sim/sim_1/behav/xsim/simulate.log

@@ -1,0 +1,16 @@
+{
+  "bundle_hashes_match": true,
+  "file_count": 31,
+  "overlays": [
+    "k26-starter-kits_image_1"
+  ],
+  "fpga_state": "operating",
+  "zocl_loaded": false,
+  "render_nodes": [],
+  "native_pid_exists": false,
+  "socket_exists": false,
+  "app_exists": false,
+  "vart_exists": false,
+  "ubuntu_groups": "ubuntu adm cdrom sudo dip lxd",
+  "dfx_packages": ""
+}

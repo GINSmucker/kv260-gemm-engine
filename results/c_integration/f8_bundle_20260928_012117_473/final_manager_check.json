@@ -1,0 +1,12 @@
+{
+  "dfx_status": {
+    "returncode": 0,
+    "stdout": "active\n",
+    "stderr": ""
+  },
+  "dfx_packages_query": {
+    "returncode": 255,
+    "stdout": "",
+    "stderr": "DFX-MGRD> ERROR:initSocket():453 connect(/var/run/dfx-mgrd.socket): Permission denied\nwrite: Transport endpoint is not connected\n"
+  }
+}

@@ -1,0 +1,7 @@
+# Preserve tested bytes: these files are referenced by SHA-256 manifests.
+/board/** -text
+/hardware/kv260_f8/** -text
+/scripts/run_f8_system.ps1 -text
+/scripts/package_f8_runtime.ps1 -text
+/results/** -text
+/vectors/demo_integration/** -text
