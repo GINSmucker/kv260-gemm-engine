@@ -1,0 +1,12 @@
+test_anchor_and_repeated_calls (test_c_integration.IntegrationTests.test_anchor_and_repeated_calls) ... ok
+test_fault_injection_is_detected (test_c_integration.IntegrationTests.test_fault_injection_is_detected) ... ok
+test_fpga_selection_never_falls_back_to_cpu (test_c_integration.IntegrationTests.test_fpga_selection_never_falls_back_to_cpu) ... ok
+test_model_consumes_returned_values (test_c_integration.IntegrationTests.test_model_consumes_returned_values) ... ok
+test_payload_hash_is_checked (test_c_integration.IntegrationTests.test_payload_hash_is_checked) ... ok
+test_rectangular_extremes_and_weight_replacement (test_c_integration.IntegrationTests.test_rectangular_extremes_and_weight_replacement) ... ok
+test_rejects_implicit_layout_copy (test_c_integration.IntegrationTests.test_rejects_implicit_layout_copy) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.375s
+
+OK

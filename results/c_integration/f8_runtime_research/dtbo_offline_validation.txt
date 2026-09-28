@@ -1,0 +1,3 @@
+xlnx,fclk
+5f5e100
+xlnx,zocl

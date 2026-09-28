@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "case_id": "c_toy_anchor_v1",
+  "mode": "dense_w8a8",
+  "layout_id": "row_major_k_n_v1",
+  "logical_layout": "C-contiguous row-major X[M,K], W[K,N], Y[M,N]",
+  "byte_order": "little",
+  "encoder_version": "numpy_npz_v1",
+  "M": 2,
+  "K": 3,
+  "N": 2,
+  "source": {
+    "source_kind": "toy",
+    "exporter_version": "c_demo_v1",
+    "seed": null
+  },
+  "quantization": {
+    "scheme": "symmetric_zero_point_0",
+    "scale_x": 0.25,
+    "scale_w": [
+      0.5,
+      0.125
+    ],
+    "bias": [
+      0.5,
+      -0.25
+    ]
+  },
+  "tensors": {
+    "Xq": {
+      "shape": [
+        2,
+        3
+      ],
+      "dtype": "|i1",
+      "bytes": 6
+    },
+    "Wq": {
+      "shape": [
+        3,
+        2
+      ],
+      "dtype": "|i1",
+      "bytes": 6
+    },
+    "Y_ref_int32": {
+      "shape": [
+        2,
+        2
+      ],
+      "dtype": "<i4",
+      "bytes": 16
+    }
+  },
+  "payload": {
+    "file": "tensors.npz",
+    "bytes": 776,
+    "sha256": "3542302474afe126535111fd9d018ee45f425a271417e474424bceb9d8cc2d76"
+  }
+}

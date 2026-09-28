@@ -1,0 +1,18 @@
+{
+  "kv260_f8.bit": {
+    "bytes": 7797814,
+    "sha256": "8feb6d7c15dafd69aa201e2f59ae8b4f6d5a7c1bbf986bbc972e7538d16d9819"
+  },
+  "kv260_f8.bin": {
+    "bytes": 7797692,
+    "sha256": "ecacf6dca164223ff88078c8d56977b81d31b5fab02258dfc3ca995d641e9895"
+  },
+  "kv260_f8.hwh": {
+    "bytes": 301976,
+    "sha256": "e4804ed1e70f99cc3f4602e90245cd991893ef0b4386e76cba88431cb6740bfc"
+  },
+  "kv260_f8.xsa": {
+    "bytes": 2787033,
+    "sha256": "97659996a1c53ad6d4eed22887be21ded79b3e5feae059cea6634c38a8342b87"
+  }
+}

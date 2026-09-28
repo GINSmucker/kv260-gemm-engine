@@ -1,0 +1,61 @@
+test_anchor_and_repeated_calls (test_c_integration.IntegrationTests.test_anchor_and_repeated_calls) ... ok
+test_fault_injection_is_detected (test_c_integration.IntegrationTests.test_fault_injection_is_detected) ... ok
+test_fpga_selection_never_falls_back_to_cpu (test_c_integration.IntegrationTests.test_fpga_selection_never_falls_back_to_cpu) ... ok
+test_model_consumes_returned_values (test_c_integration.IntegrationTests.test_model_consumes_returned_values) ... ok
+test_payload_hash_is_checked (test_c_integration.IntegrationTests.test_payload_hash_is_checked) ... ERROR
+test_rectangular_extremes_and_weight_replacement (test_c_integration.IntegrationTests.test_rectangular_extremes_and_weight_replacement) ... ok
+test_rejects_implicit_layout_copy (test_c_integration.IntegrationTests.test_rejects_implicit_layout_copy) ... ok
+
+======================================================================
+ERROR: test_payload_hash_is_checked (test_c_integration.IntegrationTests.test_payload_hash_is_checked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\15224\Desktop\����\202609FPGA�Ż�����\results\external_ip_review_20260927\repository\tests\test_c_integration.py", line 88, in test_payload_hash_is_checked
+    (target / "manifest.json").write_bytes((ANCHOR / "manifest.json").read_bytes())
+  File "E:\anaconda\Lib\pathlib.py", line 1036, in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\15224\\Desktop\\����\\202609FPGA�Ż�����\\results\\external_ip_review_20260927\\repository\\results\\c_integration\\test_tmp\\tmphzgguxml\\manifest.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\15224\\Desktop\\����\\202609FPGA�Ż�����\\results\\external_ip_review_20260927\\repository\\results\\c_integration\\test_tmp\\tmphzgguxml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15224\Desktop\����\202609FPGA�Ż�����\results\external_ip_review_20260927\repository\tests\test_c_integration.py", line 84, in test_payload_hash_is_checked
+    with tempfile.TemporaryDirectory(dir=TEST_TMP_ROOT) as temp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "E:\anaconda\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "E:\anaconda\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "E:\anaconda\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "E:\anaconda\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "E:\anaconda\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "E:\anaconda\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "E:\anaconda\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\15224\\Desktop\\����\\202609FPGA�Ż�����\\results\\external_ip_review_20260927\\repository\\results\\c_integration\\test_tmp\\tmphzgguxml'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.745s
+
+FAILED (errors=1)

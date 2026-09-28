@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "staged Git archive, before adding this check record",
+  "checks": {
+    "git_objects_with_tested_sha256": 52,
+    "tracked_file_count": 171,
+    "max_file_bytes": 7797814,
+    "markdown_link_targets_in_git": "PASS"
+  },
+  "board_execution_this_check": "NOT_RUN"
+}

@@ -1,0 +1,14 @@
+{
+  "host_date": "2026-09-28",
+  "operation": "read_only_mmap_PROT_READ",
+  "raw": {
+    "FPD_SLCR_AFI_FS": "0xa00",
+    "HP0_RDCTRL": "0x3b0",
+    "HP0_WRCTRL": "0x3b0"
+  },
+  "hpm0_bits": 128,
+  "hp0_read_bits": 128,
+  "hp0_write_bits": 128,
+  "failed_platform_hpm0_bits": 32,
+  "reference": "https://docs.amd.com/r/en-US/ug1087-zynq-ultrascale-registers/afi_fs-FPD_SLCR-Register"
+}

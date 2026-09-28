@@ -1,0 +1,14 @@
+{
+  "kv260_f8.bit": {
+    "matches": true,
+    "sha256": "8feb6d7c15dafd69aa201e2f59ae8b4f6d5a7c1bbf986bbc972e7538d16d9819"
+  },
+  "kv260_f8.hwh": {
+    "matches": true,
+    "sha256": "e4804ed1e70f99cc3f4602e90245cd991893ef0b4386e76cba88431cb6740bfc"
+  },
+  "PS_interface_bits": {
+    "C_MAXIGP0_DATA_WIDTH": "128",
+    "C_SAXIGP2_DATA_WIDTH": "128"
+  }
+}

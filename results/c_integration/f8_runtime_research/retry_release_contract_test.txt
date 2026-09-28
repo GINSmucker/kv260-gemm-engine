@@ -1,0 +1,6 @@
+test_capability_matches_published_ip_registers_and_widths (test_f8_host.F8ReleaseContractTests.test_capability_matches_published_ip_registers_and_widths) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.018s
+
+OK
