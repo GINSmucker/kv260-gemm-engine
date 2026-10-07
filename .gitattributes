@@ -1,5 +1,13 @@
 # Exact handoff bytes, including signed evidence, survive Windows checkout unchanged.
-system/** -text
+system/** -text whitespace=cr-at-eol
+# Frozen/public source snapshots retain original CRLF and insignificant spacing.
+system/board/** -whitespace
+system/model/** -whitespace
+system/hardware/** -whitespace
+system/vendor/** -whitespace
+system/research/** -whitespace
+system/evidence/** -whitespace
+system/ui/** -whitespace
 AGENTS.md text eol=lf
 README.md text eol=lf
 .gitignore text eol=lf

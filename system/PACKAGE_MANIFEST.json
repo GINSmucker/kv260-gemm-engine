@@ -3,8 +3,8 @@
   "scope": "Added/updated public handoff files, excluding this manifest and original unchanged engine",
   "files": {
     ".gitattributes": {
-      "bytes": 196,
-      "sha256": "9d426619680d5d3df8b406b1565febefdb2858b4d27621b6c5409294f464d2af"
+      "bytes": 501,
+      "sha256": "984664f5aa3165c0ef08459120cb2f610e78ba4d9b1731721b243f60c2bf435a"
     },
     ".gitignore": {
       "bytes": 514,
