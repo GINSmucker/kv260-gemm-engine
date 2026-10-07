@@ -1,0 +1,11 @@
+--- CPU_tested/quant_linear_v2a.cpp
++++ A3_bound/quant_linear_v2a.cpp
+@@ -162,7 +162,7 @@
+         checked(error==0&&receipt.status==0,"OWNER_FAULT: C run failed; no automatic retry/fallback");
+         checked(receipt.abi_version==2&&receipt.struct_bytes==sizeof(receipt),"BAD_IDENTITY: C receipt ABI");
+         checked(receipt.one_start==1&&receipt.done==1&&receipt.kernel_error==0&&receipt.guards_ok==1&&receipt.inputs_unchanged==1&&receipt.starts_after==receipt.starts_before+1,"OWNER_FAULT: invalid start/completion evidence");
+-        checked(receipt.tag0==0xe7333e5e&&receipt.tag1==0x9c258169,"BAD_IDENTITY: hardware tags");
++        checked(receipt.tag0==0xf04207fb&&receipt.tag1==0xe4ebd6cd,"BAD_IDENTITY: hardware tags");
+         checked(bounded_text(receipt.X_sha256,sizeof(receipt.X_sha256))==digest(xq.data(),xq.size())&&bounded_text(receipt.W_sha256,sizeof(receipt.W_sha256))==whash&&bounded_text(receipt.Y_sha256,sizeof(receipt.Y_sha256))==digest(y.data(),y.size()*4),"BAD_IDENTITY: C payload SHA");
+         checked(receipt.owner_pid>0&&std::isfinite(receipt.native_us)&&receipt.native_us>=0,"BAD_IDENTITY: owner/timing receipt");
+         checked(!bounded_text(receipt.native_result_file,sizeof(receipt.native_result_file)).empty(),"BAD_IDENTITY: native evidence path missing");

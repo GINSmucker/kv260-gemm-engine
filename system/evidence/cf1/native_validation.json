@@ -1,0 +1,34 @@
+{
+  "status": "PASS_V2B_CF1_NORMAL_ARM_XRT_BUILD",
+  "binaries": {
+    "model_xrt_owner_v2b": "fb2b4f33f767f43131338b35b2ca2605b3d9961823bb5720e4c41537498c1635",
+    "libkv260_gemm_backend_v2b.so": "3c3a57f0200df00104fa4c1d56ec6565cb9e9baff2660caa3a82f3d73efe18f4",
+    "libquant_linear_v2b_arm.so": "9e6e3d2e28718fbb31183aab6f7380eaa00a90c0b87eddef151d43fec27eeb7c"
+  },
+  "tools_sha256": "8595f60bf5f1ef1376d9fb32805b7da6887aefbf5c575e1e62ba973671397a59",
+  "registration_sha256": "c313ec03024c0883b8ee58c8fbf93b3eb3822d0b57e24c281b5d7ca84dd5de9f",
+  "ABI_cases": 16,
+  "CPU_full_images_new": 0,
+  "B_plugin_byte_identical": true,
+  "B_numeric_reuse": {
+    "status": "PASS_EXACT_B_NUMERIC_REUSE",
+    "original_verification_sha256": "02a4ee757921dd5b54555584f34504ec9d61697ddd854bfd8621664318970f38",
+    "original_result_sha256": "7de4b840b71f1e6ab9424922a8d1dde55ff55ff10cc72dfb96ddb541ca4a2534",
+    "original_integer_outputs": 8171984,
+    "new_CPU_images": 0,
+    "plugin_sha256": "9e6e3d2e28718fbb31183aab6f7380eaa00a90c0b87eddef151d43fec27eeb7c",
+    "tools_sha256": "8595f60bf5f1ef1376d9fb32805b7da6887aefbf5c575e1e62ba973671397a59",
+    "unchanged_tools": {
+      "tools/model/b/common.py": "3b4fa645f04132181d45e8620068c1956449ed98a32b2581de8afd00f156c9be",
+      "tools/model/b/preprocess.py": "36d1405d8300ff7d0eb0d824354e2d9c5650549384b4d8608fd9c6f415500835",
+      "tools/model/b/runtime.py": "883874bc85091c420a4a909a1db2d45d39d57f9745e0b5afcf91ea2deac3bc6f",
+      "tools/model/b/runtime_v2b.py": "6e85b79519c5afbf7d6ca99e58bb63ed50ae56f349151a15920ba3a07c92549c",
+      "tools/model/b/__init__.py": "49c3e5f8def8f2c5d0d4fd2b122fb25a19584c2b9557d55f7ee3b8b6c44acde7",
+      "tools/model/b/contracts/gemm_backend_v2b.h": "3af0b482e6a36810ffcf5dd77af3a9cb879bd0594f6a2793d12e1d9d9840515c",
+      "tools/model/b/custom_op/quant_linear_v2b.cpp": "dd4325117519301de5414a3d4a1c939e92dd3683a42527ba119ae6b6c5709684"
+    }
+  },
+  "owner_rebuild_identical": true,
+  "actual_owner_bootstrap": "NOT_RUN",
+  "physical_PL_starts": 0
+}

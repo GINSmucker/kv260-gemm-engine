@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kv260:b:layer-case-result:v1",
+  "title": "B calculation workbench CPU result; C supplies future PL schema",
+  "type": "object",
+  "required": ["schema", "status", "case_id", "layer_id", "M", "K", "N", "mode", "execution_kind", "integer_mismatches", "reference_elapsed_ms", "PL_starts", "hardware_identity", "supported_modes", "sparse_W4"],
+  "properties": {
+    "schema": {"const": "b_layer_case_result_v1"},
+    "status": {"enum": ["PASS", "FAIL"]},
+    "case_id": {"type": "string"}, "layer_id": {"type": "string"},
+    "M": {"enum": [1, 197]}, "K": {"enum": [192, 768]}, "N": {"enum": [192, 576, 768, 1000]},
+    "mode": {"const": "dense_w8a8"},
+    "execution_kind": {"const": "CPU_REFERENCE"},
+    "integer_mismatches": {"type": "integer", "minimum": 0},
+    "reference_elapsed_ms": {"type": "number", "minimum": 0},
+    "PL_starts": {"const": 0}, "hardware_identity": {"type": "null"},
+    "supported_modes": {"const": ["dense_w8a8"]}, "sparse_W4": {"const": "UNSUPPORTED"}
+  },
+  "additionalProperties": true
+}

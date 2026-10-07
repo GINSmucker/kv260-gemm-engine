@@ -1,0 +1,8 @@
+{
+  "name": "kv260-local-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": { "start": "node server.mjs", "test": "node --test --test-isolation=none tests/*.test.mjs", "check": "node --check server.mjs && node --check board-client.mjs && node --check public/app.js && node --check public/live-view.js && node --check public/api-client.js && node --check domain.mjs" }
+}

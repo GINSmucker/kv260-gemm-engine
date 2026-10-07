@@ -1,0 +1,26 @@
+--- a/src/runtime_src/core/edge/drm/zocl/common/cu.c
++++ b/src/runtime_src/core/edge/drm/zocl/common/cu.c
+@@ -457,6 +457,12 @@
+ 	if (!zcu)
+ 		return -EINVAL;
+ 
++	/* sysfs removal may sleep while draining active attribute callbacks.
++	 * Do not hold attr_rwlock: a callback may itself need its read side.
++	 * Drain callbacks before destroying the CU resources they can access.
++	 */
++	sysfs_remove_group(&pdev->dev.kobj, &cu_attrgroup);
++
+ 	info = &zcu->base.info;
+ 	switch (info->model) {
+ 	case XCU_HLS:
+@@ -480,10 +486,6 @@
+ 	if (zcu->base.res)
+ 		vfree(zcu->base.res);
+ 
+-	write_lock(&zcu->attr_rwlock);
+-	sysfs_remove_group(&pdev->dev.kobj, &cu_attrgroup);
+-	write_unlock(&zcu->attr_rwlock);
+-
+ 	zocl_info(&pdev->dev, "CU[%d] removed", info->inst_idx);
+ 	kfree(zcu->irq_name);
+ 	kfree(zcu);

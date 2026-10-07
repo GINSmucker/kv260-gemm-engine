@@ -1,0 +1,30 @@
+{
+  "schema": "team_handoff_assets_v1",
+  "repository": "GINSmucker/kv260-gemm-engine",
+  "assets": {
+    "board-runtime": {
+      "filename": "board-runtime-v2a.tar.gz",
+      "bytes": 3976222,
+      "sha256": "7205ffb480313d0adba85bfcf1983a2804d10020576edf696f5638152caf941d",
+      "destination": "board-runtime",
+      "release_tag": "team-handoff-20261007",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/board-runtime-v2a.tar.gz"
+    },
+    "ip-rebuild": {
+      "filename": "ip-rebuild-v2.tar.gz",
+      "bytes": 2102153,
+      "sha256": "63076a32fed21b1fefdb40d32278e33aae17b0f75bcd439a7acd79fb8dd18356",
+      "destination": "ip-rebuild",
+      "release_tag": "team-handoff-20261007",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/ip-rebuild-v2.tar.gz"
+    },
+    "model": {
+      "filename": "B_MODEL_BUNDLE_V1_20261001.tar.gz",
+      "bytes": 146328353,
+      "sha256": "ff7b46e663539a0ba3125d0493d4a9757873e41676ec794d43865e0eebaf7f5f",
+      "destination": "model",
+      "release_tag": "team-handoff-20261007",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/B_MODEL_BUNDLE_V1_20261001.tar.gz"
+    }
+  }
+}

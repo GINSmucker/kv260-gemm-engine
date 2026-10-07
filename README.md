@@ -1,6 +1,10 @@
 [README.md](https://github.com/user-attachments/files/32999740/README.md)
 # KV260 GEMM Engine
 
+2026-10-07 完整模型协作入口已整理到 **[system/](system/README.md)**。新成员和零历史上下文Codex从[接手步骤](system/docs/START_HERE.md)、[当前状态](system/docs/STATUS.md)及[身份锁](system/BASELINE_LOCK.json)开始；模型/板测/IP资产按需从协作快照Release下载。当前采用父版为OPT35a/V2A，OPT38与V2B为独立研究候选；CHK05为诊断，最终整网性能尚未通过。
+
+以下保留原作者v0.2通用GEMM介绍，`src/`与`tb/`继续对应该实现，其接口和状态不自动等同`system/`完整模型。
+
 面向 AMD Kria KV260 的 HLS 矩阵计算引擎项目。项目以可综合、可验证、可集成
 为目标，逐步实现动态尺寸 Dense GEMM、INT8/INT4 混合精度和 2:4 结构化稀疏
 计算，并完成 PS/PL 集成与板端性能测试。

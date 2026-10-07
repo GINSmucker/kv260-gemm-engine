@@ -1,0 +1,26 @@
+{
+  "status": "FROZEN_VERIFIED_DEVELOPMENT_PACKAGE",
+  "client_utc": "2026-09-30T19:05:46.048746+00:00",
+  "bundle": "C:\\Users\\15224\\Desktop\\\u5de5\u7a0b\\202609FPGA\u4f18\u5316\u5de5\u7a0b\\build\\model_assets\\b_model\\B_MODEL_DENSE_V1_20260930",
+  "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+  "files": 989,
+  "archive_sha256": "ff7b46e663539a0ba3125d0493d4a9757873e41676ec794d43865e0eebaf7f5f",
+  "archive_bytes": 146328353,
+  "archive": "build\\model_assets\\b_delivery\\B_MODEL_BUNDLE_V1_20261001\\B_MODEL_BUNDLE_V1_20261001.tar.gz",
+  "gates": {
+    "B0_READY": "PASS_LOCAL",
+    "B1_FP32_MODEL_READY": "PASS_LOCAL",
+    "B2_QUANT_PROTOCOL_FROZEN": "PASS_LOCAL",
+    "B3_CASEPACK_READY": "PASS_LOCAL",
+    "B4_EXPORT_READY": "PASS_LOCAL",
+    "B5_ARM_MODEL_READY": "PARTIAL_CROSS_HOST_QUANT_FAIL",
+    "B5_ARM_same_host_function_and_integer": "PASS",
+    "B5_CROSS_HOST_QUANT": "FAIL_RETAINED",
+    "B5_ACCURACY_WINDOWS_FAST_FULL": "PASS",
+    "B5_ACCURACY_ARM_FAST_FULL": "PASS_CPU_ONLY",
+    "C_MODEL_BACKEND_READY": "NOT_RUN",
+    "B6_FULL_PL_MODEL_PASS": "WAITING_C_BACKEND",
+    "B7_PL_EVALUATION": "NOT_RUN",
+    "B8_B9_hardware": "NOT_RUN_CONDITIONAL"
+  }
+}

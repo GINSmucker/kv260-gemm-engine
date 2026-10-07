@@ -1,0 +1,24 @@
+# Team working rules
+
+- Start with `system/docs/START_HERE.md`, `system/docs/STATUS.md`, and `system/BASELINE_LOCK.json`.
+- `src/` and `tb/` are the original v0.2 engine. The integrated model work lives in `system/`; keep their identities distinct.
+- Adopted development parent: `system_a3_20261005_02`, OPT35a + V2A. OPT38 and V2B CF1 are explicitly named research candidates.
+- The latest CHK05 result is diagnostic evidence, not a fair performance PASS. RW06 and CF1 remain inconclusive; the C refactor is planned, not implemented.
+- Read the domain document before editing hardware, numerical software, runtime, or UI. State the parent, scope, required checks, and unrun checks.
+- Use the host's native shell. Windows uses PowerShell 7. AArch64 runtime builds require Linux on the board or an explicitly configured cross toolchain.
+- Discover tools once. Use an existing Python 3.12 environment, not an assumed Conda base. Do not install tools or change global configuration automatically.
+- From `system/`, run `python -B tools/check.py` with the selected environment. Add `--cpp`, `--node`, and `--model-bundle` as appropriate; see START_HERE.
+- Check outputs are local software evidence. They do not constitute HLS synthesis, RTL cosim, an ARM rebuild, or a new board Gate.
+- Preserve `BASELINE_LOCK.json`, original signed evidence, frozen assets, and historical failures. Changed implementations need new identities and new validation.
+- Never claim speedup from an invalid comparison, a diagnostic build, summed quantiles, HLS estimates, or mixed historical timings.
+- Do not read or upload C private holdout seeds/vectors. This repository intentionally includes public aggregate attestations only.
+- Obtain the current maintainer's board assignment before using shared hardware. Old local chat permissions are not transferred by this repository.
+- All board work requires a concrete window, identity/budget, occupancy and lock checks, and recovery plan. UNKNOWN hardware state retains its owner and BOs.
+- Prove CU/AXI quiet before stopping or unloading. Do not kill an uncertain owner, automatically resend a submitted request, or silently fall back to CPU.
+- Boot, QSPI, reboot, reset, system driver installation, and system configuration changes need separate explicit authorization.
+- Do not install or run Codex on the KV260. Development is on members' computers; the board runs the model and hardware checks.
+- Use a `codex/` branch and a scoped PR. Include the baseline hash, source/binary/asset changes, numerical/interface effects, validation, and rollback.
+- Update `system/docs/STATUS.md` and `system/docs/OPTIMISATION_AND_ISSUES.md` after an important result. Record NOT RUN/FAIL/INCONCLUSIVE honestly.
+- Avoid bulk copies of build/results trees, one-off window scripts, environments, datasets, or raw traces. Git budget for this handoff is <=250 new files and <=5 MiB.
+- Release assets are explicit downloads under ignored `system/assets/`. Check their locks before extraction; fetching a runtime does not authorize loading it.
+- Keep unrelated teammate changes and original engine reports intact. Do not force-push, move existing tags, or auto-merge main.

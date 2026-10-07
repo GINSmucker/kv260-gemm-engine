@@ -1,0 +1,50 @@
+{
+  "status": "PASS_LOCAL_HANDOFF_VALIDATION",
+  "client_date": "2026-10-07",
+  "scope": "Public source handoff; no new hardware acceptance",
+  "PL_starts": 0,
+  "HLS_synthesis": "NOT_RUN",
+  "RTL_cosim": "NOT_RUN",
+  "ARM_rebuild": "NOT_RUN",
+  "native_Cpp_public": {
+    "opt35a_clear_v1_full": {
+      "valid_cases": 8,
+      "invalid_cases": 8,
+      "outputs": 418064,
+      "scope": "Ordinary C++ execution; HLS pragmas ignored"
+    },
+    "opt38_fullk_v1_full": {
+      "valid_cases": 8,
+      "invalid_cases": 8,
+      "outputs": 418064,
+      "scope": "Ordinary C++ execution; HLS pragmas ignored"
+    }
+  },
+  "Node_UI_tests": 17,
+  "Python_UI_tests": 6,
+  "same_host_CPU_model_input": "00",
+  "CPU_model_regression": {
+    "fp32": {
+      "max_abs": 0.0,
+      "PL_starts": 0
+    },
+    "w8a8_reference": {
+      "max_abs": 0.0,
+      "PL_starts": 0
+    }
+  },
+  "model_archive_frozen_members_verified": 989,
+  "source_map_entries_checked": 223,
+  "C_include_closure": "PASS",
+  "entry_PowerShell_parse": "PASS_4_FILES",
+  "asset_archives_and_members": "PASS",
+  "platform_preparation": [
+    "OPT35a_PASS_PREPARE_ONLY",
+    "OPT38_PASS_PREPARE_ONLY"
+  ],
+  "runtime_build_entry": "PREVIEW_ONLY_NOT_COMPILED",
+  "credentials_and_protected_paths": "PASS_WHITELIST_SCAN",
+  "retained_first_failure": "First UI cold check required two public historical files; exact fixtures were added and only test URI changed. No hardware result was changed.",
+  "cold_git_checkout": "PENDING_AFTER_COMMIT",
+  "GitHub_upload": "PENDING"
+}

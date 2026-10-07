@@ -1,0 +1,6 @@
+# Exact handoff bytes, including signed evidence, survive Windows checkout unchanged.
+system/** -text
+AGENTS.md text eol=lf
+README.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf

@@ -25,3 +25,12 @@
 # Generated FPGA binaries
 *.bin
 *.pdi
+
+# Team handoff runtime assets, environments and generated checks
+/system/assets/
+/system/build/
+/system/results/
+/system/.venv/
+/system/ui/tests/.tmp/
+__pycache__/
+*.pyc

@@ -1,0 +1,77 @@
+{
+  "gate": "A2_USABLE",
+  "status": "PASS",
+  "schema_version": "model_gemm_v1",
+  "ip_build_id": "model_gemm_opt38_fullk_v1_full_20261005_103205_588",
+  "platform_build_id": "model_system_20261005_110458_087",
+  "source_commit": null,
+  "source_identity": "A3_FROZEN_HASHED_WORKSPACE_SNAPSHOT",
+  "artifact_manifest_sha256": "dc8285e3bc0d3fc62576db81dbb3a7ad5a4736ad9185f4494047f18521922b10",
+  "paired_manifest_sha256": "d43d1b8f6c3a1c8c13e1a97845a7d64ccabb73f970b5eee4be5d806b1b7d07f9",
+  "supported_shape_families": [
+    "head",
+    "proj",
+    "qkv",
+    "fc1",
+    "fc2"
+  ],
+  "supported_modes": [
+    "dense_w8a8"
+  ],
+  "one_compute_start_per_layer": true,
+  "integer_correctness": "PASS",
+  "functional_cases_passed": 160,
+  "mixed_requests_passed": 1000,
+  "synthetic_sequences_passed": 3,
+  "holdout_cases_passed": 50,
+  "holdout_result": "PASS",
+  "technical": {
+    "public_160": "PASS",
+    "mixed_1000": "PASS",
+    "synthetic_3x49": "PASS",
+    "holdout_50": "PASS",
+    "integer_correctness": "PASS",
+    "one_compute_start_per_layer": "PASS",
+    "request_rejections": 13,
+    "resource_trend": "PASS_OBSERVED_WINDOWS",
+    "safe_stop_and_starter_recovery": "PASS_BOTH_WINDOWS",
+    "kernel_severe_errors": 0,
+    "OF_reference_errors": 0,
+    "exact_AXI_count_checks": 1357,
+    "high_address_board_path": "NOT_EXERCISED",
+    "kernel_cycles": "UNAVAILABLE",
+    "model_inference": "NOT_RUN",
+    "performance_acceptance": "NOT_RUN"
+  },
+  "reviewed_by_C": true,
+  "reviewed_by_A": true,
+  "C_attestation_sha256": "7cebf257034499d0d4ae896a18272ae057779f6ff4725d1adf4508d19d04dceb",
+  "A_attestation": {
+    "path": "results/A/A3/opt38_c_identity_20261005/A_IDENTITY_CONTRACT_ATTESTATION.json",
+    "sha256": "e6031cb69a7e12c6c90aec945bc87e5653fd1733de8ec94fb89b23b14ea0c51f",
+    "reviewer": "Codex A-side DUT developer and author of frozen OPT38; hardware identity/contract reviewer, NOT independent C",
+    "reviewer_thread": "01a1060f-c9e4-7e20-99d9-8426099b9c59"
+  },
+  "evidence_paths": [
+    "C:/Users/15224/Desktop/\u5de5\u7a0b/202609FPGA\u4f18\u5316\u5de5\u7a0b/results/C/OPT38/c_opt38_20261005_01/public_results/local_verification.json",
+    "C:/Users/15224/Desktop/\u5de5\u7a0b/202609FPGA\u4f18\u5316\u5de5\u7a0b/results/C/OPT38/c_opt38_20261005_01/holdout_results/local_verification.json",
+    "C:/Users/15224/Desktop/\u5de5\u7a0b/202609FPGA\u4f18\u5316\u5de5\u7a0b/results/C/OPT38/c_opt38_20261005_01/C_CANDIDATE_FREEZE.json",
+    "C:/Users/15224/Desktop/\u5de5\u7a0b/202609FPGA\u4f18\u5316\u5de5\u7a0b/results/C/OPT38/c_opt38_20261005_01/C_TECHNICAL_ATTESTATION.json"
+  ],
+  "evidence": {
+    "public_verification_sha256": "84f86afc37201e5b3f7a33bf7863428699eba30681086e7d74bfdf3352699b84",
+    "holdout_verification_sha256": "267def368a42167627677869e3a3ac025a7489419a12d61e8257bbebe5a1b559",
+    "candidate_freeze_sha256": "c259f17d50615252fa242e7437ca17fe7938b9e6f40c535b5bdc8f4601078214",
+    "public_manifest_sha256": "0955b85bc27c57146de8b36648c293794a7fdc0211e704f34abd71b670d6572c",
+    "holdout_manifest_sha256": "814c68fd565f2d238855089d2f0bb1f09bc85f9281cfc4355861be3a4b225492"
+  },
+  "limitations": [
+    "four known overlay property warnings per window remain",
+    "high address coverage limited to actual BO allocations",
+    "kernel cycles unavailable",
+    "synthetic sequence is not model inference",
+    "formal system performance/quality/stability not completed"
+  ],
+  "B_A3_release": "A2_GATE_PASSED",
+  "joint_signed_host_utc": "2026-10-05T04:48:37.120880+00:00"
+}

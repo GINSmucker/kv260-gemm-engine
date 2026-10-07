@@ -1,0 +1,10 @@
+{
+  "status": "PASS_ARM_B_PLUGIN_TAG_REBIND_ONLY",
+  "plugin_sha256": "b0049a9a82addf8291727b134a7e6e6c1856a18d1306e2149482ea812418dddf",
+  "inputs_sha256": "f7e69a70aa525a3630ef4bf008edb6cf625dbd01ecf46144affb829c25e4e2f4",
+  "tag_predicate_accepts": 1,
+  "tag_predicate_refusals": 2,
+  "numerical_operations": "EXACT_UNCHANGED_SOURCE_REUSE",
+  "new_CPU_images": 0,
+  "new_PL_starts": 0
+}

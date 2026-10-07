@@ -1,0 +1,2 @@
+# Install from https://pypi.org/simple after requirements-cpu.txt.
+timm==1.0.20

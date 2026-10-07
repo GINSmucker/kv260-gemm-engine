@@ -1,0 +1,448 @@
+[
+  {
+    "layer_id": "blocks.0.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "6da1db0120083089dadf72c7f06d8a9a8b3a868258aeacc6fb969335cfec9389",
+      "c31ac6a97ba9f7067e4204e50f191dea2aa0e464540780f04b20f85256d10320"
+    ]
+  },
+  {
+    "layer_id": "blocks.0.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "81a311eae1d1c13589d3566c4e819d06502a263e38e68a376315889553bd0915",
+      "e6b2583bac7aaa5471e6864fa48f9ddc5f7e2032086aaa7b84c573f7c5e0e031"
+    ]
+  },
+  {
+    "layer_id": "blocks.0.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "1a037aa569b76b11b9da3f941ba43717ccf88468db05875d4cf866de6865e90f",
+      "444aa3b9c1ea6504c42bf63e0c6c07812a804d74ea9f35b0a35d46f1f8254d85"
+    ]
+  },
+  {
+    "layer_id": "blocks.0.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "5fe7ccd05a7c745346343e2e1915ebe681b92f65fdd42272c7365a683ca8b07b",
+      "bd392499b81d83bd00a619b267a9409375cedc027c6faa731589dd717a0a358d"
+    ]
+  },
+  {
+    "layer_id": "blocks.1.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "5a941826aa55162a7981afcb52cd55e5d0e35edf1df588aafa25750c188e8e75"
+    ]
+  },
+  {
+    "layer_id": "blocks.1.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "2d2ac7dd1db389d8efc595e4afee290a3a898af451094345f7d6ba366927718e"
+    ]
+  },
+  {
+    "layer_id": "blocks.1.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "0e20ea35b9a601a0b4b1916145498a9717d82db732ee386ce5fdd6eefaaf5558"
+    ]
+  },
+  {
+    "layer_id": "blocks.1.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "577b018cd01174a19337773ca65b71bf8a413be474a5cb5eda38a076590849ae"
+    ]
+  },
+  {
+    "layer_id": "blocks.2.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "7d3b80df1fbafa4f28467592affe437bed043db6ce4a2ee534c1394decba735b"
+    ]
+  },
+  {
+    "layer_id": "blocks.2.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "60544bcdb56023deba44a06c1b1f95a5ab9a990006afab1e0d000b29b9bc6fff"
+    ]
+  },
+  {
+    "layer_id": "blocks.2.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "2806e5d2e4d26a169afd8b58914a18b60487a7e3c4924a42ef67dbf083439332"
+    ]
+  },
+  {
+    "layer_id": "blocks.2.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "c76a3a809ae2bec83e6931a261927f3d37abd2c4c8db24598cf386f034b372f8"
+    ]
+  },
+  {
+    "layer_id": "blocks.3.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "65620f382dc78da4f15f7d24c4d95f9e51bce4a58d9bfca13c48ff189d8e6d88"
+    ]
+  },
+  {
+    "layer_id": "blocks.3.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "4f4b46e5e34a0b19a4fa990570358a6033890d48123b22112232325e9ddacd77"
+    ]
+  },
+  {
+    "layer_id": "blocks.3.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "b16c8800fc7a42efc11f7beabd9178ff07ef88579b87476bf3793abf89ab8cb4"
+    ]
+  },
+  {
+    "layer_id": "blocks.3.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "229cd552f20cd17339c3224f3fd8d2b83a89162a0109a9a1c6df69ad76d4e310"
+    ]
+  },
+  {
+    "layer_id": "blocks.4.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "d2af8430a09cb5277723677a1ee8bcf84ed00ab2d6846c008d7a1d86b313fd82"
+    ]
+  },
+  {
+    "layer_id": "blocks.4.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "c94e223465df40dc57eff3ceecbc1face5d0a14548bab5f53961a39756b87aae"
+    ]
+  },
+  {
+    "layer_id": "blocks.4.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "9ce626bfd20b9cade022f864d598866a671d724e49a91ce01d0e6e0da5b0fa47"
+    ]
+  },
+  {
+    "layer_id": "blocks.4.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "92d16cdeefb01b4053a5fb4c9e88e19ce9b060f8343df688b5ad20c2ef1bbf01"
+    ]
+  },
+  {
+    "layer_id": "blocks.5.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "5f29fae2f0c2bb771c89b314b480c9742f8d0a3dedb1f434a650e7c44f9b2049"
+    ]
+  },
+  {
+    "layer_id": "blocks.5.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "ea2978c214c9e0aa704487f8562b1beb732272d3b296d533f399e0616962c570"
+    ]
+  },
+  {
+    "layer_id": "blocks.5.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "49fb24926b7c04e42d29b2c4816594f85743e65bf0e05a7debfd97baa1e95a14"
+    ]
+  },
+  {
+    "layer_id": "blocks.5.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "d6e04764a26b1a7173a5a7119a64c53ef3c37529f765fa0105f72ab0a31f1019"
+    ]
+  },
+  {
+    "layer_id": "blocks.6.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "4e5839a9e3c4cb2f589e27f3abd6df83f14be7d0c95e2260f856a563327f0e17"
+    ]
+  },
+  {
+    "layer_id": "blocks.6.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "f41dc8035cf562aba14618c04c89e65cd15a02b4d6c38cc232461b4a044e1cac"
+    ]
+  },
+  {
+    "layer_id": "blocks.6.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "ed98540f0cfee6a9484ee9ba72a9a9e5ffaf692a842396c300c06f864e0f54c3"
+    ]
+  },
+  {
+    "layer_id": "blocks.6.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "e8ebe4416058f3dbcfad31cf428135993ea25f9c15d5d5fac64397b8c464ac20"
+    ]
+  },
+  {
+    "layer_id": "blocks.7.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "06f15fcde88f91ef4553bb3f4a068bd4bd4810d07a63c92bebd4d7fdc34bd63b"
+    ]
+  },
+  {
+    "layer_id": "blocks.7.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "2b10be98a938779c81aa6011b70ffe9f4a82f68290a7134bb541c43984afe0ed"
+    ]
+  },
+  {
+    "layer_id": "blocks.7.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "49c606d6bf77695225558bf09ef9c062e355b6e84ab5f7b68b5f677693c84665"
+    ]
+  },
+  {
+    "layer_id": "blocks.7.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "3c206bccdead4021931c0152f64fc5cea707a46523c863cabe41523b30ef718f"
+    ]
+  },
+  {
+    "layer_id": "blocks.8.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "3e1ed0d7845abf41e0c954ab87456976966a890f39f1644c9553a63726b800b3"
+    ]
+  },
+  {
+    "layer_id": "blocks.8.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "533919cf23cc36db8092ccd42f297ec07b31bf9fb5b2b45ab5b83a6586ca2571"
+    ]
+  },
+  {
+    "layer_id": "blocks.8.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "3e3cc4ca3c9c52081385e7372ad977631fd15ce10599636ddc9354f57ed11de9"
+    ]
+  },
+  {
+    "layer_id": "blocks.8.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "8d6ceab40c75f6963ba367220cd6557a32c7413cfa09a34c3afdb924e8ceb8b3"
+    ]
+  },
+  {
+    "layer_id": "blocks.9.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "b822294d669dacaf8c73acfb66cff1e68410663b78cb156c3ec7a82063976c7a"
+    ]
+  },
+  {
+    "layer_id": "blocks.9.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "85cc9ad13222de02408287237a5ef50cf4cde92efa35cd07c3a77be5faff5d63"
+    ]
+  },
+  {
+    "layer_id": "blocks.9.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "dcab8ad803b11a9e3bbca2741f85ed0a581312078e0d53c69a28db929daa4b98"
+    ]
+  },
+  {
+    "layer_id": "blocks.9.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "68ac7c5d9dacf6804fa7dd119e0c9165937dffc0e9ef2f79308ec77afd32e234"
+    ]
+  },
+  {
+    "layer_id": "blocks.10.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "3fa1a64875e1bcd784b2cf0beb5c97b6f53bf7f4f0e4833530b2e978ab771cfa"
+    ]
+  },
+  {
+    "layer_id": "blocks.10.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "dfb2e1dfbf29b6f192a7d9edf89e960c23204f81f681bb1fae4e1e6891eebf24"
+    ]
+  },
+  {
+    "layer_id": "blocks.10.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "fa5c9ccc8ba31b1c29d76fa1919d2abb8baaa6aa307146617686567282bbaf2b"
+    ]
+  },
+  {
+    "layer_id": "blocks.10.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "adc55e6368c501641749e558d14f605691b5a227d9cff98ec3bda3cfd59e70ef"
+    ]
+  },
+  {
+    "layer_id": "blocks.11.attn.qkv",
+    "M": 197,
+    "K": 192,
+    "N": 576,
+    "weights": [
+      "70e100618c4a53eb893a7ad6c6b3cc173fb7b1da7a14db6ec80ff419b28dcebb"
+    ]
+  },
+  {
+    "layer_id": "blocks.11.attn.proj",
+    "M": 197,
+    "K": 192,
+    "N": 192,
+    "weights": [
+      "812cf8c531c57225d6d65e5d9077aed827e0da85ac662a5232c3c881fcb6de73"
+    ]
+  },
+  {
+    "layer_id": "blocks.11.mlp.fc1",
+    "M": 197,
+    "K": 192,
+    "N": 768,
+    "weights": [
+      "bfdbad96bdfaaf041f3783f35fda86fe8ea35396432246bba0c062581130b60e"
+    ]
+  },
+  {
+    "layer_id": "blocks.11.mlp.fc2",
+    "M": 197,
+    "K": 768,
+    "N": 192,
+    "weights": [
+      "35356017a21fed2000a1febc9cc4fcbfff100159a233ebebf7922f70559f886b"
+    ]
+  },
+  {
+    "layer_id": "head",
+    "M": 1,
+    "K": 192,
+    "N": 1000,
+    "weights": [
+      "982c75e60e4ab914c14ac68fa10d5006e602ea1fd1213da1c8d037dac6311f3d",
+      "aeaffdc3a8126e1424c439a31f01564468388b35c33343ec5f51604f5015c180"
+    ]
+  }
+]
