@@ -45,6 +45,7 @@
   "runtime_build_entry": "PREVIEW_ONLY_NOT_COMPILED",
   "credentials_and_protected_paths": "PASS_WHITELIST_SCAN",
   "retained_first_failure": "First UI cold check required two public historical files; exact fixtures were added and only test URI changed. No hardware result was changed.",
-  "cold_git_checkout": "PENDING_AFTER_COMMIT",
-  "GitHub_upload": "PENDING"
+  "cold_git_checkout": "PASS_NEW_GIT_CLONE_AT_309452e",
+  "GitHub_upload": "PUBLICATION_PENDING_AT_SNAPSHOT_FREEZE",
+  "cold_scope": "Exact bytes, Python imports and handoff links; copied DUT/CPU/UI checks retained by matching source SHA"
 }
