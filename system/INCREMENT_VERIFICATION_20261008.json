@@ -14,9 +14,10 @@
   "original_checks": "REUSED_UNCHANGED_SOURCE_20261007; not rerun as new hardware/model evidence",
   "new_board_access": "NOT_RUN",
   "new_HLS_RTL_ARM_experiments": "NOT_RUN",
-  "cold_checkout": "PENDING_AFTER_COMMIT",
+  "cold_checkout": "PASS_NEW_GIT_CLONE_AT_3855123",
   "new_f05_code": "Exact historical compiled sources; not modified or newly qualified by this upload",
   "local_entry_check": "PASS",
   "new_asset_safe_extract": "PASS_BOTH",
-  "f05_build_entry": "PASS_PREVIEW_NOT_COMPILED"
+  "f05_build_entry": "PASS_PREVIEW_NOT_COMPILED",
+  "publication": "PENDING_AT_SNAPSHOT_FREEZE"
 }
