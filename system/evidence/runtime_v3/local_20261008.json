@@ -312,7 +312,25 @@
       "status": "FAIL"
     },
     "quant_tolerance_changed": false,
-    "frozen_reference_changed": false
+    "frozen_reference_changed": false,
+    "cold_git_checkout": {
+      "status": "PASS_SOURCE_IDENTITY_IMPORTS_LINKS",
+      "commit": "7ad7a2e72b8fb642c3bc82c74eaed55e1e8f359a",
+      "verification": {
+        "scope": "HANDOFF_LOCAL_SOFTWARE_ONLY",
+        "PL_starts": 0,
+        "HLS_synthesis": "NOT_RUN",
+        "RTL_cosim": "NOT_RUN",
+        "ARM_rebuild": "NOT_RUN",
+        "development_source_manifest_sha256": "aaecda445ecab26c12bc4dd5b944d9be570b78b38273b8cd1e7ede9df7d3f96f",
+        "package_files_verified": 255,
+        "python_core_imports": "PASS",
+        "handoff_links": "PASS",
+        "status": "PASS",
+        "logs": "C:\\FPGA\\verify-g1-20261008\\system\\build\\check_1791424695584270600"
+      },
+      "scope": "Fresh local Git clone with selected project Python; 0 PL, not repeated ARM/HLS/RTL/model qualification"
+    }
   },
   "gates": {
     "G0": "LOCAL_CONTRACT_FROZEN_REVIEWABLE_NOT_INDEPENDENT_SIGNOFF",
@@ -419,6 +437,10 @@
     },
     "build/check_1791423252807180400/cpu_quant.json": {
       "sha256": "aedeada01bfa1486c6e6c990beedf19a54eafb2980ede90753a3d4376272c5cf",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/cold_checkout_check.log": {
+      "sha256": "7b0679915405db3243349df0bebde6397bb24642788a0d65d656833447c5fb04",
       "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
     }
   },
