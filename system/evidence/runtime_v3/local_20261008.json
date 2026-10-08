@@ -1,0 +1,427 @@
+{
+  "schema": "runtime_v3_local_development_receipt_v1",
+  "client_date": "2026-10-08",
+  "client_timezone": "Asia/Shanghai",
+  "scope": "G0_CONTRACT_AND_G1_LOCAL_CORE_B_DIAGNOSTIC_NOT_PRODUCTION_NOT_INDEPENDENT_ACCEPTANCE",
+  "status": "PASS_SCOPED_LOCAL_WITH_RETAINED_ARCHIVED_HOST_QUANT_FAIL",
+  "repository": "GINSmucker/kv260-gemm-engine",
+  "baseline_git_commit": "eba1a78ece0fe4eea7931c5a3458845cb6842bfd",
+  "remote_main_at_handoff": "cd0870dd642378719fd844f8cdbe4cacaae36609",
+  "branch": "codex/runtime-g0-g1-20261007",
+  "adopted_parent": "system_a3_20261005_02",
+  "adopted_hardware": "OPT35a",
+  "adopted_runtime": "V2A",
+  "new_candidate_id": "runtime_v3_g1_local_20261008",
+  "candidate_source_inputs_sha256": "3e8b35b7005634140256f6e600e0de2ea6c52ab95d588546fe84506b8f645bd8",
+  "source_inputs": {
+    "board\\model_backend\\v3\\frame.h": "1fe16af9bbf8705b1cdde7b373e0a19b815085ffe08c67b35927731b30861ab2",
+    "board\\model_backend\\v3\\ledger.h": "f4f19ddfbd30cc5fa74f3c1d650450268eb76d21219ed5f38f576fdb16ff364b",
+    "board\\model_backend\\v3\\session.h": "3523c34d1cdc61f4695f48ba120246ea40a0778991a18c52ee84dc173041a35d",
+    "board\\model_backend\\v3\\tests\\test_core.cpp": "553c2417f7fd14c2175f693d4001d159c9fd585c3e64e1f97d09a9db809d4d0f",
+    "board\\model_backend\\v3\\tests\\test_sha.h": "430823ba8193fada654c7f09ba23ff1b17ce6118aea2cdff051d10934082b21c",
+    "board\\model_backend\\v3\\timing.h": "c83678ad818c819ad2dfce72165e168294a8c523419c671f4f99054fdd7c3a06",
+    "board\\model_backend\\v2b\\protocol\\stream_v2b_admission.h": "81c96350847d1e66a3f464944343075edd063e7122eb0cac56c14d7d1a199031",
+    "board\\model_backend\\v2b\\protocol\\stream_v2b_frame.h": "986313080d9f13bcbb04bd85144b4bada1f3123831a72db62e5a655c4e0b9b0f",
+    "board\\model_backend\\v2b\\protocol\\stream_v2b_json.h": "f1c61593dff7b31b4ca560e1ce5238a0c42814d40aa3eb28b75281604e2563b8",
+    "board\\model_backend\\v2b\\protocol\\stream_v2b_lifecycle.h": "347df4ab42bcd4435605ad945d4c8eeaed83f05b14d8479a816a3d2812a0eade",
+    "board\\model_backend\\v2b\\protocol\\stream_v2b_recovery.h": "1ffb0e65f58b8df27359b8a573c04b07622792bc3d49284ddac8f8986474bb0e",
+    "board\\model_backend\\v2b\\protocol\\stream_v2b_semantics.h": "9f14929fd93d4477042fa668b3d66342674aed130a9e9c5154b5d8f8c829dcb0",
+    "board\\model_backend\\v2b\\protocol\\stream_v2b_socket.h": "993f270548793e9e9d75459f2316869e81b274af9a746cbd7c9cd27fbd7ca427",
+    "board\\model_backend\\v2b\\protocol\\stream_v2b_storage.h": "7f15f0229953bb1190d93c3bb9259cd2dbbe4d514640f5060b5a85ab220d749e",
+    "board\\model_backend\\vendor\\json.hpp": "aaf127c04cb31c406e5b04a63f1ae89369fccde6d8fa7cdda1ed4f32dfc5de63",
+    "board\\model_backend\\sha256_crypto.h": "adcbda7981d824fa5baf7e69e25d0ccd6514462da243f0fd3b9b20577de9b754",
+    "BASELINE_LOCK.json": "26ad75f1f61508aae0abdf50083949422717e90784b967213d6462cf15d086d6",
+    "research\\v2b\\model\\b\\custom_op\\quant_linear_v2b.cpp": "dd4325117519301de5414a3d4a1c939e92dd3683a42527ba119ae6b6c5709684",
+    "research\\v3\\custom_op\\quant_linear_v3.cpp": "2a32fd5e9855b659e6dfdab3201e5a6edb0246fd25c66a02c9c9431bfa633553",
+    "research\\v3\\validate_timing.py": "30883d27e0d2ccf198d70f40ff6d903fa500b3db0ae9be438d594262b4da829d",
+    "board\\model_backend\\v2b\\gemm_backend_v2b.h": "3af0b482e6a36810ffcf5dd77af3a9cb879bd0594f6a2793d12e1d9d9840515c",
+    "vendor\\plugin\\sha256_crypto.h": "adcbda7981d824fa5baf7e69e25d0ccd6514462da243f0fd3b9b20577de9b754",
+    "vendor\\onnxruntime\\onnxruntime_c_api.h": "d683537d0fdc29e977b5520f7f15d87a0ac212ae6d94fa9be8893a52655621ae",
+    "vendor\\onnxruntime\\onnxruntime_cxx_api.h": "28b21dfc371fb53d1ba67356adeb124f36643ee5ab6f1ad2e9afbf09eb4bf305",
+    "vendor\\onnxruntime\\onnxruntime_cxx_inline.h": "c41b9a11aac46851f68f4bd888bb2444a0e1eb6b37eadb41bf15f5154b48ea31",
+    "vendor\\onnxruntime\\onnxruntime_float16.h": "6c4db3d1954b266c4febe413351af86cac922e3448538e7e452e51d646e56a4a"
+  },
+  "PL_starts": 0,
+  "private_holdout_accessed": false,
+  "independent_A_C_signoff": "NOT_PERFORMED",
+  "immutable_original_locks": {
+    "BASELINE_LOCK.json": "26ad75f1f61508aae0abdf50083949422717e90784b967213d6462cf15d086d6",
+    "ASSETS.lock.json": "4f8192e4be77b03506412a03b68fe2b93aae897b2e197960880c52810ead1389",
+    "PACKAGE_MANIFEST.json": "5c23f234fcab40e574ef7acc0a18584f92114fe827643b064cbf4e118939cafc",
+    "SOURCE_MAP.json": "5a8037bbb5c6d4e479105c1579d651f039d61d729e12e86057d8ae4c11481665",
+    "DELIVERY_VERIFICATION.json": "7ced53b8ec52ec3c82a0dcea52c626850e13cde8a343fc828604371d579438d3"
+  },
+  "release": {
+    "tag": "team-handoff-20261007",
+    "target_commit": "eba1a78ece0fe4eea7931c5a3458845cb6842bfd",
+    "prerelease": true,
+    "draft": false,
+    "assets_checked_against_release_and_lock": {
+      "board-runtime": {
+        "filename": "board-runtime-v2a.tar.gz",
+        "bytes": 3976222,
+        "sha256": "7205ffb480313d0adba85bfcf1983a2804d10020576edf696f5638152caf941d",
+        "destination": "board-runtime",
+        "release_tag": "team-handoff-20261007",
+        "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/board-runtime-v2a.tar.gz"
+      },
+      "ip-rebuild": {
+        "filename": "ip-rebuild-v2.tar.gz",
+        "bytes": 2102153,
+        "sha256": "63076a32fed21b1fefdb40d32278e33aae17b0f75bcd439a7acd79fb8dd18356",
+        "destination": "ip-rebuild",
+        "release_tag": "team-handoff-20261007",
+        "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/ip-rebuild-v2.tar.gz"
+      },
+      "model": {
+        "filename": "B_MODEL_BUNDLE_V1_20261001.tar.gz",
+        "bytes": 146328353,
+        "sha256": "ff7b46e663539a0ba3125d0493d4a9757873e41676ec794d43865e0eebaf7f5f",
+        "destination": "model",
+        "release_tag": "team-handoff-20261007",
+        "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/B_MODEL_BUNDLE_V1_20261001.tar.gz"
+      }
+    }
+  },
+  "downloaded_assets": {
+    "model": {
+      "archive_sha256": "ff7b46e663539a0ba3125d0493d4a9757873e41676ec794d43865e0eebaf7f5f",
+      "archive_bytes": 146328353,
+      "payload_members_verified": 989,
+      "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+      "archive_members": 1208,
+      "complete_members_preserved": true
+    },
+    "board-runtime": "NOT_DOWNLOADED_NOT_NEEDED_FOR_LOCAL_SCOPE",
+    "ip-rebuild": "NOT_DOWNLOADED_NOT_NEEDED_FOR_LOCAL_SCOPE"
+  },
+  "environment": {
+    "OS": "Microsoft Windows 10.0.26300",
+    "PowerShell": "7.6.5",
+    "Python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "Python_selection": "PROJECT_PRIVATE_VENV",
+    "Node": "v24.19.0",
+    "git": "git version 2.56.0.windows.1",
+    "Cxx": "LLVM-MinGW20261006 / Clang23.1.3 / x86_64-w64-windows-gnu / static runtime",
+    "Cxx_archive_sha256": "317492c456aa27ee607a5919f1d2d38dcdc1112516a24d0bf4b00d078f52d17a",
+    "Cxx_archive_bytes": 190836485,
+    "CPU": {
+      "Name": "Intel(R) Core(TM) i5-14600KF",
+      "Architecture": 9,
+      "NumberOfCores": 14,
+      "NumberOfLogicalProcessors": 20
+    },
+    "pinned_versions": {
+      "numpy": "1.26.4",
+      "onnxruntime": "1.22.1",
+      "Pillow": "12.3.0",
+      "coloredlogs": "15.0.1",
+      "humanfriendly": "10.0",
+      "flatbuffers": "25.2.10",
+      "protobuf": "5.29.5",
+      "sympy": "1.14.0",
+      "mpmath": "1.3.0",
+      "packaging": "26.3"
+    },
+    "pip_check": "PASS",
+    "system_installations": 0,
+    "global_configuration_changes": 0,
+    "missing": [
+      "Vivado/Vitis HLS/Bootgen on PATH or standard C:/AMD/C:/Xilinx installation roots",
+      "K26 device/license availability not established",
+      "AArch64 Linux/XRT/uuid build SDK on this host",
+      "configured kv260 hostname/SSH authentication"
+    ]
+  },
+  "verification": {
+    "initial_published_manifest_files": 228,
+    "handoff_software": {
+      "scope": "HANDOFF_LOCAL_SOFTWARE_ONLY",
+      "PL_starts": 0,
+      "HLS_synthesis": "NOT_RUN",
+      "RTL_cosim": "NOT_RUN",
+      "ARM_rebuild": "NOT_RUN",
+      "development_source_manifest_sha256": "dd3b44c3b12dd05646b3fbcffc04c07a391cbe5392e3d91926e073ad616697f3",
+      "package_files_verified": 255,
+      "python_core_imports": "PASS",
+      "handoff_links": "PASS",
+      "UI_existing_tests": "PASS",
+      "native_Cpp_public": {
+        "opt35a_clear_v1_full": {
+          "status": "PASS",
+          "profile": "rtl",
+          "valid_cases_passed": 8,
+          "invalid_cases_rejected": 8,
+          "output_elements_compared": 418064,
+          "micro_unit_cases": 0,
+          "signed_lane_checks": 0,
+          "golden": "independent_INT64_complete_matrix",
+          "guard_read_coverage": "RTL_AXI_MONITOR_REQUIRED"
+        },
+        "opt38_fullk_v1_full": {
+          "status": "PASS",
+          "profile": "rtl",
+          "valid_cases_passed": 8,
+          "invalid_cases_rejected": 8,
+          "output_elements_compared": 418064,
+          "micro_unit_cases": 0,
+          "signed_lane_checks": 0,
+          "golden": "independent_INT64_complete_matrix",
+          "guard_read_coverage": "RTL_AXI_MONITOR_REQUIRED"
+        }
+      },
+      "native_Cpp_scope": "Ordinary C++ execution with HLS pragmas ignored; not RTL or HLS validation",
+      "status": "PASS",
+      "logs": "C:\\FPGA\\kv260\\system\\build\\check_1791424183140069700"
+    },
+    "existing_Node_UI_tests": 17,
+    "existing_Python_UI_tests": 6,
+    "runtime_v3": {
+      "INT64_outputs_per_fake_kernel_call": 1000,
+      "PL_starts": 0,
+      "private_holdout_accessed": false,
+      "scope": "PUBLIC_ORDINARY_CPP_G1_CORE_NOT_ARM_NOT_PL_NOT_DURABILITY",
+      "status": "PASS",
+      "test_names": [
+        "real_sha_known_answer",
+        "single_parse_fragmented_admission",
+        "alias_mutation_during_digest_and_after_seal",
+        "trusted_context_alias_isolated",
+        "task_generation_and_credential_lifetime",
+        "duplicate_top_and_nested_keys",
+        "escaped_duplicate_key",
+        "NUL_raw_decoded_BOM_trailing_UTF8",
+        "bool_integer_wrong_shape_unknown_keys",
+        "prefix_bound_no_admission",
+        "short_body_preserves_reserved_ID_zero_start",
+        "wrong_body_digest_rejected_zero_start",
+        "clock_deadline_and_trailing_bytes",
+        "reentrant_receiver_poisoned_even_if_swallowed",
+        "reentrant_authority_cannot_mint_nested_proof",
+        "request_ID_metadata_and_peer_rejection",
+        "start_preconditions_and_unknown_no_stop",
+        "result_pending_ACK_no_rehash_and_Y_release",
+        "bad_ACK_digest_and_changed_peer_retain_Y",
+        "recovery_requires_real_proof_and_exact_original_peer",
+        "completion_readback_failure_faults_retains_output",
+        "ACK_COMMITTED_corruption_retains_result",
+        "reentrant_ledger_callback_faults",
+        "native_done_drain_guard_const_traffic_mismatch",
+        "full_W_hash_and_length_preserved",
+        "portable_session_two_commit_seams_full_INT64",
+        "SUB_failure_zero_start_failure_seal",
+        "start_observation_loss_UNKNOWN_no_auto_replay",
+        "session_native_corruption_fault_retains_Y",
+        "session_COMP_failure_no_release",
+        "timing_partition_closes_and_rejects_bad_order",
+        "real_clock_sample_available",
+        "all_five_shape_credentials_and_invalid_tail",
+        "terminal_budget_rejection_zero_new_start",
+        "reentrant_admission_rejects_reserved_ID"
+      ],
+      "tests": 35
+    },
+    "runtime_v3_binary_sha256": "610660e805d04d08e8dda1ac772994f4a63e0c1ac57df4dfde91b8327497dff8",
+    "same_machine_B": {
+      "status": "PASS_SAME_MACHINE_CANDIDATE_EQUIVALENCE",
+      "scope": "SAME_MACHINE_B_CPU_DIAGNOSTIC",
+      "PL_starts": 0,
+      "logs": "C:\\FPGA\\kv260\\system\\build\\b_v3_1791424297788829100",
+      "logits_max_abs": 0.0,
+      "complete_layer_payload_matches": 49,
+      "archived_host_quant_max_abs": 0.09186744689941406,
+      "archived_host_gate": "SEPARATE_NO_TOLERANCE_CHANGE",
+      "candidates": {
+        "cf1": {
+          "status": "PASS_CPU_FUNCTION_ONLY",
+          "PL_starts": 0,
+          "kind": "cf1",
+          "plugin_sha256": "b7376711c9f465788aa46eb7cbd3d5af188e845d4209385c13371fae4f30653c",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "graph_sha256": "85107530e70f8eb9f9c8a769c1c92a091a6cd629c52aff2bb8f8e0ba8c347185",
+          "session_load_ns": 63860200,
+          "session_run_including_terminal_export_ns": 231494100,
+          "timing_use": "DIAGNOSTIC_NOT_FAIR_PERFORMANCE",
+          "layers": 49,
+          "logits_sha256": "ee979eb88b4224a4daba5d1bd19365be95f7dd1d4e0ad8ef879950377887ec3b"
+        },
+        "v3": {
+          "status": "PASS_CPU_FUNCTION_ONLY",
+          "PL_starts": 0,
+          "kind": "v3",
+          "plugin_sha256": "7fdc9994d22d1042e912b9e4d09afe439dd5361173ffe39b1bb07923c73fa8ed",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "graph_sha256": "85107530e70f8eb9f9c8a769c1c92a091a6cd629c52aff2bb8f8e0ba8c347185",
+          "session_load_ns": 54802700,
+          "session_run_including_terminal_export_ns": 231531500,
+          "timing_use": "DIAGNOSTIC_NOT_FAIR_PERFORMANCE",
+          "layers": 49,
+          "logits_sha256": "ee979eb88b4224a4daba5d1bd19365be95f7dd1d4e0ad8ef879950377887ec3b",
+          "timing_schema": {
+            "status": "PASS_DIAGNOSTIC_SCHEMA_ONLY",
+            "layers": 49,
+            "PL_starts": 0,
+            "production_capability": false,
+            "observer_overhead": "NOT_QUANTIFIED"
+          },
+          "timing_rejections": 6,
+          "PL_gate_rejection": "PASS_ZERO_START"
+        }
+      }
+    },
+    "same_machine_quant_graph_vs_v3_plugin": "BIT_EQUAL",
+    "Node_collector": {
+      "schema": "v3_g1_diagnostic_collection",
+      "layers": 49,
+      "execution_source": "CPU_REFERENCE",
+      "PL_starts": 0,
+      "production_capability": false,
+      "observer_overhead": "NOT_QUANTIFIED",
+      "fair_performance": "NOT_RUN",
+      "error_rejections": 8,
+      "status": "PASS_ACTUAL_DIAGNOSTIC_ROWS"
+    },
+    "archived_host_fp32": {
+      "backend": "fp32",
+      "max_abs": 3.129243850708008e-06,
+      "threshold": 0.0001,
+      "PL_starts": 0,
+      "ORT": "1.22.1",
+      "python_executable": "C:\\FPGA\\kv260\\system\\.venv\\Scripts\\python.exe",
+      "architecture": "AMD64",
+      "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+      "status": "PASS"
+    },
+    "archived_host_w8a8": {
+      "backend": "w8a8_reference",
+      "max_abs": 0.09186744689941406,
+      "threshold": 0.0001,
+      "PL_starts": 0,
+      "ORT": "1.22.1",
+      "python_executable": "C:\\FPGA\\kv260\\system\\.venv\\Scripts\\python.exe",
+      "architecture": "AMD64",
+      "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+      "status": "FAIL"
+    },
+    "quant_tolerance_changed": false,
+    "frozen_reference_changed": false
+  },
+  "gates": {
+    "G0": "LOCAL_CONTRACT_FROZEN_REVIEWABLE_NOT_INDEPENDENT_SIGNOFF",
+    "G1": "PARTIAL_LOCAL_CORE_AND_B_PASS_PRODUCTION_ADAPTERS_NOT_INTEGRATED",
+    "G2": "NOT_IMPLEMENTED",
+    "G3_ARM_full_software_and_PL_recovery": "NOT_RUN",
+    "G4_fair_screen": "NOT_RUN",
+    "G5_OPT38_new_software": "NOT_RUN",
+    "HLS_synthesis": "NOT_RUN",
+    "RTL_cosim": "NOT_RUN",
+    "full_current_UI": "NOT_RUN",
+    "formal_performance": "NOT_PASSED",
+    "formal_release": "NOT_PASSED"
+  },
+  "retained_failures": [
+    "Initial pinned pip download ReadTimeout: original output retained in chat tool transcript, not a local raw log",
+    "Subsequent pip truncated payload SHA mismatch / metadata truncation; fixed versions eventually installed, hashes not bypassed",
+    "Compiler archive interruption; official API Range continuation combined and full SHA checked before extraction",
+    "First portable GEMM executable lacked runtime DLLs; explicit static linking fixed it",
+    "G1 Windows BCrypt minimum target and B duplicate SHA adapter include failure corrected, old attempts retained",
+    "Archived Windows W8A8 input00 max_abs=0.09186744689941406 > unchanged 0.0001; root cause NOT_LOCATED",
+    "kv260 SSH alias unresolved; no board connection or action"
+  ],
+  "raw_output_inventory": {
+    "build/check_1791424183140069700/verification.json": {
+      "sha256": "5bef1af75326fc08f494560b0d91e791774a34152f10250ab2a0d00bcba21154",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/runtime_v3_1791424289347263000/verification.json": {
+      "sha256": "b310983416652d539dc2f05d94585bd035d8686319ebe905580cc51e29a8b50c",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/b_v3_1791424297788829100/verification.json": {
+      "sha256": "a695f41f7457a64628dcd5e93a7caf60fadbd144cd7dd31744ddf6de077abadc",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/initial_check.log": {
+      "sha256": "67d1f98456759a9783fa2adc5f72a10d0e0cc5f7a94b7a1b8936ccf8dcc4a3d1",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/dependencies.log": {
+      "sha256": "2f7b8f2cfde1bf857bf7ac39dde4c58c5f9aaccc473911406b1dd5a91b1164be",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/dependencies_retry.log": {
+      "sha256": "5d073d02d3a001c6b314a3a5b8a5bc0e21dcd73d012a76dcf2c307ef3f298f8c",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/dependencies_html.log": {
+      "sha256": "882e40003330623aec6e60c954864cedaf363b66e5f2d464404e7ccfdda3e191",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/model_asset.log": {
+      "sha256": "f6a79ae14af812a04f7fb9086ea291f406dc88cbedfce1956f5357c6933bd291",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/ssh_preflight.log": {
+      "sha256": "6b023b10fe344fb2e97e26fa0c56a03e92351d4be6859018ea4353b89275a92a",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/full_check.log": {
+      "sha256": "7de0bed0d7ab4ff1cc50e71d9c304ea5d8a7833464a0161a7d63981ffd825ab6",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/full_check_02.log": {
+      "sha256": "fda6265f571135116a58256edb17446f0610f011426d8111ac4f6132d01d4332",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/model_check_03.log": {
+      "sha256": "280f5edda2287550c0203271f3e99476601eeb2315b86143af7e8f342d31d96a",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/g1/compile.log": {
+      "sha256": "42450846813c392b3a511feee91ad7c58e2d91d201fbaf0bb7edc78aa40f7355",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/g1/compile_02.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/b_v3_check_01.log": {
+      "sha256": "a8d1156b0cff483dd889fd9cb375d9ef12866f43d4f5e4e9381279b07b1a7cd2",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/final_dev_01.log": {
+      "sha256": "5bf39d32e192b4f75b763888991b2446b07240dc9b98b18f6da99a48b2c6a1ad",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/final_dev_02.log": {
+      "sha256": "b94a40d6e3a181987353587e58669f56850150d7075d4786de2447f39e99dfe2",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/final_collector.log": {
+      "sha256": "5f7ccdb46692a29bc4d1254259ebbaa69ca190476b81085cb43d9b06657550a2",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/handoff/final_collector_tests.log": {
+      "sha256": "b4215f9aec7427c5c31325ffed8ca3cd7583ecbb9c5d45f793c412ee3d41dc61",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/check_1791423252807180400/cpu_fp32.json": {
+      "sha256": "e5a7cf679264bbbb35f58fc707550060002427105100136475ba8bdfa7e40381",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    },
+    "build/check_1791423252807180400/cpu_quant.json": {
+      "sha256": "aedeada01bfa1486c6e6c990beedf19a54eafb2980ede90753a3d4376272c5cf",
+      "availability": "LOCAL_ONLY_IGNORED_BUILD_NOT_IN_GIT"
+    }
+  },
+  "rollback": "Use unchanged adopted parent source/paired assets; v3 has no production ready and PL binding hard rejects. No board changes to roll back.",
+  "next_dependency": "Real Linux socket/file/record/checkpoint/recovery and C ABI integration, then new ARM identity/exception proof. Maintainer must supply SSH endpoint/auth and an exclusive scoped board window before board use."
+}

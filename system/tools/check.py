@@ -31,6 +31,8 @@ def main():
     p.add_argument('--node', action='store_true')
     p.add_argument('--cpp', action='store_true')
     p.add_argument('--cxx', default='g++')
+    p.add_argument('--cxx-flag', action='append', default=[], help='Explicit compiler/linker flag, e.g. --cxx-flag=-static')
+    p.add_argument('--source-manifest', type=Path, help='Development overlay; defaults to DEVELOPMENT_SOURCE.lock.json when present')
     p.add_argument('--model-bundle', type=Path)
     p.add_argument('--output', type=Path)
     a = p.parse_args()
@@ -40,6 +42,15 @@ def main():
     if not manifest.exists():
         raise RuntimeError('PACKAGE_MANIFEST.json missing; this is not the published snapshot')
     entries = json.loads(manifest.read_text(encoding='utf-8'))['files']
+    development = a.source_manifest or ROOT / 'DEVELOPMENT_SOURCE.lock.json'
+    if a.source_manifest or development.exists():
+        overlay = json.loads(development.read_text(encoding='utf-8'))
+        if overlay.get('schema') != 'development_source_overlay_v1':
+            raise ValueError('Unknown development source overlay schema')
+        if overlay['base_manifest_sha256'] != sha(manifest):
+            raise ValueError('Development overlay has a different published base')
+        entries = {**entries, **overlay['files']}
+        result['development_source_manifest_sha256'] = sha(development)
     for name, item in entries.items():
         file = (ROOT.parent / name).resolve()
         if not file.is_relative_to(ROOT.parent) or file.stat().st_size != item['bytes'] or sha(file) != item['sha256']:
@@ -66,6 +77,9 @@ def main():
         node = shutil.which('node')
         if not node:
             raise RuntimeError('Node >=24 required; no automatic installation')
+        version = subprocess.check_output([node, '--version'], text=True).strip()
+        if int(version.lstrip('v').split('.')[0]) < 24:
+            raise RuntimeError('Node >=24 required; found ' + version)
         files = sorted((ROOT / 'ui/tests').glob('*.test.mjs'))
         command([node, '--test', '--test-isolation=none', *files], ROOT / 'ui', run / 'node_tests.log')
         command([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'ui/tests', '-p', 'test_agent.py'], ROOT, run / 'python_ui.log')
@@ -80,7 +94,7 @@ def main():
             dest = run / name
             dest.mkdir()
             executable = dest / ('testbench.exe' if sys.platform == 'win32' else 'testbench')
-            command([cxx, '-std=c++11', '-O3', '-Wno-unknown-pragmas', src / 'src/model_gemm_top.cpp', src / 'tb/testbench.cpp', '-o', executable], dest, dest / 'compile.log')
+            command([cxx, '-std=c++11', '-O3', '-Wno-unknown-pragmas', *a.cxx_flag, src / 'src/model_gemm_top.cpp', src / 'tb/testbench.cpp', '-o', executable], dest, dest / 'compile.log')
             command([executable, 'rtl'], dest, dest / 'run.log')
             summary = json.loads((dest / 'rtl_tb_summary.json').read_text())
             if summary['status'] != 'PASS' or summary['valid_cases_passed'] != 8 or summary['invalid_cases_rejected'] != 8:
@@ -103,10 +117,17 @@ def main():
             actual = runner.run(tensor, 'handoff_' + suffix, 'img0000')
             expected = np.load(bundle / ('regression/00_' + suffix + '_logits.npy'), allow_pickle=False)
             difference = float(np.max(np.abs(np.asarray(actual['logits']) - expected)))
+            observation = {'backend': kind, 'max_abs': difference, 'threshold': 1e-4,
+                           'PL_starts': actual['PL_starts'], 'ORT': actual['ORT'],
+                           'python_executable': sys.executable, 'architecture': actual['architecture'],
+                           'manifest_sha256': identity['manifest_sha256'],
+                           'status': 'PASS' if difference <= 1e-4 and actual['PL_starts'] == 0 else 'FAIL'}
+            (run / ('cpu_' + suffix + '.json')).write_text(json.dumps(observation, indent=2) + '\n', encoding='utf-8')
+            np.save(run / ('cpu_' + suffix + '_logits.npy'), np.asarray(actual['logits'], dtype=np.float32), allow_pickle=False)
             if difference > 1e-4 or actual['PL_starts'] != 0:
-                raise ValueError('Same-host CPU regression failed: ' + kind)
+                raise ValueError(f'Archived-host CPU regression failed: {kind}, max_abs={difference}; see {run}')
             result['CPU_model_regression'][kind] = {'max_abs': difference, 'PL_starts': 0}
-        result['CPU_model_scope'] = 'One frozen same-host input; not quality or performance certification'
+        result['CPU_model_scope'] = 'One frozen input compared with the archived host reference; not quality or performance certification'
     result['status'] = 'PASS'
     result['logs'] = str(run)
     output = a.output.resolve() if a.output else run / 'verification.json'

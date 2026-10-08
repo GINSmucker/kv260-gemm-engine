@@ -2,6 +2,10 @@
 
 采用父版仍为OPT35a/V2A。下面保留实验的实际资格，目标是让后续工作解决已知最大项，避免重复无效比较。
 
+2026-10-08新进展：[v3本机G0/G1候选](G0_G1_LOCAL_20261008.md)建立私有不可变Frame/Request/Result、一次header严格解析与防重入串行ledger；B preparation/compute/receipt/dequant/trace边界可精确分账。同机CF1/v3全49层logits和X/W/Y SHA相等，核心35项、collector错误路径通过。生产socket/文件/owner/C ABI未接入，G1整体PARTIAL，没有ARM速度、持久化或采用结论；98提交合同保留。
+
+新电脑CPU资格新增FAIL：冻结输入00量化相对旧Windows参考max_abs=0.09186744689941406，原1e-4阈值不变；同机量化图/未改CF1/新B插件一致。需要定位跨机器CPU/ORT数值路径，不能将Windows平台名称当同机身份或删除旧reference。新机FP32通过原阈值。本次不重开CF1/RW06旧比较。
+
 |结果|已知事实|决定|
 |---|---|---|
 |OPT35a生产短筛选|p50 6570.318084ms；CPU前/后约314.4/314.9ms，漂移有效|当前开发父版，最终性能不达标|

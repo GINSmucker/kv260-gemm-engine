@@ -17,6 +17,8 @@
 
 公共证据更新写短STATUS和优化表，历史长日志保存到独立审计归档。新实验必须有client日期、run_id、boot、source/binary/asset身份；HLS估计、loop II、top Interval、native wait、cycles和模型延迟分开。
 
+原PACKAGE_MANIFEST/SOURCE_MAP仅描述冻结交付，不因开发修改而反写。当前分支用独立DEVELOPMENT_SOURCE.lock.json覆盖明确改动，绑定原manifest SHA；`tools/source_manifest.py`只记录Git非忽略源，`tools/check.py`严格核对对应字节。v3目前仅本机核心/B诊断候选，生产接线与独立验收仍是[后续依赖](G0_G1_LOCAL_20261008.md)。
+
 当前协作Release仅是接手快照。main与正式发布由队友审核整合，本PR不自动合并；已有v0.1/v0.2、F8 PR和P1冻结身份保留。
 
 轻量取得本分支：

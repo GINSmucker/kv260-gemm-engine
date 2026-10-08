@@ -25,4 +25,6 @@ V2B CF1研究接口为ABI3/wire3，独立[头文件](../board/model_backend/v2b/
 
 错误及恢复约束：SUB同步失败零start；COMP失败不向调用者交付Y；RESULT/ACK丢失保留原ID；错身份/跨任务/坏长度/重复key/NUL/别名等拒绝；一个未ACK结果不能被新请求覆盖；STOP只在真实CU/AXI静止后成功。取消是等安全边界退出，不强杀硬件所有者。
 
+10月8日[v3 G0/G1本机核心](G0_G1_LOCAL_20261008.md)复用ABI3/wire3外部语义，内部变为私有不可变Frame/Request/Result；`v3`是源码候选名，不表示已发布ABI4。Scope/generation和完整canonical request凭据仅在单一owner生命周期内流转。B trace/timing采用独立`*_v3_g1`诊断schema，collector仅允许CPU_REFERENCE/0 starts，生产ready和能力关闭。真实Linux socket/记录/恢复/C ABI/owner尚未接线，不能让原CF1 bridge或旧ready给新核心放行。
+
 每次接口或硬件变更都需要自己的identity和Gate，精确未变模块证明可明确复用；不冒用旧A2或签署。公开旧回执引用路径的映射见[SOURCE_MAP](../SOURCE_MAP.json)，私有留出只提供汇总，详细审计仍由C维护者保管。

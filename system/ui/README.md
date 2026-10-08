@@ -15,3 +15,8 @@ node server.mjs
 `board_agent.py`保留历史v1/CPU功能，`board_agent_v2a.py`为版本化接合入口，均显式要求bundle/runs；V2A PL另要求ready/bridge/config/plugin。当前组合完整UI实板Gate NOT RUN，历史v1 S4的通过不能沿用。用`python board_agent_v2a.py --help`读取参数，不运行历史硬编码启动脚本。
 
 部署文件和调用顺序见[模型说明](../docs/MODEL_AND_RUNTIME.md)与[接口](../docs/INTERFACES.md)。URI和capability版本变化由C/UI联合更新，未完成真实接合时保持拒绝。
+# G1离线诊断collector（2026-10-08）
+
+`timing-v3-g1.mjs`只验证`b_layer_timing_v3_g1`与`b_layer_trace_v3_g1`的49层请求/计时身份，要求CPU_REFERENCE、0真实PL starts、精确分区闭合，并输出`production_capability=false`。不放行生产agent或旧ready；当前组合完整UI Gate仍未通过。
+
+从system执行`node tools/collect_v3_timing.mjs <timing.jsonl> <trace.jsonl> <fresh-output.json>`，原始文件SHA随输出保留。`tools/check_v3_collector.mjs <actual-B-output-dir>`在真实候选记录上验证8项错误拒绝。完整接口、B终末导出计入session.run及未运行项见[本次G0/G1记录](../docs/G0_G1_LOCAL_20261008.md)。

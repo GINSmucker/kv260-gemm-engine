@@ -33,4 +33,6 @@ V2B研究B0.3.0在`research/v2b/model`，与默认B0.2.0隔离。它的`model.b`
 
 Windows和ARM CPU的500/full3925质量已通过，跨主机量化logits历史FAIL保留。PL质量/公平性能/模型稳定性尚未通过；20图功能、500质量与正式性能使用各自协议，不用一图CPU smoke放行。
 
+2026-10-08新Windows电脑冻结输入00的FP32回归通过、量化相对旧Windows参考max_abs=0.09186744689941406 FAIL；阈值及参考未改。新的[v3 B诊断插件](../research/v3/custom_op/quant_linear_v3.cpp)与同机未改CF1源码完整49层logits/X/W/Y摘要相等，数值顺序不变。准备、计算、回执、反量化、trace/dump有独立wall/线程CPU边界，终末导出仍计入session.run。新PL绑定硬拒绝，真实C_ABI计时NOT EXERCISED，详见[合同和结果](G0_G1_LOCAL_20261008.md)。
+
 UI由Node本机工作台、SSH loopback转发和板端代理组成。浏览器入口4173，转发8741→板端8740。界面从实时capability判断可用性；当前V2A/V2B整合UI Gate未完成。历史v1/cacheable S4的通过不等于当前组合通过。启动方式见[UI说明](../ui/README.md)。
