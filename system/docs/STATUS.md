@@ -1,4 +1,8 @@
-# 当前开发状态 2026年10月7日
+# 当前开发状态 2026年10月8日
+
+新电脑从实际远端 `eba1a78` 接手，在 `codex/runtime-g0-g1-20261007` 开发。G0合同及独立v3本机核心/B计时候选已实施：35项公开C++核心测试、同机CF1/v3完整49层logits与payload等价、真实计时collector通过，0 PL启动。**G1整体PARTIAL：真实Linux socket/文件/恢复/owner/C ABI尚未接线，ARM和板测NOT RUN，生产关闭。** 详细边界、状态、预算、日志及重复入口见[本次结果](G0_G1_LOCAL_20261008.md)。
+
+新机冻结输入00 FP32 max_abs=0.000003129243850708008通过原阈值；W8A8相对旧Windows参考max_abs=0.09186744689941406，FAIL保留。同机未改CF1和新B插件结果完全一致，不能据此放行跨机数值或质量。环境已建立项目Python3.12.14及固定依赖、Node24.19和SHA校验的便携Clang23；HLS/Vivado/ARM SDK缺失。SSH只读预检因kv260未配置地址失败，未操作板卡。
 
 客户端日期为Asia/Shanghai。实验日期来自原报告；板端旧日历和本次上传时间不替代实验日期。当前正式开发父版为`system_a3_20261005_02`，OPT35a/V2A/修正B标签插件。详见[BASELINE_LOCK](../BASELINE_LOCK.json)。
 
@@ -11,7 +15,7 @@
 |B3 Neon|逐bitCPU、正常ARM、恢复、完整PL单图通过|只有组合资格，未签整网收益或采用|
 |RW06页容器|34项ARM文件机制/59文件PASS，0 PL|成本父均值漂移6.508776%、部分组超过43%；生产关闭，不扩样|
 |CHK05 native分账|52start/4238288完整INT64输出零差异；构建、恢复、49层图与回退PASS|诊断专用，净观察开销未量化，无公平性能或生产采用|
-|C重构|10月7日源码审阅和G0～G5计划完成|新结构NOT_IMPLEMENTED；下一步G0/G1|
+|C重构|10月7日源码审阅；10月8日G0及G1本机私有对象/单解析/ledger/B计时候选通过|真实生产适配未接线，G1整体PARTIAL；G2～G5未放行|
 
 最新CHK05诊断图`session.run=3280.125216ms`，互斥账本为原API内native外2250.468097、host wait646.051318、copy/sync18.216809、native其他75.544514、量化/反量化61.404203、PS其他228.440275ms。纯kernel cycles仍UNAVAILABLE。
 

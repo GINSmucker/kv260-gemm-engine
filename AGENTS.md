@@ -3,11 +3,12 @@
 - Start with `system/docs/START_HERE.md`, `system/docs/STATUS.md`, and `system/BASELINE_LOCK.json`.
 - `src/` and `tb/` are the original v0.2 engine. The integrated model work lives in `system/`; keep their identities distinct.
 - Adopted development parent: `system_a3_20261005_02`, OPT35a + V2A. OPT38 and V2B CF1 are explicitly named research candidates.
-- The latest CHK05 result is diagnostic evidence, not a fair performance PASS. RW06 and CF1 remain inconclusive; the C refactor is planned, not implemented.
+- The latest CHK05 result is diagnostic evidence, not a fair performance PASS. RW06 and CF1 remain inconclusive. The v3 G0/G1 local core and B diagnostics are implemented; real Linux owner/socket/file/C ABI integration remains incomplete and production is closed. Read `system/docs/G0_G1_LOCAL_20261008.md`.
 - Read the domain document before editing hardware, numerical software, runtime, or UI. State the parent, scope, required checks, and unrun checks.
 - Use the host's native shell. Windows uses PowerShell 7. AArch64 runtime builds require Linux on the board or an explicitly configured cross toolchain.
 - Discover tools once. Use an existing Python 3.12 environment, not an assumed Conda base. Do not install tools or change global configuration automatically.
 - From `system/`, run `python -B tools/check.py` with the selected environment. Add `--cpp`, `--node`, and `--model-bundle` as appropriate; see START_HERE.
+- Development source identity uses `system/DEVELOPMENT_SOURCE.lock.json`, bound to the unchanged published manifest. Refresh it explicitly after edits with `tools/dev.ps1 -RefreshSourceLock`. Project `.venv` and the portable C++ compiler are selected by `tools/dev.ps1`; no global PATH or system installation is required.
 - Check outputs are local software evidence. They do not constitute HLS synthesis, RTL cosim, an ARM rebuild, or a new board Gate.
 - Preserve `BASELINE_LOCK.json`, original signed evidence, frozen assets, and historical failures. Changed implementations need new identities and new validation.
 - Never claim speedup from an invalid comparison, a diagnostic build, summed quantiles, HLS estimates, or mixed historical timings.

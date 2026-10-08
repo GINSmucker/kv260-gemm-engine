@@ -17,4 +17,6 @@
 
 本次交付检查记录在`DELIVERY_VERIFICATION.json`。它只证明公开文件身份、便携入口及本机软件接手，不产生新实板、HLS/RTL、性能、质量或正式发布Gate。
 
+10月8日的新电脑接手/G0/G1精简回执在[evidence/runtime_v3/local_20261008.json](../evidence/runtime_v3/local_20261008.json)，源码和界面边界见[本次记录](G0_G1_LOCAL_20261008.md)。原日志在本机ignored build中；回执列出相对路径和SHA，Git不含原始矩阵/trace/二进制。本机核心、同机B等价与新电脑相对旧参考的FAIL分别报告；未产生新的A/C签署或实际PL启动。
+
 V2A `software_core.h`是可选历史数学测试适配器，编译宏保护阻止它进入正常owner。它不是父版实际ARM编译输入，也未获得当前平台的新软件集成Gate；保留它是为了显式测试include依赖。默认构建不定义该测试宏。

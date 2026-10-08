@@ -1,6 +1,6 @@
 # C运行时下一阶段 G0至G5
 
-本方案来自2026年10月7日CF1准确编译源码审阅和CHK05/CHK06结果。当前只是设计，**新结构未实施**。默认父版不变，旧CF1/PS1/RW05/RW06的INCONCLUSIVE和SAX未准入不改签。
+本方案来自2026年10月7日CF1准确编译源码审阅和CHK05/CHK06结果。10月8日已有[独立v3本机G0/G1候选与冻结合同](G0_G1_LOCAL_20261008.md)：公开核心及B计时验证通过，**真实Linux生产适配未接线，G1整体PARTIAL**。默认父版不变，旧CF1/PS1/RW05/RW06的INCONCLUSIVE和SAX未准入不改签。
 
 秒级成本来自逐层事务组织：B、bridge、owner、文件记录和可变协议对象之间反复解析、摘要、复制和读回；每层两次持久提交在串行关键路径中引入存储抖动。可信边界各有作用，不能通过删除guard、真实peer/文件/CU/AXI检查提速。
 
@@ -27,4 +27,4 @@ B保持RNE、[-127,127]、两次FP32乘后加bias。预分配scratch按Kernel/�
 
 若98屏障仍占≥500ms/图，单独设计持久化语义分支，不把旧RW05/06默认采用。改变持久粒度需独立恢复证明及公平比较。父漂移超限停止同一比较，不无限补样。最终p50/p95、质量、模型稳定性与回退保持原合同。
 
-源码定位：[CF1 owner](../board/model_backend/v2b/owner.cpp)、[backend](../board/model_backend/v2b/backend.cpp)、[session](../board/model_backend/v2b/session.h)、[frame](../board/model_backend/v2b/protocol/stream_v2b_frame.h)、[ledger](../board/model_backend/v2b/protocol/stream_v2b_lifecycle.h)、[B插件](../research/v2b/model/b/custom_op/quant_linear_v2b.cpp)。它们是已通过功能的研究祖先，新结构尚未存在。
+源码定位：[CF1 owner](../board/model_backend/v2b/owner.cpp)、[backend](../board/model_backend/v2b/backend.cpp)、[session](../board/model_backend/v2b/session.h)、[frame](../board/model_backend/v2b/protocol/stream_v2b_frame.h)、[ledger](../board/model_backend/v2b/protocol/stream_v2b_lifecycle.h)、[B插件](../research/v2b/model/b/custom_op/quant_linear_v2b.cpp)。它们是未改的研究祖先。新代码为[v3 Frame/Request/Result](../board/model_backend/v3/frame.h)、[ledger](../board/model_backend/v3/ledger.h)、[强制适配接口](../board/model_backend/v3/session.h)、[精确计时](../board/model_backend/v3/timing.h)及[新B诊断插件](../research/v3/custom_op/quant_linear_v3.cpp)，尚未形成生产owner或ready。
