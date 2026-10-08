@@ -1,6 +1,6 @@
 {
   "schema": "handoff_files_v1",
-  "scope": "Public handoff updated Oct 9; formal and development baselines distinct",
+  "scope": "Public Oct9 handoff including complete AB6; formal and shipped development baselines distinct",
   "files": {
     ".gitattributes": {
       "bytes": 501,
@@ -35,8 +35,8 @@
       "sha256": "24bbaa9814d48ab1f670be63ef5bab23ac719919474b379fa6d0ba77b979191e"
     },
     "system/INCREMENT_VERIFICATION_20261009.json": {
-      "bytes": 723,
-      "sha256": "cbb7afd34be2f1766452a35279e412883e2eb4871f3698b927e9236f90e70f7d"
+      "bytes": 1324,
+      "sha256": "c08f4a442fd9ff55fc373d88aa9c3d2ac07b33c620319483cde18c47b28c0ea7"
     },
     "system/README.md": {
       "bytes": 1960,
@@ -96,7 +96,7 @@
     },
     "system/docs/TEAM_WORKFLOW.md": {
       "bytes": 2588,
-      "sha256": "70cacb4e9839e35347d6ef9acf862d703ff3ad8d097d3d93c38ac65f7ad15b6d"
+      "sha256": "fb90eee98c6576bff84a598f39dedb303bb6a7252898c1a8d8b577212d74770c"
     },
     "system/docs/V5_AB_HANDOFF.md": {
       "bytes": 5546,
