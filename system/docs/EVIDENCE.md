@@ -21,6 +21,6 @@ V2A `software_core.h`是可选历史数学测试适配器，编译宏保护阻�
 
 10月8日新增[公共进度汇总](../evidence/latest/runtime_progress_20261008.json)与[F05_LOCK](../research/F05_LOCK.json)。汇总逐份记录原始路径/完整SHA与JSON值，不改旧V3/CHK05/CF1回执。F05最终S0沿用了旧模板的candidate_status字段，它不代表最新实现Gate；实际阶段以D3/D4/D5和STATUS为准。大原始证据仍LOCAL_ONLY，私有C材料不读取或上传。
 
-10月9日新增[开发锁](../research/DEVELOPMENT_LOCK.json)与[最新小回执](../evidence/latest/runtime_progress_20261009.json)：v5对F05的漂移无效、AB1的有效比较、AB2/3软件回收及首组合PL失败分开保留。本次没有把运行中/未回收任务补成PASS，AB3原“回收中”已由173文件实际receipt更新。正式父版锁和历史签署原字节保持。
+10月9日[最新小回执](../evidence/latest/runtime_progress_20261009.json)覆盖v5 R4、AB1、AB2/3软件、首组合已完成生产与profile失败、线程1/2/4、GELU拒绝及两次AB6。SHA绑定完整原文件；profile/probe标明selected_fields_summary，省去大logits。外层窗口完成不覆盖数值Gate；第二AB6同v5有效与整体CPU漂移无效同时保留。正式父版锁/历史签署原字节保持。
 
 v5生产与诊断互相独立；删除热SHA/持久日志是已授权的新协议，不是把旧F05合同测试改成PASS。旧硬件等待计时仍非纯cycles。当前新Source包对应AB1原B代码，AB2/3候选delta不参与默认构建。若其他会话有后续新窗，需其新的原始回执另同步，不借首窗失败或既有PASS覆盖。

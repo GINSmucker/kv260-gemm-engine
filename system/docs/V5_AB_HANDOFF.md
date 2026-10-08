@@ -1,6 +1,6 @@
 # v5 与 A/B 当前开发接续
 
-10月9日当前开发基线是AB1 OPT38+最小v5，正式父版system_a3_20261005_02和历史Gate保留。已完成v5 R1～R3、两次R4及AB1；AB2/3软件通过，但首个组合PL诊断FAIL，不能将这些delta作为默认已采用版本。
+默认开发运行包为AB1 OPT38+最小v5，正式父版system_a3_20261005_02和历史Gate保留。最新回执覆盖AB2/3单因素、线程profile、AB5和AB6两次组合；源码候选已进一步完成4线程整图资格，不以首FAIL覆盖后续结果。
 
 ## 实测和取舍
 
@@ -31,8 +31,10 @@ AB2首版多折叠48权重Transpose，image00误差3.814697e-6，逐位Gate FAIL
 
 AB3行内NEON汇总非有限标记，行尾归约一次，保留absmax/除法/RNE/两乘加bias；去不可达tail、缓存固定shape。fegetround保留，不造线程状态框架。AB2 166/AB3 173文件ARM软件回收PASS；源码包candidates只有对应delta，默认不编译它们。
 
-首组合板窗v5_ab23_screen_20261009_01已回收41文件、status FAIL：benchmark第0层Y逐位比较失败；rollback_errors为空、recovery PASS。仅凭该断言不能确认根因是fold、数据传播或硬件，不将软件PASS扩大为PL采用；不发布新折叠ONNX或AB2/3二进制为默认资产。进一步定位属于新工作包，本上传不重跑板卡。
+首组合窗v5_ab23_screen_20261009_01回收41文件、整体FAIL、恢复PASS。完整原B/fold/scratch/combined/AB3/原Bafter生产比较已完成且VALID；20图逐层等价PASS，core p50为438.365659/437.570146/438.131487/437.442855/430.013316/439.060602ms。失败发生于随后profile1第0层Y检查。独立profile02外层PASS_R2_BOARD、回退PASS，内部1/2线程PROFILE_NUMERIC_MISMATCH，三正式输入max_abs0.077726/0.157673/0.209252；4线程logits逐位PASS。保持ORT intra=4/inter=1、顺序执行、禁图优化/禁spinning；线程1/2计时不能作为可用收益。
 
-AB4需真实预算后新HLS/RTL/配对，AB5 probe尚无本机完整回执，AB6组合两公平窗未运行。新任务不因目录存在而记PASS；本次以已回收receipt为截止，后续运行需新的同步。原A/B静态审查、旧profile和循环/内存估算只用于排序，不拼成新性能。
+最新AB2/3单因素生产阶段和20图逐层对照已完成；首窗口整体FAIL来自后续profile1第0层Y比对，不代表前面全部PL失败。独立profile窗1/2线程数值FAIL，4线程PASS。AB6两次20图同v5比较均VALID，候选p50=431.020901/430.067842ms，较较快父版下降1.678801%/1.860703%；logits逐位、CLI和回退PASS，各3332starts。第二窗FP32参考最大漂移5.101189%，整体INCONCLUSIVE，正式PL/CPU验收未通过；第一窗CPU speedup=0.763596，PL仍慢于FP32。AB5 exact-GELU probe有635540个逐位差异/5446656元素、max_abs4.768e-7，候选拒绝。源码delta和复建配方用于接续，已发布默认运行库保持AB1。
+
+复建AB2/3时，在新源码工作目录覆盖candidates/ab3内b_plugin.cpp、quant_neon.h、runtime.py三项；其余共享输入SHA不变，实际ARM命令和折叠图SHA见源码包CANDIDATE_REBUILD.json。fold_graph.py --bundle/--out在新目录生成图，不覆盖B989；AB3 Runner支持graph参数。生产/诊断插件分别编译；候选库不替换默认v5-runtime。AB4尚无新内核实测，不凭旧预算推定收益。
 
 最新证据见[进度汇总](../evidence/latest/runtime_progress_20261009.json)。原实验日期保留；本轮上传没有板卡、HLS、RTL或ARM新实验。

@@ -3,12 +3,12 @@
   "date": "2026-10-09",
   "previous_commit": "839e3b4ded3289a957bce67448b032edf4468db9",
   "asset_members": {
-    "v5-source": 24,
+    "v5-source": 25,
     "v5-runtime": 8,
     "opt38-platform": 6
   },
   "quoted_include_checks": 11,
-  "local_doc_links": 113,
+  "local_doc_links": 111,
   "old_source_map_checks": 223,
   "old_assets": "EXACT_ALL_FIVE_REUSED",
   "formal_parent": "EXACT_UNCHANGED",
@@ -16,11 +16,6 @@
   "AB23_first_failure": "RETAINED_NOT_ADOPTED",
   "new_board_HLS_RTL_ARM_experiment": "NOT_RUN",
   "source_qualification": "Original completed experiment evidence; no fresh compiler or hardware Gate",
-  "cold_checkout": "PASS_NEW_GIT_CLONE_AT_3daea4d",
-  "live_board_status": "NOT_CHECKED_BY_UPLOAD",
-  "local_entry": "PASS",
-  "new_asset_extract": "PASS_ALL_THREE",
-  "v5_build_entry": "PREVIEW_PASS_NOT_COMPILED",
-  "execution_channel_note": "Default sandbox call stalled; same native shell read-only unsandboxed probe succeeded; no pending Git commit had occurred",
-  "publication": "PENDING_AT_SNAPSHOT_FREEZE"
+  "cold_checkout": "PENDING_AFTER_COMMIT",
+  "live_board_status": "NOT_CHECKED_BY_UPLOAD"
 }

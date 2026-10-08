@@ -35,7 +35,7 @@ V2B研究B0.3.0在`research/v2b/model`，与默认B0.2.0隔离。它的`model.b`
 
 10月9日当前开发是独立v5产品Runner(bundle, plugin, socket)和CLI；模型一次加载，输入run_id递增，完整失败不切CPU或重放。正常51RPC/图，无JSON回执/持久提交/逐层导出，诊断插件单独编译。AB1只将native UUID/tags绑到已有OPT38，其余B数值/协议不变。取v5-source、v5-runtime和opt38-platform，原B989不变；CLI和构建命令见[V5/AB](V5_AB_HANDOFF.md)。
 
-AB2常量图修正版PL696→323节点、CPU20图逐位通过；49套scratch容量19559204→757268B是容量，不是每图分配量。AB3量化/shape精简软件173文件已回收，但首组合PL诊断FAIL，当前不发布折叠图或AB2/3运行库为默认路径。源码delta供定位，保留首版Transpose导致3.814697e-6差异及后续板窗失败。
+最新AB2/3单因素生产阶段和20图逐层对照已完成；首窗口整体FAIL来自后续profile1第0层Y比对，不代表前面全部PL失败。独立profile窗1/2线程数值FAIL，4线程PASS。AB6两次20图同v5比较均VALID，候选p50=431.020901/430.067842ms，较较快父版下降1.678801%/1.860703%；logits逐位、CLI和回退PASS，各3332starts。第二窗FP32参考最大漂移5.101189%，整体INCONCLUSIVE，正式PL/CPU验收未通过；第一窗CPU speedup=0.763596，PL仍慢于FP32。AB5 exact-GELU probe有635540个逐位差异/5446656元素、max_abs4.768e-7，候选拒绝。源码delta和复建配方用于接续，已发布默认运行库保持AB1。 scratch19559204→757268B属于容量，非每图分配量。
 
 Windows和ARM CPU的500/full3925质量已通过，跨主机量化logits历史FAIL保留。PL质量/公平性能/模型稳定性尚未通过；20图功能、500质量与正式性能使用各自协议，不用一图CPU smoke放行。
 

@@ -9,7 +9,7 @@
 |C运行时|G0/G1不可变对象与真实C++软件链，之后驻留/记录适配|状态/恢复契约、source/binary/ABI、完整软件异常、板窗与回退结果|
 |UI|capability/代理/前端/导出/取消，现有Node/Python测试|明确真实CPU/PL状态、输入和回执绑定、错误及可观测进度|
 
-目前最小v5和AB1已完成，开发硬件采用38；先定位AB2/3首组合PL诊断失败，再评估常量图/会话scratch/量化精简。AB4新A内核才需要新HLS/RTL/配对平台；AB5需真正热点和等价证据。UI未发布v5 ready，不能沿用ABI4。正式质量/稳定性/PL对CPU与发布仍需独立Gate；不得代填A/C签署或读取C私有留出。
+默认开发运行包用38+v5；AB2/3的4线程完整PL与两次同v5比較通过，源码/复建配方可接续。保持1/2线程数值FAIL、GELU拒绝和第二窗CPU公平性失败。下一工作可针对约146ms session_other及数据通路实测预算；AB4需新HLS/RTL/平台。UI未发布v5 ready，正式质量/稳定性/PL对CPU及发布需独立Gate，不代签A/C、不读C留出。
 
 每个PR应说明：基于哪个baseline SHA；单一机制与源码范围；对shape/寄存器/ABI/wire/数值/恢复的影响；实际执行的验证及NOT RUN；新source/binary/asset SHA；失败/不确定与回退方案。给出可以从此仓库和显式资产重建的命令，不依赖个人完整results树。
 

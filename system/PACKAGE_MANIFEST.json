@@ -11,16 +11,16 @@
       "sha256": "3008ac31b6a6faf8b48c19d342c44ede64826a353bedd616d3702f1149189a7c"
     },
     "AGENTS.md": {
-      "bytes": 3562,
-      "sha256": "87beedf6bd497ab813843276d2ad25d576770945c6bd4a4ea8550669b102bbce"
+      "bytes": 3660,
+      "sha256": "0de70c2f3fb271ad2aaf01e44b1a144d689315fe5a8bc8ce713badfaa2dc5f6e"
     },
     "README.md": {
-      "bytes": 7470,
-      "sha256": "affd73474fa0ead8cb86835dc180b6cf1cabb6113f868770056f785347d706de"
+      "bytes": 7427,
+      "sha256": "1c98593bc72f646f14ca4257ccf880a7e51e17f3656459fc4ebf147993f65f4b"
     },
     "system/ASSETS.lock.json": {
       "bytes": 3295,
-      "sha256": "2638dbdfc9cb8709c9c7d2e12d0d08fd1af3d66e855b4c847de698ba8b1d6bac"
+      "sha256": "9e53ebd13acb28df56b587902bcb0ca941ccedb8ec5f31760280cb0a85905700"
     },
     "system/BASELINE_LOCK.json": {
       "bytes": 2461,
@@ -35,12 +35,12 @@
       "sha256": "24bbaa9814d48ab1f670be63ef5bab23ac719919474b379fa6d0ba77b979191e"
     },
     "system/INCREMENT_VERIFICATION_20261009.json": {
-      "bytes": 1047,
-      "sha256": "d1a3c8f9e25a7d04ae7cda3dda816c3d60d044e3c9cdbeb04efd945abca95f77"
+      "bytes": 723,
+      "sha256": "cbb7afd34be2f1766452a35279e412883e2eb4871f3698b927e9236f90e70f7d"
     },
     "system/README.md": {
-      "bytes": 2063,
-      "sha256": "f3f8e4308821def02511bfa744b0878527ce2395e9da53f03fa889af315ac008"
+      "bytes": 1960,
+      "sha256": "f1d41b8608b343341a80a6e6006b2a8487ff6bad8f6ecea44e489fefad7c0808"
     },
     "system/SOURCE_MAP.json": {
       "bytes": 105215,
@@ -67,8 +67,8 @@
       "sha256": "6e7e76d811a67d141d6983ea37d5d0f554679e4e500ee81e8b28ec5ba5180660"
     },
     "system/docs/EVIDENCE.md": {
-      "bytes": 3677,
-      "sha256": "ba3310c08f0fa6342d7aaba4707571e893ae77aeb1bcd8ef0126c68355dc7f71"
+      "bytes": 3712,
+      "sha256": "ffb9477c4d7ee71b7d2d4bad98bfc2d4f3f29b0f4039d579159d109227efc735"
     },
     "system/docs/F05_HANDOFF.md": {
       "bytes": 4542,
@@ -79,28 +79,28 @@
       "sha256": "48846827434152daf3453f186d793e10b7bd7ad06734ed4f7db06bca01660677"
     },
     "system/docs/MODEL_AND_RUNTIME.md": {
-      "bytes": 4989,
-      "sha256": "b58f2b6b9b834be1a2615d4a47a9b7f724003ac8be881d3440d86c1d2673b062"
+      "bytes": 5374,
+      "sha256": "503981143b6ba5608623046824997e2207b5a7991907f5ba9ebbc6dfbdbba13c"
     },
     "system/docs/OPTIMISATION_AND_ISSUES.md": {
-      "bytes": 5335,
-      "sha256": "48ff633c947427abec6cf3c8175406e8137bba87f46e86b5a81fbea670d0953c"
+      "bytes": 5825,
+      "sha256": "1bb507c8a28632cbc6cb764e7c7fd8a84cc409c6b928b8a96a89814d8693d0d4"
     },
     "system/docs/START_HERE.md": {
-      "bytes": 4082,
-      "sha256": "bef41aa27399ad7f676b48eb4bb4826006a9c9c6697638c46b8f504daf8b3579"
+      "bytes": 4096,
+      "sha256": "2fa6fcc563d18d81f7995186ba74ac2f19fd2e4e24bbd1950af5aec6d9b68568"
     },
     "system/docs/STATUS.md": {
-      "bytes": 6052,
-      "sha256": "6b4d2eb4e297057742ae8668b5ad69357a9e95cf4ccc49967d81b18ce351151d"
+      "bytes": 6257,
+      "sha256": "853497fe5068e30b86dbe4efc704069fdd4e9c494dc7b4d9d2b04b1869129926"
     },
     "system/docs/TEAM_WORKFLOW.md": {
-      "bytes": 2567,
-      "sha256": "aeacfa80460329f1a83ee01686c6ca7c8174a1b5f67f5d5d82533544dff5471b"
+      "bytes": 2588,
+      "sha256": "70cacb4e9839e35347d6ef9acf862d703ff3ad8d097d3d93c38ac65f7ad15b6d"
     },
     "system/docs/V5_AB_HANDOFF.md": {
-      "bytes": 4502,
-      "sha256": "13bf69ac6643657fe22ea5a5501dbf2e60d7e12bb30cee09355d8568ba9bd381"
+      "bytes": 5546,
+      "sha256": "62aa72134c67acebd42911c8025d42590e097acd131428658cd437a451c83f03"
     },
     "system/model/requirements-cpu.txt": {
       "bytes": 128,
@@ -443,8 +443,8 @@
       "sha256": "028f82530d00f43e85f956e8da2bf3b80d4c17bee04f46ac6151f95f7697eb9c"
     },
     "system/evidence/latest/runtime_progress_20261009.json": {
-      "bytes": 27384,
-      "sha256": "65732bbdb9b91ba4c268f3a8e465b450452a828e0cbe01f80dff51a2917ff92b"
+      "bytes": 48492,
+      "sha256": "2ba0237554596633a4cec25896d7cc245e00e9616b974abdb144cb8078e8604c"
     },
     "system/evidence/latest/RW06_decision.json": {
       "bytes": 2315,

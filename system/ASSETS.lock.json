@@ -44,8 +44,8 @@
     },
     "v5-source": {
       "filename": "v5-ab1-source-20261009.tar.gz",
-      "bytes": 116588,
-      "sha256": "843ca0ac583aaadcf8f998667e8a4e86353b2a4832ee08cc4131b1f5c3e116ea",
+      "bytes": 117334,
+      "sha256": "35892555804f43faa670b0221698984da990bbc6feace9629f9efeb2e3407488",
       "destination": "v5-source",
       "release_tag": "team-handoff-20261009",
       "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261009/v5-ab1-source-20261009.tar.gz"

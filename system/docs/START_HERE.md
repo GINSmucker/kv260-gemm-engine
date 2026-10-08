@@ -36,7 +36,7 @@ python -B tools/check.py --model-bundle assets/model/B_MODEL_BUNDLE_V1
 
 > 请先读AGENTS.md、system/docs/START_HERE.md、STATUS.md和BASELINE_LOCK.json，说明实际采用父版、最新证据与我的工作边界。我的方向是A FPGA、B模型、C运行时或UI中的一个。先完成本机检查，提出具体单因素修改并在独立分支实施；未经当前维护者安排不使用共享板卡，保留所有未运行和失败状态。
 
-当前V3/F05及最小v5都已实施；旧F05 REQUEST306.895ms属于历史路径。开发基线已选AB1 OPT38+v5，core约438.385ms。下一边界是[AB2/3首组合PL诊断失败](V5_AB_HANDOFF.md)的定位，之后才讨论常量图/会话scratch/量化精简的采用及AB4/5条件分支；正式G5未签。按[TEAM_WORKFLOW](TEAM_WORKFLOW.md)开展公开离线工作。
+V3/F05及v5已实施，旧REQUEST306.895ms属于历史路径。默认AB1 OPT38+v5 core438.385ms；最新AB2/3两次4线程整图同v5比较有效，431.021/430.068ms。先读[V5/AB结论](V5_AB_HANDOFF.md)，区分早先profile失败、后续生产PASS和第二窗CPU公平性失败，再选择公开PS/数据通路工作；正式G5未签。按[TEAM_WORKFLOW](TEAM_WORKFLOW.md)接续。
 
 需要最新研究实现时，显式下载两个小资产；原模型、IP和采用父版运行资产继续复用10月7日锁：
 

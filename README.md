@@ -1,7 +1,7 @@
 [README.md](https://github.com/user-attachments/files/32999740/README.md)
 # KV260 GEMM Engine
 
-2026-10-09 完整模型协作入口已增量更新到 **[system/](system/README.md)**。正式父版锁保留OPT35a/V2A；当前开发基线为OPT38+最小v5，20图同软件比较有效，core中位438.385ms、较较快35a父版下降50.632%。v5对F05的公平比较仍漂移无效，AB2/3首个组合PL诊断失败并保留，正式发布未放行。首读[当前状态](system/docs/STATUS.md)、[开发锁](system/research/DEVELOPMENT_LOCK.json)及[新接续说明](system/docs/V5_AB_HANDOFF.md)，原模型和旧资产按需复用。
+2026-10-09 完整模型协作入口已增量更新到 **[system/](system/README.md)**。正式父版锁保留OPT35a/V2A；默认开发运行包OPT38+v5，AB1有效core438.385ms、下降50.632%。最新AB2/3两次20图同v5比较有效，431.021/430.068ms；第二窗CPU公平性及早先线程/GELU失败保留，正式发布未放行。首读[状态](system/docs/STATUS.md)、[开发锁](system/research/DEVELOPMENT_LOCK.json)与[接续](system/docs/V5_AB_HANDOFF.md)，旧资产按需复用。
 
 以下保留原作者v0.2通用GEMM介绍，`src/`与`tb/`继续对应该实现，其接口和状态不自动等同`system/`完整模型。
 
