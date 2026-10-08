@@ -16,10 +16,11 @@
   "AB23_first_failure": "RETAINED_NOT_ADOPTED",
   "new_board_HLS_RTL_ARM_experiment": "NOT_RUN",
   "source_qualification": "Original completed experiment evidence; no fresh compiler or hardware Gate",
-  "cold_checkout": "PENDING_AFTER_COMMIT",
+  "cold_checkout": "PASS_NEW_GIT_CLONE_AT_3daea4d",
   "live_board_status": "NOT_CHECKED_BY_UPLOAD",
   "local_entry": "PASS",
   "new_asset_extract": "PASS_ALL_THREE",
   "v5_build_entry": "PREVIEW_PASS_NOT_COMPILED",
-  "execution_channel_note": "Default sandbox call stalled; same native shell read-only unsandboxed probe succeeded; no pending Git commit had occurred"
+  "execution_channel_note": "Default sandbox call stalled; same native shell read-only unsandboxed probe succeeded; no pending Git commit had occurred",
+  "publication": "PENDING_AT_SNAPSHOT_FREEZE"
 }
