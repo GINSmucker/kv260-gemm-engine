@@ -31,6 +31,8 @@ ARM构建由`tools/build_runtime.py`提供，无`--execute`仅准备命令。显
 
 V2B研究B0.3.0在`research/v2b/model`，与默认B0.2.0隔离。它的`model.b`应在独立源根/环境导入，搭配ABI3/wire3的owner/bridge。B3仅保留[Neon头](../research/b3/custom_op/quant_neon.h)和插件候选：AArch64逐bit成立，不能把它当Windows替代，也不能拼接旧观察时延。
 
+最新F05 B0.6.0使用完整模型begin/commit、复用scratch、固定POD/trace与等价NEON。D3五图20429960输出、Xq/sx/Y/logits逐位一致，272 NEON/19拒绝；实际ABI4库与源码由两个F05资产取得，原B989模型不重新打包。运行候选仍未采用；构建入口显式`--variant f05`，不切换默认V2A。详见[F05_HANDOFF](F05_HANDOFF.md)。
+
 Windows和ARM CPU的500/full3925质量已通过，跨主机量化logits历史FAIL保留。PL质量/公平性能/模型稳定性尚未通过；20图功能、500质量与正式性能使用各自协议，不用一图CPU smoke放行。
 
 UI由Node本机工作台、SSH loopback转发和板端代理组成。浏览器入口4173，转发8741→板端8740。界面从实时capability判断可用性；当前V2A/V2B整合UI Gate未完成。历史v1/cacheable S4的通过不等于当前组合通过。启动方式见[UI说明](../ui/README.md)。

@@ -17,7 +17,7 @@ def sha(p):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--variant', choices=('v2a', 'v2b'), default='v2a')
+    p.add_argument('--variant', choices=('v2a', 'v2b', 'f05'), default='v2a')
     p.add_argument('--compiler', default='g++-13')
     p.add_argument('--xrt-include', type=Path, default=Path('/usr/include/xrt'))
     p.add_argument('--uuid-include', type=Path, required=True)
@@ -28,6 +28,39 @@ def main():
     output = ROOT / 'build' / ('runtime_' + a.variant + '_' + str(time.time_ns()))
     source = output / 'source'
     source.mkdir(parents=True)
+    if a.variant == 'f05':
+        base = ROOT / 'assets/f05-source/f05-source'
+        if not (base / 'asset_manifest.json').is_file():
+            raise FileNotFoundError('First acquire/extract f05-source using tools/assets.py')
+        manifest = json.loads((base / 'asset_manifest.json').read_text())
+        for name, item in manifest['files'].items():
+            file = (base / name).resolve()
+            if not file.is_relative_to(base.resolve()) or file.stat().st_size != item['bytes'] or sha(file) != item['sha256']:
+                raise ValueError('F05 source member changed: ' + name)
+        # All copies are new build outputs; frozen sources and their pins stay exact.
+        shutil.copytree(base, source, dirs_exist_ok=True)
+        c = [a.compiler, '-std=c++17', '-O2', '-Wall', '-Wextra', '-Werror', '-pthread']
+        owner = output / 'model_xrt_owner_v4'
+        bridge = output / 'libgemm_backend_v4.so'
+        plugin = output / 'libquant_linear_v4.so'
+        commands = [c + ['-I' + str(a.xrt_include), '-I' + str(a.uuid_include), str(source / 'src/native_owner.cpp'), '-lxrt_coreutil', '-l:libuuid.so.1', '-l:libcrypto.so.3', '-o', str(owner)],
+                    c + ['-fPIC', '-shared', '-fvisibility=hidden', str(source / 'src/backend.cpp'), '-l:libcrypto.so.3', '-o', str(bridge)],
+                    c + ['-DKV4_USE_NEON', '-fPIC', '-shared', '-fvisibility=hidden', '-fno-fast-math', '-ffp-contract=off', '-I' + str(source / 'headers'), str(source / 'b/quant_linear_v4.cpp'), '-L' + str(output), '-Wl,-rpath,$ORIGIN', '-lgemm_backend_v4', '-l:libcrypto.so.3', '-o', str(plugin)]]
+        report = {'scope': 'F05_COMPILE_ONLY_NOT_ADOPTED_NOT_NEW_READY', 'variant': 'f05', 'PL_starts': 0, 'commands': commands}
+        if a.execute:
+            if not a.xrt_include.is_dir() or not a.uuid_include.is_dir():
+                raise FileNotFoundError('Provide existing XRT and uuid SDK headers')
+            for index, command in enumerate(commands):
+                r = subprocess.run(command, capture_output=True)
+                (output / (str(index) + '.log')).write_bytes(r.stdout + r.stderr)
+                if r.returncode:
+                    raise RuntimeError('Compiler failed; preserved output: ' + str(output))
+            report.update(status='PASS_COMPILE_ONLY', binaries={f.name: sha(f) for f in (owner, bridge, plugin)})
+        else:
+            report['status'] = 'PREPARED_NOT_COMPILED'
+        (output / 'build.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+        print(json.dumps(report, indent=2))
+        return
     base = ROOT / 'board/model_backend'
     common_files = ['guard_bytes.h', 'sha256_crypto.h', 'y_snapshot.h']
     if a.variant == 'v2a':

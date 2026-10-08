@@ -12,6 +12,8 @@
 |SAX|7388项差分通过；441次解析代理省24.970ms/18.2%|有效但未达预声明准入门槛，关闭|
 |RW06|34项通过；观察wall691.066→310.100→646.086ms|父均值漂移6.509%，部分组43～51%；INCONCLUSIVE，不接生产|
 |CHK05 native|52start/4238288完整INT64零差异，诊断图3280.125216ms|诊断专用，净观察开销未量化，不签性能|
+|V3 G4|G1/G2/G3通过，候选中位3219.059ms；父逐图漂移9.186/17.365/7.026%|比较INCONCLUSIVE，软件1478.581/C1013.794/B66.161ms超预算，触发F05独立合同|
+|F05 D5 10月8日|完整结果6445.621→1465.885→6663.106ms，父/CPU控制有效，减少77.635%|软件/C/B下界798.998/422.725/35.973ms仍超600/100/30，G5关闭、保持正式父版|
 
 最新CHK05原互斥账本精确闭合：API内native外2250.468097、host wait646.051318、copy/sync18.216809、native其他75.544514、量化/反量化61.404203、PS其他228.440275ms。API标签过宽，含B准备和回执摘要；应重分精确B/C边界。
 
@@ -19,7 +21,7 @@ native新观测共5385 poll、5336次50µs sleep；poll/drain wall645.897957ms�
 
 CF1正常路径静态审阅确认：owner admission和FrameReceiver重复解析，同一私有请求/结果多次校验/序列化/摘要，每层重复读取固定W，正常2RPC/98连接与98热fsync；开启trace时Y静态8次全量SHA。这些是准确快照的代码推导，不冒充实测调用数。未发现C每层创建大量业务线程或成功路径固定等待数秒。
 
-下一步按[C重构G0/G1](C_RUNTIME_REFACTOR.md)建立私有不可变对象、单次严格解析、分层wall/线程CPU和端到端计时。首版两次持久提交与原恢复检查保留；改变持久化粒度需要独立契约。之后才做驻留连接、W任务快照、B scratch/trace适配及新软件下OPT38组合。
+G0～G3、驻留连接、W快照、trace组织与F05独立合同已经实施。F05将98层级热同步改为每图BEGIN/COMMIT两次，唯一owner日志writer，失败poison/完整重开/不重放语义另行验证，不能沿用旧恢复声明。下一工作围绕REQUEST非native306.895ms细分；完整验证46.458ms、ACK47.001ms等仍在C下界内。边界包括owner工作、摘要/复制、传输与调度，不称纯网络。详见[F05_HANDOFF](F05_HANDOFF.md)。
 
 当前约646ms host wait已超过旧公平FP32约313ms，单独C优化也不保证达标。不能把旧OPT38 wait、旧B3量化和新C成本相加，形成虚拟模型速度。
 
@@ -28,3 +30,5 @@ CF1正常路径静态审阅确认：owner admission和FrameReceiver重复解析�
 正式目标保持同板同窗PL完整模型p50小于公平ARM FP32、p95不高于ARM，再进入PL质量和模型稳定性。三图筛选不能签p95，诊断构建不能进入性能窗口，父漂移超限保留INCONCLUSIVE。
 
 原始入口：[native账本](../evidence/latest/native_accounting.json)、[RW06](../evidence/latest/RW06_decision.json)、[CF1](../evidence/cf1/comparison.json)、[同步账本](../evidence/diagnostic/sync_accounting.json)、[源码审阅](../evidence/latest/C_runtime_audit.json)。
+
+最新原始小回执包括D3/D4/D5/V3成本和最终root，见[10月8日汇总](../evidence/latest/runtime_progress_20261008.json)。F05精确fsync持续时间未报告，BEGIN/COMMIT括号提供上下界；不得写成“本轮fsync精确耗时”，也不从旧V3时间跨身份相减。三图资源稳定不证明205模型/10045starts长稳。

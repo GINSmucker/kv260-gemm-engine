@@ -25,6 +25,22 @@
       "destination": "model",
       "release_tag": "team-handoff-20261007",
       "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/B_MODEL_BUNDLE_V1_20261001.tar.gz"
+    },
+    "f05-source": {
+      "filename": "f05-source-20261008.tar.gz",
+      "bytes": 468169,
+      "sha256": "b9050f4ba12af93a9cff167dc24c845a2bd3f3aa23a5460baac4e016ce4a67dc",
+      "destination": "f05-source",
+      "release_tag": "team-handoff-20261008",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261008/f05-source-20261008.tar.gz"
+    },
+    "f05-runtime": {
+      "filename": "f05-runtime-20261008.tar.gz",
+      "bytes": 217046,
+      "sha256": "56dcd434513c6f517f9113208b04f793792e2d9d513f7b9543c0117b28e9f161",
+      "destination": "f05-runtime",
+      "release_tag": "team-handoff-20261008",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261008/f05-runtime-20261008.tar.gz"
     }
   }
 }

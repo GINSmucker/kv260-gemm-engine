@@ -9,7 +9,7 @@
 |C运行时|G0/G1不可变对象与真实C++软件链，之后驻留/记录适配|状态/恢复契约、source/binary/ABI、完整软件异常、板窗与回退结果|
 |UI|capability/代理/前端/导出/取消，现有Node/Python测试|明确真实CPU/PL状态、输入和回执绑定、错误及可观测进度|
 
-目前优先C G0/G1；A可离线为新软件下OPT38组合准备，B可以定位真实计时边界与等价 scratch/trace，UI跟踪新契约。硬件新DUT或数值变化需重新履行独立Gate；不得代填A/C签署或读取C私有留出。
+目前V3和F05已完成本轮实现，优先细分F05 REQUEST非native约306.895ms及验证/ACK/B剩余成本；A可离线准备但G5关闭，不能直接接OPT38上板。B可核对回执/trace预算，UI跟踪ABI4新契约且其真实集成NOT RUN。硬件新DUT或数值变化需重新履行独立Gate；不得代填A/C签署或读取C私有留出。
 
 每个PR应说明：基于哪个baseline SHA；单一机制与源码范围；对shape/寄存器/ABI/wire/数值/恢复的影响；实际执行的验证及NOT RUN；新source/binary/asset SHA；失败/不确定与回退方案。给出可以从此仓库和显式资产重建的命令，不依赖个人完整results树。
 

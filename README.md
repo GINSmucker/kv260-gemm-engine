@@ -1,7 +1,7 @@
 [README.md](https://github.com/user-attachments/files/32999740/README.md)
 # KV260 GEMM Engine
 
-2026-10-07 完整模型协作入口已整理到 **[system/](system/README.md)**。新成员和零历史上下文Codex从[接手步骤](system/docs/START_HERE.md)、[当前状态](system/docs/STATUS.md)及[身份锁](system/BASELINE_LOCK.json)开始；模型/板测/IP资产按需从协作快照Release下载。当前采用父版为OPT35a/V2A，OPT38与V2B为独立研究候选；CHK05为诊断，最终整网性能尚未通过。
+2026-10-08 完整模型协作入口已增量更新到 **[system/](system/README.md)**。新成员和零历史上下文Codex从[接手步骤](system/docs/START_HERE.md)、[当前状态](system/docs/STATUS.md)及[身份锁](system/BASELINE_LOCK.json)开始。F05已完成功能/恢复及有效三图比较，完整结果中位约1.466秒、较两侧父版均值减少77.635%，但软件/C/B预算全部失败、G5关闭；采用父版仍OPT35a/V2A。F05小型源码/运行候选按需下载，原模型/IP/基础运行资产复用10月7日Release。
 
 以下保留原作者v0.2通用GEMM介绍，`src/`与`tb/`继续对应该实现，其接口和状态不自动等同`system/`完整模型。
 

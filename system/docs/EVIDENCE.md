@@ -18,3 +18,5 @@
 本次交付检查记录在`DELIVERY_VERIFICATION.json`。它只证明公开文件身份、便携入口及本机软件接手，不产生新实板、HLS/RTL、性能、质量或正式发布Gate。
 
 V2A `software_core.h`是可选历史数学测试适配器，编译宏保护阻止它进入正常owner。它不是父版实际ARM编译输入，也未获得当前平台的新软件集成Gate；保留它是为了显式测试include依赖。默认构建不定义该测试宏。
+
+10月8日新增[公共进度汇总](../evidence/latest/runtime_progress_20261008.json)与[F05_LOCK](../research/F05_LOCK.json)。汇总逐份记录原始路径/完整SHA与JSON值，不改旧V3/CHK05/CF1回执。F05最终S0沿用了旧模板的candidate_status字段，它不代表最新实现Gate；实际阶段以D3/D4/D5和STATUS为准。大原始证据仍LOCAL_ONLY，私有C材料不读取或上传。
