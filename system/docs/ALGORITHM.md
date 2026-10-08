@@ -24,4 +24,6 @@ OPT38采用128MAC、W16bank、完整K的X行条带驻留，在N循环之外只�
 
 现有OPT35a平台WNS1.836ns/WHS0.010ns，OPT38平台WNS2.473ns/WHS0.010ns。HLS时钟估计9ns、循环II、top Interval、RTL延迟、host wait与实板kernel cycles分别表达；当前模型实板cycles不可用。OPT38旧整网比较仍无效，不能从128MAC、RTL代理202.499640ms或旧wait197.777ms宣称模型加速。
 
+10月9日已有新的同软件AB1验证：同v5的35a→38→35a二十图core887.999602→438.384590→888.105542ms，比较有效，下降50.632344%，当前开发硬件采用38；原旧V2A比较保持其INCONCLUSIVE。这不是新的HLS/器件实现，复用原38配对包与独立A2；正式PL/CPU加速、质量/稳定性/发布仍未签。见[开发锁](../research/DEVELOPMENT_LOCK.json)。
+
 P1 Naive冻结和历史F8不在本子项目中重新实现或改写；原作者v0.2通用尺寸接口也不自动兼容此五shape ABI。

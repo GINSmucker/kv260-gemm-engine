@@ -41,6 +41,30 @@
       "destination": "f05-runtime",
       "release_tag": "team-handoff-20261008",
       "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261008/f05-runtime-20261008.tar.gz"
+    },
+    "v5-source": {
+      "filename": "v5-ab1-source-20261009.tar.gz",
+      "bytes": 116588,
+      "sha256": "843ca0ac583aaadcf8f998667e8a4e86353b2a4832ee08cc4131b1f5c3e116ea",
+      "destination": "v5-source",
+      "release_tag": "team-handoff-20261009",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261009/v5-ab1-source-20261009.tar.gz"
+    },
+    "v5-runtime": {
+      "filename": "v5-ab1-runtime-20261009.tar.gz",
+      "bytes": 82179,
+      "sha256": "7a972df6385f91854039df07fd928939ebe8b93c76b40fb24298c377813cd95d",
+      "destination": "v5-runtime",
+      "release_tag": "team-handoff-20261009",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261009/v5-ab1-runtime-20261009.tar.gz"
+    },
+    "opt38-platform": {
+      "filename": "opt38-paired-platform-20261009.tar.gz",
+      "bytes": 794913,
+      "sha256": "9d422c0c0ed68378812d2dab3f060bc603b8e2794200b58662956f3c65f55ba8",
+      "destination": "opt38-platform",
+      "release_tag": "team-handoff-20261009",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261009/opt38-paired-platform-20261009.tar.gz"
     }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "schema": "AB1_OPT38_V5_DEVELOPMENT_BASELINE_NOT_FORMAL_RELEASE",
+  "date": "2026-10-09",
+  "formal_parent": "system_a3_20261005_02",
+  "development_baseline": "AB1_OPT38_V5",
+  "build_id": "v5_ab1_build_20261009_01",
+  "paired_manifest_sha256": "d43d1b8f6c3a1c8c13e1a97845a7d64ccabb73f970b5eee4be5d806b1b7d07f9",
+  "observer_tags": [
+    3346164097,
+    3039215366
+  ],
+  "B_manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+  "owner_sha256": "34db01789b21ec878ba7edb45da4e8f238cb31035ee41df853f15a7f356e959a",
+  "plugin_sha256": "9bb3e16a42d0a45dd3d28481a9fe1b363698c719760e0ad77f1501f1b20592b7",
+  "diagnostic_owner_sha256": "e5c54edc80d4d1944ba958edf2919273b2aa55188fc197def0fbd36df0664016",
+  "diagnostic_plugin_sha256": "262c4e6c09589cb6e0d33ace7421caa3cbcbcfd5e826c49223352eb5a3c17b53",
+  "metadata_sha256": "f6801431a9507ee80a4ce21fb349760b924e0067bd82daee0a3214f71ed777cc",
+  "comparison": {
+    "status": "VALID_COMPARISON",
+    "core_p50_ms": {
+      "before": 887.9996015,
+      "candidate": 438.3845895,
+      "after": 888.105542
+    },
+    "reduction_percent": 50.63234389300568,
+    "parent_drift_max_percent": 3.7914756013263773,
+    "CPU_drift_max_percent": 3.6106836628680528
+  },
+  "limits": "Development adoption only; no formal PL/CPU speedup, p95, quality, stability, v5 UI or release gate; AB2/3 not adopted"
+}

@@ -3,8 +3,8 @@
 - Start with `system/docs/START_HERE.md`, `system/docs/STATUS.md`, and `system/BASELINE_LOCK.json`.
 - `src/` and `tb/` are the original v0.2 engine. The integrated model work lives in `system/`; keep their identities distinct.
 - Adopted development parent: `system_a3_20261005_02`, OPT35a + V2A. OPT38 and V2B CF1 are explicitly named research candidates.
-- Latest F05 ABI4/wire4 has passed D1-D4 function/recovery and a valid three-image D5 comparison, but all software cost gates failed. G5 is closed and the formal V2A parent is retained.
-- V3 G0-G3 and F05 D0-D5 are implemented; older CF1/V3/OPT38 inconclusive results stay historical. Read system/docs/F05_HANDOFF.md for the current research source and next cost boundary.
+- Formal parent remains system_a3_20261005_02. Current development hardware is AB1 OPT38 + minimal v5: 20-image same-software comparison valid, core p50 438.385ms. Read system/research/DEVELOPMENT_LOCK.json and system/docs/V5_AB_HANDOFF.md.
+- v5 software budgets pass in diagnostics; its comparison against F05 remains inconclusive. AB1 development adoption does not sign formal PL/CPU speedup, p95, quality, stability, UI or release. AB2/3 software passed, but first combined PL diagnostic failed layer-0 Y comparison and is not adopted.
 - Read the domain document before editing hardware, numerical software, runtime, or UI. State the parent, scope, required checks, and unrun checks.
 - Use the host's native shell. Windows uses PowerShell 7. AArch64 runtime builds require Linux on the board or an explicitly configured cross toolchain.
 - Discover tools once. Use an existing Python 3.12 environment, not an assumed Conda base. Do not install tools or change global configuration automatically.

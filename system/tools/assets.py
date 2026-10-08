@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('asset', choices=('board-runtime', 'ip-rebuild', 'model', 'f05-source', 'f05-runtime'))
+    p.add_argument('asset', choices=('board-runtime', 'ip-rebuild', 'model', 'f05-source', 'f05-runtime', 'v5-source', 'v5-runtime', 'opt38-platform'))
     p.add_argument('--download', action='store_true')
     p.add_argument('--archive', type=Path)
     p.add_argument('--extract', action='store_true')

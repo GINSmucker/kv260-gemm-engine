@@ -25,6 +25,8 @@ V2B CF1研究接口为ABI3/wire3，独立[头文件](../board/model_backend/v2b/
 
 10月8日F05为独立ABI4/wire4、MODEL_TRANSACTION_V1。128B固定小端header/完整body SHA，唯一owner writer、4驻留连接/1执行线程、49层逐序号及一个未ACK Y。整图BEGIN在首次start前真实持久并读回，49层ACK完成和真实safe后COMMIT写入49完整native、7448B trace与4000B logits，成功晚于提交完成。正常每图2热fsync，层间结果易失；owner失效后不重放旧epoch。旧ABI2/3、ready或配置不能授权此接口，详见[F05合同与恢复](F05_HANDOFF.md)。
 
+当前开发v5为独立32B little-endian wire5，HELLO一次、BEGIN+49RUN+END，一计算连接和一管理连接。无逐层SHA/proc身份读取/ACK/持久账本/JSON；下一完整RUN隐式消费旧Y，只能QUERY当前run的最近Y，重复RUN拒绝，传输失败关闭图且不重放。正常STOP延后至真实DMA完成，未知完成保留BO。它不承诺F05原日志/COMMIT重开保证。生产和诊断二进制分开，源码b_api.h及protocol.h随v5-source取得；接口不能混装，详见[V5_HANDOFF](V5_AB_HANDOFF.md)。
+
 错误及恢复约束：SUB同步失败零start；COMP失败不向调用者交付Y；RESULT/ACK丢失保留原ID；错身份/跨任务/坏长度/重复key/NUL/别名等拒绝；一个未ACK结果不能被新请求覆盖；STOP只在真实CU/AXI静止后成功。取消是等安全边界退出，不强杀硬件所有者。
 
 每次接口或硬件变更都需要自己的identity和Gate，精确未变模块证明可明确复用；不冒用旧A2或签署。公开旧回执引用路径的映射见[SOURCE_MAP](../SOURCE_MAP.json)，私有留出只提供汇总，详细审计仍由C维护者保管。

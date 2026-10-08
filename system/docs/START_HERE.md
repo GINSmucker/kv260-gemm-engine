@@ -36,7 +36,7 @@ python -B tools/check.py --model-bundle assets/model/B_MODEL_BUNDLE_V1
 
 > 请先读AGENTS.md、system/docs/START_HERE.md、STATUS.md和BASELINE_LOCK.json，说明实际采用父版、最新证据与我的工作边界。我的方向是A FPGA、B模型、C运行时或UI中的一个。先完成本机检查，提出具体单因素修改并在独立分支实施；未经当前维护者安排不使用共享板卡，保留所有未运行和失败状态。
 
-当前G0～G3首版和F05 D0～D5已经完成，不再把“开始G0/G1”当下一步。下一边界是[F05 REQUEST非native约306.895ms](F05_HANDOFF.md)的真实细分，以及完整验证/ACK/B回执剩余工作；三预算未达标，G5仍关闭。其他成员按[TEAM_WORKFLOW](TEAM_WORKFLOW.md)独立推进公开离线工作。
+当前V3/F05及最小v5都已实施；旧F05 REQUEST306.895ms属于历史路径。开发基线已选AB1 OPT38+v5，core约438.385ms。下一边界是[AB2/3首组合PL诊断失败](V5_AB_HANDOFF.md)的定位，之后才讨论常量图/会话scratch/量化精简的采用及AB4/5条件分支；正式G5未签。按[TEAM_WORKFLOW](TEAM_WORKFLOW.md)开展公开离线工作。
 
 需要最新研究实现时，显式下载两个小资产；原模型、IP和采用父版运行资产继续复用10月7日锁：
 
@@ -46,3 +46,13 @@ python -B tools/assets.py f05-runtime --download --extract
 ```
 
 源码在`assets/f05-source/f05-source`，正常ARM编译配方和公开测试均随包，编译入口见F05_HANDOFF。运行包为已资格验证但未采用的ABI4候选，不能与ABI2/3或旧ready混装。
+
+最新开发源、生产/诊断运行候选和已有OPT38配对产物只新增三个小资产，原139.55MiB模型复用：
+
+```powershell
+python -B tools/assets.py v5-source --download --extract
+python -B tools/assets.py v5-runtime --download --extract
+python -B tools/assets.py opt38-platform --download --extract
+```
+
+正式父版锁与开发锁分别读取。v5是独立最小协议，语义不同于F05持久事务；不能混接ABI或声称仍有旧日志恢复保证。镜像/库取得不授权加载。实际构建用显式`--variant v5-ab1`，AB2/3 delta仅供诊断，不默认合入。

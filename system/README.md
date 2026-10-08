@@ -2,7 +2,7 @@
 
 这里提供队友接手所需的完整层GEMM源码、实际运行时、DeiT数值软件、界面和精简证据。首先阅读[接手步骤](docs/START_HERE.md)及[当前状态](docs/STATUS.md)。文件身份固定在[BASELINE_LOCK](BASELINE_LOCK.json)、[SOURCE_MAP](SOURCE_MAP.json)和[PACKAGE_MANIFEST](PACKAGE_MANIFEST.json)。
 
-当前采用父版为 **OPT35a + V2A 的 system_a3_20261005_02**。10月8日F05 ABI4/wire4的D1～D4功能/恢复通过；D5三图比较有效，完整结果中位1465.884971ms、较两侧父中位均值减少77.635%。软件/C/B成本下界仍超600/100/30ms，G5关闭，未替换正式父版。源码和运行候选入口见[F05接续](docs/F05_HANDOFF.md)。正式性能、PL质量、稳定性与发布Gate仍未通过。
+正式父版锁为 **OPT35a + V2A 的 system_a3_20261005_02**，保持原身份。当前开发基线为 **AB1 OPT38 + 最小v5**：20图同软件比较有效，生产core中位438.384590ms、下降50.632344%，开发硬件采用38。最小v5软件目标在独立诊断中达到；v5对F05的公平比较仍INCONCLUSIVE，正式PL/CPU性能、质量、稳定性/UI和发布未签。AB2/3仅软件资格，首组合PL诊断第0层Y对比FAIL，不并入默认开发路径。见[V5/AB接续](docs/V5_AB_HANDOFF.md)及[开发锁](research/DEVELOPMENT_LOCK.json)。
 
 |需要了解|入口|
 |---|---|
@@ -13,7 +13,7 @@
 |模型、量化、CPU/PL调用|[MODEL_AND_RUNTIME](docs/MODEL_AND_RUNTIME.md)|
 |测量口径、已关闭实验、下一步|[OPTIMISATION_AND_ISSUES](docs/OPTIMISATION_AND_ISSUES.md)|
 |多端分工与整合|[TEAM_WORKFLOW](docs/TEAM_WORKFLOW.md)|
-|C重构进展与下一边界|[C_RUNTIME_REFACTOR](docs/C_RUNTIME_REFACTOR.md)、[F05](docs/F05_HANDOFF.md)|
+|当前开发实现与边界|[V5/AB](docs/V5_AB_HANDOFF.md)、[重构历史](docs/C_RUNTIME_REFACTOR.md)、[F05历史](docs/F05_HANDOFF.md)|
 |原始公共回执的用途|[EVIDENCE](docs/EVIDENCE.md)|
 
 源码和小回执随Git拉取；[资产锁](ASSETS.lock.json)指定板测包、IP包和完整冻结模型，按需下载。它们是协作开发快照，不是正式性能发布。

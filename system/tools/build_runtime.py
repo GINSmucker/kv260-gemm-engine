@@ -17,7 +17,7 @@ def sha(p):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--variant', choices=('v2a', 'v2b', 'f05'), default='v2a')
+    p.add_argument('--variant', choices=('v2a', 'v2b', 'f05', 'v5-ab1'), default='v2a')
     p.add_argument('--compiler', default='g++-13')
     p.add_argument('--xrt-include', type=Path, default=Path('/usr/include/xrt'))
     p.add_argument('--uuid-include', type=Path, required=True)
@@ -62,6 +62,36 @@ def main():
         print(json.dumps(report, indent=2))
         return
     base = ROOT / 'board/model_backend'
+    if a.variant == 'v5-ab1':
+        base = ROOT / 'assets/v5-source/v5-source'
+        if not (base / 'asset_manifest.json').is_file():
+            raise FileNotFoundError('First acquire/extract v5-source using tools/assets.py')
+        manifest = json.loads((base / 'asset_manifest.json').read_text())
+        for name, item in manifest['files'].items():
+            file = (base / name).resolve()
+            if not file.is_relative_to(base.resolve()) or file.stat().st_size != item['bytes'] or sha(file) != item['sha256']:
+                raise ValueError('v5 source member changed: ' + name)
+        shutil.copytree(base, source, dirs_exist_ok=True)
+        c = [a.compiler, '-std=c++17', '-O2', '-Wall', '-Wextra', '-Werror', '-pthread']
+        owner = output / 'native_owner'
+        plugin = output / 'libquant_v5.so'
+        commands = [c + ['-I' + str(a.xrt_include), '-I' + str(a.uuid_include), str(source / 'owner.cpp'), str(source / 'kernel.cpp'), '-lxrt_coreutil', '-l:libuuid.so.1', '-l:libcrypto.so.3', '-o', str(owner)],
+                    c + ['-fPIC', '-shared', '-fvisibility=hidden', '-fno-fast-math', '-ffp-contract=off', '-I' + str(source / 'headers'), str(source / 'b_plugin.cpp'), str(source / 'client.cpp'), '-o', str(plugin)]]
+        report = {'scope': 'AB1_OPT38_V5_COMPILE_ONLY_NOT_FORMAL_RELEASE', 'variant': a.variant, 'PL_starts': 0, 'commands': commands}
+        if a.execute:
+            if not a.xrt_include.is_dir() or not a.uuid_include.is_dir():
+                raise FileNotFoundError('Provide existing XRT and uuid SDK headers')
+            for index, command in enumerate(commands):
+                r = subprocess.run(command, capture_output=True)
+                (output / (str(index) + '.log')).write_bytes(r.stdout + r.stderr)
+                if r.returncode:
+                    raise RuntimeError('Compiler failed; preserved output: ' + str(output))
+            report.update(status='PASS_COMPILE_ONLY', binaries={f.name: sha(f) for f in (owner, plugin)})
+        else:
+            report['status'] = 'PREPARED_NOT_COMPILED'
+        (output / 'build.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+        print(json.dumps(report, indent=2))
+        return
     common_files = ['guard_bytes.h', 'sha256_crypto.h', 'y_snapshot.h']
     if a.variant == 'v2a':
         common_files += [f.name for f in base.glob('stream_v2a_*.h')]

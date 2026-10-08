@@ -32,3 +32,5 @@ Host kv260
 加载与运行链：维护者安排临时runtime权限和配对overlay→唯一owner持有BO/CU→B通过C调用→完成/排空/结果消费→SAFE_STOP→确认无设备用户、CU和AXI静止→回退starter。UNKNOWN状态保留owner/BO，不强杀、不重发或卸载。boot/QSPI/reboot/reset与系统安装另行授权。
 
 回退后的starter、无ZOCL/render、XRT0是预期状态。每窗仍有4条已知属性告警；不能把它解释为全面泄漏修复或任意长期切换安全。
+
+当前开发AB1使用原OPT38配对清单d43d1b8f…d07f9，与基础35a运行包的BIN/DTBO/metadata不同。本次新增opt38-platform按需资产并与v5源码硬编码UUID/tags匹配；旧驱动仍复用，不能把35a的metadata或bit混入38。新资产只是文件，实际板卡安排、运行库/模型/owner与boot、AXI静止/回退仍由维护者固定。
