@@ -8,6 +8,7 @@
 *.tcl text eol=lf
 *.xdc text eol=lf
 *.cfg text eol=lf
-*.md text eol=lf
+# Historical Markdown files include both CRLF and LF; preserve their bytes.
+*.md -text
 *.json text eol=lf
 *.csv text eol=lf
