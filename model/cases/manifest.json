@@ -1,0 +1,6 @@
+{
+  "schema": "kv260-gemm-cases-v1",
+  "status": "NOT_AVAILABLE",
+  "cases": [],
+  "note": "Small reproducible tensors and hashes will be added after B confirms the canonical test set."
+}
