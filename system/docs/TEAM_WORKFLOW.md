@@ -1,12 +1,12 @@
 # 多端协作与整合
 
-各成员在独立`codex/`分支工作，共同基线为[BASELINE_LOCK](../BASELINE_LOCK.json)。通过Git/PR同步源码、状态和接口；共享KV260由当前维护者串行安排，不能多个Codex同时占板。
+先用[分支与版本导航](../../BRANCH_GUIDE.md)选择入口：当前完整模型从team-handoff分支接手，F8与G0/G1分支用于历史闭环和早期软件研究。各成员在独立`codex/`分支工作，正式基线见[BASELINE_LOCK](../BASELINE_LOCK.json)，开发组合另读DEVELOPMENT_LOCK。通过Git/PR同步；共享KV260由当前维护者串行安排。
 
 |方向|可独立推进|给集成方的交付|
 |---|---|---|
 |A FPGA|公开TB、HLS/RTL、bank/访存/微核研究|新source/contract/IP manifest、数值/非法请求/AXI/时序/资源和未运行项|
 |B模型|CPU等价、PS/ORT定位、量化/反量化及scratch/trace组织|图/数值身份、CPU/INT64/错误路径、依赖与精确计时schema|
-|C运行时|G0/G1不可变对象与真实C++软件链，之后驻留/记录适配|状态/恢复契约、source/binary/ABI、完整软件异常、板窗与回退结果|
+|C运行时|当前v5公开协议/错误路径、C与owner边界成本；旧G0/G1机制单独评审移植|状态/恢复契约、source/binary/ABI、完整软件异常、板窗与回退结果|
 |UI|capability/代理/前端/导出/取消，现有Node/Python测试|明确真实CPU/PL状态、输入和回执绑定、错误及可观测进度|
 
 默认开发运行包用38+v5；AB2/3的4线程完整PL与两次同v5比较通过，源码/复建配方可接续。保持1/2线程数值FAIL、GELU拒绝和第二窗CPU公平性失败。下一工作可针对约146ms session_other及数据通路实测预算；AB4需新HLS/RTL/平台。UI未发布v5 ready，正式质量/稳定性/PL对CPU及发布需独立Gate，不代签A/C、不读C留出。

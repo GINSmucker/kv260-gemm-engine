@@ -1,8 +1,8 @@
 # Team working rules
 
-- Start with `system/docs/START_HERE.md`, `system/docs/STATUS.md`, and `system/BASELINE_LOCK.json`.
+- Select the appropriate branch with [BRANCH_GUIDE.md](BRANCH_GUIDE.md), then read `system/docs/START_HERE.md`, `system/docs/STATUS.md`, and `system/BASELINE_LOCK.json`.
 - `src/` and `tb/` are the original v0.2 engine. The integrated model work lives in `system/`; keep their identities distinct.
-- Adopted development parent: `system_a3_20261005_02`, OPT35a + V2A. OPT38 and V2B CF1 are explicitly named research candidates.
+- Formal frozen parent: `system_a3_20261005_02`, OPT35a + V2A. Its baseline lock is distinct from the current OPT38/v5 development lock; use the identity appropriate to the selected branch.
 - Formal parent remains system_a3_20261005_02. Current development hardware is AB1 OPT38 + minimal v5: 20-image same-software comparison valid, core p50 438.385ms. Read system/research/DEVELOPMENT_LOCK.json and system/docs/V5_AB_HANDOFF.md.
 - v5 diagnostics meet budgets; comparison against F05 remains inconclusive. AB1 is the shipped default development runtime. AB2/3 subsequent 4-thread full PL production passed two same-v5 development comparisons (431.021/430.068 ms). Retain initial profile1/Y and 1/2-thread failures, second AB6 CPU fairness failure and GELU rejection. No formal speedup, quality, stability, UI or release Gate.
 - Read the domain document before editing hardware, numerical software, runtime, or UI. State the parent, scope, required checks, and unrun checks.

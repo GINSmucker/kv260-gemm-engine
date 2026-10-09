@@ -1,22 +1,22 @@
 {
   "schema": "handoff_files_v1",
-  "scope": "Public Oct9 handoff including complete AB6; formal and shipped development baselines distinct",
+  "scope": "Public model handoff plus readable branch navigation; documents updated Oct9; code and asset identities unchanged",
   "files": {
     ".gitattributes": {
-      "bytes": 501,
-      "sha256": "984664f5aa3165c0ef08459120cb2f610e78ba4d9b1731721b243f60c2bf435a"
+      "bytes": 529,
+      "sha256": "03745d5c9c1cd163e9884907205717c9a9d87faa8d278f1c1c78401bd3f5accc"
     },
     ".gitignore": {
       "bytes": 514,
       "sha256": "3008ac31b6a6faf8b48c19d342c44ede64826a353bedd616d3702f1149189a7c"
     },
     "AGENTS.md": {
-      "bytes": 3660,
-      "sha256": "0de70c2f3fb271ad2aaf01e44b1a144d689315fe5a8bc8ce713badfaa2dc5f6e"
+      "bytes": 3791,
+      "sha256": "66bd9e08da933c3184b725085a62747f0e0e8048dc73502e343d1b708141cdf7"
     },
     "README.md": {
-      "bytes": 7427,
-      "sha256": "1c98593bc72f646f14ca4257ccf880a7e51e17f3656459fc4ebf147993f65f4b"
+      "bytes": 7623,
+      "sha256": "65e35aa8ea08b70f90b786dd0bdf38a27a934e5f73486c097d1b27162865d78f"
     },
     "system/ASSETS.lock.json": {
       "bytes": 3295,
@@ -95,8 +95,8 @@
       "sha256": "853497fe5068e30b86dbe4efc704069fdd4e9c494dc7b4d9d2b04b1869129926"
     },
     "system/docs/TEAM_WORKFLOW.md": {
-      "bytes": 2588,
-      "sha256": "fb90eee98c6576bff84a598f39dedb303bb6a7252898c1a8d8b577212d74770c"
+      "bytes": 2765,
+      "sha256": "cce330374fa51cd66be857a9c627d66dac923d80af5fb411ac6d196e7f109612"
     },
     "system/docs/V5_AB_HANDOFF.md": {
       "bytes": 5546,
@@ -945,6 +945,10 @@
     "system/vendor/plugin/sha256_crypto.h": {
       "bytes": 791,
       "sha256": "adcbda7981d824fa5baf7e69e25d0ccd6514462da243f0fd3b9b20577de9b754"
+    },
+    "BRANCH_GUIDE.md": {
+      "bytes": 8138,
+      "sha256": "0889fe8f42a04e4afab21686c5d2740b0e2e2497e7b1a0ddbfce3c147faa873b"
     }
   }
 }
