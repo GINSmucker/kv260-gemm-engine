@@ -1,6 +1,6 @@
 {
   "schema": "handoff_files_v1",
-  "scope": "Public model handoff plus readable branch navigation; documents updated Oct9; code and asset identities unchanged",
+  "scope": "Public model handoff with frozen dataset references and helpers; JPEGs only in explicit Release asset",
   "files": {
     ".gitattributes": {
       "bytes": 529,
@@ -15,12 +15,12 @@
       "sha256": "66bd9e08da933c3184b725085a62747f0e0e8048dc73502e343d1b708141cdf7"
     },
     "README.md": {
-      "bytes": 7623,
-      "sha256": "65e35aa8ea08b70f90b786dd0bdf38a27a934e5f73486c097d1b27162865d78f"
+      "bytes": 7761,
+      "sha256": "2e166f42ed01cadbb88b590e9b3df4c092a4d634686d3e71e72185d48309a65e"
     },
     "system/ASSETS.lock.json": {
-      "bytes": 3295,
-      "sha256": "9e53ebd13acb28df56b587902bcb0ca941ccedb8ec5f31760280cb0a85905700"
+      "bytes": 3700,
+      "sha256": "56ac8065fc6a8fb193c5a508b46e81636e7dbf91c48b660f1b3a9664cc4d0f91"
     },
     "system/BASELINE_LOCK.json": {
       "bytes": 2461,
@@ -39,8 +39,8 @@
       "sha256": "c08f4a442fd9ff55fc373d88aa9c3d2ac07b33c620319483cde18c47b28c0ea7"
     },
     "system/README.md": {
-      "bytes": 1960,
-      "sha256": "f1d41b8608b343341a80a6e6006b2a8487ff6bad8f6ecea44e489fefad7c0808"
+      "bytes": 2117,
+      "sha256": "0451f6912cf3f9c2467ee42e49f56f6cc86d3356eb68a2574d6618c2a48765ca"
     },
     "system/SOURCE_MAP.json": {
       "bytes": 105215,
@@ -87,8 +87,8 @@
       "sha256": "1bb507c8a28632cbc6cb764e7c7fd8a84cc409c6b928b8a96a89814d8693d0d4"
     },
     "system/docs/START_HERE.md": {
-      "bytes": 4096,
-      "sha256": "2fa6fcc563d18d81f7995186ba74ac2f19fd2e4e24bbd1950af5aec6d9b68568"
+      "bytes": 4259,
+      "sha256": "437dbcccb72565a4c10ef2393d5ad13513dd63982a7973b48cdfbd81a8c9a1d4"
     },
     "system/docs/STATUS.md": {
       "bytes": 6257,
@@ -123,8 +123,8 @@
       "sha256": "502c1ab5803873e63ef9f65f2e07f777c0001ab96585b03d2deef74ba166c862"
     },
     "system/tools/assets.py": {
-      "bytes": 3239,
-      "sha256": "7c63fc4ae3c29ef331f63d1e357e17a8a9f3ef0a3167b1e20202b9d0c1641dfc"
+      "bytes": 3250,
+      "sha256": "063a6b480b8f81360a39656f0e103dcf7c0af17a3915aee1196c78dd8a927e5d"
     },
     "system/tools/board_preflight.py": {
       "bytes": 1453,
@@ -949,6 +949,22 @@
     "BRANCH_GUIDE.md": {
       "bytes": 8043,
       "sha256": "8dcd833f6dd5c2b496ddf086f8ec6ed051a94830170bde67824f912dfca52e97"
+    },
+    "system/DATASET.lock.json": {
+      "bytes": 2195,
+      "sha256": "b199aa39dcc00d51cc574033ae24232b3c9db669c0de1113a86edad20721d7fe"
+    },
+    "system/tools/dataset.py": {
+      "bytes": 7837,
+      "sha256": "e0f6aa484b4b7faa8c9cc13d3457b5e8777f188fe931e20919e9b2533b9aa2b3"
+    },
+    "system/docs/DATASETS.md": {
+      "bytes": 5953,
+      "sha256": "c9acd296a77d75bdb45471e6b3e5bc8ad88d12acb6fe98d5d4a63c3539556f28"
+    },
+    "system/evidence/latest/dataset_delivery_20261010.json": {
+      "bytes": 2284,
+      "sha256": "b32e2fb77bbe5661864e81f31127b70cc94668d89161582998efcd8d780d70d9"
     }
   }
 }

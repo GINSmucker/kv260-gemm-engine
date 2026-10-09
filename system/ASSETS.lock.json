@@ -65,6 +65,14 @@
       "destination": "opt38-platform",
       "release_tag": "team-handoff-20261009",
       "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261009/opt38-paired-platform-20261009.tar.gz"
+    },
+    "dataset": {
+      "filename": "imagenette-dev-subset-20261010.tar.gz",
+      "bytes": 22288297,
+      "sha256": "7c3296de8b0c5c9fe3eb760351633906ee0254cf514f731414b841ce4d47f781",
+      "destination": "dataset",
+      "release_tag": "team-data-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-data-20261010/imagenette-dev-subset-20261010.tar.gz"
     }
   }
 }

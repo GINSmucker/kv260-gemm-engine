@@ -1,5 +1,7 @@
 # KV260 完整模型协作入口
 
+训练相关数据与公开测试入口：[DATASETS](docs/DATASETS.md)，固定256校准/100选择/20回归/500快速验证，原JPEG按需Release下载。
+
 这里提供队友接手所需的完整层GEMM源码、实际运行时、DeiT数值软件、界面和精简证据。首先阅读[接手步骤](docs/START_HERE.md)及[当前状态](docs/STATUS.md)。文件身份固定在[BASELINE_LOCK](BASELINE_LOCK.json)、[SOURCE_MAP](SOURCE_MAP.json)和[PACKAGE_MANIFEST](PACKAGE_MANIFEST.json)。
 
 正式父版锁为 **OPT35a + V2A 的 system_a3_20261005_02**。默认开发运行包 **AB1 OPT38 + 最小v5**，20图有效core438.384590ms、下降50.632344%。最新AB2/3两次同v5比较有效，431.021/430.068ms；源码包含三项delta和准确复建配方。第二窗CPU公平性、1/2线程及GELU失败保留，正式性能/质量/稳定性/UI/发布未签。见[V5/AB接续](docs/V5_AB_HANDOFF.md)及[开发锁](research/DEVELOPMENT_LOCK.json)。

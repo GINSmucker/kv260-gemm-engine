@@ -1,5 +1,7 @@
 # 零历史上下文接手步骤
 
+公开训练相关/测试图片已按冻结划分打包，先读[数据使用与复测](DATASETS.md)，按需获取dataset资产；原模型和运行包复用。
+
 先辨认两个项目：仓库根`src/`是原作者v0.2/4MAC通用GEMM；`system/`是后来完整模型系统。默认接手后者，保持原作者源码和报告。
 
 1. 读根AGENTS、[STATUS](STATUS.md)、[BASELINE_LOCK](../BASELINE_LOCK.json)。复述当前父版、候选、未通过Gate及自己的工作方向。

@@ -1,0 +1,61 @@
+{
+  "schema": "team_dataset_lock_v1",
+  "date": "2026-10-10",
+  "asset_key": "dataset",
+  "root_prefix": "dataset",
+  "asset_manifest_sha256": "d1b26700aae618adc0e3374d75326f4211652129b6e4d5cf0878089cca10cddc",
+  "source_archive": {
+    "url": "https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-320.tgz",
+    "bytes": 341663724,
+    "sha256": "569b4497c98db6dd29f335d1f109cf315fe127053cedf69010d047f0188e158c",
+    "raw_counts": {
+      "train": 9469,
+      "val": 3925
+    },
+    "root_prefix": "imagenette2-320"
+  },
+  "metadata": {
+    "splits.json": {
+      "bytes": 1170770,
+      "sha256": "75eedf53a30660c989e2dfdd9c9afb711f879aed39865476f014e3e0f9fa0988"
+    },
+    "labels_imagenet1k.json": {
+      "bytes": 92570,
+      "sha256": "3bdb2c583fb2995aec8ed1f0f0a9f4b7839567ce059d517be78ff12b01a14da8"
+    },
+    "preprocess.json": {
+      "bytes": 730,
+      "sha256": "42652957acab41b1c5d9f0ca8a29df919cb278d74e24d01cd5fe8fd1109124fb"
+    },
+    "dataset_source.json": {
+      "bytes": 415,
+      "sha256": "c3cf02e86708d66a5a7101a5f99c35a666d96038e1d838572dbd1fee7446bb02"
+    },
+    "regression_refs.json": {
+      "bytes": 11641,
+      "sha256": "7ba2a09676a7da88d0fb6d9d32ae001c7cce4b82576335c349c7f113edb17bba"
+    },
+    "UPSTREAM_PROVENANCE.json": {
+      "bytes": 647,
+      "sha256": "44beafd636f8e4013e7949c1db59de50e5c92952987211884c0d2df3d3590fa5"
+    }
+  },
+  "split_counts": {
+    "calibration": 256,
+    "selection": 100,
+    "regression": 20,
+    "validation_fast": 500,
+    "validation_full": 3925
+  },
+  "packaged_images": 856,
+  "B_manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+  "preprocess_source_sha256": "36d1405d8300ff7d0eb0d824354e2d9c5650549384b4d8608fd9c6f415500835",
+  "versions": {
+    "Python": "3.12.4",
+    "NumPy": "1.26.4",
+    "Pillow": "12.3.0"
+  },
+  "relationships": "calibration disjoint selection; regression subset selection; fast subset full; selected train content disjoint all val",
+  "image_rights": "SOURCE_AND_USE.md; original rights retained; repository Apache-2.0 notice not a new image license",
+  "scope": "Data and preprocessing reproducibility only; no model/PL/quality/performance Gate"
+}

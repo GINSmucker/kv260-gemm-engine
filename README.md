@@ -1,6 +1,8 @@
 [README.md](https://github.com/user-attachments/files/32999740/README.md)
 # KV260 GEMM Engine
 
+**训练相关数据与开发复测：[数据说明](system/docs/DATASETS.md)**。固定公开样本按需下载，图片不进入Git。
+
 **分支选择与版本说明：[GitHub分支导航](BRANCH_GUIDE.md)**。当前完整模型从协作分支的system/接手；main、F8历史闭环和G0/G1早期软件候选的用途见总览。
 
 2026-10-09 完整模型协作入口已增量更新到 **[system/](system/README.md)**。正式父版锁保留OPT35a/V2A；默认开发运行包OPT38+v5，AB1有效core438.385ms、下降50.632%。最新AB2/3两次20图同v5比较有效，431.021/430.068ms；第二窗CPU公平性及早先线程/GELU失败保留，正式发布未放行。首读[状态](system/docs/STATUS.md)、[开发锁](system/research/DEVELOPMENT_LOCK.json)与[接续](system/docs/V5_AB_HANDOFF.md)，旧资产按需复用。
