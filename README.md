@@ -18,17 +18,15 @@ docs/      公共接口、进度、验证与协作规范
 results/   跨版本结果汇总
 ```
 
-## 当前状态
+## 当前状态（OPT40 开发分支）
 
-- 当前 HLS 候选：`OPT38 full-K v1`
-- 计算结构：8×16 外积阵列，共 128 个并行 INT8 MAC
-- 支持范围：当前仅支持配置文件中登记的 5 组 M/K/N，不是任意尺寸引擎
-- 顶层函数：`model_gemm_top`
-- 目标器件：`xck26-sfvc784-2LV-c`（KV260）
-- 目标时钟：100 MHz
-- 板端接口：XRT
+- HLS 候选：`OPT40`，源码基线 `79ac98b250a0d90e94ec94c1cd388682cc3f4140`
+- 计算结构：16×16 外积阵列，设计并行度 256 个 INT8 MAC/周期
+- X/W/Y AXI 数据口均为 128 位；仅支持配置文件中登记的 5 组 M/K/N
+- 顶层：`model_gemm_top`；目标器件：`xck26-sfvc784-2LV-c`（KV260）；目标时钟：100 MHz
+- 板端软件接口：XRT，需与新生成的 IP 重新核对
 
-OPT38 源码来自团队交接版本 `team-handoff-20261009`。它已在新目录下通过 Vitis 2026.1 C Simulation；C Synthesis、C/RTL Co-simulation 和板端验证尚未执行。各项状态以 [验证清单](docs/verification.md) 为准。
+相同源码在独立 OPT40 工作区中已通过 Vitis 2026.1 C Simulation、C Synthesis 和 C/RTL Co-simulation；仓库路径下的重新运行及板端验证均未完成。测试覆盖和综合数据见[验证清单](docs/verification.md)与[综合摘要](hls/reports/synthesis.md)。本分支不提交 Vitis 生成目录或 IP 压缩包，也不改变 `main`。
 
 ## 快速入口
 
