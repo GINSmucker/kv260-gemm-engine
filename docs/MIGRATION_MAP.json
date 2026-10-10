@@ -6,7 +6,7 @@
     {
       "old": "system/ASSETS.lock.json",
       "new": "docs/locks/ASSETS.lock.json",
-      "current_sha256": "56ac8065fc6a8fb193c5a508b46e81636e7dbf91c48b660f1b3a9664cc4d0f91",
+      "current_sha256": "81da5625512e8985e1b989af3a69527af2c9843d3f2b17c0c98ba10bda277bb9",
       "original_sha256": "56ac8065fc6a8fb193c5a508b46e81636e7dbf91c48b660f1b3a9664cc4d0f91"
     },
     {
@@ -42,25 +42,26 @@
     {
       "old": "system/PACKAGE_MANIFEST.json",
       "new": "docs/PACKAGE_MANIFEST.json",
-      "current_sha256": "71c96dd5aba5e639b6d2f64400f0defa830239a0c834d2398be8ccd8a96eb3f2",
+      "current_sha256": "981108944730c9ed55365654623e065205ebea457a8869b265990abada41e45b",
       "original_sha256": "f83c653067cad5396112c6cae5f62d74516b1d31720b450762f96ceb3f20f7ed"
     },
     {
       "old": "system/README.md",
-      "new": "docs/history/overview_pre_layout_20261010.md",
-      "current_sha256": "0451f6912cf3f9c2467ee42e49f56f6cc86d3356eb68a2574d6618c2a48765ca",
-      "original_sha256": "0451f6912cf3f9c2467ee42e49f56f6cc86d3356eb68a2574d6618c2a48765ca"
+      "new": "README.md",
+      "current_sha256": "9547501d94d58db7f96a2a7d58fc3ae0675297a89f82973ee90135ddedace36e",
+      "original_sha256": "0451f6912cf3f9c2467ee42e49f56f6cc86d3356eb68a2574d6618c2a48765ca",
+      "archived_url": "https://github.com/GINSmucker/kv260-gemm-engine/blob/0b2ee9ad94e58fd6dff200ad58747abc0252a1dd/system/README.md"
     },
     {
       "old": "system/SOURCE_MAP.json",
       "new": "docs/SOURCE_MAP.json",
-      "current_sha256": "fc65d28b1ac2c96a310d4b4659b08e2155462955f9ceb8f0cad4242013c01521",
+      "current_sha256": "71d56b636d2990459b2550455898856e5e028c64bbb48ab3e6fe86c7b1cfd440",
       "original_sha256": "5a8037bbb5c6d4e479105c1579d651f039d61d729e12e86057d8ae4c11481665"
     },
     {
       "old": "system/THIRD_PARTY.md",
       "new": "docs/THIRD_PARTY.md",
-      "current_sha256": "83ccda2bd4f0805a53d11407b725c986ddcecb8ad05e10c277382fbcf9fc233c",
+      "current_sha256": "cbb597c8cafac04d6ae12bee8c2efca91932dd4bfc31ae7234cdfa0e845c898a",
       "original_sha256": "8daf46a244e009301a2f53431ec9dbd0671bcdd6285300f0871da6d69b9aeb84"
     },
     {
@@ -402,79 +403,80 @@
     {
       "old": "system/docs/ALGORITHM.md",
       "new": "docs/reference/ALGORITHM.md",
-      "current_sha256": "30eea54c2d6b40debcba5bf9b844ee4a8163e09df3eac2782bb702f4705ea08b",
+      "current_sha256": "df3816b2f5a68d29e03f5742031b5c7e10fee50b6b303b9707538eb457bf3d6a",
       "original_sha256": "f2badf6c4f5d51e314396685d4ae8d2c50b6ff32dbfe61b635f5d913fe17d51f"
     },
     {
       "old": "system/docs/BOARD_AND_TOOLS.md",
       "new": "docs/reference/BOARD_AND_TOOLS.md",
-      "current_sha256": "4a8d32ec8725d6389d66928934bc7672418d5fc63d5edb1afea38b1df0fac97a",
+      "current_sha256": "63d9131f73dcac20325e6803cbaa84f5a1f509585abb15fb3a973643cf361755",
       "original_sha256": "94c3fe485fbebcd80e3346204ca826529fa9689863652f25380da87a94c95f35"
     },
     {
       "old": "system/docs/C_RUNTIME_REFACTOR.md",
       "new": "docs/reference/C_RUNTIME_REFACTOR.md",
-      "current_sha256": "821a0d6ab72f0b3b46b6dfead19c32e822465edcdef87437390ec337a4f284b5",
+      "current_sha256": "88c0dd861292ec604d969daf41c1aa13e0b5790dfe98a580259ef4b0974f3f62",
       "original_sha256": "6e7e76d811a67d141d6983ea37d5d0f554679e4e500ee81e8b28ec5ba5180660"
     },
     {
       "old": "system/docs/DATASETS.md",
       "new": "docs/reference/DATASETS.md",
-      "current_sha256": "12d6d2c1e5bd6591e2ad92e64b1a7e4a95ca208bb838eb2e26e1d1edc5648231",
+      "current_sha256": "1480623653845c7c1012ea9a12d627d9b6f6fb3775576c3abe1f3db641588da5",
       "original_sha256": "c9acd296a77d75bdb45471e6b3e5bc8ad88d12acb6fe98d5d4a63c3539556f28"
     },
     {
       "old": "system/docs/EVIDENCE.md",
       "new": "docs/reference/EVIDENCE.md",
-      "current_sha256": "a9eede83a46af0501b794a8be9df835b0a95dba6f5fb50951c1b3dda61819e5d",
+      "current_sha256": "4bf5fae66063e6b8b1ef40e6623e0afdcb15cccf2c9482b45c9c89b466f45777",
       "original_sha256": "ffb9477c4d7ee71b7d2d4bad98bfc2d4f3f29b0f4039d579159d109227efc735"
     },
     {
       "old": "system/docs/F05_HANDOFF.md",
       "new": "docs/reference/F05_HANDOFF.md",
-      "current_sha256": "40a44a32dfe66a0b3da58f695e1524f0f6bf25bafe0b2b7df725fb1b6f2c53bc",
+      "current_sha256": "654b365acc8c8c459f4b6feebd320cc89bd0e907bf3912ea697eda3f23f99b6a",
       "original_sha256": "4e232426a8164f2b891f587d1e1df7bee58fd68eb2ae98e5e060d3ce67ee26f8"
     },
     {
       "old": "system/docs/INTERFACES.md",
-      "new": "docs/history/interfaces_pre_layout_20261010.md",
-      "current_sha256": "48846827434152daf3453f186d793e10b7bd7ad06734ed4f7db06bca01660677",
-      "original_sha256": "48846827434152daf3453f186d793e10b7bd7ad06734ed4f7db06bca01660677"
+      "new": "docs/interface.md",
+      "current_sha256": "cc583558f09fb47ef6f0d631d9cdd5fd7052ff28407a674a490686a4dea75769",
+      "original_sha256": "48846827434152daf3453f186d793e10b7bd7ad06734ed4f7db06bca01660677",
+      "archived_url": "https://github.com/GINSmucker/kv260-gemm-engine/blob/0b2ee9ad94e58fd6dff200ad58747abc0252a1dd/system/docs/INTERFACES.md"
     },
     {
       "old": "system/docs/MODEL_AND_RUNTIME.md",
       "new": "docs/reference/MODEL_AND_RUNTIME.md",
-      "current_sha256": "a8b26a8c9b6158053d80da8c1a6e314ab5a0fe6d48034b7cfde72c70d95998a3",
+      "current_sha256": "74f1437fd7a394eb2360e7b8358c924065876602cdf4a4e6471676c911b5e413",
       "original_sha256": "503981143b6ba5608623046824997e2207b5a7991907f5ba9ebbc6dfbdbba13c"
     },
     {
       "old": "system/docs/OPTIMISATION_AND_ISSUES.md",
       "new": "docs/reference/OPTIMISATION_AND_ISSUES.md",
-      "current_sha256": "cd0d44cb3daf49c18ad847c5daa70c9ab74ee047419cebd838c1de3d78a5982a",
+      "current_sha256": "127bc7f91d152bfddf89d59c02e762421dccebf505ae3f444b7daa6275b53252",
       "original_sha256": "1bb507c8a28632cbc6cb764e7c7fd8a84cc409c6b928b8a96a89814d8693d0d4"
     },
     {
       "old": "system/docs/START_HERE.md",
       "new": "docs/reference/START_HERE.md",
-      "current_sha256": "61d597e1a448665cba43d9a85a1daaebb6fe9c0a9bde03215d34dcf826f3dc6d",
+      "current_sha256": "4f7d4d0aa86b8f3ae085093a470b61b4f52ca53c08ed364bb23aaa101597f33f",
       "original_sha256": "437dbcccb72565a4c10ef2393d5ad13513dd63982a7973b48cdfbd81a8c9a1d4"
     },
     {
       "old": "system/docs/STATUS.md",
       "new": "docs/reference/STATUS.md",
-      "current_sha256": "d5073e273126ed7bff0e79783fa372b5212b62e65a58f609249bfcf532dca25a",
+      "current_sha256": "8386660eb6824cbdd1eaffd706a6a09aec8827debe5d8d232ea88c2588cb10de",
       "original_sha256": "853497fe5068e30b86dbe4efc704069fdd4e9c494dc7b4d9d2b04b1869129926"
     },
     {
       "old": "system/docs/TEAM_WORKFLOW.md",
       "new": "docs/reference/TEAM_WORKFLOW.md",
-      "current_sha256": "324f76f355de9fec432631325c7ee03708a0d5e7d2f77e71adb3a6be37c3ef39",
+      "current_sha256": "5381045d07812c57767c4c8b2be4ab25ef980676563baa3c192669cc5f39157a",
       "original_sha256": "cce330374fa51cd66be857a9c627d66dac923d80af5fb411ac6d196e7f109612"
     },
     {
       "old": "system/docs/V5_AB_HANDOFF.md",
       "new": "docs/reference/V5_AB_HANDOFF.md",
-      "current_sha256": "40a3959a1079d48bd85c147a408b9178740beab1ec74d8ad3cf3a5bb67062f4a",
+      "current_sha256": "9f000663906fd3ef05132d3fb0a3bdf7412475ea9c1c0fec27651024741e5673",
       "original_sha256": "62aa72134c67acebd42911c8025d42590e097acd131428658cd437a451c83f03"
     },
     {
@@ -1188,7 +1190,7 @@
     {
       "old": "system/tools/assets.py",
       "new": "docs/tools/assets.py",
-      "current_sha256": "457a050b6d91085ef93d00c3e3b58acbf9a8f6eedbcc45b741be4acdbb84ea6b",
+      "current_sha256": "94e4b67cb7497c3aaaf2d810d50f9013e2d901a34efa8c4ae9038207392f42f0",
       "original_sha256": "063a6b480b8f81360a39656f0e103dcf7c0af17a3915aee1196c78dd8a927e5d"
     },
     {
@@ -1206,7 +1208,7 @@
     {
       "old": "system/tools/check.py",
       "new": "docs/tools/check.py",
-      "current_sha256": "6ebbf36dd563c47c6c2cf04c5fc90ee6288eb5611160ad5bcc9ccec7cfbba4a8",
+      "current_sha256": "8c832c81374c2ce1822ade5f568fbd28a85da776d4c8d78561e331e669010635",
       "original_sha256": "445911dda6be0661a2f406b280a2f8f6d13e4532baff6455171bf9059c9876df"
     },
     {
@@ -1230,7 +1232,7 @@
     {
       "old": "system/ui/README.md",
       "new": "board/ui/README.md",
-      "current_sha256": "4086ed53b0d34ef8d952a511b4972da266c7f313575bd36ce27bffe1800e45b1",
+      "current_sha256": "00b62f124ff152214eae73ace63e3995c76bd5e2ef3ac977e4d6771aa4e1a492",
       "original_sha256": "d5b21def0d169886b2dd2c57561fa81875cf10d0c4f7d98dd1d825efa7c883a2"
     },
     {
@@ -1428,7 +1430,7 @@
     {
       "old": "BRANCH_GUIDE.md",
       "new": "docs/branches.md",
-      "current_sha256": "5029e2a7f997771a13d3968da22d739c67d162879573f6ac5c11be134e9a744e",
+      "current_sha256": "4b47c144622de4b2ef9976e311f9e10343a0d43d73cf277caa4825e80682aedb",
       "original_sha256": "8dcd833f6dd5c2b496ddf086f8ec6ed051a94830170bde67824f912dfca52e97"
     }
   ],

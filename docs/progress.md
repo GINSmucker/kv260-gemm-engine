@@ -1,48 +1,43 @@
-# 项目进度（已上传资料范围）
+# 当前有效状态
 
-目录更新时间2026-10-10。A/B/C主入口已按职责归位；公开v5内核/owner/B适配和约194KiB完整head case导入。新目录软件复验结果见verification，迁移不授权进入新硬件阶段。
+有效实验日期：2026-10-10。状态以匹配源码、运行包、平台及测量身份为依据。
 
-## 队友main的2026.1实验
-来源f5ead7a / PR #4：OPT38 160合法+8拒绝、10925312输出C-sim报告PASS；本会话未重跑Vitis2026.1。该工具版本的新综合/RTL/板端仍NOT RUN，勿用历史2020.2.2 PASS覆盖。
+## 配置与职责
 
-## 原协作模型进度（截至原冻结交接）
+默认开发配置为OPT38/v5，身份见[开发锁](locks/DEVELOPMENT_LOCK.json)；正式资格参考为[BASELINE_LOCK](locks/BASELINE_LOCK.json)。当前研究配置为OPT45＋X128＋Y768＋Layout4，固定qkv/fc1/fc2在PL、proj/head在CPU，每图36次PL。
 
+A数据通路为单512MAC、125MHz、TM32/TN768；X使用32行×64个128bit字LUTRAM，Y累加器96KiB。B使用intra4/inter1、顺序执行、spinning0、图优化关闭；量化、反量化、Erf和布局复用ORT线程池。C owner持有CU与BO，B直接访问导入的X/Y，保留cache sync、Done和排空检查。
 
-客户端日期为Asia/Shanghai。实验日期来自原报告；板端旧日历和本次上传时间不替代实验日期。当前正式开发父版为`system_a3_20261005_02`，OPT35a/V2A/修正B标签插件。详见[BASELINE_LOCK](locks/BASELINE_LOCK.json)。
+[研究身份锁](locks/RESEARCH_LOCK.json)绑定的AB_SHARED_OPT45_X128_Y768_LAYOUT4_FIXED_20261010有33个清单成员，manifest SHA为204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8。源码、运行文件及证据由[资产锁](locks/ASSETS.lock.json)中的opt45-source/runtime/evidence固定。
 
-当前开发硬件已采用**AB1 OPT38 + 最小v5**，独立[开发锁](locks/DEVELOPMENT_LOCK.json)与正式父版分开。20图同软件比较VALID，core中位887.999602→438.384590→888.105542ms，较较快35a父版下降50.632344%；父最大漂移3.791476%、CPU3.610684%，logits逐位一致。三窗3823真实starts，候选五shape/8285456全INT64及实际客户端退出/QUERY/拒绝重放、root静止/starter/UI回退PASS。它是开发采用，不签正式PL/CPU加速比或发布。
+## 整图与资源测量
 
-最小v5的热SHA/ACK/持久账本/大JSON已移除，51RPC/图、32B wire5；独立诊断软件/C/B成本241.449/31.580/0ms达到旧目标。v5对F05的两次20图比较仍INCONCLUSIVE_DRIFT，旧父COMMIT长尾不能据此放宽；正式G5/父版未移动。见[V5/AB接续](reference/V5_AB_HANDOFF.md)。
+边界为初始化完成后的Runner.run，不包括会话创建、输入文件读取及结果SHA核对。每段60个正式样本，输入20张×3次、线程固定、逐层诊断关闭。
 
-最新AB2/3单因素生产阶段和20图逐层对照已完成；首窗口整体FAIL来自后续profile1第0层Y比对，不代表前面全部PL失败。独立profile窗1/2线程数值FAIL，4线程PASS。AB6两次20图同v5比较均VALID，候选p50=431.020901/430.067842ms，较较快父版下降1.678801%/1.860703%；logits逐位、CLI和回退PASS，各3332starts。第二窗FP32参考最大漂移5.101189%，整体INCONCLUSIVE，正式PL/CPU验收未通过；第一窗CPU speedup=0.763596，PL仍慢于FP32。AB5 exact-GELU probe有635540个逐位差异/5446656元素、max_abs4.768e-7，候选拒绝。源码delta和复建配方用于接续，已发布默认运行库保持AB1。 以下带日期记录保留历史范围。
+|集合|p50 ms|p95 ms|p99 ms|max ms|
+|---|---:|---:|---:|---:|
+|固定测量一|168.647137|171.387642|177.503626|178.259022|
+|固定测量二|169.086792|174.866617|195.331145|198.734057|
+|200次连续调用|168.725388|173.517146|178.354562|185.660837|
 
-|对象|已证范围|当前限制|
-|---|---|---|
-|OPT35a引擎|独立1357层/94880648完整INT64输出零差异、精确流量、真实A/C A2、回退PASS|不是模型性能或发布PASS|
-|父版生产路径|152例S2、断开恢复；完整单图49start/4085992输出、logits0/fallback0；有效短筛选|短测中位6570.318084ms，对FP32前/后314.414075/314.884949ms；正式S5未通过|
-|OPT38|128MAC；完整本机/平台/独立A2/生产单图通过|旧V2A比较父漂移6.079240%，INCONCLUSIVE，未采用|
-|V2B CF1|实际ARM构建、软件协议、三启动恢复、完整单图通过|唯一性能比较父中位漂移18.861686%、输入07漂移31.602520%；未采用|
-|B3 Neon|逐bitCPU、正常ARM、恢复、完整PL单图通过|只有组合资格，未签整网收益或采用|
-|RW06页容器|34项ARM文件机制/59文件PASS，0 PL|成本父均值漂移6.508776%、部分组超过43%；生产关闭，不扩样|
-|CHK05 native分账|52start/4238288完整INT64输出零差异；构建、恢复、49层图与回退PASS|诊断专用，净观察开销未量化，无公平性能或生产采用|
-|V3重构|G1/G2软件与正常ARM、G3真实PL/恢复通过，G4完成|父逐图漂移9.186/17.365/7.026%，INCONCLUSIVE；600/100/30ms成本全部FAIL|
-|F05 ABI4/wire4|D0～D5实施与实验完成，D1～D4功能/恢复PASS；D5有效开发比较|完整结果中位1465.884971ms，减少77.635%；软件/C/B预算全部FAIL，G5关闭，未替换父版|
-|最小v5|R1/R2/R3通过；20图生产core888.361ms，诊断软件目标达到|对F05比较漂移无效，未签公平加速百分比|
-|AB1 OPT38+v5|同软件20图比较有效，core438.385ms，开发硬件采用38|正式G5/PL对CPU/质量/长稳/UI/发布仍未通过|
-|AB2/AB3与AB6|4线程整图、两次同v520图比较通过，431.021/430.068ms|初窗profile1/Y及1/2线程FAIL保持；第二窗CPU公平性失败，默认运行包仍AB1|
+同B插件、固定路由和同窗较快OPT43参照的p50改善为4.831634%/4.649080%；两组20/20张图的配对中位数更快。第二组p99/max高于较快参照，慢样本全部保留，不能承诺尾部已解决。参照完整分布与560个无诊断样本位于opt45-evidence。
 
-历史F05 D5同boot父→候选→父完整结果中位6445.621097→1465.884971→6663.105521ms，候选session中位1400.893781ms；完整结果包含BEGIN、49层、COMMIT和必要结果/trace/profile导出。父最大漂移3.374142%、CPU最大0.498919%，三图均快于两侧父版。588starts/49031904输出摘要锚定、1481原始文件核验PASS；这是三图开发比较，不是正式S5/p95或采用。
+200次运行期间client fd8/线程7固定、RSS101192→101448KiB；owner fd11/线程1、RSS21124KiB固定。三次会话重建、提交后断开、QUERY完成/ABORT及新会话完整图通过。关闭后client fd4/线程4、owner fd10/线程1；内存保留原因待核实，200次不证明长期无泄漏。
 
-F05软件总量扣wait/fsync的下界798.998ms>600，C ABI扣native/fsync下界422.725ms>100，B回执/trace下界35.973ms>30，三预算严格FAIL。fsync精确持续时间NOT REPORTED，采用BEGIN/COMMIT括号形成保守边界。G5仍关闭，OPT38新组合NOT RUN。下一目标是REQUEST非native306.895ms的细分及验证/ACK/B剩余工作，见[F05交接](reference/F05_HANDOFF.md)。
+## 硬件与数值范围
 
-F05 D3正常XRT/NEON和完整软件核对1604文件PASS，五图20429960输出、Xq/sx/Y/logits逐位一致；D4 52starts/4426408完整INT64输出、实际调用者死亡封存/COMMIT/安全回退PASS。D4和D5使用相同owner/bridge/plugin，身份在[F05_LOCK](locks/F05_LOCK.json)。硬件、原guard/const/AXI和冻结B数值不改。
+HLS运行model_gemm_opt45_y768_v1_20261010_183212_157的160有效＋8拒绝、10925312整数输出、320输入SHA及同地址复用PASS。完整AXI RTL为16事务、418064整数、高地址/4KiB边界/受控背压/排空PASS；关键loop II1，top不流水。
 
-CPU模型Windows/ARM的500和full3925质量已通过；跨主机量化logits仍有历史FAIL。完整PL质量、模型稳定性、当前V2A/V2B的完整UI与两次公平S5/正式发布仍未通过。历史v1 S3/S4、F8稳定性不自动放行当前组合。
+平台model_system_20261010_184640_939为125MHz，WNS0.641ns/WHS0.010ns；65024 LUT、52837 FF、56 RAMB36、517 DSP，LUT占器件55.52%。14寄存器、三路128bit与131项DDR配置通过配对核验。HLS资源及估计时钟见[综合摘要](../hls/reports/synthesis.md)。
 
-已回收AB1、AB23/profile和两次AB6结果记录安全回退，boot6f08c7ac…494e；AB6各24文件回收、rollback_errors为空。窗口完成与数值/性能Gate分别表达。本次没有实时独占/空闲确认，上传会话未访问板卡。
+实板20次shape探针、1365664整数一致；三张完整验证图共12257976整数及X/Xq/sx/Y/Z/logits逐位一致；正式整图logits逐位一致。完整FP32边界p50：head0.551121、proj1.053051、qkv1.618456、fc1 1.931909、fc2 1.835943ms。算子诊断边界与无诊断整图不能混用。
 
-当前模型BO高地址NOT_EXERCISED，kernel cycles不可用；永久AXI卡死硬件恢复、掉电、并发热拔插及长期切换未证明。原系统驱动保留；临时ZOCL v2须核对SHA和kernel后由维护者安排。
+带宽研究记录34689次PL调用、3896项本机回传文件哈希核验。公开资产提供必要摘要、原始性能样本和身份，完整矩阵/trace仍在本机验证记录中。
 
-结果入口：[10月8日原始小回执汇总](../results/evidence/latest/runtime_progress_20261008.json)、[F05_LOCK](locks/F05_LOCK.json)、[历史CHK05](../results/evidence/latest/native_accounting.json)、[父版短测](../results/evidence/parent/short_screen.json)、[CF1比较](../results/evidence/cf1/comparison.json)、[OPT38 A2](../results/evidence/opt38/A2_USABLE.json)。证据范围说明见[EVIDENCE](reference/EVIDENCE.md)。
+## 有效边界与问题
 
-最新小回执和失败：[10月9日进度汇总](../results/evidence/latest/runtime_progress_20261009.json)、[开发锁](locks/DEVELOPMENT_LOCK.json)。本次只固化已回收结果，不把运行中或后续窗口记为PASS。
+正式独立C、PL500/full质量、独立长期稳定性及正式发布签署均NOT RUN。普通libm GELU融合和1/2线程配置有数值FAIL，不能作为等价实现。当前优先问题是慢样本、PS/缓存行为及有界运行之外的资源趋势；固定W BO、额外HP、Stream或新队列不属于实施设计。
+
+原始实验的最终root/UI检查PASS：starter/99999999Hz、无硬件使用者/ZOCL/render、严重内核错误0、UI未暂停。boot6f08c7ac-6431-4fdc-af4d-12b02a8e494e仅标识该实验，不能当作实时占用确认。SSH间歇性timeout/reset根因未确认；永久AXI卡死及长期overlay切换未证明。
+
+证据入口：[资产锁](locks/ASSETS.lock.json)、[源码身份](SOURCE_MAP.json)、[结果表](../results/summary.csv)和[验证状态](verification.md)。

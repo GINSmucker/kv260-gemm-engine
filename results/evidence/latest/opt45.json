@@ -1,0 +1,1047 @@
+{
+  "schema": "current_opt45_public_evidence_v1",
+  "experiment_date": "2026-10-10",
+  "scope": "Measured research; no formal release qualification",
+  "runtime_manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
+  "entries": {
+    "production_analysis.json": {
+      "source": "results/model_planning/bus_bandwidth_20261010_01/production_analysis.json",
+      "source_sha256": "fed1a260d7f94b96cf8f5dcf032bdf4c47b7c5c101547e3c09a387dc8454f637",
+      "asset": "opt45-evidence",
+      "member": "measurements/production_analysis.json",
+      "value": {
+        "status": "PASS_PRODUCTION_NUMERICS_AND_EVIDENCE",
+        "rounds": [
+          {
+            "round": 1,
+            "parent_before": {
+              "p50_ms": 178.207242,
+              "p95_ms": 185.2033121,
+              "p99_ms": 188.34961590999998,
+              "max_ms": 190.167082,
+              "over250ms": 0,
+              "over300ms": 0,
+              "samples": 60,
+              "mean_process_cpu_ms": 367.40114691666673
+            },
+            "candidate": {
+              "p50_ms": 168.6471365,
+              "p95_ms": 171.38764204999998,
+              "p99_ms": 177.50362611999998,
+              "max_ms": 178.259022,
+              "over250ms": 0,
+              "over300ms": 0,
+              "samples": 60,
+              "mean_process_cpu_ms": 367.8164101666667
+            },
+            "parent_after": {
+              "p50_ms": 177.2092375,
+              "p95_ms": 181.8500948,
+              "p99_ms": 184.7524044,
+              "max_ms": 185.343844,
+              "over250ms": 0,
+              "over300ms": 0,
+              "samples": 60,
+              "mean_process_cpu_ms": 367.2334735499999
+            },
+            "p50_gain": 0.04831633565377769,
+            "p95_gain": 0.057533391783527454,
+            "images_improved": 20,
+            "paired_image_gains": [
+              0.05108463957028331,
+              0.033719879357324345,
+              0.053608362215466165,
+              0.049537075929556806,
+              0.04664316711516303,
+              0.04840810455274913,
+              0.04290756323322387,
+              0.04889567630949021,
+              0.0496567036867005,
+              0.03337855479932128,
+              0.034990322651512806,
+              0.053994802718400625,
+              0.04371968944048765,
+              0.04691260169065259,
+              0.04731380352172032,
+              0.038250846767488356,
+              0.040345015516519145,
+              0.04438633138034587,
+              0.05175706537848357,
+              0.0455541801610122
+            ],
+            "max_parent_image_drift": 0.04035796914647194
+          },
+          {
+            "round": 2,
+            "parent_before": {
+              "p50_ms": 177.404729,
+              "p95_ms": 182.82932015,
+              "p99_ms": 197.6866290199999,
+              "max_ms": 213.082102,
+              "over250ms": 0,
+              "over300ms": 0,
+              "samples": 60,
+              "mean_process_cpu_ms": 367.35890275
+            },
+            "candidate": {
+              "p50_ms": 169.0867915,
+              "p95_ms": 174.8666167,
+              "p99_ms": 195.33114526999998,
+              "max_ms": 198.734057,
+              "over250ms": 0,
+              "over300ms": 0,
+              "samples": 60,
+              "mean_process_cpu_ms": 368.5599500833333
+            },
+            "parent_after": {
+              "p50_ms": 177.331054,
+              "p95_ms": 181.72072344999998,
+              "p99_ms": 186.60968613999998,
+              "max_ms": 190.417224,
+              "over250ms": 0,
+              "over300ms": 0,
+              "samples": 60,
+              "mean_process_cpu_ms": 367.0323779666667
+            },
+            "p50_gain": 0.04649079963174407,
+            "p95_gain": 0.037717804661315135,
+            "images_improved": 20,
+            "paired_image_gains": [
+              0.04242868500532759,
+              0.05218849824508842,
+              0.04433604660094259,
+              0.04214643269512641,
+              0.046626001582109056,
+              0.037554819671527295,
+              0.04675805089809537,
+              0.04693794812423302,
+              0.04729518082262818,
+              0.0432522246449365,
+              0.0410164325296728,
+              0.04580798023721466,
+              0.05174797878742288,
+              0.053528750186363494,
+              0.038115933828726245,
+              0.02234902313419207,
+              0.03091934744581526,
+              0.05069269473653337,
+              0.051741257722061285,
+              0.05377111705688553
+            ],
+            "max_parent_image_drift": 0.01866537817256142
+          }
+        ],
+        "continuous": {
+          "p50_ms": 168.7253875,
+          "p95_ms": 173.51714564999997,
+          "p99_ms": 178.35456233999994,
+          "max_ms": 185.660837,
+          "over250ms": 0,
+          "over300ms": 0,
+          "samples": 200,
+          "mean_process_cpu_ms": 367.56882621
+        },
+        "resources": {
+          "client": {
+            "fd": [
+              8
+            ],
+            "threads": [
+              7
+            ],
+            "rss_kib": [
+              101192,
+              101192,
+              101192,
+              101192,
+              101192,
+              101192,
+              101192,
+              101192,
+              101320,
+              101448,
+              101448
+            ]
+          },
+          "owner": {
+            "fd": [
+              11
+            ],
+            "threads": [
+              1
+            ],
+            "rss_kib": [
+              21124,
+              21124,
+              21124,
+              21124,
+              21124,
+              21124,
+              21124,
+              21124,
+              21124,
+              21124,
+              21124
+            ]
+          }
+        },
+        "disconnect": "submitted complete RUN; client closed; QUERY completion + ABORT + fresh bit-exact graph PASS",
+        "after_recovery": {
+          "owner": {
+            "fd": 10,
+            "rss_kib": 21124,
+            "threads": 1
+          },
+          "client": {
+            "fd": 4,
+            "rss_kib": 102088,
+            "threads": 4
+          },
+          "environment": {
+            "temperatures": {
+              "/sys/class/hwmon/hwmon0/temp3_input": "30542",
+              "/sys/class/hwmon/hwmon0/temp1_input": "32484",
+              "/sys/class/hwmon/hwmon0/temp2_input": "31148"
+            },
+            "cpu_khz": "1333333",
+            "governor": "userspace",
+            "loadavg": "2.08 1.02 0.53 1/251 190179"
+          }
+        },
+        "scope": "Two prespecified parent/candidate/parent rounds, no filtering; reliable gain judged from all results, no automatic5% rule; 200 calls is bounded lifecycle evidence only.",
+        "runs": [
+          "v5_bus_parent_r1_before_20261010_01",
+          "v5_bus_candidate_r1_20261010_01",
+          "v5_bus_parent_r1_after_20261010_01",
+          "v5_bus_parent_r2_before_20261010_01",
+          "v5_bus_candidate_r2_20261010_01",
+          "v5_bus_parent_r2_after_20261010_01"
+        ],
+        "physical_PL_starts": 21889,
+        "all_logits_and_verified_intermediates_exact": true
+      }
+    },
+    "B3_boundary_analysis.json": {
+      "source": "results/model_planning/bus_bandwidth_20261010_01/B3_boundary_analysis.json",
+      "source_sha256": "6446dbd01c68ad6a8fdbb1f8bd690efcc51c8fa0ce3ab8b1b1efc48a80c30b85",
+      "asset": "opt45-evidence",
+      "member": "measurements/B3_boundary_analysis.json",
+      "value": {
+        "status": "PASS_BOUNDARY_NUMERICS_AND_EVIDENCE",
+        "families": [
+          {
+            "family": "head",
+            "parent": {
+              "p50_ms": 0.5547504999999999,
+              "p95_ms": 0.6053489999999999,
+              "p99_ms": 0.6426683099999998,
+              "max_ms": 0.676057,
+              "mean_ms": 0.5615003999999999,
+              "mean_boundary_stages_ms": [
+                0.0027676666666666665,
+                0.5270352833333333,
+                0.03065895,
+                0.5615004
+              ],
+              "mean_native_ms": {
+                "owner": 0.3928069,
+                "copy_W": 0.10280415000000004,
+                "sync_W": 0.024533816666666666,
+                "MMIO": 0.008822883333333335,
+                "wait": 0.2528216666666667,
+                "status": 0.002237166666666666,
+                "copy_Y": 9.266666666666665e-05
+              }
+            },
+            "candidate": {
+              "p50_ms": 0.5511205,
+              "p95_ms": 0.6001289999999999,
+              "p99_ms": 0.6142554099999998,
+              "max_ms": 0.631307,
+              "mean_ms": 0.5581554166666667,
+              "mean_boundary_stages_ms": [
+                0.0024098333333333333,
+                0.5261452833333333,
+                0.028566116666666665,
+                0.5581554166666667
+              ],
+              "mean_native_ms": {
+                "owner": 0.3811738500000002,
+                "copy_W": 0.09434359999999997,
+                "sync_W": 0.023811583333333337,
+                "MMIO": 0.007886450000000001,
+                "wait": 0.2512969666666667,
+                "status": 0.0019080333333333331,
+                "copy_Y": 0.00010333333333333329
+              }
+            },
+            "p50_gain": 0.006543482159997893,
+            "paired_faster": 11,
+            "paired_total": 20,
+            "paired_median_saving_sum_per_graph_ms": -0.00016485000000000008
+          },
+          {
+            "family": "proj",
+            "parent": {
+              "p50_ms": 1.035601,
+              "p95_ms": 1.11661805,
+              "p99_ms": 1.1460899100000002,
+              "max_ms": 1.203612,
+              "mean_ms": 1.0440611527777777,
+              "mean_boundary_stages_ms": [
+                0.11413017916666666,
+                0.8075488305555555,
+                0.1214869236111111,
+                1.0440611527777777
+              ],
+              "mean_native_ms": {
+                "owner": 0.5561064333333331,
+                "copy_W": 0.020062256944444423,
+                "sync_W": 0.017373751388888903,
+                "MMIO": 0.013731254166666675,
+                "wait": 0.49980599027777795,
+                "status": 0.0020958305555555533,
+                "copy_Y": 9.358472222222257e-05
+              }
+            },
+            "candidate": {
+              "p50_ms": 1.0530505,
+              "p95_ms": 1.11676995,
+              "p99_ms": 1.1584866999999999,
+              "max_ms": 1.260263,
+              "mean_ms": 1.0517853625,
+              "mean_boundary_stages_ms": [
+                0.1158436625,
+                0.811637725,
+                0.12338724444444445,
+                1.0517853625
+              ],
+              "mean_native_ms": {
+                "owner": 0.5560595847222223,
+                "copy_W": 0.020746190277777785,
+                "sync_W": 0.01749705555555555,
+                "MMIO": 0.01373141666666665,
+                "wait": 0.4992809222222222,
+                "status": 0.001961951388888887,
+                "copy_Y": 0.00011873888888888962
+              }
+            },
+            "p50_gain": -0.01684963610502499,
+            "paired_faster": 88,
+            "paired_total": 240,
+            "paired_median_saving_sum_per_graph_ms": -0.10097909999999999
+          },
+          {
+            "family": "qkv",
+            "parent": {
+              "p50_ms": 1.729617,
+              "p95_ms": 1.867727,
+              "p99_ms": 1.9425565999999996,
+              "max_ms": 2.049611,
+              "mean_ms": 1.7384656486111112,
+              "mean_boundary_stages_ms": [
+                0.12276114722222223,
+                1.3713480736111112,
+                0.24317148472222222,
+                1.7384656486111112
+              ],
+              "mean_native_ms": {
+                "owner": 1.186850836111112,
+                "copy_W": 0.0563751708333334,
+                "sync_W": 0.01858031388888889,
+                "MMIO": 0.008133099999999994,
+                "wait": 1.1000320513888897,
+                "status": 0.0019196347222222231,
+                "copy_Y": 9.470833333333362e-05
+              }
+            },
+            "candidate": {
+              "p50_ms": 1.6184560000000001,
+              "p95_ms": 1.7723444999999998,
+              "p99_ms": 1.8451969999999998,
+              "max_ms": 2.352194,
+              "mean_ms": 1.6283751124999999,
+              "mean_boundary_stages_ms": [
+                0.12156908888888888,
+                1.2601976722222221,
+                0.2454331486111111,
+                1.6283751125
+              ],
+              "mean_native_ms": {
+                "owner": 1.0646696319444446,
+                "copy_W": 0.057322269444444435,
+                "sync_W": 0.018779955555555543,
+                "MMIO": 0.007629088888888876,
+                "wait": 0.9770745944444434,
+                "status": 0.0019110194444444475,
+                "copy_Y": 0.0001009458333333339
+              }
+            },
+            "p50_gain": 0.06426914166546693,
+            "paired_faster": 236,
+            "paired_total": 240,
+            "paired_median_saving_sum_per_graph_ms": 1.32861165
+          },
+          {
+            "family": "fc1",
+            "parent": {
+              "p50_ms": 2.0470005000000002,
+              "p95_ms": 2.1434699999999998,
+              "p99_ms": 2.1961264,
+              "max_ms": 2.878879,
+              "mean_ms": 2.049644172222222,
+              "mean_boundary_stages_ms": [
+                0.11669139444444444,
+                1.6321090805555556,
+                0.3001699875,
+                2.049644172222222
+              ],
+              "mean_native_ms": {
+                "owner": 1.4464313208333348,
+                "copy_W": 0.07186278749999996,
+                "sync_W": 0.021081415277777796,
+                "MMIO": 0.007739855555555552,
+                "wait": 1.3421246069444457,
+                "status": 0.0019533652777777764,
+                "copy_Y": 9.437638888888933e-05
+              }
+            },
+            "candidate": {
+              "p50_ms": 1.931909,
+              "p95_ms": 2.0289119999999996,
+              "p99_ms": 2.1061083999999988,
+              "max_ms": 3.03573,
+              "mean_ms": 1.9356815027777776,
+              "mean_boundary_stages_ms": [
+                0.11608078888888888,
+                1.5197139125,
+                0.29906168333333333,
+                1.9356815027777778
+              ],
+              "mean_native_ms": {
+                "owner": 1.323739354166666,
+                "copy_W": 0.07313286250000008,
+                "sync_W": 0.021178859722222217,
+                "MMIO": 0.007174388888888889,
+                "wait": 1.2186298861111116,
+                "status": 0.0019023083333333335,
+                "copy_Y": 0.0001036805555555561
+              }
+            },
+            "p50_gain": 0.05622446110785029,
+            "paired_faster": 238,
+            "paired_total": 240,
+            "paired_median_saving_sum_per_graph_ms": 1.3979332
+          },
+          {
+            "family": "fc2",
+            "parent": {
+              "p50_ms": 1.824973,
+              "p95_ms": 1.909248,
+              "p99_ms": 2.0130525,
+              "max_ms": 2.152311,
+              "mean_ms": 1.823216077777778,
+              "mean_boundary_stages_ms": [
+                0.3096679125,
+                1.3787815513888888,
+                0.13320835972222222,
+                1.8232160777777777
+              ],
+              "mean_native_ms": {
+                "owner": 1.1102240402777777,
+                "copy_W": 0.0801785041666667,
+                "sync_W": 0.02547037361111112,
+                "MMIO": 0.014022449999999975,
+                "wait": 0.9857729527777777,
+                "status": 0.0019639388888888876,
+                "copy_Y": 9.391666666666694e-05
+              }
+            },
+            "candidate": {
+              "p50_ms": 1.8359429999999999,
+              "p95_ms": 1.9191835,
+              "p99_ms": 2.0496108099999995,
+              "max_ms": 3.434985,
+              "mean_ms": 1.8364431347222223,
+              "mean_boundary_stages_ms": [
+                0.3124771722222222,
+                1.3898217,
+                0.13253302916666668,
+                1.836443134722222
+              ],
+              "mean_native_ms": {
+                "owner": 1.1133943416666672,
+                "copy_W": 0.08073053333333333,
+                "sync_W": 0.02543606805555553,
+                "MMIO": 0.014266070833333316,
+                "wait": 0.9880677847222218,
+                "status": 0.0019307819444444481,
+                "copy_Y": 0.00012018611111111181
+              }
+            },
+            "p50_gain": -0.006011047834680205,
+            "paired_faster": 97,
+            "paired_total": 240,
+            "paired_median_saving_sum_per_graph_ms": -0.12061744999999999
+          }
+        ],
+        "selected36_estimated_saving_ms": 2.6059274,
+        "scope": "Instrumented identical FP32 boundary, current parent, all49 layers screened; fixed36 production routing unchanged. Local sum is not whole-graph gain.",
+        "runs": [
+          "v5_bus_y_parent_20261010_01",
+          "v5_bus_y_candidate_20261010_01"
+        ],
+        "physical_PL_starts": 6390,
+        "all_logits_and_verified_intermediates_exact": true
+      }
+    },
+    "B3_platform_analysis.json": {
+      "source": "results/model_planning/bus_bandwidth_20261010_01/B3_platform_analysis.json",
+      "source_sha256": "d29ec9f9983d929589cc25e0380d6ac7d29a34581a80bea10ff8cc34545c4d7e",
+      "asset": "opt45-evidence",
+      "member": "measurements/B3_platform_analysis.json",
+      "value": {
+        "status": "PASS_ROUTED_PLATFORM_COMPARISON",
+        "parent": {
+          "platform": "model_system_20261010_172023_634",
+          "WNS_ns": 0.713,
+          "WHS_ns": 0.01,
+          "resources": {
+            "LUT": 53981,
+            "logic_LUT": 38456,
+            "LUTRAM": 14910,
+            "SRL": 615,
+            "FF": 52834,
+            "RAMB36": 56,
+            "RAMB18": 0,
+            "URAM": 0,
+            "DSP": 517
+          },
+          "utilization_sha256": "4fee23c037ca33f8607a7148c4da536fb94f53e7d5eb9ff21a45de71db0dc561",
+          "platform_verification_sha256": "0aeda3a032d2fa9db01ae3fd6b65206500bb1855eddd5f287f8d8058a26082c6"
+        },
+        "candidate": {
+          "platform": "model_system_20261010_184640_939",
+          "WNS_ns": 0.641,
+          "WHS_ns": 0.01,
+          "resources": {
+            "LUT": 65024,
+            "logic_LUT": 38579,
+            "LUTRAM": 25830,
+            "SRL": 615,
+            "FF": 52837,
+            "RAMB36": 56,
+            "RAMB18": 0,
+            "URAM": 0,
+            "DSP": 517
+          },
+          "utilization_sha256": "3bc57f5e64944fd4f304dde69e5cfc2ed20ad68a0be30fa2a8ab5b352c77e3f2",
+          "platform_verification_sha256": "16187b74b23a35da78ca5f1ca3d7d2fefdf4c382527a9c054053bdc8b3f64cdf"
+        },
+        "LUT_increase": 11043,
+        "candidate_LUT_fraction": 0.5551912568306011,
+        "scope": "Routed resource and timing evidence; performance is measured separately on board."
+      }
+    },
+    "B3_RTL_analysis.json": {
+      "source": "results/model_planning/bus_bandwidth_20261010_01/B3_RTL_analysis.json",
+      "source_sha256": "682c8c31ed82a766556aee0504a664182b9878eaf57c3d81fac475d30678b628",
+      "asset": "opt45-evidence",
+      "member": "measurements/B3_RTL_analysis.json",
+      "value": {
+        "status": "PASS_RTL_NUMERICS_AND_TRANSACTIONS",
+        "inputs": {
+          "results\\A\\A1\\model_gemm_opt44_x128_v1_20261010_163710_378\\axi_monitor_result.json": "8695f6bfac8181ac39fbc17ff3ed34a1b243716923d81355b6f7c1fad8f86cfb",
+          "results\\A\\A1\\model_gemm_opt45_y768_v1_20261010_183212_157\\axi_monitor_result.json": "172f685c941783f339b43299a4963e63e3fcad49caaaf41ead20d66c65e06ac0"
+        },
+        "transactions": [
+          {
+            "transaction": 1,
+            "shape": [
+              1,
+              192,
+              1000
+            ],
+            "parent_cycles": 25525,
+            "candidate_cycles": 25386,
+            "gain": 0.005445641527913825,
+            "parent_Y_requests": 5,
+            "candidate_Y_requests": 5,
+            "candidate_max_pending_Y": 2
+          },
+          {
+            "transaction": 2,
+            "shape": [
+              197,
+              192,
+              192
+            ],
+            "parent_cycles": 44954,
+            "candidate_cycles": 45194,
+            "gain": -0.005338790763891987,
+            "parent_Y_requests": 234,
+            "candidate_Y_requests": 234,
+            "candidate_max_pending_Y": 2
+          },
+          {
+            "transaction": 3,
+            "shape": [
+              197,
+              192,
+              576
+            ],
+            "parent_cycles": 120829,
+            "candidate_cycles": 113431,
+            "gain": 0.06122702331393959,
+            "parent_Y_requests": 702,
+            "candidate_Y_requests": 628,
+            "candidate_max_pending_Y": 2
+          },
+          {
+            "transaction": 4,
+            "shape": [
+              197,
+              192,
+              768
+            ],
+            "parent_cycles": 152894,
+            "candidate_cycles": 146363,
+            "gain": 0.0427158685102097,
+            "parent_Y_requests": 739,
+            "candidate_Y_requests": 739,
+            "candidate_max_pending_Y": 2
+          },
+          {
+            "transaction": 5,
+            "shape": [
+              197,
+              768,
+              192
+            ],
+            "parent_cycles": 107423,
+            "candidate_cycles": 107668,
+            "gain": -0.002280703387542715,
+            "parent_Y_requests": 234,
+            "candidate_Y_requests": 234,
+            "candidate_max_pending_Y": 2
+          },
+          {
+            "transaction": 6,
+            "shape": [
+              197,
+              768,
+              192
+            ],
+            "parent_cycles": 107426,
+            "candidate_cycles": 107669,
+            "gain": -0.0022620222292555336,
+            "parent_Y_requests": 234,
+            "candidate_Y_requests": 234,
+            "candidate_max_pending_Y": 2
+          },
+          {
+            "transaction": 7,
+            "shape": [
+              1,
+              192,
+              1000
+            ],
+            "parent_cycles": 25522,
+            "candidate_cycles": 25386,
+            "gain": 0.005328735992477074,
+            "parent_Y_requests": 5,
+            "candidate_Y_requests": 5,
+            "candidate_max_pending_Y": 2
+          },
+          {
+            "transaction": 8,
+            "shape": [
+              197,
+              192,
+              192
+            ],
+            "parent_cycles": 44957,
+            "candidate_cycles": 45194,
+            "gain": -0.0052717040727805475,
+            "parent_Y_requests": 234,
+            "candidate_Y_requests": 234,
+            "candidate_max_pending_Y": 2
+          }
+        ],
+        "selected36_RTL_saving_ms": 1.313664,
+        "decision": "Proceed to125MHz platform for one TN768 candidate: selected36 net positive including fc2 clear cost; exact outputs and actual descriptors pass. Board delivery gain and physical timing remain unmeasured.",
+        "limitations": "Controlled RTL ready pattern, fixed high bases. Not board bandwidth or graph gain. Maximum pending2 is measured, not proof that every row has more concurrency than parent."
+      }
+    },
+    "runtime_identity.json": {
+      "source": "results/model_planning/bus_bandwidth_20261010_01/runtime_identity.json",
+      "source_sha256": "94fa1ee4e132e44c78f97a8cc40c66eb2f849efa97922a0df117cc58d31219eb",
+      "asset": "opt45-evidence",
+      "member": "measurements/runtime_identity.json",
+      "value": {
+        "status": "PASS_NO_NEW_B_OR_C_RUNTIME_LOGIC",
+        "parent": "v5_mac512_route_build_20261010_01",
+        "bindings": [
+          {
+            "run": "v5_bus44_host_build_20261010_01",
+            "identical_sources": {
+              "owner.cpp": "41a112057132999e255bfe8ffde3105b8d767eed1876c6a4c9e0e5b6dc6fb873",
+              "kernel.h": "ce9272182e1c699903f92235c821462781993355d5b3ef5229ed82bb4af70997",
+              "route.h": "d5aaf98aa2945158d9210cae4d3a4441328bf11d02b1636c8224ad2022e0cb1c",
+              "client.cpp": "c84c988eaaad1b14b7e2f35967e94614e5d5a7880093693478b038af6edd5df1",
+              "client.h": "0c0da46e40bc04deb6ec95317ed08104d8a75ae1dddf8dc713d052d9390685f5",
+              "b_plugin.cpp": "3a23cd6a5fc89ca1af4c46375a0e1c2043686e726668462cd0df7958121ff91a"
+            },
+            "kernel_change": "Two platform identity constants only",
+            "kernel_sha256": "0e53b8d1d281d65e3ab1093334891be297370ccac85b689a82f9b5dd44fcfb22"
+          },
+          {
+            "run": "v5_bus45_host_build_20261010_01",
+            "identical_sources": {
+              "owner.cpp": "41a112057132999e255bfe8ffde3105b8d767eed1876c6a4c9e0e5b6dc6fb873",
+              "kernel.h": "ce9272182e1c699903f92235c821462781993355d5b3ef5229ed82bb4af70997",
+              "route.h": "d5aaf98aa2945158d9210cae4d3a4441328bf11d02b1636c8224ad2022e0cb1c",
+              "client.cpp": "c84c988eaaad1b14b7e2f35967e94614e5d5a7880093693478b038af6edd5df1",
+              "client.h": "0c0da46e40bc04deb6ec95317ed08104d8a75ae1dddf8dc713d052d9390685f5",
+              "b_plugin.cpp": "3a23cd6a5fc89ca1af4c46375a0e1c2043686e726668462cd0df7958121ff91a"
+            },
+            "kernel_change": "Two platform identity constants only",
+            "kernel_sha256": "9ddbcb66f08c6d444cd5f5c9abcaf8932024e53e080e252f8d8ca56b99c7da1a"
+          }
+        ],
+        "scope": "Existing synchronous owner, fixed36 route, four-thread B and cache synchronization unchanged. Metadata and two identity constants bind new hardware; this is source identity, not performance evidence."
+      }
+    },
+    "closeout.json": {
+      "source": "results/model_planning/bus_bandwidth_20261010_01/closeout.json",
+      "source_sha256": "84ee75e4df141265d1d663970ef9b1b655ba35e75e3fddeab00230ed3b57b71b",
+      "asset": "opt45-evidence",
+      "member": "measurements/closeout.json",
+      "value": {
+        "status": "PASS_BUS_EVIDENCE_AND_RECOVERY",
+        "runs": [
+          {
+            "run_id": "v5_bus43_diag_build_20261010_01",
+            "status": "PASS_DIAGNOSTIC_ARM_BUILD",
+            "evidence_files": 13,
+            "PL_starts": 0,
+            "inputs_sha256": "78ede1d75c24840d00ca40131f22c3a05b523ccd16186ef9296a442606d15f53"
+          },
+          {
+            "run_id": "v5_bus44_host_build_20261010_01",
+            "status": "PASS_BUS_BINDING_BUILD",
+            "evidence_files": 13,
+            "PL_starts": 0,
+            "inputs_sha256": "02521631a691e3c8b077722d17446913a5003d705f3820908c22577b571d0489"
+          },
+          {
+            "run_id": "v5_bus44_axi_build_20261010_01",
+            "status": "PASS_BUS_AXI_BUILD",
+            "evidence_files": 10,
+            "PL_starts": 0,
+            "inputs_sha256": "a7c930a6268e65f28de80bebb61f0eeb373ea82aebec50e8c1c93d3069ff223d"
+          },
+          {
+            "run_id": "v5_bus43_diag_window_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 12,
+            "PL_starts": 20,
+            "inputs_sha256": "8bae439b67bc947ba79963cc58a51366cf207eb4310ad0bfbfb24bc4df2025f6"
+          },
+          {
+            "run_id": "v5_bus_boundary_parent_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 750,
+            "PL_starts": 3185,
+            "inputs_sha256": "31bf38bac771aecf065ced1374b8c9732a73b0b8368f54089b492b743a774aec"
+          },
+          {
+            "run_id": "v5_bus_boundary_candidate_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 752,
+            "PL_starts": 3205,
+            "inputs_sha256": "0b7147a7e9a845fd07eaa8f651ed867e2f31fa8752dbc86fd953c1aa2a24ab76"
+          },
+          {
+            "run_id": "v5_bus45_host_build_20261010_01",
+            "status": "PASS_BUS_BINDING_BUILD",
+            "evidence_files": 13,
+            "PL_starts": 0,
+            "inputs_sha256": "ea3b65afff9e12c52c8cdd82b55cbcc84f515d0a0d96d3bafac046b6860f547e"
+          },
+          {
+            "run_id": "v5_bus45_axi_build_20261010_01",
+            "status": "PASS_BUS_AXI_BUILD",
+            "evidence_files": 10,
+            "PL_starts": 0,
+            "inputs_sha256": "0c99bb7d0b86300824036e0cadd7f7219e20d76aefb9b2b9e8f7a81f965eb4ab"
+          },
+          {
+            "run_id": "v5_bus_y_parent_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 750,
+            "PL_starts": 3185,
+            "inputs_sha256": "e29e6b3c0ce77ae1a9cee7550055929aba6bce02b74cfaa3e124bc716dc9803f"
+          },
+          {
+            "run_id": "v5_bus_y_candidate_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 752,
+            "PL_starts": 3205,
+            "inputs_sha256": "3ce54ea19986a5d8a643239b24ec02c0a65c44b793daec0a08e793e6a630d7f6"
+          },
+          {
+            "run_id": "v5_bus_parent_r1_before_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 13,
+            "PL_starts": 2268,
+            "inputs_sha256": "49782e536737022fc6fa50d7db1efbd93b6f3779a5d5cbe1f33fdfd73217b55e"
+          },
+          {
+            "run_id": "v5_bus_candidate_r1_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 752,
+            "PL_starts": 2376,
+            "inputs_sha256": "947b78db75aeee8706a4a79aa94f032fed7c818b8ae92507ee0b90bf897fd593"
+          },
+          {
+            "run_id": "v5_bus_parent_r1_after_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 13,
+            "PL_starts": 2268,
+            "inputs_sha256": "97b74303e2a8feedbd10d8efbf6a496b47c992951c859a1d122bbf380b6203cb"
+          },
+          {
+            "run_id": "v5_bus_parent_r2_before_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 13,
+            "PL_starts": 2268,
+            "inputs_sha256": "8f9edd579520735cd018430bd6c3cdbcc1121a4912832d556e5fbfcc9b84c814"
+          },
+          {
+            "run_id": "v5_bus_candidate_r2_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 17,
+            "PL_starts": 10441,
+            "inputs_sha256": "3b80316086821ca332dc2bcac7ce8df49395f85929d2ee158dbbf491ae212399"
+          },
+          {
+            "run_id": "v5_bus_parent_r2_after_20261010_01",
+            "status": "PASS_R2_BOARD",
+            "evidence_files": 13,
+            "PL_starts": 2268,
+            "inputs_sha256": "d10200d7ac8ad8cf8cfd9afa6d4211de3244e3de4df8655e1d5108e24c61f0e9"
+          }
+        ],
+        "physical_PL_starts": 34689,
+        "evidence_files": 3896,
+        "protected": {
+          "AB_MINIMAL_OPT38_20261009": {
+            "files": 12,
+            "manifest_sha256": "2329fe875e822a8235dbb951417cf71e129b0e28dfc8c5591e9e074a591f0c1b"
+          },
+          "AB_SHARED_OPT43_LAYOUT4_FIXED_20261010": {
+            "files": 32,
+            "manifest_sha256": "34f40b9e6d5333240e9331edf6fa061699d6bf732bbb338711efbc96a348a0e1"
+          }
+        },
+        "release": {
+          "path": "build/model_assets/ab_runtime/AB_SHARED_OPT45_X128_Y768_LAYOUT4_FIXED_20261010",
+          "manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
+          "files": 33
+        },
+        "final_candidate": "opt45_y768_v1",
+        "selection_sha256": "01d76d4b1d76434d54915f292eb1d6ee31ec6089d7ec586e6316478fbfcc93ca",
+        "final_board_sha256": "24607f912723e1add4e85574c4f9c3c7e3b6a2a790a9456f01bdc87c55b71a9f",
+        "control_transport_evidence": {
+          "results/model_planning/bus_bandwidth_20261010_01/ssh_connection_diagnostic.json": "d3852bfb22eec03764d2db41cdb791580f396103169f904d22a0823fa8c87113",
+          "results/model_planning/bus_bandwidth_20261010_01/fixed_sequence_control_receipt.json": "f888bec6d7478115ea403ea99e73d3deb8ea9565f46bec9501d1c7061d73dab0",
+          "results/model_planning/bus_bandwidth_20261010_01/remote_fixed_sequence_result.json": "5ba6297256f8af5070bc2dd7944aaaec9a6f8c704aae2e7f1156fc840016ffa4",
+          "results/model_planning/v5_bus_y_candidate_20261010_01/transport_recovery.json": "483ceb0c84bac518c29a75a6ff6177ff482d581f9fa4cd0d35f8ed26ba1c528d",
+          "results/model_planning/v5_bus_parent_r1_before_20261010_01/start_connect_timeout_receipt.json": "7986d98a92c544d65eebd7bc23eaa3962e9e626cc60a4319e5cd5463438b8ac9",
+          "results/model_planning/v5_bus_candidate_r1_20261010_01/start_receipt.json": "7986d98a92c544d65eebd7bc23eaa3962e9e626cc60a4319e5cd5463438b8ac9"
+        },
+        "formal_independent_C": "NOT_RUN",
+        "adoption_assessment": {
+          "adopted": true,
+          "p50_gains": [
+            0.04831633565377769,
+            0.04649079963174407
+          ],
+          "p95_gains": [
+            0.057533391783527454,
+            0.037717804661315135
+          ],
+          "paired_images_improved": [
+            20,
+            20
+          ],
+          "client_RSS_growth_KiB": 256,
+          "scope": "Measured research delivery; no automatic5% cutoff. All samples retained. p99/max are not uniformly improved; bounded RSS observations do not establish long-term leak freedom."
+        }
+      }
+    },
+    "platform_verification.json": {
+      "source": "results/model_integration/model_system_20261010_184640_939/platform_verification.json",
+      "source_sha256": "16187b74b23a35da78ca5f1ca3d7d2fefdf4c382527a9c054053bdc8b3f64cdf",
+      "asset": "opt45-evidence",
+      "member": "platform/platform_verification.json",
+      "value": {
+        "status": "PASS",
+        "schema": "model_platform_crosscheck_v1",
+        "build": "model_system_20261010_184640_939",
+        "a1_manifest_sha256": "68e5aebce7b2ccce672b6a8944e2c0392ad0d750786faef70d92a0a1a54ca217",
+        "WNS_ns": 0.641,
+        "WHS_ns": 0.01,
+        "artifact_count": 4,
+        "register_count": 14,
+        "address_ranges": [
+          {
+            "ADDRESSBLOCK": "HP0_DDR_LOW",
+            "BASENAME": "C_BASEADDR",
+            "BASEVALUE": "0x00000000",
+            "HIGHNAME": "C_HIGHADDR",
+            "HIGHVALUE": "0x7FFFFFFF",
+            "INSTANCE": "ps",
+            "IS_DATA": "TRUE",
+            "IS_INSTRUCTION": "TRUE",
+            "MASTERBUSINTERFACE": "m_axi_gmem0",
+            "MEMTYPE": "MEMORY",
+            "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+          },
+          {
+            "ADDRESSBLOCK": "HP0_DDR_LOW",
+            "BASENAME": "C_BASEADDR",
+            "BASEVALUE": "0x00000000",
+            "HIGHNAME": "C_HIGHADDR",
+            "HIGHVALUE": "0x7FFFFFFF",
+            "INSTANCE": "ps",
+            "IS_DATA": "TRUE",
+            "IS_INSTRUCTION": "TRUE",
+            "MASTERBUSINTERFACE": "m_axi_gmem1",
+            "MEMTYPE": "MEMORY",
+            "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+          },
+          {
+            "ADDRESSBLOCK": "HP0_DDR_LOW",
+            "BASENAME": "C_BASEADDR",
+            "BASEVALUE": "0x00000000",
+            "HIGHNAME": "C_HIGHADDR",
+            "HIGHVALUE": "0x7FFFFFFF",
+            "INSTANCE": "ps",
+            "IS_DATA": "TRUE",
+            "IS_INSTRUCTION": "TRUE",
+            "MASTERBUSINTERFACE": "m_axi_gmem2",
+            "MEMTYPE": "MEMORY",
+            "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+          },
+          {
+            "ADDRESSBLOCK": "HP0_DDR_HIGH",
+            "BASENAME": "C_BASEADDR",
+            "BASEVALUE": "0x800000000",
+            "HIGHNAME": "C_HIGHADDR",
+            "HIGHVALUE": "0xFFFFFFFFF",
+            "INSTANCE": "ps",
+            "IS_DATA": "TRUE",
+            "IS_INSTRUCTION": "TRUE",
+            "MASTERBUSINTERFACE": "m_axi_gmem0",
+            "MEMTYPE": "MEMORY",
+            "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+          },
+          {
+            "ADDRESSBLOCK": "HP0_DDR_HIGH",
+            "BASENAME": "C_BASEADDR",
+            "BASEVALUE": "0x800000000",
+            "HIGHNAME": "C_HIGHADDR",
+            "HIGHVALUE": "0xFFFFFFFFF",
+            "INSTANCE": "ps",
+            "IS_DATA": "TRUE",
+            "IS_INSTRUCTION": "TRUE",
+            "MASTERBUSINTERFACE": "m_axi_gmem1",
+            "MEMTYPE": "MEMORY",
+            "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+          },
+          {
+            "ADDRESSBLOCK": "HP0_DDR_HIGH",
+            "BASENAME": "C_BASEADDR",
+            "BASEVALUE": "0x800000000",
+            "HIGHNAME": "C_HIGHADDR",
+            "HIGHVALUE": "0xFFFFFFFFF",
+            "INSTANCE": "ps",
+            "IS_DATA": "TRUE",
+            "IS_INSTRUCTION": "TRUE",
+            "MASTERBUSINTERFACE": "m_axi_gmem2",
+            "MEMTYPE": "MEMORY",
+            "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+          },
+          {
+            "ADDRESSBLOCK": "Reg",
+            "BASENAME": "C_S_AXI_CONTROL_BASEADDR",
+            "BASEVALUE": "0xA0000000",
+            "HIGHNAME": "C_S_AXI_CONTROL_HIGHADDR",
+            "HIGHVALUE": "0xA000FFFF",
+            "INSTANCE": "gemm",
+            "IS_DATA": "TRUE",
+            "IS_INSTRUCTION": "TRUE",
+            "MASTERBUSINTERFACE": "M_AXI_HPM0_FPD",
+            "MEMTYPE": "REGISTER",
+            "SLAVEBUSINTERFACE": "s_axi_control"
+          },
+          {
+            "ADDRESSBLOCK": "reg0",
+            "BASENAME": "C_BASEADDR",
+            "BASEVALUE": "0xA0010000",
+            "HIGHNAME": "C_HIGHADDR",
+            "HIGHVALUE": "0xA001FFFF",
+            "INSTANCE": "status",
+            "IS_DATA": "TRUE",
+            "IS_INSTRUCTION": "TRUE",
+            "MASTERBUSINTERFACE": "M_AXI_HPM0_FPD",
+            "MEMTYPE": "REGISTER",
+            "SLAVEBUSINTERFACE": "S_AXI"
+          }
+        ],
+        "axi_address_bits": 64,
+        "axi_data_bits": {
+          "X": 128,
+          "W": 128,
+          "Y": 128
+        },
+        "HPM0_HP0_bits": 128,
+        "clock_constraint_ns": 8.0,
+        "HWH_clock_hz": {
+          "gemm/ap_clk": 124998749,
+          "ctrl/aclk": 124998749,
+          "data/aclk": 124998749,
+          "status/aclk": 124998749,
+          "ps/maxihpm0_fpd_aclk": 124998749,
+          "ps/saxihp0_fpd_aclk": 124998749
+        },
+        "DDR_configuration": {
+          "status": "PASS_DDR_CONFIGURATION_UNCHANGED",
+          "parameter_count": 131,
+          "parent_hwh_sha256": "6ab60d29b2b12fe08d6b6fcd391d6faa730eed0099d111802c67dfa99726a08b"
+        },
+        "formal_A2": "NOT_RUN",
+        "artifacts": {
+          "kv260_model.bit": {
+            "sha256": "cd625b6ded8d8ca862dafee47ac9327c2e591b14dfdad807da8bf82c5690b94a",
+            "bytes": 7797817
+          },
+          "kv260_model.bin": {
+            "sha256": "0e116d05f5032e2dee391861820805371fde4908bfd2d99a734251ebba14baa8",
+            "bytes": 7797692
+          },
+          "kv260_model.hwh": {
+            "sha256": "476d3ac28464f021ae54247807ca40b8f9df393aa50bc878ad33efd5268747d0",
+            "bytes": 322912
+          },
+          "kv260_model.xsa": {
+            "sha256": "ef180f0a9b1f585746e071738f4eb5231d7f2b7d20a41cbdf1ed0515182c6edd",
+            "bytes": 4884743
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,39 +1,37 @@
 # KV260 GEMM Engine
 
-A/B/C共用的完整模型计算工程，按职责直接从仓库根目录接手。计算定义为 Y[M,N]=X[M,K]×W[K,N]，INT8输入、INT32完整K归约。
+面向DeiT Tiny完整模型的KV260计算工程。A维护hls，B维护model，C维护board；共享接口、验证状态与使用方式位于docs。
 
-## 目录与责任
+## 当前运行配置
 
-```text
-hls/       A：OPT38源码、配置、公开TB和综合摘要
-model/     B：量化、INT64 Golden、小型完整head case、完整模型与v5适配
-board/     C：Vivado平台、真实v5 XRT运行时、驱动补丁和可选UI
-docs/      共享接口、进度、验证、工作流、资产锁与迁移映射
-results/   性能/资源CSV、小型公开证据；生成长日志不入Git
-```
+|配置|实现|用途与资格|
+|---|---|---|
+|默认开发|OPT38，128MAC，100MHz，载荷型wire5，49层PL|Git主入口及既有开发资产；身份见开发锁|
+|研究交付|OPT45，512MAC，125MHz，X/W/Y128bit，共享X/Y，固定36层PL|具有完整边界、两组整图和200次生命周期证据；正式独立C、PL500/full质量与独立长稳NOT RUN|
+|正式资格参考|OPT35a/V2A|身份与签署范围由正式父版锁固定|
 
-主线PR #4的职责骨架与此前协作资料已整合。hls/src保留OPT38的128 MAC、五类完整M/K/N；board/runtime已导入已发布AB1 v5源码，模型使用完整DeiT/1000类。正式冻结父版仍system_a3_20261005_02（OPT35a/V2A）；开发组合OPT38/v5与其身份分开。
+研究交付采用TM32/TN768与Layout4。qkv/fc1/fc2固定PL，proj/head固定CPU；owner独占CU/BO，B通过匹配的共享接口访问X/Y。模型、量化顺序及logits要求保持逐位一致。
 
-目录归位、复制源码和软件复验不继承新HLS、ARM、PL或公平性能Gate。[当前进度](docs/progress.md)、[验证范围](docs/verification.md)和[结果表](results/summary.csv)共同表达实际结果。旧tag/Release/签署保持，主线2026.1 C-sim和历史2020.2.2报告分开记录。
+有效实验日期为2026-10-10。OPT45两组无诊断Runner.run的p50为168.647137/169.086792ms，p95为171.387642/174.866617ms。每组20图×3正式样本全部保留；p99/max并非在所有参照中一致更优。当前状态见[progress](docs/progress.md)与[verification](docs/verification.md)。
 
-## 快速开始
+## 接手与软件检查
 
-使用已有Python3.12/NumPy1.26.4/Pillow12.3.0/ORT1.22.1环境，从仓库根目录执行：
+先读[AGENTS](AGENTS.md)、[唯一公共接口](docs/interface.md)和[工作流](docs/workflow.md)。使用已有Python3.12/NumPy1.26.4/Pillow12.3.0/ORT1.22.1环境，从仓库根运行：
 
 ```powershell
 python -B docs/tools/check.py
 python -B model/golden.py --check model/cases/tensors.npz
-python -B docs/tools/assets.py dataset --download --extract
-python -B docs/tools/dataset.py verify --root build/assets/dataset/dataset
+python -B docs/tools/assets.py opt45-source --download --extract
+python -B docs/tools/check.py --cpp --research-source build/assets/opt45-source/opt45-source --cxx <existing-cxx> --hls-include <existing-vitis-include>
 ```
 
-HLS公开软件TB：python -B docs/tools/check.py --cpp --cxx <existing-compiler>。UI：同检查加--node。均不操作FPGA；旧Release大模型/IP/运行文件按需下载至忽略的build/assets/，不默认下载全部内容。
+普通C++检查不访问FPGA，HLS pragma被忽略。完整研究运行文件和原始性能样本分别通过opt45-runtime、opt45-evidence取得；[资产锁](docs/locks/ASSETS.lock.json)固定名称、长度、SHA256及源清单。默认不会下载全部资产，缓存位于忽略的build/assets。
 
-- [A：计算核与运行](hls/README.md)
-- [B：量化、模型与测试数据](model/README.md)
-- [C：平台与运行时](board/README.md)
-- [唯一公共接口](docs/interface.md)
-- [多端分支与整合](docs/workflow.md)
-- [原路径到新位置](docs/MIGRATION.md)
+- [A：HLS计算核](hls/README.md)
+- [B：模型、量化与共享适配](model/README.md)
+- [C：平台和运行时](board/README.md)
+- [性能与资源](results/summary.csv)
+- [源码及资产定位](docs/SOURCE_MAP.json)
+- [分支用途](docs/branches.md)
 
-共享板卡由维护者串行安排；新boot/构建/接口要有独立身份和验证，按AGENTS保留未运行、失败和测量无结论状态。界面和回执不能声称尚未测得的加速。
+共享板卡由维护者串行分配。取得文件不授权加载；每个新构建、boot和接口组合必须有自己的身份、占用检查、数值与恢复验证。

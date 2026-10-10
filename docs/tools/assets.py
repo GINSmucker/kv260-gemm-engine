@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('asset', choices=('board-runtime', 'ip-rebuild', 'model', 'f05-source', 'f05-runtime', 'v5-source', 'v5-runtime', 'opt38-platform', 'dataset'))
+    p.add_argument('asset', choices=tuple(json.loads((ROOT / 'docs/locks/ASSETS.lock.json').read_bytes())['assets']))
     p.add_argument('--download', action='store_true')
     p.add_argument('--archive', type=Path)
     p.add_argument('--extract', action='store_true')
@@ -54,6 +54,26 @@ def main():
             destination.mkdir(parents=True)
             t.extractall(destination, filter='data')
         result.update(destination=str(destination), members=len(seen))
+        if a.asset.startswith('opt45-'):
+            root = destination / spec['root_prefix']
+            index = json.loads((root / 'asset_manifest.json').read_bytes())
+            for name, item in index['files'].items():
+                file = (root / name).resolve()
+                if not file.is_relative_to(root) or file.stat().st_size != item['bytes'] or hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
+                    raise ValueError('Asset member identity mismatch: ' + name)
+            result['payload_files_verified'] = len(index['files'])
+            if a.asset == 'opt45-runtime':
+                bundle = root / 'AB_SHARED_OPT45_X128_Y768_LAYOUT4_FIXED_20261010'
+                manifest = bundle / 'manifest.json'
+                if hashlib.sha256(manifest.read_bytes()).hexdigest() != spec['source_manifest_sha256']:
+                    raise ValueError('Research runtime manifest mismatch')
+                entries = json.loads(manifest.read_bytes())['files']
+                for name, item in entries.items():
+                    file = (bundle / name).resolve()
+                    if not file.is_relative_to(bundle) or file.stat().st_size != item['bytes'] or hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
+                        raise ValueError('Research runtime payload mismatch: ' + name)
+                result['frozen_runtime_members_verified'] = len(entries)
+
         if a.asset == 'model':
             import sys
             sys.path.insert(0, str(ROOT))

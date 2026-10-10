@@ -1,27 +1,27 @@
-# C：KV260平台、运行时和板端验证
+# C：平台、共享运行时与设备生命周期
 
-vivado/保留实际PS/AXI/DDR平台创建脚本/DT及observer；runtime/已取得AB1 v5真实源码，model_gemm_runtime.cpp/hpp对应原kernel.cpp/h，owner.cpp/protocol.h原字节导入。kernel.h仅提供旧include兼容名；legacy/model_backend保存冻结V2A与未采用V2B源。driver_fixes/为修复候选；ui/为已有可选工作台。
+默认运行源码位于runtime，默认平台位于vivado；当前研究实现的准确编译输入、HLS/IP与平台脚本通过opt45-source取得。driver_fixes提供固定候选补丁，ui是可选工作台，其设备能力需要真实就绪身份。
 
-[docs/interface](../docs/interface.md)是唯一公共接口；运行平台和metadata须与docs/locks/DEVELOPMENT_LOCK.json绑定的OPT38配对一致。历史35a包不能混入38，新构建不继承旧A2。
+OPT45配对平台model_system_20261010_184640_939为125MHz，X/W/Y128bit，经SmartConnect共用128bit HP0，HPM0/HP0匹配；14寄存器和131项DDR参数已核验。UUID/tags、运行图、owner和插件均由完整研究包身份固定。
 
-## 软件与构建
-
-不访问设备的协议检查由runtime/test_runtime.cpp和CMake protocol_test目标提供；Python总体检查位于docs/tools/check.py。
+## 取得与核对
 
 ```powershell
-python -B board/runtime/tools/build_runtime.py --variant v5-ab1 --uuid-include <existing-sdk>
-./board/runtime/tools/platform.ps1 -Candidate opt38
+python -B docs/tools/assets.py opt45-source --download --extract
+python -B docs/tools/assets.py opt45-runtime --download --extract
+python -B docs/tools/assets.py opt45-evidence --download --extract
 ```
 
-默认只预览/准备新build副本，--execute限已有SDK的AArch64 Linux；-Build才运行Vivado2020.2.2。实际XRT owner或B插件由runtime/CMakeLists.txt显式BUILD_XRT_OWNER开关编译，Windows不编译/运行Linux owner，目录软件迁移不等于ARM资格。
+运行包含配对bit.bin、DTBO、metadata、owner、B插件及33成员manifest；源码包含匹配平台脚本与55文件HLS/IP冻结交付。既有board-runtime资产提供固定驱动候选；不能从资产存在推断板卡当前已加载。
 
-## 产物与调用
+研究source的runtime/CMakeLists.txt限已配置Linux/AArch64 XRT/uuid/OpenSSL/ORT头环境，仅编译owner和插件，配方验证NOT RUN。原源码身份和预编译资格是可核验范围，重建产物需重新验证。默认runtime/CMakeLists.txt默认只编译软件协议测试，BUILD_XRT_OWNER是显式开关。
 
-```powershell
-python -B docs/tools/assets.py v5-runtime --download --extract
-python -B docs/tools/assets.py opt38-platform --download --extract
-```
+## 运行契约
 
-资产进入build/assets/且校验原SHA；旧Release/tag字节保持。真实owner使用维护者提供的metadata/固定W/私有root，临时驱动、独占、boot、tag、地址与AXI静止按窗口方案固定。无直接加载/驱动/boot操作在本轮验证中执行。
+维护者确认独占、固定驱动/boot/包身份并加载匹配平台后，运行包的cli.py run接受bundle、plugin、socket、input和递增run-id；匹配图为graphs/model_w8a8_pl.onnx。Runner.run不包含文件读取/会话创建；该测量边界在[progress](../docs/progress.md)登记。
 
-原C1软件、异常恢复、ARM/XRT、完整49层以及独立A/C历史证据分开计范围，见[verification](../docs/verification.md)与results/evidence。UNKNOWN保留owner/BO；先确认真实完成再停止，不能强杀、重放或据退出码推断回退成功。
+owner独占CU/BO；B初始化导入两个共享FD，RUN只传控制。owner检查Done与AXI排空，B完成FROM_DEVICE后反量化。START之后完成未知时保留owner/BO，不强杀、重放或自动回退CPU。断开恢复需QUERY确认完成、ABORT封闭及新会话完整验证。
+
+STOP后确认CU/AXI静止、无设备使用者，再卸载临时模块并恢复starter/100MHz；boot/QSPI/复位不由仓库授权。当前研究覆盖200连续、3次重建和断开恢复，正式独立C及长稳NOT RUN。历史boot和回执不能替代实时占用检查。
+
+唯一契约见[interface](../docs/interface.md)，源码/包绑定见[SOURCE_MAP](../docs/SOURCE_MAP.json)，资格见[verification](../docs/verification.md)。

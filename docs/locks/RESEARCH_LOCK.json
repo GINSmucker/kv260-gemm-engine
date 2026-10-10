@@ -1,0 +1,77 @@
+{
+  "status": "MEASURED_RESEARCH_CANDIDATE",
+  "source_window": "v5_bus_candidate_r2_20261010_01",
+  "source_build": "v5_bus45_host_build_20261010_01",
+  "production_evidence_sha256": "fed1a260d7f94b96cf8f5dcf032bdf4c47b7c5c101547e3c09a387dc8454f637",
+  "platform_fingerprint": "8e85ed09bd935e80ee2d3c237a115e70aa679bfabe04e9080f8ce4cfd750c14e",
+  "observer_tags": [
+    2391141641,
+    3180551808
+  ],
+  "clock_mhz": 125,
+  "MACs": 512,
+  "fixed_PL_families": [
+    "qkv",
+    "fc1",
+    "fc2"
+  ],
+  "CPU_families": [
+    "proj",
+    "head"
+  ],
+  "PL_layers_per_graph": 36,
+  "threads": 4,
+  "metadata_UUID": "8aec6c74-0818-f958-4716-0a6c9d3b1cc1",
+  "p50_gains": [
+    0.04831633565377769,
+    0.04649079963174407
+  ],
+  "default_OPT38": "UNCHANGED",
+  "formal_independent_C": "NOT_RUN",
+  "lifetime_scope": "200 continuous calls and three recreations; not independent long-term qualification",
+  "parent_manifest_sha256": "34f40b9e6d5333240e9331edf6fa061699d6bf732bbb338711efbc96a348a0e1",
+  "AXI_data_bits": {
+    "X": 128,
+    "W": 128,
+    "Y": 128
+  },
+  "comparison": "Current OPT43 with identical B and fixed36 route",
+  "hardware_candidate": {
+    "build_id": "model_gemm_opt45_y768_v1_20261010_183212_157",
+    "tile": {
+      "TM": 32,
+      "TN": 768,
+      "TK": 32,
+      "micro_rows": 32,
+      "micro_cols": 16,
+      "buffers": 1,
+      "TK_usage": "compatibility_constant_unused_by_compute"
+    },
+    "transport": {
+      "data_bits": {
+        "X": 128,
+        "W": 128,
+        "Y": 128
+      },
+      "MMIO_pointer_units": "BYTE_ADDRESS_UNCHANGED",
+      "word_depths": {
+        "X": 9456,
+        "W": 12000,
+        "Y": 37824
+      },
+      "W_lifetime": "full_reload_each_start",
+      "X_lifetime": "initialize32x64_load_each_valid_row_once",
+      "MAC_instances": 512,
+      "clock_mhz": 125
+    }
+  },
+  "candidate_selection_sha256": "01d76d4b1d76434d54915f292eb1d6ee31ec6089d7ec586e6316478fbfcc93ca",
+  "files_manifest_asset": "opt45-runtime",
+  "manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
+  "formal_status": {
+    "independent_C": "NOT_RUN",
+    "PL500_full_quality": "NOT_RUN",
+    "independent_long_term": "NOT_RUN",
+    "release_signature": "NOT_RUN"
+  }
+}

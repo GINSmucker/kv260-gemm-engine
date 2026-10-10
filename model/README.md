@@ -1,28 +1,28 @@
-# B：模型、量化与Golden
+# B：模型、量化与CPU/PL调度
 
-quantize.py和golden.py为共享数学入口；b/保留已发布完整DeiT工具，v5/是从已发布源包导入的最小运行时适配，research/保存明确未采用研究源。原数值代码/冻结权重不因目录整理重新训练。
+模型为DeiT Tiny、224输入、12 blocks、49个Linear和1000输出。冻结B模型的989payload由model资产及BASELINE_LOCK固定，研究交付使用相同Wq/sw/bias数值身份。
 
-- DeiT-Tiny，12block/197token/embed192/3heads/224输入/1000类，49个完整Linear。
-- 动态行scale与按输出通道W scale；[-127,127]/zp0/RNE；FP32先乘sx、再sw、再bias，不融合改舍入。
-- 完整INT64独立乘法检查，再安全转换INT32；不是tile实现或HLS估计。
+quantize.py与golden.py提供共享数学入口；b包含完整模型工具，v5为默认载荷型适配。研究共享适配在opt45-source的runtime中，匹配运行图/插件在opt45-runtime。CPU/PL配置必须显式选择。
 
-## 小case
+## 数值与线程
 
-cases/tensors.npz是公开冻结B案例l48_real：完整head M1/K192/N1000，约194KiB。含Xq/Wq、sx/sw/bias、完整INT32和FP32预期；cases/manifest.json保留来源、逐数组SHA和shape，不来自C留出。
+RNE、[-127,127]/zp0；X逐行scale、W逐输出通道scale，完整INT8×INT8→INT32。反量化两次FP32乘再加bias，禁止fast-math/FMA改变已确认顺序。logits要求逐位一致。
+
+研究ORT为intra4/inter1、顺序执行、spinning0、图优化关闭。Layout4直接写入三个[1,3,197,64]目标及反向输出布局；Erf/量化/反量化复用ORT线程池。当前图251节点，布局不增加浮点计算。
+
+固定qkv/fc1/fc2在PL、proj/head在CPU，36次PL/图。B导入X/Y BO，直接量化/反量化；CPU整数结果使用151296B普通工作区。必要cache sync保留，无失败后fallback或自动调优。
+
+## 公共测试与资产
+
+cases/tensors.npz约194KiB，冻结公开head为M1/K192/N1000，含Xq/Wq/sx/sw/bias/Y与后处理参考；不含私有C留出。
 
 ```powershell
 python -B model/golden.py --check model/cases/tensors.npz
+python -B docs/tools/assets.py model --download --extract
+python -B docs/tools/assets.py opt45-runtime --download --extract
+python -B docs/tools/assets.py opt45-evidence --download --extract
 ```
 
-完整152层case、权重、20张量与模型图通过旧model资产按需取得，不在Git复制。校准256/选择100/回归20（selection子集）/快测500的856原JPEG在数据Release中，见[DATASETS](../docs/reference/DATASETS.md)。
+模型根为build/assets/model/B_MODEL_BUNDLE_V1；研究包根为build/assets/opt45-runtime/opt45-runtime/AB_SHARED_OPT45_X128_Y768_LAYOUT4_FIXED_20261010。研究包含匹配251节点图、权重连续文件、库、Runner/CLI和metadata，33成员manifest固定。
 
-## CPU与v5
-
-模型包取得后，从根目录执行：
-```powershell
-python -B -m model.b.cli infer --bundle build/assets/model/B_MODEL_BUNDLE_V1 --tensor build/assets/model/B_MODEL_BUNDLE_V1/regression/00_input.npy --backend windows_fp32 --output results/runs/my_cpu.json
-```
-
-ARM用arm_fp32/arm_w8a8_reference，必须在ARM执行。保持4线程和依赖；跨主机量化logits FAIL、未签质量/性能限制继续保留。
-
-model/v5/runtime.py与cli.py不直接取得板卡，连接维护者已验证的v5 owner；b_plugin.cpp/client.cpp等头用CMake实际配方独立编译。v5不具旧V2A/F05持久恢复语义；接口和配对见[唯一接口](../docs/interface.md)、[v5交接](../docs/reference/V5_AB_HANDOFF.md)及[开发锁](../docs/locks/DEVELOPMENT_LOCK.json)。
+单CPU输入的软件回归入口为docs/tools/check.py --model-bundle；Windows和ARM后端名前缀不同。正式PL500/full质量与独立长稳NOT RUN；20图逐位验证不代替这些范围。研究使用与设备前置条件见[board](../board/README.md)和[接口](../docs/interface.md)。

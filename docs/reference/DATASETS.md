@@ -76,4 +76,4 @@ unpack-full拒绝错误SHA、链接/路径逃逸和已有目标。完整评测�
 
 随包保留[上游仓库](https://github.com/fastai/imagenette)的Apache-2.0许可、固定revision及原图权利说明；仓库许可不等于重新许可原照片。用于队友研究教育复测，使用前阅读来源与[原数据条款](https://image-net.org/download.php)，保留归属，不授予额外商业许可。
 
-Imagenette来自ImageNet，可能与预训练数据相关；此处用于相同模型量化/替换的配对回归，不表述为标准ImageNet-1k或新域泛化成绩。本次数据打包与输入复现不产生新的训练、质量、性能或发布Gate。
+Imagenette来自ImageNet，可能与预训练数据相关；此处用于相同模型量化/替换的配对回归，不表述为标准ImageNet-1k或新域泛化成绩。数据可取得和输入复现仅证明对应身份，不能代替训练、质量、性能或发布验收。

@@ -1,14 +1,14 @@
-# 固定第三方来源与许可
+# 第三方来源与许可
 
-此协作快照不为团队代码重新声明全仓许可证。原作者项目资料和签署保留；第三方材料保持各自许可及摘要。
+团队代码不在本资料中重新声明全仓许可证；第三方材料保持自身许可、版权和摘要。
 
-|材料|来源与许可|
+|材料|来源与约束|
 |---|---|
-|nlohmann JSON编译头|冻结`board/runtime/legacy/model_backend/vendor/json.hpp`，MIT；同目录JSON_LICENSE.MIT，头内原版权保留|
-|PicoSHA2|固定编译头中的原MIT许可/版权保留；插件和旧工具使用的版本各有SOURCE_MAP摘要|
-|ORT 1.22.1 C/C++ API头|Microsoft ONNX Runtime v1.22.1，MIT，头内声明保留；[官方固定源码](https://github.com/microsoft/onnxruntime/tree/v1.22.1/include/onnxruntime/core/session)|
-|KV260 board文件|XilinxBoardStore固定提交，原LICENSE随IP Release保留，来源见BOARD_AND_TOOLS|
-|ZOCL补丁|XRT固定上游及其GPL许可；两份差分保留上游上下文，不在本包安装系统模块|
-|DeiT模型和B冻结包|`deit_tiny_patch16_224.fb_in1k`来源、revision、数据来源与构建依赖保留在原B包model_identity/dataset_source/manifest中；归档保持原字节|
+|nlohmann JSON|legacy/model_backend/vendor的固定头及MIT许可|
+|PicoSHA2|固定编译头与原MIT声明，SOURCE_MAP绑定具体版本|
+|ORT C/C++头|ONNX Runtime1.22.1、MIT，匹配编译头保持原版权|
+|KV260板文件|固定XilinxBoardStore材料，许可证随IP/source资产|
+|ZOCL补丁|固定XRT上游及GPL许可，差分不授予系统安装权限|
+|DeiT/B模型|B模型包的model_identity/dataset_source/manifest固定来源、revision和依赖|
 
-ARM runtime链接目标系统现有XRT、uuid与libcrypto，不复制系统库。B完整归档中的安装材料保留原发行包元数据；它只通过私有协作Release显式下载。
+研究运行时链接目标系统现有XRT/uuid/OpenSSL，不分发系统库或SDK环境。图片使用范围和源许可见[DATASETS](reference/DATASETS.md)，资产与源身份见[SOURCE_MAP](SOURCE_MAP.json)。

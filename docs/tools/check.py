@@ -32,6 +32,8 @@ def main():
     p.add_argument('--cpp', action='store_true')
     p.add_argument('--cxx', default='g++')
     p.add_argument('--model-bundle', type=Path)
+    p.add_argument('--research-source', type=Path, help='Extracted opt45-source root; --cpp adds ordinary C++ TB')
+    p.add_argument('--hls-include', type=Path, help='Existing Vitis HLS include directory containing ap_int.h')
     p.add_argument('--output', type=Path)
     a = p.parse_args()
     result = {'scope': 'HANDOFF_LOCAL_SOFTWARE_ONLY', 'PL_starts': 0,
@@ -52,6 +54,18 @@ def main():
     for name in ('model.b.common', 'model.b.quantization', 'model.b.golden_int64', 'model.b.runtime', 'model.b.runtime_v2a', 'model.b.v2a.cli'):
         importlib.import_module(name)
     result['python_core_imports'] = 'PASS'
+    if a.research_source:
+        research = a.research_source.resolve()
+        identity = json.loads((research / 'asset_manifest.json').read_bytes())
+        spec = json.loads((ROOT / 'docs/locks/ASSETS.lock.json').read_bytes())['assets']['opt45-source']
+        if identity['source_identity']['A_delivery_manifest_sha256'] != spec['source_manifest_sha256']:
+            raise ValueError('Research source identity mismatch')
+        for name, item in identity['files'].items():
+            file = (research / name).resolve()
+            if not file.is_relative_to(research) or file.stat().st_size != item['bytes'] or sha(file) != item['sha256']:
+                raise ValueError('Research member identity mismatch: ' + name)
+        result['OPT45_source_members_verified'] = len(identity['files'])
+
     broken = []
     for file in [ROOT / 'README.md', ROOT / 'hls/README.md', ROOT / 'model/README.md', ROOT / 'board/README.md', *list((ROOT / 'docs').glob('*.md')), *list((ROOT / 'docs/reference').glob('*.md'))]:
         for link in re.findall(r'\[[^\]]+\]\(([^)]+)\)', file.read_text(encoding='utf-8')):
@@ -75,12 +89,20 @@ def main():
         if not cxx:
             raise RuntimeError('C++ compiler missing; supply --cxx')
         result['native_Cpp_public'] = {}
-        for name in ('opt35a_clear_v1_full', 'opt38_fullk_v1_full'):
-            src = ROOT / 'hls' if name == 'opt38_fullk_v1_full' else ROOT / 'hls/candidates' / name
+        candidates = [('opt35a_clear_v1_full', ROOT / 'hls/candidates/opt35a_clear_v1_full'),
+                      ('opt38_fullk_v1_full', ROOT / 'hls')]
+        if a.research_source:
+            if not a.hls_include or not (a.hls_include / 'ap_int.h').is_file():
+                raise FileNotFoundError('OPT45 ordinary C++ requires --hls-include with existing Vitis ap_int.h')
+            candidates.append(('opt45_y768_v1', a.research_source.resolve() / 'hardware/model_gemm/candidates/opt45_y768_v1'))
+        for name, src in candidates:
             dest = run / name
             dest.mkdir()
             executable = dest / ('testbench.exe' if sys.platform == 'win32' else 'testbench')
-            command([cxx, '-std=c++11', '-O3', '-Wno-unknown-pragmas', src / 'src/model_gemm_top.cpp', src / 'tb/testbench.cpp', '-o', executable], dest, dest / 'compile.log')
+            compile_args = [cxx, '-std=c++11', '-O3', '-Wno-unknown-pragmas']
+            if name == 'opt45_y768_v1':
+                compile_args += ['-I' + str(a.hls_include.resolve())]
+            command(compile_args + [src / 'src/model_gemm_top.cpp', src / 'tb/testbench.cpp', '-o', executable], dest, dest / 'compile.log')
             command([executable, 'rtl'], dest, dest / 'run.log')
             summary = json.loads((dest / 'rtl_tb_summary.json').read_text())
             if summary['status'] != 'PASS' or summary['valid_cases_passed'] != 8 or summary['invalid_cases_rejected'] != 8:

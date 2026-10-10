@@ -73,6 +73,45 @@
       "destination": "dataset",
       "release_tag": "team-data-20261010",
       "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-data-20261010/imagenette-dev-subset-20261010.tar.gz"
+    },
+    "opt45-runtime": {
+      "filename": "opt45-fixed-runtime-20261010.tar.gz",
+      "bytes": 13522655,
+      "sha256": "62f5ec3f5fc20765c6e85c343388c16795801fcc88952b8f161dd510c7a25599",
+      "destination": "opt45-runtime",
+      "release_tag": "team-opt45-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-opt45-20261010/opt45-fixed-runtime-20261010.tar.gz",
+      "root_prefix": "opt45-runtime",
+      "payload_files": 35,
+      "source_manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "total_uncompressed_bytes": 20711693
+    },
+    "opt45-source": {
+      "filename": "opt45-source-20261010.tar.gz",
+      "bytes": 5549003,
+      "sha256": "c217eb521cbf4c7e04e80ef6c52d452c70ae1b35a83f2bd365112c33c9778ef0",
+      "destination": "opt45-source",
+      "release_tag": "team-opt45-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-opt45-20261010/opt45-source-20261010.tar.gz",
+      "root_prefix": "opt45-source",
+      "payload_files": 113,
+      "source_manifest_sha256": "68e5aebce7b2ccce672b6a8944e2c0392ad0d750786faef70d92a0a1a54ca217",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "total_uncompressed_bytes": 13448395
+    },
+    "opt45-evidence": {
+      "filename": "opt45-evidence-20261010.tar.gz",
+      "bytes": 119082,
+      "sha256": "d9459f4facf18d5075a6146f15f2da4b712fd7f9fd9474acaba2daebd8642810",
+      "destination": "opt45-evidence",
+      "release_tag": "team-opt45-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-opt45-20261010/opt45-evidence-20261010.tar.gz",
+      "root_prefix": "opt45-evidence",
+      "payload_files": 29,
+      "source_manifest_sha256": "68e5aebce7b2ccce672b6a8944e2c0392ad0d750786faef70d92a0a1a54ca217",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "total_uncompressed_bytes": 1355743
     }
   }
 }

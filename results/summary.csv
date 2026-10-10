@@ -1,16 +1,41 @@
-experiment,variant,shape_or_samples,metric,value,unit,clock_mhz,source_ref,status_or_comparison,evidence,scope
-AB1_comparison,before,20 public images,model core p50,887.9996015,ms,100,0b2ee9a,VALID_COMPARISON,results/evidence/latest/runtime_progress_20261009.json,original JSON df61508664830b8699dd51d21831e9b437f79b6d26454df6568eb078cef7c8b6; no layout experiment
-AB1_comparison,candidate,20 public images,model core p50,438.3845895,ms,100,0b2ee9a,VALID_COMPARISON,results/evidence/latest/runtime_progress_20261009.json,original JSON df61508664830b8699dd51d21831e9b437f79b6d26454df6568eb078cef7c8b6; no layout experiment
-AB1_comparison,after,20 public images,model core p50,888.105542,ms,100,0b2ee9a,VALID_COMPARISON,results/evidence/latest/runtime_progress_20261009.json,original JSON df61508664830b8699dd51d21831e9b437f79b6d26454df6568eb078cef7c8b6; no layout experiment
-AB6_comparison_1,before,20 public images,model core p50,438.5917965,ms,100,0b2ee9a,VALID_COMPARISON,results/evidence/latest/runtime_progress_20261009.json,original JSON 7cc11c1c6d97d94f87c8cd74897b7fa42e53db44a99df7e5a9471f397089c15d; no layout experiment
-AB6_comparison_1,ab3,20 public images,model core p50,431.020901,ms,100,0b2ee9a,VALID_COMPARISON,results/evidence/latest/runtime_progress_20261009.json,original JSON 7cc11c1c6d97d94f87c8cd74897b7fa42e53db44a99df7e5a9471f397089c15d; no layout experiment
-AB6_comparison_1,after,20 public images,model core p50,438.3804345,ms,100,0b2ee9a,VALID_COMPARISON,results/evidence/latest/runtime_progress_20261009.json,original JSON 7cc11c1c6d97d94f87c8cd74897b7fa42e53db44a99df7e5a9471f397089c15d; no layout experiment
-AB6_comparison_2,before,20 public images,model core p50,438.65532199999996,ms,100,0b2ee9a,INCONCLUSIVE_DRIFT,results/evidence/latest/runtime_progress_20261009.json,original JSON be2281293cd128b7e10188a5fd168f6fc95c060a93bb375969c95d90865f2176; no layout experiment
-AB6_comparison_2,ab3,20 public images,model core p50,430.0678415,ms,100,0b2ee9a,INCONCLUSIVE_DRIFT,results/evidence/latest/runtime_progress_20261009.json,original JSON be2281293cd128b7e10188a5fd168f6fc95c060a93bb375969c95d90865f2176; no layout experiment
-AB6_comparison_2,after,20 public images,model core p50,438.221848,ms,100,0b2ee9a,INCONCLUSIVE_DRIFT,results/evidence/latest/runtime_progress_20261009.json,original JSON be2281293cd128b7e10188a5fd168f6fc95c060a93bb375969c95d90865f2176; no layout experiment
-OPT38,2020.2.2,five registered shapes,HLS estimated clock,9,ns,100,model_gemm_opt38_fullk_v1_full_20261005_103205_588,PASS_HISTORICAL,results/evidence/opt38/hls_export_inspection.json,"Estimate, not board clock/cycles"
-OPT38,2020.2.2,five registered shapes,HLS DSP,131,DSP,100,model_gemm_opt38_fullk_v1_full_20261005_103205_588,PASS_HISTORICAL,results/evidence/opt38/hls_export_inspection.json,Different scope from routed resources
-main_OPT38,2026.1,160 valid +8 rejected,reported C-sim outputs,10925312,elements,100,f5ead7a,PASS_REPORTED,hls/reports/synthesis.md,Team main report; not rerun by layout
-OPT38,2020.2.2,five registered shapes,HLS BRAM_18K,110,BRAM_18K,100,model_gemm_opt38_fullk_v1_full_20261005_103205_588,PASS_HISTORICAL,results/evidence/opt38/hls_export_inspection.json,Original HLS estimate; no new synthesis or board measurement
-OPT38,2020.2.2,five registered shapes,HLS FF,16113,FF,100,model_gemm_opt38_fullk_v1_full_20261005_103205_588,PASS_HISTORICAL,results/evidence/opt38/hls_export_inspection.json,Original HLS estimate; no new synthesis or board measurement
-OPT38,2020.2.2,five registered shapes,HLS LUT,14837,LUT,100,model_gemm_opt38_fullk_v1_full_20261005_103205_588,PASS_HISTORICAL,results/evidence/opt38/hls_export_inspection.json,Original HLS estimate; no new synthesis or board measurement
+experiment,variant,samples_or_scope,metric,value,unit,clock_mhz,experiment_date,measurement_scope,evidence_asset_member
+round1,parent_before,20 images x3,p50_ms,178.207242,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,parent_before,20 images x3,p95_ms,185.2033121,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,parent_before,20 images x3,p99_ms,188.34961590999998,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,parent_before,20 images x3,max_ms,190.167082,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,candidate,20 images x3,p50_ms,168.6471365,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,candidate,20 images x3,p95_ms,171.38764204999998,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,candidate,20 images x3,p99_ms,177.50362611999998,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,candidate,20 images x3,max_ms,178.259022,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,parent_after,20 images x3,p50_ms,177.2092375,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,parent_after,20 images x3,p95_ms,181.8500948,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,parent_after,20 images x3,p99_ms,184.7524044,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round1,parent_after,20 images x3,max_ms,185.343844,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,parent_before,20 images x3,p50_ms,177.404729,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,parent_before,20 images x3,p95_ms,182.82932015,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,parent_before,20 images x3,p99_ms,197.6866290199999,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,parent_before,20 images x3,max_ms,213.082102,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,candidate,20 images x3,p50_ms,169.0867915,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,candidate,20 images x3,p95_ms,174.8666167,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,candidate,20 images x3,p99_ms,195.33114526999998,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,candidate,20 images x3,max_ms,198.734057,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,parent_after,20 images x3,p50_ms,177.331054,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,parent_after,20 images x3,p95_ms,181.72072344999998,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,parent_after,20 images x3,p99_ms,186.60968613999998,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+round2,parent_after,20 images x3,max_ms,190.417224,ms,125,2026-10-10,Runner.run without diagnostics,opt45-evidence/measurements/production_analysis.json
+continuous,OPT45,200 calls,p50_ms,168.7253875,ms,125,2026-10-10,bounded lifecycle; not long-term,opt45-evidence/measurements/production_analysis.json
+continuous,OPT45,200 calls,p95_ms,173.51714564999997,ms,125,2026-10-10,bounded lifecycle; not long-term,opt45-evidence/measurements/production_analysis.json
+continuous,OPT45,200 calls,p99_ms,178.35456233999994,ms,125,2026-10-10,bounded lifecycle; not long-term,opt45-evidence/measurements/production_analysis.json
+continuous,OPT45,200 calls,max_ms,185.660837,ms,125,2026-10-10,bounded lifecycle; not long-term,opt45-evidence/measurements/production_analysis.json
+HLS,OPT45,five shapes,BRAM_18K,124,BRAM_18K,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,DSP,515,DSP,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,FF,60461,FF,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,LUT,81469,LUT,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,URAM,0,URAM,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,estimated_clock_ns,7,ns,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+platform,OPT45,whole routed system,LUT,65024,LUT,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,FF,52837,FF,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,RAMB36,56,RAMB36,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,DSP,517,DSP,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,WNS_ns,0.641,ns,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,WHS_ns,0.01,ns,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
