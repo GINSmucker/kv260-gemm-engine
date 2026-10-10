@@ -10,9 +10,9 @@
 |研究交付|OPT45，512MAC，125MHz，X/W/Y128bit，共享X/Y，固定36层PL|具有完整边界、两组整图和200次生命周期证据；正式独立C、PL500/full质量与独立长稳NOT RUN|
 |正式资格参考|OPT35a/V2A|身份与签署范围由正式父版锁固定|
 
-研究交付采用TM32/TN768与Layout4。qkv/fc1/fc2固定PL，proj/head固定CPU；owner独占CU/BO，B通过匹配的共享接口访问X/Y。模型、量化顺序及logits要求保持逐位一致。
+研究交付采用TM32/TN768、QuantQKV和固定W BO。qkv/fc1/fc2固定PL，proj/head固定CPU；owner独占CU/BO，B通过匹配的共享接口访问X/Y。模型、量化顺序及logits要求保持逐位一致。
 
-有效实验日期为2026-10-10。OPT45两组无诊断Runner.run的p50为168.647137/169.086792ms，p95为171.387642/174.866617ms。每组20图×3正式样本全部保留；p99/max并非在所有参照中一致更优。当前状态见[progress](docs/progress.md)与[verification](docs/verification.md)。
+有效实验日期为2026-10-10。当前组合两组无诊断Runner.run的p50为161.476920/161.470765ms，p95为163.026194/163.562457ms，每组200正式样本全部保留。各机制收益只对应同窗参照，不跨窗口相加；长期尾部上限未证明。当前状态见[progress](docs/progress.md)与[verification](docs/verification.md)。
 
 ## 接手与软件检查
 
@@ -35,3 +35,5 @@ python -B docs/tools/check.py --cpp --research-source build/assets/opt45-source/
 - [分支用途](docs/branches.md)
 
 共享板卡由维护者串行分配。取得文件不授权加载；每个新构建、boot和接口组合必须有自己的身份、占用检查、数值与恢复验证。
+
+当前PS组合取得方式：先下载并解包opt45-runtime，再执行python -B docs/tools/assets.py ps-runtime --download --extract及ps-evidence；21成员复用、11成员增量，组装后核验32成员。完整机制样本与有界慢样本由ps-evidence提供。

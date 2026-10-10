@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import shutil
 from pathlib import Path, PurePosixPath
 import subprocess
 import tarfile
@@ -39,6 +40,16 @@ def main():
         raise ValueError('Archive size/SHA mismatch')
     result = {'status': 'PASS_ARCHIVE_SHA256', 'asset': a.asset, 'sha256': digest.hexdigest()}
     if a.extract:
+        if a.asset == 'ps-runtime':
+            base = ROOT / 'build/assets/opt45-runtime/opt45-runtime/AB_SHARED_OPT45_X128_Y768_LAYOUT4_FIXED_20261010'
+            base_spec = lock['assets']['opt45-runtime']
+            base_manifest = base / 'manifest.json'
+            if not base_manifest.is_file() or hashlib.sha256(base_manifest.read_bytes()).hexdigest() != base_spec['source_manifest_sha256']:
+                raise FileNotFoundError('Extract and verify opt45-runtime before ps-runtime')
+            for name, item in json.loads(base_manifest.read_bytes())['files'].items():
+                file = (base / name).resolve()
+                if not file.is_relative_to(base) or file.stat().st_size != item['bytes'] or hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
+                    raise ValueError('Base runtime member mismatch: ' + name)
         destination = (ROOT / 'build/assets' / spec['destination']).resolve()
         if not destination.is_relative_to(ROOT / 'build/assets') or destination.exists():
             raise FileExistsError('Extraction requires a fresh destination under build/assets')
@@ -54,7 +65,7 @@ def main():
             destination.mkdir(parents=True)
             t.extractall(destination, filter='data')
         result.update(destination=str(destination), members=len(seen))
-        if a.asset.startswith('opt45-'):
+        if a.asset.startswith(('opt45-', 'ps-')):
             root = destination / spec['root_prefix']
             index = json.loads((root / 'asset_manifest.json').read_bytes())
             for name, item in index['files'].items():
@@ -62,6 +73,30 @@ def main():
                 if not file.is_relative_to(root) or file.stat().st_size != item['bytes'] or hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
                     raise ValueError('Asset member identity mismatch: ' + name)
             result['payload_files_verified'] = len(index['files'])
+            if a.asset == 'ps-runtime':
+                delta = json.loads((root / 'delta_manifest.json').read_bytes())
+                if delta['base_manifest_sha256'] != base_spec['source_manifest_sha256'] or delta['target_manifest_sha256'] != spec['source_manifest_sha256']:
+                    raise ValueError('PS delta/base identity mismatch')
+                bundle = (root / delta['target_directory']).resolve()
+                if not bundle.is_relative_to(root):
+                    raise ValueError('PS target escapes asset root')
+                for name, item in delta['reuse'].items():
+                    source, target = (base / name).resolve(), (bundle / name).resolve()
+                    if not source.is_relative_to(base) or not target.is_relative_to(bundle) or target.exists():
+                        raise ValueError('Invalid PS reuse path: ' + name)
+                    if source.stat().st_size != item['bytes'] or hashlib.sha256(source.read_bytes()).hexdigest() != item['sha256']:
+                        raise ValueError('PS base identity mismatch: ' + name)
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(source, target)
+                manifest = bundle / 'manifest.json'
+                if hashlib.sha256(manifest.read_bytes()).hexdigest() != spec['source_manifest_sha256']:
+                    raise ValueError('PS frozen manifest mismatch')
+                entries = json.loads(manifest.read_bytes())['files']
+                for name, item in entries.items():
+                    file = (bundle / name).resolve()
+                    if not file.is_relative_to(bundle) or file.stat().st_size != item['bytes'] or hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
+                        raise ValueError('PS materialized member mismatch: ' + name)
+                result.update(materialized_runtime=str(bundle), frozen_runtime_members_verified=len(entries), reused_base_members=len(delta['reuse']))
             if a.asset == 'opt45-runtime':
                 bundle = root / 'AB_SHARED_OPT45_X128_Y768_LAYOUT4_FIXED_20261010'
                 manifest = bundle / 'manifest.json'

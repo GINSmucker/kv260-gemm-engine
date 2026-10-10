@@ -2369,21 +2369,24 @@
   "signed_receipts": "Exact bytes; original evidence paths retained; private vectors excluded",
   "layout_parent": "0b2ee9ad94e58fd6dff200ad58747abc0252a1dd",
   "research": {
-    "configuration": "OPT45_X128_Y768_LAYOUT4_FIXED36",
+    "configuration": "OPT45_AFFINITY_QUANTQKV_WBO_FIXED36",
     "experiment_date": "2026-10-10",
-    "runtime_manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
+    "runtime_manifest_sha256": "7e8396d798c0dcac3c95ef4ad202f5fccfefc47837918ebd68df954a545a382e",
     "A_delivery_manifest_sha256": "68e5aebce7b2ccce672b6a8944e2c0392ad0d750786faef70d92a0a1a54ca217",
     "asset_keys": [
       "opt45-source",
       "opt45-runtime",
-      "opt45-evidence"
+      "opt45-evidence",
+      "ps-runtime",
+      "ps-evidence"
     ],
     "source_tree": "opt45-source/hardware/model_gemm/candidates/opt45_y768_v1",
-    "runtime_tree": "opt45-runtime/AB_SHARED_OPT45_X128_Y768_LAYOUT4_FIXED_20261010",
+    "runtime_tree": "ps-runtime/AB_SHARED_OPT45_PS_QKV_WBO_20261010",
     "source_index": "opt45-source/asset_manifest.json",
     "evidence_index": "opt45-evidence/asset_manifest.json",
     "formal_independent_C": "NOT_RUN",
     "default_development": "OPT38_UNCHANGED",
-    "CMake_recipe": "NOT_RUN_COMPILE_ONLY"
+    "CMake_recipe": "NOT_RUN_COMPILE_ONLY",
+    "base_runtime_manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8"
   }
 }

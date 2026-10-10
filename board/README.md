@@ -9,12 +9,14 @@ OPT45配对平台model_system_20261010_184640_939为125MHz，X/W/Y128bit，经Sm
 ```powershell
 python -B docs/tools/assets.py opt45-source --download --extract
 python -B docs/tools/assets.py opt45-runtime --download --extract
+python -B docs/tools/assets.py ps-runtime --download --extract
+python -B docs/tools/assets.py ps-evidence --download --extract
 python -B docs/tools/assets.py opt45-evidence --download --extract
 ```
 
-运行包含配对bit.bin、DTBO、metadata、owner、B插件及33成员manifest；源码包含匹配平台脚本与55文件HLS/IP冻结交付。既有board-runtime资产提供固定驱动候选；不能从资产存在推断板卡当前已加载。
+当前组合运行包含配对bit.bin、DTBO、metadata、owner、B插件及32成员manifest；源码包含匹配平台脚本与55文件HLS/IP冻结交付。既有board-runtime资产提供固定驱动候选；不能从资产存在推断板卡当前已加载。
 
-研究source的runtime/CMakeLists.txt限已配置Linux/AArch64 XRT/uuid/OpenSSL/ORT头环境，仅编译owner和插件，配方验证NOT RUN。原源码身份和预编译资格是可核验范围，重建产物需重新验证。默认runtime/CMakeLists.txt默认只编译软件协议测试，BUILD_XRT_OWNER是显式开关。
+当前组合源码和实测参数入口为组装包source/build_runtime.py，Linux/AArch64依赖与SDK路径由调用方明确确认；在新构建副本编译，不覆盖冻结包。基础opt45-source的CMake配方只对应基础owner，配方验证NOT RUN。原源码身份和预编译资格是可核验范围，重建产物需重新验证。默认runtime/CMakeLists.txt默认只编译软件协议测试，BUILD_XRT_OWNER是显式开关。
 
 ## 运行契约
 

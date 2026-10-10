@@ -1,8 +1,5 @@
 {
   "status": "MEASURED_RESEARCH_CANDIDATE",
-  "source_window": "v5_bus_candidate_r2_20261010_01",
-  "source_build": "v5_bus45_host_build_20261010_01",
-  "production_evidence_sha256": "fed1a260d7f94b96cf8f5dcf032bdf4c47b7c5c101547e3c09a387dc8454f637",
   "platform_fingerprint": "8e85ed09bd935e80ee2d3c237a115e70aa679bfabe04e9080f8ce4cfd750c14e",
   "observer_tags": [
     2391141641,
@@ -22,20 +19,15 @@
   "PL_layers_per_graph": 36,
   "threads": 4,
   "metadata_UUID": "8aec6c74-0818-f958-4716-0a6c9d3b1cc1",
-  "p50_gains": [
-    0.04831633565377769,
-    0.04649079963174407
-  ],
   "default_OPT38": "UNCHANGED",
   "formal_independent_C": "NOT_RUN",
   "lifetime_scope": "200 continuous calls and three recreations; not independent long-term qualification",
-  "parent_manifest_sha256": "34f40b9e6d5333240e9331edf6fa061699d6bf732bbb338711efbc96a348a0e1",
+  "parent_manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
   "AXI_data_bits": {
     "X": 128,
     "W": 128,
     "Y": 128
   },
-  "comparison": "Current OPT43 with identical B and fixed36 route",
   "hardware_candidate": {
     "build_id": "model_gemm_opt45_y768_v1_20261010_183212_157",
     "tile": {
@@ -65,9 +57,24 @@
       "clock_mhz": 125
     }
   },
-  "candidate_selection_sha256": "01d76d4b1d76434d54915f292eb1d6ee31ec6089d7ec586e6316478fbfcc93ca",
-  "files_manifest_asset": "opt45-runtime",
-  "manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
+  "source_window": "v5_ps45_wbo_20261010_01",
+  "source_builds": [
+    "v5_ps45_qkv_build_20261010_01",
+    "v5_ps45_wbo_build_20261010_01"
+  ],
+  "graph_nodes": 239,
+  "affinity": "main0; ORT workers1/2/3; owner0-3",
+  "weight_BO_bytes": 4866048,
+  "weight_host_vector": "released after initialization",
+  "comparison": "Sequential one-mechanism fixed comparisons; no direct composed-vs-original OPT45 window",
+  "evidence": {
+    "affinity_analysis.json": "12ce4af414876feee4378a5564447f399be40bcb40fd7a62be22c808e13b62f5",
+    "qkv_analysis.json": "0b3b59f6bb2fc7f9e1442a65f3b3766c00a90f3313ba9b3d6f2a47ebd910325f",
+    "wbo_analysis.json": "64737aeb6c3b86215919b377f5f08b9520e65ad9740ecadbb44018cadbc29a9a",
+    "final_board_check.json": "986209a6133b47ebbd93780e0eb94d248d4409b578802fb22387865d72bf6afc"
+  },
+  "files_manifest_asset": "ps-runtime",
+  "manifest_sha256": "7e8396d798c0dcac3c95ef4ad202f5fccfefc47837918ebd68df954a545a382e",
   "formal_status": {
     "independent_C": "NOT_RUN",
     "PL500_full_quality": "NOT_RUN",

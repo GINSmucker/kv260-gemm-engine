@@ -16,3 +16,5 @@ python -B docs/tools/check.py --cpp --research-source build/assets/opt45-source/
 研究运行文件用opt45-runtime，完整560条性能样本及验证用opt45-evidence；模型和图片分别用model/dataset资产。下载需要私有仓库权限及已认证gh；解包拒绝覆盖已有目标。普通软件检查不打开设备。
 
 给新Codex的任务可写为：请先按上述入口核对当前有效实现、源/包身份、我的A/B/C职责和未通过范围，再在独立codex分支完成一个明确改动及相应验证。不得继承其他会话的板卡授权、修改固定标签或代签C。
+
+当前PS组合取得方式：先下载并解包opt45-runtime，再执行python -B docs/tools/assets.py ps-runtime --download --extract及ps-evidence；21成员复用、11成员增量，组装后核验32成员。完整机制样本与有界慢样本由ps-evidence提供。

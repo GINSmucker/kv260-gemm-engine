@@ -6,7 +6,7 @@
     {
       "old": "system/ASSETS.lock.json",
       "new": "docs/locks/ASSETS.lock.json",
-      "current_sha256": "81da5625512e8985e1b989af3a69527af2c9843d3f2b17c0c98ba10bda277bb9",
+      "current_sha256": "f02f60d4d7c114eec0b2c6fa1223f8aa01edd83b922f6904651f6dc65d3f7d66",
       "original_sha256": "56ac8065fc6a8fb193c5a508b46e81636e7dbf91c48b660f1b3a9664cc4d0f91"
     },
     {
@@ -42,20 +42,20 @@
     {
       "old": "system/PACKAGE_MANIFEST.json",
       "new": "docs/PACKAGE_MANIFEST.json",
-      "current_sha256": "981108944730c9ed55365654623e065205ebea457a8869b265990abada41e45b",
+      "current_sha256": "86a8d7123260a9b7107a8facae253410c3ed7c4ffd8b967f8e0270db5eb9cea2",
       "original_sha256": "f83c653067cad5396112c6cae5f62d74516b1d31720b450762f96ceb3f20f7ed"
     },
     {
       "old": "system/README.md",
       "new": "README.md",
-      "current_sha256": "9547501d94d58db7f96a2a7d58fc3ae0675297a89f82973ee90135ddedace36e",
+      "current_sha256": "2d395202c4e57bcc46860a92e013cb4c5988b43946f341453fc97da7cba90793",
       "original_sha256": "0451f6912cf3f9c2467ee42e49f56f6cc86d3356eb68a2574d6618c2a48765ca",
       "archived_url": "https://github.com/GINSmucker/kv260-gemm-engine/blob/0b2ee9ad94e58fd6dff200ad58747abc0252a1dd/system/README.md"
     },
     {
       "old": "system/SOURCE_MAP.json",
       "new": "docs/SOURCE_MAP.json",
-      "current_sha256": "71d56b636d2990459b2550455898856e5e028c64bbb48ab3e6fe86c7b1cfd440",
+      "current_sha256": "d11db8d614517d4bd66e97cdb677df8bab22f3484e2eab3c6c5ae3efd9dcbb00",
       "original_sha256": "5a8037bbb5c6d4e479105c1579d651f039d61d729e12e86057d8ae4c11481665"
     },
     {
@@ -415,7 +415,7 @@
     {
       "old": "system/docs/C_RUNTIME_REFACTOR.md",
       "new": "docs/reference/C_RUNTIME_REFACTOR.md",
-      "current_sha256": "88c0dd861292ec604d969daf41c1aa13e0b5790dfe98a580259ef4b0974f3f62",
+      "current_sha256": "bd8ca6700485891c3483e25b9b930627ba3b0aec5637f923950389bd76fa7f4b",
       "original_sha256": "6e7e76d811a67d141d6983ea37d5d0f554679e4e500ee81e8b28ec5ba5180660"
     },
     {
@@ -427,7 +427,7 @@
     {
       "old": "system/docs/EVIDENCE.md",
       "new": "docs/reference/EVIDENCE.md",
-      "current_sha256": "4bf5fae66063e6b8b1ef40e6623e0afdcb15cccf2c9482b45c9c89b466f45777",
+      "current_sha256": "d3da9ccf5b120601e68f7c393069aabdbe902554c29890298afc79dd053f01fc",
       "original_sha256": "ffb9477c4d7ee71b7d2d4bad98bfc2d4f3f29b0f4039d579159d109227efc735"
     },
     {
@@ -439,32 +439,32 @@
     {
       "old": "system/docs/INTERFACES.md",
       "new": "docs/interface.md",
-      "current_sha256": "cc583558f09fb47ef6f0d631d9cdd5fd7052ff28407a674a490686a4dea75769",
+      "current_sha256": "88578a75400cd53b01a191d625dc785905b5413a700efe8062d2d615225bc3c7",
       "original_sha256": "48846827434152daf3453f186d793e10b7bd7ad06734ed4f7db06bca01660677",
       "archived_url": "https://github.com/GINSmucker/kv260-gemm-engine/blob/0b2ee9ad94e58fd6dff200ad58747abc0252a1dd/system/docs/INTERFACES.md"
     },
     {
       "old": "system/docs/MODEL_AND_RUNTIME.md",
       "new": "docs/reference/MODEL_AND_RUNTIME.md",
-      "current_sha256": "74f1437fd7a394eb2360e7b8358c924065876602cdf4a4e6471676c911b5e413",
+      "current_sha256": "fbff820c8ce2013f9439eaea43d662da568f588aed7f0fb18f119400122f34c9",
       "original_sha256": "503981143b6ba5608623046824997e2207b5a7991907f5ba9ebbc6dfbdbba13c"
     },
     {
       "old": "system/docs/OPTIMISATION_AND_ISSUES.md",
       "new": "docs/reference/OPTIMISATION_AND_ISSUES.md",
-      "current_sha256": "127bc7f91d152bfddf89d59c02e762421dccebf505ae3f444b7daa6275b53252",
+      "current_sha256": "0552dee732957579992d3a3f5dab08339a57db590a4fe6fe48e67bdf142f0065",
       "original_sha256": "1bb507c8a28632cbc6cb764e7c7fd8a84cc409c6b928b8a96a89814d8693d0d4"
     },
     {
       "old": "system/docs/START_HERE.md",
       "new": "docs/reference/START_HERE.md",
-      "current_sha256": "4f7d4d0aa86b8f3ae085093a470b61b4f52ca53c08ed364bb23aaa101597f33f",
+      "current_sha256": "eb727428b91afa61976f2222fe3513481dfd1cafa99171f3bb992187271ca16d",
       "original_sha256": "437dbcccb72565a4c10ef2393d5ad13513dd63982a7973b48cdfbd81a8c9a1d4"
     },
     {
       "old": "system/docs/STATUS.md",
       "new": "docs/reference/STATUS.md",
-      "current_sha256": "8386660eb6824cbdd1eaffd706a6a09aec8827debe5d8d232ea88c2588cb10de",
+      "current_sha256": "3bd8ef217952d9f775da9dfc9aad88ff06867668dfd393b9b4119ffe0a55b241",
       "original_sha256": "853497fe5068e30b86dbe4efc704069fdd4e9c494dc7b4d9d2b04b1869129926"
     },
     {
@@ -476,7 +476,7 @@
     {
       "old": "system/docs/V5_AB_HANDOFF.md",
       "new": "docs/reference/V5_AB_HANDOFF.md",
-      "current_sha256": "9f000663906fd3ef05132d3fb0a3bdf7412475ea9c1c0fec27651024741e5673",
+      "current_sha256": "f5b9a0db26ccdfdea2249bb5f92f7e24490fdaa9c0c9659bf66920983c5615fa",
       "original_sha256": "62aa72134c67acebd42911c8025d42590e097acd131428658cd437a451c83f03"
     },
     {
@@ -1190,7 +1190,7 @@
     {
       "old": "system/tools/assets.py",
       "new": "docs/tools/assets.py",
-      "current_sha256": "94e4b67cb7497c3aaaf2d810d50f9013e2d901a34efa8c4ae9038207392f42f0",
+      "current_sha256": "98f52ec5b7c000125f1af5af930c968405122efcd0e25ce0d15a222acac2ce7c",
       "original_sha256": "063a6b480b8f81360a39656f0e103dcf7c0af17a3915aee1196c78dd8a927e5d"
     },
     {

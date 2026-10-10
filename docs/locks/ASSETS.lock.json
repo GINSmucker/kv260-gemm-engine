@@ -112,6 +112,32 @@
       "source_manifest_sha256": "68e5aebce7b2ccce672b6a8944e2c0392ad0d750786faef70d92a0a1a54ca217",
       "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
       "total_uncompressed_bytes": 1355743
+    },
+    "ps-runtime": {
+      "filename": "opt45-ps-runtime-delta-20261010.tar.gz",
+      "bytes": 6026134,
+      "sha256": "d4ec6c5392bfaec1e7ff67fe66939161257ce9b11c5a095c108ca0d5e5448f9a",
+      "destination": "ps-runtime",
+      "root_prefix": "ps-runtime",
+      "release_tag": "team-ps-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-ps-20261010/opt45-ps-runtime-delta-20261010.tar.gz",
+      "source_manifest_sha256": "7e8396d798c0dcac3c95ef4ad202f5fccfefc47837918ebd68df954a545a382e",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "payload_files": 14,
+      "base_asset": "opt45-runtime"
+    },
+    "ps-evidence": {
+      "filename": "opt45-ps-evidence-20261010.tar.gz",
+      "bytes": 329788,
+      "sha256": "2343bf744761016bafde29bab2d21a97ee962a7d826b32515148509cf2f52b6f",
+      "destination": "ps-evidence",
+      "root_prefix": "ps-evidence",
+      "release_tag": "team-ps-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-ps-20261010/opt45-ps-evidence-20261010.tar.gz",
+      "source_manifest_sha256": "7e8396d798c0dcac3c95ef4ad202f5fccfefc47837918ebd68df954a545a382e",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "payload_files": 37,
+      "base_asset": null
     }
   }
 }

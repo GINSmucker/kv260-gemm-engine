@@ -23,7 +23,7 @@ Y[M,N]=X[M,K]×W[K,N]。X/W为signed INT8，Y及完整K累加为INT32；紧凑ro
 |默认OPT38|32/32/32bit|100MHz|载荷型wire5，49层PL|
 |研究OPT45|128/128/128bit|125MHz|共享Map扩展、固定36层PL|
 
-相同wire版本号不保证实现兼容。默认源码为hls/src、board/runtime与model/v5；研究源码由opt45-source资产提供，实际运行身份由opt45-runtime的33成员manifest固定。不得混用两套owner、插件、图或metadata。
+相同wire版本号不保证实现兼容。默认源码为hls/src、board/runtime与model/v5；硬件源由opt45-source提供；当前B/C源和运行由ps-runtime组装后的32成员manifest固定，依赖opt45-runtime的配对硬件和相同成员。不得混用两套owner、插件、图或metadata。
 
 OPT45 FPGA用128bit整字读取紧凑INT8，X/W每拍16B、Y每拍4个INT32；X行bank32×64×128bit，Y累加器32×16×48×INT32。MMIO始终写64bit字节地址，不除4或16。数据master经3入1出的SmartConnect进入128bit HP0；HPM0/HP0位宽一致。
 
@@ -46,9 +46,9 @@ ap_ctrl_hs：start bit0、Done bit1读清、idle bit2/ready bit3；无Continue�
 
 头固定32B little-endian：magic0x0035564b、version5、op16、run64，sequence/layer/bytes/status各32。研究扩展op Map=9；SCM_RIGHTS传递两个X/Y FD及SharedInfo，导入XRT对象先于接收FD释放。owner原始BO覆盖整个DMA生命周期。
 
-BO容量X151552/W192512/Y606208B。B直接量化写X并TO_DEVICE，RUN只发控制且body长度0；owner写参数/start、观察Done及AXI排空；B对Y FROM_DEVICE并直接反量化。CPU整数输出使用151296B普通工作区，必要cache sync不可删除。W逐层host→BO复制和同步，PL每start读取本层完整W。
+当前BO容量X151552/W4866048/Y606208B。B直接量化写X并TO_DEVICE，RUN只发控制且body长度0；owner写参数/start、观察Done及AXI排空；B对Y FROM_DEVICE并直接反量化。CPU整数输出使用151296B普通工作区，必要cache sync不可删除。owner初始化装载并同步4866048B固定W BO，36段4KiB对齐；RUN选择本层64bit地址，PL每start仍读取本层完整W。初始化释放5500416B主机向量，只有X/W/Y三个BO。
 
-49个Linear依次在B处理，固定路由header约束36个PL层的索引、顺序和sequence。默认配置的49载荷请求不能直接发送到共享owner。HELLO绑定权重摘要，BEGIN/END定义整图；同步调用复用单组BO，无队列、双缓冲或失败后CPU fallback。
+QuantQKV将反量化直接写三个目标，239节点，K transpose保留；默认Runner调用线程CPU0、worker CPU1/2/3，close后亲和性保留，显式options由调用者配置。49个Linear依次在B处理，固定路由header约束36个PL层的索引、顺序和sequence。默认配置的49载荷请求不能直接发送到共享owner。HELLO绑定权重摘要，BEGIN/END定义整图；同步调用复用单组BO，无队列、双缓冲或失败后CPU fallback。
 
 ## 完成、断开与资源
 
