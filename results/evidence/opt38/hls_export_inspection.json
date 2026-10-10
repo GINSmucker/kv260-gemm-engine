@@ -1,0 +1,71 @@
+{
+  "schema": "model_gemm_hls_export_inspection_v1",
+  "status": "PASS",
+  "part": "xck26-sfvc784-2LV-c",
+  "tool_version": "2020.2.2",
+  "clock_constraint_ns": 10.0,
+  "clock_uncertainty_ns": 1.0,
+  "hls_estimated_clock_ns": 9.0,
+  "top_latency_and_interval_estimates": {
+    "unit": "clock cycles",
+    "Best-caseLatency": "1",
+    "Average-caseLatency": "120464",
+    "Worst-caseLatency": "1572341",
+    "Best-caseRealTimeLatency": "10.000 ns",
+    "Average-caseRealTimeLatency": "1.205 ms",
+    "Worst-caseRealTimeLatency": "15.723 ms",
+    "Interval-min": "2",
+    "Interval-max": "1572342"
+  },
+  "resources": {
+    "BRAM_18K": 110,
+    "DSP": 131,
+    "FF": 16113,
+    "LUT": 14837,
+    "URAM": 0
+  },
+  "outer_k_pipeline_achieved_II": 1,
+  "outer_k_II_evidence": "dense_layer_csynth.rpt actual loop row; not top Interval",
+  "axi": {
+    "gmem0": {
+      "address_bits": 64,
+      "data_bits": 32
+    },
+    "gmem1": {
+      "address_bits": 64,
+      "data_bits": 32
+    },
+    "gmem2": {
+      "address_bits": 64,
+      "data_bits": 32
+    }
+  },
+  "registers": {
+    "CTRL": 0,
+    "GIE": 4,
+    "IER": 8,
+    "ISR": 12,
+    "ERROR": 16,
+    "X_LOW": 24,
+    "X_HIGH": 28,
+    "W_LOW": 36,
+    "W_HIGH": 40,
+    "Y_LOW": 48,
+    "Y_HIGH": 52,
+    "M": 60,
+    "K": 68,
+    "N": 76
+  },
+  "control": "ap_ctrl_hs",
+  "done": "clear_on_read_by_exclusive_owner",
+  "start": "clear_on_handshake",
+  "hardware_cycles_counter": "UNAVAILABLE",
+  "board_test": "NOT_RUN",
+  "provenance": {
+    "model_gemm_hls/solution1/impl/ip/drivers/model_gemm_top_v1_0/src/xmodel_gemm_top_hw.h": "01108c5e6e804c9bce29073085e2be00ebe2ddcfb1391c4de540d0932f4a14bd",
+    "model_gemm_hls/solution1/syn/verilog/model_gemm_top_control_s_axi.v": "be18108a56f7b5af6766a556bc8129466baa7ed816199e16fd433621236f8846",
+    "model_gemm_hls/solution1/syn/verilog/model_gemm_top.v": "5b2b480e8ba27d909aa029491244e238608955430f21780875f43ae3f7442cd1",
+    "model_gemm_hls/solution1/impl/ip/component.xml": "14c07f62b7a44cc4755c0265bae35ebc27efbe616e95c4c694d6bc165de77690",
+    "model_gemm_hls/solution1/impl/export.zip": "8bdf3829a25c8c6e7d73684d9205d81fbacecaad951e3d10c0dc138a54bfa2a1"
+  }
+}

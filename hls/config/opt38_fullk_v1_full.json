@@ -1,0 +1,31 @@
+{
+  "schema": "model_gemm_hls_config_v1",
+  "candidate_id": "model_gemm_opt38_fullk_v1_full",
+  "research_gate": "A3_RESEARCH",
+  "parent_id": "model_gemm_opt38_fullk_v1",
+  "changed_mechanism": "NONE_same_OPT38_DUT_full160_csim_and8valid_RTL_offline_gate",
+  "top": "model_gemm_top",
+  "part": "xck26-sfvc784-2LV-c",
+  "flow": "vivado",
+  "clock_period_ns": 10,
+  "clock_uncertainty_ns": 1,
+  "address_bits": 64,
+  "control": "ap_ctrl_hs",
+  "source_root": "hls",
+  "design_files": [
+    "src/model_gemm_top.cpp",
+    "src/model_gemm_core.hpp",
+    "src/model_gemm_config.hpp"
+  ],
+  "tb_file": "tb/testbench.cpp",
+  "tb_extra": [
+    "tb/public_cases.hpp"
+  ],
+  "csim_profile": "full",
+  "cosim_profile": "rtl",
+  "testbench_cflags": "-std=c++11 -O3",
+  "automatic_pipeline_loops": 0,
+  "expected_csim_valid_cases": 160,
+  "expected_rtl_valid_transactions": 8,
+  "maximum_local_hls_seconds": 7200
+}

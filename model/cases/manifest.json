@@ -1,0 +1,165 @@
+{
+  "schema": "kv260-gemm-cases-v1",
+  "status": "READY_PUBLIC_SOFTWARE_CASE",
+  "cases": [
+    {
+      "case_id": "l48_real",
+      "M": 1,
+      "K": 192,
+      "N": 1000,
+      "source": "Frozen B_MODEL_BUNDLE_V1 public case; NOT_C_PRIVATE_HOLDOUT",
+      "bundle_manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+      "original_case": {
+        "schema": "b_model_case_v1",
+        "case_id": "l48_real",
+        "layer_id": "head",
+        "layer_index": 48,
+        "family": "head",
+        "M": 1,
+        "K": 192,
+        "N": 1000,
+        "kind": "real",
+        "source": "regression/00_input.npy real propagated ORT quant network",
+        "Wq": {
+          "file": "weights/48/Wq.bin",
+          "sha256": "aeaffdc3a8126e1424c439a31f01564468388b35c33343ec5f51604f5015c180",
+          "bytes": 192000,
+          "dtype": "|i1",
+          "shape": [
+            192,
+            1000
+          ]
+        },
+        "sw": {
+          "file": "weights/48/sw.bin",
+          "sha256": "33896e18f10712ae01f3eab10132fd0ad51618e0c0881c6caf429edc2400bbbc",
+          "bytes": 4000,
+          "dtype": "<f4",
+          "shape": [
+            1000
+          ]
+        },
+        "bias": {
+          "file": "weights/48/bias.bin",
+          "sha256": "acaa79f54ad3bd029d0f831fc02cce7b360ed50c9b51c5c144d4d4dd012097bd",
+          "bytes": 4000,
+          "dtype": "<f4",
+          "shape": [
+            1000
+          ]
+        },
+        "Xq": {
+          "file": "layer_cases/l48_real/Xq.bin",
+          "sha256": "74eddbc20554130ac5eb5e800cdbea487762da26d69243518cb5c59424f534d6",
+          "bytes": 192,
+          "dtype": "|i1",
+          "shape": [
+            1,
+            192
+          ]
+        },
+        "sx": {
+          "file": "layer_cases/l48_real/sx.bin",
+          "sha256": "a95466d44a3f52cbb672400278bb23abd3e82264a976c6bd40d19334f1bed545",
+          "bytes": 4,
+          "dtype": "<f4",
+          "shape": [
+            1,
+            1
+          ]
+        },
+        "Y_golden": {
+          "file": "layer_cases/l48_real/Y.bin",
+          "sha256": "d60a31951211bb10b3888d41221fc9e911ad1a8947a6ee5524a0942e19bf76cc",
+          "bytes": 4000,
+          "dtype": "<i4",
+          "shape": [
+            1,
+            1000
+          ]
+        },
+        "postprocess_expected": {
+          "file": "layer_cases/l48_real/Yfloat.bin",
+          "sha256": "20b1fdc0d323c3cac04611b928b8c3449d75175053c02732f40df2fe4fcaa039",
+          "bytes": 4000,
+          "dtype": "<f4",
+          "shape": [
+            1,
+            1000
+          ]
+        },
+        "layout": "compact_row_major",
+        "mode": "dense_w8a8",
+        "Golden": "independent complete NumPy INT64; prefix bound checked"
+      },
+      "payload": "tensors.npz",
+      "payload_sha256": "580fa7c979e3e4c37c9757396ba09e3ac8e9feec062584372dbbf67d34c7a65d",
+      "payload_bytes": 198037,
+      "arrays": {
+        "Xq": {
+          "dtype": "int8",
+          "shape": [
+            1,
+            192
+          ],
+          "bytes": 192,
+          "sha256": "74eddbc20554130ac5eb5e800cdbea487762da26d69243518cb5c59424f534d6"
+        },
+        "Wq": {
+          "dtype": "int8",
+          "shape": [
+            192,
+            1000
+          ],
+          "bytes": 192000,
+          "sha256": "aeaffdc3a8126e1424c439a31f01564468388b35c33343ec5f51604f5015c180"
+        },
+        "sx": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            1
+          ],
+          "bytes": 4,
+          "sha256": "a95466d44a3f52cbb672400278bb23abd3e82264a976c6bd40d19334f1bed545"
+        },
+        "sw": {
+          "dtype": "float32",
+          "shape": [
+            1000
+          ],
+          "bytes": 4000,
+          "sha256": "33896e18f10712ae01f3eab10132fd0ad51618e0c0881c6caf429edc2400bbbc"
+        },
+        "bias": {
+          "dtype": "float32",
+          "shape": [
+            1000
+          ],
+          "bytes": 4000,
+          "sha256": "acaa79f54ad3bd029d0f831fc02cce7b360ed50c9b51c5c144d4d4dd012097bd"
+        },
+        "Y_golden": {
+          "dtype": "int32",
+          "shape": [
+            1,
+            1000
+          ],
+          "bytes": 4000,
+          "sha256": "d60a31951211bb10b3888d41221fc9e911ad1a8947a6ee5524a0942e19bf76cc"
+        },
+        "postprocess_expected": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            1000
+          ],
+          "bytes": 4000,
+          "sha256": "20b1fdc0d323c3cac04611b928b8c3449d75175053c02732f40df2fe4fcaa039"
+        }
+      },
+      "INT64_complete_check": "PASS_THIS_LAYOUT_PREPARATION",
+      "ARM_PL": "NOT_RUN_THIS_MIGRATION"
+    }
+  ]
+}

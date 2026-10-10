@@ -1,25 +1,18 @@
-# Team working rules
+# 团队与Agent工作规则
 
-- Select the appropriate branch with [BRANCH_GUIDE.md](BRANCH_GUIDE.md), then read `system/docs/START_HERE.md`, `system/docs/STATUS.md`, and `system/BASELINE_LOCK.json`.
-- `src/` and `tb/` are the original v0.2 engine. The integrated model work lives in `system/`; keep their identities distinct.
-- Formal frozen parent: `system_a3_20261005_02`, OPT35a + V2A. Its baseline lock is distinct from the current OPT38/v5 development lock; use the identity appropriate to the selected branch.
-- Formal parent remains system_a3_20261005_02. Current development hardware is AB1 OPT38 + minimal v5: 20-image same-software comparison valid, core p50 438.385ms. Read system/research/DEVELOPMENT_LOCK.json and system/docs/V5_AB_HANDOFF.md.
-- v5 diagnostics meet budgets; comparison against F05 remains inconclusive. AB1 is the shipped default development runtime. AB2/3 subsequent 4-thread full PL production passed two same-v5 development comparisons (431.021/430.068 ms). Retain initial profile1/Y and 1/2-thread failures, second AB6 CPU fairness failure and GELU rejection. No formal speedup, quality, stability, UI or release Gate.
-- Read the domain document before editing hardware, numerical software, runtime, or UI. State the parent, scope, required checks, and unrun checks.
-- Use the host's native shell. Windows uses PowerShell 7. AArch64 runtime builds require Linux on the board or an explicitly configured cross toolchain.
-- Discover tools once. Use an existing Python 3.12 environment, not an assumed Conda base. Do not install tools or change global configuration automatically.
-- From `system/`, run `python -B tools/check.py` with the selected environment. Add `--cpp`, `--node`, and `--model-bundle` as appropriate; see START_HERE.
-- Check outputs are local software evidence. They do not constitute HLS synthesis, RTL cosim, an ARM rebuild, or a new board Gate.
-- Preserve `BASELINE_LOCK.json`, original signed evidence, frozen assets, and historical failures. Changed implementations need new identities and new validation.
-- Never claim speedup from an invalid comparison, a diagnostic build, summed quantiles, HLS estimates, or mixed historical timings.
-- Do not read or upload C private holdout seeds/vectors. This repository intentionally includes public aggregate attestations only.
-- Obtain the current maintainer's board assignment before using shared hardware. Old local chat permissions are not transferred by this repository.
-- All board work requires a concrete window, identity/budget, occupancy and lock checks, and recovery plan. UNKNOWN hardware state retains its owner and BOs.
-- Prove CU/AXI quiet before stopping or unloading. Do not kill an uncertain owner, automatically resend a submitted request, or silently fall back to CPU.
-- Boot, QSPI, reboot, reset, system driver installation, and system configuration changes need separate explicit authorization.
-- Do not install or run Codex on the KV260. Development is on members' computers; the board runs the model and hardware checks.
-- Use a `codex/` branch and a scoped PR. Include the baseline hash, source/binary/asset changes, numerical/interface effects, validation, and rollback.
-- Update `system/docs/STATUS.md` and `system/docs/OPTIMISATION_AND_ISSUES.md` after an important result. Record NOT RUN/FAIL/INCONCLUSIVE honestly.
-- Avoid bulk copies of build/results trees, one-off window scripts, environments, datasets, or raw traces. Git budget for this handoff is <=250 new files and <=5 MiB.
-- Release assets are explicit downloads under ignored `system/assets/`. Check their locks before extraction; fetching a runtime does not authorize loading it.
-- Keep unrelated teammate changes and original engine reports intact. Do not force-push, move existing tags, or auto-merge main.
+- A维护hls/；B维护model/；C维护board/；docs/和results/共同维护。
+- 首读README、docs/progress.md、docs/verification.md和docs/workflow.md。docs/interface.md是唯一当前公共接口文档；接口变更同时更新机器契约和受影响消费者。
+- 主线职责骨架来自f5ead7a；已上传资料来自0b2ee9a。数值/协议不因目录迁移改变；原路径和SHA见docs/SOURCE_MAP.json及docs/MIGRATION_MAP.json。
+- 正式身份docs/locks/BASELINE_LOCK.json为OPT35a/V2A；已交付开发组合docs/locks/DEVELOPMENT_LOCK.json为AB1 OPT38/v5。区别旧正式父版、当前开发组合、未采用候选与历史实验。
+- 从根目录用选定Python3.12运行python -B docs/tools/check.py，按需加--cpp/--node/--model-bundle。它是本机软件检查，不是HLS/RTL/ARM/PL验收。
+- Windows使用PowerShell7；Linux/AArch64运行时构建必须明确使用已有工具链。先核对可执行程序身份，不自动改PATH、安装工具、依赖或系统配置。
+- 保持冻结资产锁、P1标签、签署与历史FAIL原字节。新源码/二进制/平台用新身份重新资格验证，不能借旧PASS放行。
+- Gate记录PASS/FAIL/NOT RUN；比较状态可记录INCONCLUSIVE_DRIFT/PARTIAL等原实际结果，不能强改为PASS。区分top Interval、loop II、HLS估计、kernel cycles、owner wait和整网时间。
+- 每个性能值注明源码/工具/时钟/shape/测量范围/证据和父版；不跨身份减旧数字，不相加p50，不从诊断或无效比较宣称加速。
+- 保留独立C留出边界：不读取或上传私有种子/向量，不代填独立签署。公开图片数据仅用于固定校准、选择与回归。
+- 共享KV260先由当前维护者分配，仓库不转移旧聊天授权。执行前固定清单/预算/锁/占用/Gate/回退；UNKNOWN保留owner/BO，不重发已提交请求、不强杀或自动回退CPU。
+- 证明CU/AXI静止再停止/卸载；boot/QSPI/reboot/reset/系统安装须另获具体授权。不在KV260安装或运行Codex。
+- 功能工作在codex/<方向>-<主题>分支，通过PR评审；不force-push、不移动旧tag、不自动合并main。
+- 重要节点更新docs/progress.md、docs/verification.md和results/summary.csv；完整模型研究背景见docs/reference/，历史回执见results/evidence/。新测试不覆盖旧报告。
+- 不提交工作缓存、大原始数据、SDK/环境或长日志。生成输出在build/或results/runs/；资产通过Release显式取得，当前Git内容目标5MiB以内，新增文件按实际main基线控制250以内。
+- 目录迁移仅改路径的模块也应复测依赖、调用和身份，保留原SHA与旧tag来源。保留不相关队友改动；清理与恢复按主工程维护规则，不能为数量目标删除受保护材料。
