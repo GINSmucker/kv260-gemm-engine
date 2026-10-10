@@ -1,27 +1,48 @@
-# Vitis IDE metadata and cache
+# Vitis / Vivado generated state
 /.cache/
 /_ide/
+/.Xil/
+/.vitis/
 /.vitisWorkspace.json
 /compile_commands.json
 /vitis-comp.json
+/**/solution*/
+/**/.autopilot/
+/**/build/
+/**/export/
+/**/logs/
+/**/reports/raw/
 
-# Vitis HLS generated work directory
-/rmp_sparse_gemm/
+# Generated work directories
+/hls/work/
+/hls/.hls.*
+/board/vivado/work/
+/board/runtime/build/
 
-# Build and export directories
-/build/
-/export/
-/logs/
-
-# Compiler and dependency files
+# Compiler, simulator and log files
 *.o
+*.obj
 *.d
-
-# Logs and lock files
+*.exe
 *.log
 *.jou
+*.str
 *.lock
 
-# Generated FPGA binaries
+# Generated FPGA binaries: publish these as Release assets
+*.xclbin
+*.xo
+*.bit
 *.bin
 *.pdi
+*.hwh
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
