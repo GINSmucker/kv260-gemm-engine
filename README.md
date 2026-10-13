@@ -7,12 +7,15 @@
 |配置|实现|用途与资格|
 |---|---|---|
 |默认开发|OPT38，128MAC，100MHz，载荷型wire5，49层PL|Git主入口及既有开发资产；身份见开发锁|
-|研究交付|OPT45，512MAC，125MHz，X/W/Y128bit，共享X/Y，固定36层PL|具有完整边界、两组整图和200次生命周期证据；正式独立C、PL500/full质量与独立长稳NOT RUN|
+|下一步Dense FPGA性能优化基准|OPT45，512MAC，125MHz，TM32/TN768，X/W/Y128bit|从冻结研究源码开始；完整边界、平台及实板证据可用，正式独立C、PL500/full质量与独立长稳NOT RUN|
+|资源取舍候选|A_OPT40_AXI128_M16N16，256MAC，10ns目标|固定到A分支68a9e643；用于LUT/DSP取舍研究，同条件实板性能比较NOT RUN|
 |正式资格参考|OPT35a/V2A|身份与签署范围由正式父版锁固定|
 
-研究交付采用TM32/TN768、QuantQKV和固定W BO。qkv/fc1/fc2固定PL，proj/head固定CPU；owner独占CU/BO，B通过匹配的共享接口访问X/Y。模型、量化顺序及logits要求保持逐位一致。
+OPT45是下一步Dense FPGA性能优化的主基准；A候选的用途是资源取舍。该选择不转移正式资格。A接手入口为[hls/README](hls/README.md)，其中列出源码、配置、测试、接口与证据的准确路径。Git内hls/src对应默认OPT38，OPT45由已锁定的Release源码资产提供。
 
-有效实验日期为2026-10-10。当前组合两组无诊断Runner.run的p50为161.476920/161.470765ms，p95为163.026194/163.562457ms，每组200正式样本全部保留。各机制收益只对应同窗参照，不跨窗口相加；长期尾部上限未证明。当前状态见[progress](docs/progress.md)与[verification](docs/verification.md)。
+GitHub已发布的PS比较配置采用QuantQKV和固定W BO。qkv/fc1/fc2固定PL，proj/head固定CPU；owner独占CU/BO，B通过匹配的共享接口访问X/Y。模型、量化顺序及logits要求保持逐位一致。
+
+已发布硬件/PS实验日期为2026-10-10，算法契约复核日期为2026-10-11。已发布PS组合两组无诊断Runner.run的p50为161.476920/161.470765ms，p95为163.026194/163.562457ms，每组200正式样本全部保留。各机制收益只对应同窗参照，不跨窗口相加；长期尾部上限未证明。这些指标只对应资产锁绑定的发布配置，不代表未发布的本机PS或稀疏实验。当前状态见[progress](docs/progress.md)与[verification](docs/verification.md)。
 
 ## 接手与软件检查
 

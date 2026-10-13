@@ -2,6 +2,8 @@
 
 接口说明版本KV260_GEMM_SHARED_MAP_V1。确认规范是完整K归约、紧凑矩阵、逐位数值一致与明确设备所有权；使用方必须选择匹配的运行配置和完整包身份。
 
+下一步Dense FPGA性能优化的公共接口基准为OPT45，身份由[研究锁](locks/RESEARCH_LOCK.json)的performance_baseline固定；源码与使用入口见[A接手](../hls/README.md)。A_OPT40_AXI128_M16N16为独立资源候选，不能凭相同指针宽度或寄存器偏移混用平台与运行包。
+
 ## 矩阵与shape
 
 Y[M,N]=X[M,K]×W[K,N]。X/W为signed INT8，Y及完整K累加为INT32；紧凑row-major，不修改PS矩阵布局。B采用RNE、[-127,127]/zp0、逐行sx及逐输出通道sw；scale/bias在PS，浮点顺序固定。
@@ -26,6 +28,8 @@ Y[M,N]=X[M,K]×W[K,N]。X/W为signed INT8，Y及完整K累加为INT32；紧凑ro
 相同wire版本号不保证实现兼容。默认源码为hls/src、board/runtime与model/v5；硬件源由opt45-source提供；当前B/C源和运行由ps-runtime组装后的32成员manifest固定，依赖opt45-runtime的配对硬件和相同成员。不得混用两套owner、插件、图或metadata。
 
 OPT45 FPGA用128bit整字读取紧凑INT8，X/W每拍16B、Y每拍4个INT32；X行bank32×64×128bit，Y累加器32×16×48×INT32。MMIO始终写64bit字节地址，不除4或16。数据master经3入1出的SmartConnect进入128bit HP0；HPM0/HP0位宽一致。
+
+字内lane顺序为低位在前：X/W元素i位于第i/16字的bits[8*(i%16)+7:8*(i%16)]，Y元素i位于第i/4字的bits[32*(i%4)+31:32*(i%4)]。当前合法K均能被16整除、N均能被4整除，无需按tile重排。HLS master声明深度X/W/Y分别为9456/12000/37824个128bit字；测试平台按声明最大深度分配，板端BO容量由对应运行包约定。
 
 ## 控制寄存器
 

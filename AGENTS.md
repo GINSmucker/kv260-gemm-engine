@@ -2,7 +2,7 @@
 
 - A维护hls，B维护model，C维护board；docs和results共同维护。
 - 首读README、docs/interface.md、docs/progress.md与docs/verification.md。interface是唯一当前公共接口说明；机器契约和消费者必须一致。
-- 当前默认开发是开发锁绑定的OPT38/v5；OPT45共享36层属于已测研究交付。正式资格由BASELINE_LOCK及独立签署固定，研究结果不转移正式资格。
+- 下一步Dense FPGA性能优化以RESEARCH_LOCK.performance_baseline绑定的OPT45为基准；A_OPT40_AXI128_M16N16为资源取舍候选。首读hls/README取得冻结源码及证据。Git内默认OPT38/v5与正式BASELINE_LOCK身份保持各自用途，研究结果不转移正式资格。
 - Windows使用PowerShell7。Linux/AArch64构建使用明确选定的现有SDK，不自动改PATH、环境、系统配置或安装工具。
 - 使用选定Python3.12执行docs/tools/check.py；可加--cpp、--node及--research-source。普通软件结果不能标为HLS/RTL/ARM/PL验收。
 - 冻结标签、资产、源码清单、独立签署和原始FAIL记录保持字节身份。新构建须记录新源/二进制/平台身份并重新验证。

@@ -26,10 +26,67 @@ def command(args, cwd, log):
     return r
 
 
+def architecture_contract(args, run):
+    """Reproduce the pinned public numerical contract without operating hardware."""
+    if not args.research_source or not args.hls_include or not (args.hls_include / 'ap_int.h').is_file():
+        raise ValueError('--architecture-contract requires --research-source and existing --hls-include')
+    cxx, git = shutil.which(args.cxx), shutil.which('git')
+    if not cxx or not git:
+        raise RuntimeError('Existing C++ compiler and Git are required')
+    evidence = json.loads((ROOT / 'results/architecture_contract_20261011.json').read_bytes())
+    identity = evidence['source_identity']
+    commit = identity['head']
+    if not re.fullmatch(r'[0-9a-f]{40}', commit):
+        raise ValueError('Invalid pinned A commit')
+    dest = run / 'architecture_contract'
+    dest.mkdir()
+    test = evidence['test_source_utf8'].encode('utf-8')
+    if hashlib.sha256(test).hexdigest() != evidence['verification']['test_source_sha256']:
+        raise ValueError('Contract test identity mismatch')
+    (dest / 'contract_test.cpp').write_bytes(test)
+    for name in ('src/model_gemm_top.cpp', 'src/model_gemm_core.hpp', 'include/model_gemm_config.hpp'):
+        relative = 'hls/' + name
+        blob = subprocess.run([git, 'show', commit + ':' + relative], cwd=ROOT,
+                              capture_output=True, timeout=30)
+        if blob.returncode:
+            raise RuntimeError('Pinned A commit unavailable; run git fetch origin hls/opt40-axi128-burst')
+        spec = identity['A_source_files'][relative]
+        if len(blob.stdout) != spec['bytes'] or hashlib.sha256(blob.stdout).hexdigest() != spec['sha256']:
+            raise ValueError('A source identity mismatch: ' + relative)
+        target = dest / 'A_OPT40' / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(blob.stdout)
+        source = args.research_source.resolve() / 'hardware/model_gemm/candidates/opt45_y768_v1' / name
+        spec = identity['local_OPT45_source_files'][name]
+        if source.stat().st_size != spec['bytes'] or sha(source) != spec['sha256']:
+            raise ValueError('OPT45 source identity mismatch: ' + name)
+        target = dest / 'LOCAL_OPT45' / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(source.read_bytes())
+    results = {}
+    for name, top, flags in (
+        ('A_OPT40', 'A_OPT40/hls/src/model_gemm_top.cpp', ['-DTEST_A_OPT40']),
+        ('LOCAL_OPT45', 'LOCAL_OPT45/src/model_gemm_top.cpp', []),
+    ):
+        executable = dest / (name + ('.exe' if sys.platform == 'win32' else ''))
+        command([cxx, '-std=c++11', '-O3', '-Wno-unknown-pragmas',
+                 '-I' + str(args.hls_include.resolve()), *flags, dest / top,
+                 dest / 'contract_test.cpp', '-o', executable], dest, dest / (name + '_compile.log'))
+        output = command([executable], dest, dest / (name + '_contract.log'))
+        log = output.stdout.decode('utf-8')
+        expected = evidence['verification']['tests'][name]
+        if f"SUMMARY status=PASS valid={expected['valid_cases']} invalid={expected['invalid_cases']} outputs={expected['integer_outputs']}" not in log:
+            raise ValueError('Native contract failed: ' + name)
+        results[name] = {key: expected[key] for key in ('valid_cases', 'invalid_cases', 'integer_outputs')}
+        results[name]['status'] = 'PASS'
+    return {'scope': 'ORDINARY_CPP_ONLY_NOT_HLS_RTL_BOARD_OR_PERFORMANCE', 'tests': results}
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--node', action='store_true')
     p.add_argument('--cpp', action='store_true')
+    p.add_argument('--architecture-contract', action='store_true', help='Pinned A/OPT45 ordinary C++ numerical contract')
     p.add_argument('--cxx', default='g++')
     p.add_argument('--model-bundle', type=Path)
     p.add_argument('--research-source', type=Path, help='Extracted opt45-source root; --cpp adds ordinary C++ TB')
@@ -76,6 +133,8 @@ def main():
     result['handoff_links'] = 'PASS'
     run = ROOT / 'build' / ('check_' + str(time.time_ns()))
     run.mkdir(parents=True)
+    if a.architecture_contract:
+        result['architecture_contract'] = architecture_contract(a, run)
     if a.node:
         node = shutil.which('node')
         if not node:

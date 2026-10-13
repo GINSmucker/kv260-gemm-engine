@@ -80,5 +80,42 @@
     "PL500_full_quality": "NOT_RUN",
     "independent_long_term": "NOT_RUN",
     "release_signature": "NOT_RUN"
+  },
+  "performance_baseline": {
+    "role": "NEXT_DENSE_FPGA_PERFORMANCE_BASELINE",
+    "decision_date": "2026-10-13",
+    "hardware": "OPT45_M32N16_Y768_125MHz",
+    "source_asset": "opt45-source",
+    "A_delivery_manifest_sha256": "68e5aebce7b2ccce672b6a8944e2c0392ad0d750786faef70d92a0a1a54ca217",
+    "source_tree": "hardware/model_gemm/candidates/opt45_y768_v1",
+    "contract": "docs/interface.md",
+    "verification": "docs/verification.md",
+    "source_hashes": {
+      "src/model_gemm_top.cpp": {
+        "sha256": "4f855e84019f1fbb4f6663d6f3eb46cf8a8c2c0d49f2346090fee42ade731d16",
+        "bytes": 1343
+      },
+      "src/model_gemm_core.hpp": {
+        "sha256": "6f01b6f35beb63cedb4bf3aa39a1f2f39547811a8bf449e0ac6fc466a5e80719",
+        "bytes": 6130
+      },
+      "include/model_gemm_config.hpp": {
+        "sha256": "82c05e326150715867ab0d1d3a3b7333149032125ce35791b0c322a351e1e70c",
+        "bytes": 1342
+      }
+    },
+    "comparison_evidence": "results/architecture_contract_20261011.json",
+    "A_resource_candidate": {
+      "name": "A_OPT40_AXI128_M16N16",
+      "branch": "hls/opt40-axi128-burst",
+      "commit": "68a9e643a9e998c1bd075434b31202f1545e00aa",
+      "MACs": 256,
+      "TM": 16,
+      "TN": 16,
+      "target_clock_ns": 10,
+      "same_condition_board_comparison": "NOT_RUN"
+    },
+    "formal_qualification": "NOT_RUN",
+    "default_development": "OPT38_UNCHANGED"
   }
 }

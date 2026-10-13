@@ -1,6 +1,8 @@
 # 当前有效状态
 
-有效实验日期2026-10-10。默认开发配置为OPT38/v5，正式资格参考由BASELINE_LOCK固定。当前研究交付为OPT45＋固定亲和性＋QuantQKV＋固定W BO，准确身份见[研究锁](locks/RESEARCH_LOCK.json)。
+已发布硬件/PS实验日期2026-10-10，算法契约复核日期2026-10-11。下一步Dense FPGA性能优化基准为OPT45_M32N16_Y768_125MHz；A_OPT40_AXI128_M16N16固定为资源取舍候选，双方同条件实板性能比较NOT RUN。准确身份由[研究锁](locks/RESEARCH_LOCK.json)的performance_baseline绑定，源码和验证入口见[A接手](../hls/README.md)。
+
+默认开发配置为OPT38/v5，正式资格参考由BASELINE_LOCK固定。GitHub已发布的PS参照为OPT45＋固定亲和性＋QuantQKV＋固定W BO；本页指标只适用于该冻结配置，不涵盖未发布的本机PS或稀疏研究。
 
 ## 实现与职责
 

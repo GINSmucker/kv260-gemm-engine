@@ -2387,6 +2387,9 @@
     "formal_independent_C": "NOT_RUN",
     "default_development": "OPT38_UNCHANGED",
     "CMake_recipe": "NOT_RUN_COMPILE_ONLY",
-    "base_runtime_manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8"
+    "base_runtime_manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
+    "performance_baseline": "docs/locks/RESEARCH_LOCK.json#performance_baseline",
+    "A_entry": "hls/README.md",
+    "architecture_contract_evidence": "results/architecture_contract_20261011.json"
   }
 }

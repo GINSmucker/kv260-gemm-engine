@@ -1,6 +1,6 @@
 {
   "schema": "handoff_files_v1",
-  "scope": "Current A/B/C documentation, frozen defaults and OPT45 research asset identities; software integrity only",
+  "scope": "Current A/B/C documentation, selected OPT45 Dense performance baseline and pinned A resource candidate; software integrity only",
   "files": {
     ".gitattributes": {
       "bytes": 399,
@@ -11,12 +11,12 @@
       "sha256": "b110f09ba4baa253796a9ae0c1fc927d481b05470488e6b1ddefc0302d1aa10e"
     },
     "AGENTS.md": {
-      "bytes": 2493,
-      "sha256": "395cc6b735722efea5477526995918f235dbbad950f46b164b70f6323c3cd986"
+      "bytes": 2602,
+      "sha256": "9d718ef6d5f3e820c49909eaaf9e9e16257148ab63377e2d640ab8b80b682f19"
     },
     "README.md": {
-      "bytes": 2759,
-      "sha256": "2d395202c4e57bcc46860a92e013cb4c5988b43946f341453fc97da7cba90793"
+      "bytes": 3423,
+      "sha256": "9402914e05ad169c71501a898a7c1f533453be297326109be363890624fec0d0"
     },
     "board/README.md": {
       "bytes": 2671,
@@ -423,26 +423,26 @@
       "sha256": "400d05354e3838d9781aa1a2c400f592a03f049e97ea311482d7a8edaeae9a3a"
     },
     "docs/SOURCE_MAP.json": {
-      "bytes": 128687,
-      "sha256": "d11db8d614517d4bd66e97cdb677df8bab22f3484e2eab3c6c5ae3efd9dcbb00"
+      "bytes": 128886,
+      "sha256": "4bfc6eb46a10d80eb91fe56dde197907e4127e963af325ca054ec4b7e032b54c"
     },
     "docs/THIRD_PARTY.md": {
       "bytes": 860,
       "sha256": "cbb597c8cafac04d6ae12bee8c2efca91932dd4bfc31ae7234cdfa0e845c898a"
     },
     "docs/branches.md": {
-      "bytes": 1824,
-      "sha256": "4b47c144622de4b2ef9976e311f9e10343a0d43d73cf277caa4825e80682aedb"
+      "bytes": 2016,
+      "sha256": "a85f63971ffbd7211c9d7be1c734ec9cf914a0810e61d405d701bb79de75859d"
     },
     "docs/contracts/registered_layers.json": {
       "bytes": 9371,
       "sha256": "ceb70a7e3a62f2394d24ccde883852d06a80b0270043534d63ab4fe8f83efadf"
     },
-    "docs/history/KV260_三人协作规范与六周计划_v0.1.md": {
+    "docs/history/KV260_\u4e09\u4eba\u534f\u4f5c\u89c4\u8303\u4e0e\u516d\u5468\u8ba1\u5212_v0.1.md": {
       "bytes": 43815,
       "sha256": "0f3e79a21f53cfd67766553e1ca692cb928b1c5075bde5b59df1d4ce509e2db1"
     },
-    "docs/history/KV260_连接与使用指南_含FPGA运行环境状态.md": {
+    "docs/history/KV260_\u8fde\u63a5\u4e0e\u4f7f\u7528\u6307\u5357_\u542bFPGA\u8fd0\u884c\u73af\u5883\u72b6\u6001.md": {
       "bytes": 13516,
       "sha256": "0754243c9f445c546013658c1ac2049d4f545f85cd14248f4b45ff2344020bc3"
     },
@@ -459,8 +459,8 @@
       "sha256": "91616e747007acea7279068337f3ade89de991b0cb5dcb60134680236079647b"
     },
     "docs/interface.md": {
-      "bytes": 4247,
-      "sha256": "88578a75400cd53b01a191d625dc785905b5413a700efe8062d2d615225bc3c7"
+      "bytes": 4934,
+      "sha256": "36e96837613f8dd6b14274dff7ac8144784f4c420f4aa0ef0a04b7f972e4131c"
     },
     "docs/locks/ASSETS.lock.json": {
       "bytes": 7015,
@@ -483,12 +483,12 @@
       "sha256": "502c1ab5803873e63ef9f65f2e07f777c0001ab96585b03d2deef74ba166c862"
     },
     "docs/locks/RESEARCH_LOCK.json": {
-      "bytes": 2605,
-      "sha256": "d49bf459c82548c3a57ceb071dedb71234cda54a790957ace310af1b1b1cfaf7"
+      "bytes": 4012,
+      "sha256": "2bbb412caab42ea846f8929df54493e53af94ec47369c9290ad5137d53d422e2"
     },
     "docs/progress.md": {
-      "bytes": 4319,
-      "sha256": "47987cbfc8fb38872748c66965f41e2dbbfaaddb650f6521ff45dddd6056b390"
+      "bytes": 4711,
+      "sha256": "819b6416ec9c213a21d4bcc2b9975995a14c231c0de949cfd9deec62c1afd466"
     },
     "docs/reference/ALGORITHM.md": {
       "bytes": 833,
@@ -523,8 +523,8 @@
       "sha256": "0552dee732957579992d3a3f5dab08339a57db590a4fe6fe48e67bdf142f0065"
     },
     "docs/reference/START_HERE.md": {
-      "bytes": 1757,
-      "sha256": "eb727428b91afa61976f2222fe3513481dfd1cafa99171f3bb992187271ca16d"
+      "bytes": 2908,
+      "sha256": "f6c8a994c6f5d8adfcb5d34fa4b84ae8888664cffe585c22343c22b3c7d6aeb8"
     },
     "docs/reference/STATUS.md": {
       "bytes": 580,
@@ -543,24 +543,24 @@
       "sha256": "98f52ec5b7c000125f1af5af930c968405122efcd0e25ce0d15a222acac2ce7c"
     },
     "docs/tools/check.py": {
-      "bytes": 7900,
-      "sha256": "8c832c81374c2ce1822ade5f568fbd28a85da776d4c8d78561e331e669010635"
+      "bytes": 11630,
+      "sha256": "0179392db63ef22b1393aa05eadf57d1cd29e0d2a98ad2d92ce45633ac192be5"
     },
     "docs/tools/dataset.py": {
       "bytes": 7859,
       "sha256": "e77cce60c960c5dcec6f58dcc61fde2c1bb152b7b400e277991456121e483759"
     },
     "docs/verification.md": {
-      "bytes": 4301,
-      "sha256": "fc16537ae07a10b573cf66d8503a69166507a66a2bf45c99ef7462f9f980211e"
+      "bytes": 5812,
+      "sha256": "25dbbd0e88c98c7e1abc07610063885090b051c5dcc9dff15d704c704ceed3f1"
     },
     "docs/workflow.md": {
       "bytes": 2113,
       "sha256": "33abf088295bd2d7ca301870ce49aa86ce433379594cec5acc919b021e7ba778"
     },
     "hls/README.md": {
-      "bytes": 2112,
-      "sha256": "e286478505568ab33dd9caf6bd48a39f235a6fbf0074dd98b6ede28690985022"
+      "bytes": 6810,
+      "sha256": "85da5fe8f335d02d2a4e353ee73dfa5dad6815a932a183df890000b92d4ff668"
     },
     "hls/candidates/opt35a_clear_v1_full/axi_monitor.vh": {
       "bytes": 10634,
@@ -977,6 +977,10 @@
     "results/README.md": {
       "bytes": 742,
       "sha256": "2bc47d9dfaa7cf969cadae3f0f908092c3fb695961be12e5e1383941cd55702e"
+    },
+    "results/architecture_contract_20261011.json": {
+      "bytes": 12219,
+      "sha256": "8afa9564326221c8db8cbf9ab17664f919b37199dc2db828d3913733c5b93300"
     },
     "results/evidence/cf1/candidate.json": {
       "bytes": 2207,
