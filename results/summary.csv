@@ -1,1 +1,85 @@
-candidate,source_commit,tool_version,m,k,n,csim,csynth,cosim,board,latency_ms,dsp,bram,lut,ff,notes
+experiment,variant,samples_or_scope,metric,value,unit,clock_mhz,experiment_date,measurement_scope,evidence_asset_member
+affinity,parent_before_r1,20 images x10; 200 formal,p50_ms,169.1491115,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_before_r1,20 images x10; 200 formal,p95_ms,171.58630255,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_before_r1,20 images x10; 200 formal,p99_ms,176.41615933999998,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_before_r1,20 images x10; 200 formal,max_ms,179.392564,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,candidate_r1,20 images x10; 200 formal,p50_ms,168.707608,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,candidate_r1,20 images x10; 200 formal,p95_ms,171.06936165,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,candidate_r1,20 images x10; 200 formal,p99_ms,175.70106289999998,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,candidate_r1,20 images x10; 200 formal,max_ms,177.534436,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_after_r1,20 images x10; 200 formal,p50_ms,168.7025825,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_after_r1,20 images x10; 200 formal,p95_ms,171.60006855,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_after_r1,20 images x10; 200 formal,p99_ms,175.22292932999997,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_after_r1,20 images x10; 200 formal,max_ms,179.081771,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_before_r2,20 images x10; 200 formal,p50_ms,168.93169949999998,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_before_r2,20 images x10; 200 formal,p95_ms,170.90505000000002,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_before_r2,20 images x10; 200 formal,p99_ms,175.92552149,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_before_r2,20 images x10; 200 formal,max_ms,178.473615,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,candidate_r2,20 images x10; 200 formal,p50_ms,168.101356,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,candidate_r2,20 images x10; 200 formal,p95_ms,170.38059265,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,candidate_r2,20 images x10; 200 formal,p99_ms,174.04892328999998,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,candidate_r2,20 images x10; 200 formal,max_ms,178.672977,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_after_r2,20 images x10; 200 formal,p50_ms,168.878974,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_after_r2,20 images x10; 200 formal,p95_ms,171.3366963,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_after_r2,20 images x10; 200 formal,p99_ms,175.98725847,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+affinity,parent_after_r2,20 images x10; 200 formal,max_ms,177.847379,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/affinity_analysis.json
+qkv,parent_before_r1,20 images x10; 200 formal,p50_ms,168.340624,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_before_r1,20 images x10; 200 formal,p95_ms,170.9229311,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_before_r1,20 images x10; 200 formal,p99_ms,177.16482517,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_before_r1,20 images x10; 200 formal,max_ms,185.676497,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,candidate_r1,20 images x10; 200 formal,p50_ms,165.1947475,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,candidate_r1,20 images x10; 200 formal,p95_ms,167.14687304999998,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,candidate_r1,20 images x10; 200 formal,p99_ms,172.81146863,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,candidate_r1,20 images x10; 200 formal,max_ms,173.211393,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_after_r1,20 images x10; 200 formal,p50_ms,168.5295655,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_after_r1,20 images x10; 200 formal,p95_ms,170.73603025,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_after_r1,20 images x10; 200 formal,p99_ms,175.37800828,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_after_r1,20 images x10; 200 formal,max_ms,190.807858,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_before_r2,20 images x10; 200 formal,p50_ms,168.18127700000002,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_before_r2,20 images x10; 200 formal,p95_ms,173.4089372,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_before_r2,20 images x10; 200 formal,p99_ms,189.45677722999983,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_before_r2,20 images x10; 200 formal,max_ms,225.138511,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,candidate_r2,20 images x10; 200 formal,p50_ms,166.0516705,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,candidate_r2,20 images x10; 200 formal,p95_ms,167.73199455,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,candidate_r2,20 images x10; 200 formal,p99_ms,174.3858037,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,candidate_r2,20 images x10; 200 formal,max_ms,174.520135,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_after_r2,20 images x10; 200 formal,p50_ms,168.882004,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_after_r2,20 images x10; 200 formal,p95_ms,173.29058605,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_after_r2,20 images x10; 200 formal,p99_ms,177.88710535999994,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+qkv,parent_after_r2,20 images x10; 200 formal,max_ms,188.763828,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/qkv_analysis.json
+wbo,parent_before_r1,20 images x10; 200 formal,p50_ms,165.00179500000002,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_before_r1,20 images x10; 200 formal,p95_ms,167.6889237,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_before_r1,20 images x10; 200 formal,p99_ms,172.40141071,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_before_r1,20 images x10; 200 formal,max_ms,174.418535,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,candidate_r1,20 images x10; 200 formal,p50_ms,161.47692,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,candidate_r1,20 images x10; 200 formal,p95_ms,163.02619375,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,candidate_r1,20 images x10; 200 formal,p99_ms,169.65422202,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,candidate_r1,20 images x10; 200 formal,max_ms,170.063761,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_after_r1,20 images x10; 200 formal,p50_ms,165.32620300000002,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_after_r1,20 images x10; 200 formal,p95_ms,167.4577319,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_after_r1,20 images x10; 200 formal,p99_ms,171.69949653999998,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_after_r1,20 images x10; 200 formal,max_ms,173.287063,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_before_r2,20 images x10; 200 formal,p50_ms,165.796553,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_before_r2,20 images x10; 200 formal,p95_ms,170.23738855,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_before_r2,20 images x10; 200 formal,p99_ms,181.75346960999988,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_before_r2,20 images x10; 200 formal,max_ms,211.594977,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,candidate_r2,20 images x10; 200 formal,p50_ms,161.470765,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,candidate_r2,20 images x10; 200 formal,p95_ms,163.562457,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,candidate_r2,20 images x10; 200 formal,p99_ms,167.27227954999998,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,candidate_r2,20 images x10; 200 formal,max_ms,170.059021,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_after_r2,20 images x10; 200 formal,p50_ms,165.3026385,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_after_r2,20 images x10; 200 formal,p95_ms,167.40631810000002,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_after_r2,20 images x10; 200 formal,p99_ms,174.14685111,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+wbo,parent_after_r2,20 images x10; 200 formal,max_ms,176.868529,ms,125,2026-10-10,no diagnostics; matched mechanism comparison,ps-evidence/analysis/wbo_analysis.json
+HLS,OPT45,five shapes,BRAM_18K,124,BRAM_18K,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,DSP,515,DSP,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,FF,60461,FF,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,LUT,81469,LUT,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,URAM,0,URAM,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+HLS,OPT45,five shapes,estimated_clock_ns,7,ns,125,2026-10-10,HLS estimate; not board cycles,opt45-evidence/hls/hls_export_inspection.json
+platform,OPT45,whole routed system,LUT,65024,LUT,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,FF,52837,FF,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,RAMB36,56,RAMB36,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,DSP,517,DSP,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,WNS_ns,0.641,ns,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json
+platform,OPT45,whole routed system,WHS_ns,0.01,ns,125,2026-10-10,model_system_20261010_184640_939,opt45-evidence/platform/platform_verification.json

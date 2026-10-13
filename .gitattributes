@@ -1,14 +1,13 @@
-* text=auto
-
-*.c text eol=lf
-*.cpp text eol=lf
-*.h text eol=lf
-*.hpp text eol=lf
-*.py text eol=lf
-*.tcl text eol=lf
-*.xdc text eol=lf
-*.cfg text eol=lf
-# Historical Markdown files include both CRLF and LF; preserve their bytes.
-*.md -text
-*.json text eol=lf
-*.csv text eol=lf
+# Preserve source snapshots and signed/historical report bytes on every host.
+* -text whitespace=cr-at-eol
+hls/** -whitespace
+model/b/** -whitespace
+board/runtime/legacy/** -whitespace
+board/runtime/vendor/** -whitespace
+board/ui/** -whitespace
+results/evidence/** -whitespace
+docs/history/** -whitespace
+README.md text eol=lf
+AGENTS.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf

@@ -1,0 +1,30 @@
+--- a/src/runtime_src/core/edge/drm/zocl/include/zocl_drv.h
++++ b/src/runtime_src/core/edge/drm/zocl/include/zocl_drv.h
+@@ -305,9 +305,16 @@
+ zocl_get_zdev(void)
+ {
+ 	struct platform_device *pdev = zocl_find_pdev("zyxclmm_drm");
++	struct drm_zocl_dev *zdev;
++
+ 	if(!pdev)
+ 		return NULL;
+-	return platform_get_drvdata(pdev);
++	/* The caller's DRM/CU lifetime must serialize against driver removal.
++	 * Return borrowed drvdata, balancing only the bus lookup reference.
++	 */
++	zdev = platform_get_drvdata(pdev);
++	put_device(&pdev->dev);
++	return zdev;
+ }
+ int get_apt_index_by_addr(struct drm_zocl_dev *zdev, phys_addr_t addr);
+ int get_apt_index_by_cu_idx(struct drm_zocl_dev *zdev, int cu_idx);
+--- a/src/runtime_src/core/edge/drm/zocl/common/zocl_drv.c
++++ b/src/runtime_src/core/edge/drm/zocl/common/zocl_drv.c
+@@ -270,6 +270,7 @@
+ 		return -EINVAL;
+ 
+ 	ret = of_address_to_resource(np, 0, res);
++	of_node_put(np);
+ 	if (ret)
+ 		return -EINVAL;
+ 

@@ -1,0 +1,143 @@
+{
+  "schema": "team_handoff_assets_v1",
+  "repository": "GINSmucker/kv260-gemm-engine",
+  "assets": {
+    "board-runtime": {
+      "filename": "board-runtime-v2a.tar.gz",
+      "bytes": 3976222,
+      "sha256": "7205ffb480313d0adba85bfcf1983a2804d10020576edf696f5638152caf941d",
+      "destination": "board-runtime",
+      "release_tag": "team-handoff-20261007",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/board-runtime-v2a.tar.gz"
+    },
+    "ip-rebuild": {
+      "filename": "ip-rebuild-v2.tar.gz",
+      "bytes": 2102153,
+      "sha256": "63076a32fed21b1fefdb40d32278e33aae17b0f75bcd439a7acd79fb8dd18356",
+      "destination": "ip-rebuild",
+      "release_tag": "team-handoff-20261007",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/ip-rebuild-v2.tar.gz"
+    },
+    "model": {
+      "filename": "B_MODEL_BUNDLE_V1_20261001.tar.gz",
+      "bytes": 146328353,
+      "sha256": "ff7b46e663539a0ba3125d0493d4a9757873e41676ec794d43865e0eebaf7f5f",
+      "destination": "model",
+      "release_tag": "team-handoff-20261007",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261007/B_MODEL_BUNDLE_V1_20261001.tar.gz"
+    },
+    "f05-source": {
+      "filename": "f05-source-20261008.tar.gz",
+      "bytes": 468169,
+      "sha256": "b9050f4ba12af93a9cff167dc24c845a2bd3f3aa23a5460baac4e016ce4a67dc",
+      "destination": "f05-source",
+      "release_tag": "team-handoff-20261008",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261008/f05-source-20261008.tar.gz"
+    },
+    "f05-runtime": {
+      "filename": "f05-runtime-20261008.tar.gz",
+      "bytes": 217046,
+      "sha256": "56dcd434513c6f517f9113208b04f793792e2d9d513f7b9543c0117b28e9f161",
+      "destination": "f05-runtime",
+      "release_tag": "team-handoff-20261008",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261008/f05-runtime-20261008.tar.gz"
+    },
+    "v5-source": {
+      "filename": "v5-ab1-source-20261009.tar.gz",
+      "bytes": 117334,
+      "sha256": "35892555804f43faa670b0221698984da990bbc6feace9629f9efeb2e3407488",
+      "destination": "v5-source",
+      "release_tag": "team-handoff-20261009",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261009/v5-ab1-source-20261009.tar.gz"
+    },
+    "v5-runtime": {
+      "filename": "v5-ab1-runtime-20261009.tar.gz",
+      "bytes": 82179,
+      "sha256": "7a972df6385f91854039df07fd928939ebe8b93c76b40fb24298c377813cd95d",
+      "destination": "v5-runtime",
+      "release_tag": "team-handoff-20261009",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261009/v5-ab1-runtime-20261009.tar.gz"
+    },
+    "opt38-platform": {
+      "filename": "opt38-paired-platform-20261009.tar.gz",
+      "bytes": 794913,
+      "sha256": "9d422c0c0ed68378812d2dab3f060bc603b8e2794200b58662956f3c65f55ba8",
+      "destination": "opt38-platform",
+      "release_tag": "team-handoff-20261009",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261009/opt38-paired-platform-20261009.tar.gz"
+    },
+    "dataset": {
+      "filename": "imagenette-dev-subset-20261010.tar.gz",
+      "bytes": 22288297,
+      "sha256": "7c3296de8b0c5c9fe3eb760351633906ee0254cf514f731414b841ce4d47f781",
+      "destination": "dataset",
+      "release_tag": "team-data-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-data-20261010/imagenette-dev-subset-20261010.tar.gz"
+    },
+    "opt45-runtime": {
+      "filename": "opt45-fixed-runtime-20261010.tar.gz",
+      "bytes": 13522655,
+      "sha256": "62f5ec3f5fc20765c6e85c343388c16795801fcc88952b8f161dd510c7a25599",
+      "destination": "opt45-runtime",
+      "release_tag": "team-opt45-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-opt45-20261010/opt45-fixed-runtime-20261010.tar.gz",
+      "root_prefix": "opt45-runtime",
+      "payload_files": 35,
+      "source_manifest_sha256": "204aab4d8120445fb24e1dd10cad1c9f0dbfe5aefba0456fba9b15c40a6e7cf8",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "total_uncompressed_bytes": 20711693
+    },
+    "opt45-source": {
+      "filename": "opt45-source-20261010.tar.gz",
+      "bytes": 5549003,
+      "sha256": "c217eb521cbf4c7e04e80ef6c52d452c70ae1b35a83f2bd365112c33c9778ef0",
+      "destination": "opt45-source",
+      "release_tag": "team-opt45-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-opt45-20261010/opt45-source-20261010.tar.gz",
+      "root_prefix": "opt45-source",
+      "payload_files": 113,
+      "source_manifest_sha256": "68e5aebce7b2ccce672b6a8944e2c0392ad0d750786faef70d92a0a1a54ca217",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "total_uncompressed_bytes": 13448395
+    },
+    "opt45-evidence": {
+      "filename": "opt45-evidence-20261010.tar.gz",
+      "bytes": 119082,
+      "sha256": "d9459f4facf18d5075a6146f15f2da4b712fd7f9fd9474acaba2daebd8642810",
+      "destination": "opt45-evidence",
+      "release_tag": "team-opt45-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-opt45-20261010/opt45-evidence-20261010.tar.gz",
+      "root_prefix": "opt45-evidence",
+      "payload_files": 29,
+      "source_manifest_sha256": "68e5aebce7b2ccce672b6a8944e2c0392ad0d750786faef70d92a0a1a54ca217",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "total_uncompressed_bytes": 1355743
+    },
+    "ps-runtime": {
+      "filename": "opt45-ps-runtime-delta-20261010.tar.gz",
+      "bytes": 6026134,
+      "sha256": "d4ec6c5392bfaec1e7ff67fe66939161257ce9b11c5a095c108ca0d5e5448f9a",
+      "destination": "ps-runtime",
+      "root_prefix": "ps-runtime",
+      "release_tag": "team-ps-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-ps-20261010/opt45-ps-runtime-delta-20261010.tar.gz",
+      "source_manifest_sha256": "7e8396d798c0dcac3c95ef4ad202f5fccfefc47837918ebd68df954a545a382e",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "payload_files": 14,
+      "base_asset": "opt45-runtime"
+    },
+    "ps-evidence": {
+      "filename": "opt45-ps-evidence-20261010.tar.gz",
+      "bytes": 329788,
+      "sha256": "2343bf744761016bafde29bab2d21a97ee962a7d826b32515148509cf2f52b6f",
+      "destination": "ps-evidence",
+      "root_prefix": "ps-evidence",
+      "release_tag": "team-ps-20261010",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-ps-20261010/opt45-ps-evidence-20261010.tar.gz",
+      "source_manifest_sha256": "7e8396d798c0dcac3c95ef4ad202f5fccfefc47837918ebd68df954a545a382e",
+      "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
+      "payload_files": 37,
+      "base_asset": null
+    }
+  }
+}

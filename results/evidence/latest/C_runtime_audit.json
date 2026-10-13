@@ -1,0 +1,327 @@
+{
+  "schema": "kv260_c_runtime_source_audit_v1",
+  "audit_date": "2026-10-07",
+  "status": "REVIEW_AND_PLAN_ONLY",
+  "new_board_runs": 0,
+  "new_pl_starts": 0,
+  "new_builds": 0,
+  "implementation_status": "NOT_IMPLEMENTED",
+  "formal_parent": "system_a3_20261005_02",
+  "source_basis": "CF1 qualified source; not adopted production default",
+  "scope": "Public runtime, B custom op, OPT35a/OPT38 sources and existing reports only",
+  "private_holdout_accessed": false,
+  "sources": [
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/backend.cpp",
+      "bytes": 24339,
+      "sha256": "f5502a5945e9d8bb733c6ba8c1744f4032c66b8bc2a214026abd75056c9a9571"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/owner.cpp",
+      "bytes": 7540,
+      "sha256": "925537fbd87ae53b11b667f70989a32968b04157a737088cceddc081472961c3"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/session.h",
+      "bytes": 14099,
+      "sha256": "f90c9a174e672de9f681ed0429a7dcdf0d193b6d69f3b03704dd393f0a925629"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/kernel_core.h",
+      "bytes": 10991,
+      "sha256": "68b7b1e53ab9f54264c3e0efcb2b743ea17bf629440f2ca3d5ba4e1e39cf9282"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/config.h",
+      "bytes": 10085,
+      "sha256": "e417da3933e2452855cd7db9073ab8f154c21601bb4e76790331d0c8c778a554"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/record_log.h",
+      "bytes": 14272,
+      "sha256": "644f16e02a96aa4bfff6de8aad190fa037dc8cee12a3d1014fe9ecae5e68e79b"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/record_binding.h",
+      "bytes": 1541,
+      "sha256": "1fbb4277dd651c479edfbb4fb552d79a67c4c2c7c9b05239004ab349c5e80174"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/control_checkpoint.h",
+      "bytes": 1406,
+      "sha256": "1b9072604e3c7892c9007cb8b998dd18b8f13cd698160b955333faf8b9a5d8ee"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_frame.h",
+      "bytes": 7024,
+      "sha256": "986313080d9f13bcbb04bd85144b4bada1f3123831a72db62e5a655c4e0b9b0f"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_json.h",
+      "bytes": 9747,
+      "sha256": "f1c61593dff7b31b4ca560e1ce5238a0c42814d40aa3eb28b75281604e2563b8"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_semantics.h",
+      "bytes": 18610,
+      "sha256": "9f14929fd93d4477042fa668b3d66342674aed130a9e9c5154b5d8f8c829dcb0"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_socket.h",
+      "bytes": 9607,
+      "sha256": "993f270548793e9e9d75459f2316869e81b274af9a746cbd7c9cd27fbd7ca427"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_admission.h",
+      "bytes": 3257,
+      "sha256": "81c96350847d1e66a3f464944343075edd063e7122eb0cac56c14d7d1a199031"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_lifecycle.h",
+      "bytes": 16350,
+      "sha256": "347df4ab42bcd4435605ad945d4c8eeaed83f05b14d8479a816a3d2812a0eade"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_storage.h",
+      "bytes": 4380,
+      "sha256": "7f15f0229953bb1190d93c3bb9259cd2dbbe4d514640f5060b5a85ab220d749e"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_recovery.h",
+      "bytes": 17294,
+      "sha256": "1ffb0e65f58b8df27359b8a573c04b07622792bc3d49284ddac8f8986474bb0e"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/custom_op/quant_linear_v2b.cpp",
+      "bytes": 13825,
+      "sha256": "dd4325117519301de5414a3d4a1c939e92dd3683a42527ba119ae6b6c5709684"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/runtime_v2b.py",
+      "bytes": 9024,
+      "sha256": "6e85b79519c5afbf7d6ca99e58bb63ed50ae56f349151a15920ba3a07c92549c"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/runtime.py",
+      "bytes": 10947,
+      "sha256": "883874bc85091c420a4a909a1db2d45d39d57f9745e0b5afcf91ea2deac3bc6f"
+    },
+    {
+      "path": "hardware/model_gemm/candidates/opt35a_clear_v1_full/src/model_gemm_core.hpp",
+      "bytes": 5532,
+      "sha256": "39d5281dbca1b767d06b2245733172d7a0b0ade79925a00118f6af6745a7cb4d"
+    },
+    {
+      "path": "hardware/model_gemm/candidates/opt35a_clear_v1_full/src/model_gemm_top.cpp",
+      "bytes": 1278,
+      "sha256": "7006f2cad585a65c275b9fd54e1d3e75261835214e82efb46422cda7009831f2"
+    },
+    {
+      "path": "hardware/model_gemm/candidates/opt35a_clear_v1_full/include/model_gemm_config.hpp",
+      "bytes": 1227,
+      "sha256": "ce195d481260b8f477b08487a3277d3a1ee284fd7ae8874b1330e019f268acaf"
+    },
+    {
+      "path": "hardware/model_gemm/candidates/opt38_fullk_v1_full/src/model_gemm_core.hpp",
+      "bytes": 6304,
+      "sha256": "984fcaba0e6ef3157e9ccff4f8dd2b8ca271be0b74f086a4a5e0d1bb34df58d0"
+    },
+    {
+      "path": "hardware/model_gemm/candidates/opt38_fullk_v1_full/src/model_gemm_top.cpp",
+      "bytes": 1278,
+      "sha256": "7006f2cad585a65c275b9fd54e1d3e75261835214e82efb46422cda7009831f2"
+    },
+    {
+      "path": "hardware/model_gemm/candidates/opt38_fullk_v1_full/include/model_gemm_config.hpp",
+      "bytes": 1228,
+      "sha256": "0447703eb344ac8853a5f81658462d2ea1a37d2b1b6f80dec6e6a14143c938ee"
+    },
+    {
+      "path": "board/c_opt38/traffic.py",
+      "bytes": 1058,
+      "sha256": "c60104a3b8da33adc22d4bfb4c86bb93b0ec227561a9574b055e8db93e52fb1a"
+    },
+    {
+      "path": "docs/model/CHK05_NATIVE_ACCOUNTING_RESULT_20261007.md",
+      "bytes": 7625,
+      "sha256": "0acc1d288ca222be2aefb93ffbd0a5d8c7ae37f740d657de81b9a6f840ca93e0"
+    },
+    {
+      "path": "docs/model/CHK06_PRODUCTION_SYNC_RESULT_20261007.md",
+      "bytes": 5544,
+      "sha256": "bc6b2f2687280ac761d64fb136635034bdf7d74baaae96010996e170b611ba78"
+    },
+    {
+      "path": "docs/model/V2B_C_SCOPE_DIAGNOSTIC_20261005.md",
+      "bytes": 6527,
+      "sha256": "3510f8d610cde4bf1a39048af6fcbc02d393d1992977f8fb363f3920d5db157b"
+    },
+    {
+      "path": "docs/model/V2B_RW02_DIAGNOSTIC_AND_PS1_20261005.md",
+      "bytes": 5814,
+      "sha256": "d65a9c95df6fd4bcba178f6f25bf2d81c177d12653b013566d5acc04871739d3"
+    },
+    {
+      "path": "docs/model/V2B_CF1_RESULT_20261007.md",
+      "bytes": 8496,
+      "sha256": "4d2aef5fcae59eeecf3e11a705213d0faa915af24e4e1f97990ae733204b6989"
+    },
+    {
+      "path": "docs/model/OPT38_SYSTEM_RESULT_20261005.md",
+      "bytes": 8017,
+      "sha256": "d1b64e639278470510bd6c23c5e41631e0770c2cfd6e9a6820569b6e684a5dcf"
+    },
+    {
+      "path": "docs/C/OPT38_INDEPENDENT_RESULT_20261005.md",
+      "bytes": 7501,
+      "sha256": "8dd27d8daf2e63e02c130f1c25ea2196f64d2b24297c94ea216893a17bc53c1a"
+    },
+    {
+      "path": "docs/A/OPT38_FULL_LOCAL_RESULT_20261005.md",
+      "bytes": 6602,
+      "sha256": "49f405a9b01a2b41894927fe05d09a22a041abd4398c51652352258708dee2ad"
+    }
+  ],
+  "static_model": {
+    "shape_order": "M,K,N,count",
+    "shapes": [
+      [
+        197,
+        192,
+        576,
+        12
+      ],
+      [
+        197,
+        192,
+        192,
+        12
+      ],
+      [
+        197,
+        192,
+        768,
+        12
+      ],
+      [
+        197,
+        768,
+        192,
+        12
+      ],
+      [
+        1,
+        192,
+        1000,
+        1
+      ]
+    ],
+    "payload_bytes_per_image": {
+      "X": 3177408,
+      "W": 5500416,
+      "Y": 16343968
+    },
+    "MACs": 1045949952
+  },
+  "normal_path_static_Y_hash_audit": {
+    "conditions": "49 successful warm layers, trace enabled, no QUERY/recovery/reattach",
+    "method": "Manual interprocedural path tracing; script checks source sites, not executable call counts",
+    "C_passes": 6,
+    "B_passes": 2,
+    "total_passes": 8,
+    "total_bytes_traversed": 130751744,
+    "sites": [
+      {
+        "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/kernel_core.h",
+        "line": 164,
+        "text": "{\"Y_sha256\",digest(y_snapshot.data(),ny)}"
+      },
+      {
+        "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/session.h",
+        "line": 174,
+        "text": "Frame completed{std::move(h),std::move(executed.first)};body_fields"
+      },
+      {
+        "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_lifecycle.h",
+        "line": 193,
+        "text": "body_fields(result.header,result.body,context_,digest_);"
+      },
+      {
+        "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_frame.h",
+        "line": 33,
+        "text": "body_fields(owned.header,owned.body,context,digest);"
+      },
+      {
+        "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_frame.h",
+        "line": 64,
+        "text": "const auto actual=digest_(frame_.body);"
+      },
+      {
+        "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/backend.cpp",
+        "line": 238,
+        "text": "reply_success(incoming,original);V::body_fields"
+      },
+      {
+        "path": "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/custom_op/quant_linear_v2b.cpp",
+        "line": 166,
+        "text": "\"BAD_IDENTITY: C payload SHA\""
+      },
+      {
+        "path": "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/custom_op/quant_linear_v2b.cpp",
+        "line": 193,
+        "text": "\\\"fallback_count\\\":0,\\\"X_sha256\\\":\\\""
+      }
+    ],
+    "not_claimed": "No timing attribution, physical DDR traffic or removable-byte guarantee"
+  },
+  "normal_path_static_control": {
+    "rpc_per_layer": 2,
+    "new_connections_per_image": 98,
+    "fsync_commits_per_image": 98,
+    "explicit_birth_checks_per_layer_main_path": 17,
+    "birth_checks_main_path_per_image": 833,
+    "not_included": "Cold attach, initial W publish, INFO/STOP, recovery and error paths"
+  },
+  "owner_duplicate_header_parse_sites": [
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_admission.h",
+      "line": 25,
+      "text": "const auto header=parse_header(text);"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_admission.h",
+      "line": 41,
+      "text": "receiver.feed(reinterpret_cast<const std::uint8_t*>(text.data())"
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/protocol/stream_v2b_frame.h",
+      "line": 98,
+      "text": "frame_.header=parse_header(header_bytes_);"
+    }
+  ],
+  "thread_creation_source_search": {
+    "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/backend.cpp": [],
+    "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/owner.cpp": [],
+    "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/session.h": [],
+    "results/model_planning/v2b_cf1_native_20261006_01/source/v2b/kernel_core.h": [],
+    "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/custom_op/quant_linear_v2b.cpp": []
+  },
+  "thread_search_limit": "These entry/core files only; ORT/XRT/library/internal OS threads not excluded",
+  "measurement_boundary": [
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/custom_op/quant_linear_v2b.cpp",
+      "line": 145,
+      "text": "auto quant_end="
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/custom_op/quant_linear_v2b.cpp",
+      "line": 161,
+      "text": "int error=bridge->run("
+    },
+    {
+      "path": "results/model_planning/v2b_cf1_native_20261006_01/tools/model/b/custom_op/quant_linear_v2b.cpp",
+      "line": 179,
+      "text": "auto gemm_end="
+    }
+  ]
+}

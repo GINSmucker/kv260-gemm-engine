@@ -1,0 +1,19 @@
+{
+  "stage": "S2",
+  "status": "PASS",
+  "verification": "EXACT_C_S2_EVIDENCE_REUSE_FOR_B_PL_TAG_ONLY_NOT_NEW_BOARD_TEST",
+  "candidate_sha256": "c538e1dfd3738f6db43bff12f49b2aeab6c27635b6c445c0330a047fa2f29e7d",
+  "parent_candidate_sha256": "028c6362734c6cefe752dbfe3a61c8c096cd9b258278c7c8ac300f4efc203771",
+  "evidence_path": "results/C/model_system/system_a3_20261005_01/S2/verification.json",
+  "evidence_sha256": "f768dd41b36497b417fd477d4024ca1fc17d998f7b0ec3dae2e5d5cfb83d0332",
+  "new_cases": 0,
+  "new_native_starts": 0,
+  "covered_parent_counts": {
+    "cases_or_layers": 152,
+    "integer_outputs": 12599392,
+    "integer_mismatches": 0,
+    "native_starts": 154
+  },
+  "recovery": "PASS_FROM_REFERENCED_PARENT",
+  "qualified_scope": "UNCHANGED_C_OWNER_BRIDGE_TOOLS_PLATFORM; B_FULL_MODEL_STILL_NOT_RUN"
+}

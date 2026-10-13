@@ -1,0 +1,23 @@
+{
+  "status": "PASS_LOCAL_INCREMENT_INTEGRITY",
+  "date": "2026-10-08",
+  "parent_commit": "eba1a78ece0fe4eea7931c5a3458845cb6842bfd",
+  "asset_member_checks": {
+    "f05-source": 60,
+    "f05-runtime": 7
+  },
+  "quoted_include_checks": 61,
+  "original_source_map_checks": 223,
+  "handoff_local_links": 98,
+  "reused_assets": "EXACT_ORIGINAL_THREE_LOCKS",
+  "adopted_parent": "EXACT_UNCHANGED",
+  "original_checks": "REUSED_UNCHANGED_SOURCE_20261007; not rerun as new hardware/model evidence",
+  "new_board_access": "NOT_RUN",
+  "new_HLS_RTL_ARM_experiments": "NOT_RUN",
+  "cold_checkout": "PASS_NEW_GIT_CLONE_AT_3855123",
+  "new_f05_code": "Exact historical compiled sources; not modified or newly qualified by this upload",
+  "local_entry_check": "PASS",
+  "new_asset_safe_extract": "PASS_BOTH",
+  "f05_build_entry": "PASS_PREVIEW_NOT_COMPILED",
+  "publication": "PENDING_AT_SNAPSHOT_FREEZE"
+}

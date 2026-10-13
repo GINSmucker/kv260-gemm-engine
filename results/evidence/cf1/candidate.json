@@ -1,0 +1,37 @@
+{
+  "schema": "model_system_development_candidate_v2b",
+  "abi_version": 3,
+  "wire_version": 3,
+  "protocol": "kv260_gemm_stream_v2b",
+  "parent_candidate_sha256": "e28bf8221e909f63ec3732cd6b140f04304cf458e8718b381a67cfe8f27bba97",
+  "single_factor": "COMPOSED_OWNER_CHECKPOINTS_PRIVATE_FRAME",
+  "formal_C_gate": "NOT_ASSESSED",
+  "owner_sha256": "fb2b4f33f767f43131338b35b2ca2605b3d9961823bb5720e4c41537498c1635",
+  "bridge_sha256": "3c3a57f0200df00104fa4c1d56ec6565cb9e9baff2660caa3a82f3d73efe18f4",
+  "plugin_sha256": "9e6e3d2e28718fbb31183aab6f7380eaa00a90c0b87eddef151d43fec27eeb7c",
+  "B_tools_wheel_sha256": "8595f60bf5f1ef1376d9fb32805b7da6887aefbf5c575e1e62ba973671397a59",
+  "registration_sha256": "c313ec03024c0883b8ee58c8fbf93b3eb3822d0b57e24c281b5d7ca84dd5de9f",
+  "ABI_header_sha256": "3af0b482e6a36810ffcf5dd77af3a9cb879bd0594f6a2793d12e1d9d9840515c",
+  "platform_manifest_sha256": "c733bf290b7f913852bbfcb919fc40fb548366ccfb9faebcf3d1ff8a91497ff4",
+  "A2_gate_sha256": "2c25dcf1dc2734bad5a11500de8b0a1b9bf49aa6b56b5c281ecef7c73b3003d0",
+  "B_manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+  "driver_sha256": "cba324ac56c9bebe84fabbdf2635ea699b10ec718593cba7d44c4b004f782eca",
+  "driver_srcversion": "9806AB60AF7AE94483CDDC9",
+  "uuid": "763f3efb-0df3-6ae4-1cc4-974db7b092ca",
+  "tag0": 4030859259,
+  "tag1": 3840661197,
+  "metadata_sha256": "9c4ad3213e04b5319e1fad0c623a625bf1ac1778ca2d09b50102c6e417c8bee6",
+  "paired_bundle": "results/model_integration/model_bundle_20261005_023408_855",
+  "runtime_dependencies": {
+    "/usr/lib/aarch64-linux-gnu/libcrypto.so.3": "136996fb4f53b67b36aafb93a37721bc2965fb95ae02cc8477d5fc0374c56156"
+  },
+  "traffic_model": "packed32_fullW_Xtile_Yburst_clear64_v1",
+  "normal_build_verification_sha256": "ed89cd67bba2ace7a8208177e03191b5270a2fb3419aa5ca8b4862a9b32c04c5",
+  "software_verification_sha256": "d51ec0afd2f30f3150446670e7258b85f277d9e59f816f7f34a376fb807af3d4",
+  "composition_sha256": "440169742a9046a9304412f321b4a0c2d77c6a382d490de3bb054f84729c0e9e",
+  "composed_mechanisms": [
+    "RW03",
+    "RW04"
+  ],
+  "individual_old_comparisons": "INCONCLUSIVE_RETAINED"
+}

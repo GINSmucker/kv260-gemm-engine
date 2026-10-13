@@ -1,0 +1,161 @@
+{
+  "status": "PASS_V2B_PRODUCTION_SYNC_DIAGNOSTIC",
+  "window_id": "system_v2b_rw02_sync_20261007_01",
+  "window_manifest_sha256": "023e7236991a18de54c862cf10c3979f1cfa95d5c996becc340bd02e45708bfc",
+  "candidate_sha256": "e28bf8221e909f63ec3732cd6b140f04304cf458e8718b381a67cfe8f27bba97",
+  "files_verified": 303,
+  "native_starts": 196,
+  "XWY_digest_bound_outputs": 16343968,
+  "logits_max_abs": 0.0,
+  "full_INT64_outputs_recomputed_now": 0,
+  "mean_exclusive_ms": {
+    "wait": 646.5135603333333,
+    "copy_sync": 17.959517666666667,
+    "native_other": 68.06690833333316,
+    "API_outside_native": 2863.6540200000004,
+    "quant_dequant": 59.82697033333334,
+    "PS_other": 231.20580500000025
+  },
+  "CPU_p50_drift_percent": {
+    "fp32": 2.822203220727615,
+    "quant": 0.027498826929417408
+  },
+  "record_file_sha256": "e17d01efd9282685094b68867b5da806665821fd866a4e8c943fefda1e219465",
+  "recovery": "PASS",
+  "source_verification_sha256": "75703abb3b62e01a49622e34657151276382b80aaadd101656c7f167eb200e54",
+  "root_check_sha256": "4b052b74f3b945b27bbad593d8d4fc9961563846954fee55c86c68dc40d4d68d",
+  "phases": [
+    {
+      "name": "warmup_00",
+      "image_index": 0,
+      "inference_ms": 4006.480131,
+      "API_outside_native_ms": 2978.679207,
+      "totals": {
+        "fsync_wall_ms": 728.349119,
+        "fsync_thread_CPU_ms": 25.999419,
+        "observed_wrapper_outside_call_ms": 3.045464
+      },
+      "sync_fraction_percent": 24.45208323502424,
+      "residual_after_sync_ms": 2250.330088,
+      "slow_layers": [
+        {
+          "layer_index": 0,
+          "layer_id": "blocks.0.attn.qkv",
+          "request_id": "system_v2b_rw02_sync_20261007_01_pl_warmup_00_l0",
+          "API_outside_native_ms": 202.118861,
+          "sync_wall_ms": 21.937449,
+          "sync_fraction_percent": 10.853736702978948,
+          "residual_after_sync_ms": 180.18141200000002,
+          "calls": [
+            {
+              "fsync_wall_ms": 9.822418,
+              "fsync_thread_CPU_ms": 0.207782,
+              "observed_wrapper_outside_call_ms": 0.01583,
+              "call_begin_monotonic_ns": 411060359999589,
+              "call_end_monotonic_ns": 411060369822007,
+              "index": 3,
+              "errno": 0,
+              "sequence": 2,
+              "type": "SUBMITTED"
+            },
+            {
+              "fsync_wall_ms": 12.115031,
+              "fsync_thread_CPU_ms": 0.407953,
+              "observed_wrapper_outside_call_ms": 0.01831,
+              "call_begin_monotonic_ns": 411060411902168,
+              "call_end_monotonic_ns": 411060424017199,
+              "index": 4,
+              "errno": 0,
+              "sequence": 3,
+              "type": "COMPLETED"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "formal_00",
+      "image_index": 0,
+      "inference_ms": 3797.798454,
+      "API_outside_native_ms": 2780.410519,
+      "totals": {
+        "fsync_wall_ms": 665.002471,
+        "fsync_thread_CPU_ms": 24.940723,
+        "observed_wrapper_outside_call_ms": 2.9647580000000002
+      },
+      "sync_fraction_percent": 23.917420339755232,
+      "residual_after_sync_ms": 2115.4080480000002,
+      "slow_layers": []
+    },
+    {
+      "name": "formal_01",
+      "image_index": 7,
+      "inference_ms": 3787.905035,
+      "API_outside_native_ms": 2758.736433,
+      "totals": {
+        "fsync_wall_ms": 642.919027,
+        "fsync_thread_CPU_ms": 24.88814,
+        "observed_wrapper_outside_call_ms": 3.161879
+      },
+      "sync_fraction_percent": 23.30483692858092,
+      "residual_after_sync_ms": 2115.817406,
+      "slow_layers": []
+    },
+    {
+      "name": "formal_02",
+      "image_index": 19,
+      "inference_ms": 4075.976856,
+      "API_outside_native_ms": 3051.8151080000002,
+      "totals": {
+        "fsync_wall_ms": 930.066781,
+        "fsync_thread_CPU_ms": 24.874805,
+        "observed_wrapper_outside_call_ms": 3.514644
+      },
+      "sync_fraction_percent": 30.475856108121736,
+      "residual_after_sync_ms": 2121.7483270000002,
+      "slow_layers": [
+        {
+          "layer_index": 44,
+          "layer_id": "blocks.11.attn.qkv",
+          "request_id": "system_v2b_rw02_sync_20261007_01_pl_formal_02_l44",
+          "API_outside_native_ms": 340.21057200000007,
+          "sync_wall_ms": 294.651246,
+          "sync_fraction_percent": 86.60849199007254,
+          "residual_after_sync_ms": 45.559326000000056,
+          "calls": [
+            {
+              "fsync_wall_ms": 9.451414,
+              "fsync_thread_CPU_ms": 0.267742,
+              "observed_wrapper_outside_call_ms": 0.01623,
+              "call_begin_monotonic_ns": 411075529606309,
+              "call_end_monotonic_ns": 411075539057723,
+              "index": 88,
+              "errno": 0,
+              "sequence": 384,
+              "type": "SUBMITTED"
+            },
+            {
+              "fsync_wall_ms": 285.199832,
+              "fsync_thread_CPU_ms": 0.264673,
+              "observed_wrapper_outside_call_ms": 0.02114,
+              "call_begin_monotonic_ns": 411075583281766,
+              "call_end_monotonic_ns": 411075868481598,
+              "index": 89,
+              "errno": 0,
+              "sequence": 385,
+              "type": "COMPLETED"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "observed_19_minus_07": {
+    "whole_delta_ms": 288.071821,
+    "sync_delta_ms": 287.14775399999996,
+    "API_residual_delta_ms": 293.0786750000002
+  },
+  "finding": "Current input19/layer44 COMPLETED fsync is 285.199832ms; observed slow API residual is 340.210572ms, two fsync calls cover 86.608492%. Earlier CF1/OPT38 slow samples did not record this call and remain causally unresolved.",
+  "limitations": "No old performance decision changed; no net observer overhead calibration; fsync wall is not uniquely physical-device waiting. Full INT64 anchors reused through complete hashes, not recomputed during timing.",
+  "new_performance_samples": 0
+}

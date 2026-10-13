@@ -1,0 +1,31 @@
+{
+  "status": "PASS_LOCAL_INCREMENT_INTEGRITY",
+  "date": "2026-10-09",
+  "previous_commit": "839e3b4ded3289a957bce67448b032edf4468db9",
+  "asset_members": {
+    "v5-source": 25,
+    "v5-runtime": 8,
+    "opt38-platform": 6
+  },
+  "quoted_include_checks": 11,
+  "local_doc_links": 111,
+  "old_source_map_checks": 223,
+  "old_assets": "EXACT_ALL_FIVE_REUSED",
+  "formal_parent": "EXACT_UNCHANGED",
+  "development": "AB1_OPT38_V5",
+  "AB23_first_failure": "RETAINED_PROFILE1_AFTER_VALID_PRODUCTION",
+  "new_board_HLS_RTL_ARM_experiment": "NOT_RUN",
+  "source_qualification": "Original completed experiment evidence; no fresh compiler or hardware Gate",
+  "cold_checkout": "PASS_NEW_GIT_CLONE_AT_3920bf5",
+  "live_board_status": "NOT_CHECKED_BY_UPLOAD",
+  "public_receipts_sha256_checks": 23,
+  "local_entry": "PASS",
+  "new_asset_extract": "PASS_ALL_THREE_LATEST_PAYLOAD",
+  "v5_build_entry": "PREVIEW_PASS_NOT_COMPILED",
+  "AB23_threads": "1_AND_2_NUMERICAL_FAIL_4_PASS",
+  "AB6_same_v5": "TWO_VALID_DEVELOPMENT_COMPARISONS",
+  "AB6_CPU": "FIRST_VALID_BUT_SLOWER_SECOND_INCONCLUSIVE_DRIFT",
+  "AB5_GELU": "REJECT_NUMERICAL_CHANGE",
+  "execution_channel_note": "Default execution and patch tool stalled; authorized elevated PowerShell succeeded; no automatic review rejection",
+  "publication": "PENDING_AT_SNAPSHOT_FREEZE"
+}

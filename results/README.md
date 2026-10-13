@@ -1,5 +1,7 @@
-# 结果汇总
+# 性能、资源与验证证据
 
-这里只保存小型、可比较的汇总数据。每条结果必须绑定源码 commit、工具版本、目标时钟、矩阵尺寸和计时范围。
+summary.csv包含OPT45固定整图、连续调用、HLS与完整平台指标，每行注明范围、单位、时钟和证据位置。HLS估计与routed资源、完整边界和Runner.run分别解读，不相加分位数或跨身份推断收益。
 
-Vitis/Vivado 原始日志、IP、`.xclbin` 和大体积测试输出放 GitHub Release，不放入 Git 历史。
+opt45-evidence提供完整560条无诊断正式样本、三图验证及资源/断开记录，以及原始HLS/RTL/平台/数值摘要。研究测试日期2026-10-10；原始报告的签署和字段保持不变。
+
+Git中的evidence按其原验证身份使用。大量矩阵/trace、冻结构建和SDK留在本机或按需Release；资料整合不产生新硬件资格。当前状态见[verification](../docs/verification.md)、[progress](../docs/progress.md)。

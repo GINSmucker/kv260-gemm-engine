@@ -1,0 +1,56 @@
+{
+  "schema": "F05_QUALIFIED_RESEARCH_NOT_ADOPTED",
+  "candidate_sha256": "0b44fa0975f2b4d4584029be9705b371d03573e867e67df97d28431da6bc2226",
+  "candidate": {
+    "platform_manifest_sha256": "c733bf290b7f913852bbfcb919fc40fb548366ccfb9faebcf3d1ff8a91497ff4",
+    "A2_gate_sha256": "2c25dcf1dc2734bad5a11500de8b0a1b9bf49aa6b56b5c281ecef7c73b3003d0",
+    "B_manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+    "driver_sha256": "cba324ac56c9bebe84fabbdf2635ea699b10ec718593cba7d44c4b004f782eca",
+    "driver_srcversion": "9806AB60AF7AE94483CDDC9",
+    "uuid": "763f3efb-0df3-6ae4-1cc4-974db7b092ca",
+    "tag0": 4030859259,
+    "tag1": 3840661197,
+    "metadata_sha256": "9c4ad3213e04b5319e1fad0c623a625bf1ac1778ca2d09b50102c6e417c8bee6",
+    "paired_bundle": "results/model_integration/model_bundle_20261005_023408_855",
+    "runtime_dependencies": {
+      "/usr/lib/aarch64-linux-gnu/libcrypto.so.3": "136996fb4f53b67b36aafb93a37721bc2965fb95ae02cc8477d5fc0374c56156"
+    },
+    "traffic_model": "packed32_fullW_Xtile_Yburst_clear64_v1",
+    "schema": "model_system_development_candidate_v4",
+    "abi_version": 4,
+    "wire_version": 4,
+    "runtime_contract": "MODEL_TRANSACTION_V1",
+    "formal_C_gate": "NOT_ASSESSED",
+    "parent_candidate_sha256": "18322611d9b27dec1b9235d353ee522c1f9bef37a81bd8d0177baf0c75c1d965",
+    "normal_build_verification_sha256": "83de7a05343a5ce033e04f94881cd8561224cefd197a3da7e55b87b64934eb84",
+    "owner_sha256": "1f638249bb1977ad53d6c82c1320c261f9ad81dab9a2a6782862b61c4bbd2e94",
+    "bridge_sha256": "e834538a31d5258f871895d3c9debeb7b00e4146589704acf6567e4c245a2248",
+    "plugin_sha256": "74f94c88d18f73dc3be21ba1a22da65f1138f7f3ff1a8433994c58bad01d6cf7",
+    "B_tools_wheel_sha256": "98453e5a570e330af96a8cdf04d7a2d18f8d152100783666b12077090f0c638e",
+    "method_sha256": "61582872f8b73d72e8880ba4139894bd90000599ad035590e899314e4d970643"
+  },
+  "D3_input_manifest_sha256": "202dbd2ee99341e54683c4463c8118c5543fe36fc44bda38bb974882687e7c2f",
+  "cost_gates": {
+    "software": "FAIL",
+    "C": "FAIL",
+    "B": "FAIL"
+  },
+  "G5": "CLOSED",
+  "source_asset": {
+    "filename": "f05-source-20261008.tar.gz",
+    "bytes": 468169,
+    "sha256": "b9050f4ba12af93a9cff167dc24c845a2bd3f3aa23a5460baac4e016ce4a67dc",
+    "destination": "f05-source",
+    "release_tag": "team-handoff-20261008",
+    "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261008/f05-source-20261008.tar.gz"
+  },
+  "runtime_asset": {
+    "filename": "f05-runtime-20261008.tar.gz",
+    "bytes": 217046,
+    "sha256": "56dcd434513c6f517f9113208b04f793792e2d9d513f7b9543c0117b28e9f161",
+    "destination": "f05-runtime",
+    "release_tag": "team-handoff-20261008",
+    "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-handoff-20261008/f05-runtime-20261008.tar.gz"
+  },
+  "qualification": "D1-D4 functional and D5 valid development comparison; not formal S5, UI, quality, stability or production adoption"
+}

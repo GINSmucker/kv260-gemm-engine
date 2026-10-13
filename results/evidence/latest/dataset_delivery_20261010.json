@@ -1,0 +1,60 @@
+{
+  "schema": "dataset_delivery_public_20261010_v1",
+  "date": "2026-10-10",
+  "source_archive_sha256": "569b4497c98db6dd29f335d1f109cf315fe127053cedf69010d047f0188e158c",
+  "raw_counts": {
+    "train": 9469,
+    "val": 3925
+  },
+  "packaged_images": 856,
+  "split_counts": {
+    "calibration": 256,
+    "selection": 100,
+    "regression": 20,
+    "validation_fast": 500,
+    "validation_full": 3925
+  },
+  "regression_relationship": "selection subset, not val subset",
+  "train_val_content_overlap": 0,
+  "preprocess_byte_exact": "20/20 frozen input arrays",
+  "jpeg_decode": "856/856 VALID",
+  "dataset_asset": {
+    "filename": "imagenette-dev-subset-20261010.tar.gz",
+    "bytes": 22288297,
+    "sha256": "7c3296de8b0c5c9fe3eb760351633906ee0254cf514f731414b841ce4d47f781",
+    "destination": "dataset",
+    "release_tag": "team-data-20261010",
+    "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/team-data-20261010/imagenette-dev-subset-20261010.tar.gz"
+  },
+  "source_metadata": {
+    "splits.json": "75eedf53a30660c989e2dfdd9c9afb711f879aed39865476f014e3e0f9fa0988",
+    "labels_imagenet1k.json": "3bdb2c583fb2995aec8ed1f0f0a9f4b7839567ce059d517be78ff12b01a14da8",
+    "dataset_source.json": "c3cf02e86708d66a5a7101a5f99c35a666d96038e1d838572dbd1fee7446bb02"
+  },
+  "preprocess_source_sha256": "36d1405d8300ff7d0eb0d824354e2d9c5650549384b4d8608fd9c6f415500835",
+  "B_manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+  "initial_cpu_failure": "Unsupported backend enum before inference; retained locally and commands corrected",
+  "new_training_or_ARM_PL": "NOT_RUN",
+  "independent_C_private_data": "NOT_ACCESSED_OR_UPLOADED",
+  "accuracy_performance_gate": "UNCHANGED",
+  "cpu_single_input": {
+    "scope": "ONE_CPU_INPUT_FUNCTIONAL_ONLY_NOT_QUALITY_GATE",
+    "samples": 1,
+    "prediction_classes": 1000,
+    "backends": {
+      "windows_fp32": {
+        "samples": 1,
+        "top1_correct": 0
+      },
+      "windows_w8a8_reference": {
+        "samples": 1,
+        "top1_correct": 0
+      }
+    },
+    "original_cli_status": "PASS",
+    "PL": "NOT_RUN",
+    "both_top1_missed_label": true,
+    "initial_argument_failure": "RETAINED"
+  },
+  "negative_checks": "PASS_NO_FULL_CLAIM_OR_WRONG_ARCHIVE_EXTRACTION"
+}

@@ -1,0 +1,77 @@
+{
+  "status": "INCONCLUSIVE_CONTROL_DRIFT",
+  "decision": "NO_PRODUCTION_ADMISSION_NO_ADDITIONAL_SAMPLES",
+  "functional_status": "PASS_PAGE_RECORD_CONTAINER_STORAGE_ONLY",
+  "cases": 34,
+  "physical_PL_starts": 0,
+  "files_verified": 59,
+  "inputs_sha256": "830c115fc3bee3371ff954fb1a956116611866584c816ab78f6b7b0b5cef874d",
+  "verification_sha256": "ba48da8e90fc4dbb8b9ff45fb635fa4b3f1dd69c686849dba30e0a2f5192d3cc",
+  "validation_sha256": "4f442f737407e2c79ebf2288395efd48e2ac211d1ad8364905e9db877d33dc07",
+  "predeclared": {
+    "order": [
+      "parent_before",
+      "page_container",
+      "parent_after"
+    ],
+    "precreate_all": true,
+    "warmup_groups": 1,
+    "formal_groups": 5,
+    "requests_per_group": 49,
+    "drift_limit_percent": 5,
+    "wall_gain_percent": 20,
+    "wall_saving_ms": 100,
+    "additional_samples": 0
+  },
+  "means": {
+    "parent_before": {
+      "wall_ms": 691.0662497878075,
+      "thread_CPU_ms": 137.1121722
+    },
+    "page_container": {
+      "wall_ms": 310.10044358968736,
+      "thread_CPU_ms": 131.97855339999995
+    },
+    "parent_after": {
+      "wall_ms": 646.0862940192222,
+      "thread_CPU_ms": 136.9517786000002
+    }
+  },
+  "parent_mean_drift_percent": 6.508776225491602,
+  "parent_group_drift_percent": [
+    3.162874217037708,
+    43.60891272666522,
+    51.23239770655091,
+    13.56536437458145,
+    9.438109247944698
+  ],
+  "observed_saving_vs_faster_control_ms": 335.9858504295349,
+  "observed_gain_percent": 52.00324686341956,
+  "candidate_extra_CPU_vs_faster_parent_ms": -4.9732252000002575,
+  "initialisation_and_reader_attach_ms": [
+    9.623916029930115,
+    185.46003502607346,
+    9.640175998210907
+  ],
+  "warmup": [
+    {
+      "records": 98,
+      "requests": 49,
+      "thread_CPU_ms": 137.03864499999997,
+      "wall_ms": 556.114932000637
+    },
+    {
+      "records": 98,
+      "requests": 49,
+      "thread_CPU_ms": 130.80354499999999,
+      "wall_ms": 221.02746003866196
+    },
+    {
+      "records": 98,
+      "requests": 49,
+      "thread_CPU_ms": 137.25397399999997,
+      "wall_ms": 555.4999349713326
+    }
+  ],
+  "remaining": "Not a production ABI/socket/owner, power-loss, hardware or capacity-policy proof; old synthetic comparison remains inconclusive."
+}

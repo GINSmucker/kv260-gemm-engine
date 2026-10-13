@@ -1,23 +1,52 @@
-# 项目进度
+# 当前有效状态
 
-更新时间：2026-10-09
+已发布硬件/PS实验日期2026-10-10，算法契约复核日期2026-10-11。下一步Dense FPGA性能优化基准为OPT45_M32N16_Y768_125MHz；A_OPT40_AXI128_M16N16固定为资源取舍候选，双方同条件实板性能比较NOT RUN。准确身份由[研究锁](locks/RESEARCH_LOCK.json)的performance_baseline绑定，源码和验证入口见[A接手](../hls/README.md)。
 
-## 已完成
+默认开发配置为OPT38/v5，正式资格参考由BASELINE_LOCK固定。GitHub已发布的PS参照为OPT45＋固定亲和性＋QuantQKV＋固定W BO；本页指标只适用于该冻结配置，不涵盖未发布的本机PS或稀疏研究。
 
-- 第一周 Naive GEMM 和第二周 tiled dense GEMM 历史版本已由 Git tag 保存。
-- 已接收团队交接版本中的 OPT38 HLS 源码。
-- OPT38 使用 8×16 外积阵列，设计并行度为 128 MAC/cycle。
-- 已把仓库整理为 `hls / model / board / docs / results` 五个主要目录。
-- 已导入 B 的量化和 INT64 Golden Reference 脚本。
-- 已导入 C 提供的平台创建脚本。
-- 已在 Vitis 2026.1 下完成 OPT38 C Simulation：160 个合法用例通过，8 个非法尺寸正确拒绝，共比较 10,925,312 个输出。
+## 实现与职责
 
-## 尚未完成
+单512MAC、125MHz、TM32/TN768，X/W/Y128bit，共用HP0。qkv/fc1/fc2固定PL、proj/head固定CPU，每图36次PL。HLS和平台身份model_system_20261010_184640_939固定，PS组合没有新的硬件综合或A2签署。
 
-- 重新综合并记录 DSP、BRAM、LUT、FF、时序和 latency。
-- 完成 C/RTL Co-simulation。
-- 取得并整理最新 XRT v5 runtime 源码。
-- 生成新 IP / `.xclbin`，完成 KV260 板端正确性与性能测试。
-- 补齐可复现的小型输入用例与真实测试结果。
+QuantQKV反量化直接写三个[1,3,197,64]目标，不物化[1,197,576]；239节点，K transpose保留。ORT intra4/inter1、顺序执行、spinning0、图优化关闭；调用线程CPU0，三个ORT worker CPU1/2/3，owner仍允许四核。Runner默认设置亲和性，close后保留；显式options由调用者负责。
 
-所有验证状态见 `verification.md`，不要用“源码已复制”替代“验证已通过”。
+owner初始化装载并同步4866048B固定W BO，36段4KiB对齐；每层选64bit字节地址，PL仍从DDR读取本层W。初始化释放5500416B主机权重向量，保持X/W/Y三个BO。B导入固定X/Y，cache sync、Done/排空与无重放约束不变。
+
+## 无诊断整图
+
+每个机制两轮参照/研究/参照，每段20预热＋200正式图，共1200正式样本/机制；所有慢样本保留。当前组合由固定W BO候选段测量。
+
+|组合测量|p50 ms|p95 ms|p99 ms|max ms|
+|---|---:|---:|---:|---:|
+|第一轮|161.476920|163.026194|169.654222|170.063761|
+|第二轮|161.470765|163.562457|167.272280|170.059021|
+
+400个正式候选样本无超过180ms；不能据此保证长期尾部上限。没有组合对硬件基础包的直接同窗比较，不提供跨窗口精确总收益，也不相加各机制百分比。
+
+|机制|两轮p50收益|两轮p95收益|两轮p99收益|
+|---|---|---|---|
+|固定亲和性|-0.003%/0.460%|0.301%/0.307%|-0.273%/1.067%|
+|QuantQKV|1.869%/1.266%|2.102%/3.208%|1.463%/1.968%|
+|固定W BO|2.136%/2.318%|2.646%/2.296%|1.191%/3.948%|
+
+每个分位收益对该机制同轮两侧参照中更快的对应分位计算。亲和性不能证明p50或p99一致改善；QuantQKV及固定W两轮均20/20张输入配对中位数更快。完整样本在ps-evidence。
+
+## 数值、资源与恢复
+
+QuantQKV和固定W各通过720个完整Q/K/V张量、27233280 FP32值及147层/12257976 INT32输出的独立INT64核对；正式图logits逐位一致。默认Runner额外3图与实际线程mask通过。
+
+200连续调用、3次重建、非有限输入拒绝后复用、提交后断开恢复通过。组合client RSS101320KiB、owner15844KiB固定，运行fd8/线程7与fd11/线程1；关闭client fd4/线程4。连续调用计时包含结果相等检查，不能作为无诊断生产比较；其中219.305993ms慢样本保留。
+
+READY观测约262至312ms、粒度50ms；初始化成本不等于每图稳态成本。W BO增加4673536B、主机向量释放5500416B，已知两项净减少826880B；RSS不涵盖全部CMA/BO，不能解释为系统总内存收益。
+
+32成员包manifest SHA7e8396d798c0dcac3c95ef4ad202f5fccfefc47837918ebd68df954a545a382e。ps-runtime增量复用opt45-runtime的21个相同成员，提供11个变化/新增成员；完整组装后逐个验证32成员。旧资产和硬件基础包保持固定。
+
+PS记录191342次PL调用、1901项回传文件，SHA与owner STOP计数闭合；[公开摘要](../results/evidence/latest/opt45.json)和ps-evidence包含实际结果。节点profile/trace有扰动，不能当作生产性能或可相加预算。
+
+## 资格与剩余问题
+
+硬件的160+8 C-sim、完整AXI RTL418064整数、125MHz平台WNS0.641/WHS0.010ns及配对范围见[综合摘要](../hls/reports/synthesis.md)。研究软件通过不代替正式独立C、PL500/full质量、独立长期稳定性和发布签署；这些均NOT RUN。
+
+普通libm GELU和1/2线程存在数值FAIL，不能采用。当前剩余边界是逐位一致前提下的GELU外围物化和有细分依据的控制收发，不新增线程池、队列或盲目扩大硬件。长期资源/稀有慢图、永久AXI故障及overlay生命周期未证明。
+
+原实验最终root/UI PASS：starter/99999999Hz、无使用者/ZOCL/render、严重内核错误0、UI未暂停；不能替代实时占用确认。SSH间歇性timeout/reset根因未确认。使用约束见[interface](interface.md)、[workflow](workflow.md)和[资产锁](locks/ASSETS.lock.json)。

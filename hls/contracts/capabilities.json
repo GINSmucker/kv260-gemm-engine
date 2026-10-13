@@ -1,0 +1,113 @@
+{
+  "schema": "model_gemm_capabilities_v1",
+  "abi": "model_gemm_v1",
+  "build_id": "model_gemm_opt35a_clear_v1_full_20261004_205715_369",
+  "status": "A3_FULL_OFFLINE_PASS_NEW_PLATFORM_AND_INDEPENDENT_C_REQUIRED",
+  "shape_order": [
+    "M",
+    "K",
+    "N"
+  ],
+  "shapes": [
+    {
+      "family": "head",
+      "M": 1,
+      "K": 192,
+      "N": 1000
+    },
+    {
+      "family": "proj",
+      "M": 197,
+      "K": 192,
+      "N": 192
+    },
+    {
+      "family": "qkv",
+      "M": 197,
+      "K": 192,
+      "N": 576
+    },
+    {
+      "family": "fc1",
+      "M": 197,
+      "K": 192,
+      "N": 768
+    },
+    {
+      "family": "fc2",
+      "M": 197,
+      "K": 768,
+      "N": 192
+    }
+  ],
+  "dtype": {
+    "X": "signed_int8",
+    "W": "signed_int8",
+    "product": "signed_int16",
+    "accumulator": "signed_int32",
+    "Y": "signed_int32"
+  },
+  "layout": "compact_row_major_X_MK_W_KN_Y_MN",
+  "byte_order": "little",
+  "input_value_range": [
+    -128,
+    127
+  ],
+  "model_quantization_range": [
+    -127,
+    127
+  ],
+  "zero_point": 0,
+  "bias_scale_requant": false,
+  "tile": {
+    "TM": 8,
+    "TN": 64,
+    "TK": 32,
+    "micro_rows": 8,
+    "micro_cols": 8,
+    "buffers": 1
+  },
+  "max_elements": {
+    "X": 151296,
+    "W": 192000,
+    "Y": 151296
+  },
+  "device_address_bits": 64,
+  "required_alignment_bytes": 64,
+  "alignment_scope": "conservative_host_policy_not_hardware_minimum",
+  "buffer_offset_bytes": 0,
+  "aliasing": "three_nonoverlapping_BO_allocation_ranges",
+  "control": "ap_ctrl_hs",
+  "auto_restart": false,
+  "interrupts": false,
+  "concurrency": "one_owner_one_inflight_no_queue",
+  "error_codes": {
+    "OK": 0,
+    "INVALID_SHAPE": 1
+  },
+  "hardware_reject_before_data_access": [
+    "INVALID_SHAPE"
+  ],
+  "counters": {
+    "kernel_cycles": "UNAVAILABLE"
+  },
+  "modes": {
+    "dense_w8a8": "OFFLINE_VALIDATED_BOARD_NOT_RUN",
+    "sparse_2of4_w8a8": "UNSUPPORTED",
+    "w4a8": "UNSUPPORTED"
+  },
+  "register_map": "register_map.json",
+  "board_test": "NOT_RUN",
+  "C_review": "NOT_REVIEWED",
+  "transport": {
+    "X_W_port_type": "uint32_packed_four_signed_int8_little_endian",
+    "MMIO_pointer_units": "BYTE_ADDRESS_UNCHANGED",
+    "word_depths": {
+      "X": 37824,
+      "W": 48000
+    },
+    "Y": "int32_unchanged",
+    "W_lifetime": "reload_every_start",
+    "X_lifetime": "small_tile_repeat_OPT32_rejected"
+  }
+}

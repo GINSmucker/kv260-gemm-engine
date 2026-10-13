@@ -1,0 +1,135 @@
+{
+  "schema": "architecture_contract_evidence_v1",
+  "verification": {
+    "date": "2026-10-11T15:35:07.353065+08:00",
+    "scope": "ORDINARY_NATIVE_CPP_NUMERICAL_AND_BUFFER_CONTRACT_ONLY",
+    "source_identity": "source_identity.json",
+    "test_source": "contract_test.cpp",
+    "test_source_sha256": "aae11f2f6de8a3a9054c980a20212468046c941af9c6e35d535a3a423a0bd014",
+    "reference": "Independent INT64 full M/N/K reduction on compact INT8 buffers",
+    "patterns": [
+      "signed INT8 edges including -128 and 127, all five shapes",
+      "full-range public deterministic random, all five shapes",
+      "qkv zero / changed random / reused earlier random at unchanged buffer addresses"
+    ],
+    "compiler": "g++.exe (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0",
+    "compiler_options": [
+      "-std=c++11",
+      "-O3",
+      "-Wno-unknown-pragmas"
+    ],
+    "ap_int_include": "C:\\Xilinx\\Vitis_HLS\\2020.2\\include",
+    "tests": {
+      "A_OPT40": {
+        "status": "PASS",
+        "valid_cases": 13,
+        "invalid_cases": 6,
+        "integer_outputs": 1023248,
+        "log": "A_OPT40_contract.log",
+        "log_sha256": "3d7a8c7e96be1a7513529ff425473418123417e5aadd0303a720dc7dfd02226f",
+        "source_manifest_match": "PINNED_GIT_BLOBS",
+        "same_buffers_reused": true,
+        "input_const_and_output_guards": "PASS"
+      },
+      "LOCAL_OPT45": {
+        "status": "PASS",
+        "valid_cases": 13,
+        "invalid_cases": 6,
+        "integer_outputs": 1023248,
+        "log": "LOCAL_OPT45_contract.log",
+        "log_sha256": "3d7a8c7e96be1a7513529ff425473418123417e5aadd0303a720dc7dfd02226f",
+        "source_manifest_match": "PASS",
+        "same_buffers_reused": true,
+        "input_const_and_output_guards": "PASS"
+      }
+    },
+    "HLS_synthesis": "NOT_RUN",
+    "RTL_cosimulation": "NOT_RUN",
+    "hardware_execution": "NOT_RUN",
+    "performance_comparison": "NOT_RUN",
+    "limitations": [
+      "HLS pragmas are ignored by the native compiler.",
+      "The test does not prove AXI transactions, timing closure, or DDR safety.",
+      "A remote HLS/XSIM claims are read from its summary; original reports are not in the fetched branch."
+    ],
+    "static_compute_iterations": [
+      {
+        "shape": "qkv",
+        "A_M16_iterations": 89856,
+        "local_M32_iterations": 48384
+      },
+      {
+        "shape": "fc1",
+        "A_M16_iterations": 119808,
+        "local_M32_iterations": 64512
+      },
+      {
+        "shape": "fc2",
+        "A_M16_iterations": 119808,
+        "local_M32_iterations": 64512
+      }
+    ],
+    "recommendation": "Use frozen OPT45 hardware with existing PS/QuantQKV/fixed-W-BO stack as the next performance baseline; keep A OPT40 AXI128 M16N16 as a resource tradeoff candidate.",
+    "basis": "Current OPT45 has matching routed timing, AXI checks, board and whole-model evidence; A OPT40 has narrower Y segments and no same-condition board comparison."
+  },
+  "source_identity": {
+    "repository": "GINSmucker/kv260-gemm-engine",
+    "branch": "hls/opt40-axi128-burst",
+    "head": "68a9e643a9e998c1bd075434b31202f1545e00aa",
+    "source_commit": "79ac98b250a0d90e94ec94c1cd388682cc3f4140",
+    "A_source_files": {
+      "hls/src/model_gemm_top.cpp": {
+        "sha256": "0f8a8591c15ac1b19d7a606f5aa5c9eee2ee1aab6bcd40de843cff0b95e1225f",
+        "bytes": 1960
+      },
+      "hls/src/model_gemm_core.hpp": {
+        "sha256": "1b03b2daa7697778c4317818f13f9799602a96900c00b52ce03581e50914b9f0",
+        "bytes": 6391
+      },
+      "hls/include/model_gemm_config.hpp": {
+        "sha256": "f181564f5b65ea2dcc0decbaee21a255a1d2feb5e8837087fd1f54dac246fb45",
+        "bytes": 1859
+      },
+      "hls/tb/testbench.cpp": {
+        "sha256": "d06bad14142f6217c91245f0f0c5c37e6d67301b6a5e5bed613cca498b2b9607",
+        "bytes": 3360
+      },
+      "hls/hls_config.cfg": {
+        "sha256": "7efb908bcae077119f61e7c16f7b286a1082e8a06e40eb376021dce8867a89de",
+        "bytes": 302
+      },
+      "hls/reports/synthesis.md": {
+        "sha256": "e9c4d101b1fe945915443bba30083c5d8d34bb4cbefcb72572fe27f9a7481973",
+        "bytes": 2422
+      },
+      "docs/interface.md": {
+        "sha256": "61421dbdd3516c025f55ff3b147bc88d88bc2ac46e269ffc94a0ed40c630cdd4",
+        "bytes": 2967
+      },
+      "docs/verification.md": {
+        "sha256": "99f66f9899a63e09cfaaeb61bedf2bd4657288de85b249b041d37089812b3824",
+        "bytes": 2017
+      }
+    },
+    "local_OPT45_source_files": {
+      "src/model_gemm_top.cpp": {
+        "sha256": "4f855e84019f1fbb4f6663d6f3eb46cf8a8c2c0d49f2346090fee42ade731d16",
+        "bytes": 1343
+      },
+      "src/model_gemm_core.hpp": {
+        "sha256": "6f01b6f35beb63cedb4bf3aa39a1f2f39547811a8bf449e0ac6fc466a5e80719",
+        "bytes": 6130
+      },
+      "include/model_gemm_config.hpp": {
+        "sha256": "82c05e326150715867ab0d1d3a3b7333149032125ce35791b0c322a351e1e70c",
+        "bytes": 1342
+      }
+    },
+    "scope": "Exact source snapshots for offline comparison; no hardware execution."
+  },
+  "test_source_utf8": "#include <cstdint>\n#include <cstdio>\n#include <vector>\n#include <algorithm>\n\n#if defined(TEST_A_OPT40)\n#include \"A_OPT40/hls/include/model_gemm_config.hpp\"\nusing Word = axi_word_t;\nstatic int invoke(const Word* x, const Word* w, Word* y, int m, int k, int n) {\n    return model_gemm_top(x, w, y, m, k, n);\n}\n#else\n#include \"LOCAL_OPT45/include/model_gemm_config.hpp\"\nusing Word = model_gemm::wide_t;\nstatic int invoke(const Word* x, const Word* w, Word* y, int m, int k, int n) {\n    return model_gemm_top(x, w, y, m, k, n);\n}\n#endif\n\nstruct Shape { const char* name; int m, k, n; };\nstatic const Shape shapes[] = {\n    {\"head\",1,192,1000}, {\"proj\",197,192,192}, {\"qkv\",197,192,576},\n    {\"fc1\",197,192,768}, {\"fc2\",197,768,192}\n};\nstatic const unsigned guard = 16;\nstatic const unsigned x_words = 9456, w_words = 12000, y_words = 37824;\nstatic const Word marker = Word(0x5a5a5a5au) | (Word(0x5a5a5a5au)<<32)\n    | (Word(0x5a5a5a5au)<<64) | (Word(0x5a5a5a5au)<<96);\nstatic uint32_t next(uint32_t& s) {\n    s^=s<<13; s^=s>>17; s^=s<<5; return s;\n}\nstatic int8_t value(unsigned i, unsigned pattern, uint32_t& state, bool weight) {\n    if (pattern==0) return 0;\n    if (pattern==1) {\n        static const int8_t edges[] = {-128,127,-127,0,1,-1};\n        return edges[(i+(weight?3:0))%6];\n    }\n    return static_cast<int8_t>(static_cast<int>(next(state)%256u)-128);\n}\nstatic void fill(std::vector<Word>& packed, std::vector<int8_t>& plain,\n                 unsigned count, unsigned pattern, uint32_t seed, bool weight) {\n    std::fill(packed.begin(), packed.end(), marker);\n    plain.resize(count);\n    for (unsigned i=0;i<count/16;++i) packed[guard+i]=0;\n    for (unsigned i=0;i<count;++i) {\n        plain[i]=value(i,pattern,seed,weight);\n        packed[guard+i/16].range(8*(i%16)+7,8*(i%16))=static_cast<uint8_t>(plain[i]);\n    }\n}\nstatic int32_t unpack(const Word& word, unsigned lane) {\n    const uint32_t bits=word.range(lane*32+31,lane*32).to_uint();\n    const int64_t signed_value=bits>=0x80000000u ? int64_t(bits)-0x100000000LL : bits;\n    return static_cast<int32_t>(signed_value);\n}\n\nint main() {\n    std::vector<Word> px(x_words+2*guard), pw(w_words+2*guard), py(y_words+2*guard);\n    std::vector<int8_t> x,w;\n    unsigned passed=0, rejected=0;\n    uint64_t outputs=0;\n    bool all=true;\n    // Fixed allocations exercise changed inputs and weights at identical addresses.\n    const unsigned case_shape[]={0,1,2,3,4,0,1,2,3,4,2,2,2};\n    const unsigned case_pattern[]={1,1,1,1,1,2,2,2,2,2,0,3,2};\n    for(unsigned t=0;t<13;++t) {\n        const Shape& s=shapes[case_shape[t]];\n        const unsigned pattern=case_pattern[t];\n        const uint32_t seed=0x6b26a45u ^ (unsigned(s.k)<<16) ^ unsigned(s.n) ^ (pattern*0x9e3779b9u);\n        fill(px,x,s.m*s.k,pattern,seed,false);\n        fill(pw,w,s.k*s.n,pattern,seed^0x1337u,true);\n        std::fill(py.begin(),py.end(),marker);\n        const std::vector<Word> oldx=px, oldw=pw;\n        const int status=invoke(px.data()+guard,pw.data()+guard,py.data()+guard,s.m,s.k,s.n);\n        bool ok=status==0 && px==oldx && pw==oldw;\n        unsigned differences=0;\n        for(int m=0;m<s.m;++m) for(int n=0;n<s.n;++n) {\n            int64_t expected=0;\n            for(int k=0;k<s.k;++k) expected+=int64_t(x[m*s.k+k])*w[k*s.n+n];\n            const unsigned index=m*s.n+n;\n            if(unpack(py[guard+index/4],index%4)!=expected) ++differences;\n        }\n        ok=ok && differences==0;\n        for(unsigned i=0;i<guard;++i) ok=ok && py[i]==marker;\n        for(unsigned i=guard+s.m*s.n/4;i<py.size();++i) ok=ok && py[i]==marker;\n        std::printf(\"CASE %u %s pattern=%u status=%d differences=%u input_const_and_output_guards=%s\\n\",\n                    t,s.name,pattern,status,differences,ok?\"PASS\":\"FAIL\");\n        std::fflush(stdout);\n        if(ok) {++passed; outputs+=s.m*s.n;} else all=false;\n    }\n    const int invalid[][3]={{0,192,1000},{1,193,1000},{197,192,1000},{197,768,768},{8,8,8},{-1,192,192}};\n    for(const auto& dims:invalid) {\n        std::fill(py.begin(),py.end(),marker);\n        const std::vector<Word> oldx=px, oldw=pw;\n        const int status=invoke(px.data()+guard,pw.data()+guard,py.data()+guard,dims[0],dims[1],dims[2]);\n        const bool ok=status==1 && px==oldx && pw==oldw\n            && std::all_of(py.begin(),py.end(),[](const Word& v){return v==marker;});\n        if(ok) ++rejected; else all=false;\n    }\n    std::printf(\"SUMMARY status=%s valid=%u invalid=%u outputs=%llu\\n\",all?\"PASS\":\"FAIL\",passed,rejected,\n                static_cast<unsigned long long>(outputs));\n    return all?0:1;\n}\n",
+  "logs_utf8": {
+    "A_OPT40": "CASE 0 head pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 1 proj pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 2 qkv pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 3 fc1 pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 4 fc2 pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 5 head pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 6 proj pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 7 qkv pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 8 fc1 pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 9 fc2 pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 10 qkv pattern=0 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 11 qkv pattern=3 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 12 qkv pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nSUMMARY status=PASS valid=13 invalid=6 outputs=1023248\r\n",
+    "LOCAL_OPT45": "CASE 0 head pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 1 proj pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 2 qkv pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 3 fc1 pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 4 fc2 pattern=1 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 5 head pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 6 proj pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 7 qkv pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 8 fc1 pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 9 fc2 pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 10 qkv pattern=0 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 11 qkv pattern=3 status=0 differences=0 input_const_and_output_guards=PASS\r\nCASE 12 qkv pattern=2 status=0 differences=0 input_const_and_output_guards=PASS\r\nSUMMARY status=PASS valid=13 invalid=6 outputs=1023248\r\n"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "model_gemm_register_map_v1",
+  "build_id": "model_gemm_opt35a_clear_v1_full_20261004_205715_369",
+  "control": "ap_ctrl_hs",
+  "registers": {
+    "CTRL": 0,
+    "GIE": 4,
+    "IER": 8,
+    "ISR": 12,
+    "ERROR": 16,
+    "X_LOW": 24,
+    "X_HIGH": 28,
+    "W_LOW": 36,
+    "W_HIGH": 40,
+    "Y_LOW": 48,
+    "Y_HIGH": 52,
+    "M": 60,
+    "K": 68,
+    "N": 76
+  },
+  "axi": {
+    "gmem0": {
+      "address_bits": 64,
+      "data_bits": 32
+    },
+    "gmem1": {
+      "address_bits": 64,
+      "data_bits": 32
+    },
+    "gmem2": {
+      "address_bits": 64,
+      "data_bits": 32
+    }
+  },
+  "done_semantics": "read_CTRL_clears_done_exclusive_owner_only",
+  "error_semantics": "read_only_uint32_return_after_done",
+  "source_sha256": {
+    "model_gemm_hls/solution1/impl/ip/drivers/model_gemm_top_v1_0/src/xmodel_gemm_top_hw.h": "01108c5e6e804c9bce29073085e2be00ebe2ddcfb1391c4de540d0932f4a14bd",
+    "model_gemm_hls/solution1/syn/verilog/model_gemm_top_control_s_axi.v": "be18108a56f7b5af6766a556bc8129466baa7ed816199e16fd433621236f8846",
+    "model_gemm_hls/solution1/syn/verilog/model_gemm_top.v": "bb7c3eada8f0ed073a0deb3c3892cfb5d9478ccfc6a0978f40d369404b43dfa2",
+    "model_gemm_hls/solution1/impl/ip/component.xml": "77aafe3ec104d1992e6ee7219152d28c16b64a6913068da86498ef7f1fa1d29a",
+    "model_gemm_hls/solution1/impl/export.zip": "b81f45d42cb1c81f95b628159906f45a45ef1562d3601221ea60c0cdb14fdb8e"
+  }
+}

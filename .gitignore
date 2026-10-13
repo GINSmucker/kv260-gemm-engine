@@ -46,3 +46,10 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Explicit runtime/model/data downloads and local checks
+/build/
+/system/
+/results/runs/
+/board/ui/tests/.tmp/
+/model/.venv/

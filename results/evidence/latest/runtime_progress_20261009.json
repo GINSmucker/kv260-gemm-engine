@@ -1,0 +1,1351 @@
+{
+  "schema": "public_progress_20261009_v1",
+  "date": "2026-10-09",
+  "snapshot_scope": "Completed local receipts through AB6 final02; numerical Gate distinct from window completion; upload has no hardware access.",
+  "entries": {
+    "v5_R4_01": {
+      "original_path": "results/model_planning/v5_r4_20261009_01/comparison.json",
+      "sha256": "62f78c3012de6df57c787a72d57542fface8f1efd69f25b406e0cfc341291c91",
+      "value": {
+        "status": "INCONCLUSIVE_DRIFT",
+        "run_id": "v5_r4_20261009_01",
+        "actual_PL_starts": 3283,
+        "formal_images_per_stage": 20,
+        "logits_bit_exact": true,
+        "core_p50_ms": {
+          "before": 1419.9261415,
+          "candidate": 887.690063,
+          "after": 1419.3099555
+        },
+        "legacy_export_product_p50_ms": {
+          "before": 1450.0515879999998,
+          "after": 1449.8770805
+        },
+        "reduction_percent": null,
+        "parent_per_image_max_drift_percent": 11.746584780043733,
+        "cpu_reference_max_drift_percent": 33.61005482262871,
+        "diagnostic_cost_means_ms": {
+          "core_ms": 888.1267093333333,
+          "owner_service_ms": 663.6729093333333,
+          "wait_ms": 646.2958663333334,
+          "copy_ms": 4.388629666666667,
+          "input_sync_ms": 2.13177,
+          "MMIO_ms": 0.6316883333333333,
+          "output_sync_ms": 1.5653683333333333,
+          "output_copy_ms": 8.551479,
+          "C_roundtrip_ms": 695.5585526666667,
+          "C_outside_owner_ms": 31.885643333333334,
+          "quant_ms": 26.054891,
+          "dequant_ms": 19.019687666666666,
+          "B_other_ms": 0.459771,
+          "session_other_ms": 147.033807,
+          "software_except_wait_ms": 241.830843,
+          "B_record_receipt_ms": 0,
+          "hot_fsync_ms": 0
+        },
+        "diagnostic_samples": [
+          {
+            "image": 0,
+            "core_ms": 888.487036,
+            "owner_service_ms": 663.437445,
+            "wait_ms": 646.155889,
+            "copy_ms": 4.375344,
+            "input_sync_ms": 2.107679,
+            "MMIO_ms": 0.636641,
+            "output_sync_ms": 1.524448,
+            "output_copy_ms": 8.528943,
+            "C_roundtrip_ms": 695.462559,
+            "C_outside_owner_ms": 32.025114,
+            "quant_ms": 26.016143,
+            "dequant_ms": 19.093719,
+            "B_other_ms": 0.452152,
+            "session_other_ms": 147.46246299999996,
+            "software_except_wait_ms": 242.331147,
+            "B_record_receipt_ms": 0,
+            "hot_fsync_ms": 0
+          },
+          {
+            "image": 7,
+            "core_ms": 887.734969,
+            "owner_service_ms": 663.768475,
+            "wait_ms": 646.268035,
+            "copy_ms": 4.457493,
+            "input_sync_ms": 2.197971,
+            "MMIO_ms": 0.607086,
+            "output_sync_ms": 1.601933,
+            "output_copy_ms": 8.531027,
+            "C_roundtrip_ms": 695.194655,
+            "C_outside_owner_ms": 31.42618,
+            "quant_ms": 26.030729,
+            "dequant_ms": 19.1988,
+            "B_other_ms": 0.476217,
+            "session_other_ms": 146.834568,
+            "software_except_wait_ms": 241.46693399999992,
+            "B_record_receipt_ms": 0,
+            "hot_fsync_ms": 0
+          },
+          {
+            "image": 19,
+            "core_ms": 888.158123,
+            "owner_service_ms": 663.812808,
+            "wait_ms": 646.463675,
+            "copy_ms": 4.333052,
+            "input_sync_ms": 2.08966,
+            "MMIO_ms": 0.651338,
+            "output_sync_ms": 1.569724,
+            "output_copy_ms": 8.594467,
+            "C_roundtrip_ms": 696.018444,
+            "C_outside_owner_ms": 32.205636,
+            "quant_ms": 26.117801,
+            "dequant_ms": 18.766544,
+            "B_other_ms": 0.450944,
+            "session_other_ms": 146.80439,
+            "software_except_wait_ms": 241.69444800000008,
+            "B_record_receipt_ms": 0,
+            "hot_fsync_ms": 0
+          }
+        ],
+        "diagnostic_change_vs_same_image_product_percent": [
+          -0.19536124792499665,
+          0.04049626718669597,
+          0.1615171030262541
+        ],
+        "resource": {
+          "before": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 157108,
+              "rss_last_kib": 159156,
+              "rss_growth_kib": 2048
+            },
+            "owner": {
+              "fd_min": 12,
+              "fd_max": 12,
+              "rss_first_kib": 30304,
+              "rss_last_kib": 30304,
+              "rss_growth_kib": 0
+            }
+          },
+          "candidate": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 161044,
+              "rss_last_kib": 161684,
+              "rss_growth_kib": 640
+            },
+            "owner": {
+              "fd_min": 9,
+              "fd_max": 9,
+              "rss_first_kib": 21892,
+              "rss_last_kib": 21892,
+              "rss_growth_kib": 0
+            }
+          },
+          "after": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 157996,
+              "rss_last_kib": 159788,
+              "rss_growth_kib": 1792
+            },
+            "owner": {
+              "fd_min": 12,
+              "fd_max": 12,
+              "rss_first_kib": 30328,
+              "rss_last_kib": 30328,
+              "rss_growth_kib": 0
+            }
+          }
+        },
+        "budgets": {
+          "software": true,
+          "C": true,
+          "B": true
+        },
+        "gate": "CLOSED",
+        "scope": "v5 minimal product; no durable COMMIT; 20-image development screen, not long-term/formal release",
+        "recovery": "PASS",
+        "source_sha256": {
+          "b_api.h": "b34b68de5f763842e978218cb75112fa2a3e18466022ca988b642054ce9addb8",
+          "b_plugin.cpp": "ab51f58043369fa6d75fa0cd3e057c6b41d316b8e535638bb20a8421f76c4f97",
+          "client.cpp": "b25e1ede9499ec680dc1927bc88e839f3ca131b49aa34549efee76d3dd4f440d",
+          "client.h": "8171c0d21b3d0f7e81842100e1191f5559b6b56f6b3e38fe858608cbe4c1d98c",
+          "kernel.cpp": "ebb5ad5dde07c12369323e4b19e490fecb9f235a604f504802081a046ede1eb9",
+          "kernel.h": "eeda3869fccf6f8eef7c4850134f24a34da725ddcd5667a674bd9e16e8d47089",
+          "owner.cpp": "a077808d4f55e78093620859b6df97a39682ebd10be40e89ec712e9a1ebf7e48",
+          "protocol.h": "f0034691efdf820f3ad6e9e2e9ae4313488f56d7b69825ffc17e84685d3f4f0c",
+          "quant_neon.h": "dc182eba56c97b4fc52f15e16adaae61eec3178fd18a1c2c4f487c086ddadbf7"
+        }
+      }
+    },
+    "v5_R4_02": {
+      "original_path": "results/model_planning/v5_r4_20261009_02/comparison.json",
+      "sha256": "6ef04c475b3793c7c1d9f038327e0817626c9db6ee9af6be3ba8cf88bcd58c54",
+      "value": {
+        "status": "INCONCLUSIVE_DRIFT",
+        "run_id": "v5_r4_20261009_02",
+        "actual_PL_starts": 3283,
+        "formal_images_per_stage": 20,
+        "logits_bit_exact": true,
+        "core_p50_ms": {
+          "before": 1422.7876999999999,
+          "candidate": 888.360855,
+          "after": 1421.9187765000001
+        },
+        "F05_with_this_harness_export_p50_ms": {
+          "before": 1453.0318625,
+          "after": 1452.0870934999998
+        },
+        "export_scope": "This harness saves native JSON, trace and POD; it omits old D5 anchor/row processing. Historical complete D5 p50 remains 1465.884971 ms, a different measurement.",
+        "reduction_percent": null,
+        "parent_per_image_max_drift_percent": 34.27046194014105,
+        "cpu_reference_max_drift_percent": 3.6742412584610085,
+        "diagnostic_cost_means_ms": {
+          "core_ms": 887.6695116666666,
+          "owner_service_ms": 663.47944,
+          "wait_ms": 646.220552,
+          "copy_ms": 4.327424,
+          "input_sync_ms": 2.104073,
+          "MMIO_ms": 0.608228,
+          "output_sync_ms": 1.5519553333333334,
+          "output_copy_ms": 8.568877333333333,
+          "C_roundtrip_ms": 695.0592356666666,
+          "C_outside_owner_ms": 31.579795666666666,
+          "quant_ms": 26.071040333333332,
+          "dequant_ms": 18.893789333333334,
+          "B_other_ms": 0.47284566666666666,
+          "session_other_ms": 147.17260066666663,
+          "software_except_wait_ms": 241.44895966666664,
+          "B_record_receipt_ms": 0,
+          "hot_fsync_ms": 0
+        },
+        "diagnostic_samples": [
+          {
+            "image": 0,
+            "core_ms": 887.405716,
+            "owner_service_ms": 663.179545,
+            "wait_ms": 646.024691,
+            "copy_ms": 4.214032,
+            "input_sync_ms": 2.114996,
+            "MMIO_ms": 0.606292,
+            "output_sync_ms": 1.558867,
+            "output_copy_ms": 8.562487,
+            "C_roundtrip_ms": 694.802669,
+            "C_outside_owner_ms": 31.623124,
+            "quant_ms": 26.046971,
+            "dequant_ms": 18.758447,
+            "B_other_ms": 0.450115,
+            "session_other_ms": 147.34751399999993,
+            "software_except_wait_ms": 241.38102500000002,
+            "B_record_receipt_ms": 0,
+            "hot_fsync_ms": 0
+          },
+          {
+            "image": 7,
+            "core_ms": 887.033692,
+            "owner_service_ms": 663.326405,
+            "wait_ms": 646.049797,
+            "copy_ms": 4.373837,
+            "input_sync_ms": 2.10178,
+            "MMIO_ms": 0.608047,
+            "output_sync_ms": 1.513576,
+            "output_copy_ms": 8.582318,
+            "C_roundtrip_ms": 694.627137,
+            "C_outside_owner_ms": 31.300732,
+            "quant_ms": 25.956687,
+            "dequant_ms": 18.981661,
+            "B_other_ms": 0.488015,
+            "session_other_ms": 146.980192,
+            "software_except_wait_ms": 240.98389499999996,
+            "B_record_receipt_ms": 0,
+            "hot_fsync_ms": 0
+          },
+          {
+            "image": 19,
+            "core_ms": 888.569127,
+            "owner_service_ms": 663.93237,
+            "wait_ms": 646.587168,
+            "copy_ms": 4.394403,
+            "input_sync_ms": 2.095443,
+            "MMIO_ms": 0.610345,
+            "output_sync_ms": 1.583423,
+            "output_copy_ms": 8.561827,
+            "C_roundtrip_ms": 695.747901,
+            "C_outside_owner_ms": 31.815531,
+            "quant_ms": 26.209463,
+            "dequant_ms": 18.94126,
+            "B_other_ms": 0.480407,
+            "session_other_ms": 147.19009599999993,
+            "software_except_wait_ms": 241.98195899999996,
+            "B_record_receipt_ms": 0,
+            "hot_fsync_ms": 0
+          }
+        ],
+        "diagnostic_change_vs_same_image_product_percent": [
+          -0.11102631809302155,
+          -0.099101868614071,
+          -0.032316019741185364
+        ],
+        "resource": {
+          "before": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 155956,
+              "rss_last_kib": 157876,
+              "rss_growth_kib": 1920
+            },
+            "owner": {
+              "fd_min": 12,
+              "fd_max": 12,
+              "rss_first_kib": 30328,
+              "rss_last_kib": 30328,
+              "rss_growth_kib": 0
+            }
+          },
+          "candidate": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 160848,
+              "rss_last_kib": 161616,
+              "rss_growth_kib": 768
+            },
+            "owner": {
+              "fd_min": 9,
+              "fd_max": 9,
+              "rss_first_kib": 21888,
+              "rss_last_kib": 21888,
+              "rss_growth_kib": 0
+            }
+          },
+          "after": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 158504,
+              "rss_last_kib": 160552,
+              "rss_growth_kib": 2048
+            },
+            "owner": {
+              "fd_min": 12,
+              "fd_max": 12,
+              "rss_first_kib": 30328,
+              "rss_last_kib": 30328,
+              "rss_growth_kib": 0
+            }
+          }
+        },
+        "budgets": {
+          "software": true,
+          "C": true,
+          "B": true
+        },
+        "gate": "CLOSED",
+        "scope": "v5 minimal product; no durable COMMIT; 20-image development screen, not long-term/formal release",
+        "recovery": "PASS",
+        "source_sha256": {
+          "b_api.h": "b34b68de5f763842e978218cb75112fa2a3e18466022ca988b642054ce9addb8",
+          "b_plugin.cpp": "ab51f58043369fa6d75fa0cd3e057c6b41d316b8e535638bb20a8421f76c4f97",
+          "client.cpp": "b25e1ede9499ec680dc1927bc88e839f3ca131b49aa34549efee76d3dd4f440d",
+          "client.h": "8171c0d21b3d0f7e81842100e1191f5559b6b56f6b3e38fe858608cbe4c1d98c",
+          "kernel.cpp": "ebb5ad5dde07c12369323e4b19e490fecb9f235a604f504802081a046ede1eb9",
+          "kernel.h": "eeda3869fccf6f8eef7c4850134f24a34da725ddcd5667a674bd9e16e8d47089",
+          "owner.cpp": "a077808d4f55e78093620859b6df97a39682ebd10be40e89ec712e9a1ebf7e48",
+          "protocol.h": "f0034691efdf820f3ad6e9e2e9ae4313488f56d7b69825ffc17e84685d3f4f0c",
+          "quant_neon.h": "dc182eba56c97b4fc52f15e16adaae61eec3178fd18a1c2c4f487c086ddadbf7"
+        },
+        "environment_observed": true,
+        "cpu_frequencies_khz": [
+          "1333333"
+        ],
+        "temperature_millidegrees_range": [
+          27511,
+          31894
+        ]
+      }
+    },
+    "AB1_comparison": {
+      "original_path": "results/model_planning/ab1_comparison_20261009_01/comparison.json",
+      "sha256": "df61508664830b8699dd51d21831e9b437f79b6d26454df6568eb078cef7c8b6",
+      "value": {
+        "status": "VALID_COMPARISON",
+        "runs": {
+          "before": "v5_ab1_before_20261009_01",
+          "candidate": "v5_ab1_candidate_20261009_01",
+          "after": "v5_ab1_after_20261009_01"
+        },
+        "core_p50_ms": {
+          "before": 887.9996015,
+          "candidate": 438.3845895,
+          "after": 888.105542
+        },
+        "core_range_ms": {
+          "before": [
+            886.982251,
+            895.199393
+          ],
+          "candidate": [
+            437.094042,
+            440.738078
+          ],
+          "after": [
+            886.857,
+            921.077652
+          ]
+        },
+        "parent_per_image_max_drift_percent": 3.7914756013263773,
+        "cpu_max_drift_percent": 3.6106836628680528,
+        "logits_bit_exact": true,
+        "reduction_percent": 50.63234389300568,
+        "diagnostic_means_ms": {
+          "before": {
+            "core": 888.1728096666667,
+            "wait": 646.406289,
+            "quant": 26.013132333333335,
+            "dequant": 18.994683333333334,
+            "B_other": 0.44863833333333336,
+            "C_outside_owner": 31.600537,
+            "owner_other": 17.45107266666667,
+            "session_other": 147.25845700000002,
+            "software_except_wait": 241.7665206666667
+          },
+          "candidate": {
+            "core": 439.23471333333333,
+            "wait": 197.53129566666667,
+            "quant": 26.024368,
+            "dequant": 19.030441,
+            "B_other": 0.473914,
+            "C_outside_owner": 31.481531,
+            "owner_other": 17.336231666666666,
+            "session_other": 147.35693199999997,
+            "software_except_wait": 241.70341766666664
+          },
+          "after": {
+            "core": 889.487333,
+            "wait": 646.4018036666666,
+            "quant": 25.993991666666666,
+            "dequant": 18.986586333333335,
+            "B_other": 0.469762,
+            "C_outside_owner": 31.933506,
+            "owner_other": 17.588121333333333,
+            "session_other": 148.11356200000003,
+            "software_except_wait": 243.0855293333333
+          }
+        },
+        "resources": {
+          "before": {
+            "client": {
+              "fd_range": [
+                5,
+                5
+              ],
+              "rss_first_kib": 158772,
+              "rss_last_kib": 159540
+            },
+            "owner": {
+              "fd_range": [
+                9,
+                9
+              ],
+              "rss_first_kib": 21888,
+              "rss_last_kib": 21888
+            }
+          },
+          "candidate": {
+            "client": {
+              "fd_range": [
+                5,
+                5
+              ],
+              "rss_first_kib": 158664,
+              "rss_last_kib": 159304
+            },
+            "owner": {
+              "fd_range": [
+                9,
+                9
+              ],
+              "rss_first_kib": 21892,
+              "rss_last_kib": 21892
+            }
+          },
+          "after": {
+            "client": {
+              "fd_range": [
+                5,
+                5
+              ],
+              "rss_first_kib": 160916,
+              "rss_last_kib": 161684
+            },
+            "owner": {
+              "fd_range": [
+                9,
+                9
+              ],
+              "rss_first_kib": 21892,
+              "rss_last_kib": 21892
+            }
+          }
+        },
+        "physical_PL_starts": 3823,
+        "recovery": "PASS_ALL_WINDOWS",
+        "scope": "20-image development comparison, not formal CPU speedup/quality/stability/release"
+      }
+    },
+    "AB1_build": {
+      "original_path": "results/model_planning/v5_ab1_build_20261009_01/collected/result.json",
+      "sha256": "f061f7c4e00f2dafa00c7df3c68da0c03624d8873edabb1afd6baa4a48bbad34",
+      "value": {
+        "status": "PASS_R1",
+        "failure": null,
+        "before": {
+          "schema": "kv260_ui_board_health_v1",
+          "source": "BOARD",
+          "connected": true,
+          "execution_host": "kria",
+          "architecture": "aarch64",
+          "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "payload_verified": true,
+          "backends": [
+            "fp32",
+            "w8a8",
+            "custom_cpu"
+          ],
+          "pl_ready": false,
+          "pl_reason": "C_MODEL_BACKEND_READY and validated owner bridge are absent; no PL loading or CPU fallback.",
+          "serial_connected": false,
+          "calendar_note": "Board UTC is not synchronized; use boot/client UTC/monotonic durations.",
+          "active_job": null,
+          "paused": false
+        },
+        "after": {
+          "schema": "kv260_ui_board_health_v1",
+          "source": "BOARD",
+          "connected": true,
+          "execution_host": "kria",
+          "architecture": "aarch64",
+          "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "payload_verified": true,
+          "backends": [
+            "fp32",
+            "w8a8",
+            "custom_cpu"
+          ],
+          "pl_ready": false,
+          "pl_reason": "C_MODEL_BACKEND_READY and validated owner bridge are absent; no PL loading or CPU fallback.",
+          "serial_connected": false,
+          "calendar_note": "Board UTC is not synchronized; use boot/client UTC/monotonic durations.",
+          "active_job": null,
+          "paused": false
+        },
+        "seconds": 174.41865054899972,
+        "physical_PL_starts": 0
+      }
+    },
+    "AB1_board": {
+      "original_path": "results/model_planning/v5_ab1_candidate_20261009_01/collected/result.json",
+      "sha256": "b6ecc73105b657591b5bb881eb436b0483cf32975e29b1083d5db7d2f5076c8f",
+      "value": {
+        "status": "PASS_R2_BOARD",
+        "failure": null,
+        "rollback_errors": [],
+        "recovery": "PASS",
+        "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+        "seconds": 89.9051242509995
+      }
+    },
+    "AB1_functional": {
+      "original_path": "results/model_planning/v5_ab1_candidate_20261009_01/collected/arm/hardware/result.json",
+      "sha256": "9a2ddd565cdda6117fd8739bd7da515631384d9a22da3ee7545351387d71b538",
+      "value": {
+        "status": "PASS_R2_FUNCTIONAL",
+        "physical_PL_starts": 148,
+        "integer_outputs": 8285456,
+        "full_graphs": 2,
+        "five_shapes": true,
+        "nonzero_old_Y": true,
+        "real_client_process_exit": true,
+        "repeat_RUN_rejected": true,
+        "production_no_dumps": true,
+        "parent_logits_bits": true,
+        "product_one_image_observation_ms": 447.137702,
+        "performance_comparison": "NOT_RUN"
+      }
+    },
+    "AB2_local_bits": {
+      "original_path": "results/model_planning/ab2_fold_20261009_02/local_equivalence.json",
+      "sha256": "310cb8751538f1aee48d59f515dd74ff63c0a022d8c16d6eb71a859992051136",
+      "value": {
+        "status": "PASS_LOCAL_CPU_FOLD_EQUIVALENCE",
+        "rows": [
+          {
+            "graph": "model_fp32.onnx",
+            "images": 20,
+            "logits_bit_exact": true
+          },
+          {
+            "graph": "model_w8a8_reference.onnx",
+            "images": 20,
+            "logits_bit_exact": true
+          }
+        ],
+        "ORT": "1.22.1",
+        "PL_starts": 0
+      }
+    },
+    "AB2_software": {
+      "original_path": "results/model_planning/v5_ab2_build_20261009_01/collected/result.json",
+      "sha256": "5ccfade5dd9417e2b60d4b8b0925dc4b82320c8e4351abbf854f48025bda3f27",
+      "value": {
+        "status": "PASS_R1",
+        "failure": null,
+        "before": {
+          "schema": "kv260_ui_board_health_v1",
+          "source": "BOARD",
+          "connected": true,
+          "execution_host": "kria",
+          "architecture": "aarch64",
+          "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "payload_verified": true,
+          "backends": [
+            "fp32",
+            "w8a8",
+            "custom_cpu"
+          ],
+          "pl_ready": false,
+          "pl_reason": "C_MODEL_BACKEND_READY and validated owner bridge are absent; no PL loading or CPU fallback.",
+          "serial_connected": false,
+          "calendar_note": "Board UTC is not synchronized; use boot/client UTC/monotonic durations.",
+          "active_job": null,
+          "paused": false
+        },
+        "after": {
+          "schema": "kv260_ui_board_health_v1",
+          "source": "BOARD",
+          "connected": true,
+          "execution_host": "kria",
+          "architecture": "aarch64",
+          "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "payload_verified": true,
+          "backends": [
+            "fp32",
+            "w8a8",
+            "custom_cpu"
+          ],
+          "pl_ready": false,
+          "pl_reason": "C_MODEL_BACKEND_READY and validated owner bridge are absent; no PL loading or CPU fallback.",
+          "serial_connected": false,
+          "calendar_note": "Board UTC is not synchronized; use boot/client UTC/monotonic durations.",
+          "active_job": null,
+          "paused": false
+        },
+        "seconds": 173.08658665599796,
+        "physical_PL_starts": 0
+      }
+    },
+    "AB3_software": {
+      "original_path": "results/model_planning/v5_ab3_build_20261009_02/collected/result.json",
+      "sha256": "a9339866fc7bda2a03c5a37227f6d6eb6cec1da914e37e7204260786a85c212c",
+      "value": {
+        "status": "PASS_R1",
+        "failure": null,
+        "before": {
+          "schema": "kv260_ui_board_health_v1",
+          "source": "BOARD",
+          "connected": true,
+          "execution_host": "kria",
+          "architecture": "aarch64",
+          "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "payload_verified": true,
+          "backends": [
+            "fp32",
+            "w8a8",
+            "custom_cpu"
+          ],
+          "pl_ready": false,
+          "pl_reason": "C_MODEL_BACKEND_READY and validated owner bridge are absent; no PL loading or CPU fallback.",
+          "serial_connected": false,
+          "calendar_note": "Board UTC is not synchronized; use boot/client UTC/monotonic durations.",
+          "active_job": null,
+          "paused": false
+        },
+        "after": {
+          "schema": "kv260_ui_board_health_v1",
+          "source": "BOARD",
+          "connected": true,
+          "execution_host": "kria",
+          "architecture": "aarch64",
+          "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "payload_verified": true,
+          "backends": [
+            "fp32",
+            "w8a8",
+            "custom_cpu"
+          ],
+          "pl_ready": false,
+          "pl_reason": "C_MODEL_BACKEND_READY and validated owner bridge are absent; no PL loading or CPU fallback.",
+          "serial_connected": false,
+          "calendar_note": "Board UTC is not synchronized; use boot/client UTC/monotonic durations.",
+          "active_job": null,
+          "paused": false
+        },
+        "seconds": 261.34256165299666,
+        "physical_PL_starts": 0
+      }
+    },
+    "AB23_board_failure": {
+      "original_path": "results/model_planning/v5_ab23_screen_20261009_01/collected/result.json",
+      "sha256": "3223a0b279d33f6232fc66e1de9d483b13805533776bd5365c39fe00df16b4e7",
+      "value": {
+        "status": "FAIL",
+        "failure": "Traceback (most recent call last):\n  File \"/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_ab23_screen_20261009_01/hardware_window.py\", line 89, in main\n    execute(ROOT,privilege,started+plan['budget_seconds'])\n  File \"/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_ab23_screen_20261009_01/compare_window.py\", line 31, in execute\n    assert r.returncode==0,r.stderr\n           ^^^^^^^^^^^^^^^\nAssertionError: Traceback (most recent call last):\n  File \"/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_ab23_screen_20261009_01/benchmark.py\", line 89, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_ab23_screen_20261009_01/benchmark.py\", line 79, in main\n    assert y.tobytes()==expected[i].tobytes(),i\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 0\n\n",
+        "rollback_errors": [],
+        "recovery": "PASS",
+        "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+        "seconds": 152.39432823099924
+      }
+    },
+    "AB23_completed_production": {
+      "original_path": "results/model_planning/v5_ab23_screen_20261009_01/B_comparison.json",
+      "sha256": "8aa0914298cfbd78f73887d60e02e93d0c9e0ee977e2b3ebbfa963941347367f",
+      "value": {
+        "window_status": "FAIL",
+        "window_failure": "Traceback (most recent call last):\n  File \"/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_ab23_screen_20261009_01/hardware_window.py\", line 89, in main\n    execute(ROOT,privilege,started+plan['budget_seconds'])\n  File \"/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_ab23_screen_20261009_01/compare_window.py\", line 31, in execute\n    assert r.returncode==0,r.stderr\n           ^^^^^^^^^^^^^^^\nAssertionError: Traceback (most recent call last):\n  File \"/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_ab23_screen_20261009_01/benchmark.py\", line 89, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_ab23_screen_20261009_01/benchmark.py\", line 79, in main\n    assert y.tobytes()==expected[i].tobytes(),i\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 0\n\n",
+        "completed_production_comparison": "VALID_COMPARISON",
+        "core_p50_ms": {
+          "before": 438.36565900000005,
+          "fold": 437.570146,
+          "scratch": 438.131487,
+          "combined": 437.442855,
+          "ab3": 430.01331600000003,
+          "after": 439.0606015
+        },
+        "parent_max_drift_percent": 0.6258188137677756,
+        "cpu_max_drift_percent": 3.963039163755888,
+        "reductions_percent": {
+          "fold": 0.18147247250497323,
+          "scratch": 0.0534193304590147,
+          "combined": 0.2105101029367007,
+          "ab3": 1.9053369780500984
+        },
+        "twenty_image_layer_equivalence": true,
+        "physical_PL_starts": 8379,
+        "starts_by_stage": {
+          "ab3": 1029,
+          "after": 1029,
+          "before": 1029,
+          "combined": 1029,
+          "diagnostic": 196,
+          "equivalence": 1960,
+          "fold": 1029,
+          "profile1": 49,
+          "scratch": 1029
+        },
+        "diagnostic_means_ms": {
+          "core": 430.0210006666667,
+          "wait": 197.43753066666667,
+          "quant": 19.457465,
+          "dequant": 18.801248666666666,
+          "B_other": 0.06706433333333334,
+          "C_outside_owner": 31.408686666666668,
+          "owner_other": 17.289458333333332,
+          "session_other": 145.55954699999998
+        },
+        "client_RSS_first_kib": {
+          "before": 152824,
+          "fold": 153704,
+          "scratch": 141148,
+          "combined": 142524,
+          "ab3": 142760,
+          "after": 155864
+        },
+        "recovery": "PASS",
+        "profile_failure": "Retained; completed production stages are not the overall window status."
+      },
+      "representation": "complete_JSON"
+    },
+    "AB23_profile_window": {
+      "original_path": "results/model_planning/v5_ab23_profile_20261009_02/collected/result.json",
+      "sha256": "8481fcdc14a046852e88f6b50a7d8ad73232625b04c6583604f101f27a874b56",
+      "value": {
+        "status": "PASS_R2_BOARD",
+        "failure": null,
+        "rollback_errors": [],
+        "recovery": "PASS",
+        "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+        "seconds": 28.715810051999142
+      },
+      "representation": "complete_JSON"
+    },
+    "AB23_profile_1": {
+      "original_path": "results/model_planning/v5_ab23_profile_20261009_02/collected/arm/profile1/samples.json",
+      "sha256": "713016dd9af9cc989aee5de51e983c407300eb54119c1c6f441bd6cc43796c82",
+      "value": {
+        "status": "PROFILE_NUMERIC_MISMATCH",
+        "stage": "profile1",
+        "starts": 196,
+        "variant": {
+          "name": "profile1",
+          "plugin": "libquant_v5.so",
+          "fold": true,
+          "threads": 1
+        },
+        "samples": [
+          {
+            "image": 0,
+            "phase": "warmup",
+            "core_ms": 544.307694,
+            "logits_bit_exact": false,
+            "logits_max_abs": 0.07772600650787354,
+            "process_cpu_ms": 320.376702,
+            "context_switches": 189
+          },
+          {
+            "image": 0,
+            "phase": "formal",
+            "core_ms": 534.965431,
+            "logits_bit_exact": false,
+            "logits_max_abs": 0.07772600650787354,
+            "process_cpu_ms": 311.155354,
+            "context_switches": 185
+          },
+          {
+            "image": 7,
+            "phase": "formal",
+            "core_ms": 533.508106,
+            "logits_bit_exact": false,
+            "logits_max_abs": 0.15767264366149902,
+            "process_cpu_ms": 309.397532,
+            "context_switches": 157
+          },
+          {
+            "image": 19,
+            "phase": "formal",
+            "core_ms": 534.554646,
+            "logits_bit_exact": false,
+            "logits_max_abs": 0.20925229787826538,
+            "process_cpu_ms": 309.834904,
+            "context_switches": 157
+          }
+        ]
+      },
+      "representation": "selected_fields_summary; sha256 binds complete original"
+    },
+    "AB23_profile_2": {
+      "original_path": "results/model_planning/v5_ab23_profile_20261009_02/collected/arm/profile2/samples.json",
+      "sha256": "02ab119f75a36eb740ce4b417b59dda3b68e0d1ed7775c51ba995467afc62f31",
+      "value": {
+        "status": "PROFILE_NUMERIC_MISMATCH",
+        "stage": "profile2",
+        "starts": 196,
+        "variant": {
+          "name": "profile2",
+          "plugin": "libquant_v5.so",
+          "fold": true,
+          "threads": 2
+        },
+        "samples": [
+          {
+            "image": 0,
+            "phase": "warmup",
+            "core_ms": 500.628747,
+            "logits_bit_exact": false,
+            "logits_max_abs": 0.07772600650787354,
+            "process_cpu_ms": 347.06312,
+            "context_switches": 316
+          },
+          {
+            "image": 0,
+            "phase": "formal",
+            "core_ms": 492.495676,
+            "logits_bit_exact": false,
+            "logits_max_abs": 0.07772600650787354,
+            "process_cpu_ms": 345.715243,
+            "context_switches": 302
+          },
+          {
+            "image": 7,
+            "phase": "formal",
+            "core_ms": 490.162003,
+            "logits_bit_exact": false,
+            "logits_max_abs": 0.15767264366149902,
+            "process_cpu_ms": 341.561094,
+            "context_switches": 307
+          },
+          {
+            "image": 19,
+            "phase": "formal",
+            "core_ms": 489.451995,
+            "logits_bit_exact": false,
+            "logits_max_abs": 0.20925229787826538,
+            "process_cpu_ms": 345.710919,
+            "context_switches": 319
+          }
+        ]
+      },
+      "representation": "selected_fields_summary; sha256 binds complete original"
+    },
+    "AB23_profile_4": {
+      "original_path": "results/model_planning/v5_ab23_profile_20261009_02/collected/arm/profile4/samples.json",
+      "sha256": "fa1d49fd52fca27fa8fdb3ec18921e67aa6a8a6ec4003f3e880cd006e7c5a90d",
+      "value": {
+        "status": "PASS",
+        "stage": "profile4",
+        "starts": 196,
+        "variant": {
+          "name": "profile4",
+          "plugin": "libquant_v5.so",
+          "fold": true,
+          "threads": 4
+        },
+        "samples": [
+          {
+            "image": 0,
+            "phase": "warmup",
+            "core_ms": 466.295204,
+            "logits_bit_exact": true,
+            "logits_max_abs": 0.0,
+            "process_cpu_ms": 377.997922,
+            "context_switches": 559
+          },
+          {
+            "image": 0,
+            "phase": "formal",
+            "core_ms": 457.466876,
+            "logits_bit_exact": true,
+            "logits_max_abs": 0.0,
+            "process_cpu_ms": 367.689945,
+            "context_switches": 554
+          },
+          {
+            "image": 7,
+            "phase": "formal",
+            "core_ms": 458.220503,
+            "logits_bit_exact": true,
+            "logits_max_abs": 0.0,
+            "process_cpu_ms": 367.458094,
+            "context_switches": 611
+          },
+          {
+            "image": 19,
+            "phase": "formal",
+            "core_ms": 457.316554,
+            "logits_bit_exact": true,
+            "logits_max_abs": 0.0,
+            "process_cpu_ms": 364.89919,
+            "context_switches": 574
+          }
+        ]
+      },
+      "representation": "selected_fields_summary; sha256 binds complete original"
+    },
+    "AB5_window": {
+      "original_path": "results/model_planning/v5_ab5_probe_20261009_01/collected/result.json",
+      "sha256": "12794fd1b094c4d2bb3957a043bee6025cbbdde914540c0012626059121df99f",
+      "value": {
+        "status": "PASS_CPU_PROBE",
+        "failure": null,
+        "physical_PL_starts": 0,
+        "before": {
+          "schema": "kv260_ui_board_health_v1",
+          "source": "BOARD",
+          "connected": true,
+          "execution_host": "kria",
+          "architecture": "aarch64",
+          "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "payload_verified": true,
+          "backends": [
+            "fp32",
+            "w8a8",
+            "custom_cpu"
+          ],
+          "pl_ready": false,
+          "pl_reason": "C_MODEL_BACKEND_READY and validated owner bridge are absent; no PL loading or CPU fallback.",
+          "serial_connected": false,
+          "calendar_note": "Board UTC is not synchronized; use boot/client UTC/monotonic durations.",
+          "active_job": null,
+          "paused": false
+        },
+        "after": {
+          "schema": "kv260_ui_board_health_v1",
+          "source": "BOARD",
+          "connected": true,
+          "execution_host": "kria",
+          "architecture": "aarch64",
+          "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+          "bundle_identity": {
+            "status": "PASS",
+            "manifest_sha256": "77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e",
+            "candidate_id": "B_MODEL_BUNDLE_V1"
+          },
+          "payload_verified": true,
+          "backends": [
+            "fp32",
+            "w8a8",
+            "custom_cpu"
+          ],
+          "pl_ready": false,
+          "pl_reason": "C_MODEL_BACKEND_READY and validated owner bridge are absent; no PL loading or CPU fallback.",
+          "serial_connected": false,
+          "calendar_note": "Board UTC is not synchronized; use boot/client UTC/monotonic durations.",
+          "active_job": null,
+          "paused": false
+        }
+      },
+      "representation": "complete_JSON"
+    },
+    "AB5_GELU_probe": {
+      "original_path": "results/model_planning/v5_ab5_probe_20261009_01/collected/arm/probe.json",
+      "sha256": "dbcae9181fb3e1807fced48b31b318a53ccb91cf6ce42705e4fcaa9fce498c6b",
+      "value": {
+        "status": "REJECT_NUMERICAL_CHANGE",
+        "rows": 36,
+        "elements": 5446656,
+        "different_bits": 635540,
+        "max_abs": 4.76837158203125e-07,
+        "physical_PL_starts": 0,
+        "limitation": "Standalone fusion probe; not a graph or speedup result."
+      },
+      "representation": "selected_fields_summary; sha256 binds complete original"
+    },
+    "AB6_window_1": {
+      "original_path": "results/model_planning/v5_ab6_final_20261009_01/collected/result.json",
+      "sha256": "99d557255f36a6d34d337df46cc136f7c24ec55217be05097fa580c1b09d1267",
+      "value": {
+        "status": "PASS_R2_BOARD",
+        "failure": null,
+        "rollback_errors": [],
+        "recovery": "PASS",
+        "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+        "seconds": 105.66265138200106
+      },
+      "representation": "complete_JSON"
+    },
+    "AB6_comparison_1": {
+      "original_path": "results/model_planning/v5_ab6_final_20261009_01/final_comparison.json",
+      "sha256": "7cc11c1c6d97d94f87c8cd74897b7fa42e53db44a99df7e5a9471f397089c15d",
+      "value": {
+        "status": "VALID_COMPARISON",
+        "same_v5_comparison": "VALID_COMPARISON",
+        "core": {
+          "before": {
+            "p50_ms": 438.5917965,
+            "p95_ms": 439.6704548,
+            "min_ms": 437.495056,
+            "max_ms": 441.096572
+          },
+          "ab3": {
+            "p50_ms": 431.020901,
+            "p95_ms": 431.8537626,
+            "min_ms": 430.243133,
+            "max_ms": 432.011341
+          },
+          "after": {
+            "p50_ms": 438.3804345,
+            "p95_ms": 440.0612307,
+            "min_ms": 437.751418,
+            "max_ms": 440.423175
+          },
+          "diagnostic": {
+            "p50_ms": 430.88373,
+            "p95_ms": 430.93922399999997,
+            "min_ms": 430.465486,
+            "max_ms": 430.94539
+          }
+        },
+        "cpu_fp32": {
+          "before_cpu_fp32_before": {
+            "p50_ms": 329.16162199999997,
+            "p95_ms": 343.1874279
+          },
+          "before_cpu_fp32_after": {
+            "p50_ms": 329.2535175,
+            "p95_ms": 340.90403555
+          },
+          "ab3_cpu_fp32_before": {
+            "p50_ms": 329.125937,
+            "p95_ms": 341.4593081
+          },
+          "ab3_cpu_fp32_after": {
+            "p50_ms": 329.4853805,
+            "p95_ms": 340.27859205
+          },
+          "after_cpu_fp32_before": {
+            "p50_ms": 329.6050765,
+            "p95_ms": 338.15797745
+          },
+          "after_cpu_fp32_after": {
+            "p50_ms": 329.57465149999996,
+            "p95_ms": 339.6564432
+          }
+        },
+        "parent_max_drift_percent": 0.6795359996585981,
+        "cpu_quant_drift_percent": 3.9027914213829895,
+        "cpu_fp32_drift_percent": 4.754438972575525,
+        "B_reduction_percent": 1.6788006308707693,
+        "faster_than_CPU_FP32": false,
+        "CPU_speedup": 0.7635962345129987,
+        "diagnostic_means_ms": {
+          "core": 430.76486866666664,
+          "wait": 197.73916066666666,
+          "quant": 19.49095133333333,
+          "dequant": 18.939946666666668,
+          "B_other": 0.06985133333333333,
+          "C_outside_owner": 31.505130666666666,
+          "owner_other": 17.224469,
+          "session_other": 145.795359
+        },
+        "resources": {
+          "before": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 214484,
+              "rss_last_kib": 214996
+            },
+            "owner": {
+              "fd_min": 9,
+              "fd_max": 9,
+              "rss_first_kib": 21892,
+              "rss_last_kib": 21892
+            }
+          },
+          "ab3": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 212084,
+              "rss_last_kib": 212852
+            },
+            "owner": {
+              "fd_min": 9,
+              "fd_max": 9,
+              "rss_first_kib": 21888,
+              "rss_last_kib": 21888
+            }
+          },
+          "after": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 221828,
+              "rss_last_kib": 222596
+            },
+            "owner": {
+              "fd_min": 9,
+              "fd_max": 9,
+              "rss_first_kib": 21888,
+              "rss_last_kib": 21888
+            }
+          }
+        },
+        "physical_PL_starts": 3332,
+        "logits_bit_exact": true,
+        "actual_CLI": "PASS",
+        "recovery": "PASS",
+        "formal_release": "NOT_SIGNED_20_IMAGE_DEVELOPMENT_ONLY"
+      },
+      "representation": "complete_JSON"
+    },
+    "AB6_collect_1": {
+      "original_path": "results/model_planning/v5_ab6_final_20261009_01/collect_receipt.json",
+      "sha256": "86b451881f143e8ca331e2f990daf368a4dd03c58f0134a9f77a435e67c632a3",
+      "value": {
+        "returncode": 0,
+        "stdout": "{\"collection\": \"PASS\", \"files\": 24, \"result\": \"PASS_R2_BOARD\"}",
+        "stderr": ""
+      },
+      "representation": "complete_JSON"
+    },
+    "AB6_window_2": {
+      "original_path": "results/model_planning/v5_ab6_final_20261009_02/collected/result.json",
+      "sha256": "855efca03301fc258d691450caa23a62d96710a441c483c307b353faab38b1e1",
+      "value": {
+        "status": "PASS_R2_BOARD",
+        "failure": null,
+        "rollback_errors": [],
+        "recovery": "PASS",
+        "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+        "seconds": 105.01531244700163
+      },
+      "representation": "complete_JSON"
+    },
+    "AB6_comparison_2": {
+      "original_path": "results/model_planning/v5_ab6_final_20261009_02/final_comparison.json",
+      "sha256": "be2281293cd128b7e10188a5fd168f6fc95c060a93bb375969c95d90865f2176",
+      "value": {
+        "status": "INCONCLUSIVE_DRIFT",
+        "same_v5_comparison": "VALID_COMPARISON",
+        "core": {
+          "before": {
+            "p50_ms": 438.65532199999996,
+            "p95_ms": 439.4248647,
+            "min_ms": 437.741108,
+            "max_ms": 439.850839
+          },
+          "ab3": {
+            "p50_ms": 430.0678415,
+            "p95_ms": 432.24142105,
+            "min_ms": 429.166532,
+            "max_ms": 432.276344
+          },
+          "after": {
+            "p50_ms": 438.221848,
+            "p95_ms": 439.35144149999996,
+            "min_ms": 437.558326,
+            "max_ms": 440.219903
+          },
+          "diagnostic": {
+            "p50_ms": 430.278383,
+            "p95_ms": 432.2959877,
+            "min_ms": 430.044541,
+            "max_ms": 432.520166
+          }
+        },
+        "cpu_fp32": {
+          "before_cpu_fp32_before": {
+            "p50_ms": 329.659952,
+            "p95_ms": 342.14698155
+          },
+          "before_cpu_fp32_after": {
+            "p50_ms": 329.737923,
+            "p95_ms": 331.25413695
+          },
+          "ab3_cpu_fp32_before": {
+            "p50_ms": 328.650597,
+            "p95_ms": 341.3529696
+          },
+          "ab3_cpu_fp32_after": {
+            "p50_ms": 329.1688175,
+            "p95_ms": 333.9895444
+          },
+          "after_cpu_fp32_before": {
+            "p50_ms": 329.2790935,
+            "p95_ms": 338.1512576
+          },
+          "after_cpu_fp32_after": {
+            "p50_ms": 329.16099699999995,
+            "p95_ms": 338.1003166
+          }
+        },
+        "parent_max_drift_percent": 0.37546913833739204,
+        "cpu_quant_drift_percent": 1.8992230102260477,
+        "cpu_fp32_drift_percent": 5.101189231313463,
+        "B_reduction_percent": 1.8607028693831906,
+        "faster_than_CPU_FP32": false,
+        "CPU_speedup": null,
+        "diagnostic_means_ms": {
+          "core": 430.9476966666667,
+          "wait": 197.63274,
+          "quant": 19.533365,
+          "dequant": 19.017382666666666,
+          "B_other": 0.065431,
+          "C_outside_owner": 31.349566666666668,
+          "owner_other": 17.268118,
+          "session_other": 146.08109333333334
+        },
+        "resources": {
+          "before": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 222560,
+              "rss_last_kib": 223328
+            },
+            "owner": {
+              "fd_min": 9,
+              "fd_max": 9,
+              "rss_first_kib": 21892,
+              "rss_last_kib": 21892
+            }
+          },
+          "ab3": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 212344,
+              "rss_last_kib": 212856
+            },
+            "owner": {
+              "fd_min": 9,
+              "fd_max": 9,
+              "rss_first_kib": 21892,
+              "rss_last_kib": 21892
+            }
+          },
+          "after": {
+            "client": {
+              "fd_min": 5,
+              "fd_max": 5,
+              "rss_first_kib": 223864,
+              "rss_last_kib": 224504
+            },
+            "owner": {
+              "fd_min": 9,
+              "fd_max": 9,
+              "rss_first_kib": 21892,
+              "rss_last_kib": 21892
+            }
+          }
+        },
+        "physical_PL_starts": 3332,
+        "logits_bit_exact": true,
+        "actual_CLI": "PASS",
+        "recovery": "PASS",
+        "formal_release": "NOT_SIGNED_20_IMAGE_DEVELOPMENT_ONLY"
+      },
+      "representation": "complete_JSON"
+    },
+    "AB6_collect_2": {
+      "original_path": "results/model_planning/v5_ab6_final_20261009_02/collect_receipt.json",
+      "sha256": "86b451881f143e8ca331e2f990daf368a4dd03c58f0134a9f77a435e67c632a3",
+      "value": {
+        "returncode": 0,
+        "stdout": "{\"collection\": \"PASS\", \"files\": 24, \"result\": \"PASS_R2_BOARD\"}",
+        "stderr": ""
+      },
+      "representation": "complete_JSON"
+    }
+  },
+  "snapshot_frozen_at_client": "2026-10-09T02:53:22.674660+08:00"
+}

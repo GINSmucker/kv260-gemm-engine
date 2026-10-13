@@ -1,0 +1,128 @@
+{
+  "schema": "V2B_CF1_SCREEN_RESULT_V1",
+  "status": "INCONCLUSIVE",
+  "decision": "KEEP_FUNCTIONAL_PARENT_NO_EXPANSION",
+  "official_development_parent": "system_a3_20261005_02",
+  "RW01_adoption": "UNCHANGED_INCONCLUSIVE",
+  "candidate_sha256": "f4f219874c78e421e3c515bd701252bc961497f1781bcf45f6df0ea7eee073e7",
+  "parent_candidate_sha256": "e28bf8221e909f63ec3732cd6b140f04304cf458e8718b381a67cfe8f27bba97",
+  "comparison_plan_sha256": "fd49aff06e82b7cd593157ab1c3fe61bdd6efbcfb6149c3a3dbfe37df374a9d3",
+  "windows": [
+    "system_v2b_cf1_20261007_01_before",
+    "system_v2b_cf1_20261007_01_candidate",
+    "system_v2b_cf1_20261007_01_after"
+  ],
+  "monotonic_ranges": [
+    [
+      409725226774075,
+      409767036357286
+    ],
+    [
+      409913994800310,
+      409951778034821
+    ],
+    [
+      410067594472206,
+      410110871646275
+    ]
+  ],
+  "rows": [
+    {
+      "image_index": 0,
+      "parent_before_ms": 3983.32337,
+      "candidate_ms": 3237.563991,
+      "parent_after_ms": 3759.542812,
+      "saving_vs_faster_parent_ms": 521.9788210000002,
+      "parent_drift_percent": 5.617936010050817
+    },
+    {
+      "image_index": 7,
+      "parent_before_ms": 3802.705973,
+      "candidate_ms": 3506.271878,
+      "parent_after_ms": 5004.456873,
+      "saving_vs_faster_parent_ms": 296.43409500000007,
+      "parent_drift_percent": 31.602519588226908
+    },
+    {
+      "image_index": 19,
+      "parent_before_ms": 3980.566962,
+      "candidate_ms": 2941.929494,
+      "parent_after_ms": 4731.369021,
+      "saving_vs_faster_parent_ms": 1038.637468,
+      "parent_drift_percent": 18.86168644234456
+    }
+  ],
+  "PL_medians_ms": [
+    3980.566962,
+    3237.563991,
+    4731.369021
+  ],
+  "parent_median_drift_percent": 18.86168644234456,
+  "CPU_drift_percent": [
+    {
+      "fp32": 0.16422768614705596,
+      "quant": 0.5297216204025457
+    },
+    {
+      "fp32": 0.01363439616505202,
+      "quant": 0.19497756201529715
+    },
+    {
+      "fp32": 0.12515354034547954,
+      "quant": 0.3998374388257786
+    }
+  ],
+  "valid": false,
+  "all_paired_images_faster": true,
+  "whole_median_saving_ms": 743.0029709999999,
+  "whole_median_saving_percent": 18.665757368058063,
+  "target_mean_saving_ms": 692.5899669999994,
+  "target_mean_saving_percent": 23.860928897371462,
+  "exclusive_means_ms": [
+    {
+      "wait": 646.3460323333335,
+      "copy_sync": 18.104184666666665,
+      "native_other": 67.88942733333326,
+      "API_outside_native": 2902.611084333333,
+      "quant_dequant": 59.73926133333333,
+      "PS_other": 227.50877833333334
+    },
+    {
+      "wait": 646.3967503333332,
+      "copy_sync": 17.86264866666667,
+      "native_other": 74.32823599999999,
+      "API_outside_native": 2210.0211173333337,
+      "quant_dequant": 60.66508966666667,
+      "PS_other": 219.31461233333343
+    },
+    {
+      "wait": 646.3033593333333,
+      "copy_sync": 18.03671466666667,
+      "native_other": 67.90679466666666,
+      "API_outside_native": 3482.760624666667,
+      "quant_dequant": 60.072182,
+      "PS_other": 223.37656000000024
+    }
+  ],
+  "candidate_non_API_residual_mean_ms": 1018.567337,
+  "same_window_FP32_faster_median_ms": 313.583156,
+  "candidate_median_over_FP32": 10.324419309690219,
+  "native_starts": 588,
+  "formal_PL_images": 9,
+  "formal_performance_gate": "NOT_ASSESSED",
+  "additional_samples": 0,
+  "sources": [
+    {
+      "path": "results/C/model_system/system_v2b_rw02_20261005_01/PERF_SCREEN/collected_system_v2b_cf1_20261007_01_before/research_verification.json",
+      "sha256": "4191cd6c488ab0e43514aabe8a047d08a4c4558e2a4b1e3939aa6f758351bc7c"
+    },
+    {
+      "path": "results/C/model_system/system_v2b_cf1_20261007_01/PERF_SCREEN/verification.json",
+      "sha256": "0cddd9cc043e096b8f3b7ae65ea1263932dbb9ed69d7d59a6124082d88b072b1"
+    },
+    {
+      "path": "results/C/model_system/system_v2b_rw02_20261005_01/PERF_SCREEN/collected_system_v2b_cf1_20261007_01_after/research_verification.json",
+      "sha256": "e9c43f2a25b6d1ed715dd964cc8cf9a17a713f00c0959ef90435cd4e504393c9"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "status": "VALID_PROXY_INSUFFICIENT_GAIN",
+  "decision": "NO_PRODUCTION_ADMISSION_NO_ADDITIONAL_SAMPLES",
+  "cases": 7388,
+  "accepted": 2718,
+  "rejected": 4670,
+  "ownership_cases": 2,
+  "physical_PL_starts": 0,
+  "inputs_sha256": "bada56d817688d5ce293f0f40f302eab34b4f9ea0b3d9d6f5eabff804bcc4c4d",
+  "verification_sha256": "0ac13a4eeee3a2f52b73b4197861a4635c9b708c5f6fce752fa6939c145b2ef3",
+  "validation_sha256": "fe202b0bacbd429dbfcfdd760bbc54410840100261dabebec7fcb29e7364e375",
+  "predeclared": {
+    "order": [
+      "parent_before",
+      "sax_builder",
+      "parent_after"
+    ],
+    "warmup_groups": 1,
+    "formal_groups": 5,
+    "parses_per_group": 1764,
+    "proxy_parses": 441,
+    "drift_limit_percent": 5,
+    "gain_percent": 25,
+    "wall_saving_ms": 100,
+    "additional_samples": 0
+  },
+  "metrics": {
+    "wall_ms_per_441": {
+      "means": {
+        "parent_before": 137.19415810108185,
+        "sax_builder": 112.22463480234146,
+        "parent_after": 137.28831315040588
+      },
+      "parent_mean_drift_percent": 0.06862905143137249,
+      "parent_group_drift_percent": [
+        0.08364878369733361,
+        0.07416987514458905,
+        0.07281151733705747,
+        0.03115688294978329,
+        0.08135518212946889
+      ],
+      "saving_vs_faster_parent_ms": 24.9695232987404,
+      "gain_percent": 18.200135956476636,
+      "control_valid": true
+    },
+    "thread_CPU_ms_per_441": {
+      "means": {
+        "parent_before": 137.16318255000004,
+        "sax_builder": 112.19665204999993,
+        "parent_after": 137.25978290000003
+      },
+      "parent_mean_drift_percent": 0.0704273174507123,
+      "parent_group_drift_percent": [
+        0.08628239698661026,
+        0.07799660884909666,
+        0.06646380987172694,
+        0.03468718353527408,
+        0.08670278714393799
+      ],
+      "saving_vs_faster_parent_ms": 24.96653050000012,
+      "gain_percent": 18.202064166088505,
+      "control_valid": true
+    }
+  },
+  "production": "NOT_IMPLEMENTED_NOT_MEASURED",
+  "scope": "Isolated parser equivalence and cost only; CF1 per-layer 9 calls are a source-derived proxy, not a production counter."
+}

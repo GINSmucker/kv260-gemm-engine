@@ -1,0 +1,1810 @@
+{
+  "schema": "public_runtime_progress_20261008_v1",
+  "date": "2026-10-08",
+  "adopted_parent": "system_a3_20261005_02",
+  "entries": {
+    "F05_D3": {
+      "original_path": "results/model_planning/v4_f05_d3_20261008_01/verification.json",
+      "sha256": "83de7a05343a5ce033e04f94881cd8561224cefd197a3da7e55b87b64934eb84",
+      "value": {
+        "status": "PASS_COLLECTED_PASS_F05_D3_NORMAL_XRT_BUILD_AND_NEON_B_SOFTWARE",
+        "actual_status": "PASS_F05_D3_NORMAL_XRT_BUILD_AND_NEON_B_SOFTWARE",
+        "archive_sha256": "6841766326afcecaea0d9cc5791e23b40a3371d853202613923a84eb4b7d3b4e",
+        "inputs_sha256": "202dbd2ee99341e54683c4463c8118c5543fe36fc44bda38bb974882687e7c2f",
+        "files": 1604,
+        "result_sha256": "ea6f744ef4ceac8e3b7a9335d7a6e283f4f9599486e206aef1c3db1772c1a71f",
+        "physical_PL_starts": 0
+      }
+    },
+    "F05_D3_actual_result": {
+      "original_path": "results/model_planning/v4_f05_d3_20261008_01/collected/result.json",
+      "sha256": "ea6f744ef4ceac8e3b7a9335d7a6e283f4f9599486e206aef1c3db1772c1a71f",
+      "value": {
+        "status": "PASS_F05_D3_NORMAL_XRT_BUILD_AND_NEON_B_SOFTWARE",
+        "failure": null,
+        "details": {
+          "status": "PASS_F05_D3_NORMAL_XRT_BUILD_AND_NEON_B_SOFTWARE",
+          "checks": 349,
+          "refusals": 264,
+          "epoch_cut_positions": 50,
+          "normal_hot_fsync": 2,
+          "physical_PL_starts": 0,
+          "dispatcher": "ACTUAL_CPP_SOCKET_TESTED",
+          "normal_fsync_trace": [
+            "4721  fsync(5</home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v4_f05_d3_20261008_01/arm/fixtures/normal/models.v4>) = 0",
+            "4721  fsync(5</home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v4_f05_d3_20261008_01/arm/fixtures/normal/models.v4>) = 0",
+            "4721  fsync(5</home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v4_f05_d3_20261008_01/arm/fixtures/normal/models.v4>) = 0",
+            "4721  fsync(5</home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v4_f05_d3_20261008_01/arm/fixtures/normal/models.v4>) = 0"
+          ],
+          "cold_task_sync": 1,
+          "hot_begin_commit_sync": 2,
+          "recovery_sync": 1,
+          "binary_sha256": "cdde69b1c15678ea6e822877d536be4dd47412250287a289de12870c0462e273",
+          "rebuild_identical": true,
+          "transaction": {
+            "status": "PASS_F05_TRANSACTION_SOFTWARE",
+            "checks": 526,
+            "refusals": 267,
+            "software_starts": 1277,
+            "abort_cut_positions": 50,
+            "physical_PL_starts": 0
+          },
+          "socket": {
+            "status": "PASS_F05_ACTUAL_SOCKET",
+            "checks": 6,
+            "payload_bytes": 605184,
+            "physical_PL_starts": 0
+          },
+          "abi": {
+            "status": "PASS_F05_ACTUAL_ABI",
+            "checks": 411,
+            "software_starts": 99,
+            "response_losses": 4,
+            "actual_caller_death": 1,
+            "physical_PL_starts": 0
+          },
+          "B_plugin": "ARM_BUILD_AND_BOUNDARIES_ONLY",
+          "XRT_adapter": "NORMAL_BUILD_AND_METADATA_ONLY",
+          "B_boundary": {
+            "status": "PASS_ACTUAL_B_BOUNDARY_ONLY",
+            "checks": 12,
+            "full_model": "NOT_RUN",
+            "physical_PL_starts": 0
+          },
+          "B_numerics": "ARM_FULL_MODEL_SOFTWARE_PASS",
+          "normal_owner_sha256": "1f638249bb1977ad53d6c82c1320c261f9ad81dab9a2a6782862b61c4bbd2e94",
+          "normal_owner_rebuild_identical": true,
+          "neon_cases": 272,
+          "neon_refusals": 19,
+          "B_model": {
+            "status": "PASS_F05_B_FULL_MODEL_SOFTWARE",
+            "reports": [
+              {
+                "name": "cpu",
+                "status": "PASS_FULL49_INT64_AND_PARENT_BITS",
+                "outputs": 4085992,
+                "logits_max_abs": 0,
+                "software_layers": 0,
+                "physical_PL_starts": 0,
+                "commit_sha256": "7ea813582d70aa4b4f1e4707a5e28be4df91c8dd2e57a433991f6cf5f5896c86",
+                "complete_result_ms": 33782.833361
+              },
+              {
+                "name": "normal",
+                "status": "PASS_FULL49_INT64_AND_PARENT_BITS",
+                "outputs": 4085992,
+                "logits_max_abs": 0,
+                "software_layers": 49,
+                "physical_PL_starts": 0,
+                "commit_sha256": "76c8e8ab64c8f949190813d4e019c838f954bcdc3c449ff1f06b2e473dd480a4",
+                "complete_result_ms": 33859.647109
+              },
+              {
+                "name": "lost_replies",
+                "status": "PASS_FULL49_INT64_AND_PARENT_BITS",
+                "outputs": 4085992,
+                "logits_max_abs": 0,
+                "software_layers": 49,
+                "physical_PL_starts": 0,
+                "commit_sha256": "d6fb94c75c99e45e69a63b3b08fbe5663c6f304c026272edaf7a7b5e8f9f6fea",
+                "complete_result_ms": 33816.575339
+              },
+              {
+                "name": "bad_logits",
+                "status": "EXPECTED_LOGITS_FAILURE_ABORTED",
+                "software_layers": 49
+              },
+              {
+                "name": "after_logits",
+                "status": "PASS_FULL49_INT64_AND_PARENT_BITS",
+                "outputs": 4085992,
+                "logits_max_abs": 0,
+                "software_layers": 49,
+                "physical_PL_starts": 0,
+                "commit_sha256": "dd9ffb4025fc2e4555f1bfb8ce363f87fbba4fa1956cd1677f061dd52b1dc774",
+                "complete_result_ms": 33850.579138
+              },
+              {
+                "name": "bad_dump",
+                "status": "EXPECTED_DUMP_FAILURE_ABORTED",
+                "software_layers": 49
+              },
+              {
+                "name": "after_dump",
+                "status": "PASS_FULL49_INT64_AND_PARENT_BITS",
+                "outputs": 4085992,
+                "logits_max_abs": 0,
+                "software_layers": 49,
+                "physical_PL_starts": 0,
+                "commit_sha256": "403d8c2985633210a1cd50e5642e3c4535a88f2a325aca88d564fd99805231d6",
+                "complete_result_ms": 33915.016893
+              }
+            ],
+            "outputs_compared": 20429960,
+            "software_starts": 294,
+            "physical_PL_starts": 0,
+            "parent_plugin_sha256": "b7c3743760671fd1dbd3d2bb230927d2cb062b85d195381c6c552fc3926a388d",
+            "plugin_sha256": "74f94c88d18f73dc3be21ba1a22da65f1138f7f3ff1a8433994c58bad01d6cf7",
+            "generation": "3c201f072087751da151d3f954d8d8cac096bfa6cb5f531fd0cd0ac47f5ba5bd",
+            "hardware": "NOT_TESTED",
+            "performance": "NOT_EVALUATED"
+          }
+        },
+        "inputs_sha256": "202dbd2ee99341e54683c4463c8118c5543fe36fc44bda38bb974882687e7c2f",
+        "elapsed_seconds": 537.5645335430002,
+        "physical_PL_starts": 0
+      }
+    },
+    "F05_D4": {
+      "original_path": "results/C/model_system/system_f05_d4_20261008_01/DEV_LAYER/verification.json",
+      "sha256": "ed1fb053a9c907cd848a4bb1875050b48f4f8235dc4fa912c20205497b883d96",
+      "value": {
+        "status": "PASS_F05_D4_PL_PROTOCOL_AND_FULL_MODEL",
+        "candidate_sha256": "0b44fa0975f2b4d4584029be9705b371d03573e867e67df97d28431da6bc2226",
+        "collection_sha256": "694b7ed2ea4066139df924d82488086c830010f2c677b50e8714012f50d97706",
+        "manifest_sha256": "1dc4323d8013a6a323a5f9b20355aeece01ffb4876b12fdaee8f55f08eaaccea",
+        "boot_id": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+        "physical_PL_starts": 52,
+        "outputs_compared": 4426408,
+        "recovery": "PASS",
+        "severe_errors": 0,
+        "OF_reference_errors": 0,
+        "property_warnings": 4,
+        "files": 220,
+        "performance": "NOT_EVALUATED"
+      }
+    },
+    "F05_D5": {
+      "original_path": "results/C/model_system/system_f05_d5_20261008_01/F05_COMPARISON.json",
+      "sha256": "83ac96ee98598c0e820527f8987e2e85202f752b7869c6184ceea3d19a16cc12",
+      "value": {
+        "status": "VALID_COMPARISON",
+        "comparison_plan_sha256": "447ff22e20e3c3304183c3a143facec82a7cbf3d25906bb3549f92f49681dcbc",
+        "candidate_sha256": "0b44fa0975f2b4d4584029be9705b371d03573e867e67df97d28431da6bc2226",
+        "timing": [
+          {
+            "window": "system_f05_d5_20261008_01_before",
+            "complete_result_formal_ms": [
+              6383.520985,
+              7492.419206,
+              6445.621097
+            ],
+            "p50_complete_result_ms": 6445.621097,
+            "p50_session_ms": 6409.0318
+          },
+          {
+            "window": "system_f05_d5_20261008_01_candidate",
+            "complete_result_formal_ms": [
+              1465.884971,
+              1470.332816,
+              1462.671229
+            ],
+            "p50_complete_result_ms": 1465.884971,
+            "p50_session_ms": 1400.893781
+          },
+          {
+            "window": "system_f05_d5_20261008_01_after",
+            "complete_result_formal_ms": [
+              6334.135621,
+              7634.539738,
+              6663.105521
+            ],
+            "p50_complete_result_ms": 6663.105521,
+            "p50_session_ms": 6626.383154
+          }
+        ],
+        "parent_per_image_drift_percent": [
+          0.7736383120858448,
+          1.8968577183480217,
+          3.3741422390035414
+        ],
+        "parent_median_drift_percent": 3.3741422390035414,
+        "CPU_drift_percent": [
+          {
+            "fp32": 0.11126796408067463,
+            "quant": 0.13747210308019397
+          },
+          {
+            "fp32": 0.4989185392262674,
+            "quant": 0.016480351273706617
+          },
+          {
+            "fp32": 0.07267208945189729,
+            "quant": 0.028499973856743743
+          }
+        ],
+        "descriptive_median_saving_percent": 77.63497533029413,
+        "all_images_faster": true,
+        "cost_bounds_mean_ms": {
+          "software": {
+            "lower_ms": 798.9982736666666,
+            "upper_ms": 819.8410656666667,
+            "budget_ms": 600
+          },
+          "C": {
+            "lower_ms": 422.7250613333333,
+            "upper_ms": 443.5678533333333,
+            "budget_ms": 100
+          },
+          "B": {
+            "lower_ms": 35.97265933333333,
+            "upper_ms": 288.3958196666667,
+            "budget_ms": 30
+          }
+        },
+        "cost_gates": {
+          "software": "FAIL",
+          "C": "FAIL",
+          "B": "FAIL"
+        },
+        "G5": "CLOSED",
+        "adoption": "KEEP_FORMAL_PARENT",
+        "fsync_ms": "NOT_REPORTED_BOUNDED_BY_MEASURED_BEGIN_COMMIT",
+        "C_exclusive_mean_ms": {
+          "prepare_ns": 17.102276333333332,
+          "verify_ns": 46.45806866666667,
+          "ack_ns": 47.001253,
+          "copy_ns": 5.2681,
+          "total_ns": 1157.0577269999999,
+          "request_outside_native_ms": 306.8953633333333
+        },
+        "resources": [
+          {
+            "image_index": 0,
+            "client": {
+              "threads": 13,
+              "zero_runtime_threads": 9,
+              "runtime_ms": 609.112728,
+              "runqueue_wait_ms": 1.658725,
+              "fd_before": 5,
+              "fd_after": 5
+            },
+            "owner": {
+              "threads": 1,
+              "zero_runtime_threads": 0,
+              "runtime_ms": 462.201417,
+              "runqueue_wait_ms": 0.354083,
+              "fd_before": 12,
+              "fd_after": 12
+            }
+          },
+          {
+            "image_index": 7,
+            "client": {
+              "threads": 13,
+              "zero_runtime_threads": 9,
+              "runtime_ms": 608.157613,
+              "runqueue_wait_ms": 0.475833,
+              "fd_before": 5,
+              "fd_after": 5
+            },
+            "owner": {
+              "threads": 1,
+              "zero_runtime_threads": 0,
+              "runtime_ms": 462.016682,
+              "runqueue_wait_ms": 0.280671,
+              "fd_before": 12,
+              "fd_after": 12
+            }
+          },
+          {
+            "image_index": 19,
+            "client": {
+              "threads": 13,
+              "zero_runtime_threads": 9,
+              "runtime_ms": 606.17581,
+              "runqueue_wait_ms": 0.629847,
+              "fd_before": 5,
+              "fd_after": 5
+            },
+            "owner": {
+              "threads": 1,
+              "zero_runtime_threads": 0,
+              "runtime_ms": 460.533557,
+              "runqueue_wait_ms": 0.265492,
+              "fd_before": 12,
+              "fd_after": 12
+            }
+          }
+        ],
+        "collections": [
+          {
+            "window": "system_f05_d5_20261008_01_before",
+            "files": 690,
+            "collection_sha256": "0a787207e1b5c4134c3fa4b873bbd5b82b302b7acc528fe1d718f3cf8436af2c",
+            "recovery": "PASS",
+            "property_warnings": 4
+          },
+          {
+            "window": "system_f05_d5_20261008_01_candidate",
+            "files": 101,
+            "collection_sha256": "f1b269a34df75a6a4b3b03433e466ae7fef8e25f13775c26b097223ff06ee2fc",
+            "recovery": "PASS",
+            "property_warnings": 4
+          },
+          {
+            "window": "system_f05_d5_20261008_01_after",
+            "files": 690,
+            "collection_sha256": "a7189daec3b21a6a7e4ec464f6a6f7b093f08e1abc5883a977ae7a95b689b105",
+            "recovery": "PASS",
+            "property_warnings": 4
+          }
+        ],
+        "total_PL_starts": 588,
+        "total_integer_outputs_digest_anchored": 49031904,
+        "formal_performance": "NOT_ASSESSED",
+        "resampling": "NONE"
+      }
+    },
+    "F05_final_S0": {
+      "original_path": "results/C/model_system/system_f05_final_20261008_01/S0/result.json",
+      "sha256": "6485226a1e3e0f83bc55e001446bdda8eed9bf312d7119541456696f564b6941",
+      "value": {
+        "stage": "S0",
+        "status": "PASS",
+        "client_utc": "2026-10-08T12:43:41.827899+00:00",
+        "candidate_sha256": null,
+        "candidate_status": "S1_BRIDGE_NOT_IMPLEMENTED",
+        "window_manifest_sha256": "6cd8b68936c3aa664512ee81b551ee5f2ab6aaf4536555ffdaa4b3c35fc3b57b",
+        "boot": "6f08c7ac-6431-4fdc-af4d-12b02a8e494e",
+        "evidence_hashes": {
+          "local_guard.json": "56158af2065e616c6a7fa1501f437c8b757cb2feed3ae47ec095e221c03207e6",
+          "manifest.json": "6cd8b68936c3aa664512ee81b551ee5f2ab6aaf4536555ffdaa4b3c35fc3b57b",
+          "root_snapshot.json": "872ad7b584e37d28e5fd52a2c42d9df24cd4feaac774be520d3e03f593d6543b",
+          "root_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "user_snapshot.json": "e9a58cd96c308ac232e85691d193a7d7747a34703924dd5bf71755406c65442f",
+          "user_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "counts": {
+          "B": 989,
+          "A1": 131,
+          "platform": 68,
+          "F8": 488,
+          "C_tools": 9,
+          "P1_sources": 3
+        },
+        "root_C0": "PASS",
+        "recovery": "NO_PL_OR_DRIVER_CHANGE",
+        "S1_gate_open": true
+      }
+    },
+    "V3_comparison": {
+      "original_path": "results/C/model_system/system_v2b_v3_20261007_01/V3_COMPARISON.json",
+      "sha256": "51cb5846ae4ad808e40e0b5cc7021d1be233b63a97c943050f3b65afff5f8b43",
+      "value": {
+        "status": "INCONCLUSIVE",
+        "valid": false,
+        "candidate_sha256": "18322611d9b27dec1b9235d353ee522c1f9bef37a81bd8d0177baf0c75c1d965",
+        "comparison_plan_sha256": "57cf673388eb0a5556b0474a12d15d964de1bc0532beaee1bfd2da3daec8cd48",
+        "rows": [
+          {
+            "image_index": 0,
+            "before_ms": 6886.629847,
+            "new_ms": 3305.707623,
+            "after_ms": 6254.0322,
+            "parent_drift_percent": 9.185881353497994,
+            "saving_ms": 2948.324577
+          },
+          {
+            "image_index": 7,
+            "before_ms": 6908.543066,
+            "new_ms": 3219.059316,
+            "after_ms": 8108.232365,
+            "parent_drift_percent": 17.36530101265783,
+            "saving_ms": 3689.4837500000003
+          },
+          {
+            "image_index": 19,
+            "before_ms": 7080.081281,
+            "new_ms": 2730.60194,
+            "after_ms": 6582.622776,
+            "parent_drift_percent": 7.026169407616434,
+            "saving_ms": 3852.020836
+          }
+        ],
+        "PL_medians_ms": [
+          6908.543066,
+          3219.059316,
+          6582.622776
+        ],
+        "parent_median_drift_percent": 4.7176414315776345,
+        "CPU_drift_percent": [
+          {
+            "fp32": 0.11696556988047835,
+            "quant": 0.04620177986469631
+          },
+          {
+            "fp32": 0.21686015077424514,
+            "quant": 0.39515728833650066
+          },
+          {
+            "fp32": 0.10050082136571215,
+            "quant": 0.23925835463390888
+          }
+        ],
+        "whole_median_saving_ms": 3363.5634600000003,
+        "whole_median_saving_percent": 51.097618296819746,
+        "target_mean_saving_percent": 65.89921153325534,
+        "decision": "KEEP_FORMAL_PARENT_NO_RESAMPLING",
+        "cost_budgets_pass": false,
+        "storage_contract_branch_required": true,
+        "mean_record_fsync_ms": 959.9321153333334,
+        "G5": "CLOSED_SOFTWARE_COST_OR_COMPARABILITY",
+        "formal_performance_gate": "NOT_ASSESSED",
+        "additional_samples": 0,
+        "monotonic_ranges": [
+          [
+            429451864239701,
+            429504650802979
+          ],
+          [
+            429647601207955,
+            429710184881440
+          ],
+          [
+            429840433253897,
+            429893206655083
+          ]
+        ],
+        "sources": [
+          {
+            "path": "results/C/model_system/system_a3_20261005_02/PERF_SCREEN/collected_system_v2b_v3_20261007_01_before/research_verification.json",
+            "sha256": "a45cc2c9ee4dc358dc43899255c5d76d9c2ebdeba35aaaf01fa5af43de1bd7b3"
+          },
+          {
+            "path": "results/C/model_system/system_v2b_v3_20261007_01/PERF_SCREEN/verification.json",
+            "sha256": "0796a130cc1185979076a315a795fdf026a3c675a1aaa9954a3a78c832804706"
+          },
+          {
+            "path": "results/C/model_system/system_a3_20261005_02/PERF_SCREEN/collected_system_v2b_v3_20261007_01_after/research_verification.json",
+            "sha256": "c05d9ee5af779a2c4eb6e3c7991e422684ecf7023f745cf55365487b544e17ec"
+          }
+        ],
+        "V3_software_cost": {
+          "images": [
+            {
+              "schema": "v3_full_software_cost_v1",
+              "C_ABI_ms": 2519.5231860000004,
+              "C_body_ms": 2499.958545,
+              "C_exclusive_wall_ms": {
+                "prepare": 104.253068,
+                "submit_commit": 369.240401,
+                "request_prepare": 12.895639,
+                "request_rpc_including_owner": 1362.396914,
+                "result_verify_and_receipt": 47.795721,
+                "complete_commit": 310.926553,
+                "caller_copy_and_ack_prepare": 10.834068,
+                "ack_rpc": 279.661842,
+                "final_check": 1.954339
+              },
+              "C_exclusive_thread_cpu_ms": {
+                "prepare": 104.116044,
+                "submit_commit": 31.713788,
+                "request_prepare": 12.881405,
+                "request_rpc_including_owner": 179.023813,
+                "result_verify_and_receipt": 47.706659,
+                "complete_commit": 41.7847,
+                "caller_copy_and_ack_prepare": 10.833389,
+                "ack_rpc": 85.016587,
+                "final_check": 1.889517
+              },
+              "C_work": {
+                "JSON_parses": 147,
+                "connections": 0,
+                "fsync_calls": 98,
+                "fsync_thread_cpu_ns": 26389807,
+                "fsync_wall_ns": 632921793,
+                "hash_bytes": 46252950,
+                "hash_calls": 686,
+                "payload_allocations": 196,
+                "payload_copy_bytes": 42220160,
+                "request_validations": 490
+              },
+              "record_fsync_ms": 632.921793,
+              "B_receipt_ms": 52.120661000000005,
+              "B_trace_prepare_ms": 13.243504999999999,
+              "B_trace_write_ms": 1.02891,
+              "B_dump_ms": 0.07387200000000002,
+              "native_ms": 736.1594669999998,
+              "session_ms": 3036.482,
+              "result_and_evidence_ms": 3078.857833,
+              "C_ABI_outside_native_and_fsync_ms": 1150.4419260000004,
+              "B_receipt_and_trace_ms": 66.39307600000001,
+              "note": "Nested owner/native/fsync costs are included in ABI; do not add twice. Actual software profile observer cost remains included.",
+              "phase": "warmup",
+              "image_index": 0,
+              "host_wait_ms": 646.4705289999999,
+              "software_budget_total_ms": 1757.0896779999998,
+              "budgets": {
+                "total_ms": 600,
+                "C_ABI_outside_native_and_fsync_ms": 100,
+                "B_receipt_and_trace_ms": 30
+              },
+              "cost_budget_pass": false,
+              "resources": {
+                "before": {
+                  "client": {
+                    "pid": 478489,
+                    "threads": {
+                      "478489": {
+                        "user_ticks": 1248,
+                        "system_ticks": 180,
+                        "schedstat": "14286847656 33478235 404"
+                      },
+                      "478490": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83934651 159831 7"
+                      },
+                      "478491": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83778289 200762 8"
+                      },
+                      "478492": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83604646 386745 5"
+                      },
+                      "478497": {
+                        "user_ticks": 215,
+                        "system_ticks": 4,
+                        "schedstat": "2194064349 45427446 72"
+                      },
+                      "478498": {
+                        "user_ticks": 214,
+                        "system_ticks": 4,
+                        "schedstat": "2192082971 20281612 79"
+                      },
+                      "478499": {
+                        "user_ticks": 215,
+                        "system_ticks": 3,
+                        "schedstat": "2194963459 40624958 55"
+                      },
+                      "478500": {
+                        "user_ticks": 212,
+                        "system_ticks": 0,
+                        "schedstat": "2120277353 54913499 72"
+                      },
+                      "478501": {
+                        "user_ticks": 212,
+                        "system_ticks": 0,
+                        "schedstat": "2122333772 49772658 56"
+                      },
+                      "478502": {
+                        "user_ticks": 213,
+                        "system_ticks": 0,
+                        "schedstat": "2134180425 38792545 74"
+                      },
+                      "478507": {
+                        "user_ticks": 0,
+                        "system_ticks": 0,
+                        "schedstat": "213182 0 1"
+                      },
+                      "478508": {
+                        "user_ticks": 0,
+                        "system_ticks": 0,
+                        "schedstat": "190222 0 1"
+                      },
+                      "478509": {
+                        "user_ticks": 0,
+                        "system_ticks": 0,
+                        "schedstat": "230132 0 1"
+                      }
+                    },
+                    "fd_count": 4,
+                    "memory": {
+                      "VmSize": "1069672 kB",
+                      "VmHWM": "218800 kB",
+                      "VmRSS": "218800 kB"
+                    }
+                  },
+                  "owner": {
+                    "pid": 478487,
+                    "threads": {
+                      "478487": {
+                        "user_ticks": 16,
+                        "system_ticks": 8,
+                        "schedstat": "253998889 5599475 49"
+                      }
+                    },
+                    "fd_count": 9,
+                    "memory": {
+                      "VmSize": "39460 kB",
+                      "VmHWM": "28672 kB",
+                      "VmRSS": "28672 kB"
+                    }
+                  }
+                },
+                "after": {
+                  "client": {
+                    "pid": 478489,
+                    "threads": {
+                      "478489": {
+                        "user_ticks": 1330,
+                        "system_ticks": 206,
+                        "schedstat": "15376714985 34129422 800"
+                      },
+                      "478490": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83934651 159831 7"
+                      },
+                      "478491": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83778289 200762 8"
+                      },
+                      "478492": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83604646 386745 5"
+                      },
+                      "478497": {
+                        "user_ticks": 215,
+                        "system_ticks": 4,
+                        "schedstat": "2194064349 45427446 72"
+                      },
+                      "478498": {
+                        "user_ticks": 214,
+                        "system_ticks": 4,
+                        "schedstat": "2192082971 20281612 79"
+                      },
+                      "478499": {
+                        "user_ticks": 215,
+                        "system_ticks": 3,
+                        "schedstat": "2194963459 40624958 55"
+                      },
+                      "478500": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2161544777 60095500 76"
+                      },
+                      "478501": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2163500805 51174861 59"
+                      },
+                      "478502": {
+                        "user_ticks": 217,
+                        "system_ticks": 0,
+                        "schedstat": "2174328927 43594433 76"
+                      },
+                      "478507": {
+                        "user_ticks": 6,
+                        "system_ticks": 0,
+                        "schedstat": "61390695 5426534 132"
+                      },
+                      "478508": {
+                        "user_ticks": 3,
+                        "system_ticks": 0,
+                        "schedstat": "40418328 6906729 125"
+                      },
+                      "478509": {
+                        "user_ticks": 3,
+                        "system_ticks": 0,
+                        "schedstat": "32129853 2942110 123"
+                      }
+                    },
+                    "fd_count": 7,
+                    "memory": {
+                      "VmSize": "1087668 kB",
+                      "VmHWM": "243248 kB",
+                      "VmRSS": "237956 kB"
+                    }
+                  },
+                  "owner": {
+                    "pid": 478487,
+                    "threads": {
+                      "478487": {
+                        "user_ticks": 75,
+                        "system_ticks": 28,
+                        "schedstat": "1037277846 5890968 5519"
+                      }
+                    },
+                    "fd_count": 12,
+                    "memory": {
+                      "VmSize": "39460 kB",
+                      "VmHWM": "28672 kB",
+                      "VmRSS": "28672 kB"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "schema": "v3_full_software_cost_v1",
+              "C_ABI_ms": 2931.473315999999,
+              "C_body_ms": 2912.030624,
+              "C_exclusive_wall_ms": {
+                "prepare": 74.481419,
+                "submit_commit": 640.565171,
+                "request_prepare": 12.932815,
+                "request_rpc_including_owner": 1245.415377,
+                "result_verify_and_receipt": 47.689638,
+                "complete_commit": 593.499387,
+                "caller_copy_and_ack_prepare": 10.884912,
+                "ack_rpc": 284.611394,
+                "final_check": 1.950511
+              },
+              "C_exclusive_thread_cpu_ms": {
+                "prepare": 74.319265,
+                "submit_commit": 32.936307,
+                "request_prepare": 12.941883,
+                "request_rpc_including_owner": 171.106426,
+                "result_verify_and_receipt": 47.606796,
+                "complete_commit": 43.429964,
+                "caller_copy_and_ack_prepare": 10.882946,
+                "ack_rpc": 85.890592,
+                "final_check": 1.903338
+              },
+              "C_work": {
+                "JSON_parses": 147,
+                "connections": 0,
+                "fsync_calls": 98,
+                "fsync_thread_cpu_ns": 28912478,
+                "fsync_wall_ns": 1186513026,
+                "hash_bytes": 40752692,
+                "hash_calls": 637,
+                "payload_allocations": 196,
+                "payload_copy_bytes": 42220160,
+                "request_validations": 490
+              },
+              "record_fsync_ms": 1186.513026,
+              "B_receipt_ms": 52.014664,
+              "B_trace_prepare_ms": 13.154860999999999,
+              "B_trace_write_ms": 0.98393,
+              "B_dump_ms": 0.070911,
+              "native_ms": 735.5110649999999,
+              "session_ms": 3305.707623,
+              "result_and_evidence_ms": 3353.033086,
+              "C_ABI_outside_native_and_fsync_ms": 1009.4492249999989,
+              "B_receipt_and_trace_ms": 66.15345500000001,
+              "note": "Nested owner/native/fsync costs are included in ABI; do not add twice. Actual software profile observer cost remains included.",
+              "phase": "formal",
+              "image_index": 0,
+              "host_wait_ms": 646.4653639999999,
+              "software_budget_total_ms": 1472.7292329999996,
+              "budgets": {
+                "total_ms": 600,
+                "C_ABI_outside_native_and_fsync_ms": 100,
+                "B_receipt_and_trace_ms": 30
+              },
+              "cost_budget_pass": false,
+              "resources": {
+                "before": {
+                  "client": {
+                    "pid": 478489,
+                    "threads": {
+                      "478489": {
+                        "user_ticks": 1338,
+                        "system_ticks": 207,
+                        "schedstat": "15457670335 34176493 801"
+                      },
+                      "478490": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83934651 159831 7"
+                      },
+                      "478491": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83778289 200762 8"
+                      },
+                      "478492": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83604646 386745 5"
+                      },
+                      "478497": {
+                        "user_ticks": 215,
+                        "system_ticks": 4,
+                        "schedstat": "2194064349 45427446 72"
+                      },
+                      "478498": {
+                        "user_ticks": 214,
+                        "system_ticks": 4,
+                        "schedstat": "2192082971 20281612 79"
+                      },
+                      "478499": {
+                        "user_ticks": 215,
+                        "system_ticks": 3,
+                        "schedstat": "2194963459 40624958 55"
+                      },
+                      "478500": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2161544777 60095500 76"
+                      },
+                      "478501": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2163500805 51174861 59"
+                      },
+                      "478502": {
+                        "user_ticks": 217,
+                        "system_ticks": 0,
+                        "schedstat": "2174328927 43594433 76"
+                      },
+                      "478507": {
+                        "user_ticks": 6,
+                        "system_ticks": 0,
+                        "schedstat": "61390695 5426534 132"
+                      },
+                      "478508": {
+                        "user_ticks": 3,
+                        "system_ticks": 0,
+                        "schedstat": "40418328 6906729 125"
+                      },
+                      "478509": {
+                        "user_ticks": 3,
+                        "system_ticks": 0,
+                        "schedstat": "32129853 2942110 123"
+                      }
+                    },
+                    "fd_count": 7,
+                    "memory": {
+                      "VmSize": "1088296 kB",
+                      "VmHWM": "243248 kB",
+                      "VmRSS": "237956 kB"
+                    }
+                  },
+                  "owner": {
+                    "pid": 478487,
+                    "threads": {
+                      "478487": {
+                        "user_ticks": 75,
+                        "system_ticks": 28,
+                        "schedstat": "1037277846 5890968 5519"
+                      }
+                    },
+                    "fd_count": 12,
+                    "memory": {
+                      "VmSize": "39460 kB",
+                      "VmHWM": "28672 kB",
+                      "VmRSS": "28672 kB"
+                    }
+                  }
+                },
+                "after": {
+                  "client": {
+                    "pid": 478489,
+                    "threads": {
+                      "478489": {
+                        "user_ticks": 1415,
+                        "system_ticks": 223,
+                        "schedstat": "16389675167 34443017 1195"
+                      },
+                      "478490": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83934651 159831 7"
+                      },
+                      "478491": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83778289 200762 8"
+                      },
+                      "478492": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83604646 386745 5"
+                      },
+                      "478497": {
+                        "user_ticks": 215,
+                        "system_ticks": 4,
+                        "schedstat": "2194064349 45427446 72"
+                      },
+                      "478498": {
+                        "user_ticks": 214,
+                        "system_ticks": 4,
+                        "schedstat": "2192082971 20281612 79"
+                      },
+                      "478499": {
+                        "user_ticks": 215,
+                        "system_ticks": 3,
+                        "schedstat": "2194963459 40624958 55"
+                      },
+                      "478500": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2161544777 60095500 76"
+                      },
+                      "478501": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2163500805 51174861 59"
+                      },
+                      "478502": {
+                        "user_ticks": 217,
+                        "system_ticks": 0,
+                        "schedstat": "2174328927 43594433 76"
+                      },
+                      "478507": {
+                        "user_ticks": 11,
+                        "system_ticks": 0,
+                        "schedstat": "121895992 5492114 257"
+                      },
+                      "478508": {
+                        "user_ticks": 7,
+                        "system_ticks": 0,
+                        "schedstat": "79819426 6993030 245"
+                      },
+                      "478509": {
+                        "user_ticks": 5,
+                        "system_ticks": 0,
+                        "schedstat": "64851796 3572817 242"
+                      }
+                    },
+                    "fd_count": 7,
+                    "memory": {
+                      "VmSize": "1089788 kB",
+                      "VmHWM": "243248 kB",
+                      "VmRSS": "239620 kB"
+                    }
+                  },
+                  "owner": {
+                    "pid": 478487,
+                    "threads": {
+                      "478487": {
+                        "user_ticks": 132,
+                        "system_ticks": 47,
+                        "schedstat": "1797018808 6218513 10984"
+                      }
+                    },
+                    "fd_count": 12,
+                    "memory": {
+                      "VmSize": "39460 kB",
+                      "VmHWM": "28928 kB",
+                      "VmRSS": "28928 kB"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "schema": "v3_full_software_cost_v1",
+              "C_ABI_ms": 2842.652344000001,
+              "C_body_ms": 2823.107098,
+              "C_exclusive_wall_ms": {
+                "prepare": 75.10499,
+                "submit_commit": 623.844069,
+                "request_prepare": 12.9953,
+                "request_rpc_including_owner": 1252.247018,
+                "result_verify_and_receipt": 48.346369,
+                "complete_commit": 509.661403,
+                "caller_copy_and_ack_prepare": 11.110358,
+                "ack_rpc": 287.767533,
+                "final_check": 2.030058
+              },
+              "C_exclusive_thread_cpu_ms": {
+                "prepare": 74.951434,
+                "submit_commit": 32.50604,
+                "request_prepare": 12.997541,
+                "request_rpc_including_owner": 172.158123,
+                "result_verify_and_receipt": 48.259784,
+                "complete_commit": 43.12686,
+                "caller_copy_and_ack_prepare": 11.107259,
+                "ack_rpc": 86.544807,
+                "final_check": 1.966242
+              },
+              "C_work": {
+                "JSON_parses": 147,
+                "connections": 0,
+                "fsync_calls": 98,
+                "fsync_thread_cpu_ns": 26606033,
+                "fsync_wall_ns": 1084344931,
+                "hash_bytes": 40753157,
+                "hash_calls": 637,
+                "payload_allocations": 196,
+                "payload_copy_bytes": 42220160,
+                "request_validations": 490
+              },
+              "record_fsync_ms": 1084.344931,
+              "B_receipt_ms": 52.01538499999999,
+              "B_trace_prepare_ms": 13.162027999999998,
+              "B_trace_write_ms": 0.96004,
+              "B_dump_ms": 0.07193000000000001,
+              "native_ms": 738.3331049999999,
+              "session_ms": 3219.059316,
+              "result_and_evidence_ms": 3261.013886,
+              "C_ABI_outside_native_and_fsync_ms": 1019.9743080000007,
+              "B_receipt_and_trace_ms": 66.13745299999998,
+              "note": "Nested owner/native/fsync costs are included in ABI; do not add twice. Actual software profile observer cost remains included.",
+              "phase": "formal",
+              "image_index": 7,
+              "host_wait_ms": 647.04488,
+              "software_budget_total_ms": 1487.6695049999998,
+              "budgets": {
+                "total_ms": 600,
+                "C_ABI_outside_native_and_fsync_ms": 100,
+                "B_receipt_and_trace_ms": 30
+              },
+              "cost_budget_pass": false,
+              "resources": {
+                "before": {
+                  "client": {
+                    "pid": 478489,
+                    "threads": {
+                      "478489": {
+                        "user_ticks": 1423,
+                        "system_ticks": 223,
+                        "schedstat": "16471677368 34443017 1195"
+                      },
+                      "478490": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83934651 159831 7"
+                      },
+                      "478491": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83778289 200762 8"
+                      },
+                      "478492": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83604646 386745 5"
+                      },
+                      "478497": {
+                        "user_ticks": 215,
+                        "system_ticks": 4,
+                        "schedstat": "2194064349 45427446 72"
+                      },
+                      "478498": {
+                        "user_ticks": 214,
+                        "system_ticks": 4,
+                        "schedstat": "2192082971 20281612 79"
+                      },
+                      "478499": {
+                        "user_ticks": 215,
+                        "system_ticks": 3,
+                        "schedstat": "2194963459 40624958 55"
+                      },
+                      "478500": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2161544777 60095500 76"
+                      },
+                      "478501": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2163500805 51174861 59"
+                      },
+                      "478502": {
+                        "user_ticks": 217,
+                        "system_ticks": 0,
+                        "schedstat": "2174328927 43594433 76"
+                      },
+                      "478507": {
+                        "user_ticks": 11,
+                        "system_ticks": 0,
+                        "schedstat": "121895992 5492114 257"
+                      },
+                      "478508": {
+                        "user_ticks": 7,
+                        "system_ticks": 0,
+                        "schedstat": "79819426 6993030 245"
+                      },
+                      "478509": {
+                        "user_ticks": 5,
+                        "system_ticks": 0,
+                        "schedstat": "64851796 3572817 242"
+                      }
+                    },
+                    "fd_count": 7,
+                    "memory": {
+                      "VmSize": "1090452 kB",
+                      "VmHWM": "243248 kB",
+                      "VmRSS": "239620 kB"
+                    }
+                  },
+                  "owner": {
+                    "pid": 478487,
+                    "threads": {
+                      "478487": {
+                        "user_ticks": 132,
+                        "system_ticks": 47,
+                        "schedstat": "1797018808 6218513 10984"
+                      }
+                    },
+                    "fd_count": 12,
+                    "memory": {
+                      "VmSize": "39460 kB",
+                      "VmHWM": "28928 kB",
+                      "VmRSS": "28928 kB"
+                    }
+                  }
+                },
+                "after": {
+                  "client": {
+                    "pid": 478489,
+                    "threads": {
+                      "478489": {
+                        "user_ticks": 1500,
+                        "system_ticks": 240,
+                        "schedstat": "17403058444 35474021 1576"
+                      },
+                      "478490": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83934651 159831 7"
+                      },
+                      "478491": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83778289 200762 8"
+                      },
+                      "478492": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83604646 386745 5"
+                      },
+                      "478497": {
+                        "user_ticks": 215,
+                        "system_ticks": 4,
+                        "schedstat": "2194064349 45427446 72"
+                      },
+                      "478498": {
+                        "user_ticks": 214,
+                        "system_ticks": 4,
+                        "schedstat": "2192082971 20281612 79"
+                      },
+                      "478499": {
+                        "user_ticks": 215,
+                        "system_ticks": 3,
+                        "schedstat": "2194963459 40624958 55"
+                      },
+                      "478500": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2161544777 60095500 76"
+                      },
+                      "478501": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2163500805 51174861 59"
+                      },
+                      "478502": {
+                        "user_ticks": 217,
+                        "system_ticks": 0,
+                        "schedstat": "2174328927 43594433 76"
+                      },
+                      "478507": {
+                        "user_ticks": 17,
+                        "system_ticks": 0,
+                        "schedstat": "182467338 7804657 380"
+                      },
+                      "478508": {
+                        "user_ticks": 10,
+                        "system_ticks": 0,
+                        "schedstat": "119276219 8808367 360"
+                      },
+                      "478509": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "96700004 6984449 356"
+                      }
+                    },
+                    "fd_count": 7,
+                    "memory": {
+                      "VmSize": "1090836 kB",
+                      "VmHWM": "243248 kB",
+                      "VmRSS": "240644 kB"
+                    }
+                  },
+                  "owner": {
+                    "pid": 478487,
+                    "threads": {
+                      "478487": {
+                        "user_ticks": 191,
+                        "system_ticks": 65,
+                        "schedstat": "2566111557 8897474 16437"
+                      }
+                    },
+                    "fd_count": 12,
+                    "memory": {
+                      "VmSize": "39460 kB",
+                      "VmHWM": "29184 kB",
+                      "VmRSS": "29184 kB"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "schema": "v3_full_software_cost_v1",
+              "C_ABI_ms": 2356.9023270000002,
+              "C_body_ms": 2337.54976,
+              "C_exclusive_wall_ms": {
+                "prepare": 74.323254,
+                "submit_commit": 336.348682,
+                "request_prepare": 12.8194,
+                "request_rpc_including_owner": 1248.855639,
+                "result_verify_and_receipt": 47.814127,
+                "complete_commit": 319.895243,
+                "caller_copy_and_ack_prepare": 10.813347,
+                "ack_rpc": 284.731247,
+                "final_check": 1.948821
+              },
+              "C_exclusive_thread_cpu_ms": {
+                "prepare": 74.154049,
+                "submit_commit": 31.220665,
+                "request_prepare": 12.808839,
+                "request_rpc_including_owner": 171.340185,
+                "result_verify_and_receipt": 47.711438,
+                "complete_commit": 41.814696,
+                "caller_copy_and_ack_prepare": 10.81053,
+                "ack_rpc": 85.564835,
+                "final_check": 1.907847
+              },
+              "C_work": {
+                "JSON_parses": 147,
+                "connections": 0,
+                "fsync_calls": 98,
+                "fsync_thread_cpu_ns": 25766351,
+                "fsync_wall_ns": 608938389,
+                "hash_bytes": 40753149,
+                "hash_calls": 637,
+                "payload_allocations": 196,
+                "payload_copy_bytes": 42220160,
+                "request_validations": 490
+              },
+              "record_fsync_ms": 608.938389,
+              "B_receipt_ms": 52.03905500000002,
+              "B_trace_prepare_ms": 13.171325999999999,
+              "B_trace_write_ms": 0.98272,
+              "B_dump_ms": 0.07127000000000001,
+              "native_ms": 736.00613,
+              "session_ms": 2730.60194,
+              "result_and_evidence_ms": 2772.699281,
+              "C_ABI_outside_native_and_fsync_ms": 1011.9578080000002,
+              "B_receipt_and_trace_ms": 66.19310100000003,
+              "note": "Nested owner/native/fsync costs are included in ABI; do not add twice. Actual software profile observer cost remains included.",
+              "phase": "formal",
+              "image_index": 19,
+              "host_wait_ms": 646.317921,
+              "software_budget_total_ms": 1475.3456300000003,
+              "budgets": {
+                "total_ms": 600,
+                "C_ABI_outside_native_and_fsync_ms": 100,
+                "B_receipt_and_trace_ms": 30
+              },
+              "cost_budget_pass": false,
+              "resources": {
+                "before": {
+                  "client": {
+                    "pid": 478489,
+                    "threads": {
+                      "478489": {
+                        "user_ticks": 1507,
+                        "system_ticks": 240,
+                        "schedstat": "17484999054 35535662 1578"
+                      },
+                      "478490": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83934651 159831 7"
+                      },
+                      "478491": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83778289 200762 8"
+                      },
+                      "478492": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83604646 386745 5"
+                      },
+                      "478497": {
+                        "user_ticks": 215,
+                        "system_ticks": 4,
+                        "schedstat": "2194064349 45427446 72"
+                      },
+                      "478498": {
+                        "user_ticks": 214,
+                        "system_ticks": 4,
+                        "schedstat": "2192082971 20281612 79"
+                      },
+                      "478499": {
+                        "user_ticks": 215,
+                        "system_ticks": 3,
+                        "schedstat": "2194963459 40624958 55"
+                      },
+                      "478500": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2161544777 60095500 76"
+                      },
+                      "478501": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2163500805 51174861 59"
+                      },
+                      "478502": {
+                        "user_ticks": 217,
+                        "system_ticks": 0,
+                        "schedstat": "2174328927 43594433 76"
+                      },
+                      "478507": {
+                        "user_ticks": 17,
+                        "system_ticks": 0,
+                        "schedstat": "182467338 7804657 380"
+                      },
+                      "478508": {
+                        "user_ticks": 10,
+                        "system_ticks": 0,
+                        "schedstat": "119276219 8808367 360"
+                      },
+                      "478509": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "96700004 6984449 356"
+                      }
+                    },
+                    "fd_count": 7,
+                    "memory": {
+                      "VmSize": "1091500 kB",
+                      "VmHWM": "243248 kB",
+                      "VmRSS": "240644 kB"
+                    }
+                  },
+                  "owner": {
+                    "pid": 478487,
+                    "threads": {
+                      "478487": {
+                        "user_ticks": 191,
+                        "system_ticks": 65,
+                        "schedstat": "2566111557 8897474 16437"
+                      }
+                    },
+                    "fd_count": 12,
+                    "memory": {
+                      "VmSize": "39460 kB",
+                      "VmHWM": "29184 kB",
+                      "VmRSS": "29184 kB"
+                    }
+                  }
+                },
+                "after": {
+                  "client": {
+                    "pid": 478489,
+                    "threads": {
+                      "478489": {
+                        "user_ticks": 1584,
+                        "system_ticks": 256,
+                        "schedstat": "18406856924 35721883 1948"
+                      },
+                      "478490": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83934651 159831 7"
+                      },
+                      "478491": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83778289 200762 8"
+                      },
+                      "478492": {
+                        "user_ticks": 8,
+                        "system_ticks": 0,
+                        "schedstat": "83604646 386745 5"
+                      },
+                      "478497": {
+                        "user_ticks": 215,
+                        "system_ticks": 4,
+                        "schedstat": "2194064349 45427446 72"
+                      },
+                      "478498": {
+                        "user_ticks": 214,
+                        "system_ticks": 4,
+                        "schedstat": "2192082971 20281612 79"
+                      },
+                      "478499": {
+                        "user_ticks": 215,
+                        "system_ticks": 3,
+                        "schedstat": "2194963459 40624958 55"
+                      },
+                      "478500": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2161544777 60095500 76"
+                      },
+                      "478501": {
+                        "user_ticks": 216,
+                        "system_ticks": 0,
+                        "schedstat": "2163500805 51174861 59"
+                      },
+                      "478502": {
+                        "user_ticks": 217,
+                        "system_ticks": 0,
+                        "schedstat": "2174328927 43594433 76"
+                      },
+                      "478507": {
+                        "user_ticks": 23,
+                        "system_ticks": 1,
+                        "schedstat": "242811068 7864269 504"
+                      },
+                      "478508": {
+                        "user_ticks": 14,
+                        "system_ticks": 1,
+                        "schedstat": "158003452 8886288 477"
+                      },
+                      "478509": {
+                        "user_ticks": 11,
+                        "system_ticks": 1,
+                        "schedstat": "129887135 6984449 472"
+                      }
+                    },
+                    "fd_count": 7,
+                    "memory": {
+                      "VmSize": "1091888 kB",
+                      "VmHWM": "243248 kB",
+                      "VmRSS": "241668 kB"
+                    }
+                  },
+                  "owner": {
+                    "pid": 478487,
+                    "threads": {
+                      "478487": {
+                        "user_ticks": 248,
+                        "system_ticks": 84,
+                        "schedstat": "3331178068 9117585 21898"
+                      }
+                    },
+                    "fd_count": 12,
+                    "memory": {
+                      "VmSize": "39460 kB",
+                      "VmHWM": "30720 kB",
+                      "VmRSS": "30720 kB"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "matched_CPU_medians_ms": {
+            "before": {
+              "arm_fp32": 329.366884,
+              "arm_w8a8_reference": 346.446555
+            },
+            "after": {
+              "arm_fp32": 328.809158,
+              "arm_w8a8_reference": 342.163872
+            }
+          },
+          "matched_CPU_drift_percent": {
+            "arm_fp32": 0.16933274931185682,
+            "arm_w8a8_reference": 1.2361742202920634
+          },
+          "matched_CPU_drift_pass": true,
+          "mean_record_fsync_ms": 959.9321153333334,
+          "storage_contract_branch_required": true,
+          "all_formal_cost_budgets_pass": false,
+          "count_note": "4 PL images and unchanged 24 fixed CPU images plus 24 separate-child matching-policy CPU images; no matched CPU workers retained during PL"
+        }
+      }
+    },
+    "V3_cost": {
+      "original_path": "results/C/model_system/system_v2b_v3_20261007_01/V3_COST_ANALYSIS.json",
+      "sha256": "e375cb32e179611e97d6b019b49bf26be350e009bd5c8d10d208c6355f26e4f1",
+      "value": {
+        "status": "PASS_RECONCILED_COST_ACCOUNTING_NOT_PERFORMANCE_GATE",
+        "candidate_sha256": "18322611d9b27dec1b9235d353ee522c1f9bef37a81bd8d0177baf0c75c1d965",
+        "source_proof_sha256": "0796a130cc1185979076a315a795fdf026a3c675a1aaa9954a3a78c832804706",
+        "source_stage_sha256": "496c3e990f37729e5e9bba9c2011037f4e90b4a72af5022510a109f43abff0f8",
+        "formal_mean_ms": {
+          "session_ms": 3085.1229596666667,
+          "result_and_evidence_ms": 3128.9154176666666,
+          "host_wait_ms": 646.6093883333333,
+          "native_ms": 736.6167666666666,
+          "C_ABI_ms": 2710.3426623333335,
+          "record_fsync_ms": 959.9321153333334,
+          "software_budget_total_ms": 1478.581456,
+          "C_ABI_outside_native_and_fsync_ms": 1013.7937803333333,
+          "B_receipt_and_trace_ms": 66.16133633333334,
+          "B_receipt_ms": 52.02303466666667,
+          "B_trace_prepare_ms": 13.162738333333332,
+          "B_trace_write_ms": 0.9755633333333333
+        },
+        "C_exclusive_wall_mean_ms": {
+          "prepare": 74.63655433333334,
+          "submit_commit": 533.585974,
+          "request_prepare": 12.915838333333333,
+          "request_rpc_including_owner": 1248.8393446666666,
+          "result_verify_and_receipt": 47.95004466666667,
+          "complete_commit": 474.352011,
+          "caller_copy_and_ack_prepare": 10.936205666666666,
+          "ack_rpc": 285.70339133333334,
+          "final_check": 1.9764633333333332
+        },
+        "C_exclusive_thread_cpu_mean_ms": {
+          "prepare": 74.47491600000001,
+          "submit_commit": 32.221004,
+          "request_prepare": 12.916087666666668,
+          "request_rpc_including_owner": 171.53491133333333,
+          "result_verify_and_receipt": 47.85933933333334,
+          "complete_commit": 42.790506666666666,
+          "caller_copy_and_ack_prepare": 10.933578333333333,
+          "ack_rpc": 86.000078,
+          "final_check": 1.925809
+        },
+        "C_ABI_outside_native_and_fsync_decomposition_ms": {
+          "prepare": 74.63655433333334,
+          "commits_except_fsync": 48.00586966666663,
+          "request_prepare": 12.915838333333333,
+          "request_RPC_except_native": 512.222578,
+          "receipt": 47.95004466666667,
+          "copy_and_ack_prepare": 10.936205666666666,
+          "ACK_RPC": 285.70339133333334,
+          "final_check": 1.9764633333333332,
+          "ABI_bracket_outside_profile": 19.446835000000192
+        },
+        "legacy_exclusive_means_ms": {
+          "wait": 646.6093883333334,
+          "copy_sync": 18.079371666666663,
+          "native_other": 71.92800666666652,
+          "API_outside_native": 2026.3198,
+          "quant_dequant": 146.29203533333333,
+          "PS_other": 175.89435766666654
+        },
+        "cold_initialisation": [
+          {
+            "backend": "arm_fp32",
+            "runner_init_ms": 2561.560749,
+            "session_load_ms": 488.405485,
+            "scope": "binding/runner/session creation, excludes input/preprocessing"
+          },
+          {
+            "backend": "arm_w8a8_reference",
+            "runner_init_ms": 3946.757023,
+            "session_load_ms": 1934.962643,
+            "scope": "binding/runner/session creation, excludes input/preprocessing"
+          },
+          {
+            "backend": "arm_pl_v2b",
+            "runner_init_ms": 2171.128414,
+            "session_load_ms": 186.791158,
+            "scope": "binding/runner/session creation, excludes input/preprocessing"
+          }
+        ],
+        "warmup": 3036.482,
+        "formal_resources": [
+          {
+            "image_index": 0,
+            "client": {
+              "threads": 13,
+              "thread_runtime_ms": {
+                "478489": 932.004832,
+                "478490": 0.0,
+                "478491": 0.0,
+                "478492": 0.0,
+                "478497": 0.0,
+                "478498": 0.0,
+                "478499": 0.0,
+                "478500": 0.0,
+                "478501": 0.0,
+                "478502": 0.0,
+                "478507": 60.505297,
+                "478508": 39.401098,
+                "478509": 32.721943
+              },
+              "total_thread_runtime_ms": 1064.63317,
+              "total_runqueue_wait_ms": 1.049112,
+              "fd_before": 7,
+              "fd_after": 7,
+              "memory_before": {
+                "VmSize": "1088296 kB",
+                "VmHWM": "243248 kB",
+                "VmRSS": "237956 kB"
+              },
+              "memory_after": {
+                "VmSize": "1089788 kB",
+                "VmHWM": "243248 kB",
+                "VmRSS": "239620 kB"
+              }
+            },
+            "owner": {
+              "threads": 1,
+              "thread_runtime_ms": {
+                "478487": 759.740962
+              },
+              "total_thread_runtime_ms": 759.740962,
+              "total_runqueue_wait_ms": 0.327545,
+              "fd_before": 12,
+              "fd_after": 12,
+              "memory_before": {
+                "VmSize": "39460 kB",
+                "VmHWM": "28672 kB",
+                "VmRSS": "28672 kB"
+              },
+              "memory_after": {
+                "VmSize": "39460 kB",
+                "VmHWM": "28928 kB",
+                "VmRSS": "28928 kB"
+              }
+            }
+          },
+          {
+            "image_index": 7,
+            "client": {
+              "threads": 13,
+              "thread_runtime_ms": {
+                "478489": 931.381076,
+                "478490": 0.0,
+                "478491": 0.0,
+                "478492": 0.0,
+                "478497": 0.0,
+                "478498": 0.0,
+                "478499": 0.0,
+                "478500": 0.0,
+                "478501": 0.0,
+                "478502": 0.0,
+                "478507": 60.571346,
+                "478508": 39.456793,
+                "478509": 31.848208
+              },
+              "total_thread_runtime_ms": 1063.257423,
+              "total_runqueue_wait_ms": 8.570516,
+              "fd_before": 7,
+              "fd_after": 7,
+              "memory_before": {
+                "VmSize": "1090452 kB",
+                "VmHWM": "243248 kB",
+                "VmRSS": "239620 kB"
+              },
+              "memory_after": {
+                "VmSize": "1090836 kB",
+                "VmHWM": "243248 kB",
+                "VmRSS": "240644 kB"
+              }
+            },
+            "owner": {
+              "threads": 1,
+              "thread_runtime_ms": {
+                "478487": 769.092749
+              },
+              "total_thread_runtime_ms": 769.092749,
+              "total_runqueue_wait_ms": 2.678961,
+              "fd_before": 12,
+              "fd_after": 12,
+              "memory_before": {
+                "VmSize": "39460 kB",
+                "VmHWM": "28928 kB",
+                "VmRSS": "28928 kB"
+              },
+              "memory_after": {
+                "VmSize": "39460 kB",
+                "VmHWM": "29184 kB",
+                "VmRSS": "29184 kB"
+              }
+            }
+          },
+          {
+            "image_index": 19,
+            "client": {
+              "threads": 13,
+              "thread_runtime_ms": {
+                "478489": 921.85787,
+                "478490": 0.0,
+                "478491": 0.0,
+                "478492": 0.0,
+                "478497": 0.0,
+                "478498": 0.0,
+                "478499": 0.0,
+                "478500": 0.0,
+                "478501": 0.0,
+                "478502": 0.0,
+                "478507": 60.34373,
+                "478508": 38.727233,
+                "478509": 33.187131
+              },
+              "total_thread_runtime_ms": 1054.115964,
+              "total_runqueue_wait_ms": 0.323754,
+              "fd_before": 7,
+              "fd_after": 7,
+              "memory_before": {
+                "VmSize": "1091500 kB",
+                "VmHWM": "243248 kB",
+                "VmRSS": "240644 kB"
+              },
+              "memory_after": {
+                "VmSize": "1091888 kB",
+                "VmHWM": "243248 kB",
+                "VmRSS": "241668 kB"
+              }
+            },
+            "owner": {
+              "threads": 1,
+              "thread_runtime_ms": {
+                "478487": 765.066511
+              },
+              "total_thread_runtime_ms": 765.066511,
+              "total_runqueue_wait_ms": 0.220111,
+              "fd_before": 12,
+              "fd_after": 12,
+              "memory_before": {
+                "VmSize": "39460 kB",
+                "VmHWM": "29184 kB",
+                "VmRSS": "29184 kB"
+              },
+              "memory_after": {
+                "VmSize": "39460 kB",
+                "VmHWM": "30720 kB",
+                "VmRSS": "30720 kB"
+              }
+            }
+          }
+        ],
+        "formal_work": [
+          {
+            "image_index": 0,
+            "JSON_parses": 147,
+            "connections": 0,
+            "fsync_calls": 98,
+            "fsync_thread_cpu_ns": 28912478,
+            "fsync_wall_ns": 1186513026,
+            "hash_bytes": 40752692,
+            "hash_calls": 637,
+            "payload_allocations": 196,
+            "payload_copy_bytes": 42220160,
+            "request_validations": 490
+          },
+          {
+            "image_index": 7,
+            "JSON_parses": 147,
+            "connections": 0,
+            "fsync_calls": 98,
+            "fsync_thread_cpu_ns": 26606033,
+            "fsync_wall_ns": 1084344931,
+            "hash_bytes": 40753157,
+            "hash_calls": 637,
+            "payload_allocations": 196,
+            "payload_copy_bytes": 42220160,
+            "request_validations": 490
+          },
+          {
+            "image_index": 19,
+            "JSON_parses": 147,
+            "connections": 0,
+            "fsync_calls": 98,
+            "fsync_thread_cpu_ns": 25766351,
+            "fsync_wall_ns": 608938389,
+            "hash_bytes": 40753149,
+            "hash_calls": 637,
+            "payload_allocations": 196,
+            "payload_copy_bytes": 42220160,
+            "request_validations": 490
+          }
+        ],
+        "limits": [
+          "No empty-thread causal claim from thread count; schedstat deltas are observed over the full model.",
+          "Three images do not establish a memory plateau or long-term stability.",
+          "Fsync subtraction is accounting, not a predicted speedup for a different durability contract.",
+          "CPU math policy and B numerical implementation costs remain in full-model timing.",
+          "Native/owner and C/B intervals are nested; no repeated addition."
+        ]
+      }
+    }
+  }
+}

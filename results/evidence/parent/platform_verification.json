@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "schema": "model_platform_crosscheck_v1",
+  "build": "model_system_20261005_014643_303",
+  "a1_manifest_sha256": "9a8844ec5dc2b16c696f5de4bdf4ad6f868ea32a2982710438566be5d1bf6a8b",
+  "WNS_ns": 1.836,
+  "WHS_ns": 0.01,
+  "artifact_count": 4,
+  "register_count": 14,
+  "address_ranges": [
+    {
+      "ADDRESSBLOCK": "HP0_DDR_LOW",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x00000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0x7FFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem0",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_LOW",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x00000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0x7FFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem1",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_LOW",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x00000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0x7FFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem2",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_HIGH",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x800000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0xFFFFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem0",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_HIGH",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x800000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0xFFFFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem1",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_HIGH",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x800000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0xFFFFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem2",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "Reg",
+      "BASENAME": "C_S_AXI_CONTROL_BASEADDR",
+      "BASEVALUE": "0xA0000000",
+      "HIGHNAME": "C_S_AXI_CONTROL_HIGHADDR",
+      "HIGHVALUE": "0xA000FFFF",
+      "INSTANCE": "gemm",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "M_AXI_HPM0_FPD",
+      "MEMTYPE": "REGISTER",
+      "SLAVEBUSINTERFACE": "s_axi_control"
+    },
+    {
+      "ADDRESSBLOCK": "reg0",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0xA0010000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0xA001FFFF",
+      "INSTANCE": "status",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "M_AXI_HPM0_FPD",
+      "MEMTYPE": "REGISTER",
+      "SLAVEBUSINTERFACE": "S_AXI"
+    }
+  ],
+  "axi_address_bits": 64,
+  "axi_data_bits": 32,
+  "HPM0_HP0_bits": 128,
+  "clock_constraint_ns": 10,
+  "formal_A2": "NOT_RUN",
+  "artifacts": {
+    "kv260_model.bit": {
+      "sha256": "695c8a74bbd614a392c5d709224906f741318011df5b823c5c9328c757ad281e",
+      "bytes": 7797817
+    },
+    "kv260_model.bin": {
+      "sha256": "7c0e072ed90e34904ca7d3ec8723817a94c16cfb95433f742161462e13f91fbe",
+      "bytes": 7797692
+    },
+    "kv260_model.hwh": {
+      "sha256": "15fcd44e73a5b5a6969f50d357ea68e52071acb8f4a4ca6617ab0a757d5317c8",
+      "bytes": 322854
+    },
+    "kv260_model.xsa": {
+      "sha256": "4cb7d33d7c4102c99df252359b7cf8b9817510ff4b356d6abf824791edbbf4a2",
+      "bytes": 3114466
+    }
+  }
+}
