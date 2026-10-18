@@ -1,0 +1,86 @@
+{
+  "status": "PASS_EXISTING_VAL_PL_QUALITY_AND_CLEAN_DEPLOYMENT",
+  "run_id": "v5_h576_quality_20261016_01",
+  "boot_id": "7d58d5e0-a5ff-4138-9de3-b4fd3eca05eb",
+  "results": {
+    "val500": {
+      "samples": 500,
+      "models": {
+        "original_fp32": {
+          "top1": 386,
+          "top5": 475
+        },
+        "same_ARM_w8": {
+          "top1": 390,
+          "top5": 480
+        },
+        "PL_w8": {
+          "top1": 390,
+          "top5": 480
+        }
+      },
+      "top1_drop_pp": -0.8,
+      "budget_pass": true
+    },
+    "full3925": {
+      "samples": 3925,
+      "models": {
+        "original_fp32": {
+          "top1": 2978,
+          "top5": 3717
+        },
+        "same_ARM_w8": {
+          "top1": 3039,
+          "top5": 3729
+        },
+        "PL_w8": {
+          "top1": 3039,
+          "top5": 3729
+        }
+      },
+      "top1_drop_pp": -1.5541401273885351,
+      "budget_pass": true
+    }
+  },
+  "complete_quality_samples": 3925,
+  "val500_is_subset": true,
+  "missing": 0,
+  "discarded": 0,
+  "failures": 0,
+  "same_ARM_logit_values": 3925000,
+  "logit_bit_differences": 0,
+  "PL_starts": 142020,
+  "regression_probes": 20,
+  "package_files": 84,
+  "package_manifest_sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76",
+  "source_quality_reference_sha256": "8d5e0e028274cde9d42c71f4b26938a3f509d30470bf62c8296989d74ba02aea",
+  "quality2000_predictions": 0,
+  "independent_C": "SEPARATE_RECEIPT_REQUIRED",
+  "cross_host_W8_elementwise": "FAIL_RETAINED",
+  "resource_range": {
+    "client": {
+      "RSS_KiB_min": 115868,
+      "RSS_KiB_max": 139292,
+      "fd_range": [
+        9,
+        10
+      ],
+      "threads": 7
+    },
+    "owner": {
+      "RSS_KiB_min": 15840,
+      "RSS_KiB_max": 15840,
+      "fd_range": [
+        11
+      ],
+      "threads": 1
+    }
+  },
+  "recovery": "PASS_SAFE_STOP_DMA_QUIESCENT_STARTER",
+  "scope": "Existing repeated ten-class data and fixed36PL/13CPU graph; no new holdout, full ImageNet, permanent deployment, or formal all49PL claim",
+  "evidence": {
+    "results/model_planning/v5_h576_quality_20261016_01/collected/evidence.json": "2f88ee743dcd6dee232136334f70aae45017be40aae947acc34efbefe90cd21f",
+    "results/model_planning/v5_h576_quality_20261016_01/inputs.json": "d56ee7e1755f7d5f38d2b6a0567eb2d805900973102b5fd39dd07ec7a5335dfe",
+    "results/model_planning/v5_h576_quality_20261016_01/collected/result.json": "1560af0a33bd983fa89785f32fac38b50c370423344ac2ed120bb0c6c3a17c3c"
+  }
+}

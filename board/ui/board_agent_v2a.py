@@ -6,11 +6,9 @@ import signal
 import sys
 import time
 from http.server import ThreadingHTTPServer
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import board_agent as base
 
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'runtime/legacy/model_backend/v2a'))
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'board/model_backend/v2a'))
 from abi import Bridge
 from model.b.common import sha
 from model.b.runtime_v2a import Runner, _strict_file
@@ -92,12 +90,11 @@ class Engine(base.Engine):
 
 
 def main():
+    for sig in (signal.SIGHUP,signal.SIGTERM,signal.SIGINT):signal.signal(sig,signal.SIG_DFL)
     p=argparse.ArgumentParser();p.add_argument('--bundle',type=Path,required=True);p.add_argument('--runs',type=Path,required=True)
     p.add_argument('--port',type=int,default=8742)
     for n in ('c-ready','bridge','bridge-config','plugin'):p.add_argument('--'+n,type=Path)
-    a=p.parse_args()
-    for sig in (signal.SIGHUP,signal.SIGTERM,signal.SIGINT):signal.signal(sig,signal.SIG_DFL)
-    engine=Engine(a.bundle,a.runs,a.c_ready,a.bridge,a.bridge_config,a.plugin)
+    a=p.parse_args();engine=Engine(a.bundle,a.runs,a.c_ready,a.bridge,a.bridge_config,a.plugin)
     server=ThreadingHTTPServer(('127.0.0.1',a.port),base.make_handler(base.Jobs(engine)))
     print(json.dumps(dict(status='READY',boot_id=engine.boot,port=a.port,model_protocol='v2a',PL_enabled=engine.pl_enabled)),flush=True)
     server.serve_forever()

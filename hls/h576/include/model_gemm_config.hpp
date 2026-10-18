@@ -1,0 +1,36 @@
+// OPT45 M32/N16, 512 MAC: X128/W128/Y128; compact byte layout and 64-bit MMIO byte addresses.
+#ifndef MODEL_GEMM_CONFIG_HPP
+#define MODEL_GEMM_CONFIG_HPP
+#include <stdint.h>
+#include <ap_int.h>
+namespace model_gemm {
+typedef ap_uint<128> wide_t;
+typedef int8_t input_t;
+typedef int16_t product_t;
+typedef int32_t output_t;
+static_assert(sizeof(input_t)==1 && sizeof(product_t)==2 && sizeof(output_t)==4, "ABI types");
+static const unsigned TM=32, TN=768, TK=32;
+static const unsigned MICRO_M=32, MICRO_N=16;
+static const unsigned MAX_X=151296, MAX_W=192000, MAX_Y=151296;
+enum Error { OK=0, INVALID_SHAPE=1 };
+struct Shape { const char* family; uint32_t M, K, N; };
+static const Shape SHAPES[6] = {
+    {"head", 1, 192, 1000},
+    {"proj", 197, 192, 192},
+    {"qkv", 197, 192, 576},
+    {"fc1", 197, 192, 768},
+    {"fc2", 197, 768, 192},
+    {"fc2_h576", 197, 576, 192}
+};
+inline bool valid_shape(uint32_t M, uint32_t K, uint32_t N) {
+    return (M==1u && K==192u && N==1000u) ||
+           (M==197u && K==192u && N==192u) ||
+           (M==197u && K==192u && N==576u) ||
+           (M==197u && K==192u && N==768u) ||
+           (M==197u && K==768u && N==192u) ||
+           (M==197u && K==576u && N==192u);
+}
+}
+uint32_t model_gemm_top(const model_gemm::wide_t* X, const model_gemm::wide_t* W,
+                       model_gemm::wide_t* Y, uint32_t M, uint32_t K, uint32_t N);
+#endif

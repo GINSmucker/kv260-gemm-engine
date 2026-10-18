@@ -1,0 +1,75 @@
+{
+  "status": "PASS_COMPLETE_RAW_RECOUNT",
+  "utc": "2026-10-16T02:13:54.448937+00:00",
+  "results": {
+    "validation_fast": {
+      "samples": 500,
+      "models": {
+        "original_fp32": {
+          "top1": 386,
+          "top5": 475
+        },
+        "pruned_fp32": {
+          "top1": 391,
+          "top5": 480,
+          "drop_pp": -1.0,
+          "within_budget": true
+        },
+        "pruned_w8a8": {
+          "top1": 390,
+          "top5": 480,
+          "drop_pp": -0.8,
+          "within_budget": true
+        }
+      }
+    },
+    "validation_full": {
+      "samples": 3925,
+      "models": {
+        "original_fp32": {
+          "top1": 2978,
+          "top5": 3717
+        },
+        "pruned_fp32": {
+          "top1": 3049,
+          "top5": 3728,
+          "drop_pp": -1.8089171974522293,
+          "within_budget": true
+        },
+        "pruned_w8a8": {
+          "top1": 3039,
+          "top5": 3729,
+          "drop_pp": -1.5541401273885351,
+          "within_budget": true
+        }
+      }
+    }
+  },
+  "formal_existing_val_status": "PASS",
+  "regression": {
+    "samples": 20,
+    "reports": {
+      "fp32": {
+        "max_abs": 5.0067901611328125e-06,
+        "allclose_1e4": true,
+        "bitwise_equal": false,
+        "sha256": "5adad40b03c27493d892d11a8361312735d24e9ac0b435addc135441a41cde93"
+      },
+      "w8a8": {
+        "max_abs": 0.19298076629638672,
+        "allclose_1e4": false,
+        "bitwise_equal": false,
+        "sha256": "28336d521f1bb5d841be817a74f4edabd8b7e35462a8ed6b277eda6986b1daf3"
+      }
+    },
+    "cross_host_W8": "reported separately; final quality uses ARM original FP32 on same dataset",
+    "utc": "2025-03-12T20:11:49.007158+00:00"
+  },
+  "reference_reuse": "REUSE_MATCHED_REFERENCE",
+  "cross_host_preprocessed_input_differences": [],
+  "missing": 0,
+  "discarded": 0,
+  "quality2000_predictions": 0,
+  "scope": "ARM existing ten-class validation; not untouched external holdout or complete ImageNet",
+  "next_hardware_gate": "not automatically granted by this quality result"
+}

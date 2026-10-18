@@ -1,30 +1,9 @@
-# 零上下文接手
+# 项目阅读入口
 
-首读[README](../../README.md)、[AGENTS](../../AGENTS.md)、[接口](../interface.md)、[当前状态](../progress.md)和[验证](../verification.md)，确认默认开发、研究交付与正式资格的不同范围。
+先阅读[成果总览](../../README.md)和[当前状态](../progress.md)，了解完整模型、固定分工及实测结果；随后阅读[公共接口](../interface.md)和[验证范围](../verification.md)，确认配置身份和未覆盖条件。
 
-完整协作入口是codex/team-handoff-20261007。main/hls/src是默认OPT38；下一步Dense FPGA性能优化必须选择[研究锁](../locks/RESEARCH_LOCK.json)绑定的OPT45。A_OPT40_AXI128_M16N16仅为资源取舍候选，其固定分支与验证范围见[A接手](../../hls/README.md)。
+希望查看或演示网页时，使用[工作台指南](../workbench.md)。默认存档展示不需要连接板卡，真实推理需要维护者建立对应硬件窗口。
 
-```powershell
-git clone --depth 1 --single-branch --branch codex/team-handoff-20261007 https://github.com/GINSmucker/kv260-gemm-engine.git
-cd kv260-gemm-engine
-```
+当前成果为 H576 Dense W8A8，模型与硬件冻结。旧默认开发配置、正式资格参考、未缩宽性能基准和资源候选保持独立用途；参考资料中的旧指标不构成当前模型的验收结论。
 
-A入口[hls](../../hls/README.md)，B入口[model](../../model/README.md)，C入口[board](../../board/README.md)。实际源与二进制身份由[SOURCE_MAP](../SOURCE_MAP.json)及资产锁固定；未下载资产的本地路径不能冒充已有程序。
-
-使用选定Python3.12和固定NumPy1.26.4/ORT1.22.1/Pillow12.3.0，不自动改Conda base或系统配置。从仓库根运行：
-
-```powershell
-python -B docs/tools/check.py
-python -B model/golden.py --check model/cases/tensors.npz
-python -B docs/tools/assets.py opt45-source --download --extract
-python -B docs/tools/assets.py opt45-evidence --download --extract
-python -B docs/tools/check.py --cpp --research-source build/assets/opt45-source/opt45-source --cxx <existing-cxx> --hls-include <existing-vitis-include>
-```
-
-研究运行文件用opt45-runtime，完整560条性能样本及验证用opt45-evidence；模型和图片分别用model/dataset资产。下载需要私有仓库权限及已认证gh；解包拒绝覆盖已有目标。普通软件检查不打开设备。
-
-给A负责人新Codex的任务可写为：请先读AGENTS.md、hls/README.md、docs/interface.md、docs/progress.md和docs/verification.md，核验RESEARCH_LOCK.performance_baseline与ASSETS锁，按需取得OPT45源码和证据。以OPT45的512MAC/TM32/TN768/125MHz为Dense性能参照，保持五shape、完整K、紧凑INT8/INT32、字节地址与逐位数值契约；A_OPT40_AXI128_M16N16仅作资源取舍候选。先核对现有SDK与软件检查，在独立codex分支提交明确候选、可复现配置和实际验证，使用新的构建身份。不得继承其他会话的板卡授权、修改固定标签或代签C。
-
-当前PS组合取得方式：先下载并解包opt45-runtime，再执行python -B docs/tools/assets.py ps-runtime --download --extract及ps-evidence；21成员复用、11成员增量，组装后核验32成员。完整机制样本与有界慢样本由ps-evidence提供。
-
-仅接手A的Dense算法时取得opt45-source约5.55MB、opt45-evidence约119KB即可；模型、图片、配对运行文件按B/C联调需要取得。已验证缓存直接使用，重复--extract会拒绝覆盖。SDK、生成工程、矩阵和长trace不入Git。
+源码、结果摘要与按需资产共同组成交付。大型运行包按摘要取得；训练数据、两千张质量保留集和 C 私有留出不随仓库发布。功能分支通过评审协作，取得资产不转移板卡操作授权。

@@ -1,30 +1,11 @@
-# B：模型、量化与CPU/PL调度
+# 模型与数值执行
 
-模型为DeiT Tiny、224输入、12 blocks、49个Linear和1000输出。冻结B模型的989payload由model资产及BASELINE_LOCK固定，研究交付使用相同Wq/sw/bias数值身份。
+当前交付是 H576 紧凑模型的冻结候选：十二个块、四十九个线性层、千类输出，MLP 隐藏宽度为 576。完整 attention、归一化、残差和分类头保留，执行路径为 Dense W8A8。
 
-quantize.py与golden.py提供共享数学入口；b包含完整模型工具，v5为默认载荷型适配。研究共享适配、匹配图/插件及实测编译入口在ps-runtime组装后的source中；opt45-source提供相同硬件的HLS/IP与平台源。CPU/PL配置必须显式选择。
+权重沿输出通道量化，激活沿行量化。硬件返回完整整数结果，PS 按既定浮点顺序反量化与加偏置。QKV 布局和 GELU 外围融合减少重复遍历，原生 Erf 与四线程执行保持。CPU 的 W8 对照用于数值语义验证，不等于高性能 INT8 算子库。
 
-## 数值与线程
+紧凑模型的恢复训练仅更新二十四个 MLP 权重矩阵，其余参数固定；三轮训练后按冻结规则选择第一轮。训练和选择不代表正式质量；既有 ARM／PL 质量另行核验。两千张新增质量保留集未使用。
 
-RNE、[-127,127]/zp0；X逐行scale、W逐输出通道scale，完整INT8×INT8→INT32。反量化两次FP32乘再加bias，禁止fast-math/FMA改变已确认顺序。logits要求逐位一致。
+[冻结模型与运行身份](../docs/locks/H576_PACKAGE.lock.json)、[准确运行实现](../board/runtime/h576/)和[公开结果](../docs/verification.md)共同定义当前成果。[恢复训练的固定实验源码](recovery/)用于解释方法与已采用选择规则，依赖原训练环境及受控数据，不是获得仓库后自动执行的训练入口。仓库不分发训练图像或保留集。
 
-研究ORT为intra4/inter1、顺序执行、spinning0、图优化关闭。QuantQKV反量化直接写三个[1,3,197,64]目标，不物化独立QKV中间张量；AttentionMerge4负责反向布局；Erf/量化/反量化复用ORT线程池。当前图239节点，布局不增加浮点计算。
-
-固定qkv/fc1/fc2在PL、proj/head在CPU，36次PL/图。B导入X/Y BO，直接量化/反量化；CPU整数结果使用151296B普通工作区。必要cache sync保留，无失败后fallback或自动调优。
-
-## 公共测试与资产
-
-cases/tensors.npz约194KiB，冻结公开head为M1/K192/N1000，含Xq/Wq/sx/sw/bias/Y与后处理参考；不含私有C留出。
-
-```powershell
-python -B model/golden.py --check model/cases/tensors.npz
-python -B docs/tools/assets.py model --download --extract
-python -B docs/tools/assets.py opt45-runtime --download --extract
-python -B docs/tools/assets.py ps-runtime --download --extract
-python -B docs/tools/assets.py ps-evidence --download --extract
-python -B docs/tools/assets.py opt45-evidence --download --extract
-```
-
-模型根为build/assets/model/B_MODEL_BUNDLE_V1；当前研究包根为build/assets/ps-runtime/ps-runtime/AB_SHARED_OPT45_PS_QKV_WBO_20261010。匹配239节点图、权重、库、Runner/CLI和metadata的32成员manifest固定；组装依赖opt45-runtime。默认Runner设置main CPU0/workers CPU1/2/3，close后调用线程亲和性保留。
-
-单CPU输入的软件回归入口为docs/tools/check.py --model-bundle；Windows和ARM后端名前缀不同。正式PL500/full质量与独立长稳NOT RUN；20图逐位验证不代替这些范围。研究使用与设备前置条件见[board](../board/README.md)和[接口](../docs/interface.md)。
+旧默认模型工具和正式资格参考保留各自身份；不能将旧模型、当前插件和其他硬件拼接运行。2:4 研究未形成当前硬件稀疏能力。

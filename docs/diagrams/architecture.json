@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "KV260 · 完整模型协同推理",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": "architecture.html",
+    "legend": {
+      "entries": {
+        "frontend": {
+          "label": "交互界面"
+        },
+        "backend": {
+          "label": "服务与计算"
+        },
+        "database": {
+          "label": "存储与缓冲"
+        }
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "viewer",
+      "type": "frontend",
+      "label": "浏览器工作台",
+      "sublabel": "图片 · 对比 · 路由 · 导出",
+      "pos": [
+        50,
+        55
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "service",
+      "type": "backend",
+      "label": "本机展示服务",
+      "sublabel": "本地浏览与板端请求转发",
+      "pos": [
+        430,
+        55
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "agent",
+      "type": "backend",
+      "label": "板端推理服务",
+      "sublabel": "图片预处理与结果封装",
+      "pos": [
+        810,
+        55
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "evidence",
+      "type": "database",
+      "label": "已保存的测量结果",
+      "sublabel": "质量 · 性能 · 稳定性",
+      "pos": [
+        430,
+        215
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "model",
+      "type": "backend",
+      "label": "PS 完整模型",
+      "sublabel": "四线程 · 静态算子分工",
+      "pos": [
+        810,
+        215
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "owner",
+      "type": "backend",
+      "label": "唯一硬件控制进程",
+      "sublabel": "同步执行 · 完成后返回",
+      "pos": [
+        810,
+        375
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "buffer",
+      "type": "database",
+      "label": "固定共享缓冲",
+      "sublabel": "共享输入输出 · 常驻权重",
+      "pos": [
+        430,
+        375
+      ],
+      "size": [
+        210,
+        76
+      ]
+    },
+    {
+      "id": "engine",
+      "type": "backend",
+      "label": "PL 矩阵引擎",
+      "sublabel": "512 MAC · 125 MHz",
+      "pos": [
+        50,
+        375
+      ],
+      "size": [
+        210,
+        76
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "browse",
+      "from": "viewer",
+      "to": "service",
+      "label": "HTTP",
+      "variant": "emphasis"
+    },
+    {
+      "id": "remote",
+      "from": "service",
+      "to": "agent",
+      "label": "受控连接",
+      "variant": "emphasis"
+    },
+    {
+      "id": "saved",
+      "from": "evidence",
+      "to": "service",
+      "label": "只读展示"
+    },
+    {
+      "id": "infer",
+      "from": "agent",
+      "to": "model",
+      "label": "完整推理",
+      "variant": "emphasis",
+      "labelDy": 32
+    },
+    {
+      "id": "run",
+      "from": "model",
+      "to": "owner",
+      "label": "算子控制",
+      "variant": "emphasis",
+      "labelDy": 32
+    },
+    {
+      "id": "sync",
+      "from": "owner",
+      "to": "buffer",
+      "label": "同步与复用",
+      "variant": "emphasis"
+    },
+    {
+      "id": "ddr",
+      "from": "buffer",
+      "to": "engine",
+      "label": "AXI 载荷",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "模型完整",
+      "items": [
+        "49 个线性层：36 层 PL、13 层 CPU",
+        "attention 与非线性计算保留在 PS"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "数据交付",
+      "items": [
+        "模型插件直接访问共享输入输出",
+        "PL 返回整数结果，PS 完成反量化与偏置"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "证据边界",
+      "items": [
+        "架构箭头表达职责与主请求方向",
+        "存档展示不发起板卡推理"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 # GitHub分支与交付用途
 
-完整模型资料入口为[codex/team-handoff-20261007](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/team-handoff-20261007)。当前提供默认OPT38/v5与OPT45共享研究资产，状态见[progress](progress.md)。
+H576 当前成果入口为 [研究交付总结](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/h576-summary-20261019)，通过独立功能分支评审，未自动合并。
+
+未缩宽配置及既有协作资料入口为[codex/team-handoff-20261007](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/team-handoff-20261007)。该入口提供默认OPT38/v5与未缩宽OPT45共享研究资产，状态见[progress](progress.md)。
 
 |分支|用途|资格与评审|
 |---|---|---|

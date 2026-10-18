@@ -1,6 +1,7 @@
 import { AppError } from './domain.mjs';
 import { isDeepStrictEqual } from 'node:util';
 import { validateV2AIdentity } from './v2a-contract.mjs';
+import { H576_MANIFEST, validateH576Result } from './h576-contract.mjs';
 
 export class BoardClient {
   constructor(endpoint) {
@@ -17,7 +18,7 @@ export class BoardClient {
     try { result = await response.json(); } catch { throw new AppError('BAD_BOARD_REPLY', '板端响应不是有效JSON。', 502); }
     if (!response.ok) throw new AppError(result.error?.code ?? 'BOARD_ERROR', result.error?.message ?? '板端拒绝请求。', response.status);
     if (path === '/health') {
-      if (result.source !== 'BOARD' || !result.payload_verified || !['aarch64','arm64'].includes(result.architecture) || result.bundle_identity?.manifest_sha256 !== '77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e') throw new AppError('BAD_BOARD_IDENTITY', '板端架构或冻结模型身份不匹配。', 502);
+      if (result.source !== 'BOARD' || !result.payload_verified || !['aarch64','arm64'].includes(result.architecture) || !['77680bacbcf6c46571fd6fc99c40778528dd366e950023b73058b6932515962e',H576_MANIFEST].includes(result.bundle_identity?.manifest_sha256)) throw new AppError('BAD_BOARD_IDENTITY', '板端架构或冻结模型身份不匹配。', 502);
       this.lastHealth = result;
     }
     if (/^\/jobs\/board_/.test(path) || (path === '/jobs' && data)) validateBoardJob(result);
@@ -30,6 +31,7 @@ export function validateBoardJob(job) {
   if (job.status !== 'SUCCEEDED') return;
   const r = job.result;
   if (!r || r.source !== 'BOARD') throw new AppError('BAD_BOARD_REPLY', '缺少实际板端回执。', 502);
+  if(r.model_protocol==='h576_v5'||r.bundle_identity?.manifest_sha256===H576_MANIFEST)return validateH576Result(job);
   const pl=job.options?.backend==='pl49';
   const v2a=r.actual_owner_identity?.schema==='kv260_gemm_actual_identity_v2a';
   const fail=message=>{throw new AppError('BAD_BOARD_REPLY',message,502);};

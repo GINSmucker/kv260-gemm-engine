@@ -109,6 +109,22 @@ def main():
                         raise ValueError('Research runtime payload mismatch: ' + name)
                 result['frozen_runtime_members_verified'] = len(entries)
 
+        if a.asset == 'h576-runtime':
+            root = destination / 'v5_h576_ui_20261017_01'
+            inputs = json.loads((root / 'inputs.json').read_bytes())
+            for name, digest in inputs['files'].items():
+                file = (root / name).resolve()
+                if not file.is_relative_to(root) or hashlib.sha256(file.read_bytes()).hexdigest() != digest:
+                    raise ValueError('H576 public input identity mismatch: ' + name)
+            frozen = ROOT / 'docs/locks/H576_PACKAGE.lock.json'
+            if (root / 'manifest.json').read_bytes() != frozen.read_bytes():
+                raise ValueError('H576 frozen manifest mismatch')
+            for name, item in json.loads(frozen.read_bytes())['files'].items():
+                file = (root / name).resolve()
+                if not file.is_relative_to(root) or file.stat().st_size != item['bytes'] or hashlib.sha256(file.read_bytes()).hexdigest() != item['sha256']:
+                    raise ValueError('H576 frozen member mismatch: ' + name)
+            result.update(public_inputs_verified=len(inputs['files']), frozen_runtime_members_verified=84,
+                          scope='Files only; historical boot binding cannot authorize or configure a new board window')
         if a.asset == 'model':
             import sys
             sys.path.insert(0, str(ROOT))

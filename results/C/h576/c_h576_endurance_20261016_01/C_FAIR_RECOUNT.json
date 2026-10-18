@@ -1,0 +1,180 @@
+{
+  "status": "PASS_C_INDEPENDENT_RECOUNT_ROOT_EXECUTED_FAIR",
+  "rounds": [
+    {
+      "round": 1,
+      "PL": {
+        "p50": 142.778248,
+        "p95": 144.31028705,
+        "p99": 149.37188923000002,
+        "max": 150.9243
+      },
+      "CPU": {
+        "original_fp32": {
+          "before": {
+            "p50": 327.735688,
+            "p95": 336.91521885,
+            "p99": 340.33916885,
+            "max": 351.380505
+          },
+          "after": {
+            "p50": 327.764413,
+            "p95": 338.04368700000003,
+            "p99": 340.95513544,
+            "max": 341.722318
+          },
+          "drift_percent": 0.008764684790753869,
+          "speedup_p50": 2.2954174924460484,
+          "p50_reduction_percent": 56.43494034131553,
+          "p95_reduction_percent": 57.167180650794755
+        },
+        "h576_fp32": {
+          "before": {
+            "p50": 277.9697155,
+            "p95": 287.12693315,
+            "p99": 290.27411265,
+            "max": 291.144002
+          },
+          "after": {
+            "p50": 277.97018549999996,
+            "p95": 291.20684564999993,
+            "p99": 461.9061168499999,
+            "max": 485.277744
+          },
+          "drift_percent": 0.0001690831676050812,
+          "speedup_p50": 1.9468631909532887,
+          "p50_reduction_percent": 48.635322469148626,
+          "p95_reduction_percent": 49.739898843063315
+        },
+        "h576_w8": {
+          "before": {
+            "p50": 295.551806,
+            "p95": 301.4079803,
+            "p99": 304.48961141,
+            "max": 305.323674
+          },
+          "after": {
+            "p50": 295.9330445,
+            "p95": 302.07749165,
+            "p99": 304.497087,
+            "max": 305.348044
+          },
+          "drift_percent": 0.1289921063788035,
+          "speedup_p50": 2.0700058317006382,
+          "p50_reduction_percent": 51.69095735452891,
+          "p95_reduction_percent": 52.12127863822191
+        }
+      },
+      "samples_sha256": {
+        "original_fp32_before_r1": "1b52f3965830c2b74b3bdacb76c28e6fdd64f9dd4adbc0413992b88a9f0fc8d6",
+        "h576_fp32_before_r1": "01c6671e0c437e46ce82443ad9aa8f52281d6a9218b52313bb1cf35635847607",
+        "h576_w8_before_r1": "3e0473e144fcaf1b58961dbfe9ce12a08c1d42e56bee38184120f24cd5d4bd7a",
+        "h576_pl_r1": "66e3f23e9a4b65288db91caf20ccf3b1a7375edbcadce6fccff554ff206e38d8",
+        "h576_w8_after_r1": "57f7e7c1245a77c66b04cadfe262d927e9d4ceb89f39ba5f4cee468dd62518ec",
+        "h576_fp32_after_r1": "ec651b9ceb5e6bf84d0673bfe1df5559fcd647b610f9d57c4d6e262ad5b50a12",
+        "original_fp32_after_r1": "60bd11876fe5541384e2ab1f03d991c5081ab6181908b63b9c37bafb6f3b07e9"
+      }
+    },
+    {
+      "round": 2,
+      "PL": {
+        "p50": 142.682422,
+        "p95": 144.19395405,
+        "p99": 149.79256931,
+        "max": 150.886959
+      },
+      "CPU": {
+        "original_fp32": {
+          "before": {
+            "p50": 327.349479,
+            "p95": 336.45816214999996,
+            "p99": 339.70942694999997,
+            "max": 343.045771
+          },
+          "after": {
+            "p50": 327.511325,
+            "p95": 336.58716115,
+            "p99": 340.88806173999996,
+            "max": 349.287884
+          },
+          "drift_percent": 0.04944134950036853,
+          "speedup_p50": 2.294252329134138,
+          "p50_reduction_percent": 56.41281530800908,
+          "p95_reduction_percent": 57.14357079983235
+        },
+        "h576_fp32": {
+          "before": {
+            "p50": 277.815058,
+            "p95": 288.2665385,
+            "p99": 291.27956475999997,
+            "max": 319.87167
+          },
+          "after": {
+            "p50": 277.34605899999997,
+            "p95": 285.8448641,
+            "p99": 290.79599513,
+            "max": 291.496355
+          },
+          "drift_percent": 0.16910245694172762,
+          "speedup_p50": 1.9437997695329279,
+          "p50_reduction_percent": 48.55437192276815,
+          "p95_reduction_percent": 49.55517059786837
+        },
+        "h576_w8": {
+          "before": {
+            "p50": 295.5548465,
+            "p95": 301.2761286,
+            "p99": 306.09246064,
+            "max": 306.738908
+          },
+          "after": {
+            "p50": 295.44765,
+            "p95": 299.97751124999996,
+            "p99": 303.93182494,
+            "max": 304.738158
+          },
+          "drift_percent": 0.03628273909099848,
+          "speedup_p50": 2.0706660698540706,
+          "p50_reduction_percent": 51.70636083922143,
+          "p95_reduction_percent": 51.931745333459546
+        }
+      },
+      "samples_sha256": {
+        "original_fp32_before_r2": "c995da29bfd3935f0840d326f3aee28e2a724cae8820ee7abee91cc17693d3bc",
+        "h576_fp32_before_r2": "a4dcb51887a8fb85bdb7bcd47f0ebafed1bf94816cb5523e5966c8eefa919f80",
+        "h576_w8_before_r2": "daa332104c934a90d910d1fd5e639534ccdd87d89a03c43d8daf529d0ade12bf",
+        "h576_pl_r2": "cb74ea2db2c157d93f474c0b552aec82781a4a6316def8a5e22c1ef719578fbf",
+        "h576_w8_after_r2": "bb548b333b9e9747dab04b1e01508f8451e7705139a21fb9a65ac5f50b811123",
+        "h576_fp32_after_r2": "db07c60291299f82d67a96be26e13180fec07d50eeb86e807ed5be44ab0fecc7",
+        "original_fp32_after_r2": "ba6b3d2ff700ff0c0e48e4e097637710127acfe83acebc576bd0bdc6dc85281d"
+      }
+    }
+  ],
+  "identities": [
+    {
+      "path": "results/model_planning/v5_h576_fair_20261016_01",
+      "inputs_sha256": "1b4b657bee299484ea92a8961cf9e806ae22fab9e5d38ff142badd803795aa84",
+      "evidence_sha256": "64f977d79b9c9946f8d2c4c794002c28c32ba09b95e791fb1589633b9ef95920",
+      "raw_evidence_files": 32,
+      "board_status": "FAIL"
+    },
+    {
+      "path": "results/model_planning/v5_h576_fair_20261016_02",
+      "inputs_sha256": "3f6793fafc8666d1a8611838772b9fddda487eaaa18071ea7dd45818925530d2",
+      "evidence_sha256": "8f3e794253bfa532e2244beae0bc5fbc76bc68707d2a95bc63024efc3946d0dc",
+      "raw_evidence_files": 25,
+      "board_status": "PASS_R2_BOARD"
+    }
+  ],
+  "formal_samples": 2800,
+  "formal_samples_excluded": 0,
+  "physical_PL_starts": 15912,
+  "provenance": "Root executed both board windows. C independently verified frozen files, raw evidence SHA, timestamps, all completed round samples, W8/PL output hashes and frozen drift/performance gates locally. C did not execute this fair experiment.",
+  "retained_failure": "run01 round2 first BEGIN rejected; full run01 remains FAIL. Its seven completed round1 segments are retained. run02 completes only round2. Three completed run01 round2 CPU segments remain evidence outside the two completed comparisons.",
+  "limits": [
+    "Existing 20 public inputs repeated; not quality or holdout evidence",
+    "FP32 per-sample full logits are not retained by root tool; their online tolerance result is source evidence, not independently recalculated logits",
+    "setup and first call excluded from steady timing; all formal samples retained",
+    "No joint release signature"
+  ]
+}

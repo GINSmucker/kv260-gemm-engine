@@ -1,0 +1,251 @@
+{
+  "status": "PASS_SCOPED_INDEPENDENT_C_H576",
+  "package_manifest_sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76",
+  "scope_sha256": "2f572115fba9677791ea5ac27d52a0f1bbbb7113077801d7c5b7ad2075b5d35b",
+  "results": {
+    "arithmetic": {
+      "status": "PASS",
+      "matrices": 72,
+      "outputs": 4550880,
+      "differences": 0,
+      "invalid_shapes": 8,
+      "actual_BO": [
+        [
+          0,
+          1148977152,
+          151552
+        ],
+        [
+          1,
+          1150550016,
+          192256
+        ],
+        [
+          2,
+          1151336448,
+          605440
+        ]
+      ],
+      "high_address": "NOT_EXERCISED",
+      "invalid_no_read_traffic": "NOT_MEASURED",
+      "input_const_and_tail_guards": "PASS",
+      "OF_reference_errors": 0,
+      "severe_kernel_errors": 0,
+      "overlay_property_warnings": 4,
+      "seconds": 3.839653902000464,
+      "recovery": "PASS",
+      "evidence_files": 87,
+      "actual_clock_hz": 124999999
+    },
+    "runtime": {
+      "status": "PASS",
+      "fresh_semantic_images": 20,
+      "successful_graphs": 347,
+      "physical_PL_starts": 12493,
+      "continuous_graphs": 300,
+      "checks": [
+        "20 fresh same-ARM semantic bitwise comparisons",
+        "3 recreate cycles",
+        "3 NaN reject and recovery",
+        "3 fixed image shape reject",
+        "300 repeat exact graphs; fd/thread constant, RSS range <=1024KiB",
+        "wrong model identity rejected",
+        "zero run, wrong sequence, CPU route, early END, missing QUERY rejected",
+        "partial header does not start; management responsive",
+        "complete RUN disconnect QUERY succeeds; duplicate RUN rejected; ABORT succeeds; old run rejected"
+      ],
+      "resource_points": [
+        {
+          "completed": 0,
+          "client": {
+            "fd": 8,
+            "rss_kib": 139112,
+            "threads": 7
+          },
+          "owner": {
+            "fd": 11,
+            "rss_kib": 15596,
+            "threads": 1
+          }
+        },
+        {
+          "completed": 50,
+          "client": {
+            "fd": 8,
+            "rss_kib": 139112,
+            "threads": 7
+          },
+          "owner": {
+            "fd": 11,
+            "rss_kib": 15596,
+            "threads": 1
+          }
+        },
+        {
+          "completed": 100,
+          "client": {
+            "fd": 8,
+            "rss_kib": 139112,
+            "threads": 7
+          },
+          "owner": {
+            "fd": 11,
+            "rss_kib": 15596,
+            "threads": 1
+          }
+        },
+        {
+          "completed": 150,
+          "client": {
+            "fd": 8,
+            "rss_kib": 139112,
+            "threads": 7
+          },
+          "owner": {
+            "fd": 11,
+            "rss_kib": 15596,
+            "threads": 1
+          }
+        },
+        {
+          "completed": 200,
+          "client": {
+            "fd": 8,
+            "rss_kib": 139112,
+            "threads": 7
+          },
+          "owner": {
+            "fd": 11,
+            "rss_kib": 15596,
+            "threads": 1
+          }
+        },
+        {
+          "completed": 250,
+          "client": {
+            "fd": 8,
+            "rss_kib": 139112,
+            "threads": 7
+          },
+          "owner": {
+            "fd": 11,
+            "rss_kib": 15596,
+            "threads": 1
+          }
+        },
+        {
+          "completed": 300,
+          "client": {
+            "fd": 8,
+            "rss_kib": 139112,
+            "threads": 7
+          },
+          "owner": {
+            "fd": 11,
+            "rss_kib": 15596,
+            "threads": 1
+          }
+        }
+      ],
+      "closed": {
+        "fd": 4,
+        "rss_kib": 127108,
+        "threads": 4
+      },
+      "after": {
+        "fd": 4,
+        "rss_kib": 127012,
+        "threads": 4
+      },
+      "OF_reference_errors": 0,
+      "severe_kernel_errors": 0,
+      "overlay_property_warnings": 4,
+      "seconds": 61.8746961830002,
+      "recovery": "PASS",
+      "evidence_files": 17,
+      "actual_clock_hz": 124999999
+    }
+  },
+  "evidence": {
+    "arithmetic": {
+      "inputs_sha256": "3941396c46b3ff7fa173b35d73239ca7645f3a8bf75687240bcd9ca28ed04288",
+      "evidence_sha256": "bf42a6dfa3169f6e3441afb29f76f84351ca2f33d058a46575947754095b9ad0",
+      "collection_sha256": "9a09840d12a40a96a9c70f7074bd841efbc9e2fb1bf0610e2e83ebcf259e3ff6"
+    },
+    "runtime": {
+      "inputs_sha256": "65154cc28b6d579226bafa452c0560618618e957abd793de1aa5081a157aede6",
+      "evidence_sha256": "bada51e2f64da267cae359d25f7e6b1431ffb70bba7d715b22a41c3df2e858a1",
+      "collection_sha256": "c6d523137377595e1f8f9e7e55f1aa8061bac75c39b41f7545b437e3ddf19459"
+    }
+  },
+  "final_readonly_sha256": "c01b28c09e9694d56e6a32b6422ecc79e4c4ffa446f5aa938e78d7d6c728cc15",
+  "independent_quality_recount": {
+    "status": "PASS_C_INDEPENDENT_RECOUNT_OF_ROOT_EXECUTED_QUALITY",
+    "executor": "root task",
+    "recount_role": "independent_c_h576",
+    "total_unique_quality_images": 3925,
+    "val500_subset": true,
+    "logit_values": 3925000,
+    "bit_differences": 0,
+    "results": {
+      "val500": {
+        "samples": 500,
+        "models": {
+          "original_fp32": {
+            "top1": 386,
+            "top5": 475
+          },
+          "PL_H576": {
+            "top1": 390,
+            "top5": 480
+          }
+        },
+        "drop_pp": -0.8,
+        "budget": "PASS"
+      },
+      "full3925": {
+        "samples": 3925,
+        "models": {
+          "original_fp32": {
+            "top1": 2978,
+            "top5": 3717
+          },
+          "PL_H576": {
+            "top1": 3039,
+            "top5": 3729
+          }
+        },
+        "drop_pp": -1.5541401273885351,
+        "budget": "PASS"
+      }
+    },
+    "PL_starts": 142020,
+    "evidence_files": 17,
+    "package_manifest_sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76",
+    "source_inputs_sha256": "8455d5b1fd044674d84c7d3ef4f21b944325cc73de4515aa1c35464add2d799c",
+    "source_inputs_path": "results/model_planning/v5_h576_quality_20261016_01/quality_inputs.json",
+    "execution_inputs_path": "results/model_planning/v5_h576_quality_20261016_01/inputs.json",
+    "execution_inputs_sha256": "d56ee7e1755f7d5f38d2b6a0567eb2d805900973102b5fd39dd07ec7a5335dfe",
+    "logits_sha256": "4106d6ff8e88dec0c7a0d7261e120414de2a0c9aaf95cf185006fce2cd4d8342",
+    "records_sha256": "0a34b61ac2dd2993057f8da3dec852cb1332c1476c63885365e9a2815e9235bf",
+    "source_evidence_sha256": "2f88ee743dcd6dee232136334f70aae45017be40aae947acc34efbefe90cd21f",
+    "new_board_execution_by_C": false,
+    "quality2000_reads": 0,
+    "scope": "Existing repeated ten-class data; no external generalization, 4425 distinct samples, cross-host W8 equality or new performance claim"
+  },
+  "independent_quality_recount_sha256": "12a213e4248860b014b8aac9201f4d18e744ce83a8dd083471f1235f3d47262a",
+  "verifier_sha256": "bc6ce887ee3f15a10c0ff8a3e5f3b1648e17323860b2ea8ef9f2636071976080",
+  "verifier_correction_evidence": "verification_attempt_1.json",
+  "role": "Independent C executor independent_c_h576; no DUT development",
+  "contract": "H576 fixed research runtime 36PL/13CPU; six hardware shapes",
+  "excluded": [
+    "quality2000: NOT_READ",
+    "existing C private holdout: NOT_READ",
+    "cross-platform W8 equality: NOT_PASSED",
+    "new performance comparison: NOT_RUN",
+    "long-term reliability: NOT_PROVEN",
+    "historical A2 or 49PL contract: UNCHANGED",
+    "joint A/B/C release: NOT_SIGNED",
+    "formal publication: NOT_AUTHORIZED_BY_THIS_RECEIPT"
+  ]
+}

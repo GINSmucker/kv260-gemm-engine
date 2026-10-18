@@ -312,7 +312,7 @@ class Jobs:
                 if job['cancelRequested']:
                     raise RequestError('CANCELLED', '实际ORT调用结束后确认停止，结果已废弃')
                 job.update({'status':'SUCCEEDED', 'result':raw, 'progress':100,
-                            'layerCompleted':raw.get('observed_custom_calls') or (1 if job['type']=='layer' else len(raw.get('samples',[]))),
+                            'layerCompleted':raw.get('completed_linear_count') or raw.get('observed_custom_calls') or (1 if job['type']=='layer' else len(raw.get('samples',[]))),
                             'realPLStarts':raw.get('PL_starts',0)})
                 self.log(job, 'SUCCEEDED', f"真实板端计算已完成；实际PL starts={job['realPLStarts']}")
         except Exception as exc:
