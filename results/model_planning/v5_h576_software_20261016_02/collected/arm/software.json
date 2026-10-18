@@ -1,0 +1,359 @@
+{
+  "status": "PASS_REFERENCE_AND_EXACT_H576_GELU",
+  "references": [
+    {
+      "image": 0,
+      "file": "reference_00.npz",
+      "sha256": "6caad93cb7cf613bd7e64fbe9ec816b315805068ca277c819f6958cf8d91ebe9",
+      "input_sha256": "3f0ff2087b39661c973adfef250f35b41eba1d31ccd46540910068cea4926a65"
+    },
+    {
+      "image": 1,
+      "file": "reference_01.npz",
+      "sha256": "07418fe68b04a2f6af522938c67a141ffc518bc3de4d586cfdf2792ff398f693",
+      "input_sha256": "5c67dbed8e0dab6c513559d133b5f841b3831abc8415f563e6f8c98544fe09fe"
+    },
+    {
+      "image": 2,
+      "file": "reference_02.npz",
+      "sha256": "d4cf71d949728daa26cf828dc4088c31bc9f1ba55ddb1b55707d405dfcdbcac6",
+      "input_sha256": "dada57bc2591b1212650c0ec0082754609d1ae52a37ac6516cc7885b710629b7"
+    },
+    {
+      "image": 3,
+      "file": "reference_03.npz",
+      "sha256": "6034d9ba809cb18c67f51658d4c87738575a85eb4291837bcffa626ae1e4de11",
+      "input_sha256": "5c8ef0ccfafc52ea817d37b15047381ceb68e797682b710e9a2d409f34c94092"
+    },
+    {
+      "image": 4,
+      "file": "reference_04.npz",
+      "sha256": "2d7697f8c68e428c9f13c24c2b8488f30408ec7367397e413b220f0f1df9eb03",
+      "input_sha256": "0d81282fcc38cba2c48ac4b6b4053e103c9a0e1c5b5bff54ac375c1707278c6c"
+    },
+    {
+      "image": 5,
+      "file": "reference_05.npz",
+      "sha256": "7b6f4cdc6b9acebfb67e856f9b4a52910150ea7212db2223c00c9094296bb8ab",
+      "input_sha256": "9993f47a04129ac3b1675d89e00b3a25ca5ad0fad8ba4c9ff0b04f66bdd94640"
+    },
+    {
+      "image": 6,
+      "file": "reference_06.npz",
+      "sha256": "ade150e02849d7b98ef8fcd69217f151b45278049566533a0dae2d28dcd54ea2",
+      "input_sha256": "e2f1769ce0a9f66767807b34c0e284e3613851db1fa9b326454b74261e4df6f8"
+    },
+    {
+      "image": 7,
+      "file": "reference_07.npz",
+      "sha256": "31dcfc2561e36231597e9b73bf22977c2b08be8b23556f98008c952b413304f9",
+      "input_sha256": "76a6df4fc689d2ef102b2dbfb27b606f1c576fe638c95044437767c415aad369"
+    },
+    {
+      "image": 8,
+      "file": "reference_08.npz",
+      "sha256": "e3cfc5b8963e2c85f58699604817ad330d97b0bc4897cf7595c9f58bba98870b",
+      "input_sha256": "3dfbeccbe5e01f792f95a87cd8582492beb1c6cc63dba0b9b75cd9d909ae52bb"
+    },
+    {
+      "image": 9,
+      "file": "reference_09.npz",
+      "sha256": "16b017f4cb7e912babda99a14a50a99230b0328fe075bb2d3f9086218a1fe50c",
+      "input_sha256": "6f11984d41eec1bdc582528eb05a4e48ad60dd525e3bad4bf9f2cf71d8668d7e"
+    },
+    {
+      "image": 10,
+      "file": "reference_10.npz",
+      "sha256": "74c4938bd03a1713fd78a5481ca6f05f06cd67e3fe7629d5e7669fbffdeddba3",
+      "input_sha256": "ae35c62fbf9644aea4d262150c74e7f98c52a611b0df20bbcebf868ab4181582"
+    },
+    {
+      "image": 11,
+      "file": "reference_11.npz",
+      "sha256": "a52afe889ecf069726212db2f240b94afd44a3e19bf5aea427e503a996616112",
+      "input_sha256": "7c18ece9bb717af40574be89071aac137688aa743c3bb549e9acbda0f9ecea13"
+    },
+    {
+      "image": 12,
+      "file": "reference_12.npz",
+      "sha256": "f33f541d75016253ae259643378f517f38a9098675d95e796f460f5cb2b7e09a",
+      "input_sha256": "470ca0345ee1dc0a327e957a3c75f5a045628307e9ca2d432e98d7c206997810"
+    },
+    {
+      "image": 13,
+      "file": "reference_13.npz",
+      "sha256": "f46c6285cf9f69889a4c80314f0ac34a3a4d33be05c3b053072b244f00371eb3",
+      "input_sha256": "727a39bb831a3ade75bb61087b5af546e13bc2e75255f8baaee5214f293472dc"
+    },
+    {
+      "image": 14,
+      "file": "reference_14.npz",
+      "sha256": "842034a41a01a8f06e0f648f9dffc3b75c904a3d3f1a460b2c2ef86445aae656",
+      "input_sha256": "0da61198c1965c9fb0cd90b757ff809bc889e52a8ef2c9fbef1a3f442e4052bb"
+    },
+    {
+      "image": 15,
+      "file": "reference_15.npz",
+      "sha256": "07c22f55409cf675e9124b1465b6100fc587e3240609caf480ccc9c5191e8df5",
+      "input_sha256": "fe96404c19fc878f271d9f8d7ec659c6b63fdac94a32ba3a25641bcf1cb5622d"
+    },
+    {
+      "image": 16,
+      "file": "reference_16.npz",
+      "sha256": "844121722f5c47809967ee84e0f623e207d54788c1994b26c1c409a103a4497c",
+      "input_sha256": "dcfbfc317b3d1205993b21b081cf43d27df5bd19478111c1b287a4afac1c0320"
+    },
+    {
+      "image": 17,
+      "file": "reference_17.npz",
+      "sha256": "50b958457274a4bcb8f397c19e285162e1158a6312584a7afe9a97c4973c3620",
+      "input_sha256": "33e9ee889d9a8794ab85835b15d350682fe49efe83c774c30e7cb1d93af9e969"
+    },
+    {
+      "image": 18,
+      "file": "reference_18.npz",
+      "sha256": "2ea3cf6462cd0e05f8e93522b111d51a04543bcba8a9683ae35be4d1114a833b",
+      "input_sha256": "fef1248dc8f07fb68faae2e207d6967c105d092a0153f21853996f3db6d0f238"
+    },
+    {
+      "image": 19,
+      "file": "reference_19.npz",
+      "sha256": "64d45715b6b1dfed4762a8852bf10cf5a1f02977d1c001f6f97694ffb325520a",
+      "input_sha256": "941e1229e44ec48f33e1258872e745dda7b88034eef77ae313572cc4e7543f3f"
+    }
+  ],
+  "GELU_checks": [
+    {
+      "name": "image0_fc1_0",
+      "values": 113472,
+      "input_sha256": "5687c7037e0dfa3e3a3474776a822189e8ff18fc8eee7a36c81731a4a423a7bb",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_1",
+      "values": 113472,
+      "input_sha256": "5f147a4808cd62f54144b9efcd81268d671d285bc1956e4b312e31481693a0e3",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_2",
+      "values": 113472,
+      "input_sha256": "aa1e9f39c9500882191f6c134750d507a8323137d9acaf428cb3d5777bfc3228",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_3",
+      "values": 113472,
+      "input_sha256": "d4b214d339be30a60ab1b4297423260ab91eb1a4f1da7139cd6ad99c34859a6f",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_4",
+      "values": 113472,
+      "input_sha256": "ffb5ef0495f0b05c018ea4170d295853474afb9dc2e98463831f93e61e0e87b7",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_5",
+      "values": 113472,
+      "input_sha256": "0387aaa298ac0ab65f1fdaa06f3f2dc11d68e185b44bfb356156c8056514eeb1",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_6",
+      "values": 113472,
+      "input_sha256": "c3e2a7831037a171dde7aca35b9bbf6787b96288316a6df33fb1f78e0862dc1e",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_7",
+      "values": 113472,
+      "input_sha256": "c7239f4f86161dcca2ced411cc66a1e59ec01a74fdf441e20978d649eaac9e97",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_8",
+      "values": 113472,
+      "input_sha256": "031a4a7946561ed1d1b8d3b81e089dcb192f22c3f03165c8786751ed543b2477",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_9",
+      "values": 113472,
+      "input_sha256": "c75096f4ecb8341ef1a8287702d7e1eb25ffa6204ce0d778c1ad28342158a43d",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_10",
+      "values": 113472,
+      "input_sha256": "807ebe04955ff23195d35193e52281eb39fae5869a610b3713d1656e8e8cbeae",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image0_fc1_11",
+      "values": 113472,
+      "input_sha256": "e99ce09ff6be37ff20ffe8fd78c0cdc266366a4a392ee19a99cac7e919188875",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_0",
+      "values": 113472,
+      "input_sha256": "3c948e49c6151f00972db910dd60613fd984ddc75622238b7a48e5b0483737df",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_1",
+      "values": 113472,
+      "input_sha256": "c96a95113558eee97ba121a50f6478a55e50f9fc572dacba098c38a0d6a449f0",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_2",
+      "values": 113472,
+      "input_sha256": "0e80b2ac03fce287ecdc9af60e4ab592f69700a4b48e5c4f8aa96f7c14fee73d",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_3",
+      "values": 113472,
+      "input_sha256": "bb9e6bf65639ff4c44e9e3a56e6e2c00dc7a281e50e7afca21b82dc632bb4052",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_4",
+      "values": 113472,
+      "input_sha256": "a5314998d637532555f9f29c9bffb858d964009cee0aa05ff84e52fb4d61137c",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_5",
+      "values": 113472,
+      "input_sha256": "bdae623e241c395853ce9684e32f7b6a40953d8a32bc5c301522a3a616eb28f5",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_6",
+      "values": 113472,
+      "input_sha256": "d6d03355cf4c96a3a09e740da8f332648317c53dffae7c3d19f4758cde5ed503",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_7",
+      "values": 113472,
+      "input_sha256": "3dbda4dfe5c1c1af2cb8cfe478ed088f9bac1f54c9dd254a677fdbc12af7e3de",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_8",
+      "values": 113472,
+      "input_sha256": "2677622f8eae23db2cb1ddc8b7cc86b6a1b28518e9f1ebda014110dba36969e0",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_9",
+      "values": 113472,
+      "input_sha256": "b10fa48424cb2f1e64cf7c3d8de8af25c8c9da9bd3db3bd91d8d88cfae0ba993",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_10",
+      "values": 113472,
+      "input_sha256": "93169217153b17dc3a996e5588fe953d8f505308201b4378656b8a939400499e",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image7_fc1_11",
+      "values": 113472,
+      "input_sha256": "1fa86a471f783e62c5ef926ea864c94745e317e633933be75a9a16c831529388",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_0",
+      "values": 113472,
+      "input_sha256": "b43910c21fb6238d9f384782a849ed3627ba00df1ed68e8e2314a1215f762f91",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_1",
+      "values": 113472,
+      "input_sha256": "362e589e5f67d21d2d518886f687cd64a30544932ebabbbc8ff0b6fc1de1bafb",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_2",
+      "values": 113472,
+      "input_sha256": "229371ba834b7fdf390152bb4bdc050fdd4fd9304b2bbc2f50aa185a6943ef1c",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_3",
+      "values": 113472,
+      "input_sha256": "1df11b04316c3cc516d29edf7d727269f7346956315f8fa01bd7217bb766ca82",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_4",
+      "values": 113472,
+      "input_sha256": "98af8aa8447070495c007555179565829a8069b4ffcdd9b6435378aacb9c8a9e",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_5",
+      "values": 113472,
+      "input_sha256": "7813e5b78f0bfdcd734dba4f9e86bfc3c981303db9b74c764a19b56be4cc0245",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_6",
+      "values": 113472,
+      "input_sha256": "b189ad4476838937ce8aec37379ddbe6d49839795a865b641221b08e5cd5a732",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_7",
+      "values": 113472,
+      "input_sha256": "78cae643466f84c235e4e86563b078ddd778b84cc366b067a4f32050934a1b12",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_8",
+      "values": 113472,
+      "input_sha256": "500e8ad300c2f2dc57789df869f10129af5bc5c55e0de09b4be91fd093cc8fad",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_9",
+      "values": 113472,
+      "input_sha256": "63b4d53d3ebb7bfc1ef7e0133a9df55734b0f03cce8fd235ac36bf29ced6cea7",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_10",
+      "values": 113472,
+      "input_sha256": "0c39703645d0adab0ae8510b596c20a7c5277e21f2d30131e54b97cab4a640e6",
+      "bitwise_equal": true
+    },
+    {
+      "name": "image19_fc1_11",
+      "values": 113472,
+      "input_sha256": "3a6eecdc287104152e29c2d8e0126c465d670b0f9a05da007ac18683958898ba",
+      "bitwise_equal": true
+    },
+    {
+      "name": "uniform",
+      "values": 113472,
+      "input_sha256": "66efe4c50f59f014591b76d3af085e053133b136d79c9338b2bc9f78558f509a",
+      "bitwise_equal": true
+    },
+    {
+      "name": "edge",
+      "values": 113472,
+      "input_sha256": "5f6d2d763258813a13e258b0bb60c35eae9b86d5e705b4313c5e312553aad362",
+      "bitwise_equal": true
+    }
+  ],
+  "total_GELU_values": 4311936,
+  "cross_boot_logits": "20 bitwise equal to frozen ARM candidate",
+  "threads": 4,
+  "quality2000_predictions": 0
+}

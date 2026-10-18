@@ -1,42 +1,52 @@
-# KV260 GEMM Engine
+# KV260 · 完整模型协同推理
 
-面向DeiT Tiny完整模型的KV260计算工程。A维护hls，B维护model，C维护board；共享接口、验证状态与使用方式位于docs。
+将完整视觉模型部署到边缘 FPGA，需要同时做好计算、数据交付、模型质量和运行展示。本项目在 KV260 上实现 CPU 与 FPGA 的固定分工：保留完整模型计算，让适合卸载的矩阵运算进入可编程逻辑，其余计算由处理器完成。
 
-## 当前运行配置
+当前成果采用冻结的 H576 紧凑模型与 Dense W8A8 数值路径。MLP 隐藏宽度为 576，包含十二个 Transformer 块和四十九个线性层，其中三十六层由 FPGA 执行、十三层由 CPU 执行。这是缩宽后的稠密模型，不是 2:4 稀疏加速器。
 
-|配置|实现|用途与资格|
-|---|---|---|
-|默认开发|OPT38，128MAC，100MHz，载荷型wire5，49层PL|Git主入口及既有开发资产；身份见开发锁|
-|下一步Dense FPGA性能优化基准|OPT45，512MAC，125MHz，TM32/TN768，X/W/Y128bit|从冻结研究源码开始；完整边界、平台及实板证据可用，正式独立C、PL500/full质量与独立长稳NOT RUN|
-|资源取舍候选|A_OPT40_AXI128_M16N16，256MAC，10ns目标|固定到A分支68a9e643；用于LUT/DSP取舍研究，同条件实板性能比较NOT RUN|
-|正式资格参考|OPT35a/V2A|身份与签署范围由正式父版锁固定|
+![成果工作台](docs/images/hero_final.jpg)
 
-OPT45是下一步Dense FPGA性能优化的主基准；A候选的用途是资源取舍。该选择不转移正式资格。A接手入口为[hls/README](hls/README.md)，其中列出源码、配置、测试、接口与证据的准确路径。Git内hls/src对应默认OPT38，OPT45由已锁定的Release源码资产提供。
+## 已取得的结果
 
-GitHub已发布的PS比较配置采用QuantQKV和固定W BO。qkv/fc1/fc2固定PL，proj/head固定CPU；owner独占CU/BO，B通过匹配的共享接口访问X/Y。模型、量化顺序及logits要求保持逐位一致。
+| 观察维度 | 已有实测结果 | 解释范围 |
+| --- | --- | --- |
+| 完整推理延迟 | 两轮中位数 142.78 / 142.68 ms | 同板、固定四线程、预热后完整浮点输入至浮点输出 |
+| 相对原模型 ARM FP32 | 约 2.295 / 2.294 倍 | 包含模型缩宽、PS 优化与 PL 交付的综合收益 |
+| 相对同候选 ARM W8A8 | 约 2.070 倍 | 对照是数值语义参考，不是高性能 INT8 CPU 内核 |
+| 既有质量集 | Top1 3039 / 3925，Top5 3729 / 3925 | 十类图像范围，Top1 比原 FP32 高 1.554 个百分点 |
+| 模型结果 | 同 ARM 候选与 PL 的 3,925,000 个 logits 逐位一致 | 不扩展为跨主机逐位一致结论 |
+| 有限连续运行 | 5,000 次推理、十轮正式加载回退 | 二十张公开图片重复使用，不能视为新增质量样本 |
+| 浏览器交付 | 真实 PL 图片推理、性能对比、路由与下载已验证 | 新展示层另完成存档显示检查，未重跑其全部实时链路 |
 
-已发布硬件/PS实验日期为2026-10-10，算法契约复核日期为2026-10-11。已发布PS组合两组无诊断Runner.run的p50为161.476920/161.470765ms，p95为163.026194/163.562457ms，每组200正式样本全部保留。各机制收益只对应同窗参照，不跨窗口相加；长期尾部上限未证明。这些指标只对应资产锁绑定的发布配置，不代表未发布的本机PS或稀疏实验。当前状态见[progress](docs/progress.md)与[verification](docs/verification.md)。
+计时不包含模型初始化、图片预处理、硬件加载、结果序列化和验算。连续运行的 p95 / p99 为 143.71 / 148.98 ms，最大值为 175.44 ms；有限样本不构成长期尾延迟上界。全部有效样本保留，失败运行仍属于验证记录。
 
-## 接手与软件检查
+## 为什么能够更快
 
-先读[AGENTS](AGENTS.md)、[唯一公共接口](docs/interface.md)和[工作流](docs/workflow.md)。使用已有Python3.12/NumPy1.26.4/Pillow12.3.0/ORT1.22.1环境，从仓库根运行：
+主要收益来自减少实际重复工作。量化后的输入和整数输出复用固定共享缓冲，静态权重在初始化时装载。模型插件直接写入输入区并读取输出区，控制消息不携带大块矩阵。唯一硬件控制进程负责同步、启动和完成确认，保持简单的同步执行顺序。
 
-```powershell
-python -B docs/tools/check.py
-python -B model/golden.py --check model/cases/tensors.npz
-python -B docs/tools/assets.py opt45-source --download --extract
-python -B docs/tools/check.py --cpp --research-source build/assets/opt45-source/opt45-source --cxx <existing-cxx> --hls-include <existing-vitis-include>
-```
+处理器继续使用四线程执行已有计算。QKV 结果直接写入消费者所需布局；GELU 的外围算术减少中间遍历，同时保留原生 Erf 和既定浮点舍入顺序。attention 保留现有内核。硬件保持单引擎、512 MAC、125 MHz 和 128 位通路，优化结论以完整交付成本衡量。
 
-普通C++检查不访问FPGA，HLS pragma被忽略。完整研究运行文件和原始性能样本分别通过opt45-runtime、opt45-evidence取得；[资产锁](docs/locks/ASSETS.lock.json)固定名称、长度、SHA256及源清单。默认不会下载全部资产，缓存位于忽略的build/assets。
+## 架构与展示
 
-- [A：HLS计算核](hls/README.md)
-- [B：模型、量化与共享适配](model/README.md)
-- [C：平台和运行时](board/README.md)
-- [性能与资源](results/summary.csv)
-- [源码及资产定位](docs/SOURCE_MAP.json)
-- [分支用途](docs/branches.md)
+![系统架构](docs/diagrams/architecture-preview.png)
 
-共享板卡由维护者串行分配。取得文件不授权加载；每个新构建、boot和接口组合必须有自己的身份、占用检查、数值与恢复验证。
+架构图由 Archify 生成。[交互式架构说明](docs/diagrams/architecture.html)下载后可通过浏览器打开，支持缩放、关系追踪和主题切换；GitHub 页面本身不执行交互式 HTML。
 
-当前PS组合取得方式：先下载并解包opt45-runtime，再执行python -B docs/tools/assets.py ps-runtime --download --extract及ps-evidence；21成员复用、11成员增量，组装后核验32成员。完整机制样本与有界慢样本由ps-evidence提供。
+工作台将正式性能、图片交互测评、模型质量和有限稳定性分区展示。性能对比采用 CPU 与 PS／PL 两条曲线，可以切换参考并查看各样本。曲线展示真实保存的测量值，不生成平滑趋势或替代缺失数据。路由视图说明四十九层的静态分工，不把它表达成逐层进度或逐层耗时。
+
+![性能双曲线](docs/images/performance_card.jpg)
+
+## 阅读和使用
+
+- [项目原理与当前状态](docs/progress.md)：理解模型、运行时、硬件及剩余边界。
+- [打开和使用工作台](docs/workbench.md)：查看成果、运行图片、阅读性能和路由、下载结果。
+- [证据与验收范围](docs/verification.md)：区分质量、性能、功能与有限稳定性结论。
+- [接口与工程协作](docs/interface.md)：了解数值和执行职责。
+- [启动本机工作台](start-workbench.ps1)：使用已有 PowerShell 7 和 Node.js 24 或更高版本运行，默认展示存档与演示功能。
+- [按需交付资产](docs/locks/ASSETS.lock.json)：冻结模型、运行包和公开验证输入按身份取得。
+
+## 当前交付边界
+
+这是有实测证据的研究交付总结，尚不等于联合正式发布。新增两千张质量保留集仍未使用；既有质量结论不外推至完整 ImageNet 泛化。跨主机 W8 逐值一致检查仍有失败记录，Chrome 自动上传本机 JPEG 的扩展权限路径仍待验证。永久 AXI 卡死恢复、无限期运行保证和从全新系统重建环境也不在已通过范围内。
+
+旧默认开发配置、正式资格参考和其他资源候选保留独立身份，不能与当前 H576 成果混用。取得源码和资产不自动授权加载共享板卡；真实推理需要维护者建立匹配窗口。仓库不包含两千张质量保留集或 C 私有留出材料。

@@ -138,6 +138,15 @@
       "scope": "MEASURED_RESEARCH_NOT_FORMAL_RELEASE",
       "payload_files": 37,
       "base_asset": null
+    },
+    "h576-runtime": {
+      "filename": "h576-runtime-public-ui.tar.gz",
+      "bytes": 43423483,
+      "sha256": "c29a006fe472fd2bfb545d7bbf77f34a5090ff9315043cdd7e5830e518d61f7c",
+      "destination": "h576-runtime",
+      "release_tag": "h576-summary-20261019",
+      "url": "https://github.com/GINSmucker/kv260-gemm-engine/releases/download/h576-summary-20261019/h576-runtime-public-ui.tar.gz",
+      "scope": "Frozen 84-file runtime, semantic models, public layer inputs and bounded-window helpers. Historical boot binding must not be replayed."
     }
   }
 }

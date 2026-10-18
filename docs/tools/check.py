@@ -141,7 +141,7 @@ def main():
             raise RuntimeError('Node >=24 required; no automatic installation')
         files = sorted((ROOT / 'board/ui/tests').glob('*.test.mjs'))
         command([node, '--test', '--test-isolation=none', *files], ROOT / 'board/ui', run / 'node_tests.log')
-        command([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'board/ui/tests', '-p', 'test_agent.py'], ROOT, run / 'python_ui.log')
+        command([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'board/ui/tests', '-p', 'test*.py'], ROOT, run / 'python_ui.log')
         result['UI_existing_tests'] = 'PASS'
     if a.cpp:
         cxx = shutil.which(a.cxx)

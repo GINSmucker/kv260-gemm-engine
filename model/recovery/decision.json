@@ -1,0 +1,81 @@
+{
+  "status": "COMPLETE",
+  "completed": [
+    {
+      "epoch": 1,
+      "name": "epoch1",
+      "results": {
+        "fp32": {
+          "top1": 777,
+          "top5": 953,
+          "samples": 1000,
+          "seconds": 21.530940200078476,
+          "logits_sha256": "2132db9e1c28d94f72b85aa8372dd70825323d7e690e5a9b27bd038119cf7c50",
+          "MSE": 0.08081259805048045
+        },
+        "w8a8": {
+          "top1": 780,
+          "top5": 950,
+          "samples": 1000,
+          "seconds": 24.302654599952803,
+          "logits_sha256": "a7fca2d2591fdbdbf3fa333fcf2154668919ff0bddc5f3cdd70c3be30c606e8a",
+          "MSE": 0.08298349423436505
+        }
+      },
+      "eligible": true
+    },
+    {
+      "epoch": 2,
+      "name": "epoch2",
+      "results": {
+        "fp32": {
+          "top1": 776,
+          "top5": 950,
+          "samples": 1000,
+          "seconds": 21.345998999939184,
+          "logits_sha256": "ef1cff4e04cec67ef5768f81fcf2b696bbf95e1725447feeec9b250a1829bac8",
+          "MSE": 0.07612036030222856
+        },
+        "w8a8": {
+          "top1": 771,
+          "top5": 947,
+          "samples": 1000,
+          "seconds": 24.87021939989063,
+          "logits_sha256": "306fc20b3ab8d1a12385d75e8229076d9854fdc7ebd71ef5623194b916b403e5",
+          "MSE": 0.07828505004638843
+        }
+      },
+      "eligible": true
+    },
+    {
+      "epoch": 3,
+      "name": "epoch3",
+      "results": {
+        "fp32": {
+          "top1": 768,
+          "top5": 950,
+          "samples": 1000,
+          "seconds": 23.09202879982331,
+          "logits_sha256": "72c93cb9dc3fd45b726e004e3d9c37377e16b01e90e40df68955bc9e9c0b99ae",
+          "MSE": 0.07352271604737057
+        },
+        "w8a8": {
+          "top1": 767,
+          "top5": 950,
+          "samples": 1000,
+          "seconds": 25.05763400014257,
+          "logits_sha256": "c6cba3aebc0277b9780913388e5fb9987dd708513eab3bded9e446a78ac7251c",
+          "MSE": 0.07579848432144323
+        }
+      },
+      "eligible": true
+    }
+  ],
+  "selected": "epoch1",
+  "best_diagnostic": "epoch1",
+  "seconds": 1190.988113200001,
+  "frozen_parameters_unchanged": true,
+  "formal_quality": "NOT_RUN",
+  "ARM": "NOT_RUN",
+  "reserved2000_predictions": 0
+}

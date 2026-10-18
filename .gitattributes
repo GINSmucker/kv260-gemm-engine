@@ -4,6 +4,7 @@ hls/** -whitespace
 model/b/** -whitespace
 board/runtime/legacy/** -whitespace
 board/runtime/vendor/** -whitespace
+board/runtime/h576/** -whitespace
 board/ui/** -whitespace
 results/evidence/** -whitespace
 docs/history/** -whitespace

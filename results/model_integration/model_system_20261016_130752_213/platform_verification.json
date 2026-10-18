@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "schema": "model_platform_crosscheck_v1",
+  "build": "model_system_20261016_130752_213",
+  "a1_manifest_sha256": "4f9259d40a67eaf7d3227ab33d3c6f7bed7d3f2704759238d2a73af379db7092",
+  "WNS_ns": 0.63,
+  "WHS_ns": 0.01,
+  "artifact_count": 4,
+  "register_count": 14,
+  "address_ranges": [
+    {
+      "ADDRESSBLOCK": "HP0_DDR_LOW",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x00000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0x7FFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem0",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_LOW",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x00000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0x7FFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem1",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_LOW",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x00000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0x7FFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem2",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_HIGH",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x800000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0xFFFFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem0",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_HIGH",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x800000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0xFFFFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem1",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "HP0_DDR_HIGH",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0x800000000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0xFFFFFFFFF",
+      "INSTANCE": "ps",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "m_axi_gmem2",
+      "MEMTYPE": "MEMORY",
+      "SLAVEBUSINTERFACE": "S_AXI_HP0_FPD"
+    },
+    {
+      "ADDRESSBLOCK": "Reg",
+      "BASENAME": "C_S_AXI_CONTROL_BASEADDR",
+      "BASEVALUE": "0xA0000000",
+      "HIGHNAME": "C_S_AXI_CONTROL_HIGHADDR",
+      "HIGHVALUE": "0xA000FFFF",
+      "INSTANCE": "gemm",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "M_AXI_HPM0_FPD",
+      "MEMTYPE": "REGISTER",
+      "SLAVEBUSINTERFACE": "s_axi_control"
+    },
+    {
+      "ADDRESSBLOCK": "reg0",
+      "BASENAME": "C_BASEADDR",
+      "BASEVALUE": "0xA0010000",
+      "HIGHNAME": "C_HIGHADDR",
+      "HIGHVALUE": "0xA001FFFF",
+      "INSTANCE": "status",
+      "IS_DATA": "TRUE",
+      "IS_INSTRUCTION": "TRUE",
+      "MASTERBUSINTERFACE": "M_AXI_HPM0_FPD",
+      "MEMTYPE": "REGISTER",
+      "SLAVEBUSINTERFACE": "S_AXI"
+    }
+  ],
+  "axi_address_bits": 64,
+  "axi_data_bits": {
+    "X": 128,
+    "W": 128,
+    "Y": 128
+  },
+  "HPM0_HP0_bits": 128,
+  "clock_constraint_ns": 8.0,
+  "HWH_clock_hz": {
+    "gemm/ap_clk": 124998749,
+    "ctrl/aclk": 124998749,
+    "data/aclk": 124998749,
+    "status/aclk": 124998749,
+    "ps/maxihpm0_fpd_aclk": 124998749,
+    "ps/saxihp0_fpd_aclk": 124998749
+  },
+  "DDR_configuration": {
+    "status": "PASS_DDR_CONFIGURATION_UNCHANGED",
+    "parameter_count": 131,
+    "parent_hwh_sha256": "6ab60d29b2b12fe08d6b6fcd391d6faa730eed0099d111802c67dfa99726a08b"
+  },
+  "formal_A2": "NOT_RUN",
+  "artifacts": {
+    "kv260_model.bit": {
+      "bytes": 7797817,
+      "sha256": "566a2814a408755151a605461ee866be72ed7581c94e010ebf4087df83cb28e4"
+    },
+    "kv260_model.bin": {
+      "bytes": 7797692,
+      "sha256": "c7f602ae3209573437debf407bb961adbafd00d77e8127c6c7e9e8e5edb0c6c8"
+    },
+    "kv260_model.hwh": {
+      "bytes": 322912,
+      "sha256": "d5758dd03cf68467a361a743661a576901c69196fdb0b51b7e47de3008a0bf57"
+    },
+    "kv260_model.xsa": {
+      "bytes": 4932101,
+      "sha256": "deecdc211aeb8410179bc30b6a378bd548ec4f2b11a4f54f563a0fc1b6973076"
+    }
+  }
+}

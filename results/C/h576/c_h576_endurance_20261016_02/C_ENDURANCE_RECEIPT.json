@@ -1,0 +1,173 @@
+{
+  "status": "PASS_C_H576_FINITE_ENDURANCE",
+  "candidate_manifest_sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76",
+  "protocol_sha256": "762d3d636f1c7910f28b637c7bb789f0e533ddbc820970da1063cc19fa0932d3",
+  "warm_loads": 1,
+  "formal_loads": 10,
+  "integer_outputs": 50059680,
+  "owner_PL_starts": 187920,
+  "arithmetic_starts": 880,
+  "formal_long_graphs": 5000,
+  "total_graphs": 5220,
+  "logit_differences": 0,
+  "resource_results": {
+    "client": {
+      "baseline": {
+        "fd": 11,
+        "rss_kib": 91340,
+        "threads": 7,
+        "cpus_allowed": "0"
+      },
+      "RSS_min_kib": 91340,
+      "RSS_max_kib": 91340,
+      "peak_delta_kib": 0,
+      "last_minus_first_quartile_median_kib": 0.0
+    },
+    "owner": {
+      "baseline": {
+        "fd": 11,
+        "rss_kib": 15712,
+        "threads": 1,
+        "cpus_allowed": "0-3"
+      },
+      "RSS_min_kib": 15712,
+      "RSS_max_kib": 15712,
+      "peak_delta_kib": 0,
+      "last_minus_first_quartile_median_kib": 0.0
+    }
+  },
+  "after_files": {
+    "client": {
+      "fd": 4,
+      "rss_kib": 91468,
+      "threads": 4,
+      "cpus_allowed": "0"
+    },
+    "owner": {
+      "fd": 10,
+      "rss_kib": 15712,
+      "threads": 1,
+      "cpus_allowed": "0-3"
+    }
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "role": "warmup",
+      "CmaFree_kib": 800312,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 1,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 2,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 3,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 4,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 5,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 6,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 7,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 8,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 9,
+      "role": "formal",
+      "CmaFree_kib": 800328,
+      "owner_starts": 720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    },
+    {
+      "round": 10,
+      "role": "formal",
+      "CmaFree_kib": 801556,
+      "owner_starts": 180720,
+      "OF_errors": 0,
+      "severe_errors": 0,
+      "property_warnings": 4
+    }
+  ],
+  "CMA_first3_minus_last3_median_kib": 0.0,
+  "times_ms": {
+    "p50": 141.9464495,
+    "p95": 143.705935,
+    "p99": 148.9788447,
+    "max": 175.442454
+  },
+  "timing_scope": "Runner.run FP32 input to FP32 logits; excludes result check, resource reads and file writes",
+  "same_window_performance_comparison": "NOT_RUN",
+  "evidence_sha256": "b3c4b8817132a3b6d9eef8134085b79e671873fa91cc698575fed66d849a434b",
+  "final_readonly_sha256": "f82f33df9194cf8f8ec62938018ce772afe93529505024997a1f0f7015470f38",
+  "limits": [
+    "Only finite5000 and10formal cycles; no unbounded reliability",
+    "36PL13CPU; historical49PL contract unchanged",
+    "No new quality2000/private inputs",
+    "No cross-host W8 equality claim",
+    "No permanent AXI hang recovery",
+    "No joint release signature"
+  ]
+}

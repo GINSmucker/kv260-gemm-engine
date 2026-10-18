@@ -1,0 +1,26 @@
+{
+  "scope": "HANDOFF_LOCAL_SOFTWARE_ONLY",
+  "PL_starts": 0,
+  "HLS_synthesis": "NOT_RUN",
+  "RTL_cosim": "NOT_RUN",
+  "ARM_rebuild": "NOT_RUN",
+  "package_files_verified": 369,
+  "python_core_imports": "PASS",
+  "handoff_links": "PASS",
+  "UI_existing_tests": "PASS",
+  "status": "PASS",
+  "UI_node_tests": 25,
+  "frozen_payload_files_verified": 84,
+  "public_asset_inputs_verified": 149,
+  "archify": {
+    "showcase_checks": 9,
+    "errors": 0,
+    "warnings": 0,
+    "desktop_viewports": 4,
+    "themes_reviewed": [
+      "light",
+      "dark"
+    ]
+  },
+  "UI_python_tests": 10
+}

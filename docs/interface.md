@@ -1,61 +1,39 @@
-# 公共接口：矩阵、运行配置与生命周期
+# 公共接口与执行职责
 
-接口说明版本KV260_GEMM_SHARED_MAP_V1。确认规范是完整K归约、紧凑矩阵、逐位数值一致与明确设备所有权；使用方必须选择匹配的运行配置和完整包身份。
+## 数值与形状
 
-下一步Dense FPGA性能优化的公共接口基准为OPT45，身份由[研究锁](locks/RESEARCH_LOCK.json)的performance_baseline固定；源码与使用入口见[A接手](../hls/README.md)。A_OPT40_AXI128_M16N16为独立资源候选，不能凭相同指针宽度或寄存器偏移混用平台与运行包。
+当前成果采用冻结 H576 Dense W8A8 合同。计算定义为输入矩阵乘以权重矩阵，完整 K 维归约生成输出；输入和权重为有符号八位整数，输出与累加为三十二位整数。权重沿输出通道量化，激活沿行量化，零点为零，使用既定最近偶数舍入和对称范围。反量化与偏置位于 PS，浮点顺序保持。
 
-## 矩阵与shape
+| 算子 | 行数 M | 归约 K | 输出 N | 每图固定分工 |
+| --- | ---: | ---: | ---: | --- |
+| head | 1 | 192 | 1000 | 1 层 CPU |
+| proj | 197 | 192 | 192 | 12 层 CPU |
+| qkv | 197 | 192 | 576 | 12 层 PL |
+| fc1 | 197 | 192 | 576 | 12 层 PL |
+| fc2 | 197 | 576 | 192 | 12 层 PL |
 
-Y[M,N]=X[M,K]×W[K,N]。X/W为signed INT8，Y及完整K累加为INT32；紧凑row-major，不修改PS矩阵布局。B采用RNE、[-127,127]/zp0、逐行sx及逐输出通道sw；scale/bias在PS，浮点顺序固定。
+一次硬件启动完成整个线性算子，PS 不补算部分 K，也不逐 tile 启动。硬件公开检查的形状范围与真实模型使用范围分别记录，不能把模型路由表当成全部硬件验收向量。
 
-|family|M|K|N|研究每图路由|
-|---|---:|---:|---:|---|
-|head|1|192|1000|1 CPU|
-|proj|197|192|192|12 CPU|
-|qkv|197|192|576|12 PL|
-|fc1|197|192|768|12 PL|
-|fc2|197|768|192|12 PL|
+## 存储与传输
 
-硬件白名单支持以上五shape，一次start完成整个Linear。非法shape返回INVALID_SHAPE=1，合法返回OK=0；不从CPU补K或逐tile start。
+矩阵使用紧凑行优先布局，字节序为小端。外部数据通路为 128 位，输入和权重每拍对应十六个八位元素，输出每拍对应四个三十二位元素。控制寄存器仍接收完整字节地址；不能因数据位宽变化而对地址做除法。
 
-## 配置绑定
+固定 BO 容量为输入 151,552 字节、权重 3,981,312 字节、输出 606,208 字节。权重按 PL 路由分段和对齐，初始化时装载并同步；PL 每次执行仍从 DDR 读取本层权重，这不表示权重全部常驻片上。
 
-|配置|AXI数据宽度X/W/Y|时钟|传输与路由|
-|---|---|---|---|
-|默认OPT38|32/32/32bit|100MHz|载荷型wire5，49层PL|
-|研究OPT45|128/128/128bit|125MHz|共享Map扩展、固定36层PL|
+模型插件导入固定输入输出缓冲，量化直接写入输入区，完成后直接读取整数输出。必要的缓存同步必须保留。socket 传递初始化绑定、映射和执行控制，不在每层携带大块矩阵。运行身份同时约束模型、插件、owner、平台、权重和逐层顺序；相同协议版本号不代表任意实现可以混用。
 
-相同wire版本号不保证实现兼容。默认源码为hls/src、board/runtime与model/v5；硬件源由opt45-source提供；当前B/C源和运行由ps-runtime组装后的32成员manifest固定，依赖opt45-runtime的配对硬件和相同成员。不得混用两套owner、插件、图或metadata。
+## 模型结果消费
 
-OPT45 FPGA用128bit整字读取紧凑INT8，X/W每拍16B、Y每拍4个INT32；X行bank32×64×128bit，Y累加器32×16×48×INT32。MMIO始终写64bit字节地址，不除4或16。数据master经3入1出的SmartConnect进入128bit HP0；HPM0/HP0位宽一致。
+QKV 的反量化直接生成消费者布局。GELU 保留原生 Erf 和既定逐步 FP32 舍入，行最大值显式交付给 fc2 量化，其他 attention 运算仍由 PS 执行。路由在初始化时确定，不开展在线自动调优，不以静默 CPU fallback 掩盖 PL 故障。
 
-字内lane顺序为低位在前：X/W元素i位于第i/16字的bits[8*(i%16)+7:8*(i%16)]，Y元素i位于第i/4字的bits[32*(i%4)+31:32*(i%4)]。当前合法K均能被16整除、N均能被4整除，无需按tile重排。HLS master声明深度X/W/Y分别为9456/12000/37824个128bit字；测试平台按声明最大深度分配，板端BO容量由对应运行包约定。
+## 生命周期
 
-## 控制寄存器
+owner 是唯一硬件控制者，负责启动、Done 状态和排空确认。同步调用复用同一组缓冲，不引入计算队列或双缓冲。模型会话的开始、结束与层序受协议约束。
 
-|寄存器|offset|
-|---|---|
-|CTRL/GIE/IER/ISR|0x00/04/08/0c|
-|ERROR|0x10|
-|X low/high|0x18/1c|
-|W low/high|0x24/28|
-|Y low/high|0x30/34|
-|M/K/N|0x3c/44/4c|
+提交后连接断开或执行状态未知时，不重放任务，不释放仍可能被 DMA 使用的缓冲，不强杀 owner 或重新配置 PL。退出必须确认计算与 AXI 静止，再关闭资源并按维护者约定回退。网页只是当前能力的消费者，不拥有加载、复位或系统配置权。
 
-ap_ctrl_hs：start bit0、Done bit1读清、idle bit2/ready bit3；无Continue。owner独占读清并latch Done，关闭auto_restart，参数运行中稳定。控制base0xA0000000、observer0xA0010000；新导出须核对驱动头/component/RTL与实际地址分配。
+## 配置身份
 
-研究配对平台model_system_20261010_184640_939：UUID8aec6c74-0818-f958-4716-0a6c9d3b1cc1、observer tags2391141641/3180551808。源码的EXPECTED_UUID和tag检查是身份依据，错误提示中的型号文字不构成平台选择规则。
+H576 采用单引擎、512 MAC、125 MHz，八十四项冻结载荷共同定义运行候选。旧默认开发配置、正式资格参考及未缩宽 OPT45 资产保持独立用途；旧图、插件或 owner 不能混入 H576 运行包。
 
-## 共享内存与wire
-
-头固定32B little-endian：magic0x0035564b、version5、op16、run64，sequence/layer/bytes/status各32。研究扩展op Map=9；SCM_RIGHTS传递两个X/Y FD及SharedInfo，导入XRT对象先于接收FD释放。owner原始BO覆盖整个DMA生命周期。
-
-当前BO容量X151552/W4866048/Y606208B。B直接量化写X并TO_DEVICE，RUN只发控制且body长度0；owner写参数/start、观察Done及AXI排空；B对Y FROM_DEVICE并直接反量化。CPU整数输出使用151296B普通工作区，必要cache sync不可删除。owner初始化装载并同步4866048B固定W BO，36段4KiB对齐；RUN选择本层64bit地址，PL每start仍读取本层完整W。初始化释放5500416B主机向量，只有X/W/Y三个BO。
-
-QuantQKV将反量化直接写三个目标，239节点，K transpose保留；默认Runner调用线程CPU0、worker CPU1/2/3，close后亲和性保留，显式options由调用者配置。49个Linear依次在B处理，固定路由header约束36个PL层的索引、顺序和sequence。默认配置的49载荷请求不能直接发送到共享owner。HELLO绑定权重摘要，BEGIN/END定义整图；同步调用复用单组BO，无队列、双缓冲或失败后CPU fallback。
-
-## 完成、断开与资源
-
-START后完成未知或硬件仍活动时保留BO/owner，不强杀、不释放、不重放RUN或重新编程。已提交客户端断开需要QUERY确认完成、ABORT封闭旧会话，再用新会话验证；STOP仅在真实静止后退出。排空、设备无使用者和starter回退由实际探针确认，退出码不足以证明。
-
-研究证据覆盖200次连续调用、三次重建及提交后断开恢复；长期泄漏、永久AXI故障或任意切换不在已证明范围。运行许可来自维护者当前安排，仓库和资产不转移其他会话授权。正式资格见[验证](verification.md)，数学配置、源码及资产身份见[SOURCE_MAP](SOURCE_MAP.json)。
+[冻结运行身份](locks/H576_PACKAGE.lock.json)用于定位准确配置，[源码映射](locks/H576_SOURCE_MAP.json)用于核对对应实现，[验证范围](verification.md)限定可继承的结论。原冻结清单中的早期验收字段保留原字节，当前独立验收状态由后续公开回执确定。

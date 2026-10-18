@@ -53,3 +53,6 @@ Thumbs.db
 /results/runs/
 /board/ui/tests/.tmp/
 /model/.venv/
+
+/docs/diagrams/*.visual-check.*
+/docs/diagrams/.archify-delivery-*/
