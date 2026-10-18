@@ -387,16 +387,16 @@
       "sha256": "7ec4f078451fdf076ebc606428c365f422a6d0d626f615eb294dd067946207ef"
     },
     "board/ui/board_agent.py": {
-      "bytes": 25356,
-      "sha256": "51e3fd1ff82f8a40db29b05bd291faf92aeae08c40b126eb3cee625826c3db53"
+      "bytes": 24896,
+      "sha256": "bb5cf45fa0db62ae3c03fd2675f214d5382132575f7af17589db27915ce4a119"
     },
     "board/ui/board_agent_h576.py": {
       "bytes": 16775,
       "sha256": "f81729c26d916f682e4d2764196f0e8bf64a4aa6c4bb250596a4f4097b22ca2d"
     },
     "board/ui/board_agent_v2a.py": {
-      "bytes": 6299,
-      "sha256": "7080f0de915ad0ba0bd0366134146a6cfe0e953abb06bbc02a7e1fa43ceeff3d"
+      "bytes": 6430,
+      "sha256": "eff325da5e544567dcd81d3b5615111ba03161c51f2826994400af36405bd99b"
     },
     "board/ui/browser_acceptance.mjs": {
       "bytes": 1630,
@@ -423,8 +423,8 @@
       "sha256": "41a82791e40fa0e610832697ed981684404b2bc5d865be80c8386b56084a8243"
     },
     "board/ui/launch_board_agent.sh": {
-      "bytes": 395,
-      "sha256": "eb0f6be1c5a5323f162cd92ab01e5e122872ae068880435097e6b7fa6751cf85"
+      "bytes": 474,
+      "sha256": "fec68b68847c56deb0b471ea7c10f4046de29e4612aefdd0519eb0df706a9b9d"
     },
     "board/ui/package.json": {
       "bytes": 543,
@@ -571,8 +571,8 @@
       "sha256": "cbb597c8cafac04d6ae12bee8c2efca91932dd4bfc31ae7234cdfa0e845c898a"
     },
     "docs/branches.md": {
-      "bytes": 2251,
-      "sha256": "6802fdf61a42ee83ec1a5a891053d57f5bc6b0220ee64a1f7fa9355d851be97f"
+      "bytes": 1023,
+      "sha256": "8e9fa89318560fdaf7b8432fe88f6ea0f5d8c7b5b4c854d554dab17965b06cf7"
     },
     "docs/contracts/registered_layers.json": {
       "bytes": 9371,
@@ -655,8 +655,8 @@
       "sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76"
     },
     "docs/locks/H576_SOURCE_MAP.json": {
-      "bytes": 31108,
-      "sha256": "2f38f3368a7401a8a092cf1dba9b5e970326b08f35a86d42e0ee27bbccd42eea"
+      "bytes": 31139,
+      "sha256": "2151240f63de3a8db842b2ab71f202f937b7a19c3b647308d40d052de107f1a6"
     },
     "docs/locks/RESEARCH_LOCK.json": {
       "bytes": 4012,

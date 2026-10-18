@@ -1,6 +1,6 @@
 {
   "schema": "h576_source_map_v1",
-  "scope": "Frozen runtime and hardware copied byte-for-byte; UI portable root and existing fixture relocation are packaging adaptations",
+  "scope": "Frozen runtime and hardware copied byte-for-byte; UI root/fixture relocation adapted for repository layout; existing portable legacy launchers preserved",
   "files": {
     "board/ui/.gitignore": {
       "source": "ui/.gitignore",
@@ -17,8 +17,8 @@
     "board/ui/board_agent.py": {
       "source": "ui/board_agent.py",
       "sha256": "51e3fd1ff82f8a40db29b05bd291faf92aeae08c40b126eb3cee625826c3db53",
-      "published_sha256": "51e3fd1ff82f8a40db29b05bd291faf92aeae08c40b126eb3cee625826c3db53",
-      "exact_copy": true
+      "published_sha256": "bb5cf45fa0db62ae3c03fd2675f214d5382132575f7af17589db27915ce4a119",
+      "exact_copy": false
     },
     "board/ui/board_agent_h576.py": {
       "source": "ui/board_agent_h576.py",
@@ -29,8 +29,8 @@
     "board/ui/board_agent_v2a.py": {
       "source": "ui/board_agent_v2a.py",
       "sha256": "7080f0de915ad0ba0bd0366134146a6cfe0e953abb06bbc02a7e1fa43ceeff3d",
-      "published_sha256": "7080f0de915ad0ba0bd0366134146a6cfe0e953abb06bbc02a7e1fa43ceeff3d",
-      "exact_copy": true
+      "published_sha256": "eff325da5e544567dcd81d3b5615111ba03161c51f2826994400af36405bd99b",
+      "exact_copy": false
     },
     "board/ui/browser_acceptance.mjs": {
       "source": "ui/browser_acceptance.mjs",
@@ -71,8 +71,8 @@
     "board/ui/launch_board_agent.sh": {
       "source": "ui/launch_board_agent.sh",
       "sha256": "eb0f6be1c5a5323f162cd92ab01e5e122872ae068880435097e6b7fa6751cf85",
-      "published_sha256": "eb0f6be1c5a5323f162cd92ab01e5e122872ae068880435097e6b7fa6751cf85",
-      "exact_copy": true
+      "published_sha256": "fec68b68847c56deb0b471ea7c10f4046de29e4612aefdd0519eb0df706a9b9d",
+      "exact_copy": false
     },
     "board/ui/package.json": {
       "source": "ui/package.json",
