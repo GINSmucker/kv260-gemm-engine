@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "version": "v2",
+  "branch": "codex/v2-h576-dense",
+  "build_returncode": 0,
+  "run_returncode": 0,
+  "profile": [
+    "rtl"
+  ],
+  "source_files": {
+    "hls/src/model_gemm_top.cpp": {
+      "bytes": 1343,
+      "sha256": "4f855e84019f1fbb4f6663d6f3eb46cf8a8c2c0d49f2346090fee42ade731d16"
+    },
+    "hls/src/model_gemm_core.hpp": {
+      "bytes": 6130,
+      "sha256": "6f01b6f35beb63cedb4bf3aa39a1f2f39547811a8bf449e0ac6fc466a5e80719"
+    },
+    "hls/include/model_gemm_config.hpp": {
+      "bytes": 1423,
+      "sha256": "7e10fbcfab10af95209461b728cf5b2b447ca267ecdee0e6550db812c7f206c4"
+    },
+    "hls/tb/testbench.cpp": {
+      "bytes": 8977,
+      "sha256": "854880fc41e8162120075689daf631852d0000fc7c626339b51535a6b9d398d0"
+    },
+    "hls/tb/public_cases.hpp": {
+      "bytes": 3634,
+      "sha256": "300a5c4d52f7c737b891a4338af554096268279c0f505c7a65a0ac9c9644af06"
+    },
+    "hls/hls_config.cfg": {
+      "bytes": 537,
+      "sha256": "064226631b74841dde53afc229c4e3ae1185bdca4dbfb8a0f1ebc3322933acaf"
+    }
+  },
+  "stdout_sha256": "ca2593231b66e9b86c2578918acfa79909613f5e8300f7e6c98cdfdd6c3dd9c6",
+  "scope": "Native C++ only; rtl is a case-set name, not RTL simulation",
+  "hardware_access": false,
+  "FPGA_latency_measured": false
+}

@@ -1,0 +1,77 @@
+{
+  "schema": "kv260_version_branch_v1",
+  "version": "v2",
+  "name": "H576 optimized Dense W8A8",
+  "branch": "codex/v2-h576-dense",
+  "source": {
+    "branch": "codex/h576-summary-20261019",
+    "commit": "f506f14e44190d035842be6e4bbc0ff431592c5d"
+  },
+  "top": "model_gemm_top",
+  "abi_arguments": [
+    "X",
+    "W",
+    "Y",
+    "M",
+    "K",
+    "N"
+  ],
+  "active_paths": {
+    "hls": "hls",
+    "hls_config": "hls/hls_config.cfg",
+    "runtime": "board/runtime/h576",
+    "model": "model"
+  },
+  "source_files": {
+    "hls/src/model_gemm_top.cpp": {
+      "bytes": 1343,
+      "sha256": "4f855e84019f1fbb4f6663d6f3eb46cf8a8c2c0d49f2346090fee42ade731d16"
+    },
+    "hls/src/model_gemm_core.hpp": {
+      "bytes": 6130,
+      "sha256": "6f01b6f35beb63cedb4bf3aa39a1f2f39547811a8bf449e0ac6fc466a5e80719"
+    },
+    "hls/include/model_gemm_config.hpp": {
+      "bytes": 1423,
+      "sha256": "7e10fbcfab10af95209461b728cf5b2b447ca267ecdee0e6550db812c7f206c4"
+    },
+    "hls/tb/testbench.cpp": {
+      "bytes": 8977,
+      "sha256": "854880fc41e8162120075689daf631852d0000fc7c626339b51535a6b9d398d0"
+    },
+    "hls/tb/public_cases.hpp": {
+      "bytes": 3634,
+      "sha256": "300a5c4d52f7c737b891a4338af554096268279c0f505c7a65a0ac9c9644af06"
+    },
+    "hls/hls_config.cfg": {
+      "bytes": 537,
+      "sha256": "064226631b74841dde53afc229c4e3ae1185bdca4dbfb8a0f1ebc3322933acaf"
+    }
+  },
+  "HLS_algorithm_changed": false,
+  "new_HLS_configuration": true,
+  "configuration_scope": "Path-adapted 8ns target from platform constraint; not the recovered original HLS configuration",
+  "verification": {
+    "source_map": {
+      "status": "PASS",
+      "scope": "Original H576 source map and duplicate active-source byte identity"
+    },
+    "new_native_Cpp": {
+      "status": "PASS",
+      "scope": "Current active source native C++ synthetic testbench only; no HLS/RTL/board",
+      "evidence": "results/active_native_20261026.json"
+    },
+    "new_HLS_RTL_board": {
+      "status": "NOT RUN"
+    },
+    "historical_H576": {
+      "status": "PASS",
+      "scope": "Original published receipts only; see docs/verification.md"
+    },
+    "active_native_cpp": {
+      "status": "PASS",
+      "scope": "Current active source native C++ synthetic testbench only; no HLS/RTL/board",
+      "evidence": "results/active_native_20261026.json"
+    }
+  }
+}
