@@ -1,73 +1,40 @@
-# GEMM PS/PL 接口
+# OPT50 PS/PL 共同接口
 
-## 三阶段归档入口（2026-10-26）
+活动接口来源：[HLS top](../hls/src/model_gemm_top.cpp)、[容量配置](../hls/include/model_gemm_config.hpp)、[metadata XML](../board/deployment_sources/metadata_sources/embedded_metadata.xml)。本页替代活动路径中的旧 OPT38 说明；旧文档在 [provenance](provenance/pre_v3_default/docs/interface.md) 原样保留。
 
-原 OPT38 接口说明在下方保留。本分支的三个源码快照必须分别选用对应 ABI，不能混用旧 runtime：
+## 数值与模式
 
-| 快照 | 顶层参数 | 当前接口依据 |
-| --- | --- | --- |
-| v1 / 历史 tiled v0.2 | `gemm_top(X,W,Y,M,N,K)` | [原始源码与范围](../hls/versions/v1_dense_initial/SNAPSHOT_STATUS.md)；特别注意 M,N,K 顺序 |
-| v2 / OPT46 | `model_gemm_top(X,W,Y,M,K,N)` | [配置和原始 top](../hls/versions/v2_dense_optimized/SNAPSHOT_STATUS.md)；与旧 H576 来源未完整配对 |
-| v3 / OPT50 | `model_gemm_top(X,W_data,W_meta,Y,M,K,N,mode)` | [128bit split-format](../hls/versions/v3_sparse_opt50/docs/sparse24_axi_format_v0.1.md) 和对应平台 ABI |
+`Y_int32[M,N] = X_int8[M,K] × W_int8[K,N]`，每次从零累加。量化、反量化、bias、scale、剪枝和模型后处理在 PS；不能把 Dense/Sparse 选择当作在线训练。
 
-v3 当前导出控制偏移（字节）：返回状态0x10；X=0x18、W_data=0x24、W_meta=0x30、Y=0x3c，
-四个指针均64bit；M=0x48、K=0x50、N=0x58、mode=0x60。控制/中断寄存器仍为0x00/0x04/0x08/0x0c。
-mode0按Dense表示读取同一组数学权重，mode1按2:4表示读取；旧六参数metadata不能用于此核。
-必须以本次生成的驱动头、平台metadata和运行时验证一致为准，不能只照表写入任意驻留电路。
-完整路由和身份见[版本索引](versions/README.md)。本次仅增加文档入口，不修改默认OPT38或任何板卡配置。
+| mode | W_data | W_meta |
+|---:|---|---|
+| 0 | 完整 Dense `W[K,N]`，INT8 row-major | 不读取 |
+| 1 | 2:4 `values[K/4,N,2]`，INT8 | 每 K 方向四元组的两个位置压缩码 |
 
-## 原 OPT38 候选接口（历史默认树）
+X/W/Y 均紧密 row-major，无逐行/tile padding。物理格式为 [H576_SPARSE24_SPLIT128_V1](../model/docs/sparse24_axi_format_v0.1.md)，独立缓冲按128bit字组织，小端 lane0 位于最低字节；INT8 需按有符号值扩展。格式支持范围不等于当前硬件能力。
 
-本文描述当前 OPT38 HLS 候选的最小公共接口。若源码、Vivado 地址分配或 runtime 与本文不一致，应先停止集成并更新接口版本。
+当前核要求 M∈[1,197]；K/N 为16的正倍数、各不超过576；K×N≤110592。M 尾块支持，Sparse K 不支持尾组，合法调用不存在 INT32 溢出。未知 mode、无效形状或 metadata 必须拒绝。
 
-## 1. 数学与数据格式
+## 顶层与寄存器
 
-```text
-Y[M x N] = X[M x K] * W[K x N]
-```
+唯一顶层 `model_gemm_top(X,W_data,W_meta,Y,M,K,N,mode)`，返回32bit状态：0成功、1形状无效、2模式无效、3metadata无效。四个指针均64bit字节地址；X/W_data/W_meta/Y 的 AXI 数据位宽128bit，W_data/W_meta 共用 gmem1；不生成两个独立 MAC IP。
 
-- X、W：有符号 INT8，row-major。
-- Y：有符号 INT32，row-major。
-- 地址：64 位字节地址。
-- 当前 HLS 输入在 AXI 上按 32 位字打包，每个字包含 4 个 INT8 元素。
-- M、K、N 必须匹配 `hls/include/model_gemm_config.hpp` 中登记的尺寸。
-
-## 2. HLS 顶层接口
-
-顶层函数为 `model_gemm_top`，控制协议为 `ap_ctrl_hs`。
-
-| 参数 | 含义 |
-|---|---|
-| `x` | X 缓冲区地址 |
-| `w` | W 缓冲区地址 |
-| `y` | Y 缓冲区地址 |
-| `m` | 输出行数 M |
-| `k` | 归约维度 K |
-| `n` | 输出列数 N |
-
-## 3. AXI-Lite 寄存器
-
-以下偏移来自当前交接版本，最终以新生成 IP 的驱动头文件和 Vivado Address Editor 为准。
-
-| 寄存器 | 偏移 |
+| 寄存器/参数 | 字节偏移 |
 |---|---:|
-| CTRL / GIE / IER / ISR | `0x00 / 0x04 / 0x08 / 0x0c` |
-| ERROR | `0x10` |
-| X low / high | `0x18 / 0x1c` |
-| W low / high | `0x24 / 0x28` |
-| Y low / high | `0x30 / 0x34` |
-| M / K / N | `0x3c / 0x44 / 0x4c` |
+| CTRL / GIE / IER / ISR | 0x00 / 0x04 / 0x08 / 0x0c |
+| 返回状态 | 0x10 |
+| X low/high | 0x18 / 0x1c |
+| W_data low/high | 0x24 / 0x28 |
+| W_meta low/high | 0x30 / 0x34 |
+| Y low/high | 0x3c / 0x40 |
+| M / K / N / mode | 0x48 / 0x50 / 0x58 / 0x60 |
 
-`ap_ctrl_hs` 中 start 为 bit 0，done 为 bit 1，idle/ready 为 bit 2/3。runtime 不应手工假设旧 IP 的寄存器布局；重新导出 IP 后必须核对。
+控制协议 `ap_ctrl_hs`：START bit0，DONE bit1，IDLE bit2，READY bit3。旧六参数 Dense metadata/运行时不能用于本核。必须验证实际导出头、平台地址与驻留身份后才可访问寄存器，不能仅据此表操作任意设备。
 
-## 4. XRT 约定
+## 平台与执行
 
-板端软件负责：
+已保存 fd96539d 平台使用 GEMM/F8 基址 `0xA0000000/0xA0010000`、目标125MHz、128bit HPM0/HP0 和同域复位。文件来源见 [board/evidence](../board/evidence/system_verified_fd96539d.json)；这不是对当前设备的新观察。
 
-1. 为 X、W、Y 分配 XRT BO；
-2. 填充 X/W，并同步到设备；
-3. 设置三个 64 位地址及 M/K/N；
-4. 启动 kernel 并等待安全完成；
-5. 将 Y 同步回主机并与 Golden Reference 比较。
+完整模型固定49个Linear：qkv/fc1/fc2共36层PL，proj/head共13层PS。十二个选中fc层可按Sparse运行。公平对照两组使用相同剪枝数学权重、同一owner/plugin：36D/0S 对 24D/12S。
 
-当前仓库尚未取得最新 v5 runtime 源码，因此 `board/runtime/` 仅为占位，不能视作已完成的 ABI 实现。
+PS负责静态权重初始化、必要client X/Y缓存同步、严格有序IPC/START、完成/idle/drain确认和正常关闭。图内保持低开销调度，完整BO/保护区/静态权重核查在计时后INFO。各时间区间可能重叠，不相加。软件窗口保留固定boot/guardian/pins门禁；[C入口](../board/README.md)说明当前不可移植部分。

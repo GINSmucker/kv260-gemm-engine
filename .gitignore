@@ -51,3 +51,5 @@ Thumbs.db
 /.test_tmp/
 /.test_build/
 **/.build/
+**/.test_tmp/*
+!**/.test_tmp/.gitkeep

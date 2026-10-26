@@ -1,0 +1,60 @@
+{
+  "schema": "kv260_active_layout_checks_v1",
+  "version": "v3",
+  "date": "2026-10-26",
+  "status": "PASS",
+  "branch": "codex/v3-opt50-sparse",
+  "source_commit": "00efbf17ec540610f3b1a3f33d05fdcb1ed508ae",
+  "scope": "Local file identity, documentation links and synthetic Python tests after activating the version directories; no device or hardware tool call",
+  "active_HLS_source_pins": {
+    "status": "PASS",
+    "files_checked": 5,
+    "manifest": "VERSION.json/source_files",
+    "portable_config_matches_archived_portable_bytes": true,
+    "new_HLS_run": "NOT RUN"
+  },
+  "frozen_runtime": {
+    "status": "PASS",
+    "all_47_files_byte_equal_to_archive": true,
+    "tool_payloads_verified": 46,
+    "tools_manifest_sha256": "76cd08c4f37ee26724cd781cf5a560a804e29d3fa7f59cb995e07561b100b47f",
+    "source_manifest_sha256": "da6a2c0d2d8596ac3caa0fe88dadcc6f29c68349d569aca7e32d7d7f961462b4",
+    "command": "python -X utf8 -B board/runtime/verify_tools.py"
+  },
+  "runtime_python": {
+    "status": "PASS",
+    "command": "python -X utf8 -B board/run_cpu_tests.py",
+    "tests_run": 101,
+    "passed": 98,
+    "skipped": 3,
+    "skip_reasons": [
+      "External complete-model fixture not bundled",
+      "Original published-load source fixture not bundled",
+      "Native POSIX root test unavailable on Windows"
+    ]
+  },
+  "model_python": {
+    "status": "PASS",
+    "command": "python -X utf8 -B -m unittest discover -s model -p test_*.py -v",
+    "temporary_environment": "TEMP and TMP set to this checkout model/.test_tmp for the child Python process; restored afterward",
+    "tests_run": 98,
+    "passed": 98,
+    "skipped": 0,
+    "earlier_attempt": {
+      "status": "FAIL",
+      "errors": 24,
+      "reason": "Windows sandbox default temporary directory cleanup raised PermissionError; no source change; rerun with checkout-owned TEMP/TMP passed"
+    }
+  },
+  "new_document_relative_links": {
+    "status": "PASS",
+    "files_checked": 9
+  },
+  "hardware_tools_or_device_access": false,
+  "owner_executed": false,
+  "ARM_compile": "NOT RUN",
+  "HLS_RTL_Vivado": "NOT RUN",
+  "board_load_or_START": "NOT RUN",
+  "stable_performance": "NOT RUN",
+  "real_image_board_accuracy": "NOT RUN"
+}

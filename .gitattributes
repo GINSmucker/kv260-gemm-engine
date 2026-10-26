@@ -21,3 +21,15 @@ board/versions/** -text whitespace=-blank-at-eol,-blank-at-eof
 model/versions/** -text whitespace=-blank-at-eol,-blank-at-eof
 docs/versions/** -text
 results/versions/** -text
+
+# Active v3 copies preserve the same byte-pinned source and runtime payloads.
+hls/** -text whitespace=-blank-at-eol,-blank-at-eof
+board/** -text whitespace=-blank-at-eol,-blank-at-eof
+model/** -text whitespace=-blank-at-eol,-blank-at-eof
+docs/provenance/** -text whitespace=-blank-at-eol,-blank-at-eof
+
+# Preserve active branch source and copied provenance bytes.
+hls/** -text whitespace=-blank-at-eol,-blank-at-eof
+board/** -text whitespace=-blank-at-eol,-blank-at-eof
+model/** -text whitespace=-blank-at-eol,-blank-at-eof
+docs/provenance/** -text whitespace=-blank-at-eol,-blank-at-eof

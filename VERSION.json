@@ -1,0 +1,81 @@
+{
+  "schema": "kv260_version_branch_v1",
+  "version": "v3",
+  "name": "OPT50 reconfigurable Dense / 2:4 Sparse",
+  "branch": "codex/v3-opt50-sparse",
+  "source": {
+    "commit": "00efbf17ec540610f3b1a3f33d05fdcb1ed508ae",
+    "branch": "archive/dense-sparse-v1-v3-20261026",
+    "hls": "hls/versions/v3_sparse_opt50",
+    "runtime": "board/versions/v3_sparse_opt50/runtime_snapshot",
+    "model": "model/versions/v3_sparse12",
+    "runtime_tools_manifest_sha256": "76cd08c4f37ee26724cd781cf5a560a804e29d3fa7f59cb995e07561b100b47f",
+    "runtime_source_manifest_sha256": "da6a2c0d2d8596ac3caa0fe88dadcc6f29c68349d569aca7e32d7d7f961462b4"
+  },
+  "top": "model_gemm_top",
+  "abi_arguments": [
+    "X",
+    "W_data",
+    "W_meta",
+    "Y",
+    "M",
+    "K",
+    "N",
+    "mode"
+  ],
+  "active_paths": {
+    "hls": "hls",
+    "hls_config": "hls/hls_config.cfg",
+    "runtime": "board/runtime",
+    "model": "model"
+  },
+  "source_files": {
+    "hls/src/model_gemm_top.cpp": {
+      "bytes": 2534,
+      "sha256": "42c7c154c64469b4958ff6c851cfe8a024ff289071e804d2d2a158fd2a78f030"
+    },
+    "hls/src/model_gemm_core.hpp": {
+      "bytes": 11392,
+      "sha256": "b9d69e105106da43fcd5a651ba82ecbf7f263b718763008b8d5d9c3a0b64b9ad"
+    },
+    "hls/include/model_gemm_config.hpp": {
+      "bytes": 2476,
+      "sha256": "d04c99fb749b0a037960444066270da39ee8e83c39b1e68cb0941c0192ff6233"
+    },
+    "hls/tb/testbench.cpp": {
+      "bytes": 20751,
+      "sha256": "89926ba0c0c4bff4b81d0568be51d6982cca8d82ccf9e69434434cb01214ae77"
+    },
+    "hls/hls_config.cfg": {
+      "bytes": 567,
+      "sha256": "a896b2c4427d0c844b6d60b6bc7a30577cc4cdac1880c0b03a4eadeac2009330"
+    }
+  },
+  "verification": {
+    "active_source_identity": "PASS",
+    "runtime_file_audit": "PASS",
+    "synthetic_runtime_python_tests": "PASS",
+    "synthetic_model_python_tests": "PASS",
+    "local_check_record": "results/v3_active_layout_checks_20261026.json",
+    "hls_csim_new_config": "NOT RUN",
+    "hls_cosim_new_config": "NOT RUN",
+    "vivado_new_layout": "NOT RUN",
+    "ARM_compile_new_layout": "NOT RUN",
+    "board_execution_this_reorganization": "NOT RUN",
+    "historical_fair_pair": {
+      "status": "PASS",
+      "record": "results/versions/v3_fair_pair_20261025.json",
+      "scope": "One same-weights zero-input sample per arm, closed owner and bitwise result; no stable-performance or image-accuracy acceptance"
+    },
+    "active_native_cpp": {
+      "status": "PASS",
+      "scope": "Current active source native C++ synthetic testbench only; no HLS/RTL/board",
+      "evidence": "results/active_native_20261026.json"
+    }
+  },
+  "limitations": [
+    "Portable full/rtl HLS config activated without rerunning HLS; rtl is also a native testbench case-set name.",
+    "Frozen runtime retains historical boot, guardian, compiler and board path gates; cloning does not authorize or enable loading/START.",
+    "External model, images, IP, board preset and firmware binaries are not bundled."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "v3_default_path_preservation_v1",
+  "source_commit": "00efbf17ec540610f3b1a3f33d05fdcb1ed508ae",
+  "scope": "Mechanical preservation of former default files only; no hardware operation",
+  "moves": [
+    {
+      "from": "hls/src",
+      "to": "docs/provenance/pre_v3_default/hls/src"
+    },
+    {
+      "from": "hls/include",
+      "to": "docs/provenance/pre_v3_default/hls/include"
+    },
+    {
+      "from": "hls/tb",
+      "to": "docs/provenance/pre_v3_default/hls/tb"
+    },
+    {
+      "from": "hls/reports",
+      "to": "docs/provenance/pre_v3_default/hls/reports"
+    },
+    {
+      "from": "hls/hls_config.cfg",
+      "to": "docs/provenance/pre_v3_default/hls/hls_config.cfg"
+    },
+    {
+      "from": "hls/README.md",
+      "to": "docs/provenance/pre_v3_default/hls/README.md"
+    },
+    {
+      "from": "board/runtime",
+      "to": "docs/provenance/pre_v3_default/board/runtime"
+    },
+    {
+      "from": "board/vivado",
+      "to": "docs/provenance/pre_v3_default/board/vivado"
+    },
+    {
+      "from": "board/README.md",
+      "to": "docs/provenance/pre_v3_default/board/README.md"
+    },
+    {
+      "from": "model/cases",
+      "to": "docs/provenance/pre_v3_default/model/cases"
+    },
+    {
+      "from": "model/golden.py",
+      "to": "docs/provenance/pre_v3_default/model/golden.py"
+    },
+    {
+      "from": "model/quantize.py",
+      "to": "docs/provenance/pre_v3_default/model/quantize.py"
+    },
+    {
+      "from": "model/README.md",
+      "to": "docs/provenance/pre_v3_default/model/README.md"
+    },
+    {
+      "from": "docs/progress.md",
+      "to": "docs/provenance/pre_v3_default/docs/progress.md"
+    },
+    {
+      "from": "docs/verification.md",
+      "to": "docs/provenance/pre_v3_default/docs/verification.md"
+    },
+    {
+      "from": "docs/workbench.md",
+      "to": "docs/provenance/pre_v3_default/docs/workbench.md"
+    },
+    {
+      "from": "docs/workflow.md",
+      "to": "docs/provenance/pre_v3_default/docs/workflow.md"
+    },
+    {
+      "from": "results/README.md",
+      "to": "docs/provenance/pre_v3_default/results/README.md"
+    },
+    {
+      "from": "results/summary.csv",
+      "to": "docs/provenance/pre_v3_default/results/summary.csv"
+    }
+  ]
+}

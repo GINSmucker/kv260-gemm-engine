@@ -1,44 +1,11 @@
-# HLS 计算核
+# A · OPT50 HLS 计算核
 
-负责人：A
+活动代码为 [src/model_gemm_top.cpp](src/model_gemm_top.cpp)、[src/model_gemm_core.hpp](src/model_gemm_core.hpp) 和 [include/model_gemm_config.hpp](include/model_gemm_config.hpp)，来自归档 commit `00efbf17ec540610f3b1a3f33d05fdcb1ed508ae` 的 OPT50 快照。top/core/config/testbench 保持原字节，身份见 [VERSION.json](../VERSION.json)。
 
-## 当前候选
+单个 `model_gemm_top(X,W_data,W_meta,Y,M,K,N,mode)` 使用共享 32×16 MAC 阵列，`mode=0/1` 选择 Dense/2:4 Sparse。输出侧 stream-of-blocks/dataflow 保留；没有新增输入侧 X/W 双缓冲。尺寸限制为 M 1..197、K/N 为16倍数且不超过576、K×N≤110592，详见 [共同 ABI](../docs/interface.md) 和 [数据格式](docs/sparse24_axi_format_v0.1.md)。
 
-`OPT38 full-K v1`，来源为团队交接版本 `team-handoff-20261009`。
+[hls_config.cfg](hls_config.cfg) 是活动配置，逐字节采用已提供的 portable 配置，保留器件 `xck26-sfvc784-2LV-c`、8 ns 时钟与同一综合源码，将 CSim/Cosim 用例集设为 `full`/`rtl`。工作目录设为本目录；这份新位置配置在本次整理中未运行 HLS。`rtl` 在 native testbench 中只是用例集名称，不能冒充 RTL 仿真。
 
-- 顶层：`model_gemm_top`
-- 数据：X/W 为 INT8，Y/累加为 INT32
-- tile：`TM=8`、`TN=64`、`TK=32`
-- 微结构：每周期形成 8×16 外积，设计并行度 128 MAC/cycle
-- X/W AXI 指针：32 位打包，每个字包含 4 个 INT8
-- 控制：AXI4-Lite + `ap_ctrl_hs`
+本机 C++ 检查会编译程序并写入全新输出目录，不生成 IP。历史 `tools/run_native_tests.ps1` 要求外部 AXI golden 包，并会创建 `.build`；没有该包时应拒绝，不生成占位权重。实际导出 C++/RTL 的来源对齐记录见 [hls_source_alignment.json](../board/evidence/hls_source_alignment.json)，不能将文件对齐等同于本次重新综合。
 
-当前只接受以下 5 个尺寸：
-
-| family | M | K | N |
-|---|---:|---:|---:|
-| head | 1 | 192 | 1000 |
-| proj | 197 | 192 | 192 |
-| qkv | 197 | 192 | 576 |
-| fc1 | 197 | 192 | 768 |
-| fc2 | 197 | 768 | 192 |
-
-它不是通用任意 M/N/K 的 dense 引擎。修改尺寸表、打包方式或顶层接口时，必须同步修改 testbench 与 `docs/interface.md`。
-
-## 文件
-
-```text
-src/model_gemm_top.cpp       HLS 顶层和 AXI pragma
-src/model_gemm_core.hpp      计算核心
-include/model_gemm_config.hpp 类型、容量和合法尺寸
-tb/testbench.cpp             C/RTL 共用测试平台
-tb/public_cases.hpp          公开测试向量定义
-hls_config.cfg               Vitis 2026.1 工程配置
-reports/synthesis.md         综合数据摘要
-```
-
-## 当前验证状态
-
-源码最初面向 Vitis HLS 2020.2.2。本目录的迁移配置已在 Vitis 2026.1 下通过 C Simulation：160 个合法用例通过，8 个非法尺寸被正确拒绝，共比较 10,925,312 个输出。C Synthesis 和 C/RTL Co-simulation 仍需重新运行，当前状态以 `docs/verification.md` 为准。
-
-生成的工作目录放在 `hls/work/`，不要提交到 Git。导出的 IP/`.xo` 应作为 GitHub Release 附件保存。
+原默认核已移到 [pre_v3_default/hls](../docs/provenance/pre_v3_default/hls/README.md)，历史 OPT50 原配置保留在 `docs/provenance/opt50_original_hls_config.cfg`（从仓库根目录定位）。平台、PS 软件与结果从 [C 入口](../board/README.md) 和 [结果入口](../results/README.md) 进入。
