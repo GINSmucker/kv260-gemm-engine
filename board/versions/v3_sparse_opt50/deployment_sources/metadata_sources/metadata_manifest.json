@@ -1,0 +1,75 @@
+{
+  "schema": "opt50_metadata_sources_v1",
+  "status": "METADATA_SOURCES_READY_NOT_PACKED",
+  "abi": "OPT50_SPLIT128_AP_CTRL_HS_V1",
+  "format": "H576_SPARSE24_SPLIT128_V1",
+  "run_id": "build_20261024_132157_775_c2e60ae4",
+  "metadata_uuid": "fd96539d-4cbc-f732-7694-0f0236ca1cf3",
+  "observer_tags": [
+    4254487453,
+    1287452466
+  ],
+  "register_header_sha256": "fc243d24a6e87de438fa0db99e9ade55a3c1467b9ed9346a58eb34c95cf91c73",
+  "verified_receipt_sha256": "2cea5094bba1f914b2aba31434359f7afadc4d60622c57cf440d064df8bbf5d2",
+  "verified_artifacts": {
+    "artifacts/kv260_opt50.bit": {
+      "bytes": 7797910,
+      "sha256": "63b19634a6ab3ff27773d0695d9afa5b2cea4416fe669342de1aba16b1964209"
+    },
+    "artifacts/kv260_opt50.bit.bin": {
+      "bytes": 7797692,
+      "sha256": "033f8ed4752b2d70b7fc93ba3a5c4669371d73660bb84c134c88b67abadd6e2b"
+    },
+    "artifacts/kv260_opt50.hwh": {
+      "bytes": 300561,
+      "sha256": "7b6bd6b4fe899e0a90874826ff363c7e86fcf535cef93043b3e4a2261c03d75d"
+    },
+    "artifacts/kv260_opt50.xsa": {
+      "bytes": 3802175,
+      "sha256": "608867a8165003d8b95d7b2bb8780501534d990894aa34ee963a6e12fcc5ad5a"
+    }
+  },
+  "clock_hz": 125000000,
+  "axi_bits": 128,
+  "memory_note": "Two physical-policy DDR windows of 2 GiB each; NOT the wider HWH address aperture",
+  "section_sources": {
+    "EMBEDDED_METADATA": "embedded_metadata.xml",
+    "IP_LAYOUT": "ip_layout.json",
+    "MEM_TOPOLOGY": "mem_topology.json",
+    "CONNECTIVITY": "connectivity.json"
+  },
+  "allowed_packed_sections": [
+    "EMBEDDED_METADATA",
+    "IP_LAYOUT",
+    "MEM_TOPOLOGY",
+    "CONNECTIVITY",
+    "ASK_GROUP_TOPOLOGY",
+    "ASK_GROUP_CONNECTIVITY"
+  ],
+  "BITSTREAM_section": "FORBIDDEN",
+  "xclbin_packing": "NOT_RUN",
+  "board": "NOT_RUN",
+  "verification_scope": "NOT_BOARD_TEST; verified system artifacts and metadata source ABI only",
+  "files": {
+    "ip_layout.json": {
+      "bytes": 529,
+      "sha256": "0e7e9618e270b4007c0812ef615d25912b09b47371c5f59639233063613219b2"
+    },
+    "mem_topology.json": {
+      "bytes": 406,
+      "sha256": "27f994d15f6582204b95c30b1d8cc5af91a57f0003484c5891b86c1740be0e10"
+    },
+    "connectivity.json": {
+      "bytes": 931,
+      "sha256": "562cfb87ca0a1a75edc3d0d83218e5537ae878ff557e967443a961c1725a96c1"
+    },
+    "embedded_metadata.xml": {
+      "bytes": 3258,
+      "sha256": "17fc0eed29036988291cab6da5a1b2724a249c77e5ec21f6299ce99782784df7"
+    },
+    "xrt.ini": {
+      "bytes": 77,
+      "sha256": "2cb54b94a2e73abe06600c1e7cdba79ec02296652e7245766933f7076bbe51b6"
+    }
+  }
+}

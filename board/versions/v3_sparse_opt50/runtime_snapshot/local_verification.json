@@ -1,0 +1,74 @@
+{
+  "schema": "opt50_same_weights_fair_log_reader_fix1_verification_v1",
+  "date": "2026-10-25",
+  "measurement_profile": "same-weights-fair-single-shot-v1",
+  "status": "LOCAL_PERMISSION_AND_SOFTWARE_REGRESSIONS_PASS_NOT_BOARD_REVIEW_OR_COMPUTE",
+  "source_manifest": {
+    "bytes": 4776,
+    "sha256": "da6a2c0d2d8596ac3caa0fe88dadcc6f29c68349d569aca7e32d7d7f961462b4"
+  },
+  "python": {
+    "environment": "h576_sparse24/.venv/Scripts/python.exe",
+    "command": "python -X utf8 -B -m unittest discover -v -p test_*.py",
+    "tests_run": 110,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "cpp_cpu_tests": {
+    "compiler": "D:/Vivado/2026.1/Vitis/tps/mingw/10.0.0/win64.o/nt/bin/g++.exe",
+    "strict_O2_Wall_Wextra_Werror_FP_semantics": true,
+    "model_core_selftest": "PASS",
+    "performance_core_selftest": "PASS",
+    "all49_original_canonical_weights_and_both36PL_active_packs": "PASS",
+    "native_XRT_kernel_cpp_compiled": false,
+    "Windows_runtime_note": "MinGW runtime DLL directory must be in the test subprocess PATH; actual successful recheck exit0 after setting only this subprocess environment"
+  },
+  "execution_modes": {
+    "all_dense": {
+      "PL_dense": 36,
+      "PL_sparse": 0
+    },
+    "mixed": {
+      "PL_dense": 24,
+      "PL_sparse": 12
+    }
+  },
+  "equal_active_data_capacity_bytes": 3981312,
+  "active_data_sha256": {
+    "all_dense": "45d95d610314148a5b63eb9807ce18fe78337df40880cc4c2da29a080a81fb68",
+    "mixed": "73986692f0f1a9f5a4eccb8f6f5522ad896c84e5892b0ae0939ce640106cec4d"
+  },
+  "preservation": {
+    "performance_v2_pinned_files_unchanged": 28,
+    "original_model_payload_files_unchanged": 57,
+    "original_model_manifest_sha256": "ae50446008cc2c335c391777a172b220bdc39618f039f0627e4f750ddd124ffb",
+    "quantization_dequantization_plugin_client_owner_numeric_sources": "UNCHANGED",
+    "HLS_RTL_bitstream_ABI": "UNCHANGED"
+  },
+  "new_boot": "f0f2eed8-5820-4df5-ba19-d05527720f97",
+  "load_guardian_plan": "/var/lib/opt50-loadonly-fd96539d-v2/plan_74abb1e54663/plan.json",
+  "ARM_XRT_build": "NO_RECOMPILE_REQUIRED; installer must verify and copy existing successful v1 receipt and four AArch64 binaries unchanged",
+  "hardware_executed_by_fair_runtime": false,
+  "START_commands_issued_by_fair_runtime": 0,
+  "fair_pair_latency_measured": false,
+  "classification_accuracy_verified": false,
+  "next": "Install into NEW sibling, run unchanged binary/file audits and corrected guardian read-only review, then create an explicit all_dense plan. No new START authorized by this repair.",
+  "reader_fix": {
+    "affected_inputs": "Exactly eight fixed new load-guardian command stdout/stderr logs",
+    "accepted_leaf_modes": [
+      "0600",
+      "0644"
+    ],
+    "private_parent_mode": "0700",
+    "root_uid_required": true,
+    "single_link_required": true,
+    "no_links_required": true,
+    "stable_file_and_parent_identity_required": true,
+    "durable_returned_size_and_sha_required": true,
+    "ordinary_private_reader_unchanged": true,
+    "old_logs_or_permissions_modified": false,
+    "native_POSIX_root_file_smoke": "NOT_RUN_ON_WINDOWS; provided in repair archive for separate board CPU/file-only test"
+  },
+  "resident_reader_sha256": "aa0d886f0b2b07a1fb7cfbef5a2e2f3f8b5837646dbd74e7a69b66049b030a1c"
+}

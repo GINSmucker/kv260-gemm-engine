@@ -1,0 +1,116 @@
+{
+  "schema": "opt50_fair_pair_comparison_v1",
+  "status": "PASS_TWO_CLOSED_FAIR_ARMS_SINGLE_SAMPLE_ONLY",
+  "measurement_profile": "same-weights-fair-single-shot-v1",
+  "boot_id": "f0f2eed8-5820-4df5-ba19-d05527720f97",
+  "dense_plan_token": "86f915bb8d13",
+  "mixed_plan_token": "297d64ab65b1",
+  "same_logical_pruned_weights": true,
+  "same_binaries_and_tools": true,
+  "same_firmware_and_BO_capacities": true,
+  "single_sample_per_arm": true,
+  "accuracy_verified": false,
+  "stable_performance_verified": false,
+  "Dense_all36": {
+    "Runner_run_ms": 145.727537,
+    "CPU_reference_ms": 345.768368,
+    "Runner_setup_ms_excluded": 2223.61839,
+    "CPU_reference_setup_ms_excluded": 1147.81994,
+    "owner_Run_dispatch_ms_overlapping": 32.464951,
+    "native_intervals_ms_overlapping": {
+      "native_BEGIN_to_END_ms": 144.807728,
+      "sum_START_returned_to_completion_ms_all36": 26.68032,
+      "sum_START_returned_to_completion_ms_selected12": 8.669497,
+      "postrun_buffer_checks_ms_excluded": 277.800358,
+      "scope": "Host-observed register return through DONE/idle/drain detection; includes polling and observer overhead; NOT pure PL cycles or independent hardware START count"
+    },
+    "plugin_intervals_ms_overlapping": {
+      "status": "AVAILABLE_PLUGIN_MEMORY_ONLY",
+      "aggregate_ms": {
+        "client_gemm_or_PS_matmul": 48.944682,
+        "custom_op_total": 64.448706,
+        "dequantization": 8.843407,
+        "quantization": 6.598247
+      },
+      "PS_13_Linear_ms": {
+        "quantization": 1.414133,
+        "client_gemm_or_PS_matmul": 8.542017,
+        "dequantization": 1.334842,
+        "custom_op_total": 11.303832
+      }
+    },
+    "PL_dense": 36,
+    "PL_sparse": 0,
+    "PL_clock_hz_OS_observation": 124999999,
+    "logits_raw_sha256": "4a00db2b7d403dd654d057600c8ecc1ad6514d24cf6d181bf250bb2fae33f867"
+  },
+  "Mixed_24D_12S": {
+    "Runner_run_ms": 143.483705,
+    "CPU_reference_ms": 312.697048,
+    "Runner_setup_ms_excluded": 2239.038454,
+    "CPU_reference_setup_ms_excluded": 717.339884,
+    "owner_Run_dispatch_ms_overlapping": 29.332356,
+    "native_intervals_ms_overlapping": {
+      "native_BEGIN_to_END_ms": 142.627907,
+      "sum_START_returned_to_completion_ms_all36": 23.528775,
+      "sum_START_returned_to_completion_ms_selected12": 5.549665,
+      "postrun_buffer_checks_ms_excluded": 279.359514,
+      "scope": "Host-observed register return through DONE/idle/drain detection; includes polling and observer overhead; NOT pure PL cycles or independent hardware START count"
+    },
+    "plugin_intervals_ms_overlapping": {
+      "status": "AVAILABLE_PLUGIN_MEMORY_ONLY",
+      "aggregate_ms": {
+        "client_gemm_or_PS_matmul": 45.36036,
+        "custom_op_total": 61.479412,
+        "dequantization": 9.579126,
+        "quantization": 6.482336
+      },
+      "PS_13_Linear_ms": {
+        "quantization": 1.480705,
+        "client_gemm_or_PS_matmul": 8.685207,
+        "dequantization": 1.343294,
+        "custom_op_total": 11.521266
+      }
+    },
+    "PL_dense": 24,
+    "PL_sparse": 12,
+    "PL_clock_hz_OS_observation": 124999999,
+    "logits_raw_sha256": "4a00db2b7d403dd654d057600c8ecc1ad6514d24cf6d181bf250bb2fae33f867"
+  },
+  "Runner_speedup_Dense_over_Mixed": 1.0156382357146412,
+  "Runner_latency_reduction_ms": 2.243832000000026,
+  "Runner_latency_reduction_percent": 1.5397446811991518,
+  "logical_PL_weight_payload_bytes": {
+    "all_dense": 3981312,
+    "mixed": 3483648,
+    "selected_12_layers_reduction_percent": 37.5,
+    "all_36_PL_layers_reduction_percent": 12.5,
+    "scope": "Encoded Wdata+used metadata bytes, not measured DDR transactions; X/Y and allocated BO sizes unchanged"
+  },
+  "scope": "One zero-input complete-model Runner.run per arm, same quantized/pruned weights and software; NOT original-unpruned accuracy comparison or a steady-state benchmark",
+  "timing_warning": "Plugin, owner and native intervals overlap Runner.run and each other; never add them to total latency. Host completion observations are not pure PL cycles.",
+  "sampling_warning": "No warmup, median, P95 or statistical significance from this pair; negative savings are retained honestly",
+  "hardware_or_processes_modified": false,
+  "plans": {
+    "all_dense": "/var/lib/opt50-fair-fd96539d-v1/plan_86f915bb8d13/plan.json",
+    "mixed": "/var/lib/opt50-fair-fd96539d-v1/plan_297d64ab65b1/plan.json"
+  },
+  "terminal_services": {
+    "all_dense": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "exited"
+    },
+    "mixed": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "SubState": "exited"
+    }
+  },
+  "saved_evidence_only": true,
+  "warning": "No fresh CSR inspection, START, retry, unload, clock change, process signal or recovery authorized"
+}

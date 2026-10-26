@@ -1,0 +1,61 @@
+{
+  "ORT": "1.22.1",
+  "START_budget_per_plan": 36,
+  "active_data_capacity_bytes": 3981312,
+  "boot_id": "f0f2eed8-5820-4df5-ba19-d05527720f97",
+  "compiler": "Same established g++13, C++17/O2/strict FP semantics; new ARM build required, never run owner manually",
+  "excluded": [
+    "Session/Runner construction",
+    "explicit output copy and reference comparison",
+    "plugin memory snapshot",
+    "receipt fsync",
+    "owner INFO post-run full buffer checks",
+    "owner STOP and resource release"
+  ],
+  "execution": "Sequential; graph optimization OFF; spinning OFF; main CPU0/workers CPU1/2/3; owner four-core schedulable",
+  "execution_modes": {
+    "all_dense": [
+      36,
+      0
+    ],
+    "mixed": [
+      24,
+      12
+    ]
+  },
+  "graph_owner_payload_access": false,
+  "graph_owner_sync_calls": 0,
+  "hot_path_logging": "Fixed RAM trace/counters only; no per-operation disk I/O or detail formatting",
+  "included": [
+    "PS/PL model path",
+    "BEGIN/END state/idle/drain/error checks",
+    "client effective-length X TO_DEVICE and Y FROM_DEVICE synchronization"
+  ],
+  "input_sha256": "2449003209f501e928cd67ed0335614accf844bdf3432a3e6146b1f836249dc9",
+  "inter_threads": 1,
+  "intra_threads": 4,
+  "measurement_profile": "same-weights-fair-single-shot-v1",
+  "model_manifest_sha256": "ae50446008cc2c335c391777a172b220bdc39618f039f0627e4f750ddd124ffb",
+  "not_claimed": [
+    "A completed board test before execution",
+    "Pure PL cycles",
+    "Stable mean/p95/throughput",
+    "Classification accuracy",
+    "Controlled old-version comparison from one historical sample"
+  ],
+  "not_verified_per_layer": [
+    "input immutability",
+    "guards/static weight hashes"
+  ],
+  "numpy": "1.26.4",
+  "original_sources_logs_guardian_preserved": true,
+  "prerequisite": "Fresh newboot guardian74abb1e54663 files/process/service/flock/heartbeat/binding verified; historical previous-boot records preserved, not used as active-session permission",
+  "publication": "INFO after worker exit/Runner close: fresh four-BO synchronization, guards/staticW checks, then compact completion proof",
+  "resident_FPGA_reloaded": false,
+  "run_id": 1,
+  "safety": "50us polling; monotonic 120s per-layer deadline; no replay/retry, forced child termination, firmware/clock/reset action or CPU fallback",
+  "samples_per_plan": 1,
+  "schema": "opt50_fair_single_shot_scope_v1",
+  "timer": "perf_counter_ns immediately around exactly one Runner.run(image,run_id=1)",
+  "warmup": 0
+}

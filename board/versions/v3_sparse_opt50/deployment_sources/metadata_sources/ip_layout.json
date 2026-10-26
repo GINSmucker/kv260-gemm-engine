@@ -1,0 +1,23 @@
+{
+  "ip_layout": {
+    "m_count": "2",
+    "m_ip_data": [
+      {
+        "m_type": "IP_KERNEL",
+        "m_int_enable": "0",
+        "m_interrupt_id": "0",
+        "m_ip_control": "AP_CTRL_NONE",
+        "m_base_address": "0xA0000000",
+        "m_name": "model_gemm_top:gemm_1"
+      },
+      {
+        "m_type": "IP_KERNEL",
+        "m_int_enable": "0",
+        "m_interrupt_id": "0",
+        "m_ip_control": "AP_CTRL_NONE",
+        "m_base_address": "0xA0010000",
+        "m_name": "axi_observer:status_1"
+      }
+    ]
+  }
+}

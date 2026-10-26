@@ -1,0 +1,206 @@
+{
+  "schema": "opt50_model_arm_build_v1",
+  "status": "ARM_BUILD_PASS_NOT_BOARD_RUN",
+  "model_manifest": {
+    "bytes": 41541,
+    "sha256": "ae50446008cc2c335c391777a172b220bdc39618f039f0627e4f750ddd124ffb"
+  },
+  "sources": {
+    "source/b_plugin.cpp": {
+      "bytes": 18420,
+      "sha256": "ab4e93eb7031631e331f450484ca9393dd08837ba3058934bf21c400e2f8aea8"
+    },
+    "source/client.cpp": {
+      "bytes": 7407,
+      "sha256": "7032973503edc4feade9abe0e0e432796e00e0571cbbe12bac4b161928fb6fb8"
+    },
+    "source/client.h": {
+      "bytes": 701,
+      "sha256": "0c0da46e40bc04deb6ec95317ed08104d8a75ae1dddf8dc713d052d9390685f5"
+    },
+    "source/gelu4.h": {
+      "bytes": 4240,
+      "sha256": "19c042ee5734b034d184813267532f96ac6722f48f886457118874dd0f7ec6e4"
+    },
+    "source/headers/headers_manifest.json": {
+      "bytes": 541,
+      "sha256": "e3c7fa1d124d00e37b17ff2fa4193f553d2b5c7a0daebe8ba3244497081e7ab6"
+    },
+    "source/headers/onnxruntime_c_api.h": {
+      "bytes": 275409,
+      "sha256": "d683537d0fdc29e977b5520f7f15d87a0ac212ae6d94fa9be8893a52655621ae"
+    },
+    "source/headers/onnxruntime_cxx_api.h": {
+      "bytes": 128360,
+      "sha256": "28b21dfc371fb53d1ba67356adeb124f36643ee5ab6f1ad2e9afbf09eb4bf305"
+    },
+    "source/headers/onnxruntime_cxx_inline.h": {
+      "bytes": 104233,
+      "sha256": "c41b9a11aac46851f68f4bd888bb2444a0e1eb6b37eadb41bf15f5154b48ea31"
+    },
+    "source/headers/onnxruntime_float16.h": {
+      "bytes": 17860,
+      "sha256": "6c4db3d1954b266c4febe413351af86cac922e3448538e7e452e51d646e56a4a"
+    },
+    "source/headers/picosha2.h": {
+      "bytes": 13810,
+      "sha256": "ae5613548dbd3ff1028b136af97d8bb409036566febc5c0fd9b48099f9c55b8d"
+    },
+    "source/headers/sha256_crypto.h": {
+      "bytes": 791,
+      "sha256": "adcbda7981d824fa5baf7e69e25d0ccd6514462da243f0fd3b9b20577de9b754"
+    },
+    "source/kernel.cpp": {
+      "bytes": 17427,
+      "sha256": "a57d316a83d40607bb37a13d593737aef21b559206e302668fecba15339ec04b"
+    },
+    "source/kernel.h": {
+      "bytes": 748,
+      "sha256": "b9a977fbdf8162ff06a51f8eb5d2e7fea8245715d6ea9889ec5e9987c8aa985e"
+    },
+    "source/layout4.h": {
+      "bytes": 2518,
+      "sha256": "9b4b2ed6c49cfd7687c14de24528eb53ff9d888175855170cc8ed9fd5bf29dc5"
+    },
+    "source/model_core.hpp": {
+      "bytes": 11227,
+      "sha256": "662dc34278f9eb7585f782b5885e53c7d6121a0ad62b4a6aa0cc1d0f5b3ff456"
+    },
+    "source/native_gate.hpp": {
+      "bytes": 10323,
+      "sha256": "ca09b19a87de3032edd5ab0bc12ab8ba80dde752b6de330e2f2c30c7e7f6384f"
+    },
+    "source/owner.cpp": {
+      "bytes": 12982,
+      "sha256": "2316231c4f8962c67a52eb89024cec01886952d3c708eb7345b2591eee0cd343"
+    },
+    "source/picosha2.h": {
+      "bytes": 13422,
+      "sha256": "b13c180161ffac8d0adc81e033e493c409457c4d1258ab9781ac80579ba3bdd8"
+    },
+    "source/protocol.h": {
+      "bytes": 2800,
+      "sha256": "558b986e5936999a43240e72660b347ef84d5527d8d9a6fe9f7e6b1776dce440"
+    },
+    "source/qkv_dequant.h": {
+      "bytes": 977,
+      "sha256": "6a6c428ba19164296b0f264a1a03f9d76d41ef84cdb30f71bd58db003240e864"
+    },
+    "source/quant_neon.h": {
+      "bytes": 2784,
+      "sha256": "9dc4467440058740b034d386baeebcd24173c4fa2df2533551102452198a6cc6"
+    },
+    "source/route.h": {
+      "bytes": 372,
+      "sha256": "d5aaf98aa2945158d9210cae4d3a4441328bf11d02b1636c8224ad2022e0cb1c"
+    },
+    "test_model_core.cpp": {
+      "bytes": 4189,
+      "sha256": "801f9a950870eda685f9fac2c8da7500d37fc87f409ddc408c9d32b76e0bb7b0"
+    }
+  },
+  "compiler": {
+    "path": "/usr/bin/aarch64-linux-gnu-g++-13",
+    "bytes": 1711336,
+    "sha256": "d7417f64cab520d49347646f817afad682edf169b1ef281e4e3ca55d7a93b070",
+    "version": "aarch64-linux-gnu-g++-13 (Ubuntu 13.2.0-23ubuntu4) 13.2.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+  },
+  "commands": [
+    [
+      "/usr/bin/aarch64-linux-gnu-g++-13",
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-DKV5_DIAGNOSTIC",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-I/usr/include/xrt",
+      "-I/home/ubuntu/fpga_project/deploy/c3_runtime_probe_20260925/sdk/uuid-dev/usr/include",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/model",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source/headers",
+      "/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/test_model_core.cpp",
+      "-o",
+      "/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/build_arm_fix1/model_core_selftest"
+    ],
+    [
+      "/usr/bin/aarch64-linux-gnu-g++-13",
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-DKV5_DIAGNOSTIC",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-I/usr/include/xrt",
+      "-I/home/ubuntu/fpga_project/deploy/c3_runtime_probe_20260925/sdk/uuid-dev/usr/include",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/model",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source/headers",
+      "-fPIC",
+      "-shared",
+      "-fvisibility=hidden",
+      "/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source/b_plugin.cpp",
+      "/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source/client.cpp",
+      "-lxrt_coreutil",
+      "-l:libuuid.so.1",
+      "-l:libcrypto.so.3",
+      "-o",
+      "/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/build_arm_fix1/libopt50_model.so"
+    ],
+    [
+      "/usr/bin/aarch64-linux-gnu-g++-13",
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-DKV5_DIAGNOSTIC",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-I/usr/include/xrt",
+      "-I/home/ubuntu/fpga_project/deploy/c3_runtime_probe_20260925/sdk/uuid-dev/usr/include",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/model",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source",
+      "-I/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source/headers",
+      "/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source/owner.cpp",
+      "/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/source/kernel.cpp",
+      "-lxrt_coreutil",
+      "-l:libuuid.so.1",
+      "-l:libcrypto.so.3",
+      "-o",
+      "/home/ubuntu/fpga_project/opt50_integration/full_model_fd96539d_v1_fix1/build_arm_fix1/opt50_model_owner"
+    ]
+  ],
+  "binaries": {
+    "model_core_selftest": {
+      "bytes": 250136,
+      "sha256": "6e8d421cd2c2744fbe4ef5d1a243febc67b4272ae091e5413a2951567f824462"
+    },
+    "libopt50_model.so": {
+      "bytes": 172472,
+      "sha256": "19ab516aae47385793e88ac5a6324b37fa3061752d5a6e01378c92e3bc571185"
+    },
+    "opt50_model_owner": {
+      "bytes": 399336,
+      "sha256": "3d1c51c8ccf93310c5473b03a7b5ab35d20339058f238a815e1a95c11fe5dd8f"
+    }
+  },
+  "diagnostic": true,
+  "CPU_core_self_test": {
+    "returncode": 0,
+    "stdout": "PACK_HASH_AND_ALL49_CANONICAL_WQ_EQUIVALENCE_PASS\nMODEL_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\n",
+    "stderr": ""
+  },
+  "native_owner_executed": false,
+  "hardware_executed": false,
+  "accuracy_verified": false,
+  "performance_verified": false,
+  "next": "Native owner is gated; a separately reviewed one-model window is still required"
+}
