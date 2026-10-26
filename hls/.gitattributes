@@ -1,0 +1,4 @@
+# The active v1 files retain the original historical Git blob bytes.
+src/** -text
+tb/** -text
+hls_config.cfg -text

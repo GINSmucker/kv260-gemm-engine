@@ -1,22 +1,17 @@
-# 验证清单
+# v1 验证范围
 
-当前分支用于重新整理项目。下表仅记录本目录中的当前版本，不继承旧目录或旧 bitstream 的通过状态。
-
-| 项目 | 状态 | 说明 |
+| 对象 | 状态 | 依据及限定 |
 |---|---|---|
-| OPT38 源码导入 | PASS | 源自 `team-handoff-20261009` |
-| Vitis 2026.1 C Simulation | PASS | 160 个合法用例、8 个拒绝用例；10,925,312 个输出一致 |
-| Vitis 2026.1 C Synthesis | NOT RUN | 资源与时序待记录 |
-| C/RTL Co-simulation | NOT RUN | 等综合通过后执行 |
-| IP / xclbin 生成 | NOT RUN | 不能复用旧候选物冒充当前版本 |
-| XRT runtime 编译 | NOT RUN | 最新源码尚未导入 |
-| KV260 正确性测试 | NOT RUN | 需与 Golden Reference 比较 |
-| KV260 性能测试 | NOT RUN | 需注明尺寸、频率和计时边界 |
+| 活跃 top/header/TB/config 文件身份 | PASS | SHA256 与历史提交 `cd0870dd642378719fd844f8cdbe4cacaae36609` 的冻结快照一致；见 VERSION.json |
+| 历史 C Simulation | PASS | 历史 v0.2 摘要记载 7/7 小型合成用例；本次未重新跑 Vitis |
+| 历史 C Synthesis | PASS | 历史摘要记录 II=1 和资源估计；没有原始报告供当前完整复核 |
+| 历史 Verilog RTL Cosim | PASS | 历史摘要记载 7/7 事务；不是板端测量 |
+| 新活跃目录原生 C++ | PASS | 本机clang运行该版原testbench，绑定四文件身份；见results/active_native_20261026.json，不是HLS/RTL |
+| 新 HLS/RTL/IP 与导出 ABI | NOT RUN | 没有新工具运行；不能从历史摘要假定寄存器/AXI 位宽 |
+| 完整 KV260 平台、ARM runtime 和板端测试 | NOT RUN | 尚未提供本版配对实现 |
+| 完整模型精度、性能、长期稳定性 | NOT RUN | 不借用 H576/OPT50 数字 |
 
-## 每次候选版本的最低验收
+历史原文在归档分支 `archive/dense-sparse-v1-v3-20261026` 的 v1 快照中。
+本分支当前活跃路径已单独做原生功能检查，结果不继承旧路径或板端资格。
 
-1. C Simulation 覆盖全部登记尺寸，并至少包含零值、边界值和随机值。
-2. C Synthesis 达到目标时钟，并保存关键资源与 latency 数据。
-3. C/RTL Co-simulation 输出与 C testbench 一致。
-4. 板端输出逐元素对比 Golden Reference。
-5. 性能记录绑定 Git commit、IP/xclbin 哈希、矩阵尺寸和工具版本。
+普通 C++ 使用 `ap_int.h`、忽略 HLS pragma 的结果不能标作 C/RTL 联合仿真。真实板测和恢复许可由维护者针对当次硬件/启动身份另行安排，本分支不自动执行加载或计算。

@@ -1,3 +1,0 @@
-# Frozen historical source and report hashes include their original line endings.
-# Disable text normalization only within this snapshot directory.
-* -text

@@ -1,15 +1,11 @@
-# KV260 平台与 XRT
+# C · v1 板端集成边界
 
-负责人：C
+本分支只恢复初级 Dense HLS 核，**没有本版配对的完整 KV260 平台、XRT 调用程序或位流**。板端正确性、性能和完整模型推理均为 **NOT RUN**。
 
-## 当前内容
+- `runtime/`：说明未提供的匹配运行时；不再混放旧 OPT38 的占位 C++。
+- `platform/`：说明尚缺的硬件平台；不把旧平台 Tcl 当作可复用 v1 系统。
+- `deployment/`：不提供加载或计算命令。
+- `tests/`：说明尚缺板测，而不是伪造测试 PASS。
+- `versions/`：保留三阶段归档，不能用于选择本分支活跃 runtime。
 
-- `vivado/create_system.tcl`：从团队交接版本导入的平台创建脚本。
-- `vivado/constraints.xdc`：约束占位文件。
-- `runtime/`：最新 XRT v5 runtime 的目标位置，目前只有占位文件。
-
-## 当前限制
-
-交接包的最新 Git 源码中未包含完整 v5 runtime 实现，因此这里没有用旧 V2A/V2B 代码冒充新版本。取得权威源码后，应将公开头文件、实现、测试和构建配置放入 `runtime/`，并核对 `docs/interface.md`。
-
-`create_system.tcl` 也需要在新目录、新 IP 和当前 Vivado 版本下重新验证；存在文件不代表平台已经可以生成或上板。
+旧默认平台和占位 runtime 原样保留在 `docs/provenance/legacy_default_board/`。集成 v1 前需从实际导出 IP 核对 `gemm_top(X,W,Y,M,N,K)` 的寄存器和接口，编写新适配并验证，不可套用三指针 OPT38 或四指针 OPT50 的控制代码。

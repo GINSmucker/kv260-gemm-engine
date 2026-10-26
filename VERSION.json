@@ -1,0 +1,90 @@
+{
+  "schema": "kv260_version_branch_v1",
+  "version": "v1",
+  "name": "Initial tiled INT8 Dense GEMM v0.2",
+  "branch": "codex/v1-dense-initial",
+  "source": {
+    "repository": "GINSmucker/kv260-gemm-engine",
+    "commit": "cd0870dd642378719fd844f8cdbe4cacaae36609",
+    "tag": "v0.2.0",
+    "snapshot_path": "hls/versions/v1_dense_initial",
+    "algorithm_modified": false
+  },
+  "top": "gemm_top",
+  "abi_arguments": [
+    "X",
+    "W",
+    "Y",
+    "M",
+    "N",
+    "K"
+  ],
+  "active_paths": {
+    "hls": "hls",
+    "hls_config": "hls/hls_config.cfg",
+    "runtime": "board/runtime",
+    "model": "model"
+  },
+  "source_files": {
+    "hls/src/gemm.cpp": {
+      "bytes": 5762,
+      "sha256": "a901dd0195af03a312fdbcfa5a9631220816edffd7a31abef501bf90fd6cc558"
+    },
+    "hls/src/gemm.h": {
+      "bytes": 1000,
+      "sha256": "0572cba7f7618c206921144beceafe54c76e7e115899dc185c639d3100583721"
+    },
+    "hls/tb/testbench.cpp": {
+      "bytes": 4798,
+      "sha256": "18c3b13c80e7d106f0dc449c4970f86444c1fb715f36e6907edf0837c0b5a10b"
+    },
+    "hls/hls_config.cfg": {
+      "bytes": 270,
+      "sha256": "39fe3c94c1f5fdee6c579fdda166d55bc5c566e14f03e90f877f11a3ce9dd73e"
+    }
+  },
+  "verification": {
+    "source_identity": {
+      "status": "PASS",
+      "scope": "Byte identity to the frozen historical v0.2 source snapshot"
+    },
+    "historical_csim": {
+      "status": "PASS",
+      "scope": "Historical summary, seven small synthetic cases; not a new run"
+    },
+    "historical_synthesis": {
+      "status": "PASS",
+      "scope": "Historical summary only; original report not recovered"
+    },
+    "historical_rtl_cosim": {
+      "status": "PASS",
+      "scope": "Historical summary, seven transactions; not board evidence"
+    },
+    "native_cpp": {
+      "status": "PASS",
+      "scope": "Current active source native C++ synthetic testbench only; no HLS/RTL/board",
+      "evidence": "results/active_native_20261026.json"
+    },
+    "new_hls_rtl": {
+      "status": "NOT RUN",
+      "scope": "No new Vitis/HLS/RTL/IP run"
+    },
+    "board": {
+      "status": "NOT RUN",
+      "scope": "No paired v1 runtime or complete KV260 platform"
+    },
+    "model_accuracy": {
+      "status": "NOT RUN",
+      "scope": "No integrated classifier"
+    },
+    "performance": {
+      "status": "NOT RUN",
+      "scope": "No v1 board or complete-model latency measurement"
+    },
+    "active_native_cpp": {
+      "status": "PASS",
+      "scope": "Current active source native C++ synthetic testbench only; no HLS/RTL/board",
+      "evidence": "results/active_native_20261026.json"
+    }
+  }
+}

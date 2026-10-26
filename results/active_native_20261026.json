@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "version": "v1",
+  "branch": "codex/v1-dense-initial",
+  "build_returncode": 0,
+  "run_returncode": 0,
+  "profile": [
+    "default"
+  ],
+  "source_files": {
+    "hls/src/gemm.cpp": {
+      "bytes": 5762,
+      "sha256": "a901dd0195af03a312fdbcfa5a9631220816edffd7a31abef501bf90fd6cc558"
+    },
+    "hls/src/gemm.h": {
+      "bytes": 1000,
+      "sha256": "0572cba7f7618c206921144beceafe54c76e7e115899dc185c639d3100583721"
+    },
+    "hls/tb/testbench.cpp": {
+      "bytes": 4798,
+      "sha256": "18c3b13c80e7d106f0dc449c4970f86444c1fb715f36e6907edf0837c0b5a10b"
+    },
+    "hls/hls_config.cfg": {
+      "bytes": 270,
+      "sha256": "39fe3c94c1f5fdee6c579fdda166d55bc5c566e14f03e90f877f11a3ce9dd73e"
+    }
+  },
+  "stdout_sha256": "752136efbd315ab4c4dbba76f0ac5d58bbcbf510307857183d1650218f66de21",
+  "scope": "Native C++ only; rtl is a case-set name, not RTL simulation",
+  "hardware_access": false,
+  "FPGA_latency_measured": false
+}

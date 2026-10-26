@@ -1,59 +1,69 @@
-# KV260 · 完整模型协同推理
+# v1 · 初级 Tiled Dense GEMM
 
-> 本开发分支新增 [v1 初级 Dense / v2 优化 Dense / v3 当前 Sparse 源码归档](docs/versions/README.md)。
-> 归档保存已有代码与证据；Sparse 稳定性能与真实图片板端验收仍待完成。下文保留既有 Dense H576 成果说明。
+## 1. 版本与能力
 
-[完整交付与下载](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/team-handoff-20261007) · [网页使用指南](docs/workbench.md) · [冻结运行包](https://github.com/GINSmucker/kv260-gemm-engine/releases/tag/h576-summary-20261019)
+本分支 `codex/v1-dense-initial` 保存早期 **Dense v0.2**，来源提交 `cd0870dd642378719fd844f8cdbe4cacaae36609`（历史 tag `v0.2.0`）。活跃核是 `hls/src/gemm.cpp`，不是 OPT38、H576 或 OPT50。
 
-本首页展示冻结 H576 的完整成果；默认开发树仍保留既有计算基线。运行工作台或复核 H576 时，请取得上方完整交付分支，按对应模型、平台和运行包使用。
+计算 `Y[M,N] = X[M,K] × W[K,N]`：X/W 为 INT8，完整 K 累加和 Y 为 INT32。支持 `1 <= M,N,K <= 1024`；TM16/TN16/TK32、K 方向四路并行，支持 M/N/K 尾块。目标 K26、10 ns。没有 Sparse、INT4、DATAFLOW 或双缓冲。
 
-将完整视觉模型部署到边缘 FPGA，需要同时做好计算、数据交付、模型质量和运行展示。本项目在 KV260 上实现 CPU 与 FPGA 的固定分工：保留完整模型计算，让适合卸载的矩阵运算进入可编程逻辑，其余计算由处理器完成。
+顶层为 **`void gemm_top(X,W,Y,M,N,K)`**；维度顺序与后续版本不同。非法维度直接返回、不访问矩阵；没有可据此假定的 ERROR 返回寄存器。精确身份和状态见 [VERSION.json](VERSION.json)。
 
-当前成果采用冻结的 H576 紧凑模型与 Dense W8A8 数值路径。MLP 隐藏宽度为 576，包含十二个 Transformer 块和四十九个线性层，其中三十六层由 FPGA 执行、十三层由 CPU 执行。这是缩宽后的稠密模型，不是 2:4 稀疏加速器。
+## 2. 目录
 
-![成果工作台](docs/images/hero_final.jpg)
+| 路径 | 当前入口 |
+|---|---|
+| [hls/](hls/README.md) | A：本版源码、testbench、相对路径 HLS 配置 |
+| [model/](model/README.md) | B：独立整数 Golden；没有冻结视觉模型或图片集 |
+| [board/](board/README.md) | C：说明尚缺的匹配平台和运行时，不提供占位驱动冒充实现 |
+| [docs/](docs/README.md) | 本版接口、状态和来源 |
+| [results/](results/README.md) | 分范围保存验证证据，不给未测项目填数 |
+| [tools/](tools/README.md) | 当前分支检查入口与历史工具边界 |
 
-## 已取得的结果
+其他版本快照保留在原 archive 分支，本分支只保留当前版本的活动内容。旧默认 OPT38 文件已保留至 `docs/provenance/legacy_default_*`；不要以目录中仍有历史文件推断其为当前实现。
 
-| 观察维度 | 已有实测结果 | 解释范围 |
-| --- | --- | --- |
-| 完整推理延迟 | 两轮中位数 142.78 / 142.68 ms | 同板、固定四线程、预热后完整浮点输入至浮点输出 |
-| 相对原模型 ARM FP32 | 约 2.295 / 2.294 倍 | 包含模型缩宽、PS 优化与 PL 交付的综合收益 |
-| 相对同候选 ARM W8A8 | 约 2.070 倍 | 对照是数值语义参考，不是高性能 INT8 CPU 内核 |
-| 既有质量集 | Top1 3039 / 3925，Top5 3729 / 3925 | 十类图像范围，Top1 比原 FP32 高 1.554 个百分点 |
-| 模型结果 | 同 ARM 候选与 PL 的 3,925,000 个 logits 逐位一致 | 不扩展为跨主机逐位一致结论 |
-| 有限连续运行 | 5,000 次推理、十轮正式加载回退 | 二十张公开图片重复使用，不能视为新增质量样本 |
-| 浏览器交付 | 真实 PL 图片推理、性能对比、路由与下载已验证 | 新展示层另完成存档显示检查，未重跑其全部实时链路 |
+## 3. 构建与只读检查
 
-计时不包含模型初始化、图片预处理、硬件加载、结果序列化和验算。连续运行的 p95 / p99 为 143.71 / 148.98 ms，最大值为 175.44 ms；有限样本不构成长期尾延迟上界。全部有效样本保留，失败运行仍属于验证记录。
+只读结构/源文件身份检查，不编译、不访问设备：
 
-## 为什么能够更快
+```bash
+python -B tools/check_version_layout.py
+```
 
-主要收益来自减少实际重复工作。量化后的输入和整数输出复用固定共享缓冲，静态权重在初始化时装载。模型插件直接写入输入区并读取输出区，控制消息不携带大块矩阵。唯一硬件控制进程负责同步、启动和完成确认，保持简单的同步执行顺序。
+HLS 工具需使用已有 Vitis 2026.1。以下以 PowerShell 为例，须从 `hls/` 运行配置；**会写入全新 `hls/work/` 工作目录，不会加载板卡**。先确认示例输出目录不存在，后续执行使用新的目录名；不能覆盖旧报告。
 
-处理器继续使用四线程执行已有计算。QKV 结果直接写入消费者所需布局；GELU 的外围算术减少中间遍历，同时保留原生 Erf 和既定浮点舍入顺序。attention 保留现有内核。硬件保持单引擎、512 MAC、125 MHz 和 128 位通路，优化结论以完整交付成本衡量。
+```powershell
+Push-Location ./hls
+vitis-run.bat --mode hls --csim --config hls_config.cfg --work_dir ./work/v1_csim_new
+Pop-Location
+```
 
-## 架构与展示
+综合和 C/RTL Cosim 也会写工具工作目录，须依次使用与该源码匹配的同一新组件。当前不提供上板命令；没有匹配驱动时，不应套用 v2/v3 的寄存器或 systemd 命令。普通原生 C++ testbench 即使使用 Vitis 头文件，也不等于 HLS 或 RTL 仿真。
 
-![系统架构](docs/diagrams/architecture-preview.png)
+当前分支原生功能入口为 `tools/run_active_native.py`：只编译本版 `hls/src/gemm.cpp` 与 `hls/tb/testbench.cpp`，会写入全新输出目录并运行本机测试程序，不访问 FPGA；使用已有 Vitis 头文件不等于运行 Vitis CSim。
 
-架构图由 Archify 生成。[交互式架构说明](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/diagrams/architecture.html)下载后可通过浏览器打开，支持缩放、关系追踪和主题切换；GitHub 页面本身不执行交互式 HTML。
+## 4. 验证
 
-工作台将正式性能、图片交互测评、模型质量和有限稳定性分区展示。性能对比采用 CPU 与 PS／PL 两条曲线，可以切换参考并查看各样本。曲线展示真实保存的测量值，不生成平滑趋势或替代缺失数据。路由视图说明四十九层的静态分工，不把它表达成逐层进度或逐层耗时。
+| 项目 | 状态 | 范围 |
+|---|---|---|
+| 活跃四个源/配置文件与冻结 v0.2 快照逐字节一致 | PASS | 文件身份，不是计算测试 |
+| 历史 CSim、综合、RTL Cosim | PASS | 原 v0.2 摘要记载 7 个小矩阵用例；不冒充本次重跑或板测 |
+| 新活跃目录 HLS/RTL/平台/板端验证 | NOT RUN | 本次目录规范化没有运行这些工具 |
+| 完整视觉模型与真实图片精度/性能 | NOT RUN | 没有本版配对链路 |
 
-![性能双曲线](docs/images/performance_card.jpg)
+原摘要及来源见 [hls/reports/README.md](hls/reports/README.md)、[docs/verification.md](docs/verification.md)。不将 H576 的整图 170 ms/142 ms 或 OPT50 Sparse 测量归属于此核。
 
-## 阅读和使用
+## 5. 限制
 
-- [项目原理与当前状态](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/progress.md)：理解模型、运行时、硬件及剩余边界。
-- [打开和使用工作台](docs/workbench.md)：查看成果、运行图片、阅读性能和路由、下载结果。
-- [证据与验收范围](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/verification.md)：区分质量、性能、功能与有限稳定性结论。
-- [接口与工程协作](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/interface.md)：了解数值和执行职责。
-- [启动本机工作台](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/start-workbench.ps1)：使用已有 PowerShell 7 和 Node.js 24 或更高版本运行，默认展示存档与演示功能。
-- [按需交付资产](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/locks/ASSETS.lock.json)：冻结模型、运行包和公开验证输入按身份取得。
+- 四路并行的初级 Dense 核不等于整个分类模型，也不是“FP32 初版”。
+- 最终导出 AXI 数据位宽、地址宽度及寄存器偏移尚需新导出文件核对；不能用后续版本的 ABI 填补。
+- 历史摘要的 II=1 指每周期启动一组四路 K 乘加，不等于每周期完成一个输出或整个矩阵。
+- 没有 v1 完整 KV260 平台、XRT runtime、位流与板端性能。历史材料和其他分支的 PASS 不转移给本分支。
+- 不提交权重、图片、工具缓存和 FPGA 二进制；当前合成 testbench 自行生成小数据，不需要下载模型。
 
-## 当前交付边界
+## 6. 三分支导航
 
-这是有实测证据的研究交付总结，尚不等于联合正式发布。新增两千张质量保留集仍未使用；既有质量结论不外推至完整 ImageNet 泛化。跨主机 W8 逐值一致检查仍有失败记录，Chrome 自动上传本机 JPEG 的扩展权限路径仍待验证。永久 AXI 卡死恢复、无限期运行保证和从全新系统重建环境也不在已通过范围内。
+- [v1 · 初级 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v1-dense-initial)：本分支。
+- [v2 · H576 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v2-h576-dense)：独立模型与配对来源；不是 OPT46 的替代名称。
+- [v3 · OPT50 Dense/Sparse](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v3-opt50-sparse)：共享乘加阵列，运行时选择数据表示。
 
-旧默认开发配置、正式资格参考和其他资源候选保留独立身份，不能与当前 H576 成果混用。取得源码和资产不自动授权加载共享板卡；真实推理需要维护者建立匹配窗口。仓库不包含两千张质量保留集或 C 私有留出材料。
+三分支采用相同 A/B/C 顶层组织，但函数、ABI、形状、模型和验收资格各自独立。导航不表示尚未推送的分支已经在远端可访问。

@@ -1,44 +1,14 @@
-# HLS 计算核
+# A · v1 活跃 HLS 核
 
-负责人：A
+入口仅为 `src/gemm.cpp`、`src/gemm.h`、`tb/testbench.cpp` 和 `hls_config.cfg`。四文件原样来自历史 `v0.2.0` 提交 `cd0870dd642378719fd844f8cdbe4cacaae36609`；没有修改算法、数值或接口。
 
-## 当前候选
+- 顶层 `gemm_top(X,W,Y,M,N,K)`；X/W INT8、Y INT32。
+- M/N/K 各为 1～1024；TM16/TN16/TK32，四路 K 乘加，M/N/K 尾块零填充。
+- K26 `xck26-sfvc784-2LV-c`，目标 10 ns、不确定度 10%。
+- load/compute/store 顺序执行，没有 Sparse 或双缓冲。
 
-`OPT38 full-K v1`，来源为团队交接版本 `team-handoff-20261009`。
+在本目录使用配置，它只引用 `./src/` 和 `./tb/`。工具工作目录放 `work/` 的全新子目录；构建会写文件但不会自行上板。测试平台生成七个小型合成用例，原生 C++ 运行不是 RTL 验证。
 
-- 顶层：`model_gemm_top`
-- 数据：X/W 为 INT8，Y/累加为 INT32
-- tile：`TM=8`、`TN=64`、`TK=32`
-- 微结构：每周期形成 8×16 外积，设计并行度 128 MAC/cycle
-- X/W AXI 指针：32 位打包，每个字包含 4 个 INT8
-- 控制：AXI4-Lite + `ap_ctrl_hs`
+`include/` 没有本版独立头文件；真实声明位于 `src/gemm.h`。不要恢复旧 OPT38 的 `model_gemm_config.hpp`。精确 ABI 见 [接口](../docs/interface.md)，历史证据见 [reports](reports/README.md)，源文件 SHA 见 [VERSION.json](../VERSION.json)。
 
-当前只接受以下 5 个尺寸：
-
-| family | M | K | N |
-|---|---:|---:|---:|
-| head | 1 | 192 | 1000 |
-| proj | 197 | 192 | 192 |
-| qkv | 197 | 192 | 576 |
-| fc1 | 197 | 192 | 768 |
-| fc2 | 197 | 768 | 192 |
-
-它不是通用任意 M/N/K 的 dense 引擎。修改尺寸表、打包方式或顶层接口时，必须同步修改 testbench 与 `docs/interface.md`。
-
-## 文件
-
-```text
-src/model_gemm_top.cpp       HLS 顶层和 AXI pragma
-src/model_gemm_core.hpp      计算核心
-include/model_gemm_config.hpp 类型、容量和合法尺寸
-tb/testbench.cpp             C/RTL 共用测试平台
-tb/public_cases.hpp          公开测试向量定义
-hls_config.cfg               Vitis 2026.1 工程配置
-reports/synthesis.md         综合数据摘要
-```
-
-## 当前验证状态
-
-源码最初面向 Vitis HLS 2020.2.2。本目录的迁移配置已在 Vitis 2026.1 下通过 C Simulation：160 个合法用例通过，8 个非法尺寸被正确拒绝，共比较 10,925,312 个输出。C Synthesis 和 C/RTL Co-simulation 仍需重新运行，当前状态以 `docs/verification.md` 为准。
-
-生成的工作目录放在 `hls/work/`，不要提交到 Git。导出的 IP/`.xo` 应作为 GitHub Release 附件保存。
+`versions/` 只作来源归档，不是当前源码选择器；旧默认 HLS 树保留在 `docs/provenance/legacy_default_hls/`。历史 README 原文见 `versions/v1_dense_initial/README.md`，其中原根目录命令不能原样代替本分支入口。
