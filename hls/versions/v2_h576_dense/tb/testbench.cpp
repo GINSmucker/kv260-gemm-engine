@@ -150,13 +150,13 @@ int main(int argc,char** argv) {
             ok=ok && run_case(4,11,rows);
         }
     } else if(rtl) {
-        for(unsigned i=0;i<8 && ok;++i) ok=run_case(public_cases::RTL_TRANSACTIONS[i].shape,public_cases::RTL_TRANSACTIONS[i].test,rows);
+        for(unsigned i=0;i<12 && ok;++i) ok=run_case(public_cases::RTL_TRANSACTIONS[i].shape,public_cases::RTL_TRANSACTIONS[i].test,rows);
     } else {
-        for(unsigned shape=0;shape<5 && ok;++shape)
+        for(unsigned shape=0;shape<6 && ok;++shape)
             for(unsigned test=0;test<32 && ok;++test) ok=run_case(shape,test,rows);
     }
     if(ok) ok=invalid_cases(rtl);
-    const unsigned expected=profile=="dev_rtl_reuse_extreme_v1" ? 6 : (profile=="dev_reuse_extreme_v1" ? 10 : (rtl?8:160));
+    const unsigned expected=profile=="dev_rtl_reuse_extreme_v1" ? 6 : (profile=="dev_reuse_extreme_v1" ? 10 : (rtl?12:192));
     ok=ok && passed==expected && rejected==8;
     std::ofstream summary(rtl?"rtl_tb_summary.json":"csim_summary.json");
     summary<<"{\"status\":\""<<(ok?"PASS":"FAIL")<<"\",\"profile\":\""<<profile<<"\",\"valid_cases_passed\":"<<passed<<",\"invalid_cases_rejected\":"<<rejected<<",\"output_elements_compared\":"<<outputs<<",\"micro_unit_cases\":"<<(rtl?0:8)<<",\"signed_lane_checks\":"<<(rtl?0:16)<<",\"golden\":\"independent_INT64_complete_matrix\",\"guard_read_coverage\":\"RTL_AXI_MONITOR_REQUIRED\"}\n";

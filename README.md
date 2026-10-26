@@ -3,6 +3,11 @@
 > 本开发分支新增 [v1 初级 Dense / v2 优化 Dense / v3 当前 Sparse 源码归档](docs/versions/README.md)。
 > 归档保存已有代码与证据；Sparse 稳定性能与真实图片板端验收仍待完成。下文保留既有 Dense H576 成果说明。
 
+独立版本入口：[v1 初级 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v1-dense-initial) ·
+[v2 H576 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v2-h576-dense) ·
+[v3 OPT50 Sparse](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v3-opt50-sparse)。
+三个分支使用相同的 `hls/model/board/docs/results` 目录入口，各版本内容和验证范围见对应 README。
+
 [完整交付与下载](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/team-handoff-20261007) · [网页使用指南](docs/workbench.md) · [冻结运行包](https://github.com/GINSmucker/kv260-gemm-engine/releases/tag/h576-summary-20261019)
 
 本首页展示冻结 H576 的完整成果；默认开发树仍保留既有计算基线。运行工作台或复核 H576 时，请取得上方完整交付分支，按对应模型、平台和运行包使用。

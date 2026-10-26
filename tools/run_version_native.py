@@ -32,7 +32,7 @@ def main():
                                  str(args.vitis_root/'win64/lib/csim'), env.get('PATH', '')])
     rows = []
     versions = [('v1_dense_initial', 'src/gemm.cpp', []),
-                ('v2_dense_optimized', 'src/model_gemm_top.cpp', ['rtl']),
+                ('v2_h576_dense', 'src/model_gemm_top.cpp', ['rtl']),
                 ('v3_sparse_opt50', 'src/model_gemm_top.cpp', ['rtl'])]
     for name, top, profile in versions:
         source = root/'hls/versions'/name

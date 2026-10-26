@@ -1,42 +1,116 @@
 {
   "FPGA_latency_measured": false,
-  "compiler": "Vitis 2026.1 bundled clang-16 native Windows",
   "hardware_access": false,
-  "scope": "Native C++ functional regression only; not Vitis CSim, RTL, timing or board proof",
+  "scope": "Three active branches native C++ synthetic regression; no HLS, RTL or board access",
   "status": "PASS",
   "versions": [
     {
+      "FPGA_latency_measured": false,
+      "branch": "codex/v1-dense-initial",
       "build_returncode": 0,
+      "hardware_access": false,
       "profile": [
         "default"
       ],
       "run_returncode": 0,
+      "scope": "Native C++ only; rtl is a case-set name, not RTL simulation",
+      "source_files": {
+        "hls/hls_config.cfg": {
+          "bytes": 270,
+          "sha256": "39fe3c94c1f5fdee6c579fdda166d55bc5c566e14f03e90f877f11a3ce9dd73e"
+        },
+        "hls/src/gemm.cpp": {
+          "bytes": 5762,
+          "sha256": "a901dd0195af03a312fdbcfa5a9631220816edffd7a31abef501bf90fd6cc558"
+        },
+        "hls/src/gemm.h": {
+          "bytes": 1000,
+          "sha256": "0572cba7f7618c206921144beceafe54c76e7e115899dc185c639d3100583721"
+        },
+        "hls/tb/testbench.cpp": {
+          "bytes": 4798,
+          "sha256": "18c3b13c80e7d106f0dc449c4970f86444c1fb715f36e6907edf0837c0b5a10b"
+        }
+      },
+      "status": "PASS",
       "stdout_sha256": "752136efbd315ab4c4dbba76f0ac5d58bbcbf510307857183d1650218f66de21",
-      "testbench_sha256": "18c3b13c80e7d106f0dc449c4970f86444c1fb715f36e6907edf0837c0b5a10b",
-      "top_source_sha256": "a901dd0195af03a312fdbcfa5a9631220816edffd7a31abef501bf90fd6cc558",
-      "version": "v1_dense_initial"
+      "version": "v1"
     },
     {
+      "FPGA_latency_measured": false,
+      "branch": "codex/v2-h576-dense",
       "build_returncode": 0,
+      "hardware_access": false,
       "profile": [
         "rtl"
       ],
       "run_returncode": 0,
-      "stdout_sha256": "843507c32ea147e36eaebec50f5672cfa541861ed446ccbb5f003351e74dad67",
-      "testbench_sha256": "df40492f612d1ebe74aebef7f341017a04910dfff2b87873fb0878bccfb33dab",
-      "top_source_sha256": "4f855e84019f1fbb4f6663d6f3eb46cf8a8c2c0d49f2346090fee42ade731d16",
-      "version": "v2_dense_optimized"
+      "scope": "Native C++ only; rtl is a case-set name, not RTL simulation",
+      "source_files": {
+        "hls/hls_config.cfg": {
+          "bytes": 537,
+          "sha256": "064226631b74841dde53afc229c4e3ae1185bdca4dbfb8a0f1ebc3322933acaf"
+        },
+        "hls/include/model_gemm_config.hpp": {
+          "bytes": 1423,
+          "sha256": "7e10fbcfab10af95209461b728cf5b2b447ca267ecdee0e6550db812c7f206c4"
+        },
+        "hls/src/model_gemm_core.hpp": {
+          "bytes": 6130,
+          "sha256": "6f01b6f35beb63cedb4bf3aa39a1f2f39547811a8bf449e0ac6fc466a5e80719"
+        },
+        "hls/src/model_gemm_top.cpp": {
+          "bytes": 1343,
+          "sha256": "4f855e84019f1fbb4f6663d6f3eb46cf8a8c2c0d49f2346090fee42ade731d16"
+        },
+        "hls/tb/public_cases.hpp": {
+          "bytes": 3634,
+          "sha256": "300a5c4d52f7c737b891a4338af554096268279c0f505c7a65a0ac9c9644af06"
+        },
+        "hls/tb/testbench.cpp": {
+          "bytes": 8977,
+          "sha256": "854880fc41e8162120075689daf631852d0000fc7c626339b51535a6b9d398d0"
+        }
+      },
+      "status": "PASS",
+      "stdout_sha256": "ca2593231b66e9b86c2578918acfa79909613f5e8300f7e6c98cdfdd6c3dd9c6",
+      "version": "v2"
     },
     {
+      "FPGA_latency_measured": false,
+      "branch": "codex/v3-opt50-sparse",
       "build_returncode": 0,
+      "hardware_access": false,
       "profile": [
         "rtl"
       ],
       "run_returncode": 0,
+      "scope": "Native C++ only; rtl is a case-set name, not RTL simulation",
+      "source_files": {
+        "hls/hls_config.cfg": {
+          "bytes": 567,
+          "sha256": "a896b2c4427d0c844b6d60b6bc7a30577cc4cdac1880c0b03a4eadeac2009330"
+        },
+        "hls/include/model_gemm_config.hpp": {
+          "bytes": 2476,
+          "sha256": "d04c99fb749b0a037960444066270da39ee8e83c39b1e68cb0941c0192ff6233"
+        },
+        "hls/src/model_gemm_core.hpp": {
+          "bytes": 11392,
+          "sha256": "b9d69e105106da43fcd5a651ba82ecbf7f263b718763008b8d5d9c3a0b64b9ad"
+        },
+        "hls/src/model_gemm_top.cpp": {
+          "bytes": 2534,
+          "sha256": "42c7c154c64469b4958ff6c851cfe8a024ff289071e804d2d2a158fd2a78f030"
+        },
+        "hls/tb/testbench.cpp": {
+          "bytes": 20751,
+          "sha256": "89926ba0c0c4bff4b81d0568be51d6982cca8d82ccf9e69434434cb01214ae77"
+        }
+      },
+      "status": "PASS",
       "stdout_sha256": "858c9a15f7cad64bc15dff396ca10caa3730c5f5f733a889b0ed522b7d4e54ef",
-      "testbench_sha256": "89926ba0c0c4bff4b81d0568be51d6982cca8d82ccf9e69434434cb01214ae77",
-      "top_source_sha256": "42c7c154c64469b4958ff6c851cfe8a024ff289071e804d2d2a158fd2a78f030",
-      "version": "v3_sparse_opt50"
+      "version": "v3"
     }
   ]
 }

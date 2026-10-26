@@ -10,8 +10,8 @@
       "sha256": "30b7213d08389ba87ae3cb03fd66eb4f46904bb3c0322aad30b2df2c9eee5438"
     },
     "README.md": {
-      "bytes": 5965,
-      "sha256": "ec3e8266f2c6533dc502e6676e48aa3965f20948440ab3f44be360ad7d07ddcc"
+      "bytes": 6399,
+      "sha256": "b6eb9cc2469abb52f9ceb000fa44bc4fea01beda769539f84fd7c33d68b5d003"
     },
     "board/versions/v3_sparse_opt50/.gitignore": {
       "bytes": 197,
@@ -550,12 +550,12 @@
       "sha256": "d8428af6b7f1110ee2434261b5cb8256f77d0df0d186646a5e9dc8ac49389244"
     },
     "docs/interface.md": {
-      "bytes": 3150,
-      "sha256": "e767443083cea7e50beb08d48152d9ca3d948e39b836473c0cdccf5cecd9a412"
+      "bytes": 3167,
+      "sha256": "63425dd09f6d4cdaeffbeba25bce128cfed2ec705062c95197cf2149e9f154b9"
     },
     "docs/versions/README.md": {
-      "bytes": 6105,
-      "sha256": "a5c45c3fec92a87e31ca056618f7e3795fe2a43f7b7a33ef0d12ce265fd7720a"
+      "bytes": 7399,
+      "sha256": "b6334effb1ae8371331788600e4ec17e756232d591a649acc9cc99621dc36055"
     },
     "docs/versions/external_assets.md": {
       "bytes": 2368,
@@ -597,53 +597,53 @@
       "bytes": 4798,
       "sha256": "18c3b13c80e7d106f0dc449c4970f86444c1fb715f36e6907edf0837c0b5a10b"
     },
-    "hls/versions/v2_dense_optimized/.gitattributes": {
-      "bytes": 156,
-      "sha256": "5b9d6c2c93885f615bba60dd0d59b8f385a9b4e9d21cc89594e371f171c9e278"
+    "hls/versions/v2_h576_dense/README.md": {
+      "bytes": 1348,
+      "sha256": "fc89f6af1a833ff5bbf9bdd67096f92ab2036314652a570adfe0922a88c17ab5"
     },
-    "hls/versions/v2_dense_optimized/README.md": {
-      "bytes": 5678,
-      "sha256": "b139b3308ded222a7b81c0916f00d6f0b37a9b5fa964c2200df9aefa37f72410"
+    "hls/versions/v2_h576_dense/SNAPSHOT_STATUS.md": {
+      "bytes": 4253,
+      "sha256": "6bd5b3b89a55c0035639241385dc1fc12d28cd320e55aee1d9f9fe65e70961dd"
     },
-    "hls/versions/v2_dense_optimized/SNAPSHOT_STATUS.md": {
-      "bytes": 6972,
-      "sha256": "1049b9c6ae3420da2f4b79541dc9470dbfa6f187b81af18618e896a97adbbc2c"
+    "hls/versions/v2_h576_dense/axi_monitor.vh": {
+      "bytes": 13202,
+      "sha256": "68b92676af8e0ac95366c8470ede20d9b46dfddd3f69715e9e09720d5d1b8f99"
     },
-    "hls/versions/v2_dense_optimized/hls_config.cfg": {
-      "bytes": 574,
-      "sha256": "021085f4072399a57f6c4d32f4ce87010cf5f2826fbb5f7ec8514c7e8e300ef9"
+    "hls/versions/v2_h576_dense/axi_replay_postcheck.tcl": {
+      "bytes": 421,
+      "sha256": "c9f6431fd0e627d823252ca71fced39ad047e7830f2e904704b0927bcbb74411"
     },
-    "hls/versions/v2_dense_optimized/include/model_gemm_config.hpp": {
-      "bytes": 1413,
-      "sha256": "cd00720d34854a2539a0cf3bff4ed4530ea4fbdc4dc401a3c28b69edbb7d26ac"
+    "hls/versions/v2_h576_dense/hls_config.cfg": {
+      "bytes": 537,
+      "sha256": "064226631b74841dde53afc229c4e3ae1185bdca4dbfb8a0f1ebc3322933acaf"
     },
-    "hls/versions/v2_dense_optimized/reports/hls_cosim.rpt": {
-      "bytes": 1258,
-      "sha256": "18c347d471ea18f5451a0c09a30e230c76fd7506ac73bd2543a6f012b7049822"
+    "hls/versions/v2_h576_dense/include/model_gemm_config.hpp": {
+      "bytes": 1423,
+      "sha256": "7e10fbcfab10af95209461b728cf5b2b447ca267ecdee0e6550db812c7f206c4"
     },
-    "hls/versions/v2_dense_optimized/reports/hls_impl_pnr.rpt": {
-      "bytes": 194113,
-      "sha256": "ca23170c861af2b6c12591283f001c40ceb883f8f42eeda64d063618b798263d"
+    "hls/versions/v2_h576_dense/inject_axi_monitor.py": {
+      "bytes": 6678,
+      "sha256": "1d4848d8c73dba91fea61c99a961ce4167d79949de72feb9ff27ee924c32b50a"
     },
-    "hls/versions/v2_dense_optimized/reports/model_gemm_top_csynth.rpt": {
-      "bytes": 23281,
-      "sha256": "3a3b99851428199d8ef1999d7c6465ee14ee32ec7fb38e36dab12e276392ecd7"
+    "hls/versions/v2_h576_dense/src/model_gemm_core.hpp": {
+      "bytes": 6130,
+      "sha256": "6f01b6f35beb63cedb4bf3aa39a1f2f39547811a8bf449e0ac6fc466a5e80719"
     },
-    "hls/versions/v2_dense_optimized/src/model_gemm_core.hpp": {
-      "bytes": 9938,
-      "sha256": "46946029d99b4621ab906f1183650a93f2d4268d4d7bb297d5fcaa2b82e6df42"
-    },
-    "hls/versions/v2_dense_optimized/src/model_gemm_top.cpp": {
+    "hls/versions/v2_h576_dense/src/model_gemm_top.cpp": {
       "bytes": 1343,
       "sha256": "4f855e84019f1fbb4f6663d6f3eb46cf8a8c2c0d49f2346090fee42ade731d16"
     },
-    "hls/versions/v2_dense_optimized/tb/public_cases.hpp": {
-      "bytes": 3601,
-      "sha256": "6541ae949d5b71083f64e7f20dd23bfcf15c0c4c1a9213c677bc72996212c9f0"
+    "hls/versions/v2_h576_dense/tb/public_cases.hpp": {
+      "bytes": 3634,
+      "sha256": "300a5c4d52f7c737b891a4338af554096268279c0f505c7a65a0ac9c9644af06"
     },
-    "hls/versions/v2_dense_optimized/tb/testbench.cpp": {
-      "bytes": 8975,
-      "sha256": "df40492f612d1ebe74aebef7f341017a04910dfff2b87873fb0878bccfb33dab"
+    "hls/versions/v2_h576_dense/tb/testbench.cpp": {
+      "bytes": 8977,
+      "sha256": "854880fc41e8162120075689daf631852d0000fc7c626339b51535a6b9d398d0"
+    },
+    "hls/versions/v2_h576_dense/verify_axi_monitor.py": {
+      "bytes": 7990,
+      "sha256": "b3cfaa329e062a25e96edc72e175cb7bf1cfdf6fc8c72cea06c6d84028936379"
     },
     "hls/versions/v3_sparse_opt50/README.md": {
       "bytes": 5797,
@@ -858,6 +858,10 @@
       "sha256": "2b0ad3a65432b926bfda5ec9889df10f33caa4945276140be0766be9b92dae74"
     },
     "results/versions/native_functional_20261026.json": {
+      "bytes": 4005,
+      "sha256": "654115ba7153ddf44b2a67106aba01757bc9f012fb03a4d2cc6227c0bf92ba92"
+    },
+    "results/versions/native_functional_opt46_historical_20261026.json": {
       "bytes": 1549,
       "sha256": "a63e1d1a9f251624a7fbc21532efc8000fd1740b0771171f35531966848658f8"
     },
@@ -870,8 +874,8 @@
       "sha256": "51761fd2ea17b72a7089cff531c394df0589a60d9f43f20ac799c54fe6f097b8"
     },
     "tools/run_version_native.py": {
-      "bytes": 3825,
-      "sha256": "853403cfe670a2cb39b8851558e0895bc00346e5ff6fe09fdc6c6dd68312fd76"
+      "bytes": 3820,
+      "sha256": "747ec0020cc149a0a8e98f25574954fa6988c6e0c1f132ec90862efcdd87c936"
     }
   },
   "schema": "kv260_three_version_source_archive_v1",

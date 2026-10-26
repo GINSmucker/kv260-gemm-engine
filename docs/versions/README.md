@@ -7,8 +7,14 @@ v1/v2/v3 是本次归档标签，不替换历史 Git tag，也不是三套已经
 | 标签 | 精确实现 | 位置 | 当前用途 |
 | --- | --- | --- | --- |
 | v1 初级 Dense | 历史 `v0.2.0`，commit `cd0870dd642378719fd844f8cdbe4cacaae36609` 的 tiled INT8 核 | [源码](../../hls/versions/v1_dense_initial/SNAPSHOT_STATUS.md) | 保存早期分块、流水线实现；不是 FP32 核 |
-| v2 优化 Dense | 本机 OPT46 原始源码，512 MAC、128-bit 接口、输出侧 dataflow 缓冲 | [源码](../../hls/versions/v2_dense_optimized/SNAPSHOT_STATUS.md) | 保存优化前驱；其支持尺寸不能冒充 H576 |
+| v2 优化 Dense | C 已发布的真实 H576 Dense，512 MAC、128-bit 接口，支持 K=576 的 fc2 | [源码](../../hls/versions/v2_h576_dense/SNAPSHOT_STATUS.md) | 对应既有 Dense H576 模型与冻结运行包；不是 OPT46 |
 | v3 当前 Sparse | OPT50，单个共享乘加阵列，由 mode 选择 Dense / 2:4 Sparse | [HLS](../../hls/versions/v3_sparse_opt50/SNAPSHOT_STATUS.md)、[板端软件](../../board/versions/v3_sparse_opt50/SNAPSHOT_STATUS.md) | 当前 H576 十二层稀疏候选和固定路由运行软件 |
+
+三个独立版本分支采用相同的根目录入口：
+[v1 初级 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v1-dense-initial)、
+[v2 H576 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v2-h576-dense)、
+[v3 OPT50 Sparse](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v3-opt50-sparse)。
+本分支保留三份对照源码；独立分支的 `hls/` 是各自活动入口，以对应 README 为准。
 
 ## 两种比较问题要分开
 
@@ -46,10 +52,19 @@ v1 物理 AXI 宽度缺少对应导出 RTL 复核，不标作已确认 32-bit。
 
 远端 main 的 H576 首页已经索引 C 的冻结运行包、图片质量和有限连续运行记录。
 本分支不删除、不改写那些成果，也不把它们继承给 Sparse。
-原 H576 运行包能追溯 PS 源码、模型、位流及 metadata，但其完整匹配 HLS 源码
-在本次本地核对中未找到。OPT46 的原始形状包含 768，不接受 H576 fc2 的 K=576。
-因此不将 172.206422 ms 或 main 所列稳态约 142.7 ms 标作本次 v2/OPT46 的板测数据。
-要补齐三版本完整模型对照，须先取得匹配 H576 的 Dense HLS/platform 来源，或另建经过验证的适配版。
+更新远端资料后，已在提交 `f506f14e44190d035842be6e4bbc0ff431592c5d` 的 `hls/h576/`
+找到真实 H576 top/core/config 与 testbench，并按 `H576_SOURCE_MAP.json` 逐 SHA 核对。
+其 `H576_PACKAGE.lock.json` 与本机原 H576 运行包 manifest 原字节相同，因此 v2 已改为该来源。
+此前仅检查旧本地 refs 所得的“未找到 H576 源码”结论已被新资料修正。
+
+H576 core 沿用 OPT45 Dense 路径；它不包含 OPT46 的输出侧双缓冲。OPT46 原始形状不接受
+H576 fc2 的 K=576，不能仅换名称当作 H576。本分支旧 OPT46 快照保留于原提交历史，
+不再占据活动 v2 目录。172.206422 ms 或 main 所列稳态约 142.7 ms 属于各自固定条件下的
+Dense H576 记录，不是 OPT46 或本次新配置的复测。
+
+H576 原目录没有配对 HLS 配置；本次新建 8 ns 相对路径入口，尚未重跑 HLS/RTL。
+三版本完整性能排名仍需同条件测试；v2 与 v3 的模型权重、软件、接口和平台身份不同，
+不能直接用各自历史端到端数字解释稀疏收益。
 
 ## 保存内容与外部资产
 
@@ -75,7 +90,9 @@ v1 物理 AXI 宽度缺少对应导出 RTL 复核，不标作已确认 32-bit。
 python tools/check_version_snapshot.py
 ```
 
-本次新目录原生 C++ 三核功能检查、模型工具 56 项测试、板端证据工具 101 项测试（98通过、3跳过）
+当前 `native_functional_20261026.json` 保存三个独立分支活跃路径的新原生C++检查，均通过。
+旧OPT46检查另存 `native_functional_opt46_historical_20261026.json`，不作为当前v2证据。
+模型工具 56 项测试、板端证据工具 101 项测试（98通过、3跳过）及执行范围
 见 [归档检查回执](../../results/versions/archive_checks_20261026.json)。这些检查不访问板卡。
 原生 C++ 可用 `tools/run_version_native.py --vitis-root <已有Vitis目录> --out <全新输出目录>` 复现；
 会编译本机程序并写入新目录，参数 rtl 仅表示用例集，不是 RTL 仿真。

@@ -75,8 +75,9 @@ inline std::vector<int32_t> golden(const model_gemm::Shape& s,
 }
 
 struct Transaction { unsigned shape, test; };
-static const Transaction RTL_TRANSACTIONS[8] = {
-    {0,10},{1,10},{2,10},{3,10},{4,10},{4,5},{0,15},{1,16}
+static const Transaction RTL_TRANSACTIONS[12] = {
+    {0,10},{1,10},{2,10},{3,10},{4,10},{4,5},{0,15},{1,16},
+    {5,10},{5,5},{5,9},{5,15}
 };
 }
 #endif

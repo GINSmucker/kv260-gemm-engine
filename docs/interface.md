@@ -7,7 +7,7 @@
 | 快照 | 顶层参数 | 当前接口依据 |
 | --- | --- | --- |
 | v1 / 历史 tiled v0.2 | `gemm_top(X,W,Y,M,N,K)` | [原始源码与范围](../hls/versions/v1_dense_initial/SNAPSHOT_STATUS.md)；特别注意 M,N,K 顺序 |
-| v2 / OPT46 | `model_gemm_top(X,W,Y,M,K,N)` | [配置和原始 top](../hls/versions/v2_dense_optimized/SNAPSHOT_STATUS.md)；与旧 H576 来源未完整配对 |
+| v2 / H576 Dense | `model_gemm_top(X,W,Y,M,K,N)` | [真实 H576 原始 top 与来源](../hls/versions/v2_h576_dense/SNAPSHOT_STATUS.md)；三路128bit，包含 `197×576×192` |
 | v3 / OPT50 | `model_gemm_top(X,W_data,W_meta,Y,M,K,N,mode)` | [128bit split-format](../hls/versions/v3_sparse_opt50/docs/sparse24_axi_format_v0.1.md) 和对应平台 ABI |
 
 v3 当前导出控制偏移（字节）：返回状态0x10；X=0x18、W_data=0x24、W_meta=0x30、Y=0x3c，

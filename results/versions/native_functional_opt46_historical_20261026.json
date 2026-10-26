@@ -1,0 +1,42 @@
+{
+  "FPGA_latency_measured": false,
+  "compiler": "Vitis 2026.1 bundled clang-16 native Windows",
+  "hardware_access": false,
+  "scope": "Native C++ functional regression only; not Vitis CSim, RTL, timing or board proof",
+  "status": "PASS",
+  "versions": [
+    {
+      "build_returncode": 0,
+      "profile": [
+        "default"
+      ],
+      "run_returncode": 0,
+      "stdout_sha256": "752136efbd315ab4c4dbba76f0ac5d58bbcbf510307857183d1650218f66de21",
+      "testbench_sha256": "18c3b13c80e7d106f0dc449c4970f86444c1fb715f36e6907edf0837c0b5a10b",
+      "top_source_sha256": "a901dd0195af03a312fdbcfa5a9631220816edffd7a31abef501bf90fd6cc558",
+      "version": "v1_dense_initial"
+    },
+    {
+      "build_returncode": 0,
+      "profile": [
+        "rtl"
+      ],
+      "run_returncode": 0,
+      "stdout_sha256": "843507c32ea147e36eaebec50f5672cfa541861ed446ccbb5f003351e74dad67",
+      "testbench_sha256": "df40492f612d1ebe74aebef7f341017a04910dfff2b87873fb0878bccfb33dab",
+      "top_source_sha256": "4f855e84019f1fbb4f6663d6f3eb46cf8a8c2c0d49f2346090fee42ade731d16",
+      "version": "v2_dense_optimized"
+    },
+    {
+      "build_returncode": 0,
+      "profile": [
+        "rtl"
+      ],
+      "run_returncode": 0,
+      "stdout_sha256": "858c9a15f7cad64bc15dff396ca10caa3730c5f5f733a889b0ed522b7d4e54ef",
+      "testbench_sha256": "89926ba0c0c4bff4b81d0568be51d6982cca8d82ccf9e69434434cb01214ae77",
+      "top_source_sha256": "42c7c154c64469b4958ff6c851cfe8a024ff289071e804d2d2a158fd2a78f030",
+      "version": "v3_sparse_opt50"
+    }
+  ]
+}

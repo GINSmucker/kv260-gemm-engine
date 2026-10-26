@@ -1,29 +1,15 @@
 #ifndef MODEL_GEMM_CORE_HPP
 #define MODEL_GEMM_CORE_HPP
 #include "../include/model_gemm_config.hpp"
-#include <hls_streamofblocks.h>
 
 namespace model_gemm {
-// OPT46 changes only result hand-off. The external AXI word remains 128 bits.
-// Each block holds at most 16 rows x 768 INT32 results = 48 KiB.
-// Two BRAM blocks decouple the single compute engine from the AXI writer.
-static const unsigned OUTPUT_ROWS=16;
-static const unsigned OUTPUT_GROUPS=TN/MICRO_N;
-typedef ap_uint<512> output_pack_t;
-typedef output_pack_t output_block_t[OUTPUT_ROWS*OUTPUT_GROUPS];
-typedef hls::stream_of_blocks<output_block_t,2> output_blocks_t;
-static_assert(TM%OUTPUT_ROWS==0 && MICRO_N==16 && TN%MICRO_N==0,
-              "OPT46 output packing requires 16-column groups and whole slabs");
-
 inline input_t signed_lane(uint32_t word, unsigned lane) {
 #pragma HLS INLINE
     const int32_t byte=static_cast<int32_t>((word>>(lane*8))&255u);
     return static_cast<input_t>(byte>=128 ? byte-256 : byte);
 }
-inline void compute_and_pack(const wide_t* X, const wide_t* W,
-                             output_blocks_t& output_blocks,
-                             uint32_t M, uint32_t K, uint32_t N) {
-#pragma HLS INLINE off
+inline void dense_layer(const wide_t* X, const wide_t* W, wide_t* Y,
+                        uint32_t M, uint32_t K, uint32_t N) {
     wide_t xt[TM][64];
     input_t wbank[16][12000];
     output_t acc[TM][MICRO_N][TN/MICRO_N];
@@ -122,80 +108,24 @@ inline void compute_and_pack(const wide_t* X, const wide_t* W,
                     }
                 }
             }
-            const unsigned valid_m=M-m0<TM ? M-m0 : TM;
-            const unsigned groups=(valid_n+MICRO_N-1)/MICRO_N;
-            output_slabs: for (unsigned row0=0; row0<valid_m; row0+=OUTPUT_ROWS) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=2
-                // Acquiring a block waits for a FREE buffer. Leaving this scope
-                // publishes it, even though the producer function is not done.
-                hls::write_lock<output_block_t> block(output_blocks);
-                const unsigned rows=valid_m-row0<OUTPUT_ROWS ? valid_m-row0 : OUTPUT_ROWS;
-                pack_rows: for (unsigned row=0; row<rows; ++row) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=16
-                    pack_groups: for (unsigned group=0; group<groups; ++group) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=48
+            y_rows: for (unsigned mm=0; mm<TM; ++mm) {
+                if (m0+mm<M) {
+                    const uint32_t base=((m0+mm)*N+n0)/4;
+                    y_cols: for (unsigned word=0; word<valid_n/4; ++word) {
+#pragma HLS LOOP_TRIPCOUNT min=16 max=192
 #pragma HLS PIPELINE II=1
-                        output_pack_t value=0;
-                        pack_lanes: for(unsigned lane=0;lane<MICRO_N;++lane) {
+                        wide_t value=0;
+                        output_lanes: for(unsigned lane=0;lane<4;++lane) {
 #pragma HLS UNROLL
                             value.range(32*lane+31,32*lane)=static_cast<uint32_t>(
-                                acc[row0+row][lane][group]);
+                                acc[mm][(word%4)*4+lane][word/4]);
                         }
-                        // One BRAM word contains 16 INT32 results. Packing four
-                        // AXI beats at once avoids a one-beat/cycle hand-off
-                        // that would serialize compute almost as before.
-                        block[row*OUTPUT_GROUPS+group]=value;
-                    }
-                }
-            }
-        }
-    }
-}
-
-inline void write_output_blocks(output_blocks_t& output_blocks, wide_t* Y,
-                                uint32_t M, uint32_t N) {
-#pragma HLS INLINE off
-    // This traversal MUST match compute_and_pack: m tile, n tile, row slab.
-    // Dimensions determine each block's valid extent; no metadata FIFO is needed.
-    write_m_tiles: for (uint32_t m0=0; m0<M; m0+=TM) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=7
-        const unsigned valid_m=M-m0<TM ? M-m0 : TM;
-        write_n_tiles: for (uint32_t n0=0; n0<N; n0+=TN) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=2
-            const unsigned valid_n=N-n0<TN ? N-n0 : TN;
-            write_slabs: for (unsigned row0=0; row0<valid_m; row0+=OUTPUT_ROWS) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=2
-                // A READY block stays owned by this writer until every valid
-                // row has been consumed, then its storage becomes FREE again.
-                hls::read_lock<output_block_t> block(output_blocks);
-                const unsigned rows=valid_m-row0<OUTPUT_ROWS ? valid_m-row0 : OUTPUT_ROWS;
-                y_rows: for (unsigned row=0; row<rows; ++row) {
-#pragma HLS LOOP_TRIPCOUNT min=1 max=16
-                    const uint32_t base=((m0+row0+row)*N+n0)/4;
-                    // Keep the original contiguous full-row AXI write loop.
-                    // A short final row/group never writes beyond valid_n.
-                    y_cols: for (unsigned word=0; word<valid_n/4; ++word) {
-#pragma HLS LOOP_TRIPCOUNT min=2 max=192
-#pragma HLS PIPELINE II=1
-                        const output_pack_t packed=block[row*OUTPUT_GROUPS+word/4];
-                        const unsigned lo=128*(word%4);
-                        const wide_t value=packed.range(lo+127,lo);
                         Y[base+word]=value;
                     }
                 }
             }
         }
     }
-}
-
-inline void dense_layer(const wide_t* X, const wide_t* W, wide_t* Y,
-                        uint32_t M, uint32_t K, uint32_t N) {
-#pragma HLS INLINE off
-#pragma HLS DATAFLOW
-    output_blocks_t output_blocks;
-#pragma HLS BIND_STORAGE variable=output_blocks type=RAM_2P impl=bram
-    compute_and_pack(X,W,output_blocks,M,K,N);
-    write_output_blocks(output_blocks,Y,M,N);
 }
 }
 #endif
