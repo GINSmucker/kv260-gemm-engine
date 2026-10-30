@@ -1,0 +1,23 @@
+{
+  "archive_sha256": "c29a006fe472fd2bfb545d7bbf77f34a5090ff9315043cdd7e5830e518d61f7c",
+  "fused_expansion_implementation": {
+    "bytes": 55877,
+    "sha256": "155b4c509dbe219377ec7aa277ae49f76863996489a00099dc9995f327b63f9b"
+  },
+  "fused_graph": {
+    "bytes": 5603598,
+    "sha256": "0a695c9813a503e84a7efb728476b77aa4ee0c53935810ea43b9d2a52764f23a"
+  },
+  "fused_integer_expansion": {
+    "bytes": 5717268,
+    "sha256": "68a8c24f0927dd495af1bcd515edce9192bb563075fbce26184d9c5ff79ae708"
+  },
+  "hardware_accessed": false,
+  "original_archive_graph_modified": false,
+  "reference": {
+    "bytes": 19628633,
+    "sha256": "f2f203362a337a357028b8b99c853cd39bdc812cf1da41775c9e233907d5f415"
+  },
+  "schema": "opt50_original_dense_provenance_v1",
+  "weights_pruned": false
+}

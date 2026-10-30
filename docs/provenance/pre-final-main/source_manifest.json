@@ -1,0 +1,145 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 5699,
+      "sha256": "24198c504b2b9d2bb4e6fcae15e2acaf273bbb5a099045bbb75bd32117056865"
+    },
+    "board/README.md": {
+      "bytes": 697,
+      "sha256": "61823770ef317842b2d6375b06687546a2fc87e0ea68b3b088763f357b8aa830"
+    },
+    "board/runtime/CMakeLists.txt": {
+      "bytes": 199,
+      "sha256": "a316379dd148e6d42b78f8754fdecc8e7cbb9840d6f157cadc86dc8a3f3eef8a"
+    },
+    "board/runtime/model_gemm_runtime.cpp": {
+      "bytes": 113,
+      "sha256": "4ddcb0158734b98bb3a51c23da8e910b07a981066693dde3e3378e7004170b89"
+    },
+    "board/runtime/model_gemm_runtime.hpp": {
+      "bytes": 188,
+      "sha256": "bc7ae4ca9f0a753d44bcf7cd79ff2ef656c988b66511fc6ef2103414a78883b2"
+    },
+    "board/runtime/test_runtime.cpp": {
+      "bytes": 76,
+      "sha256": "306c509da86310863b1594792851272e24758b90719128c656d8f7ef7fa9c620"
+    },
+    "board/vivado/constraints.xdc": {
+      "bytes": 156,
+      "sha256": "42898c641888e50584831c0e542ce0c99634bcd627bf17df6475dd19de9c0b0b"
+    },
+    "board/vivado/create_system.tcl": {
+      "bytes": 8112,
+      "sha256": "5d84771a991f9da84b6952128b3c13f69ad8b037efa4ce7034e56d927a7daddd"
+    },
+    "docs/diagrams/architecture-preview.png": {
+      "bytes": 123650,
+      "sha256": "7fb7a9ba981505c09cdaaea7c9da8fd6509d2b615844fdc060435def244d263c"
+    },
+    "docs/history/KV260_\u4e09\u4eba\u534f\u4f5c\u89c4\u8303\u4e0e\u516d\u5468\u8ba1\u5212_v0.1.md": {
+      "bytes": 43815,
+      "sha256": "0f3e79a21f53cfd67766553e1ca692cb928b1c5075bde5b59df1d4ce509e2db1"
+    },
+    "docs/history/KV260_\u8fde\u63a5\u4e0e\u4f7f\u7528\u6307\u5357_\u542bFPGA\u8fd0\u884c\u73af\u5883\u72b6\u6001.md": {
+      "bytes": 13516,
+      "sha256": "0754243c9f445c546013658c1ac2049d4f545f85cd14248f4b45ff2344020bc3"
+    },
+    "docs/history/dense_tiled_report_v0.2.md": {
+      "bytes": 4893,
+      "sha256": "c3c4e0a7ac95e90ed199ba8ec4bfccadf8fd27ee8150db479196fe2ad76c81d3"
+    },
+    "docs/history/gemm_ip_interface_v0.1.md": {
+      "bytes": 2775,
+      "sha256": "2eca88d62aea165b7106b68c5cb5d7cbd64dc4a7f7945023f31f1f9025022dbc"
+    },
+    "docs/history/naive_auto_report_v0.1.md": {
+      "bytes": 2590,
+      "sha256": "91616e747007acea7279068337f3ade89de991b0cb5dcb60134680236079647b"
+    },
+    "docs/images/hero_final.jpg": {
+      "bytes": 67034,
+      "sha256": "88ddcd2b432524e228b48f849cbe26e4e905e5aa90e25f3689025fa05550a022"
+    },
+    "docs/images/performance_card.jpg": {
+      "bytes": 46113,
+      "sha256": "16103841dfcffd5c5efdcc2d70b8928369c5a2d0968e970da03a0d756e651ad6"
+    },
+    "docs/interface.md": {
+      "bytes": 1766,
+      "sha256": "3e9abd32545043cb85b6974581f0367ff0ec7dee254172776fac5379ea7753f2"
+    },
+    "docs/progress.md": {
+      "bytes": 1023,
+      "sha256": "d38c107e6c765075542f42daa5f87ce8869733e6c5e6e9c026309ed98f9943b6"
+    },
+    "docs/verification.md": {
+      "bytes": 1179,
+      "sha256": "d554c3ce18eebb9b5096ba48974e989348da68a198c7f112f5451dd1e0c9509f"
+    },
+    "docs/workbench.md": {
+      "bytes": 4620,
+      "sha256": "e659ca2310675d9b4f4b3212123e64f3c176c21f6b93a14cbf66d7c8b8e8e21d"
+    },
+    "docs/workflow.md": {
+      "bytes": 973,
+      "sha256": "04023c37498f79f39ce7bdbb1c4a636637e9cd964714b9e5623e4252573b664f"
+    },
+    "hls/README.md": {
+      "bytes": 1626,
+      "sha256": "106d7485ab65c4a33a8be6fe64846a49e0eb0b6a5a0e5801975784553e6ee5d5"
+    },
+    "hls/hls_config.cfg": {
+      "bytes": 340,
+      "sha256": "0dd69325a50e1f77629acaafab9e1b9824e69be922ef66e89b9c086f139b4764"
+    },
+    "hls/include/model_gemm_config.hpp": {
+      "bytes": 1228,
+      "sha256": "0447703eb344ac8853a5f81658462d2ea1a37d2b1b6f80dec6e6a14143c938ee"
+    },
+    "hls/reports/synthesis.md": {
+      "bytes": 980,
+      "sha256": "f99eb00e6777e64e2fa1921178c64c7a73fcb90bf4c535cdd85f319d1d3bbb23"
+    },
+    "hls/src/model_gemm_core.hpp": {
+      "bytes": 6304,
+      "sha256": "984fcaba0e6ef3157e9ccff4f8dd2b8ca271be0b74f086a4a5e0d1bb34df58d0"
+    },
+    "hls/src/model_gemm_top.cpp": {
+      "bytes": 1278,
+      "sha256": "7006f2cad585a65c275b9fd54e1d3e75261835214e82efb46422cda7009831f2"
+    },
+    "hls/tb/public_cases.hpp": {
+      "bytes": 3519,
+      "sha256": "f5a64583115d4cb8032caac162a5943478084e69cde5b0ee09859c9c282ed3d2"
+    },
+    "hls/tb/testbench.cpp": {
+      "bytes": 8005,
+      "sha256": "29d9b2945a0f65da9387dfbf5221f015b5799ba199c1fe744e4c71822b201276"
+    },
+    "model/README.md": {
+      "bytes": 615,
+      "sha256": "b687fa67b8832e075a41300051df2caabc3d6ecfdb0c2ce310077c7acce7174f"
+    },
+    "model/cases/manifest.json": {
+      "bytes": 188,
+      "sha256": "75b5a9ee5d859a2c50168fac098fe56d398a234a0910d337baba87ad97ae05e6"
+    },
+    "model/golden.py": {
+      "bytes": 729,
+      "sha256": "94848ab412c0aec330af190bede03b4109824b45cefac471f6c151c0717d627e"
+    },
+    "model/quantize.py": {
+      "bytes": 1711,
+      "sha256": "2a204bf34699512c57edce5fe206ff7b77d56b58a4206873147d4048857dcf4f"
+    },
+    "results/README.md": {
+      "bytes": 281,
+      "sha256": "2e2590be0f1f96b3e84ca5b73ebdaf66388ff332a1e2dadc2bf2ac903d9fd6a2"
+    },
+    "results/summary.csv": {
+      "bytes": 100,
+      "sha256": "de5a56d75f8b05f1a768c6d2f90d8407766a5f37ea9e7ef256ee775d5596f736"
+    }
+  },
+  "source_commit": "becf9337915ecd855d91a8e7450c26945889a449"
+}

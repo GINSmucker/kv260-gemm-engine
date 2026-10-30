@@ -1,0 +1,31 @@
+{
+  "checked_date": "2026-10-30",
+  "hardware_accessed": false,
+  "model_manifest": {
+    "bytes": 80704,
+    "sha256": "91ed1cd0a8b55cfde7e1a82403f879f1e225ae4c96cc47272f8dd92304a19f60"
+  },
+  "scope": "Native x86/host fake-backend tests of restored source,all49 canonical weights and bounded owner protocol; not ARM compilation or board execution",
+  "source_identity": "Original source file SHA values in release_sources.json",
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "model_core",
+      "source": {
+        "bytes": 9808,
+        "sha256": "ee412d2ae02f15528979958b3c1b25462722c0bab9c7277c1af4998cc446f239"
+      },
+      "status": "PASS",
+      "stdout": "PACK_HASH_AND_ALL49_CANONICAL_WQ_EQUIVALENCE_PASS\r\nRESIDENT_NATIVE_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\r\nMODEL_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\r\n"
+    },
+    {
+      "name": "performance_core",
+      "source": {
+        "bytes": 6616,
+        "sha256": "b2d4ca7a1e1c6f2a43a9f1d523ac33b63e6dda6919bb2fb721ec9639a057b199"
+      },
+      "status": "PASS",
+      "stdout": "PERFORMANCE_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\r\n"
+    }
+  ]
+}

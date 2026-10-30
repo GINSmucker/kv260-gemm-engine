@@ -12,3 +12,13 @@
 *.md -text
 *.json text eol=lf
 *.csv text eol=lf
+
+# Preserve every byte of the actually deployed source and original evidence.
+hls/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+board/runtime/snapshots/** -text -whitespace
+board/platform/** -text -whitespace
+board/deployment_sources/** -text -whitespace
+model/training_snapshot/** -text -whitespace
+results/board500/** -text -whitespace
+results/platform_history/** -text -whitespace
+docs/provenance/** -text -whitespace

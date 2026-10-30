@@ -1,0 +1,276 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "file": "data/train-00001-of-00052-886eb11e764e42fe.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00004-of-00052-bc97b5e788035bad.parquet",
+      "cached": 0,
+      "new": 1776
+    },
+    {
+      "file": "data/train-00003-of-00052-49870f486abf934b.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00000-of-00052-ab3669701d34fafd.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00007-of-00052-7ebbc227884edb2e.parquet",
+      "cached": 0,
+      "new": 1776
+    },
+    {
+      "file": "data/train-00006-of-00052-443d777da4499fe1.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00005-of-00052-9d0b127c7e0e09bb.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00002-of-00052-571cd07ccaf0aba0.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00010-of-00052-90357a90cf01564f.parquet",
+      "cached": 0,
+      "new": 1868
+    },
+    {
+      "file": "data/train-00009-of-00052-5d9ec470527af545.parquet",
+      "cached": 0,
+      "new": 1920
+    },
+    {
+      "file": "data/train-00013-of-00052-a27e982c9824b2fc.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00008-of-00052-7224e59e6fb2283d.parquet",
+      "cached": 0,
+      "new": 2016
+    },
+    {
+      "file": "data/train-00012-of-00052-c9dcf6cc363154af.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00011-of-00052-84441e954d2c2329.parquet",
+      "cached": 0,
+      "new": 1780
+    },
+    {
+      "file": "data/train-00014-of-00052-caf2b2509ba5bca4.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00015-of-00052-bdba5c26345dc257.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00016-of-00052-f0e7e2a77c85dddb.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00018-of-00052-2fa17f14cc8113e0.parquet",
+      "cached": 0,
+      "new": 1779
+    },
+    {
+      "file": "data/train-00021-of-00052-3660c4ef5916a594.parquet",
+      "cached": 0,
+      "new": 1806
+    },
+    {
+      "file": "data/train-00020-of-00052-3d2f3be76c1ba810.parquet",
+      "cached": 0,
+      "new": 1842
+    },
+    {
+      "file": "data/train-00017-of-00052-35dee92924c77695.parquet",
+      "cached": 0,
+      "new": 1869
+    },
+    {
+      "file": "data/train-00019-of-00052-213a7684b48d6a12.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00022-of-00052-5009c46203164a5b.parquet",
+      "cached": 0,
+      "new": 1866
+    },
+    {
+      "file": "data/train-00024-of-00052-c4d3713f0afbe4aa.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00023-of-00052-8112dbb3c625d13a.parquet",
+      "cached": 0,
+      "new": 1830
+    },
+    {
+      "file": "data/train-00028-of-00052-177f34038e9c9a41.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00027-of-00052-9fc8a75241a3bff4.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00026-of-00052-f14be58421a67130.parquet",
+      "cached": 0,
+      "new": 1920
+    },
+    {
+      "file": "data/train-00025-of-00052-6f44606ad3c37c83.parquet",
+      "cached": 0,
+      "new": 1728
+    },
+    {
+      "file": "data/train-00029-of-00052-30a255a07ff7f0a1.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00034-of-00052-c5493adb43fc85e9.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00031-of-00052-d6b3ddecb505510d.parquet",
+      "cached": 0,
+      "new": 1776
+    },
+    {
+      "file": "data/train-00030-of-00052-e03c81bb91998efe.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00035-of-00052-d798ec91d9a0ff6d.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00032-of-00052-c900ccd02789e979.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00037-of-00052-4ee8734426e31605.parquet",
+      "cached": 0,
+      "new": 1877
+    },
+    {
+      "file": "data/train-00033-of-00052-4c190857e211d139.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00036-of-00052-7fe4632282d81221.parquet",
+      "cached": 0,
+      "new": 1920
+    },
+    {
+      "file": "data/train-00039-of-00052-b109e5add285a95f.parquet",
+      "cached": 0,
+      "new": 1776
+    },
+    {
+      "file": "data/train-00040-of-00052-990121a5969b5d25.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00038-of-00052-7bd96ec24cd33d9b.parquet",
+      "cached": 0,
+      "new": 1915
+    },
+    {
+      "file": "data/train-00041-of-00052-62cf7e9821e34e46.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00042-of-00052-ecaecb37069945be.parquet",
+      "cached": 0,
+      "new": 1920
+    },
+    {
+      "file": "data/train-00044-of-00052-4644f2eae294bf72.parquet",
+      "cached": 0,
+      "new": 1872
+    },
+    {
+      "file": "data/train-00043-of-00052-bc1d99c96f17f3a3.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00046-of-00052-c0255165d012e10b.parquet",
+      "cached": 0,
+      "new": 1920
+    },
+    {
+      "file": "data/train-00045-of-00052-595d2e515a3ee7d9.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00048-of-00052-b19b8bd9a8957bd9.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00049-of-00052-2a355f06f10edd93.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00050-of-00052-8633d68c8a494520.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00047-of-00052-a3f3ab1e9cb8f878.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/train-00051-of-00052-e00f2fc9aebbf12b.parquet",
+      "cached": 0,
+      "new": 1824
+    },
+    {
+      "file": "data/val-00000-of-00002-b5248be478d25e41.parquet",
+      "cached": 0,
+      "new": 8940
+    },
+    {
+      "file": "data/val-00001-of-00002-85f3d9c8fa1edb63.parquet",
+      "cached": 0,
+      "new": 9060
+    }
+  ],
+  "sampling_plan_sha256": "e88edee382f154bcdeacd981eb4d5a9167f7787c8675b4ae044ede35761e347c"
+}

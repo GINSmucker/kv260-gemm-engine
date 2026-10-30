@@ -1,0 +1,93 @@
+[
+  {
+    "epoch": 0,
+    "tune_fp32": {
+      "images": 4500,
+      "top1_correct": 2732,
+      "top5_correct": 3779,
+      "top1_pct": 60.71111111111111,
+      "top5_pct": 83.97777777777777,
+      "cross_entropy": 1.7136785401238335
+    }
+  },
+  {
+    "epoch": 1,
+    "train_loss": 0.7716826905822753,
+    "train_ce": 1.2437281192779541,
+    "train_kd": 0.2996372613763809,
+    "updates": 1563,
+    "tune_fp32": {
+      "images": 4500,
+      "top1_correct": 2804,
+      "top5_correct": 3820,
+      "top1_pct": 62.31111111111111,
+      "top5_pct": 84.88888888888889,
+      "cross_entropy": 1.6252695100572374
+    },
+    "seconds_epoch": 455.0230839252472
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.7223049394893646,
+    "train_ce": 1.1635245628738404,
+    "train_kd": 0.28108531666755676,
+    "updates": 3126,
+    "tune_fp32": {
+      "images": 4500,
+      "top1_correct": 2820,
+      "top5_correct": 3847,
+      "top1_pct": 62.666666666666664,
+      "top5_pct": 85.4888888888889,
+      "cross_entropy": 1.601734260559082
+    },
+    "seconds_epoch": 246.36991262435913
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.6909112903690338,
+    "train_ce": 1.1095453427124022,
+    "train_kd": 0.2722772381687164,
+    "updates": 4689,
+    "tune_fp32": {
+      "images": 4500,
+      "top1_correct": 2846,
+      "top5_correct": 3842,
+      "top1_pct": 63.24444444444445,
+      "top5_pct": 85.37777777777778,
+      "cross_entropy": 1.5861564852396648
+    },
+    "seconds_epoch": 251.55966138839722
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.6702458745861053,
+    "train_ce": 1.072768397512436,
+    "train_kd": 0.26772335177898404,
+    "updates": 6252,
+    "tune_fp32": {
+      "images": 4500,
+      "top1_correct": 2854,
+      "top5_correct": 3842,
+      "top1_pct": 63.422222222222224,
+      "top5_pct": 85.37777777777778,
+      "cross_entropy": 1.577194649166531
+    },
+    "seconds_epoch": 292.66197419166565
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.6585982414150238,
+    "train_ce": 1.0514677417945861,
+    "train_kd": 0.2657287413740158,
+    "updates": 7815,
+    "tune_fp32": {
+      "images": 4500,
+      "top1_correct": 2860,
+      "top5_correct": 3846,
+      "top1_pct": 63.55555555555556,
+      "top5_pct": 85.46666666666667,
+      "cross_entropy": 1.5751045455932617
+    },
+    "seconds_epoch": 249.83623957633972
+  }
+]

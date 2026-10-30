@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE_VERIFIED_CACHE_REUSED_AND_MISSING_INFERENCE_SCORED",
+  "created_at": "2026-10-26T00:07:56.958819+08:00",
+  "reason": "Windows concurrent parent-directory mkdir returned WinError5 for epoch2; training complete",
+  "frozen_select_source_sha256": "434b0d10dace9ad400b40f6681cbb22451cf2035f3c448fef0c8b4093dfa80d0",
+  "recovery_source_sha256": "6c5972f5148298a55df2cf88bf73225a7ecb9eec890cd42b1128c3214b469aab",
+  "cached_results_count": 7,
+  "sampling_training_checkpoint_selection_rules_unchanged": true,
+  "acceptance_not_evaluated": true,
+  "jobs": [
+    {
+      "model": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch2\\model_w8a8.onnx",
+      "action": "infer_missing_checkpoint"
+    },
+    {
+      "model": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_continue10_20261025_run01\\model_w8a8.onnx",
+      "action": "reuse_verified_logits",
+      "original_logits_sha256": "e8eb230953eca70c08b8c3888e218bfacd7ebdefc0206f465adba8579eb5c1a7"
+    },
+    {
+      "model": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch3\\model_w8a8.onnx",
+      "action": "reuse_verified_logits",
+      "original_logits_sha256": "220f7692c3b0ff0a51653a7a3863d6cf8ca89b62b9f98af77d1c363b6bafdc98"
+    },
+    {
+      "model": "D:\\FPGA\\AI_Operator_Optimization\\h576_sparse24\\inputs\\baseline\\h576_w8.onnx",
+      "action": "reuse_verified_logits",
+      "original_logits_sha256": "689cf1569382b2a3f3e0bbff115e74afec3675c293f387e6dbd5bdfc2f3007c0"
+    },
+    {
+      "model": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch0\\model_w8a8.onnx",
+      "action": "reuse_verified_logits",
+      "original_logits_sha256": "e8eb230953eca70c08b8c3888e218bfacd7ebdefc0206f465adba8579eb5c1a7"
+    },
+    {
+      "model": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch1\\model_w8a8.onnx",
+      "action": "reuse_verified_logits",
+      "original_logits_sha256": "7d582527c4d3aa3dd23827bfae406205b544d044d2115968ac8c31cd13d202a6"
+    },
+    {
+      "model": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch4\\model_w8a8.onnx",
+      "action": "reuse_verified_logits",
+      "original_logits_sha256": "d53d21edcebc7fa63259069257fd8a1b1a19a89b990f30dcc63ab6d8aa45ab1d"
+    },
+    {
+      "model": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch5\\model_w8a8.onnx",
+      "action": "reuse_verified_logits",
+      "original_logits_sha256": "c92b322ed316a716911c6ab54667ce705fc5a90dae455511598f494319dde403"
+    }
+  ],
+  "selection_sha256": "b1ba6c50a6d2340a52bf7f4367582ecbec75cc28738d3c3bd4788a6aca942148"
+}

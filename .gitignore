@@ -46,3 +46,17 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Final release generated assets and verification work
+.release/
+.test_build/
+*.tar.gz
+*.zip
+*.onnx
+*.npy
+*.npz
+*.pt
+*.so
+*.ko
+*.xsa
+*.dtbo

@@ -1,0 +1,2205 @@
+[
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/00_Wq.bin",
+      "sha256": "6da1db0120083089dadf72c7f06d8a9a8b3a868258aeacc6fb969335cfec9389"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.0/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.0/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.0.attn.qkv",
+    "layer_index": 0,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "6da1db0120083089dadf72c7f06d8a9a8b3a868258aeacc6fb969335cfec9389",
+      "bias": "05a0beaa994c260a5ea5d583b0e014df6e0c287534b04da52e3d6c969e7fa667",
+      "sw": "9bbc36bf914997cd89cae08b50e56594d0f41d8fb5624e4b5cea4ea68748cfec"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "be269ddedbbfb4a2b33e0a6f2c19d9711965c015936e550a223dd02c1d8eecfc",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/01_Wq.bin",
+      "sha256": "81a311eae1d1c13589d3566c4e819d06502a263e38e68a376315889553bd0915"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.0/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.0/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.0.attn.proj",
+    "layer_index": 1,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "81a311eae1d1c13589d3566c4e819d06502a263e38e68a376315889553bd0915",
+      "bias": "ac25969043bd68b0d87ae2f333e1373aa0f85982bb0f9f3a19e6ccc64b7c5984",
+      "sw": "09b24e14a302054e8b6b9351f7c230875e55dfd83ffe2194860295e157affbee"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "d4d6f7887f1bfbe2b28d9af1ce1161a633a3f1711ac435c7340e0c4a8123a2e8",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/02_Wq.bin",
+      "sha256": "2e39896b7946bc008a4a53abb02c058abd415b16e1223219ee0be4944db6568d"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.0/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.0/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.0.mlp.fc1",
+    "layer_index": 2,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "2e39896b7946bc008a4a53abb02c058abd415b16e1223219ee0be4944db6568d",
+      "bias": "ec5f5746dbc3f94fe8b684d24bcc0d77c4dc8a5afa852c1480a7510651f8144f",
+      "sw": "8716fc3315b255fb7f87eda310b092e16c10d9c72793f770c2811d1832933267"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "516be29e10f8562d6901dbed8d6b53a3723bf0c8e3059ad5a496a1ced07d4465",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/03_Wq.bin",
+      "sha256": "4798a5469f4bd3cbacbda4c2e8a02f48cf379e5a88aa79cfd60c70f6739aa2ce"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.0/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.0/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.0.mlp.fc2",
+    "layer_index": 3,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "4798a5469f4bd3cbacbda4c2e8a02f48cf379e5a88aa79cfd60c70f6739aa2ce",
+      "bias": "f90ccc6bbaddf78927b42aa441dc3d191d8cb51466c2704e429c013aef56b446",
+      "sw": "37e7c4046b3004a3a32d121d12a416b548bb0c70b75425711437d15fae8c06e1"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "180264fd6089e4990814c61bed91ab598817d063f011f3bc8bbd08ea5c37bde8",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/04_Wq.bin",
+      "sha256": "5a941826aa55162a7981afcb52cd55e5d0e35edf1df588aafa25750c188e8e75"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.1/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.1/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.1.attn.qkv",
+    "layer_index": 4,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "5a941826aa55162a7981afcb52cd55e5d0e35edf1df588aafa25750c188e8e75",
+      "bias": "b3f50070690c59629f3f42cf7ffec5405edd7d55dfbe500453408b49280e6011",
+      "sw": "5f3a2883e6056913b64f28e5642fa935e9d7442e33618c76388e837483221777"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "4647b678a364440e0b611c8aa8e181a792e49e59e81fdcce6e84daf25b91cd80",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/05_Wq.bin",
+      "sha256": "2d2ac7dd1db389d8efc595e4afee290a3a898af451094345f7d6ba366927718e"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.1/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.1/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.1.attn.proj",
+    "layer_index": 5,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "2d2ac7dd1db389d8efc595e4afee290a3a898af451094345f7d6ba366927718e",
+      "bias": "db934563d40b4375edaa674a6ef46294090bc120e1e81fd13c275ca51e1dac66",
+      "sw": "b6e0f4dc14ccb7f8d70c2c3fbfcebd77df8143d69cd3ce79a95dffeb35ef0f01"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "724e29801886d0f5d1118e363b46cd9d1a6433005cb90bf5007b930d0c257345",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/06_Wq.bin",
+      "sha256": "a7b7c290eab5f87c7386343e9195847128bb9e831785541859dd9bf0dac953c0"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.1/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.1/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.1.mlp.fc1",
+    "layer_index": 6,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "a7b7c290eab5f87c7386343e9195847128bb9e831785541859dd9bf0dac953c0",
+      "bias": "23a1e786e1f8f286088fe0c9263b950eb59cf258fe7e1939e8f7771dc7c2986f",
+      "sw": "08da8faff4347bcdde755940ca74e07be4618510f48886553d8c48156bf706de"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "252839fbe734729a261493fd8bfdcebb3f131c85a4ff99ff23c8144ef1047f9f",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/07_Wq.bin",
+      "sha256": "e9eab2b30e8332a47be448fba0b383c66ae243225bb0bb966b2e59b4a5a7b287"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.1/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.1/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.1.mlp.fc2",
+    "layer_index": 7,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "e9eab2b30e8332a47be448fba0b383c66ae243225bb0bb966b2e59b4a5a7b287",
+      "bias": "3044e51f464a3441fb3eaf1157a8f1abaf050a94b54efd0481510def29691c97",
+      "sw": "c624f8133b01b1377f38170e8c21ac3fc8f116b56bb5c3d29cb5533ad5f27136"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "6c7fe86799bd4e56823d882c2a751727e7cac315a0e262038bd9b9a38cea2261",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/08_Wq.bin",
+      "sha256": "7d3b80df1fbafa4f28467592affe437bed043db6ce4a2ee534c1394decba735b"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.2/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.2/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.2.attn.qkv",
+    "layer_index": 8,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "7d3b80df1fbafa4f28467592affe437bed043db6ce4a2ee534c1394decba735b",
+      "bias": "c497077b94e9037c5ab025857d6281ba5466a98ac1389fe8af54b2f18d257a1d",
+      "sw": "52081db0fed723c45ed20985c3e7a7a97cb69b507de656ae32e0239ac6a69d03"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "db4b6306c685a67be5e345e7a8b9a1830606aa7a5965afe56d869f1b081b6c87",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/09_Wq.bin",
+      "sha256": "60544bcdb56023deba44a06c1b1f95a5ab9a990006afab1e0d000b29b9bc6fff"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.2/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.2/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.2.attn.proj",
+    "layer_index": 9,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "60544bcdb56023deba44a06c1b1f95a5ab9a990006afab1e0d000b29b9bc6fff",
+      "bias": "319657da93fcd29e193629ceb657c25b9d76c3e49bfd82ab52fd0b40946c4ef2",
+      "sw": "c8a7f442995c46a3a1977fc506bcd415a4b63d4e85f354e93f52bc40e93d4c9d"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "148ca37ec70d0bf96bbe9182fcea19339f7264979371d3462643e9ee0462afa7",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/10_Wq.bin",
+      "sha256": "25f9b7e8f1d4624dd0bc83dfd25d195d85022110717be98d6c600d89399d9c02"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.2/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.2/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.2.mlp.fc1",
+    "layer_index": 10,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "25f9b7e8f1d4624dd0bc83dfd25d195d85022110717be98d6c600d89399d9c02",
+      "bias": "cb8eb1c78db26e868c0a1b9d78f142c7657096633b96caabf577dfaedb6cb435",
+      "sw": "f1b588a068c2ec98d7f0760cbf64ece9a2ee921d4161514644147f3b5a5fc6be"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "26fa55ee8b8b9eed951d55f9a268c32c99aa85672e8390d02fa1a88eea4e382c",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/11_Wq.bin",
+      "sha256": "712726a13aaed5fd5752c58fa32b5733143dccae4598a6ddb6dc726065fad271"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.2/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.2/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.2.mlp.fc2",
+    "layer_index": 11,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "712726a13aaed5fd5752c58fa32b5733143dccae4598a6ddb6dc726065fad271",
+      "bias": "7bd3f1a856e66a53f5bfd7d1d6068113d018de45283231bd35c3fc546e13836c",
+      "sw": "8abd4b4e254f62cf18f1f5cb2fe8b6579fe09846fa447f834e45445070386342"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "3c87c791bec1bcc2df61e44bc41b898850a2e05f32632f082a12fd9456de53c6",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/12_Wq.bin",
+      "sha256": "65620f382dc78da4f15f7d24c4d95f9e51bce4a58d9bfca13c48ff189d8e6d88"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.3/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.3/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.3.attn.qkv",
+    "layer_index": 12,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "65620f382dc78da4f15f7d24c4d95f9e51bce4a58d9bfca13c48ff189d8e6d88",
+      "bias": "deffad792f7d7558979ce623e7be6bab3a4adcabee4ec6b2d736914885829da7",
+      "sw": "c8760431922c71e569782ad126e5fc87e81a537bda1be4f79dff4dad5fe8d9e6"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "7f67e7a40229ece09ea4063bd9ca078d03ed1ca91c44eb95d9324f6e10ab0ada",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/13_Wq.bin",
+      "sha256": "4f4b46e5e34a0b19a4fa990570358a6033890d48123b22112232325e9ddacd77"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.3/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.3/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.3.attn.proj",
+    "layer_index": 13,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "4f4b46e5e34a0b19a4fa990570358a6033890d48123b22112232325e9ddacd77",
+      "bias": "fef8a09fa1b76e46a578e9c3d45a7c4f097a4b4906824eedf3b2c717b19efa66",
+      "sw": "fbd1fe1ffc0f09a7c6c5ddeec21bd2598bd4f324a75328cb1d292902c2be9771"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "a9a54bece4177aff3dee5ed482cc91fee13523fe709fcb98b3d93a264a1306a3",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/14_Wq.bin",
+      "sha256": "a40538a6ab3b9af425c4782dbc7871218bf399ab6cfb404b2ff7606ff276b172"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.3/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.3/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.3.mlp.fc1",
+    "layer_index": 14,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "a40538a6ab3b9af425c4782dbc7871218bf399ab6cfb404b2ff7606ff276b172",
+      "bias": "ec502f3010880d84ef516c29ad2f9e1d12cd0c3dd072d2e471e4550a54d0caa4",
+      "sw": "358723ce58c2638a7678ec5a086029b59788f5b8afdf2bb20990b88cc3c06c37"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "63129c0ffbce22dbbf66fce2362237dc4136f9e5c899fecce39c5a7b6b29bc99",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/15_Wq.bin",
+      "sha256": "446b975b663d484752f7068bc58ebf30e8b2838e62e699cb406807d9de66279f"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.3/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.3/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.3.mlp.fc2",
+    "layer_index": 15,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "446b975b663d484752f7068bc58ebf30e8b2838e62e699cb406807d9de66279f",
+      "bias": "5736c6bc1d6a9c8437dfdc44388f58a5e910534fee22755d42960b8a90b01482",
+      "sw": "9124d266b2ebec62268b85ddbb78fd8b5353886a5e410562a0d1f0602023d6f4"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "33576ae4d86898516c3b146fcecd65126ffcf4e9d8e1889d9344755d03b48e1e",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/16_Wq.bin",
+      "sha256": "d2af8430a09cb5277723677a1ee8bcf84ed00ab2d6846c008d7a1d86b313fd82"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.4/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.4/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.4.attn.qkv",
+    "layer_index": 16,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "d2af8430a09cb5277723677a1ee8bcf84ed00ab2d6846c008d7a1d86b313fd82",
+      "bias": "95b37a24df0ba6031e069c95918a3cc9c3d1298143343bf14cf301f72a5b9869",
+      "sw": "bd9540139b396dae43fa0d4ec3d89aa953f8d5fd8942f4e563dca4a379518fc6"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "f6d619ef54ce81653f1d6e4ffe39d9c10c07d2cd4b943e43082d288d4e7f3aac",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/17_Wq.bin",
+      "sha256": "c94e223465df40dc57eff3ceecbc1face5d0a14548bab5f53961a39756b87aae"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.4/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.4/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.4.attn.proj",
+    "layer_index": 17,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "c94e223465df40dc57eff3ceecbc1face5d0a14548bab5f53961a39756b87aae",
+      "bias": "431933bec4ccc396d0d8aaba6af5c20713fa39de5f82995ad6361c0375d45734",
+      "sw": "1e4783c374d23b56baa9c7629157fe39706c11352d692d4f0204c4e65de59691"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "302784ed11f79eb39c004d2f74e1306f2be010b44083a8582ea7e2de01793f5b",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/18_Wq.bin",
+      "sha256": "5baa147e5532340f607a7f26807b4f80ad2fc3a5df1912c5ba1e0b2e6ded2a87"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.4/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.4/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.4.mlp.fc1",
+    "layer_index": 18,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "5baa147e5532340f607a7f26807b4f80ad2fc3a5df1912c5ba1e0b2e6ded2a87",
+      "bias": "a4928e304a1b904b4be87c5d0a85b8861426abe3dc284d3500b3f5df8a4528f3",
+      "sw": "a1b7fd00f453ada09131a0f80561becb4447e90e36e293205265ffe60833f913"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "8a430ce018af55845ef5b9e96a63166ba5f4edcd4fcf67ba8b256e31ce602f45",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/19_Wq.bin",
+      "sha256": "d10c631d4d321662090bb45559fe6e35fcf565638f671084cc3c3663132c50fc"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.4/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.4/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.4.mlp.fc2",
+    "layer_index": 19,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "d10c631d4d321662090bb45559fe6e35fcf565638f671084cc3c3663132c50fc",
+      "bias": "84d0f5009a1bedededecaa9ac814902807442ac1b555ee3c9243e96ceaaf33f3",
+      "sw": "b40cbf1771aee5fed8667b022f1ebb758b495212c0fc4a61831f899305ea20bc"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "babd24b02dce199360299a68dde78cf39aa5fbbfa51c45e4ae75a288cd06e0c1",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/20_Wq.bin",
+      "sha256": "5f29fae2f0c2bb771c89b314b480c9742f8d0a3dedb1f434a650e7c44f9b2049"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.5/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.5/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.5.attn.qkv",
+    "layer_index": 20,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "5f29fae2f0c2bb771c89b314b480c9742f8d0a3dedb1f434a650e7c44f9b2049",
+      "bias": "9f646115a39018b17f2e43f6211619748b9c0664c1ad34e26336ab2af31ca0d6",
+      "sw": "07d962317ad53e724a5b3b218c81f2f64915e434382f0b5438e180af97f24e40"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "7c360e7e5acc10df500fe9c8386a95df383ac74ec557790a712d56873b80bfc9",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/21_Wq.bin",
+      "sha256": "ea2978c214c9e0aa704487f8562b1beb732272d3b296d533f399e0616962c570"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.5/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.5/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.5.attn.proj",
+    "layer_index": 21,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "ea2978c214c9e0aa704487f8562b1beb732272d3b296d533f399e0616962c570",
+      "bias": "c6f403ce93424e978ab79cb166db744c007117cd640de66428cc21f984dfd43a",
+      "sw": "68e78dcf7914ad2b8ff7126f39300ea47525bd522784773559e41573773e7ac1"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "c06dde19bf0784e53b8f5e91cff247291418a0247aee8386bbac7264f95c2214",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/22_Wq.bin",
+      "sha256": "e80cd54794c90e83a0a502ec63b5e6fe771c32e2486298086784b4b706a69faf"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.5/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.5/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.5.mlp.fc1",
+    "layer_index": 22,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "e80cd54794c90e83a0a502ec63b5e6fe771c32e2486298086784b4b706a69faf",
+      "bias": "9cf337a52b2143c0d6c7451c5e825542d365dd5e2f3262be21ed874a99789fc5",
+      "sw": "2729e12bdeceb0bc4b9b7a3ffb1e4f0eca7fbc76c06cb4c0fa1d5b3bba511aa9"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "534ca5b4e40ece3e543897814e48fe0791d728bcaf7dd460a695262b0c2e735a",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/23_Wq.bin",
+      "sha256": "43e514a3dcddfff11073aa243b11bdc48d144625ff0ea1770a04491b898b7fa0"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.5/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.5/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.5.mlp.fc2",
+    "layer_index": 23,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "43e514a3dcddfff11073aa243b11bdc48d144625ff0ea1770a04491b898b7fa0",
+      "bias": "b85bd24206f08e43a3c7ba8934c6894075cf7ac9d765e506070f83942ac849e9",
+      "sw": "360b7dd13bab00fd32dd90c9fe2bfb53ffeef5b21e7b3d860eff8ae8faac95e0"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "c925601753fd2cc6fae1a8c9ece9e79a488c2e6d53e14cd087de62257954898b",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/24_Wq.bin",
+      "sha256": "4e5839a9e3c4cb2f589e27f3abd6df83f14be7d0c95e2260f856a563327f0e17"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.6/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.6/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.6.attn.qkv",
+    "layer_index": 24,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "4e5839a9e3c4cb2f589e27f3abd6df83f14be7d0c95e2260f856a563327f0e17",
+      "bias": "1a5ae87c31d0fa84ca737e1844f6496c2591238f9caf1dd9e42ac84dc8ed4000",
+      "sw": "1646e7948e6311dd50a0ee2534ecf275a5dd0fb65c1178d175a8032f883369ff"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "0950a0e85913191a5871ee30587dec25c061554b35635400035203350fcc70b5",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/25_Wq.bin",
+      "sha256": "f41dc8035cf562aba14618c04c89e65cd15a02b4d6c38cc232461b4a044e1cac"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.6/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.6/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.6.attn.proj",
+    "layer_index": 25,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "f41dc8035cf562aba14618c04c89e65cd15a02b4d6c38cc232461b4a044e1cac",
+      "bias": "8121335e48b6fd3ca0cf39bbea2f0ca4434910bfd8716da1b5e15d4162634cf5",
+      "sw": "50c7ecf8e78ff69d82d444ac0a2ba7c7832dfea7a14ec46b7ea5b8289724e75c"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "250c2132252ac8d5fc1860bb2aea0a08ebbaa22709107ceb5d7641840d5785a9",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/26_Wq.bin",
+      "sha256": "eea760fd856d244a9475347d026f16920f68bb750b1d4389b1b873a5e479355f"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.6/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.6/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.6.mlp.fc1",
+    "layer_index": 26,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "eea760fd856d244a9475347d026f16920f68bb750b1d4389b1b873a5e479355f",
+      "bias": "a2a361bc97875a39293183a170eabf0eace63d9b3eee6d06e81dc79c6f4400bd",
+      "sw": "9df0370c643dd3c69e620f606db1f3b52b0888804219000e8ebc3191ed270bde"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "6d67dce0319a6426a364fc41ef85883950d4ff29528c1ad431b51ab763fd73c4",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/27_Wq.bin",
+      "sha256": "ccff885be104820ae2192f638279620a067de2116e97ec72c73b2a8e7dffefcb"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.6/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.6/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.6.mlp.fc2",
+    "layer_index": 27,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "ccff885be104820ae2192f638279620a067de2116e97ec72c73b2a8e7dffefcb",
+      "bias": "62817d971c1366e7f469ba2da41923a85cc1387a913c357200c85321a5740531",
+      "sw": "af4fb96328edc8bcdd4d47347dc4c46e53abbbcbfe77a31d4696464baf156222"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "9fd25d047cb342dd6b972ebcb37bbc7b3519b433e38f7cf087f29e9d93cc6ba7",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/28_Wq.bin",
+      "sha256": "06f15fcde88f91ef4553bb3f4a068bd4bd4810d07a63c92bebd4d7fdc34bd63b"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.7/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.7/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.7.attn.qkv",
+    "layer_index": 28,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "06f15fcde88f91ef4553bb3f4a068bd4bd4810d07a63c92bebd4d7fdc34bd63b",
+      "bias": "67b57358144f17c33a229fe3d5ee539cfc25d0f42ae93c19927f962085c10e78",
+      "sw": "cdee5087fe2be9d0359033356852004dda56bab1129d97f13b11d259852dad47"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "6e72e5b6ca200e3e3f1ac375be03e302aa0a32ae91beef1db602d3df993a520e",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/29_Wq.bin",
+      "sha256": "2b10be98a938779c81aa6011b70ffe9f4a82f68290a7134bb541c43984afe0ed"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.7/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.7/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.7.attn.proj",
+    "layer_index": 29,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "2b10be98a938779c81aa6011b70ffe9f4a82f68290a7134bb541c43984afe0ed",
+      "bias": "d4aed154d46c56d1e1499e08e3b8d355c232d320949b2d6adba4d2d3498f8a9f",
+      "sw": "6627fcf649e6471575dba8f7dd41165788fcdb9bc0c22ab7c18f0856da5e9804"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "01832c3509c5d5474f03838b127266cc7716e6e3c3b103d2c61be58991d73039",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/30_Wq.bin",
+      "sha256": "8c8a773528f0ff1032db24364f5ba347a8bf3f32ed991db392d0b42d46996f8c"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.7/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.7/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.7.mlp.fc1",
+    "layer_index": 30,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "8c8a773528f0ff1032db24364f5ba347a8bf3f32ed991db392d0b42d46996f8c",
+      "bias": "f9c44ae3e5ac0681383213b26b29c272744941f2e70faf4184f1ec5d5dc858dd",
+      "sw": "9a90a97e946aa8d4a03f27598d8409d904aba7298746fbe586a10742f18e2ed7"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "bcf2673fc5cee38404b3b689595ec7280d807e11b58088daf54bf149417b6e7b",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/31_Wq.bin",
+      "sha256": "b5b389e45d545ccec3123c772fc646406bd3e6ed5e89146e10e35369dc7a93c1"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.7/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.7/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.7.mlp.fc2",
+    "layer_index": 31,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "b5b389e45d545ccec3123c772fc646406bd3e6ed5e89146e10e35369dc7a93c1",
+      "bias": "4b55329217604389e96a56520b119d08f346b78c24cc99cbfa2cd0514ae564b2",
+      "sw": "5a1f6318279b477852697f9258bd0979ebf17d81d5f4bfdd1920dc16c1bf458e"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "73233ce792ea620f9cabd887d32dd5c9b912f3f2108bb7fc13996fe306dcf946",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/32_Wq.bin",
+      "sha256": "3e1ed0d7845abf41e0c954ab87456976966a890f39f1644c9553a63726b800b3"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.8/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.8/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.8.attn.qkv",
+    "layer_index": 32,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "3e1ed0d7845abf41e0c954ab87456976966a890f39f1644c9553a63726b800b3",
+      "bias": "ea6a0d65309c55449249ec9799838eff44bb1124536be6de8d38d1a386beb3f4",
+      "sw": "eaac53bae0acf142518f1a19bbd93bc90c332b862a156d8294294fcc917d705d"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "3bd99b516ba2d3c5395ff61afd211ee34d7b4f951d8fbed067373d66aba5a2f3",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/33_Wq.bin",
+      "sha256": "533919cf23cc36db8092ccd42f297ec07b31bf9fb5b2b45ab5b83a6586ca2571"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.8/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.8/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.8.attn.proj",
+    "layer_index": 33,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "533919cf23cc36db8092ccd42f297ec07b31bf9fb5b2b45ab5b83a6586ca2571",
+      "bias": "1bcf9973188ca2dcb1c3f3e960fa871d01e27a31e3925427d0c3b24f8f04610b",
+      "sw": "6cad4ef4ba546531265b39d165102c7e29657e4c5ee801337f405b8d243587c1"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "5be3f855fa4ff3f634539b6e59ac2a438d3fdf1e4d4b9b19ecabfdb4fc8b5ad9",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/34_Wq.bin",
+      "sha256": "67d5b3b12ec0043c138433e6e0ff4ffef537e4a78bf28c8dc2fba11d371f217c"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.8/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.8/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.8.mlp.fc1",
+    "layer_index": 34,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "67d5b3b12ec0043c138433e6e0ff4ffef537e4a78bf28c8dc2fba11d371f217c",
+      "bias": "a62c08c80b6adcdebe22cdbffd403953ffa8e1a25a06ee918d9eefc07f84661f",
+      "sw": "247af03b5cf5c3771fd2432479bfbe8a02a84a11a9a0f0b01265c3fd7e5d45f1"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "333fc26fc1a19125dbeed6003e4b0bb8b4fce90875c85296fa1ba04a2e022316",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/35_Wq.bin",
+      "sha256": "dd456bfd75f024a5ccbfea3eb2f740c91888d1eaf350ec7b9683301dc7315fc3"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.8/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.8/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.8.mlp.fc2",
+    "layer_index": 35,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "dd456bfd75f024a5ccbfea3eb2f740c91888d1eaf350ec7b9683301dc7315fc3",
+      "bias": "328277ff2b6e93d57e9207a2e8f01f7514bc861c5102d33963a0f8e359e4ef9c",
+      "sw": "7e79706a79f51bfd25d701e2642005488916d1a8d38d23a68e1478b71d784fe1"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "ec07386ddfc5529bf0e92c4ae2a049709e70de3929d15dc22909b0a412dd9aae",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/36_Wq.bin",
+      "sha256": "b822294d669dacaf8c73acfb66cff1e68410663b78cb156c3ec7a82063976c7a"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.9/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.9/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.9.attn.qkv",
+    "layer_index": 36,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "b822294d669dacaf8c73acfb66cff1e68410663b78cb156c3ec7a82063976c7a",
+      "bias": "a2bdb48ba607e300a1dc739910e27990ddae292e10b8905678456d64b5b473af",
+      "sw": "7cc4b3b639fa9ac59ec3b45ea63db87b08030e2a59d976eff7d66df1f6dd68b9"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "a8e28f916cccd5a7e19016295c2d319cba675aa2ded7d6ad854896c3638c9a09",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/37_Wq.bin",
+      "sha256": "85cc9ad13222de02408287237a5ef50cf4cde92efa35cd07c3a77be5faff5d63"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.9/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.9/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.9.attn.proj",
+    "layer_index": 37,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "85cc9ad13222de02408287237a5ef50cf4cde92efa35cd07c3a77be5faff5d63",
+      "bias": "97621874a2c3e84fe5926bd1ebf2508ff230fea048acb18a4d5aec3ac922c68c",
+      "sw": "48e53d2d1906081dfa233968de3117f8619daeebb7f459f4920be0cf9bda8369"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "e97ded893cfe6d76db10d7dc17c89570214f3c2c8f5a89cb21b90adbec3ec4e7",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/38_Wq.bin",
+      "sha256": "867b23a25f6d9da13da8a6be799978c112bc6915ff323b0d027a8e0ac8e18823"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.9/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.9/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.9.mlp.fc1",
+    "layer_index": 38,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "867b23a25f6d9da13da8a6be799978c112bc6915ff323b0d027a8e0ac8e18823",
+      "bias": "24b5427827ff333502e74d7531d1cb4789c8b22486d52e93e06928119f8b120c",
+      "sw": "873a5dfda3dba20c72ce3558a20e583773a5e5b8e9bac54f200927b8dc5549c1"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "b3109386a831882a61a8e474d85fc9146dcbf789f36fde63839de0008fadf663",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/39_Wq.bin",
+      "sha256": "80767ac2178bbdfce01039a04c9661935e9203171db2b28c9c910e9be49d5c48"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.9/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.9/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.9.mlp.fc2",
+    "layer_index": 39,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "80767ac2178bbdfce01039a04c9661935e9203171db2b28c9c910e9be49d5c48",
+      "bias": "ed6ce96ebd035435ebaf94d839643725b55958dc9cbb4d2c80cac0d80ce5a7aa",
+      "sw": "ea853dc05c1cf91778792cd446fd6c9e6ac6220e1f3c78471b25e91d8e838bd7"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "a7d51bb22353afb60191e5e3ed8d47b85e61910ff0fb13c8acd45185f2faa88f",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/40_Wq.bin",
+      "sha256": "3fa1a64875e1bcd784b2cf0beb5c97b6f53bf7f4f0e4833530b2e978ab771cfa"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.10/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.10/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.10.attn.qkv",
+    "layer_index": 40,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "3fa1a64875e1bcd784b2cf0beb5c97b6f53bf7f4f0e4833530b2e978ab771cfa",
+      "bias": "7b42e6a21ac2913497414fb80ec2dc5142280b3c8e14b4774216c62b574bc884",
+      "sw": "0ff98107114c5178993ba6c8fe72d68086029528a7e2274f57b9c5304712d2a9"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "23749c8020e1251f4155de3873fd8e358a4703c12b8d25ea250baf5db9550241",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/41_Wq.bin",
+      "sha256": "dfb2e1dfbf29b6f192a7d9edf89e960c23204f81f681bb1fae4e1e6891eebf24"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.10/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.10/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.10.attn.proj",
+    "layer_index": 41,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "dfb2e1dfbf29b6f192a7d9edf89e960c23204f81f681bb1fae4e1e6891eebf24",
+      "bias": "9e70e53fe62c7244badb77a0a037df09900b9dd7ff8f7673b62eae4f393fcbf8",
+      "sw": "f6a8eee0033541bccdf0b3830528b9b79138edb574ed1926fa0ca14e7baa952d"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "f5a95c0b0051b8d852b1215af03cab0b6572745af88efb1c0f18a7ffe32728ba",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/42_Wq.bin",
+      "sha256": "ec72eccc4e810566aa11b8cc7606ff4e8372baf1962e61a38a32c624166c8d7b"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.10/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.10/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.10.mlp.fc1",
+    "layer_index": 42,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "ec72eccc4e810566aa11b8cc7606ff4e8372baf1962e61a38a32c624166c8d7b",
+      "bias": "4ecc4076fc8e3ccde16fa06c73c22c825565fe84ed362fe23c49e87b30c209b5",
+      "sw": "21c8cb888ac8e0365f82b2e1f29c1823355e8f4d4d256fb793b89997a7dbee6b"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "45598131eefaf1b0b22da75e4192e41a069be712a9c548375181383e2701aa0a",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/43_Wq.bin",
+      "sha256": "ddb3d4f104991e589f666626ed20ebf4d86203c131990e3d98e11c3277d7763f"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.10/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.10/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.10.mlp.fc2",
+    "layer_index": 43,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "ddb3d4f104991e589f666626ed20ebf4d86203c131990e3d98e11c3277d7763f",
+      "bias": "369c8d1a6ed0b59e8c54536cbc268d7fd59a150bb500b831b49efedcf82701f2",
+      "sw": "199974a5263053293196c8e2bbd4ed2791b9a4e713d9f61dab63908b1cd904fc"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "ae60d75e82cc06359e53671c07f04473be6bfa090db65d38b8b1739cb29276c7",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/44_Wq.bin",
+      "sha256": "70e100618c4a53eb893a7ad6c6b3cc173fb7b1da7a14db6ec80ff419b28dcebb"
+    },
+    "activation_axis": -1,
+    "family": "qkv",
+    "graph_input": "/blocks/blocks.11/norm1/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.11/attn/qkv/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.11.attn.qkv",
+    "layer_index": 44,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "70e100618c4a53eb893a7ad6c6b3cc173fb7b1da7a14db6ec80ff419b28dcebb",
+      "bias": "0df9360f2e4e8a393b1160598074405a9ef88274167499f65eca28bdf968a228",
+      "sw": "ce7c4ba7515203f00a1b38536423ff783e39de01eab9317657afc6f91e965228"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "e920bbd9affe6d8459f0549fad16f5100163b0461e21a82edc08fac1d4d4f4d9",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 36864,
+      "file": "weights/45_Wq.bin",
+      "sha256": "812cf8c531c57225d6d65e5d9077aed827e0da85ac662a5232c3c881fcb6de73"
+    },
+    "activation_axis": -1,
+    "family": "proj",
+    "graph_input": "/blocks/blocks.11/attn/Reshape_1_output_0",
+    "graph_output": "/blocks/blocks.11/attn/proj/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.11.attn.proj",
+    "layer_index": 45,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "812cf8c531c57225d6d65e5d9077aed827e0da85ac662a5232c3c881fcb6de73",
+      "bias": "3f038e06c55aa96b25fddb3a7b000be5353bb53c23fc00535146b09ad6c669a9",
+      "sw": "48b94f7c1a878402c075b0df6850fc4033a6b935f93ff444676a8226f45518ad"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "d8fc85f3029b5d1a7cd4f7768fee1335601963601fbcd03d5b8955402901fda7",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 197,
+    "N": 576,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/46_Wq.bin",
+      "sha256": "75bc8436324088df7e16ddb2acf7ab51c7df787d851ca2413b159d9cf74a553e"
+    },
+    "activation_axis": -1,
+    "family": "fc1",
+    "graph_input": "/blocks/blocks.11/norm2/LayerNormalization_output_0",
+    "graph_output": "/blocks/blocks.11/mlp/fc1/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      192
+    ],
+    "layer_id": "blocks.11.mlp.fc1",
+    "layer_index": 46,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "75bc8436324088df7e16ddb2acf7ab51c7df787d851ca2413b159d9cf74a553e",
+      "bias": "c4d6b4614965a28124d94a6f5a374a27b7d71094c353e44d7d44f97e4cc0ca6c",
+      "sw": "1f92d8bda3e2e4fc9215f79bba5c8c566aaa9fd62e45acb7a3d26ad0941ea8f9"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "9247c163cddafe83e80338eaf10ac5bda9ec9739ddcd5bda7fec15ce5601ba4a",
+    "output_shape": [
+      1,
+      197,
+      576
+    ],
+    "pytorch_weight_shape": [
+      576,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      576
+    ]
+  },
+  {
+    "K": 576,
+    "M": 197,
+    "N": 192,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 110592,
+      "file": "weights/47_Wq.bin",
+      "sha256": "1e15adb6e0fa375d3384798685813dbe5702a77b383a21a713c78f548047a386"
+    },
+    "activation_axis": -1,
+    "family": "fc2",
+    "graph_input": "/blocks/blocks.11/mlp/act/Mul_1_output_0",
+    "graph_output": "/blocks/blocks.11/mlp/fc2/Add_output_0",
+    "input_shape": [
+      1,
+      197,
+      576
+    ],
+    "layer_id": "blocks.11.mlp.fc2",
+    "layer_index": 47,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "1e15adb6e0fa375d3384798685813dbe5702a77b383a21a713c78f548047a386",
+      "bias": "901f696a4d52135a3aa518f59d302b21c230b7a7d0671ff67d895b98606a1e79",
+      "sw": "424b8f612ce028ec4075257f2f65bf29ca533117dd30b3f11c3164ede9acae43"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PL",
+    "original_weight_sha256": "5d612f8b47afc8e3c68c39169c570a2357eae3ef47a7e90ea6476e57cf1fc3f9",
+    "output_shape": [
+      1,
+      197,
+      192
+    ],
+    "pytorch_weight_shape": [
+      192,
+      576
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      576,
+      192
+    ]
+  },
+  {
+    "K": 192,
+    "M": 1,
+    "N": 1000,
+    "PL": "FIXED_ROUTE_CANDIDATE_NOT_ACCEPTED",
+    "Wq": {
+      "bytes": 192000,
+      "file": "weights/48_Wq.bin",
+      "sha256": "aeaffdc3a8126e1424c439a31f01564468388b35c33343ec5f51604f5015c180"
+    },
+    "activation_axis": -1,
+    "family": "head",
+    "graph_input": "/Gather_output_0",
+    "graph_output": "logits",
+    "input_shape": [
+      1,
+      192
+    ],
+    "layer_id": "head",
+    "layer_index": 48,
+    "mode": "dense_w8a8",
+    "numeric_identity": {
+      "Wq": "aeaffdc3a8126e1424c439a31f01564468388b35c33343ec5f51604f5015c180",
+      "bias": "acaa79f54ad3bd029d0f831fc02cce7b360ed50c9b51c5c144d4d4dd012097bd",
+      "sw": "33896e18f10712ae01f3eab10132fd0ad51618e0c0881c6caf429edc2400bbbc"
+    },
+    "opt50_mode": 0,
+    "opt50_route": "PS",
+    "original_weight_sha256": "4cbf8450a72248a28ded92fa643af23a6a06dbe6448ea0157929d25964d59002",
+    "output_shape": [
+      1,
+      1000
+    ],
+    "pytorch_weight_shape": [
+      1000,
+      192
+    ],
+    "weight_axis": 0,
+    "weight_shape": [
+      192,
+      1000
+    ]
+  }
+]

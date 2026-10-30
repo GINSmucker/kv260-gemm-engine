@@ -1,0 +1,78 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 2630,
+      "sha256": "f4b9490d81bdee8e6a206053c6ebd722ce9bd6611401a1d0806856bbc5e8f433"
+    },
+    "install_reboot.py": {
+      "bytes": 5948,
+      "sha256": "7b4d2c077712f3b1d3ab4938ddc4e3e67e2ffb4baba3672d3685766a79e6aad2"
+    },
+    "report500.py": {
+      "bytes": 20944,
+      "sha256": "17eb3523276e29ca83ed1b6209b95589c6aac60beddb0600a2810ee483d77f01"
+    },
+    "run_to_500.py": {
+      "bytes": 24609,
+      "sha256": "09d9a693791182688106d1a2d31460524db4252701c80a089619a18089bb351b"
+    },
+    "software_payload/README.md": {
+      "bytes": 2235,
+      "sha256": "b1f1f7f0c7856b0346aa292951bd4fbf262cd5ada3afc1565638ec4f8a21d354"
+    },
+    "software_payload/predecessor_h1_tools_manifest.json": {
+      "bytes": 24547,
+      "sha256": "8f256e8eca931b80ea9513c62f0921ec0700558c5604476ea68902833411bd1e"
+    },
+    "software_payload/reboot_review.py": {
+      "bytes": 14066,
+      "sha256": "e12c5828f5413cad378de3124c6b83c445cd9c4bb1b30b3f0a5529fd1cd512de"
+    },
+    "software_payload/release_compat.py": {
+      "bytes": 12339,
+      "sha256": "4c18fe8f7b972914149d3f518f0adcb65c25c274d6abac4e2c535aaa36d6b25b"
+    },
+    "software_payload/run_model.py": {
+      "bytes": 49086,
+      "sha256": "c2ef99960f8997ddd4814555390c7a985e39d91f1d35f3a395304a4b71424dad"
+    },
+    "software_payload/tests/test_reboot_review_r1.py": {
+      "bytes": 14768,
+      "sha256": "5d5c1f7784cf6fde598ad13c964e6bda652dc12bfa4ee618ff2888826590b9fc"
+    },
+    "software_payload/tools_manifest.json": {
+      "bytes": 25141,
+      "sha256": "38c130e8632b4433f4217d840d9d9578699fb654de6095df17003d3f7fa0217d"
+    },
+    "software_payload/verify_tools.py": {
+      "bytes": 4384,
+      "sha256": "f0a6d8509227fc22b29b40fe63f00186d24989bd009cb73fdab354af3a451036"
+    },
+    "tests/test_report500.py": {
+      "bytes": 14366,
+      "sha256": "5b5e928c8bdd3ffd120be203e4d92b02556ee2328b1a0239778b3ce6b66ea310"
+    },
+    "tests/test_run_to_500.py": {
+      "bytes": 17771,
+      "sha256": "629272044e0bfa95e5b32dbaeaab81ebb6576123c1b73e05dd3f4c6a678b79a4"
+    },
+    "tests/test_verify_package.py": {
+      "bytes": 6211,
+      "sha256": "7faad1b30c77ae7014096743ef85403a99654c81d36c9ed065a19569c182adb4"
+    },
+    "verify_package.py": {
+      "bytes": 5018,
+      "sha256": "5baada6d3973070014fe43bf8332cdf360e95fc46a7d3762c042ad2c224021a5"
+    }
+  },
+  "schema": "opt50_b24_acceptance500_tool_files_v1",
+  "source_fix2": {
+    "files": 158,
+    "path": "/home/ubuntu/fpga_project/opt50_integration/b24_accuracy_resident_20261030_reboot_r1/software",
+    "tools_manifest": {
+      "bytes": 25141,
+      "sha256": "38c130e8632b4433f4217d840d9d9578699fb654de6095df17003d3f7fa0217d"
+    }
+  },
+  "target_total": 500
+}

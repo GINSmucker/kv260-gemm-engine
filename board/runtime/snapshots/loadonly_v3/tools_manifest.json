@@ -1,0 +1,59 @@
+{
+  "schema": "opt50_loadonly_tools_fd96539d_v3",
+  "hardware_executed": false,
+  "scope": "TOOLS_ONLY_NOT_LOAD_AUTHORIZATION; no firmware/driver/runtime payload included",
+  "files": {
+    "window.py": {
+      "bytes": 25185,
+      "sha256": "ae83f30af6adfd9a870ab33dc1e8c45662e6ee0f1fac09ec6ae97a8ed57f42f3"
+    },
+    "artifacts.py": {
+      "bytes": 25661,
+      "sha256": "ddf608c2fcdbc95a43e900875fc91db22917762dd1b6107e773b5d084f14e52c"
+    },
+    "board.py": {
+      "bytes": 13289,
+      "sha256": "647c67a3294b53e3ea4122ceed1227520acc8098eab035b7c3fa843185395190"
+    },
+    "durable.py": {
+      "bytes": 15877,
+      "sha256": "b2ac23fbebdabe2acadf3609fd492c8b7eb61064c299a7d2a32b027bc9be2537"
+    },
+    "board_snapshot.py": {
+      "bytes": 14059,
+      "sha256": "1f4f955608ede7ead9e8bd064011449627485a2045356b53defb2766dc6ff59e"
+    },
+    "test_durable.py": {
+      "bytes": 18104,
+      "sha256": "db551cf4072b4d502e014c420f2b7dda390e8915fdc155839a2df8fa3d3dc957"
+    },
+    "firmware.py": {
+      "bytes": 6618,
+      "sha256": "e1b7bdc5f4652cc79a8cb9041f5f853badc85f9c4bd4bd876bbdbc16e3d2e1a2"
+    },
+    "test_firmware.py": {
+      "bytes": 8931,
+      "sha256": "d5aa52ec3733a0f14098603fae74a297436ed69877aa19a20d1fbde278655557"
+    },
+    "test_window_reentry.py": {
+      "bytes": 13153,
+      "sha256": "c3dce3fa66b7400b37adfa5f005e284c3e986aa0c5685581f3f706896783906e"
+    },
+    "test_controller.py": {
+      "bytes": 20692,
+      "sha256": "1ab747552d6838241fb98b5f515e8f878434d12b587a2c138d4b462cb5785bcf"
+    },
+    "test_artifacts.py": {
+      "bytes": 19924,
+      "sha256": "fd8db9c4718f002961100f90cfdb15124c7077d652da64e5df3f06a5ffd43f07"
+    },
+    "test_bindings.py": {
+      "bytes": 3948,
+      "sha256": "2a364348066f1f512be0e0b5e6533b0afd37baf7be8e0d2b18a2336ec1fc5c9c"
+    },
+    "README.md": {
+      "bytes": 4509,
+      "sha256": "927ddeffadad6f225181bbbd5bec73ac8597b5b46adecc5fc4667c4ff27adf51"
+    }
+  }
+}

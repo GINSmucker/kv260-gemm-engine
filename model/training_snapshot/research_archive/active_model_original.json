@@ -1,0 +1,105 @@
+{
+  "status": "ACTIVE_FINETUNED24_TRAIN100K",
+  "updated_at": "2026-10-26T00:24:44.745270+08:00",
+  "reason": "Fixed24 masks,100k train,new4500 dev-selected checkpoint; passes prespecified fresh Top1 improvement gate.",
+  "sparse_layers_count": 24,
+  "selected_layers": [
+    2,
+    3,
+    6,
+    7,
+    10,
+    11,
+    14,
+    15,
+    18,
+    19,
+    22,
+    23,
+    26,
+    27,
+    30,
+    31,
+    34,
+    35,
+    38,
+    39,
+    42,
+    43,
+    46,
+    47
+  ],
+  "added_layers": [],
+  "candidate_folder": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned100k_20261025_run01",
+  "models": {
+    "w8a8": {
+      "path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned100k_20261025_run01\\model_w8a8.onnx",
+      "sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+      "bytes": 19628633
+    },
+    "fp32": {
+      "path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned100k_20261025_run01\\model_fp32.onnx",
+      "sha256": "82399bc1ce46965fe141c0bc027574ddb656dcf5788ba0a63044770fcb2a1df0",
+      "bytes": 19496673
+    },
+    "trainable": {
+      "path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned100k_20261025_run01\\model_trainable.pt",
+      "sha256": "5d357ed8548b98d9da02c9ce59c00ef7f83795505c5dc32263b3ffb774e156aa",
+      "bytes": 22030607
+    }
+  },
+  "previous_candidate_retained": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_continue10_20261025_run01",
+  "original24_retained": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_20261025_run01",
+  "training_images": 100000,
+  "epochs_run": 5,
+  "selected_epoch": 5,
+  "experiment": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01",
+  "package_manifest": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned100k_20261025_run01\\PACKAGE_MANIFEST.json",
+  "verification": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\reports\\B_mlp24_train100k_20261025_run01\\verification.json",
+  "verification_sha256": "aac614fbcdb78c5512b019c2b796d6a5beb4ae52f1292c794e8c385f34682e9a",
+  "evaluation_report": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\reports\\B_mlp24_train100k_20261025_run01",
+  "data_usage_reference": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\references\\data_usage_after_large24.json",
+  "development_metrics": {
+    "images": 4500,
+    "top1_correct": 2853,
+    "top5_correct": 3851,
+    "top1_pct": 63.4,
+    "top5_pct": 85.57777777777778,
+    "cross_entropy": 1.5801051574716916
+  },
+  "finetuned_metrics": {
+    "fresh900_1800": {
+      "images": 1800,
+      "top1_correct": 1162,
+      "top5_correct": 1566,
+      "top1_pct": 64.55555555555556,
+      "top5_pct": 87.0,
+      "cross_entropy": 1.5259867228286819
+    },
+    "previous_continue1800_regression": {
+      "images": 1800,
+      "top1_correct": 1150,
+      "top5_correct": 1562,
+      "top1_pct": 63.888888888888886,
+      "top5_pct": 86.77777777777777,
+      "cross_entropy": 1.5288006829235343
+    },
+    "previous24_1800_regression": {
+      "images": 1800,
+      "top1_correct": 1160,
+      "top5_correct": 1561,
+      "top1_pct": 64.44444444444444,
+      "top5_pct": 86.72222222222223,
+      "cross_entropy": 1.5252245073131339
+    },
+    "exposed_development1000": {
+      "images": 1000,
+      "top1_correct": 544,
+      "top5_correct": 808,
+      "top1_pct": 54.4,
+      "top5_pct": 80.8,
+      "cross_entropy": 1.9603237583912136
+    }
+  },
+  "scope": "Workspace research model,point-estimate adoption; no population superiority or hardware speed guarantee"
+}

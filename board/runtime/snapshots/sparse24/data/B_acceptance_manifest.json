@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "dataset": "evanarlian/imagenet_1k_resized_256",
+  "revision": "8de107e08d1f61884d5a4ec2dea8740667264a60",
+  "images": 1800,
+  "classes": 900,
+  "per_class": 2,
+  "label_sha256": "358b50d3fd45f4d29fe4b2596f04a4db7bdd5d41a9a84f86b6616f29217cd889",
+  "sampling_plan_sha256": "e88edee382f154bcdeacd981eb4d5a9167f7787c8675b4ae044ede35761e347c",
+  "excluded_from_training_and_development": true,
+  "limits": "Exact identities only; no pretraining exposure exclusion claim."
+}

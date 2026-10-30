@@ -1,0 +1,21 @@
+coloredlogs==15.0.1
+filelock==4.2.4
+flatbuffers==25.12.19
+fsspec==2026.9.0
+humanfriendly==10.0
+Jinja2==3.1.6
+MarkupSafe==3.0.4
+mpmath==1.3.0
+networkx==3.7
+numpy==1.26.4
+onnx==1.17.0
+onnxruntime==1.22.1
+packaging==26.3
+pillow==12.3.0
+protobuf==7.36.2
+pyreadline3==3.5.6
+setuptools==84.2.1
+sympy==1.14.0
+torch @ file:///C:/Users/TJH/Documents/Codex/2026-10-21/github-plugin-github-openai-curated-remote-2/work/torch_wheel/torch-2.7.1%2Bcu128-cp312-cp312-win_amd64.whl#sha256=2bb8c05d48ba815b316879a18195d53a6472a03e297d971e916753f8e1053d30
+torchvision==0.22.1+cu128
+typing_extensions==4.16.0

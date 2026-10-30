@@ -1,0 +1,20 @@
+{
+  "status": "CHECKPOINT_FROZEN_BEFORE_ACCEPTANCE",
+  "best_epoch": 5,
+  "metrics_w8a8": {
+    "images": 4500,
+    "top1_correct": 2853,
+    "top5_correct": 3851,
+    "top1_pct": 63.4,
+    "top5_pct": 85.57777777777778,
+    "cross_entropy": 1.5801051574716916
+  },
+  "selection_sha256": "b1ba6c50a6d2340a52bf7f4367582ecbec75cc28738d3c3bd4788a6aca942148",
+  "mask_sha256": "82ac0d36c69f3e5748c26c4e4ff29454cb27be9d50246d8b24e2bc1eb729edce",
+  "best_checkpoint_sha256": "5d357ed8548b98d9da02c9ce59c00ef7f83795505c5dc32263b3ffb774e156aa",
+  "model_hashes": {
+    "model_fp32.onnx": "82399bc1ce46965fe141c0bc027574ddb656dcf5788ba0a63044770fcb2a1df0",
+    "model_w8a8.onnx": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+    "model_trainable.pt": "5d357ed8548b98d9da02c9ce59c00ef7f83795505c5dc32263b3ffb774e156aa"
+  }
+}

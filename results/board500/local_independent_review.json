@@ -1,0 +1,49 @@
+{
+  "CPU_PL_bitwise_mismatches": {
+    "Dense": 0,
+    "Sparse": 0
+  },
+  "Dense_full500_CPU_reference": {
+    "max_ms": 384.402595,
+    "mean_ms": 307.74455281,
+    "median_ms": 299.9249595,
+    "min_ms": 292.117992,
+    "p95_ms": 363.44402905000004,
+    "samples": 500
+  },
+  "Dense_mean_over_Sparse_mean": 1.0505575010122405,
+  "FP32_values_compared_per_model": 500000,
+  "archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+  "hardware_accessed": false,
+  "images": 500,
+  "labeled_correct_counts": {
+    "Dense": {
+      "top1": 353,
+      "top5": 452
+    },
+    "Sparse": {
+      "top1": 357,
+      "top5": 461
+    }
+  },
+  "same_scheduler195_latency": {
+    "Dense_PS_PL": {
+      "max_ms": 173.090981,
+      "mean_ms": 143.49397835897435,
+      "median_ms": 140.687517,
+      "min_ms": 138.804299,
+      "p95_ms": 163.4353736,
+      "samples": 195
+    },
+    "Sparse_PS_PL": {
+      "max_ms": 162.95879,
+      "mean_ms": 136.5884096974359,
+      "median_ms": 133.127861,
+      "min_ms": 130.571686,
+      "p95_ms": 160.2989576,
+      "samples": 195
+    }
+  },
+  "scope": "Independent standard-library saved-tensor ranking and metric recomputation. Native execution/closure evidence remains the original board acceptance program proof.",
+  "status": "LOCAL_INDEPENDENT_SAVED_LOGITS_AND_PAIRED_METRICS_PASS"
+}

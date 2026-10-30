@@ -1,0 +1,157 @@
+{
+  "Dense_CPU_PL_bitwise_mismatches": 0,
+  "Dense_completed_PL_calls": 18000,
+  "Dense_modes": {
+    "Dense": 18000,
+    "Sparse": 0
+  },
+  "Dense_plans": [
+    "/var/lib/opt50-dense-model-v1/plan_3ba663572468/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_c187d7db8a3e/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_9fda5853b765/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_5fb9e2fc7406/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_1bcf7fc66a27/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_bc2e0786135d/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_8ced303f0043/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_7d24db46cfcd/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_ed7886bdc33a/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_8fdba4b01153/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_2b17a7b47c61/plan.json",
+    "/var/lib/opt50-dense-model-v1/plan_358e1cee7042/plan.json"
+  ],
+  "Dense_source_model_sha256": "f2f203362a337a357028b8b99c853cd39bdc812cf1da41775c9e233907d5f415",
+  "Dense_tools_manifest": {
+    "bytes": 17233,
+    "sha256": "e60866fca203ee366c9c9717cdbc55256cdde6ced7c25f007faf923854ad7b46"
+  },
+  "ImageNet_full_validation": false,
+  "Sparse_CPU_PL_bitwise_mismatches": 0,
+  "Sparse_minus_Dense_accuracy_pp": {
+    "top1_pct": 0.8000000000000114,
+    "top5_pct": 1.7999999999999972
+  },
+  "Sparse_reference": {
+    "Sparse_reference_only": true,
+    "archive": {
+      "bytes": 16330957,
+      "sha256": "f14b1a7e3ec26fd7205e4b32ca57b0ae5ab55972cbcb353fbcb406003bc182fb"
+    },
+    "current_hardware_residency_proved_by_this_receipt": false,
+    "dataset_manifest": {
+      "bytes": 807589,
+      "sha256": "2fd9915aa9425563869467aa0c1cf9e3aba62bd933c07cf2fdb14b4b4b84e796"
+    },
+    "paired_ordinals": [
+      0,
+      500
+    ],
+    "report_root": "/home/ubuntu/fpga_project/opt50_integration/b24_acceptance500_reboot_exports_20261030_v1/action_a77e3fa15328",
+    "schema": "opt50_dense_paired_sparse500_reference_v1",
+    "summary": {
+      "bytes": 10308,
+      "sha256": "423941bbd52cd9b14ce56fadf5ffd3b45b8388c5a1b0e168fabc89e44fbf7911"
+    }
+  },
+  "Sparse_source_model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+  "accuracy_scope": "First500 images/250 classes of the fixed acceptance corpus; all1000 outputs ranked.",
+  "classes_ranked_per_image": 1000,
+  "compared_logits_per_model": 500000,
+  "full500_recorded_Dense_CPU_reference": {
+    "max_ms": 384.402595,
+    "mean_ms": 307.74455281,
+    "median_ms": 299.9249595,
+    "min_ms": 292.117992,
+    "p90_ms": 350.7277051,
+    "p95_ms": 363.44402905000004,
+    "samples": 500,
+    "sum_ms": 153872.276405
+  },
+  "full500_recorded_Dense_PS_PL": {
+    "max_ms": 173.090981,
+    "mean_ms": 143.91285449,
+    "median_ms": 140.8031335,
+    "min_ms": 138.432714,
+    "p90_ms": 161.18928000000002,
+    "p95_ms": 164.2566675,
+    "samples": 500,
+    "sum_ms": 71956.427245
+  },
+  "full500_recorded_Sparse_PS_PL_mixed_revisions": {
+    "max_ms": 184.736138,
+    "mean_ms": 138.857933034,
+    "median_ms": 134.37361399999998,
+    "min_ms": 130.571686,
+    "p90_ms": 158.3299192,
+    "p95_ms": 161.4454195,
+    "samples": 500,
+    "sum_ms": 69428.966517
+  },
+  "full500_uniform_version_latency_comparison_verified": false,
+  "full_1800_acceptance": false,
+  "hardware_accessed_by_report": false,
+  "images": 500,
+  "isolated_sparse_kernel_speedup_claimed": false,
+  "label_classes": 250,
+  "latency_scope": "Recorded Runner.run excludes setup and CPU reference; includes BEGIN/END and client sync. First500 Sparse records include several software revisions.",
+  "matched_current_scheduler_latency": {
+    "Dense_PS_PL": {
+      "max_ms": 173.090981,
+      "mean_ms": 143.49397835897435,
+      "median_ms": 140.687517,
+      "min_ms": 138.804299,
+      "p90_ms": 159.2540306,
+      "p95_ms": 163.4353736,
+      "samples": 195,
+      "sum_ms": 27981.32578
+    },
+    "Dense_mean_over_Sparse_mean": 1.0505575010122405,
+    "Sparse_PS_PL": {
+      "max_ms": 162.95879,
+      "mean_ms": 136.5884096974359,
+      "median_ms": 133.127861,
+      "min_ms": 130.571686,
+      "p90_ms": 153.7817586,
+      "p95_ms": 160.2989576,
+      "samples": 195,
+      "sum_ms": 26634.739891
+    },
+    "Sparse_mean_latency_reduction_pct": 4.812444912679892,
+    "images": 195,
+    "ordinal_range_1based": [
+      306,
+      500
+    ],
+    "scope": "Same195 inputs and current PS scheduler; model weights and Dense/Sparse modes differ. Not isolated PL timing."
+  },
+  "no_accuracy_loss_observed_on_this_subset": true,
+  "original_Dense_accuracy": {
+    "images": 500,
+    "top1_correct": 353,
+    "top1_pct": 70.6,
+    "top5_correct": 452,
+    "top5_pct": 90.4
+  },
+  "paired_classification": {
+    "top1_hit": {
+      "both_correct": 325,
+      "both_incorrect": 115,
+      "dense_only_correct": 28,
+      "sparse_only_correct": 32
+    },
+    "top5_hit": {
+      "both_correct": 443,
+      "both_incorrect": 30,
+      "dense_only_correct": 9,
+      "sparse_only_correct": 18
+    }
+  },
+  "schema": "opt50_original_dense_sparse_paired500_v1",
+  "status": "PAIRED500_DENSE_SPARSE_SAVED_LOGITS_REVIEW_PASS",
+  "trained_Sparse24_accuracy": {
+    "images": 500,
+    "top1_correct": 357,
+    "top1_pct": 71.4,
+    "top5_correct": 461,
+    "top5_pct": 92.2
+  }
+}
