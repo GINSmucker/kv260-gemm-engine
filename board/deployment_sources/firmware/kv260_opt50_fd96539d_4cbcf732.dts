@@ -1,0 +1,31 @@
+/dts-v1/;
+/plugin/;
+/* Source template only. Compile/review after actual system verification.
+ * No permission to load an overlay is granted by this file. */
+/ {
+    fragment@0 {
+        target = <&fpga_full>;
+        __overlay__ {
+            #address-cells = <2>;
+            #size-cells = <2>;
+            firmware-name = "kv260_opt50_fd96539d_4cbcf732.bit.bin";
+            resets = <&zynqmp_reset 116>, <&zynqmp_reset 117>,
+                     <&zynqmp_reset 118>, <&zynqmp_reset 119>;
+        };
+    };
+    fragment@1 {
+        target = <&amba>;
+        __overlay__ {
+            opt50_pl0_clock {
+                compatible = "xlnx,fclk";
+                clocks = <&zynqmp_clk 71>;
+                assigned-clocks = <&zynqmp_clk 71>;
+                assigned-clock-rates = <125000000>;
+            };
+            zyxclmm_drm {
+                compatible = "xlnx,zocl";
+                status = "okay";
+            };
+        };
+    };
+};

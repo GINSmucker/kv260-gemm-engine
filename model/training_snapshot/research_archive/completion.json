@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE_FIXED24_TRAIN100K_EVALUATED",
+  "selected_epoch": 5,
+  "candidate_promoted": true,
+  "package": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned100k_20261025_run01",
+  "report": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\reports\\B_mlp24_train100k_20261025_run01\\REPORT.md",
+  "active_model_sha256": "8dae239b5f7edffcd235648a44622868c834dc3541f85361b1febde2bd38b427",
+  "verification_sha256": "aac614fbcdb78c5512b019c2b796d6a5beb4ae52f1292c794e8c385f34682e9a"
+}

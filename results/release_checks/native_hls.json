@@ -1,0 +1,17 @@
+{
+  "HLS_core": {
+    "bytes": 11392,
+    "sha256": "b9d69e105106da43fcd5a651ba82ecbf7f263b718763008b8d5d9c3a0b64b9ad"
+  },
+  "HLS_top": {
+    "bytes": 2534,
+    "sha256": "42c7c154c64469b4958ff6c851cfe8a024ff289071e804d2d2a158fd2a78f030"
+  },
+  "checked_date": "2026-10-30",
+  "hardware_accessed": false,
+  "scope": "Native C++ functional case-set named rtl; not RTL simulation,HLS synthesis or board execution",
+  "source_identity": "Original source file SHA values in release_sources.json",
+  "status": "PASS",
+  "stderr": "",
+  "stdout": "PASS documented K4/N2 format vector (not a DUT-supported shape)\r\nPASS reuse_A_dense M=1 K=16 N=16 mode=0 return=0 outputs=16\r\nPASS reuse_A_sparse M=1 K=16 N=16 mode=1 return=0 outputs=16\r\nPASS reuse_B_XW_changed_dense M=33 K=16 N=32 mode=0 return=0 outputs=1056\r\nPASS reuse_B_XW_changed_sparse M=33 K=16 N=32 mode=1 return=0 outputs=1056\r\nPASS real_fc1_shape_dense M=197 K=192 N=576 mode=0 return=0 outputs=113472\r\nPASS real_fc1_shape_sparse M=197 K=192 N=576 mode=1 return=0 outputs=113472\r\nPASS real_fc2_shape_dense M=197 K=576 N=192 mode=0 return=0 outputs=37824\r\nPASS real_fc2_shape_sparse M=197 K=576 N=192 mode=1 return=0 outputs=37824\r\nPASS reuse_C_after_large_calls_dense M=1 K=16 N=16 mode=0 return=0 outputs=16\r\nPASS reuse_C_after_large_calls_sparse M=1 K=16 N=16 mode=1 return=0 outputs=16\r\nPASS invalid_mode M=1 K=16 N=16 mode=2 return=2 outputs=0\r\nPASS invalid_shape_0 M=0 K=16 N=16 mode=0 return=1 outputs=0\r\nPASS invalid_meta_0 M=1 K=16 N=16 mode=1 return=3 outputs=0\r\nTESTBENCH PASS profile=rtl calls=13 INT32_outputs_checked=304768\r\nScope: exact integer kernel verification, NOT board/model accuracy acceptance.\r\nTODO: RTL AXI monitor for transfer bounds and zero Dense metadata reads.\r\nINFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 0\r\n"
+}

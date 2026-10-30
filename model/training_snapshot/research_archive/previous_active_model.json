@@ -1,0 +1,105 @@
+{
+  "status": "ACTIVE_FINETUNED24_CONTINUE10",
+  "updated_at": "2026-10-25T22:37:45.703744+08:00",
+  "reason": "Same24 masks,10extra epochs; W8A8 development-selected checkpoint including unchanged parent before fresh assessment.",
+  "sparse_layers_count": 24,
+  "selected_layers": [
+    2,
+    3,
+    6,
+    7,
+    10,
+    11,
+    14,
+    15,
+    18,
+    19,
+    22,
+    23,
+    26,
+    27,
+    30,
+    31,
+    34,
+    35,
+    38,
+    39,
+    42,
+    43,
+    46,
+    47
+  ],
+  "added_layers": [],
+  "candidate_folder": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_continue10_20261025_run01",
+  "models": {
+    "w8a8": {
+      "path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_continue10_20261025_run01\\model_w8a8.onnx",
+      "sha256": "4a4103cc7b06432d4f5c63c55f320189136ba6e84f2cfcb82832b4a26ace5e7e",
+      "bytes": 19628633
+    },
+    "fp32": {
+      "path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_continue10_20261025_run01\\model_fp32.onnx",
+      "sha256": "9aee6be0491c9584716ed6871770b2ff2f65c1394ebd8e4de3c7c10c4aea0697",
+      "bytes": 19496673
+    },
+    "trainable": {
+      "path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_continue10_20261025_run01\\model_trainable.pt",
+      "sha256": "a2a5a2ef48a35d2b9f1930e9971ac9c970e452caa35722b08d335566583ee961",
+      "bytes": 22030607
+    }
+  },
+  "previous_candidate_retained": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_20261025_run01",
+  "prior22_candidate_retained": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp22_best6_finetuned_20261025_run01",
+  "continued_fine_tuning": "COMPLETED",
+  "additional_epochs_run": 10,
+  "selected_extra_epoch": 5,
+  "experiment": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_continue10_20261025_run01",
+  "package_manifest": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_continue10_20261025_run01\\PACKAGE_MANIFEST.json",
+  "verification": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\reports\\B_mlp24_continue10_20261025_run01\\verification.json",
+  "verification_sha256": "5cbe28a0f2447446a90d41a34c4888e5691da1de6287d9d04f3f683e19cdd980",
+  "evaluation_report": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\reports\\B_mlp24_continue10_20261025_run01",
+  "data_usage_reference": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\references\\data_usage_after_continue24.json",
+  "development_metrics": {
+    "images": 2000,
+    "top1_correct": 1300,
+    "top5_correct": 1745,
+    "top1_pct": 65.0,
+    "top5_pct": 87.25,
+    "cross_entropy": 1.5027468387239218
+  },
+  "finetuned_metrics": {
+    "fresh900_1800": {
+      "images": 1800,
+      "top1_correct": 1116,
+      "top5_correct": 1541,
+      "top1_pct": 62.0,
+      "top5_pct": 85.61111111111111,
+      "cross_entropy": 1.6574253330552018
+    },
+    "previous24_1800_regression": {
+      "images": 1800,
+      "top1_correct": 1102,
+      "top5_correct": 1535,
+      "top1_pct": 61.22222222222222,
+      "top5_pct": 85.27777777777777,
+      "cross_entropy": 1.6541548119461982
+    },
+    "previous22_1800_regression": {
+      "images": 1800,
+      "top1_correct": 1126,
+      "top5_correct": 1550,
+      "top1_pct": 62.55555555555556,
+      "top5_pct": 86.11111111111111,
+      "cross_entropy": 1.5682563826308145
+    },
+    "exposed_development1000": {
+      "images": 1000,
+      "top1_correct": 521,
+      "top5_correct": 787,
+      "top1_pct": 52.1,
+      "top5_pct": 78.7,
+      "cross_entropy": 2.125283984485215
+    }
+  },
+  "scope": "Workspace research model; selected only on development; no deployment or hardware speed claim"
+}

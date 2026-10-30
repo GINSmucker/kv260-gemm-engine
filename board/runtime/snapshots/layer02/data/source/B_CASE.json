@@ -1,0 +1,151 @@
+{
+  "schema_version": "B_GEMM_REAL_LAYER_CASE_V1",
+  "case_id": "dev0000_L02",
+  "format_id": "H576_SPARSE24_SPLIT128_V1",
+  "layer_index": 2,
+  "layer_id": "blocks.0.mlp.fc1",
+  "route": "PL",
+  "M": 197,
+  "K": 192,
+  "N": 576,
+  "mode": 1,
+  "model_w8a8_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+  "sample_id": "dev0000",
+  "sample_image_sha256": "55e7c1eff38cd9f1f3af4c04ebcd16b941f5daa8491b49357b627b227f7648f5",
+  "activation_scope": "ACTUAL propagated activations from the final W8A8 ONNX",
+  "integer_oracle": "Original Xq and full logical Wq, INT64 full-K dot, range-check then INT32",
+  "flattening": "C order collapse leading dimensions; K is last axis; restore original leading dimensions",
+  "byte_order": "little-endian",
+  "postprocess": "float32(float32(float32(Yi32)*scale_x)*scale_w)+bias",
+  "dense_comparison": "Same pruned Wq; never the unpruned original Dense weights",
+  "tensors": {
+    "Xq": {
+      "shape": [
+        197,
+        192
+      ],
+      "dtype": "int8"
+    },
+    "Wq": {
+      "shape": [
+        192,
+        576
+      ],
+      "dtype": "int8"
+    },
+    "Y_ref_int32": {
+      "shape": [
+        197,
+        576
+      ],
+      "dtype": "int32"
+    },
+    "scale_x": {
+      "shape": [
+        197,
+        1
+      ],
+      "dtype": "float32"
+    },
+    "scale_w": {
+      "shape": [
+        1,
+        576
+      ],
+      "dtype": "float32"
+    },
+    "bias": {
+      "shape": [
+        576
+      ],
+      "dtype": "float32"
+    }
+  },
+  "files": {
+    "tensors.npz": {
+      "sha256": "1eaeb5604b790b055e32e81fda577543ef57623a577f8b862124ad32e3075a74",
+      "bytes": 985580
+    },
+    "X.bin": {
+      "sha256": "67563398b91ee2a852c21b098bad353e5db10e2d13652574512bb88149b2dfe9",
+      "bytes": 37824
+    },
+    "Y_golden.bin": {
+      "sha256": "7e5b8c893a3477702c2566097a1c12d82e5d710d5b9ede11d42ecd410803d292",
+      "bytes": 453888
+    }
+  },
+  "calls": [
+    {
+      "mode": 0,
+      "buffers": {
+        "X": "cases/dev0000/layer_02/X.bin",
+        "W_data": "weights_axi/layer_02/W_dense_data.bin",
+        "W_meta": "weights_axi/layer_02/W_dense_meta.bin",
+        "Y": "cases/dev0000/layer_02/Y_golden.bin"
+      },
+      "layout": {
+        "X": {
+          "logical_bytes": 37824,
+          "allocated_bytes": 37824,
+          "beat_count": 2364,
+          "alignment_bytes": 64
+        },
+        "W_data": {
+          "logical_bytes": 110592,
+          "allocated_bytes": 110592,
+          "beat_count": 6912,
+          "alignment_bytes": 64
+        },
+        "W_meta": {
+          "logical_bytes": 0,
+          "allocated_bytes": 16,
+          "beat_count": 1,
+          "alignment_bytes": 64
+        },
+        "Y": {
+          "logical_bytes": 453888,
+          "allocated_bytes": 453888,
+          "beat_count": 28368,
+          "alignment_bytes": 64
+        }
+      }
+    },
+    {
+      "mode": 1,
+      "buffers": {
+        "X": "cases/dev0000/layer_02/X.bin",
+        "W_data": "weights_axi/layer_02/W_sparse_data.bin",
+        "W_meta": "weights_axi/layer_02/W_sparse_meta.bin",
+        "Y": "cases/dev0000/layer_02/Y_golden.bin"
+      },
+      "layout": {
+        "X": {
+          "logical_bytes": 37824,
+          "allocated_bytes": 37824,
+          "beat_count": 2364,
+          "alignment_bytes": 64
+        },
+        "W_data": {
+          "logical_bytes": 55296,
+          "allocated_bytes": 55296,
+          "beat_count": 3456,
+          "alignment_bytes": 64
+        },
+        "W_meta": {
+          "logical_bytes": 13824,
+          "allocated_bytes": 13824,
+          "beat_count": 864,
+          "alignment_bytes": 64
+        },
+        "Y": {
+          "logical_bytes": 453888,
+          "allocated_bytes": 453888,
+          "beat_count": 28368,
+          "alignment_bytes": 64
+        }
+      }
+    }
+  ],
+  "hardware_accessed": false
+}

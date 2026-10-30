@@ -1,0 +1,123 @@
+{
+  "schema": "opt50_b24_layer02_inputs_v1",
+  "status": "INPUTS_READY_NOT_BOARD_TEST",
+  "case_id": "B24_dev0000_layer02",
+  "abi": "OPT50_SPLIT128_AP_CTRL_HS_V1",
+  "format": "H576_SPARSE24_SPLIT128_V1",
+  "layer_index": 2,
+  "layer_id": "blocks.0.mlp.fc1",
+  "M": 197,
+  "K": 192,
+  "N": 576,
+  "modes": [
+    0,
+    1
+  ],
+  "source_model_w8a8_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+  "source": {
+    "zip_name": "B_FINAL_H576_24L_100K_20261026_v1.zip",
+    "zip_sha256": "7ada4de5cf99d09d3d6a5b9d92108bcbce85dc636e0c1669d8b14d5171139fc4",
+    "original_manifest_sha256": "c0f35179ea2edd7fe848cc5643232da86b795b92a18fa27624f5770cad02f769",
+    "archive_audit": {
+      "status": "ALL_MEMBER_CRC_AND_OUTER_MANIFEST_SHA_PASS",
+      "archive_files_crc_checked": 768,
+      "manifest_files_sha_checked": 765,
+      "opaque_pt_bytes_hashed_only": true,
+      "executed_package_code": false,
+      "archive_bytes": 196459285
+    },
+    "provenance_files": {
+      "source/B_MANIFEST.json": {
+        "bytes": 123016,
+        "sha256": "c0f35179ea2edd7fe848cc5643232da86b795b92a18fa27624f5770cad02f769",
+        "source_member": "MANIFEST.json"
+      },
+      "source/B_MANIFEST.sha256": {
+        "bytes": 81,
+        "sha256": "a32c843dd4257fe3167985f9b6a5c9b67e432b0cbe535c8ab12fde2e61f7498a",
+        "source_member": "MANIFEST.sha256"
+      },
+      "source/B_RELEASE.json": {
+        "bytes": 3160,
+        "sha256": "9bf0bfe9dd9b9cead59ef4012c233aff718499d8279e241d08a7274f98fb51fa",
+        "source_member": "RELEASE.json"
+      },
+      "source/B_LAYERS.json": {
+        "bytes": 38684,
+        "sha256": "4b24f55010f802bf8d53c184f1252a2e96175975026f834d19a284d6eb8b4f88",
+        "source_member": "parameters/layers.json"
+      },
+      "source/B_CASE.json": {
+        "bytes": 4001,
+        "sha256": "47799481d49167fd565a3ff042f77069e3b43c75a4cf05e21347b87da9cbaaf2",
+        "source_member": "cases/dev0000/layer_02/manifest.json"
+      }
+    }
+  },
+  "payloads": {
+    "X": {
+      "file": "X.bin",
+      "bytes": 37824,
+      "sha256": "67563398b91ee2a852c21b098bad353e5db10e2d13652574512bb88149b2dfe9",
+      "source_member": "cases/dev0000/layer_02/X.bin"
+    },
+    "W_dense_data": {
+      "file": "W_dense_data.bin",
+      "bytes": 110592,
+      "sha256": "953f919af13d4b9a19ecb60e9bcaa5a59eb4e19204cd8bdbe63cce2c1a239e14",
+      "source_member": "weights_axi/layer_02/W_dense_data.bin"
+    },
+    "W_dense_meta": {
+      "file": "W_dense_meta.bin",
+      "bytes": 16,
+      "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "source_member": "weights_axi/layer_02/W_dense_meta.bin"
+    },
+    "W_sparse_data": {
+      "file": "W_sparse_data.bin",
+      "bytes": 55296,
+      "sha256": "6a424a993a7f6b0d991663b7619f14fffd7d83d6c3f09c7702af3c6a1bf4ae9b",
+      "source_member": "weights_axi/layer_02/W_sparse_data.bin"
+    },
+    "W_sparse_meta": {
+      "file": "W_sparse_meta.bin",
+      "bytes": 13824,
+      "sha256": "94a777971b6bc52b7180251d2c474c5ae4a79fba7e509917e171451ae7e06f78",
+      "source_member": "weights_axi/layer_02/W_sparse_meta.bin"
+    },
+    "Y_golden": {
+      "file": "Y_golden.bin",
+      "bytes": 453888,
+      "sha256": "7e5b8c893a3477702c2566097a1c12d82e5d710d5b9ede11d42ecd410803d292",
+      "source_member": "cases/dev0000/layer_02/Y_golden.bin"
+    }
+  },
+  "format_validation": {
+    "status": "INDEPENDENT_SPLIT128_DECODE_PASS",
+    "records": 27648,
+    "position_codes": {
+      "4": 4578,
+      "8": 4222,
+      "9": 4468,
+      "12": 4782,
+      "13": 5049,
+      "14": 4549
+    },
+    "retained_zero_values": 9,
+    "reconstructed_dense_sha256": "953f919af13d4b9a19ecb60e9bcaa5a59eb4e19204cd8bdbe63cce2c1a239e14"
+  },
+  "preparation_arithmetic": {
+    "status": "INDEPENDENT_INT64_FULL_K_GOLDEN_MATCH",
+    "elements": 113472,
+    "mismatches": 0,
+    "minimum": -191067,
+    "maximum": 184104,
+    "golden_sha256": "7e5b8c893a3477702c2566097a1c12d82e5d710d5b9ede11d42ecd410803d292",
+    "numpy_version": "1.26.4",
+    "physical_PL_starts": 0
+  },
+  "comparison": "Both modes use the SAME new B24 pruned Wq; Golden is reference-only, never device output",
+  "scope": "One new-model layer02 integer input package; no old12 overwrite; no classification acceptance",
+  "hardware_accessed": false,
+  "physical_PL_starts": 0
+}

@@ -1,0 +1,1 @@
+Fix only the Dense check CLI. Frozen software/model/native binaries remain identical. Existing admission, guardian, plan, Native and closure checks remain active. New runner starts at the verified Dense prefix; no automatic retry. Target500 original Dense images, maximum18000 new starts from prefix0.

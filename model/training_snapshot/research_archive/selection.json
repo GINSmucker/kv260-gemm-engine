@@ -1,0 +1,191 @@
+{
+  "status": "24_TRAIN100K_W8A8_CHECKPOINT_FROZEN_BEFORE_ACCEPTANCE",
+  "winner": {
+    "id": "fixed24",
+    "epoch": 5,
+    "metrics": {
+      "images": 4500,
+      "top1_correct": 2853,
+      "top5_correct": 3851,
+      "top1_pct": 63.4,
+      "top5_pct": 85.57777777777778,
+      "cross_entropy": 1.5801051574716916
+    },
+    "model_path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch5\\model_w8a8.onnx",
+    "model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+    "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+    "logits_sha256": "c92b322ed316a716911c6ab54667ce705fc5a90dae455511598f494319dde403",
+    "added_layers": [],
+    "selected_layers": [
+      2,
+      3,
+      6,
+      7,
+      10,
+      11,
+      14,
+      15,
+      18,
+      19,
+      22,
+      23,
+      26,
+      27,
+      30,
+      31,
+      34,
+      35,
+      38,
+      39,
+      42,
+      43,
+      46,
+      47
+    ],
+    "before_metrics": {
+      "images": 4500,
+      "top1_correct": 2735,
+      "top5_correct": 3769,
+      "top1_pct": 60.77777777777778,
+      "top5_pct": 83.75555555555556,
+      "cross_entropy": 1.717006748832242
+    },
+    "initial_folder": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\initial",
+    "all_epochs": [
+      {
+        "id": "fixed24",
+        "epoch": 0,
+        "metrics": {
+          "images": 4500,
+          "top1_correct": 2735,
+          "top5_correct": 3769,
+          "top1_pct": 60.77777777777778,
+          "top5_pct": 83.75555555555556,
+          "cross_entropy": 1.717006748832242
+        },
+        "model_path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch0\\model_w8a8.onnx",
+        "model_sha256": "4a4103cc7b06432d4f5c63c55f320189136ba6e84f2cfcb82832b4a26ace5e7e",
+        "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+        "logits_sha256": "e8eb230953eca70c08b8c3888e218bfacd7ebdefc0206f465adba8579eb5c1a7"
+      },
+      {
+        "id": "fixed24",
+        "epoch": 1,
+        "metrics": {
+          "images": 4500,
+          "top1_correct": 2802,
+          "top5_correct": 3818,
+          "top1_pct": 62.266666666666666,
+          "top5_pct": 84.84444444444445,
+          "cross_entropy": 1.6317144715158813
+        },
+        "model_path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch1\\model_w8a8.onnx",
+        "model_sha256": "88f2a0d5c11278825ea47309f9ecf716576159f42255ea1a191e61858659d976",
+        "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+        "logits_sha256": "7d582527c4d3aa3dd23827bfae406205b544d044d2115968ac8c31cd13d202a6"
+      },
+      {
+        "id": "fixed24",
+        "epoch": 2,
+        "metrics": {
+          "images": 4500,
+          "top1_correct": 2813,
+          "top5_correct": 3841,
+          "top1_pct": 62.51111111111111,
+          "top5_pct": 85.35555555555555,
+          "cross_entropy": 1.6070411480407658
+        },
+        "model_path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch2\\model_w8a8.onnx",
+        "model_sha256": "ea792d5c0c23ee4813b087de3fdb3a548cd7c11c89d41bfa4bd476b683ac8cb9",
+        "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+        "logits_sha256": "34680b31f02f0b64b67da7053460c0ef07e4122de291f3adb4b2f3c0750f18e3"
+      },
+      {
+        "id": "fixed24",
+        "epoch": 3,
+        "metrics": {
+          "images": 4500,
+          "top1_correct": 2847,
+          "top5_correct": 3850,
+          "top1_pct": 63.266666666666666,
+          "top5_pct": 85.55555555555556,
+          "cross_entropy": 1.5906091664882294
+        },
+        "model_path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch3\\model_w8a8.onnx",
+        "model_sha256": "5da761833ac215e3eecb2291ab135c6a2e351f15642c889b7a32fad405a73ac7",
+        "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+        "logits_sha256": "220f7692c3b0ff0a51653a7a3863d6cf8ca89b62b9f98af77d1c363b6bafdc98"
+      },
+      {
+        "id": "fixed24",
+        "epoch": 4,
+        "metrics": {
+          "images": 4500,
+          "top1_correct": 2851,
+          "top5_correct": 3844,
+          "top1_pct": 63.355555555555554,
+          "top5_pct": 85.42222222222222,
+          "cross_entropy": 1.5821724944267144
+        },
+        "model_path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch4\\model_w8a8.onnx",
+        "model_sha256": "fdc1d29bb5daf6772bc944bab8c4346101e067ca1db9ad52fda6767ab0c1b918",
+        "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+        "logits_sha256": "d53d21edcebc7fa63259069257fd8a1b1a19a89b990f30dcc63ab6d8aa45ab1d"
+      },
+      {
+        "id": "fixed24",
+        "epoch": 5,
+        "metrics": {
+          "images": 4500,
+          "top1_correct": 2853,
+          "top5_correct": 3851,
+          "top1_pct": 63.4,
+          "top5_pct": 85.57777777777778,
+          "cross_entropy": 1.5801051574716916
+        },
+        "model_path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\experiments\\B_mlp24_train100k_20261025_run01\\candidates\\fixed24\\training\\epoch5\\model_w8a8.onnx",
+        "model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+        "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+        "logits_sha256": "c92b322ed316a716911c6ab54667ce705fc5a90dae455511598f494319dde403"
+      }
+    ]
+  },
+  "controls": {
+    "parent24": {
+      "id": "parent24",
+      "epoch": -1,
+      "metrics": {
+        "images": 4500,
+        "top1_correct": 2735,
+        "top5_correct": 3769,
+        "top1_pct": 60.77777777777778,
+        "top5_pct": 83.75555555555556,
+        "cross_entropy": 1.717006748832242
+      },
+      "model_path": "C:\\Users\\TJH\\Documents\\Codex\\2026-10-21\\github-plugin-github-openai-curated-remote-2\\outputs\\h576_b_workspace\\candidates\\B_mlp24_finetuned_continue10_20261025_run01\\model_w8a8.onnx",
+      "model_sha256": "4a4103cc7b06432d4f5c63c55f320189136ba6e84f2cfcb82832b4a26ace5e7e",
+      "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+      "logits_sha256": "e8eb230953eca70c08b8c3888e218bfacd7ebdefc0206f465adba8579eb5c1a7"
+    },
+    "dense": {
+      "id": "dense",
+      "epoch": -1,
+      "metrics": {
+        "images": 4500,
+        "top1_correct": 2919,
+        "top5_correct": 3921,
+        "top1_pct": 64.86666666666666,
+        "top5_pct": 87.13333333333334,
+        "cross_entropy": 1.5583866390105798
+      },
+      "model_path": "D:\\FPGA\\AI_Operator_Optimization\\h576_sparse24\\inputs\\baseline\\h576_w8.onnx",
+      "model_sha256": "f2f203362a337a357028b8b99c853cd39bdc812cf1da41775c9e233907d5f415",
+      "preprocessed_inputs_sha256": "eca74def9d9b593d88d658f5ff456ee9dea009829f044da8a48d5049cfc7f2c7",
+      "logits_sha256": "689cf1569382b2a3f3e0bbff115e74afec3675c293f387e6dbd5bdfc2f3007c0"
+    }
+  },
+  "ranking_sha256": "49ded4692706d9acb36045ffff36f21e389281e3d7e011820d51b585402de686",
+  "policy_sha256": "bcd26f0be30d2feaa942eaa5369781314be501a59f1390aa65ae55922b3ac38f",
+  "acceptance_used_to_select": false,
+  "scope": "Balanced100k train,new4500 development; fixed24 masks; best among epochs0..5 including unchanged parent; no global or convergence guarantee"
+}

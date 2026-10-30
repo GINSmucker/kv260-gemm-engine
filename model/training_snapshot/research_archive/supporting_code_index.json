@@ -1,0 +1,38 @@
+[
+  {
+    "file": "research_archive/supporting_code/resume_large24_selection.py",
+    "sha256": "6c5972f5148298a55df2cf88bf73225a7ecb9eec890cd42b1128c3214b469aab"
+  },
+  {
+    "file": "research_archive/supporting_code/large24_common.py",
+    "sha256": "e7e96ed9dbc352c2790611455ac6a23692d127c662cb79bfd63db28e51610771"
+  },
+  {
+    "file": "research_archive/supporting_code/exhaustive20_common.py",
+    "sha256": "e6d65ee4a7ad7641fbb259ff9cd17eff7d69f123cbf2e7c4f215ca1650527969"
+  },
+  {
+    "file": "research_archive/supporting_code/eval_models.py",
+    "sha256": "1ea35bea273d8ac696713965e75607ed2a6a8ed666f002ce31b23a8356b29d72"
+  },
+  {
+    "file": "research_archive/supporting_code/select_large24.py",
+    "sha256": "434b0d10dace9ad400b40f6681cbb22451cf2035f3c448fef0c8b4093dfa80d0"
+  },
+  {
+    "file": "research_archive/supporting_code/finetune_model.py",
+    "sha256": "fc45e08cb396dfebca5c461a81f149732951677ca4e5489355f5638f08b2e238"
+  },
+  {
+    "file": "research_archive/supporting_code/finetune20.py",
+    "sha256": "351bb8055f4dd50293ea7cc0b86bb71fd290274322d3b6bee5ac6e776304e676"
+  },
+  {
+    "file": "research_archive/supporting_code/finetune20_common.py",
+    "sha256": "5a5bdea56d5f6442d363abcb3d4b83cf114b605fcf51dd4f612610a1ab00a50c"
+  },
+  {
+    "file": "research_archive/supporting_code/prepare_finetune_data.py",
+    "sha256": "fe2a4efed3599ad37ac593a7f66cceea17139ef6a5bef7ce1f1ae52f8ae824a7"
+  }
+]

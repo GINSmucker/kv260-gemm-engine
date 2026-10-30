@@ -1,0 +1,56 @@
+{
+  "assets": {
+    "B_FINAL_H576_24L_100K_20261026_v1.zip": {
+      "identity": {
+        "bytes": 196459285,
+        "sha256": "7ada4de5cf99d09d3d6a5b9d92108bcbce85dc636e0c1669d8b14d5171139fc4"
+      },
+      "role": "original B delivery, final models,training recipe and provenance; training images and historical parent models omitted by B"
+    },
+    "dense36-payload.tar.gz": {
+      "identity": {
+        "bytes": 24724030,
+        "sha256": "120050090eb0e4c013fedfaf1419bdec447cd71a591b376dc7752d0533516285"
+      },
+      "members": 59,
+      "role": "exact omitted payloads for dense36"
+    },
+    "fd96539d-platform.tar.gz": {
+      "identity": {
+        "bytes": 7811233,
+        "sha256": "1aac145bd43508a6c91d7d6d922ecd229386f7e2db4a69900a06a349206a6700"
+      },
+      "members": 29,
+      "role": "original platform outputs and metadata; deployment manifest predates board validation"
+    },
+    "layer02-payload.tar.gz": {
+      "identity": {
+        "bytes": 483811,
+        "sha256": "e56d6adf2acb41ce12e9698a0568c9e154f006efcd983a99e8dbad16c43dc8a3"
+      },
+      "members": 7,
+      "role": "exact omitted payloads for layer02"
+    },
+    "paired500-evidence.tar.gz": {
+      "identity": {
+        "bytes": 21246214,
+        "sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b"
+      },
+      "role": "original Dense/Sparse paired proof; includes original Sparse evidence"
+    },
+    "sparse24-payload.tar.gz": {
+      "identity": {
+        "bytes": 20895756,
+        "sha256": "42426becdb78ad90698f2402a02cc86b340434f25abec7efd4ec324ff52cee06"
+      },
+      "members": 59,
+      "role": "exact omitted payloads for sparse24"
+    }
+  },
+  "dataset_images_in_Git": false,
+  "hardware_accessed": false,
+  "release_tag": "opt50-sparse24-final-20261030",
+  "schema": "opt50_final_external_assets_v1",
+  "scope": "Local artifact identities; upload state belongs to the matching GitHub Release.",
+  "status": "PASS"
+}

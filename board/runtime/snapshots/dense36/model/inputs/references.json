@@ -1,0 +1,58 @@
+{
+  "ORT": {
+    "inter": 1,
+    "intra": 4,
+    "optimization": "OFF",
+    "sequential": true,
+    "spinning": 0
+  },
+  "ORT_version": "1.22.1",
+  "local_affinity": "NOT_APPLIED_WINDOWS_TOPOLOGY_DIFFERS",
+  "numpy_version": "1.26.4",
+  "samples": [
+    {
+      "fused4_bitwise_mismatches": 0,
+      "input_raw_sha256": "034dbb4eaef50bfdae450cb3d1e92bb467972e2c882dbd7152cd5c4229410eb8",
+      "logits": 1000,
+      "reference4_raw_logits_sha256": "101238e453dcf960c856be5b14c84ace9e5b188188747933dc549abe7685a153",
+      "sample_id": "dev0000",
+      "top5": [
+        0,
+        389,
+        955,
+        103,
+        997
+      ]
+    },
+    {
+      "fused4_bitwise_mismatches": 0,
+      "input_raw_sha256": "eb4687954e66f14e6c98ec15e1d1e515e486e9a9adf1c5f440900a0efcc23ebb",
+      "logits": 1000,
+      "reference4_raw_logits_sha256": "dce3ae9757a53ab3b73192e4b684547e38c4d2ce742608e544b833281262fffe",
+      "sample_id": "dev4499",
+      "top5": [
+        773,
+        653,
+        412,
+        804,
+        899
+      ]
+    },
+    {
+      "fused4_bitwise_mismatches": 0,
+      "input_raw_sha256": "ad8c5f4d30e45b2a50f7f4d1f347f64d613c6fbcd92c54ca746ab077f402d8cc",
+      "logits": 1000,
+      "reference4_raw_logits_sha256": "22989c61592f0c9bcebdc2daa06921d7b91a2c78d2539d5e70f20d29a7784a0c",
+      "sample_id": "zero",
+      "top5": [
+        21,
+        549,
+        600,
+        701,
+        446
+      ]
+    }
+  ],
+  "scope": "CPU mathematical check only; no ARM plugin or PL execution",
+  "status": "PASS_DENSE_ORIGINAL_CPU4_AND_FUSED_INTEGER_EXPANSION"
+}

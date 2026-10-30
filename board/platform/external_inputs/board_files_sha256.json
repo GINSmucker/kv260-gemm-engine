@@ -1,0 +1,62 @@
+[
+  {
+    "Path": "k26c\\1.1\\board.xml",
+    "SHA256": "ebf18cbf118c064194e5c731e3f11b996eafa352374c7896fa45cc6c28454bfb"
+  },
+  {
+    "Path": "k26c\\1.1\\changelog.txt",
+    "SHA256": "a0645f198f8a4d197a8f05ae0ce11429223649c5270af59a3cab5ddb5ad132df"
+  },
+  {
+    "Path": "k26c\\1.1\\k26_board.PNG",
+    "SHA256": "bd7fe63fc33d6d768285f3ff5199dc8bebb3ead063d096f34455857de8d08360"
+  },
+  {
+    "Path": "k26c\\1.1\\LICENSE",
+    "SHA256": "1172ac64342e03fc43331559614ba38e221447cdd019e3018bac1c0ea6d59375"
+  },
+  {
+    "Path": "k26c\\1.1\\part0_pins.xml",
+    "SHA256": "89ad4c859f4e889931061f82104fb2bdad9a45ddf163bb7584a3ac43b673f3d0"
+  },
+  {
+    "Path": "k26c\\1.1\\preset.xml",
+    "SHA256": "5413626ec3568ebb23a0b7dccbb9ffb875606cc6ae16a852f2acb7458fd112dd"
+  },
+  {
+    "Path": "k26c\\1.1\\vsom_kit.jpg",
+    "SHA256": "30e0f5d74efb390e1cb37ad6114e6887744e8c8309b0de5c64f6f18afb8b9321"
+  },
+  {
+    "Path": "k26c\\1.1\\xitem.json",
+    "SHA256": "8a5fc72386f66d7391045b25419cc25d99c2a28cf016999cea1f3e41c330c5b9"
+  },
+  {
+    "Path": "kv260\\1.1\\board.xml",
+    "SHA256": "2488021d186666863abb038fa43e198aeef677e9184c820e05a1f42a149e2b9d"
+  },
+  {
+    "Path": "kv260\\1.1\\changelog.txt",
+    "SHA256": "a0645f198f8a4d197a8f05ae0ce11429223649c5270af59a3cab5ddb5ad132df"
+  },
+  {
+    "Path": "kv260\\1.1\\LICENSE",
+    "SHA256": "1172ac64342e03fc43331559614ba38e221447cdd019e3018bac1c0ea6d59375"
+  },
+  {
+    "Path": "kv260\\1.1\\part0_pins.xml",
+    "SHA256": "ed86396228bfa3a05b6029273397bcc3ad98b97b7474eb3180f73c26a82236d6"
+  },
+  {
+    "Path": "kv260\\1.1\\preset_s4.xml",
+    "SHA256": "4c0dcf1546a232bcaed1191d25fe65a10352b4198351dae2dafcbac7eb1d2f27"
+  },
+  {
+    "Path": "kv260\\1.1\\vsom_kit.jpg",
+    "SHA256": "30e0f5d74efb390e1cb37ad6114e6887744e8c8309b0de5c64f6f18afb8b9321"
+  },
+  {
+    "Path": "kv260\\1.1\\xitem.json",
+    "SHA256": "fd8127f99fffa4d42101d8e2b3fdd03e1d4f60cbac584a56f81db36effd1c07c"
+  }
+]

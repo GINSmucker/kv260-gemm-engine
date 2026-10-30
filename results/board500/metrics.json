@@ -1,0 +1,119 @@
+{
+  "CPU_PL_bitwise_mismatches": {
+    "Dense": 0,
+    "Sparse24": 0
+  },
+  "FP32_logits_compared_per_model": 500000,
+  "Sparse_mean_latency_reduction_pct": 4.812444912679892,
+  "accuracy": {
+    "Dense": {
+      "images": 500,
+      "top1_correct": 353,
+      "top1_pct": 70.6,
+      "top5_correct": 452,
+      "top5_pct": 90.4
+    },
+    "Sparse24": {
+      "images": 500,
+      "top1_correct": 357,
+      "top1_pct": 71.4,
+      "top5_correct": 461,
+      "top5_pct": 92.2
+    }
+  },
+  "classes_covered": 250,
+  "classes_ranked": 1000,
+  "environment": {
+    "NumPy": "1.26.4",
+    "ORT": "1.22.1",
+    "ORT_inter_threads": 1,
+    "ORT_intra_threads": 4,
+    "batch_size": 1,
+    "compiler": "g++13",
+    "graph_optimization": "OFF",
+    "kernel": "6.8.0-1015-xilinx"
+  },
+  "hardware": {
+    "AXI_bits": 128,
+    "MAC_lanes": 512,
+    "OS_reported_clock_hz": 124999999,
+    "PL_calls_per_image": 36,
+    "PS_linear_layers": 13,
+    "board": "KV260",
+    "firmware_uuid": "fd96539d-4cbc-f732-7694-0f0236ca1cf3",
+    "target_clock_hz": 125000000
+  },
+  "images_accuracy": 500,
+  "latency": {
+    "Dense_CPU_ms": {
+      "max_ms": 383.534606,
+      "mean_ms": 308.54063073333333,
+      "median_ms": 300.069451,
+      "min_ms": 292.506585,
+      "p95_ms": 366.4925826,
+      "samples": 195
+    },
+    "Dense_PS_PL_ms": {
+      "max_ms": 173.090981,
+      "mean_ms": 143.49397835897435,
+      "median_ms": 140.687517,
+      "min_ms": 138.804299,
+      "p95_ms": 163.4353736,
+      "samples": 195
+    },
+    "Sparse_CPU_ms": {
+      "max_ms": 365.691427,
+      "mean_ms": 303.00316754871795,
+      "median_ms": 295.140782,
+      "min_ms": 291.194822,
+      "p95_ms": 355.91756,
+      "samples": 195
+    },
+    "Sparse_PS_PL_ms": {
+      "max_ms": 162.95879,
+      "mean_ms": 136.5884096974359,
+      "median_ms": 133.127861,
+      "min_ms": 130.571686,
+      "p95_ms": 160.2989576,
+      "samples": 195
+    }
+  },
+  "latency_image_range_1based": [
+    306,
+    500
+  ],
+  "latency_images": 195,
+  "measurement": {
+    "CPU": "ORT W8A8 numerical reference; not an optimized native INT8 CPU performance limit",
+    "PS_PL": "Runner.run includes PS work,BEGIN/END and client cache synchronization; excludes setup,preprocessing and CPU reference",
+    "full_1800_board_accuracy": false,
+    "isolated_PL_or_steady_state_claimed": false
+  },
+  "model_sha256": {
+    "Dense": "f2f203362a337a357028b8b99c853cd39bdc812cf1da41775c9e233907d5f415",
+    "Sparse24": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43"
+  },
+  "review": {
+    "hardware_accessed": false,
+    "independent_review_status": "LOCAL_INDEPENDENT_SAVED_LOGITS_AND_PAIRED_METRICS_PASS",
+    "saved_logits_recomputed": true
+  },
+  "runtime_tools_manifest_sha256": {
+    "Dense": "e60866fca203ee366c9c9717cdbc55256cdde6ced7c25f007faf923854ad7b46",
+    "Sparse24": "38c130e8632b4433f4217d840d9d9578699fb654de6095df17003d3f7fa0217d"
+  },
+  "schema": "opt50_final_paired_metrics_v1",
+  "source_evidence": {
+    "Sparse_archive_sha256": "f14b1a7e3ec26fd7205e4b32ca57b0ae5ab55972cbcb353fbcb406003bc182fb",
+    "archive": "evidence.tar.gz",
+    "board_summary_sha256": "1ed40cabd1b2822293f8a88609ab65761533a563c963722615b2d588668f22ed",
+    "bytes": 21246214,
+    "sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b"
+  },
+  "speedups": {
+    "Dense_CPU_over_Dense_PS_PL": 2.150199153036701,
+    "Dense_PS_PL_over_Sparse_PS_PL": 1.0505575010122405,
+    "Sparse_CPU_over_Sparse_PS_PL": 2.218366611192824
+  },
+  "status": "PASS"
+}

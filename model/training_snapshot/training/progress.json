@@ -1,0 +1,11 @@
+{
+  "candidate": "fixed24",
+  "epoch": 5,
+  "batch": 3125,
+  "batches": 3125,
+  "updates": 7815,
+  "images_seen_epoch": 100000,
+  "loss": 0.6585982414150238,
+  "lr": 1.0000003730872405e-06,
+  "seconds": 1510.6805028915405
+}

@@ -1,56 +1,75 @@
-# KV260 · 完整模型协同推理
+# KV260 可重构 Dense / 2:4 Sparse 矩阵计算引擎
 
-[完整交付与下载](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/team-handoff-20261007) · [网页使用指南](docs/workbench.md) · [冻结运行包](https://github.com/GINSmucker/kv260-gemm-engine/releases/tag/h576-summary-20261019)
+本项目在 KV260 上实现 W8A8 稠密／结构化稀疏矩阵计算引擎，并完成 H576 视觉模型的真实图片推理验证。同一个 OPT50 计算核通过 `mode` 切换 Dense 和 K 方向 2:4 Sparse 路径。
 
-本首页展示冻结 H576 的完整成果；默认开发树仍保留既有计算基线。运行工作台或复核 H576 时，请取得上方完整交付分支，按对应模型、平台和运行包使用。
-
-将完整视觉模型部署到边缘 FPGA，需要同时做好计算、数据交付、模型质量和运行展示。本项目在 KV260 上实现 CPU 与 FPGA 的固定分工：保留完整模型计算，让适合卸载的矩阵运算进入可编程逻辑，其余计算由处理器完成。
-
-当前成果采用冻结的 H576 紧凑模型与 Dense W8A8 数值路径。MLP 隐藏宽度为 576，包含十二个 Transformer 块和四十九个线性层，其中三十六层由 FPGA 执行、十三层由 CPU 执行。这是缩宽后的稠密模型，不是 2:4 稀疏加速器。
-
-![成果工作台](docs/images/hero_final.jpg)
+完整模型包含 49 个线性层：36 个进入 FPGA PL，13 个保留在 ARM PS。当前默认模型对 24 个 MLP 线性层剪枝并微调，每次推理在 PL 执行 12 次 Dense 和 24 次 Sparse 调用；原始未剪枝模型通过同一核执行 36 次 Dense 调用。
 
 ## 已取得的结果
 
-| 观察维度 | 已有实测结果 | 解释范围 |
-| --- | --- | --- |
-| 完整推理延迟 | 两轮中位数 142.78 / 142.68 ms | 同板、固定四线程、预热后完整浮点输入至浮点输出 |
-| 相对原模型 ARM FP32 | 约 2.295 / 2.294 倍 | 包含模型缩宽、PS 优化与 PL 交付的综合收益 |
-| 相对同候选 ARM W8A8 | 约 2.070 倍 | 对照是数值语义参考，不是高性能 INT8 CPU 内核 |
-| 既有质量集 | Top1 3039 / 3925，Top5 3729 / 3925 | 十类图像范围，Top1 比原 FP32 高 1.554 个百分点 |
-| 模型结果 | 同 ARM 候选与 PL 的 3,925,000 个 logits 逐位一致 | 不扩展为跨主机逐位一致结论 |
-| 有限连续运行 | 5,000 次推理、十轮正式加载回退 | 二十张公开图片重复使用，不能视为新增质量样本 |
-| 浏览器交付 | 真实 PL 图片推理、性能对比、路由与下载已验证 | 新展示层另完成存档显示检查，未重跑其全部实时链路 |
+两个模型均完成相同 500 张真实图片的板端验收，各自 CPU 参考和 PL 输出的 **500,000 个 FP32 logits 逐位一致**。500 张图片覆盖 250 类，预测在完整 1000 类输出上排名。
 
-计时不包含模型初始化、图片预处理、硬件加载、结果序列化和验算。连续运行的 p95 / p99 为 143.71 / 148.98 ms，最大值为 175.44 ms；有限样本不构成长期尾延迟上界。全部有效样本保留，失败运行仍属于验证记录。
+下表精度使用相同 500 张；耗时统一使用软件调度版本一致的第 306～500 张，共 195 张。CPU 为 ORT W8A8 **数值语义参考**，没有声明为专门优化的原生 INT8 CPU 性能上限。
 
-## 为什么能够更快
+| 模型与执行方式 | Top1 / Top5（500张） | 平均耗时（195张） | 中位数 | P95 | 相对自身CPU参考 |
+|---|---:|---:|---:|---:|---:|
+| 原始 Dense，ARM CPU | 70.6% / 90.4% | 308.541 ms | 300.069 ms | 366.493 ms | 1× |
+| 原始 Dense，ARM＋FPGA | 70.6% / 90.4% | **143.494 ms** | 140.688 ms | 163.435 ms | **2.150×** |
+| 剪枝微调 Sparse24，ARM CPU | 71.4% / 92.2% | 303.003 ms | 295.141 ms | 355.918 ms | 1× |
+| 剪枝微调 Sparse24，ARM＋FPGA | 71.4% / 92.2% | **136.588 ms** | 133.128 ms | 160.299 ms | **2.218×** |
 
-主要收益来自减少实际重复工作。量化后的输入和整数输出复用固定共享缓冲，静态权重在初始化时装载。模型插件直接写入输入区并读取输出区，控制消息不携带大块矩阵。唯一硬件控制进程负责同步、启动和完成确认，保持简单的同步执行顺序。
+同调度版本的 Dense / Sparse 完整模型平均延迟由 143.494 ms 降至 136.588 ms，降低 **4.81%**，约 **1.051×**。这是原始 Dense 与剪枝微调模型的系统对照，权重不同，不能单独归因为稀疏 MAC 核加速。
 
-处理器继续使用四线程执行已有计算。QKV 结果直接写入消费者所需布局；GELU 的外围算术减少中间遍历，同时保留原生 Erf 和既定浮点舍入顺序。attention 保留现有内核。硬件保持单引擎、512 MAC、125 MHz 和 128 位通路，优化结论以完整交付成本衡量。
+计时为完整 `Runner.run`，包含 PS 工作、图 BEGIN/END 和必要 client 缓存同步；排除初始化、图片预处理和 CPU 参考验算。每张图片只保留本次记录，批次采用有界常驻会话；没有由此声明稳态吞吐、长期尾延迟或纯 PL 周期性能。[统计与逐图数据](results/README.md) · [测量口径](docs/measurement.md)
 
-## 架构与展示
+## 架构与配置
 
-![系统架构](docs/diagrams/architecture-preview.png)
+```mermaid
+flowchart LR
+    A[真实图片] --> B[PS 预处理和完整模型]
+    B --> C[PS 量化与共享缓冲]
+    C --> D[OPT50 单核 Dense / 2:4 Sparse]
+    D --> E[PS 反量化和其余算子]
+    E --> F[1000类 logits / Top1 / Top5]
+```
 
-架构图由 Archify 生成。[交互式架构说明](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/diagrams/architecture.html)下载后可通过浏览器打开，支持缩放、关系追踪和主题切换；GitHub 页面本身不执行交互式 HTML。
+| 项目 | 交付配置 |
+|---|---|
+| 平台 | KV260 / Kria K26 |
+| 数值路径 | INT8 输入与权重、INT32 累加输出，PS 保留既定浮点后处理 |
+| 计算核 | 单一共享 512-MAC 阵列、8 参数 OPT50 ABI |
+| 时钟 / AXI | 125 MHz 目标、128 bit；OS 记录时钟为 124,999,999 Hz |
+| 模型 | H576、12 个 Transformer 块、49 个线性层 |
+| Sparse24 路由 | PL 12 Dense＋24 Sparse；PS 13 Linear |
+| 软件 | Ubuntu 24.04.2 / kernel 6.8.0-1015-xilinx；ORT 1.22.1、NumPy 1.26.4、g++13 |
+| 推理配置 | batch=1、ORT intra=4 / inter=1、关闭图优化 |
 
-工作台将正式性能、图片交互测评、模型质量和有限稳定性分区展示。性能对比采用 CPU 与 PS／PL 两条曲线，可以切换参考并查看各样本。曲线展示真实保存的测量值，不生成平滑趋势或替代缺失数据。路由视图说明四十九层的静态分工，不把它表达成逐层进度或逐层耗时。
+## 验证范围
 
-![性能双曲线](docs/images/performance_card.jpg)
+- 当前板端分类精度范围是固定 500 张子集，不是完整 ImageNet 验证集。
+- B 的历史 1800 张 CPU 单线程报告中，Dense Top1/Top5 为 65.83%/87.50%，Sparse24 为 64.56%/87.00%。该记录单列保留，不能由本次 500 张优势宣称总体精度提高。
+- 精度对照包含剪枝和额外微调／蒸馏的共同影响，没有同训练预算的 Dense 微调消融。
+- 原始运行包和其板测证明按 SHA256 冻结保存。此次 Git 目录整理的离线检查与原包板测身份分别记录；没有冒充一次新的上板、HLS、RTL 或 Vivado 验证。
+- 板端快照保留原启动、路径、编译器和历史闭合门禁；还原文件不等于可以直接访问硬件。全新操作系统／其他板卡的完整重建尚未验证。
 
-## 阅读和使用
+详见 [验证与限制](docs/verification.md) 和 [证据来源](docs/provenance.md)。
 
-- [项目原理与当前状态](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/progress.md)：理解模型、运行时、硬件及剩余边界。
-- [打开和使用工作台](docs/workbench.md)：查看成果、运行图片、阅读性能和路由、下载结果。
-- [证据与验收范围](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/verification.md)：区分质量、性能、功能与有限稳定性结论。
-- [接口与工程协作](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/interface.md)：了解数值和执行职责。
-- [启动本机工作台](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/start-workbench.ps1)：使用已有 PowerShell 7 和 Node.js 24 或更高版本运行，默认展示存档与演示功能。
-- [按需交付资产](https://github.com/GINSmucker/kv260-gemm-engine/blob/codex/team-handoff-20261007/docs/locks/ASSETS.lock.json)：冻结模型、运行包和公开验证输入按身份取得。
+## 阅读与复现
 
-## 当前交付边界
+- [快速开始](docs/quickstart.md)：离线源码检查、还原受检运行包、CPU 自测和板端使用前提。
+- [共同接口](docs/interface.md)：Dense/Sparse 数值、布局、尺寸和寄存器约定。
+- [模型与训练](model/README.md)：24 层掩码、原始模型身份、训练来源和外部数据。
+- [ARM 与平台](board/README.md)：冻结运行包、平台源码、构建和执行职责。
+- [外部资产清单](assets_manifest.json)：模型、平台和完整证据包的精确身份；下载见匹配 Release。
 
-这是有实测证据的研究交付总结，尚不等于联合正式发布。新增两千张质量保留集仍未使用；既有质量结论不外推至完整 ImageNet 泛化。跨主机 W8 逐值一致检查仍有失败记录，Chrome 自动上传本机 JPEG 的扩展权限路径仍待验证。永久 AXI 卡死恢复、无限期运行保证和从全新系统重建环境也不在已通过范围内。
+```text
+hls/       OPT50 源码、HLS配置与合成测试用例
+model/     模型准备和原始B训练/导出源码快照
+board/     平台脚本、部署源描述、冻结ARM运行包
+results/   原始摘要、逐图CSV、CPU/PL统计和检查记录
+docs/      接口、环境、复现、测量与验证边界
+tools/     身份校验、运行包还原、离线证据复核
+```
 
-旧默认开发配置、正式资格参考和其他资源候选保留独立身份，不能与当前 H576 成果混用。取得源码和资产不自动授权加载共享板卡；真实推理需要维护者建立匹配窗口。仓库不包含两千张质量保留集或 C 私有留出材料。
+## 版本演进
+
+[v1 初级 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v1-dense-initial) · [v2 H576 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v2-h576-dense) · [v3 OPT50 / 12层 Sparse](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v3-opt50-sparse)。历史分支保持独立身份；当前交付为 24 层 Sparse 和原始 Dense 的真实图片对照。

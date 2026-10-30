@@ -1,0 +1,98 @@
+{
+  "schema_version": "B_H576_FINAL_RELEASE_V1",
+  "source_model_sha256": {
+    "w8a8": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+    "fp32": "82399bc1ce46965fe141c0bc027574ddb656dcf5788ba0a63044770fcb2a1df0",
+    "trainable": "5d357ed8548b98d9da02c9ce59c00ef7f83795505c5dc32263b3ffb774e156aa"
+  },
+  "sparse_layers_count": 24,
+  "sparse_layer_indices": [
+    2,
+    3,
+    6,
+    7,
+    10,
+    11,
+    14,
+    15,
+    18,
+    19,
+    22,
+    23,
+    26,
+    27,
+    30,
+    31,
+    34,
+    35,
+    38,
+    39,
+    42,
+    43,
+    46,
+    47
+  ],
+  "format_id": "H576_SPARSE24_SPLIT128_V1",
+  "models": {
+    "w8a8": "models/final/model_w8a8.onnx",
+    "fp32": "models/final/model_fp32.onnx",
+    "trainable": "models/final/model_trainable.pt"
+  },
+  "data": {
+    "train": {
+      "labels": "datasets/labels/train.csv",
+      "images": 100000,
+      "external_archive": "datasets/images/train.zip",
+      "archive_included": false
+    },
+    "tune": {
+      "labels": "datasets/labels/tune.csv",
+      "images": 4500,
+      "external_archive": "datasets/images/tune.zip",
+      "archive_included": false
+    },
+    "acceptance": {
+      "labels": "datasets/labels/acceptance.csv",
+      "images": 1800,
+      "external_archive": "datasets/images/acceptance.zip",
+      "archive_included": false
+    }
+  },
+  "source_accuracy_report": "evidence/accuracy/REPORT.md",
+  "source_training_policy": "research_archive/policy.json",
+  "codec_upstream_sha256": "ccec814e3b0e00e874dd8a1c0550bce68a88a9f45fceb22b4abf5523809ba49d",
+  "immutable_model_files": true,
+  "hardware_accessed": false,
+  "HLS_RTL_board_validation": "NOT_RUN",
+  "mutable_user_work_root": "work",
+  "created_at": "2026-10-26T13:10:56.559177+08:00",
+  "readme": "README.md",
+  "report": "docs/FINAL_REPORT.md",
+  "ac_handoff": "docs/AC_HANDOFF.md",
+  "layers": "parameters/layers.json",
+  "full_parameters": "parameters/all_fp32.npz",
+  "real_cases": "cases/index.json",
+  "physical_weights": "weights_axi/pl_weights_bo.json",
+  "original_experiment_status": "Final epoch5 model already selected and accepted; weights unchanged by delivery work",
+  "new_software_validation": "PASS",
+  "hardware_validation": "NOT_RUN",
+  "delivery_profile": "LEAN_NO_DATA_OR_HISTORICAL_MODELS",
+  "slimmed_at": "2026-10-26T14:19:17.867830+08:00",
+  "source_full_manifest_sha256": "359ac2a9dcca8fa3246757e4251c4c60c6fea495eff0a732958aae04953d499d",
+  "omissions": "docs/OMITTED_FILES.json",
+  "raw_training_and_evaluation_images_included": false,
+  "historical_logits_included": false,
+  "comparison_model_files_included": false,
+  "external_training_inputs": {
+    "initial_model": {
+      "bytes": 19496673,
+      "sha256": "9aee6be0491c9584716ed6871770b2ff2f65c1394ebd8e4de3c7c10c4aea0697",
+      "description": "100k-before parent24 FP32, required for exact historical policy rerun"
+    },
+    "teacher_model": {
+      "bytes": 19496673,
+      "sha256": "b07d7279aecaf64b7907c6849ad8bcce4acaafeeb1110bfdd1de2d5b4843fb21",
+      "description": "Original Dense FP32 teacher"
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "case_id": "B24_dev0000_layer02",
+  "expected_START_commands": 2,
+  "expected_compared_INT32_outputs": 226944,
+  "files": {
+    "README.md": {
+      "bytes": 7385,
+      "sha256": "c3db5235cfec42cd8483d2c440318a425ef14f571105e274d7abc6af82514fc4"
+    },
+    "build_runtime.py": {
+      "bytes": 5593,
+      "sha256": "89d777238d6b88e5653bd1875df4656e865bd6e78b8fdb43e1843cb423a9f703"
+    },
+    "data/W_dense_data.bin": {
+      "bytes": 110592,
+      "sha256": "953f919af13d4b9a19ecb60e9bcaa5a59eb4e19204cd8bdbe63cce2c1a239e14"
+    },
+    "data/W_dense_meta.bin": {
+      "bytes": 16,
+      "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+    },
+    "data/W_sparse_data.bin": {
+      "bytes": 55296,
+      "sha256": "6a424a993a7f6b0d991663b7619f14fffd7d83d6c3f09c7702af3c6a1bf4ae9b"
+    },
+    "data/W_sparse_meta.bin": {
+      "bytes": 13824,
+      "sha256": "94a777971b6bc52b7180251d2c474c5ae4a79fba7e509917e171451ae7e06f78"
+    },
+    "data/X.bin": {
+      "bytes": 37824,
+      "sha256": "67563398b91ee2a852c21b098bad353e5db10e2d13652574512bb88149b2dfe9"
+    },
+    "data/Y_golden.bin": {
+      "bytes": 453888,
+      "sha256": "7e5b8c893a3477702c2566097a1c12d82e5d710d5b9ede11d42ecd410803d292"
+    },
+    "data/manifest.json": {
+      "bytes": 4348,
+      "sha256": "a6a24ae921c2ace6443861479312989d5a8f51ca93f1fbda082322e82ef83e1f"
+    },
+    "data/source/B_CASE.json": {
+      "bytes": 4001,
+      "sha256": "47799481d49167fd565a3ff042f77069e3b43c75a4cf05e21347b87da9cbaaf2"
+    },
+    "data/source/B_LAYERS.json": {
+      "bytes": 38684,
+      "sha256": "4b24f55010f802bf8d53c184f1252a2e96175975026f834d19a284d6eb8b4f88"
+    },
+    "data/source/B_MANIFEST.json": {
+      "bytes": 123016,
+      "sha256": "c0f35179ea2edd7fe848cc5643232da86b795b92a18fa27624f5770cad02f769"
+    },
+    "data/source/B_MANIFEST.sha256": {
+      "bytes": 81,
+      "sha256": "a32c843dd4257fe3167985f9b6a5c9b67e432b0cbe535c8ab12fde2e61f7498a"
+    },
+    "data/source/B_RELEASE.json": {
+      "bytes": 3160,
+      "sha256": "9bf0bfe9dd9b9cead59ef4012c233aff718499d8279e241d08a7274f98fb51fa"
+    },
+    "offline_check.py": {
+      "bytes": 5094,
+      "sha256": "4589bb388da68a98ddefda1dc68650c077a8889c339753847303ede7bc160b4c"
+    },
+    "prepare_inputs.py": {
+      "bytes": 20382,
+      "sha256": "27729304f60b6de6ad021a2a171e3b3d213f433709f08cce588873c6e8570f20"
+    },
+    "run_layer02.py": {
+      "bytes": 35242,
+      "sha256": "3a80850b2063e932216dd6bef306a051245b636fac4f5c193d6384126b89e14e"
+    },
+    "runtime/opt50_b24_layer02.cpp": {
+      "bytes": 27551,
+      "sha256": "647477b0cbe333b1e75c06884c4c5cb2b0033a269235e52032b5383269b6a611"
+    },
+    "runtime/opt50_b24_layer02_pure.hpp": {
+      "bytes": 22665,
+      "sha256": "a3aa82f2583502b99cb000954bac4b907b3303ab2c431730f48eed8ed88e74cd"
+    },
+    "runtime/support/opt50_common.hpp": {
+      "bytes": 8267,
+      "sha256": "c83b59c5a3cc1dd9fd8fdf26ef66b36aa4adaa50b43dd4679831ebf9678e7941"
+    },
+    "runtime/support/picosha2.h": {
+      "bytes": 13422,
+      "sha256": "b13c180161ffac8d0adc81e033e493c409457c4d1258ab9781ac80579ba3bdd8"
+    },
+    "support_py/durable.py": {
+      "bytes": 15877,
+      "sha256": "b2ac23fbebdabe2acadf3609fd492c8b7eb61064c299a7d2a32b027bc9be2537"
+    },
+    "support_py/resident.py": {
+      "bytes": 31095,
+      "sha256": "455536a8a45d8d8c2086e237f1fde959940fb264d2e4dcbe3907c6288c1190fe"
+    },
+    "tests/test_coordinator.py": {
+      "bytes": 19423,
+      "sha256": "e2952ea26dc5758f9c5f395bafa1b6dbfe0b27d3aa8fd8753f597d13f5722a33"
+    },
+    "tests/test_prepare_inputs.py": {
+      "bytes": 13107,
+      "sha256": "c68cee2caa481166c9db65e26260de3efd3dafe0acc425aedaa02b42a14539cc"
+    },
+    "tests/test_resident_profiles.py": {
+      "bytes": 4973,
+      "sha256": "4d564a913790ca54734fe7f1acac9bb21369fb6f233cfec5926d77a2ca8539cd"
+    },
+    "tests/test_runtime_contract.py": {
+      "bytes": 7942,
+      "sha256": "e6a85ea5c7dd7c76d4578aafc3d20d1ff1f01660e15db7d7b8646f5772d7e3a0"
+    },
+    "verify_tools.py": {
+      "bytes": 3097,
+      "sha256": "006bedd719ce9375f62a9351dae844d0c5354a4268c5bbf8cb5e42a2b52013f7"
+    }
+  },
+  "hardware_executed": false,
+  "old_12_layer_release_modified": false,
+  "schema": "opt50_b24_layer02_tools_v1",
+  "shape_MKN": [
+    197,
+    192,
+    576
+  ],
+  "software_revision": "boot-profile-v2",
+  "source_model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+  "status": "PREPARED_NOT_BOARD_RUN",
+  "trusted_loader_v3_manifest": {
+    "bytes": 1953,
+    "sha256": "b099d6206eea122c6cff4c5af937091d35cb1bc3ae50000b38c34612569d505a"
+  }
+}

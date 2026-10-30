@@ -1,0 +1,456 @@
+{
+  "schema": "opt50_system_verified_v1",
+  "status": "PASS",
+  "run_id": "build_20261024_132157_775_c2e60ae4",
+  "tool_version": "2026.1",
+  "clock_hz": 125000000,
+  "register_header_sha256": "fc243d24a6e87de438fa0db99e9ade55a3c1467b9ed9346a58eb34c95cf91c73",
+  "metadata_uuid": "fd96539d-4cbc-f732-7694-0f0236ca1cf3",
+  "observer_tags": [
+    4254487453,
+    1287452466
+  ],
+  "control_base": "0xA0000000",
+  "observer_base": "0xA0010000",
+  "axi_bits": 128,
+  "artifacts": {
+    "artifacts/kv260_opt50.bit": {
+      "bytes": 7797910,
+      "sha256": "63b19634a6ab3ff27773d0695d9afa5b2cea4416fe669342de1aba16b1964209"
+    },
+    "artifacts/kv260_opt50.bit.bin": {
+      "bytes": 7797692,
+      "sha256": "033f8ed4752b2d70b7fc93ba3a5c4669371d73660bb84c134c88b67abadd6e2b"
+    },
+    "artifacts/kv260_opt50.hwh": {
+      "bytes": 300561,
+      "sha256": "7b6bd6b4fe899e0a90874826ff363c7e86fcf535cef93043b3e4a2261c03d75d"
+    },
+    "artifacts/kv260_opt50.xsa": {
+      "bytes": 3802175,
+      "sha256": "608867a8165003d8b95d7b2bb8780501534d990894aa34ee963a6e12fcc5ad5a"
+    }
+  },
+  "xsa_hierarchy": {
+    "schema": "opt50_xsa_declared_hierarchy_v2",
+    "status": "PASS",
+    "sysdef": {
+      "bytes": 2607,
+      "sha256": "7c0b61e129d2f685fd0bcf25bf13a8f010a3d87300861a1255359985c6f715e8"
+    },
+    "top_hwh": {
+      "bytes": 300561,
+      "sha256": "7b6bd6b4fe899e0a90874826ff363c7e86fcf535cef93043b3e4a2261c03d75d",
+      "name": "kv260_opt50.hwh",
+      "hierarchy": "kv260_opt50_i"
+    },
+    "bitstream": {
+      "bytes": 7797910,
+      "sha256": "63b19634a6ab3ff27773d0695d9afa5b2cea4416fe669342de1aba16b1964209",
+      "name": "kv260_opt50.bit"
+    },
+    "scoped_hwh": {
+      "kv260_opt50_ctrl_0.hwh": {
+        "bytes": 113201,
+        "sha256": "d6275ec308b80f4b7ad802bb569dd5145f5cf5e8e2ba06f4b4db2f67098889b7",
+        "owner": "ctrl",
+        "hierarchy": "kv260_opt50_i/ctrl/inst"
+      },
+      "kv260_opt50_data_0.hwh": {
+        "bytes": 1180244,
+        "sha256": "bbec7e223f0d29b28baaa520e622949010c8cc1d51c04ad214090c734fe81847",
+        "owner": "data",
+        "hierarchy": "kv260_opt50_i/data/inst"
+      }
+    },
+    "scope": "Archive/file identity only; NOT board execution"
+  },
+  "WNS_ns": 0.561,
+  "WHS_ns": 0.01,
+  "register_count": 17,
+  "DDR_parameters_checked": 39,
+  "board_logic": {
+    "schema": "opt50_board_logic_v1",
+    "status": "PASS_HWH_LOGIC_NOT_BOARD_TEST",
+    "hwh_sha256": "7b6bd6b4fe899e0a90874826ff363c7e86fcf535cef93043b3e4a2261c03d75d",
+    "reset_policy": "peripheral_shared",
+    "reset_inputs": {
+      "external": {
+        "signal": "ps_pl_resetn0",
+        "source": "ps/pl_resetn0",
+        "consumers": [
+          "reset/ext_reset_in"
+        ]
+      },
+      "auxiliary": {
+        "source": "zero/dout",
+        "value": 0,
+        "required_level": 0,
+        "active_high": true
+      },
+      "debug": {
+        "source": "zero/dout",
+        "value": 0,
+        "required_level": 0
+      },
+      "dcm_locked": {
+        "source": "one/dout",
+        "value": 1,
+        "required_level": 1
+      }
+    },
+    "reset_domains": [
+      {
+        "signal": "reset_peripheral_aresetn",
+        "source": "reset/peripheral_aresetn",
+        "consumers": [
+          "ctrl/aresetn",
+          "data/aresetn",
+          "gemm/ap_rst_n",
+          "status/aresetn"
+        ]
+      }
+    ],
+    "clock": {
+      "signal": "ps_pl_clk0",
+      "source": "ps/pl_clk0",
+      "consumers": [
+        "ctrl/aclk",
+        "data/aclk",
+        "gemm/ap_clk",
+        "ps/maxihpm0_fpd_aclk",
+        "ps/saxihp0_fpd_aclk",
+        "reset/slowest_sync_clk",
+        "status/aclk"
+      ],
+      "requested_hz": 125000000,
+      "static_hwh_declared_hz": 124998749,
+      "actual_board_clock_measured": false
+    },
+    "interface_checks": "Caller must separately run existing check_hwh for AXI/register/address checks",
+    "scope": "Actual HWH structural semantics only; NO simulation, implementation, MMIO or board execution",
+    "board": "NOT_RUN"
+  },
+  "board_logic_rtl_checks": 4366784,
+  "board_logic_simulation": {
+    "schema": "opt50_local_model_full50_rtl_evidence_v1",
+    "status": "PASS_LOCAL_MODEL_RTL_EVIDENCE_ONLY",
+    "checks": 4366784,
+    "observer_tags": [
+      4254487453,
+      1287452466
+    ],
+    "PL_starts": 50,
+    "tiny_jobs": 2,
+    "real_jobs": 48,
+    "INT32_outputs": 1870848,
+    "package_manifest_sha256": "6d34397bae245400f19f674e98eb5726896aaa2a3e2545adf656254527585fcf",
+    "simulation_model": {
+      "id": "LOCAL_ARB_FIXED_V1",
+      "request_moves_per_module": 36,
+      "instance_count": 3,
+      "instances": [
+        "tb_opt50_board_logic.dut.kv260_opt50_i.ps.inst.ddrc.ddr_write_ports",
+        "tb_opt50_board_logic.dut.kv260_opt50_i.ps.inst.ocm_interconnect.write_ports",
+        "tb_opt50_board_logic.dut.kv260_opt50_i.ps.inst.reg_interconnect.write_ports"
+      ],
+      "binding_scope": "DDR_OCM_REG",
+      "runtime_instances": [
+        "tb_opt50_board_logic(TAG0=32'b11111101100101100101001110011101,TAG1=32'b01001100101111001111011100110010).dut.kv260_opt50_i.ps.inst.ddrc.ddr_write_ports",
+        "tb_opt50_board_logic(TAG0=32'b11111101100101100101001110011101,TAG1=32'b01001100101111001111011100110010).dut.kv260_opt50_i.ps.inst.ocm_interconnect.write_ports",
+        "tb_opt50_board_logic(TAG0=32'b11111101100101100101001110011101,TAG1=32'b01001100101111001111011100110010).dut.kv260_opt50_i.ps.inst.reg_interconnect.write_ports"
+      ],
+      "top_parameters_decorated": true,
+      "ocm_reg_business_traffic_qualified": false,
+      "is_unmodified_AMD_model": false,
+      "is_board_acceptance": false,
+      "scope": "Project-local simulation-only arbiter derivative"
+    },
+    "scope": "Full50 integrated RTL with explicit local PS VIP model; NOT board acceptance",
+    "board": "NOT_RUN"
+  },
+  "simulation_model": {
+    "id": "LOCAL_ARB_FIXED_V1",
+    "request_moves_per_module": 36,
+    "instance_count": 3,
+    "instances": [
+      "tb_opt50_board_logic.dut.kv260_opt50_i.ps.inst.ddrc.ddr_write_ports",
+      "tb_opt50_board_logic.dut.kv260_opt50_i.ps.inst.ocm_interconnect.write_ports",
+      "tb_opt50_board_logic.dut.kv260_opt50_i.ps.inst.reg_interconnect.write_ports"
+    ],
+    "binding_scope": "DDR_OCM_REG",
+    "runtime_instances": [
+      "tb_opt50_board_logic(TAG0=32'b11111101100101100101001110011101,TAG1=32'b01001100101111001111011100110010).dut.kv260_opt50_i.ps.inst.ddrc.ddr_write_ports",
+      "tb_opt50_board_logic(TAG0=32'b11111101100101100101001110011101,TAG1=32'b01001100101111001111011100110010).dut.kv260_opt50_i.ps.inst.ocm_interconnect.write_ports",
+      "tb_opt50_board_logic(TAG0=32'b11111101100101100101001110011101,TAG1=32'b01001100101111001111011100110010).dut.kv260_opt50_i.ps.inst.reg_interconnect.write_ports"
+    ],
+    "top_parameters_decorated": true,
+    "ocm_reg_business_traffic_qualified": false,
+    "is_unmodified_AMD_model": false,
+    "is_board_acceptance": false,
+    "scope": "Project-local simulation-only arbiter derivative"
+  },
+  "simulation_steps": {
+    "schema": "opt50_actual_simulation_steps_v1",
+    "status": "FOUR_STEP_OUTPUTS_AND_ELAB_ORDER_CHECKED",
+    "steps": [
+      "compile",
+      "local_model",
+      "elaborate",
+      "simulate"
+    ],
+    "evidence": {
+      "board_logic_elaborate_original.bat": {
+        "bytes": 1798,
+        "sha256": "d05f9574570c034f512b2f4cffa6037a40c7f846839fdce74972c590ccf2159f"
+      },
+      "board_logic_elaborate.bat": {
+        "bytes": 1817,
+        "sha256": "d3bd72698b411b909e2d0fd4ed49be706c1b7d5b48477e7bb1535f053450f97f"
+      },
+      "board_logic_step_compile.log": {
+        "bytes": 32036,
+        "sha256": "7e0a1f643c747e6265cb1e65d1c4bee44eaa90aaaf277fff1c5a5e7863ef5fd2"
+      },
+      "board_logic_step_local_model.log": {
+        "bytes": 241,
+        "sha256": "29c440e6e0a1d1e28d4324b728dda7befb4a4dbb2579d23288b49143acd291bc"
+      },
+      "board_logic_step_elaborate.log": {
+        "bytes": 61964,
+        "sha256": "1e054969a4554d48f6c66cf4c82ac91db9fbf7ec01826f583249c87ecc263ae9"
+      },
+      "board_logic_step_simulate.log": {
+        "bytes": 10798920,
+        "sha256": "ef5ab5de24cdba45cfe5bb3d58ab955944298b33e08e4c9b6b9eb4ce6e46d152"
+      }
+    },
+    "scope": "File evidence of actual simulation commands only; NOT hardware execution",
+    "board": "NOT_RUN"
+  },
+  "binary_pairing": "BIT_PAYLOAD_IDENTICAL_BYTES",
+  "routed_nets": 63226,
+  "evidence": {
+    "run_manifest.json": {
+      "bytes": 538,
+      "sha256": "694b135e7ca204f6df90d3ef2c3e9d8e4927678f22d6d3256a706a45356d1677"
+    },
+    "stage_scope.txt": {
+      "bytes": 266,
+      "sha256": "55ef09c56682ae5b955c4e9e0721b90d3672e0df12053562061fccb722d50690"
+    },
+    "observer_pass.txt": {
+      "bytes": 6,
+      "sha256": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c"
+    },
+    "bd_pass.txt": {
+      "bytes": 6,
+      "sha256": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c"
+    },
+    "board_logic_pass.txt": {
+      "bytes": 6,
+      "sha256": "d938fa189912f8776c3deb31a6bec42f403f57b9c8e3ed936bdb076caf6bd61c"
+    },
+    "board_logic_simulate.log": {
+      "bytes": 10752358,
+      "sha256": "b7676a3d1efbcc4542c724766fd4433da7d1f77692cb88216eb85e16c6bb7961"
+    },
+    "board_logic_elaborate.bat": {
+      "bytes": 1817,
+      "sha256": "d3bd72698b411b909e2d0fd4ed49be706c1b7d5b48477e7bb1535f053450f97f"
+    },
+    "board_logic_elaborate_original.bat": {
+      "bytes": 1798,
+      "sha256": "d05f9574570c034f512b2f4cffa6037a40c7f846839fdce74972c590ccf2159f"
+    },
+    "board_logic_step_compile.log": {
+      "bytes": 32036,
+      "sha256": "7e0a1f643c747e6265cb1e65d1c4bee44eaa90aaaf277fff1c5a5e7863ef5fd2"
+    },
+    "board_logic_step_local_model.log": {
+      "bytes": 241,
+      "sha256": "29c440e6e0a1d1e28d4324b728dda7befb4a4dbb2579d23288b49143acd291bc"
+    },
+    "board_logic_step_elaborate.log": {
+      "bytes": 61964,
+      "sha256": "1e054969a4554d48f6c66cf4c82ac91db9fbf7ec01826f583249c87ecc263ae9"
+    },
+    "board_logic_step_simulate.log": {
+      "bytes": 10798920,
+      "sha256": "ef5ab5de24cdba45cfe5bb3d58ab955944298b33e08e4c9b6b9eb4ce6e46d152"
+    },
+    "simulation_model_scope.txt": {
+      "bytes": 285,
+      "sha256": "e6597f494e4f4c962e34abbee9ea3f553b4272a35a52c23e52ef090129ae34ca"
+    },
+    "reset_properties.txt": {
+      "bytes": 1334,
+      "sha256": "d0036196d6a1954d7122de528e6f93c870917adc15de6a9d226733e150a463d2"
+    },
+    "reset_contract.txt": {
+      "bytes": 186,
+      "sha256": "9bfe265ef0571b233fef6046e552f998ae011c0741ff317cf7166660e3f62bea"
+    },
+    "build_pass.txt": {
+      "bytes": 26,
+      "sha256": "427b47743da439b125b017e258e837eecc0662265cd86403c41ed791a3b05fb4"
+    },
+    "timing_summary.rpt": {
+      "bytes": 52278,
+      "sha256": "11001341809da471529de1478817ce07b12c93bb3c484ac9029cf29c55245e61"
+    },
+    "drc.rpt": {
+      "bytes": 36734,
+      "sha256": "f3fd74e9d653201c2181068eb5190dcac85e9ede1727a7306dbfb1bfac22f325"
+    },
+    "route_status.rpt": {
+      "bytes": 651,
+      "sha256": "1a2e4bd4dd90c9b2ea887d964fcf760efabbc639279b3f9c13919c890e68d527"
+    },
+    "clocks.rpt": {
+      "bytes": 1755,
+      "sha256": "d5e5d9854787b4f6ce74756e2d9c7f5085fff251a2b2490680c4c181d16dc1cb"
+    },
+    "ps_properties.txt": {
+      "bytes": 143705,
+      "sha256": "391660110b3693ec4b756086a29ad8bec930d818fca73b5e2c5c2de92175bc89"
+    },
+    "address_map.txt": {
+      "bytes": 1166,
+      "sha256": "6ccd102916b2cc55b902c49495d327372da0d55b89cbdef49fe08e35d7cb3860"
+    }
+  },
+  "scope": "System build file cross-check with LOCAL_ARB_FIXED_V1 simulation; NOT unmodified AMD model proof; NOT board execution or quality acceptance",
+  "board": "NOT_RUN",
+  "verifier_version": "2",
+  "verification_provenance": {
+    "schema": "opt50_verification_provenance_v2",
+    "status": "PASS",
+    "board": "NOT_RUN",
+    "deployment_manifest": {
+      "bytes": 3468,
+      "sha256": "81e8307d3a2f6fe0bbdf95e071fe28638bb277a1ed458ac2fa07db101a3feaab"
+    },
+    "checker_files": {
+      "xsa_hierarchy.py": {
+        "bytes": 7795,
+        "sha256": "4ae3dde437978a8b8d2e1735f07a7e51ea757ab9c468e2d3b2c6986bb3266d3b"
+      },
+      "verification_support.py": {
+        "bytes": 7757,
+        "sha256": "2e959ed20bf6445283d199f556867665c2c2b7185cc3eb246ae310cd671cf2e4"
+      },
+      "prepare_verifier.py": {
+        "bytes": 6566,
+        "sha256": "5658f49fed546f4113f1a31b2696465aa58c813918edf8b3ccebe8076ea93a56"
+      },
+      "verify_system_v2.py": {
+        "bytes": 22315,
+        "sha256": "5a92481e410808829ae530cf404c016956c42534925aa92be586cafb655ef015"
+      }
+    },
+    "frozen_base_checker": {
+      "bytes": 21749,
+      "sha256": "56cd26ee1c175ecc98e0f2e5e6b7d216912db97221be18e1400ee47478ed3bb4"
+    },
+    "finish_folder": "finish_20261024_v1",
+    "finish_evidence": {
+      "finish_plan.json": {
+        "bytes": 16942,
+        "sha256": "ce3b4f18fe74e14bb1aeee6941aa7031fabe9f48452e1f987e4b6ab28e1a7b64"
+      },
+      "execution/finish_pass.txt": {
+        "bytes": 105,
+        "sha256": "b1f193d6b4b63a2c0373b1f405b10ab6c49baa2f48ff163a26d7e74bf1c62dc8"
+      },
+      "execution/vivado_finish.log": {
+        "bytes": 15456,
+        "sha256": "6886876eff8feb6034d587c7e540dafa205134d7c0adf80d6d2156df2a32e242"
+      },
+      "execution/vivado_stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "execution/artifacts/kv260_opt50.bit": {
+        "bytes": 7797910,
+        "sha256": "63b19634a6ab3ff27773d0695d9afa5b2cea4416fe669342de1aba16b1964209"
+      },
+      "execution/artifacts/kv260_opt50.bit.bin": {
+        "bytes": 7797692,
+        "sha256": "033f8ed4752b2d70b7fc93ba3a5c4669371d73660bb84c134c88b67abadd6e2b"
+      },
+      "execution/artifacts/kv260_opt50.hwh": {
+        "bytes": 300561,
+        "sha256": "7b6bd6b4fe899e0a90874826ff363c7e86fcf535cef93043b3e4a2261c03d75d"
+      },
+      "execution/artifacts/kv260_opt50.xsa": {
+        "bytes": 3802175,
+        "sha256": "608867a8165003d8b95d7b2bb8780501534d990894aa34ee963a6e12fcc5ad5a"
+      },
+      "execution/reports/timing_summary.rpt": {
+        "bytes": 52266,
+        "sha256": "0a7615694c7d150464845ddb27c75c58498f4ece84e009c795cc86659af137e1"
+      },
+      "execution/reports/clocks.rpt": {
+        "bytes": 1751,
+        "sha256": "ca9eadc702dcf76afdbd4a9cec137dc8ad9dac74d3cb1f994b18d76d71fb9c4c"
+      },
+      "execution/reports/check_timing.rpt": {
+        "bytes": 3362,
+        "sha256": "d51d348e888b246c359e95c00ee02a87ce083fd3fd3da420930e790ac6e76c11"
+      },
+      "execution/reports/drc.rpt": {
+        "bytes": 36734,
+        "sha256": "f3fd74e9d653201c2181068eb5190dcac85e9ede1727a7306dbfb1bfac22f325"
+      },
+      "execution/reports/route_status.rpt": {
+        "bytes": 651,
+        "sha256": "1a2e4bd4dd90c9b2ea887d964fcf760efabbc639279b3f9c13919c890e68d527"
+      },
+      "execution/reports/utilization.rpt": {
+        "bytes": 74257,
+        "sha256": "6ce2883d388c1f81237fd643dcc5ec562763061a1267baf6e08599232e45fdd3"
+      }
+    },
+    "frozen_source_files_checked": 35,
+    "frozen_finish_files_checked": 41,
+    "timing_completeness": {
+      "constant_clock": 0,
+      "generated_clocks": 0,
+      "latch_loops": 0,
+      "loops": 0,
+      "multiple_clock": 0,
+      "no_clock": 0,
+      "no_input_delay": 0,
+      "no_output_delay": 0,
+      "partial_input_delay": 0,
+      "partial_output_delay": 0,
+      "pulse_width_clock": 0,
+      "unconstrained_internal_endpoints": 0
+    },
+    "drc": {
+      "errors": 0,
+      "critical_warnings": 0,
+      "warning_checks": 53,
+      "warning_rules": {
+        "DPIP-2": 23,
+        "DPOP-3": 13,
+        "DPOP-4": 16,
+        "DPREG-7": 1
+      }
+    },
+    "final_timing": {
+      "WNS_ns": 0.561,
+      "WHS_ns": 0.01,
+      "WPWS_ns": 2.5,
+      "TNS_ns": 0.0,
+      "THS_ns": 0.0,
+      "TPWS_ns": 0.0
+    },
+    "implemented_clock_periods_ns": {
+      "clk_pl_0": 8.0,
+      "clk_pl_1": 10.0
+    },
+    "scope": "File identity and finished-report checks; NO new implementation or board execution"
+  }
+}

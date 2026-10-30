@@ -1,0 +1,76 @@
+{
+  "B_saved_logits": "THREAD1_PROVENANCE_ONLY",
+  "ORT": {
+    "inter": 1,
+    "intra": 4,
+    "optimization": "OFF",
+    "sequential": true,
+    "spinning": 0
+  },
+  "ORT_version": "1.22.1",
+  "board_affinity_required": {
+    "ORT_worker_affinities": "2;3;4",
+    "main_CPU": 0,
+    "owner_CPUs": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "local_affinity": "NOT_APPLIED_WINDOWS_TOPOLOGY_DIFFERS",
+  "numpy_version": "1.26.4",
+  "samples": [
+    {
+      "fused4_bitwise_mismatches": 0,
+      "input_raw_sha256": "034dbb4eaef50bfdae450cb3d1e92bb467972e2c882dbd7152cd5c4229410eb8",
+      "logits": 1000,
+      "reference4_raw_logits_sha256": "25f6e6c7d5d40946e1f1c272073d6a4dee0b515df5635da5237c45dbcf8f5e1f",
+      "reference4_vs_reference1_bitwise_mismatches": 1000,
+      "reference4_vs_reference1_max_abs": 0.17787763476371765,
+      "sample_id": "dev0000",
+      "top5": [
+        0,
+        389,
+        103,
+        391,
+        395
+      ]
+    },
+    {
+      "fused4_bitwise_mismatches": 0,
+      "input_raw_sha256": "eb4687954e66f14e6c98ec15e1d1e515e486e9a9adf1c5f440900a0efcc23ebb",
+      "logits": 1000,
+      "reference4_raw_logits_sha256": "6914f9e7162032fa20e30483ff51a58b55440cbf4e9fb484164c5b2c636b1350",
+      "reference4_vs_reference1_bitwise_mismatches": 1000,
+      "reference4_vs_reference1_max_abs": 0.21576368808746338,
+      "sample_id": "dev4499",
+      "top5": [
+        999,
+        700,
+        773,
+        804,
+        629
+      ]
+    },
+    {
+      "fused4_bitwise_mismatches": 0,
+      "input_raw_sha256": "ad8c5f4d30e45b2a50f7f4d1f347f64d613c6fbcd92c54ca746ab077f402d8cc",
+      "logits": 1000,
+      "reference4_raw_logits_sha256": "d6499079a6551a048cb6ac8ad689e7c1ec64cb00bf49ae72fe26c764b53c4a6c",
+      "reference4_vs_reference1_bitwise_mismatches": 0,
+      "reference4_vs_reference1_max_abs": 0.0,
+      "sample_id": "zero",
+      "top5": [
+        677,
+        574,
+        783,
+        644,
+        818
+      ]
+    }
+  ],
+  "scope": "CPU standard ONNX expansion, not native ARM NEON/chunkedErf/plugin/PL performance acceptance",
+  "standard_fused_integer_expansion_sha256": "76468e65530ca0f9f0eb0e7894fcc7b36b24ad0b5c7acc771107ab8517dd537b",
+  "status": "PASS_CPU_ALIGNED4_TWO_REAL_AND_ZERO"
+}

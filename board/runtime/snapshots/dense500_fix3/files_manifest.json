@@ -1,0 +1,43 @@
+{
+  "correction": "fix2 plus64MiB historical archive reads in admission and final report; original SHA validation retained",
+  "files": {
+    "README.md": {
+      "bytes": 302,
+      "sha256": "3370e4a30788270e3d4af1f3e96993af06066d2ca0a4d31be26a293b9263da61"
+    },
+    "bounded_sparse_reference.py": {
+      "bytes": 1418,
+      "sha256": "727d5a561f341ed662a4e7cc80a85e066e9b3d676bb4af05940d83ec05bcdc64"
+    },
+    "check_dense_fix1.py": {
+      "bytes": 3335,
+      "sha256": "12f9a27a1e2029261f79d82326c8807939b7370f8dce50b66a6918db72962ef2"
+    },
+    "report_dense500.py": {
+      "bytes": 14472,
+      "sha256": "f69b533edaaee69715df6aa61b4dcdaa1a69789c7eb69e7063554cebd2932e42"
+    },
+    "run_dense500.py": {
+      "bytes": 24889,
+      "sha256": "e036e903f361a47e8b6253e65b0fa55f28d8442fb4196e9184e5cbb0542565b3"
+    },
+    "run_once_dense_fix1.py": {
+      "bytes": 10855,
+      "sha256": "76f6e31e3d03b3b023d11635fe54c4d94a589d32b25adcbde3984e207a38590b"
+    },
+    "verify_package.py": {
+      "bytes": 1319,
+      "sha256": "e7060071794081bd8332a19178564a4bdf051c6015823a891089a95738bd0749"
+    }
+  },
+  "schema": "opt50_dense500_tool_files_v1",
+  "source_dense": {
+    "files": 115,
+    "path": "/home/ubuntu/fpga_project/opt50_integration/dense500_same_pl_20261030_v1/software",
+    "tools_manifest": {
+      "bytes": 17233,
+      "sha256": "e60866fca203ee366c9c9717cdbc55256cdde6ced7c25f007faf923854ad7b46"
+    }
+  },
+  "target_total": 500
+}

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="kv260_opt50">
+  <platform vendor="xilinx" boardid="kv260" name="kv260_opt50" featureRomTime="0">
+    <version major="1" minor="0" />
+    <device name="fpga0" fpgaDevice="xck26-sfvc784-2LV-c" addrWidth="64">
+      <core name="OCL_REGION_0" target="hw" type="clc_region" clockFreq="125MHz" numComputeUnits="2">
+        <kernel name="model_gemm_top" language="ip_c" vlnv="local:user:model_gemm_top:1.0" attributes="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" interrupt="false" hwControlProtocol="ap_ctrl_none">
+          <port name="S_AXI_CONTROL" mode="slave" range="0x10000" dataWidth="32" portType="addressable" base="0x0" />
+          <port name="M_AXI_GMEM0" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="128" portType="addressable" base="0x0" />
+          <port name="M_AXI_GMEM1" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="128" portType="addressable" base="0x0" />
+          <port name="M_AXI_GMEM2" mode="master" range="0xFFFFFFFFFFFFFFFF" dataWidth="128" portType="addressable" base="0x0" />
+          <arg name="X" addressQualifier="1" id="0" port="M_AXI_GMEM0" size="0x8" offset="0x18" hostOffset="0x0" hostSize="0x8" type="ap_uint&lt;128&gt;*" />
+          <arg name="W_data" addressQualifier="1" id="1" port="M_AXI_GMEM1" size="0x8" offset="0x24" hostOffset="0x0" hostSize="0x8" type="ap_uint&lt;128&gt;*" />
+          <arg name="W_meta" addressQualifier="1" id="2" port="M_AXI_GMEM1" size="0x8" offset="0x30" hostOffset="0x0" hostSize="0x8" type="ap_uint&lt;128&gt;*" />
+          <arg name="Y" addressQualifier="1" id="3" port="M_AXI_GMEM2" size="0x8" offset="0x3c" hostOffset="0x0" hostSize="0x8" type="ap_uint&lt;128&gt;*" />
+          <arg name="M" addressQualifier="0" id="4" port="S_AXI_CONTROL" size="0x4" offset="0x48" hostOffset="0x0" hostSize="0x4" type="unsigned int" />
+          <arg name="K" addressQualifier="0" id="5" port="S_AXI_CONTROL" size="0x4" offset="0x50" hostOffset="0x0" hostSize="0x4" type="unsigned int" />
+          <arg name="N" addressQualifier="0" id="6" port="S_AXI_CONTROL" size="0x4" offset="0x58" hostOffset="0x0" hostSize="0x4" type="unsigned int" />
+          <arg name="mode" addressQualifier="0" id="7" port="S_AXI_CONTROL" size="0x4" offset="0x60" hostOffset="0x0" hostSize="0x4" type="unsigned int" />
+          <compileWorkGroupSize x="1" y="1" z="1" />
+          <maxWorkGroupSize x="1" y="1" z="1" />
+          <instance name="gemm_1">
+            <addrRemap base="0xA0000000" range="0x10000" port="S_AXI_CONTROL" />
+          </instance>
+        </kernel>
+        <kernel name="axi_observer" language="ip_c" vlnv="local:user:axi_observer:1.0" attributes="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" interrupt="false" hwControlProtocol="ap_ctrl_none">
+          <port name="S_AXI_CONTROL" mode="slave" range="0x10000" dataWidth="32" portType="addressable" base="0x0" />
+          <compileWorkGroupSize x="1" y="1" z="1" />
+          <maxWorkGroupSize x="1" y="1" z="1" />
+          <instance name="status_1">
+            <addrRemap base="0xA0010000" range="0x10000" port="S_AXI_CONTROL" />
+          </instance>
+        </kernel>
+      </core>
+    </device>
+  </platform>
+</project>

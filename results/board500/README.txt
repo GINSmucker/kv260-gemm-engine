@@ -1,0 +1,1 @@
+Paired original Dense and trained Sparse24 on the same500 images. Accuracy is paired across500; primary timing is the same-scheduler195 subset. No isolated sparse-kernel or full ImageNet claim. Original records retained.
