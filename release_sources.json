@@ -1,4 +1,5 @@
 {
+  "archival_source_git_commit": "93dd2e9a4b81a1c5b0962990101cd82d26cc53e1",
   "base_main_commit": "becf9337915ecd855d91a8e7450c26945889a449",
   "bundles": {
     "dense36": {
@@ -4171,6 +4172,7 @@
   "new_layout_board_execution": "NOT RUN",
   "runtime_identity": "Original SHA256-pinned source bundles executed before this Git archival commit",
   "schema": "opt50_final_sources_v1",
+  "source_commit_created_after_board_execution": true,
   "status": "PASS",
   "training_snapshot": {
     "archive": {

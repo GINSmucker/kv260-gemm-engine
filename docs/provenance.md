@@ -4,6 +4,8 @@
 
 HLS活动源码来自`codex/v3-opt50-sparse`的OPT50。逐文件SHA、冻结运行包和模型来源列在 [release_sources.json](../release_sources.json)。当前Git归档提交在板测之后创建；板测时源码由原始包SHA固定，不能把后来Git提交写成当时已经存在的运行提交。
 
+本次源码归档提交为 `93dd2e9a4b81a1c5b0962990101cd82d26cc53e1`；后续元数据提交只补充此映射和检查记录。从该提交重新导出的目录通过了330个冻结文件、35个旧main文件、文档链接及4项回归检查，见 [Git归档校验](../results/release_checks/git_archive.json)。
+
 | 对象 | SHA256 |
 |---|---|
 | Sparse24 W8A8模型 | `ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43` |

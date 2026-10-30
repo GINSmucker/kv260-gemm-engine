@@ -103,6 +103,7 @@
     "Sparse24": "38c130e8632b4433f4217d840d9d9578699fb654de6095df17003d3f7fa0217d"
   },
   "schema": "opt50_final_paired_metrics_v1",
+  "source_commit_created_after_board_execution": true,
   "source_evidence": {
     "Sparse_archive_sha256": "f14b1a7e3ec26fd7205e4b32ca57b0ae5ab55972cbcb353fbcb406003bc182fb",
     "archive": "evidence.tar.gz",
@@ -110,6 +111,8 @@
     "bytes": 21246214,
     "sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b"
   },
+  "source_git_commit": "93dd2e9a4b81a1c5b0962990101cd82d26cc53e1",
+  "source_git_commit_scope": "Archival source identity; original board execution was bound by runtime_tools_manifest_sha256 and model hashes, before this Git commit existed",
   "speedups": {
     "Dense_CPU_over_Dense_PS_PL": 2.150199153036701,
     "Dense_PS_PL_over_Sparse_PS_PL": 1.0505575010122405,
