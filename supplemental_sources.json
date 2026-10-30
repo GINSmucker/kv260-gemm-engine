@@ -1,0 +1,287 @@
+{
+  "schema": "opt50_supplemental_sources_v1",
+  "base_main_commit": "10c8e6a9030f64cd9e2a100d48861643467f24bc",
+  "scope": "Original branch source/evidence bytes restored without changing current HLS,runtime,model or recorded image metrics",
+  "files": {
+    "board/platform/input/observer/tb_f8_status.sv": {
+      "bytes": 4466,
+      "sha256": "3fae9dce01e45416ee1fc6d089d64cc4ca84e713fecfb7cc5fa3817a1dbed971",
+      "source_commit": "c5739fc7d9dd70130521ac9376e8c80ee726b0d2",
+      "source_path": "board/platform/input/observer/tb_f8_status.sv",
+      "role": "Original OPT50 simulation source; not new RTL acceptance"
+    },
+    "board/platform/tests/tb_opt50_board_logic.sv": {
+      "bytes": 14645,
+      "sha256": "16be1f41c56e221f53afd95b329cca7aa694564c9c769c1367fc867be161e397",
+      "source_commit": "c5739fc7d9dd70130521ac9376e8c80ee726b0d2",
+      "source_path": "board/platform/tests/tb_opt50_board_logic.sv",
+      "role": "Original OPT50 simulation source; not new RTL acceptance"
+    },
+    "board/ui/board-client.mjs": {
+      "bytes": 9197,
+      "sha256": "7ec4f078451fdf076ebc606428c365f422a6d0d626f615eb294dd067946207ef",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/board-client.mjs",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/domain.mjs": {
+      "bytes": 11202,
+      "sha256": "b1aed28f6dffbb70a6e50097409b87dc351511e76831c3f797bf0403ced81061",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/domain.mjs",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/h576-contract.mjs": {
+      "bytes": 2562,
+      "sha256": "3e5b7a9f4a461d45f4ffb315e2f478ef07017e4665a4299c99140e3f508b1297",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/h576-contract.mjs",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/package.json": {
+      "bytes": 543,
+      "sha256": "3fbc33cbd04d110a0b39a1d07fa0ea0d239b177eb18e36acf6113c4556a7d69e",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/package.json",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/presentation.mjs": {
+      "bytes": 2704,
+      "sha256": "144c0ca0e77731f5cf1dc192a9ac14c097fa1121bbdd6bb3003133189a0160fd",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/presentation.mjs",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/api-client.js": {
+      "bytes": 1396,
+      "sha256": "07178ed19bc1c1f4776b3d8feda5a9464a1b8e55b9cbf20da33cea2474f912f5",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/api-client.js",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/app.js": {
+      "bytes": 54245,
+      "sha256": "ad38056a5036b77985dc574bd53a414b8208f6388275c489d761d570437a8d62",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/app.js",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/assets/bridge.svg": {
+      "bytes": 1669,
+      "sha256": "035bbdd4843263f07ecd652603e95c17061a1e6f4243a67f8c115fa35d6885b6",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/assets/bridge.svg",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/assets/dog.svg": {
+      "bytes": 1458,
+      "sha256": "4e378a1936cd60d73d42894bf36ab4a215b80e451e9ee07116f643994b16e352",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/assets/dog.svg",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/assets/pattern.svg": {
+      "bytes": 1246,
+      "sha256": "1d650b7f090b0b0b29f27abee0a110894d123bf01eebc00bd14b351b516c3540",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/assets/pattern.svg",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/charts.js": {
+      "bytes": 7671,
+      "sha256": "dde4ba79c33b82ad7f493869a11baf9e26b8e9e7f8f4dadacac44cd33f9c2b95",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/charts.js",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/index.html": {
+      "bytes": 2058,
+      "sha256": "ac97bcdccd8f74876831d29cce3dc1ae0c27584914facd75293dddf59d4d69c6",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/index.html",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/live-view.js": {
+      "bytes": 10008,
+      "sha256": "6b04b19dded7145f5e4527cc2fca8cf46af4b3a949a720c88a2d6bef8598ee9e",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/live-view.js",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/presentation.js": {
+      "bytes": 6390,
+      "sha256": "7058ecdea1a2b111ab55a65c187b1d25c9b716fc50094e793b04e88762aa0cdf",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/presentation.js",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/styles.css": {
+      "bytes": 39264,
+      "sha256": "b4575ed404e560d0a080dae8ef8ab656ca781e740e7b91068a34949c73912aee",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/styles.css",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/tokens.css": {
+      "bytes": 231,
+      "sha256": "3cf70405c89f0ceba12b07904a8f13dc512674dae67f9865e013535800e2c55c",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/public/tokens.css",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/server.mjs": {
+      "bytes": 10437,
+      "sha256": "ee014bae6d98447e4c6f273901498e454f946b35abfbf76e94f83c48b00c1247",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/server.mjs",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/tests/charts.test.mjs": {
+      "bytes": 4276,
+      "sha256": "f14628e0aaddff9a5a1b17052b55d44cbd4d2641b9221c304b1232cf233f1d44",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/tests/charts.test.mjs",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/tests/workbench.test.mjs": {
+      "bytes": 7448,
+      "sha256": "64897ce9bf0e897f4ab45db45db3b523504a34ddffcfb232b2ee2000d8a61c4e",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/tests/workbench.test.mjs",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/v2a-contract.mjs": {
+      "bytes": 3749,
+      "sha256": "b5803ef4f88c2087a5c58c6a0d32dad994b8c0f61eafd7936b9c1d73c751d15f",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "board/ui/v2a-contract.mjs",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "docs/diagrams/LICENSE.archify.txt": {
+      "bytes": 1102,
+      "sha256": "b799ab081703e7821ae5096d2c1abdf14bbdc75e8ea1c4045998c36ed6db9706",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "docs/diagrams/LICENSE.archify.txt",
+      "role": "H576 Dense historical architecture with original license and verification"
+    },
+    "docs/diagrams/architecture.html": {
+      "bytes": 709648,
+      "sha256": "137842b46c10bb60809e6a34a9037b45033e04b96b6608126312a31fb73c44b5",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "docs/diagrams/architecture.html",
+      "role": "H576 Dense historical architecture with original license and verification"
+    },
+    "docs/diagrams/architecture.json": {
+      "bytes": 4291,
+      "sha256": "205b99c694ca4f8fd2f09b242be592b69703a8b5c04e5325ff7b79acff801706",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "docs/diagrams/architecture.json",
+      "role": "H576 Dense historical architecture with original license and verification"
+    },
+    "docs/diagrams/verification.json": {
+      "bytes": 4710,
+      "sha256": "0aa9c0cadbefc796ca3d76ad922e71436125cd654f279b7e538864f6f75fd6d8",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "docs/diagrams/verification.json",
+      "role": "H576 Dense historical architecture with original license and verification"
+    },
+    "results/C/h576/c_h576_endurance_20261016_02/C_ENDURANCE_RECEIPT.json": {
+      "bytes": 4331,
+      "sha256": "b163748b098c6290308f03d6ef42b9d3b08eb250a8a12bd87b4d9be7d5bda531",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "results/C/h576/c_h576_endurance_20261016_02/C_ENDURANCE_RECEIPT.json",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "results/model_planning/h576_closeout_20261016_01/delivery_index.json": {
+      "bytes": 4606,
+      "sha256": "79d297560f9adc98799c115eb5b2eac1d243a2e8e9f8e12d6e1e5662991e2b15",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "results/model_planning/h576_closeout_20261016_01/delivery_index.json",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "results/model_planning/v5_h576_fair_20261016_02/analysis.json": {
+      "bytes": 10784,
+      "sha256": "7161b12b3a03a7e8048d046d384f4fdbe3cb5c0236ed5464774f54ae74b52b39",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "results/model_planning/v5_h576_fair_20261016_02/analysis.json",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "results/model_planning/v5_h576_quality_20261016_01/quality_recount.json": {
+      "bytes": 2580,
+      "sha256": "b9e4a5e7007209f84a3aea003517a9f53c3ff7d3aa7fe3d4bdafdcb560b03bb3",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "results/model_planning/v5_h576_quality_20261016_01/quality_recount.json",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "results/model_planning/v5_h576_ui_20261017_01/chrome_recount.json": {
+      "bytes": 7154,
+      "sha256": "8e97d852b8424e667901a5d8aca99d146bdbe5cf87f719b4c58e17a5669445b2",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "results/model_planning/v5_h576_ui_20261017_01/chrome_recount.json",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "results/model_planning/v5_h576_ui_20261017_01/local_chrome/benchmark.json": {
+      "bytes": 5441,
+      "sha256": "dd5bf2006d7b280eaa814a7eaf5feb2c5535519e220ddd74b57383a5e91b09fe",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "results/model_planning/v5_h576_ui_20261017_01/local_chrome/benchmark.json",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "results/model_planning/v5_h576_ui_20261017_01/local_chrome/pl.json": {
+      "bytes": 41720,
+      "sha256": "e3bc70e203b5c9c1c5c6fe85e9d258f671702782c71949358159d758bdbbaacd",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "results/model_planning/v5_h576_ui_20261017_01/local_chrome/pl.json",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "results/platform_history/implementation_reports/check_timing.rpt": {
+      "bytes": 3362,
+      "sha256": "d51d348e888b246c359e95c00ee02a87ce083fd3fd3da420930e790ac6e76c11",
+      "source_commit": "c5739fc7d9dd70130521ac9376e8c80ee726b0d2",
+      "source_path": "board/evidence/implementation_reports/check_timing.rpt",
+      "role": "Original fd96539d Vivado report; not new board timing"
+    },
+    "results/platform_history/implementation_reports/clocks.rpt": {
+      "bytes": 1751,
+      "sha256": "ca9eadc702dcf76afdbd4a9cec137dc8ad9dac74d3cb1f994b18d76d71fb9c4c",
+      "source_commit": "c5739fc7d9dd70130521ac9376e8c80ee726b0d2",
+      "source_path": "board/evidence/implementation_reports/clocks.rpt",
+      "role": "Original fd96539d Vivado report; not new board timing"
+    },
+    "results/platform_history/implementation_reports/drc.rpt": {
+      "bytes": 36734,
+      "sha256": "f3fd74e9d653201c2181068eb5190dcac85e9ede1727a7306dbfb1bfac22f325",
+      "source_commit": "c5739fc7d9dd70130521ac9376e8c80ee726b0d2",
+      "source_path": "board/evidence/implementation_reports/drc.rpt",
+      "role": "Original fd96539d Vivado report; not new board timing"
+    },
+    "results/platform_history/implementation_reports/route_status.rpt": {
+      "bytes": 651,
+      "sha256": "1a2e4bd4dd90c9b2ea887d964fcf760efabbc639279b3f9c13919c890e68d527",
+      "source_commit": "c5739fc7d9dd70130521ac9376e8c80ee726b0d2",
+      "source_path": "board/evidence/implementation_reports/route_status.rpt",
+      "role": "Original fd96539d Vivado report; not new board timing"
+    },
+    "results/platform_history/implementation_reports/timing_summary.rpt": {
+      "bytes": 52266,
+      "sha256": "0a7615694c7d150464845ddb27c75c58498f4ece84e009c795cc86659af137e1",
+      "source_commit": "c5739fc7d9dd70130521ac9376e8c80ee726b0d2",
+      "source_path": "board/evidence/implementation_reports/timing_summary.rpt",
+      "role": "Original fd96539d Vivado report; not new board timing"
+    },
+    "results/platform_history/implementation_reports/utilization.rpt": {
+      "bytes": 74257,
+      "sha256": "6ce2883d388c1f81237fd643dcc5ec562763061a1267baf6e08599232e45fdd3",
+      "source_commit": "c5739fc7d9dd70130521ac9376e8c80ee726b0d2",
+      "source_path": "board/evidence/implementation_reports/utilization.rpt",
+      "role": "Original fd96539d Vivado report; not new board timing"
+    },
+    "start-workbench.ps1": {
+      "bytes": 1094,
+      "sha256": "077863b85e28d97890e2ee3abf4ce229deb184151ff8d522c8d693c657235187",
+      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "source_path": "start-workbench.ps1",
+      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    }
+  }
+}

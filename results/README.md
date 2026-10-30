@@ -9,3 +9,18 @@
 [B历史1800张CPU1报告](board500/B_cpu1_historical1800.json)与当前500张分列。`platform_history/`保留原系统来源／实现资料，不将整理目录当作新Vivado或新上板PASS。
 
 后续Git来源提交和本轮离线检查记录分别列明。硬件运行时通过原部署包SHA固定，源码Git归档发生在板测之后。
+
+## 原OPT50硬件实现报告
+
+以下报告来自已验收fd96539d平台的原Vivado 2026.1构建`build_20261024_132157_775_c2e60ae4`。六份文件逐字节匹配现有[原核查清单](../board/platform/verification_v2/verification_manifest.json)，出处见[补充来源清单](../supplemental_sources.json)。
+
+| 原始报告 | 用途 |
+|---|---|
+| [timing_summary.rpt](platform_history/implementation_reports/timing_summary.rpt) | 实现后setup／hold时序，原记录WNS +0.561 ns、WHS +0.010 ns |
+| [utilization.rpt](platform_history/implementation_reports/utilization.rpt) | LUT、FF、BRAM及DSP分层资源 |
+| [clocks.rpt](platform_history/implementation_reports/clocks.rpt) | 实现时钟与约束 |
+| [check_timing.rpt](platform_history/implementation_reports/check_timing.rpt) | 时序约束完整性检查 |
+| [drc.rpt](platform_history/implementation_reports/drc.rpt) | 设计规则检查及警告 |
+| [route_status.rpt](platform_history/implementation_reports/route_status.rpt) | 布线状态 |
+
+这些是原系统实现证据，不是本轮重新实现，也不测量图片推理耗时。当前500张分类和195张CPU／PS+PL计时仍以本页主结果为准。
