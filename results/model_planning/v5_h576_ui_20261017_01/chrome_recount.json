@@ -1,0 +1,156 @@
+{
+  "status": "PASS_REAL_CHROME_BUILTIN_PL_DESKTOP_AND_EXPORTS_UPLOAD_PENDING",
+  "client_utc": "2026-10-16T17:10:28.958782+00:00",
+  "execution_date_Asia_Shanghai": "2026-10-17",
+  "run_id": "v5_h576_ui_20261017_01",
+  "browser": "Chrome extension browser3, new tab546919165; no Windows native controls",
+  "package_manifest_sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76",
+  "image": {
+    "kind": "builtin SVG rasterized by browser to actual PNG; not a quality dataset sample",
+    "source_sha256": "354fbdfe9e06c8411d0fc85073e373e5f45e9adc635c04642cbf4d9f911fc215",
+    "input_tensor_sha256": "db37ef5de2e64191f92e9591944f57e3de95f1715a610d0f2f598746fee62036",
+    "format": "PNG",
+    "dimensions": [
+      1000,
+      680
+    ],
+    "same_bytes_and_tensor_all_backends": true
+  },
+  "jobs": {
+    "fp32": {
+      "id": "board_85170a9224c0",
+      "realPLStarts": 0
+    },
+    "w8": {
+      "id": "board_91554efd3b34",
+      "realPLStarts": 0
+    },
+    "pl": {
+      "id": "board_d3eeb1ad0237",
+      "realPLStarts": 36
+    },
+    "benchmark": {
+      "id": "board_91dc8900b7ff",
+      "realPLStarts": 144
+    }
+  },
+  "logits_checked_zero_difference": {
+    "fp32": 5000,
+    "w8": 5000,
+    "pl": 5000
+  },
+  "numeric_comparison": "Same ARM FP32 invocations match FP32 baseline; W8 CPU semantic and PL invocations match same-window W8 baseline; not a new quality evaluation or cross-host equivalence",
+  "total_model_invocations": 15,
+  "PL_graphs": 5,
+  "PL_starts": 180,
+  "route_rows": 49,
+  "PL_rows": 36,
+  "CPU_rows": 13,
+  "browser_downloads": {
+    "JSON": 4,
+    "CSV": 2,
+    "all_HTTP200_and_exact_response_SHA": true,
+    "benchmark_rows": 3
+  },
+  "benchmark": {
+    "warmup": 1,
+    "formal_samples": 3,
+    "fp32_p50_ms": 288.264143,
+    "w8_p50_ms": 297.783348,
+    "ps_pl_p50_ms": 144.388474,
+    "ps_pl_p95_ms": 147.6941173,
+    "all_samples": [
+      {
+        "index": 1,
+        "fp32Ms": 293.700358,
+        "w8a8Ms": 297.089371,
+        "plMs": 148.061411,
+        "source": "BOARD_H576_MEASURED"
+      },
+      {
+        "index": 2,
+        "fp32Ms": 288.264143,
+        "w8a8Ms": 297.783348,
+        "plMs": 144.388474,
+        "source": "BOARD_H576_MEASURED"
+      },
+      {
+        "index": 3,
+        "fp32Ms": 280.187672,
+        "w8a8Ms": 298.552546,
+        "plMs": 142.148092,
+        "source": "BOARD_H576_MEASURED"
+      }
+    ],
+    "scope": "Interactive functionality; formal fair performance evidence unchanged"
+  },
+  "desktop": {
+    "viewport": [
+      1037,
+      698
+    ],
+    "horizontal_overflow": false,
+    "full_page_screenshots": {
+      "pl_final.jpg": [
+        1022,
+        1471
+      ],
+      "benchmark_final.jpg": [
+        1022,
+        888
+      ]
+    },
+    "five_shape_route_display": "PASS_CPU_route_PL_disabled"
+  },
+  "local_JPEG_auto_upload": "NOT_VERIFIED: extension Allow access to file URLs remains disabled; permission not changed",
+  "retained_tool_timeout": "Initial wait for benchmark CSV control expired; same original job subsequently observed SUCCEEDED; no RUN replay, four POST jobs total",
+  "collected_files_verified": 44,
+  "deployment_inputs_verified": 149,
+  "reused_evidence": "Frozen identical H576 C integer/lifecycle and IAB public JPEG quality/interface results; no new layer or quality experiment",
+  "recovery": "PASS",
+  "final_root_check": {
+    "path": "results/model_planning/v5_h576_ui_20261017_01/final_state.json",
+    "sha256": "e704898886e62238095e7dfb4e45fc225cbb6ffd4a907e64e6f17a833c0aea99"
+  },
+  "frontend_sha256": "b6ec494b501fa67667fac930fdbba132f9df8c91ff2536828c7a41b2c57e72d6",
+  "model_hardware_changes": 0,
+  "permission_changes": 0,
+  "quality2000_reads": 0,
+  "joint_formal_release": "NOT_SIGNED",
+  "browser_files": {
+    "after_window_closed_dom.txt": "e5b2d7b17fe582d494519004b544f59ea0346d815a99016e10dbe68512a9abc8",
+    "benchmark.csv": "6efd87b33858812277b30eb964aca8e8f4b052d3980247ec1eb92846cf9f9bd0",
+    "benchmark.json": "dd5bf2006d7b280eaa814a7eaf5feb2c5535519e220ddd74b57383a5e91b09fe",
+    "benchmark_desktop.jpg": "3c25cac114d809a6753d775be4df017fbab038dede5166d24e60c25d1d9c65b6",
+    "benchmark_desktop_metrics.json": "f7b7e77b3440d29295b0164195e5baa26095233b5da194e060a23a1950abf65a",
+    "benchmark_desktop_top.jpg": "1c14e870bd99f232829516214ee6322a1e804c72b003f2678b6e727caddf0707",
+    "benchmark_dom.txt": "0835cea72cd122da31c33a7dad140ec2fdd739add52fc6a068f9bcbb67f0541f",
+    "benchmark_final.jpg": "bf4a73a5af1b405bd3eae5bb2a95540f0a58e4fcba1eef7c01220bf05e8be207",
+    "browser_observation.json": "7891a26484bab39988a0cf4ca9f4c225449fd584ca91aa6cca02c11bc714aa2f",
+    "desktop_before.jpg": "21d33d91d2c6fb8a4b35a641291be1db067fd554338f284b8dc062589a3bcffe",
+    "desktop_before.json": "4076b24ec43b502591fc170d46820378fb26d0789456d4473f7e3c99c9ecf3a2",
+    "fp32.json": "1566dacf7df6017412ac46e97c313a11a3bca80edcadc19ed9407501173b451b",
+    "fp32_dom.txt": "2a722c5d362f6b009b8ea2b3433ee87df4f08cd4321b6863f9afb3b3212f2852",
+    "history_desktop.jpg": "8e96a59693744c37a12564d3be46b579abc823f8e4422cd48124d318a6bb6a3b",
+    "history_dom.txt": "8820d5450946a6f416cdffb97633635c92f9ceeee636b840962d5fed26736997",
+    "http_snapshot.jsonl": "9e3545bb720feae957a7d905af98b8b14a5be93f61bbb1b62a14b06a965df1da",
+    "pl.json": "e3bc70e203b5c9c1c5c6fe85e9d258f671702782c71949358159d758bdbbaacd",
+    "pl_desktop.jpg": "2fb4c6adc05eb6842331c5627ea59022836b9e534cba6c459db5712618c2db1a",
+    "pl_desktop_metrics.json": "e06de864f2368a6cbe9ee3bdc4fe324a6aaf4a456c4411d72ca5bfa9ed08c283",
+    "pl_desktop_top.jpg": "7708c7498b0ca3d96b6d7248ee8ec0f67b334799f3e0636e30c4f6813c9ad643",
+    "pl_dom.txt": "ea6ee8ee5ab3600b1c6cee4b059cb71b65b614a464b4852419aa84575fdd7f2b",
+    "pl_final.jpg": "15b883efbbd3b13fb32caa6dafe5a67b70bc5ad349f1d40758407427b9de1749",
+    "pl_routes.csv": "422c78c30de73eb4ec5285eed733c1b3f21c65a1a526fd7ebae2a2865cb7f7c0",
+    "route_blocks_0_attn_proj_dom.txt": "fc0fc829f504d9a544c38746915d776118cff7b3456164f61e1d2ee177fa1b12",
+    "route_blocks_0_attn_qkv.jpg": "0852fb701243dd15a701b4546e35a81440cc57b03f180a4249bf36ac89b54246",
+    "route_blocks_0_attn_qkv_dom.txt": "61cb3ea59f90972711ca87467815ba64e52d4503d7c27b7c5167f6a3643be63a",
+    "route_blocks_0_mlp_fc1_dom.txt": "25cb0734cfbe600097d23dab548961f5746592d31e0fb7519b8046ecbdb1260f",
+    "route_blocks_0_mlp_fc2_dom.txt": "52e78bf55c68d1c9b84071b51aaf91187370b6e1294c79c0717a6e8702a63d6b",
+    "route_display_checks.json": "1ec14f183f7313005acb5bad70e34bd1bf270d10312230835348eca192eeb183",
+    "route_head.jpg": "b6f06d8c5a32f45af46c572f424f2b1c15facf131b3779ebe427493a14f5d87e",
+    "route_head_dom.txt": "37abcfa7677c4197161b193d9c4a7a94d08be915e50cdbf013d043d4e56cce9b",
+    "upload_preflight.json": "32e6d228f2f1530cd7b7541911f012cc1c8d942a19fb2b1947e12ed44bdffd55",
+    "w8.json": "3ded8e12197ebcb46e841f22e117edd9844473e3db1dbabdaacd53cd37d12b50",
+    "w8_dom.txt": "5e8d77858f7cc64dbc8cc491ba59bd513e515492c351844b6b8a0dee27fa8b7f"
+  }
+}

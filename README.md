@@ -55,11 +55,25 @@ flowchart LR
 
 ## 阅读与复现
 
+### C 的 H576 展示网站
+
+仓库保留了C制作的H576可视化工作台，可在本机浏览历史实板成果、CPU／PS+PL双曲线、49层静态路由并下载JSON／CSV。使用已有PowerShell 7和Node.js 24或更高版本，在仓库根目录运行：
+
+```powershell
+pwsh -File ./start-workbench.ps1
+```
+
+打开 **http://127.0.0.1:4178/#overview**，按Ctrl+C关闭服务。默认不连接板卡，不需要模型或固件下载；详细步骤与必要文件见[网站使用指南](docs/workbench.md)。网站中的H576 Dense历史数据保留原身份；当前Sparse24的结果以上方表格为准，网页实时推理尚未接入当前运行包。
+
+### 代码与数据入口
+
 - [快速开始](docs/quickstart.md)：离线源码检查、还原受检运行包、CPU 自测和板端使用前提。
 - [共同接口](docs/interface.md)：Dense/Sparse 数值、布局、尺寸和寄存器约定。
 - [模型与训练](model/README.md)：24 层掩码、原始模型身份、训练来源和外部数据。
 - [ARM 与平台](board/README.md)：冻结运行包、平台源码、构建和执行职责。
 - [外部资产清单](assets_manifest.json)：模型、平台和完整证据包的精确身份；下载见匹配 Release。
+- [最终Release下载](https://github.com/GINSmucker/kv260-gemm-engine/releases/tag/opt50-sparse24-final-20261030)：剪枝／Dense模型、固件及完整证据。Git源码下载不包含这些大文件。
+- [版本能力与证据范围](docs/version-history.md)：v1、H576、Sparse12、Sparse24及研究分支的用途；附H576交互式架构图入口。
 
 ```text
 hls/       OPT50 源码、HLS配置与合成测试用例
@@ -73,3 +87,5 @@ tools/     身份校验、运行包还原、离线证据复核
 ## 版本演进
 
 [v1 初级 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v1-dense-initial) · [v2 H576 Dense](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v2-h576-dense) · [v3 OPT50 / 12层 Sparse](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v3-opt50-sparse)。历史分支保持独立身份；当前交付为 24 层 Sparse 和原始 Dense 的真实图片对照。
+
+原OPT50的时序、资源、时钟、DRC和布线报告见[硬件实现证据](results/README.md#原opt50硬件实现报告)。它们与已验收fd96539d系统绑定，保留原始SHA，区别于本轮源码整理的检查结果。

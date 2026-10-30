@@ -1,0 +1,91 @@
+{
+  "candidate_id": "AB_H576_OPT45_PS_GELU_20261016",
+  "package_manifest_sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76",
+  "package_payload_files": 84,
+  "model": {
+    "kind": "compact Dense W8A8, not2:4",
+    "MLP_hidden": 576,
+    "blocks": 12,
+    "Linear": 49,
+    "PL": 36,
+    "CPU": 13,
+    "classes": 1000
+  },
+  "hardware": {
+    "MACs": 512,
+    "clock_MHz": 125,
+    "AXI_bits": 128,
+    "engines": 1
+  },
+  "gates": {
+    "existing_same_ARM_PL_quality": "PASS",
+    "fair_full_model_performance": "PASS",
+    "independent_finite5000_and10formal_cycles": "PASS",
+    "UI_board_API_and_Node_exports": "PASS",
+    "manual_start_and_active_stop": "PASS",
+    "real_browser": "PASS_IAB_PUBLIC_JPEG_AND_CHROME_BUILTIN_REAL_PL",
+    "reserved_quality2000": "NOT_RUN_RESERVED",
+    "cross_host_W8_elementwise": "FAIL_RETAINED",
+    "joint_formal_release": "NOT_SIGNED",
+    "sparse2_4_hardware": "NOT_IMPLEMENTED",
+    "current_frontend_browser": "PASS_CHROME_SAVED_MEASUREMENTS_LIVE_PL_NOT_RERUN",
+    "Chrome_control": "PASS",
+    "Chrome_desktop": "PASS_REAL_PL_FULL_PAGE1037x698",
+    "Chrome_PL_UI": "PASS_BUILTIN_PNG_REAL_MODEL",
+    "Chrome_local_JPEG_auto_upload": "NOT_VERIFIED_EXTENSION_FILE_URL_PERMISSION_DISABLED",
+    "UI_presentation": "PASS_CHROME_TWO_CURVES_ROUTE_MAP_ARCHIVE_DOWNLOADS"
+  },
+  "measurement_scope": "Complete FP32 tensor to FP32 logits Runner boundary; initialization, preprocessing, hardware load, serialization and verification excluded; CPU W8 is ORT semantic reference; combined PS optimization and PL delivery, not isolated MAC speedup",
+  "limitations": [
+    "5000 repeated invocations use20 public images, not5000 new quality samples",
+    "val500 is subset of existing ten-class full3925",
+    "No unbounded reliability, permanent AXI fault recovery, live high-address coverage or cancellation-latency bound",
+    "Installed board SDK/ORT/model preprocessing environment reused; not a clean OS rebuild",
+    "Chrome real-model built-in PNG, desktop/routes/benchmark/exports PASS; local JPEG automated upload not verified because extension file-URL setting remains disabled; no new quality coverage"
+  ],
+  "retained_failures": [
+    "v5_h576_fair_20261016_01 second-round request-ID reset; complete round1 reused, only round2 repeated",
+    "c_h576_endurance_20261016_01 disk gate fail before load, zero PL",
+    "v5_h576_ui_20261016_09 wholewindowFAIL/browserNOT_VERIFIED, recoveryPASS"
+  ],
+  "schema": "H576_PORTABLE_EVIDENCE_INDEX_V1",
+  "scope": "Selected unchanged public receipts; raw campaigns retained by maintainers, not bundled in Git",
+  "source_index_sha256": "ff38993fb854769723112ee9f57a00dab302388a9ab0120d0ed68bdfe2217666",
+  "evidence": {
+    "quality": {
+      "path": "results/model_planning/v5_h576_quality_20261016_01/quality_recount.json",
+      "sha256": "b9e4a5e7007209f84a3aea003517a9f53c3ff7d3aa7fe3d4bdafdcb560b03bb3",
+      "status": "PASS_EXISTING_VAL_PL_QUALITY_AND_CLEAN_DEPLOYMENT"
+    },
+    "performance": {
+      "path": "results/model_planning/v5_h576_fair_20261016_02/analysis.json",
+      "sha256": "7161b12b3a03a7e8048d046d384f4fdbe3cb5c0236ed5464774f54ae74b52b39",
+      "status": "PASS_FINAL_FAIR_PERFORMANCE"
+    },
+    "C_functional": {
+      "path": "results/C/h576/c_h576_20261016_01/C_RECEIPT.json",
+      "sha256": "1d00e32fe18299ad193cbc489b8d3c3c5c609a4231b15477b1dd78dc5e9c12a6",
+      "status": "PASS_SCOPED_INDEPENDENT_C_H576"
+    },
+    "C_fair_recount": {
+      "path": "results/C/h576/c_h576_endurance_20261016_01/C_FAIR_RECOUNT.json",
+      "sha256": "645f0d9d6334bcfcf728af84a6c5fbb162a7b1e17bd7bc4f368b1b6f797effa4",
+      "status": "PASS_C_INDEPENDENT_RECOUNT_ROOT_EXECUTED_FAIR"
+    },
+    "C_endurance": {
+      "path": "results/C/h576/c_h576_endurance_20261016_02/C_ENDURANCE_RECEIPT.json",
+      "sha256": "b163748b098c6290308f03d6ef42b9d3b08eb250a8a12bd87b4d9be7d5bda531",
+      "status": "PASS_C_H576_FINITE_ENDURANCE"
+    },
+    "C_environment": {
+      "path": "results/C/h576/c_h576_endurance_20261016_02/C_ENVIRONMENT_RECOUNT.json",
+      "sha256": "1036bf858b5ab7a4e702b1c1d492ca5f1809204adaff9faf623310d590f5a09b",
+      "status": "PASS_RECORDED_ENVIRONMENT_RECOUNT"
+    },
+    "Chrome_real_PL_desktop": {
+      "path": "results/model_planning/v5_h576_ui_20261017_01/chrome_recount.json",
+      "sha256": "8e97d852b8424e667901a5d8aca99d146bdbe5cf87f719b4c58e17a5669445b2",
+      "status": "PASS_REAL_CHROME_BUILTIN_PL_DESKTOP_AND_EXPORTS_UPLOAD_PENDING"
+    }
+  }
+}

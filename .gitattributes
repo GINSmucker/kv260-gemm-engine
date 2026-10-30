@@ -22,3 +22,13 @@ model/training_snapshot/** -text -whitespace
 results/board500/** -text -whitespace
 results/platform_history/** -text -whitespace
 docs/provenance/** -text -whitespace
+
+# C's H576 workbench and SHA-bound historical display receipts.
+/start-workbench.ps1 -text
+board/ui/** -text -whitespace
+results/model_planning/h576_closeout_20261016_01/** -text -whitespace
+results/model_planning/v5_h576_fair_20261016_02/** -text -whitespace
+results/model_planning/v5_h576_quality_20261016_01/** -text -whitespace
+results/model_planning/v5_h576_ui_20261017_01/** -text -whitespace
+results/C/h576/c_h576_endurance_20261016_02/** -text -whitespace
+docs/diagrams/** -text -whitespace

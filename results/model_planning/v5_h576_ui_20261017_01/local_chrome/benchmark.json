@@ -1,0 +1,200 @@
+{
+  "schema": "kv260_ui_job_v1",
+  "id": "board_91dc8900b7ff",
+  "source": "BOARD",
+  "type": "benchmark",
+  "status": "SUCCEEDED",
+  "progress": 100,
+  "layerCompleted": 3,
+  "layerTotal": 3,
+  "realPLStarts": 144,
+  "options": {
+    "scenario": "normal",
+    "runs": 3,
+    "warmup": 1
+  },
+  "startedAt": "2025-03-13T11:45:28Z",
+  "completedAt": "2025-03-13T11:45:33Z",
+  "elapsedMs": 4525.603793,
+  "result": {
+    "schema": "kv260_ui_h576_benchmark_v1",
+    "model_protocol": "h576_v5",
+    "source": "BOARD",
+    "status": "PASS",
+    "samples": [
+      {
+        "index": 1,
+        "fp32Ms": 293.700358,
+        "w8a8Ms": 297.089371,
+        "plMs": 148.061411,
+        "source": "BOARD_H576_MEASURED"
+      },
+      {
+        "index": 2,
+        "fp32Ms": 288.264143,
+        "w8a8Ms": 297.783348,
+        "plMs": 144.388474,
+        "source": "BOARD_H576_MEASURED"
+      },
+      {
+        "index": 3,
+        "fp32Ms": 280.187672,
+        "w8a8Ms": 298.552546,
+        "plMs": 142.148092,
+        "source": "BOARD_H576_MEASURED"
+      }
+    ],
+    "p50Ms": 297.783348,
+    "p95Ms": 298.4756262,
+    "fp32P50Ms": 288.264143,
+    "plP50Ms": 144.388474,
+    "plP95Ms": 147.6941173,
+    "warmup": 1,
+    "PL_starts": 144,
+    "fallback_count": 0,
+    "source_sha256": "354fbdfe9e06c8411d0fc85073e373e5f45e9adc635c04642cbf4d9f911fc215",
+    "boot_id": "7d58d5e0-a5ff-4138-9de3-b4fd3eca05eb",
+    "bundle_identity": {
+      "status": "PASS",
+      "manifest_sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76",
+      "candidate_id": "AB_H576_OPT45_PS_GELU_20261016"
+    },
+    "timingsSource": "BOARD_H576_MEASURED",
+    "accuracy": null,
+    "timing_scope": "Same H576 input and four-thread model invocation; each backend has a sequential warm session; initialization and serialization excluded; UI probe is not the formal bracket comparison",
+    "hardware_binding": {
+      "package_manifest_sha256": "c18de455de083363d0b73a7b526f5262a5cb2371c8e91b5900a4447328694a76",
+      "boot_id": "7d58d5e0-a5ff-4138-9de3-b4fd3eca05eb",
+      "owner_pid": 52710,
+      "owner_birth_ticks": 4492331,
+      "socket": "/home/ubuntu/fpga_project/v5_h576_ui_20261017_01.sock",
+      "observer_tags": [
+        3652287023,
+        1996644805
+      ],
+      "uuid": "0245b248-109b-6bf7-73c7-16b629abe9a1"
+    }
+  },
+  "error": null,
+  "events": [
+    {
+      "at": "2025-03-13T11:45:28Z",
+      "source": "BOARD",
+      "status": "VALIDATING",
+      "message": "收到真实任务与图片字节；无PL加载"
+    },
+    {
+      "at": "2025-03-13T11:45:28Z",
+      "source": "BOARD",
+      "status": "PREPROCESSING",
+      "message": "板端读取图片并执行冻结预处理"
+    },
+    {
+      "at": "2025-03-13T11:45:28Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "加载H576 fp32；不计入样本"
+    },
+    {
+      "at": "2025-03-13T11:45:28Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "fp32 预热 1/1"
+    },
+    {
+      "at": "2025-03-13T11:45:29Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "fp32 正式 1/3"
+    },
+    {
+      "at": "2025-03-13T11:45:29Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "fp32 正式 2/3"
+    },
+    {
+      "at": "2025-03-13T11:45:29Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "fp32 正式 3/3"
+    },
+    {
+      "at": "2025-03-13T11:45:30Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "加载H576 w8a8；不计入样本"
+    },
+    {
+      "at": "2025-03-13T11:45:30Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "w8a8 预热 1/1"
+    },
+    {
+      "at": "2025-03-13T11:45:31Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "w8a8 正式 1/3"
+    },
+    {
+      "at": "2025-03-13T11:45:31Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "w8a8 正式 2/3"
+    },
+    {
+      "at": "2025-03-13T11:45:31Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "w8a8 正式 3/3"
+    },
+    {
+      "at": "2025-03-13T11:45:32Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "加载H576 pl49；不计入样本"
+    },
+    {
+      "at": "2025-03-13T11:45:32Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "pl49 预热 1/1"
+    },
+    {
+      "at": "2025-03-13T11:45:32Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "pl49 正式 1/3"
+    },
+    {
+      "at": "2025-03-13T11:45:32Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "pl49 正式 2/3"
+    },
+    {
+      "at": "2025-03-13T11:45:32Z",
+      "source": "BOARD",
+      "status": "RUNNING",
+      "message": "pl49 正式 3/3"
+    },
+    {
+      "at": "2025-03-13T11:45:33Z",
+      "source": "BOARD",
+      "status": "POSTPROCESSING",
+      "message": "保存全部测评样本"
+    },
+    {
+      "at": "2025-03-13T11:45:33Z",
+      "source": "BOARD",
+      "status": "SUCCEEDED",
+      "message": "H576 CPU与PS/PL测评完成"
+    }
+  ],
+  "cancelRequested": false,
+  "boot_id": "7d58d5e0-a5ff-4138-9de3-b4fd3eca05eb",
+  "evidence_dir": "/home/ubuntu/fpga_project/model_b/c_backend/protocol_preparation/v5_h576_ui_20261017_01/arm/ui/jobs/board_91dc8900b7ff",
+  "PL_starts_at_admission": 36,
+  "input_sha256": "354fbdfe9e06c8411d0fc85073e373e5f45e9adc635c04642cbf4d9f911fc215"
+}

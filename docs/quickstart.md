@@ -16,6 +16,19 @@ python -B -m unittest discover -s tests -v
 
 ## 2. 下载匹配资产
 
+[最终Release](https://github.com/GINSmucker/kv260-gemm-engine/releases/tag/opt50-sparse24-final-20261030)提供以下下载；先按[资产清单](../assets_manifest.json)核对SHA256：
+
+| 下载 | 用途 |
+|---|---|
+| [sparse24-payload.tar.gz](https://github.com/GINSmucker/kv260-gemm-engine/releases/download/opt50-sparse24-final-20261030/sparse24-payload.tar.gz) | 24层剪枝模型及运行包缺省载荷 |
+| [dense36-payload.tar.gz](https://github.com/GINSmucker/kv260-gemm-engine/releases/download/opt50-sparse24-final-20261030/dense36-payload.tar.gz) | 原始Dense对照模型及载荷 |
+| [layer02-payload.tar.gz](https://github.com/GINSmucker/kv260-gemm-engine/releases/download/opt50-sparse24-final-20261030/layer02-payload.tar.gz) | 同权重单层Dense／Sparse数据 |
+| [fd96539d-platform.tar.gz](https://github.com/GINSmucker/kv260-gemm-engine/releases/download/opt50-sparse24-final-20261030/fd96539d-platform.tar.gz) | 已验收平台固件、metadata及配对产物 |
+| [paired500-evidence.tar.gz](https://github.com/GINSmucker/kv260-gemm-engine/releases/download/opt50-sparse24-final-20261030/paired500-evidence.tar.gz) | 500张完整原始CPU／PL证明 |
+| [B原始交付ZIP](https://github.com/GINSmucker/kv260-gemm-engine/releases/download/opt50-sparse24-final-20261030/B_FINAL_H576_24L_100K_20261026_v1.zip) | 原B模型、训练配方和来源材料 |
+
+仅浏览[C的H576网站](workbench.md)时无需下载这些资产。网站和当前Sparse24图片验收保持各自数据来源。
+
 按 [资产清单](../assets_manifest.json) 取得匹配Release文件。Sparse和Dense分别使用`sparse24-payload.tar.gz`、`dense36-payload.tar.gz`；单层case使用`layer02-payload.tar.gz`；完整证据为`paired500-evidence.tar.gz`。资产在Git之外，不能用其他模型／随机权重替代。
 
 先建立新的`.release`输出父目录，再还原选择的原始包，例如：

@@ -4,6 +4,10 @@
 
 `runtime/snapshots/`保存实际受检源码；模型／case二进制由外部资产补齐。原清单不因移入Git而改写，详见 [运行包索引](runtime/README.md)。
 
+[ui/](ui/README.md)提供C原H576展示网站的本机服务和页面；[使用指南](../docs/workbench.md)说明离线查看、下载和文件依赖。该网页保留H576 Dense历史数据，旧实时协议未接入当前Sparse24运行包。
+
+`platform/tests/tb_opt50_board_logic.sv`与`platform/input/observer/tb_f8_status.sv`保留原平台脚本引用的两份测试台；[原实现报告](../results/README.md#原opt50硬件实现报告)提供配对时序和资源证据。新目录中未重跑仿真或实现，仍需原配方声明的外部输入。
+
 参考环境：Ubuntu24.04.2/aarch64，kernel6.8.0-1015-xilinx，匹配XRT2.18/zocl、g++13及XRT/UUID开发头库；ORT1.22.1、NumPy1.26.4。编译器及运行依赖受原收据约束。
 
 单个Native owner掌握CU和BO；client只同步所需输入／输出并发送有序请求。静态权重只在owner初始化同步，图后INFO执行完整保护区与静态权重检查。每次图36次PL调用；批次最多50图，结束后正常关闭并提交结果。
