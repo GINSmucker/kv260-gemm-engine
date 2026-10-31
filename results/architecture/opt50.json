@@ -1,0 +1,103 @@
+{
+  "schema": "opt50_architecture_artifacts_v1",
+  "status": "PASS",
+  "scope": "SOURCE_DIAGRAM_ARTIFACTS_AND_AUTOMATED_BROWSER_ONLY",
+  "source_revision": "bd5d8cc056a12b19f757949324986079ea675b59",
+  "archify_version": "3.2.0",
+  "hardware_accessed": false,
+  "HLS_RTL_Vivado_board": "NOT RUN",
+  "diagrams": [
+    {
+      "diagram": "system",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "html": {
+        "bytes": 844308,
+        "sha256": "59e2f9e7a3863182e6d69cfbaa5951e29ad08067d0f7baeef5f940373eeb7066"
+      },
+      "svg": {
+        "bytes": 327298,
+        "sha256": "49808b115734e5b0e5eae17433ae80f1d9131562bf0096b1dc4333552dff793a"
+      },
+      "candidate": {
+        "bytes": 7944,
+        "sha256": "5f259304e504bdf853dcfae07183ec9b1171037f00583cd2bfc86158e94c26e6"
+      },
+      "receipt": ".test_build/.archify/architecture-opt50-20261031-140639-854819/system/system.finalize.json"
+    },
+    {
+      "diagram": "hardware",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "html": {
+        "bytes": 840734,
+        "sha256": "7335ea2e9999cbeeb66f852f33721da0ef81b733cfef130c9282eeafc80773e9"
+      },
+      "svg": {
+        "bytes": 324108,
+        "sha256": "f70a22da97354ba2e8919c46d1f3600b5f2ac6d501ffa1258a92774d4af9c5bc"
+      },
+      "candidate": {
+        "bytes": 6888,
+        "sha256": "ff710cd33e9702fa7f8938b8049b4efbf7d7eee7946ca4a7ebe587156604cbfb"
+      },
+      "receipt": ".test_build/.archify/architecture-opt50-20261031-140639-854819/hardware/hardware.finalize.json"
+    },
+    {
+      "diagram": "software",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "html": {
+        "bytes": 856475,
+        "sha256": "a8a44dfb5a8f21ead0cb8e4e787326639d541b8ded6dac2ba33e5da75f01d3ab"
+      },
+      "svg": {
+        "bytes": 338703,
+        "sha256": "cd7bf49bc1a2b572fbe6b0af6ad4fbc0727aa7dc1b7972a69dad2b495f57be1a"
+      },
+      "candidate": {
+        "bytes": 11162,
+        "sha256": "05d8635292cdb4be18d653ca7d35894f61b84c0edc57342653d7a1e98829eff2"
+      },
+      "receipt": ".test_build/.archify/architecture-opt50-20261031-140639-854819/software/software.finalize.json"
+    },
+    {
+      "diagram": "shared-core",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "html": {
+        "bytes": 845594,
+        "sha256": "444e32dc293057a6ec7ad15a20f00db4777eada80d73e6b07298a9cd0f43a04e"
+      },
+      "svg": {
+        "bytes": 328916,
+        "sha256": "ac0ca6c46c83ab88a7cd574f3f323ce8eec58469bb2d128d97a9fc21f6e8f537"
+      },
+      "candidate": {
+        "bytes": 7817,
+        "sha256": "1286d12771fe88ec7558fb9d67782f9db4fb3d2260375de0f9937fce60f1189b"
+      },
+      "receipt": ".test_build/.archify/architecture-opt50-20261031-140639-854819/shared-core/shared-core.finalize.json"
+    }
+  ],
+  "entry": {
+    "bytes": 19776,
+    "sha256": "348bfc4542449e200af388431d28608dcc3ebe32e793cde2756a57903abb75ca"
+  }
+}

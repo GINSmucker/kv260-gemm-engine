@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "OPT50 · Dense 与 2:4 Sparse 如何共用计算阵列",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": "shared-core/shared-core.html",
+    "repository": {
+      "url": "git@github.com:GINSmucker/kv260-gemm-engine.git",
+      "revision": "bd5d8cc056a12b19f757949324986079ea675b59",
+      "link_mode": "local-only"
+    },
+    "legend": {
+      "entries": {
+        "backend": {
+          "label": "计算与控制"
+        },
+        "database": {
+          "label": "存储与缓冲"
+        },
+        "frontend": {
+          "label": "结果与输出"
+        },
+        "security": {
+          "label": "校验与生命周期"
+        },
+        "messagebus": {
+          "label": "块缓冲交接"
+        },
+        "external": {
+          "label": "输入来源"
+        }
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "dense",
+      "type": "database",
+      "label": "mode=0 · Dense",
+      "sublabel": "完整 W · 不读取 W_meta",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_top.cpp",
+          "line": 27,
+          "end_line": 44,
+          "label": "Dense 加载分支"
+        }
+      ]
+    },
+    {
+      "id": "sparse",
+      "type": "database",
+      "label": "mode=1 · 2:4 Sparse",
+      "sublabel": "两值 + 每列位置码",
+      "pos": [
+        40,
+        280
+      ],
+      "size": [
+        220,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_top.cpp",
+          "line": 30,
+          "end_line": 37,
+          "label": "Sparse 加载与验证"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/model_core.hpp",
+          "line": 61,
+          "end_line": 63,
+          "label": "位置码 p0 < p1"
+        }
+      ]
+    },
+    {
+      "id": "weights",
+      "type": "database",
+      "label": "片上权重与元数据",
+      "sublabel": "16 byte banks · BRAM",
+      "pos": [
+        390,
+        160
+      ],
+      "size": [
+        230,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_top.cpp",
+          "line": 24,
+          "end_line": 37,
+          "label": "权重缓存"
+        },
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 20,
+          "end_line": 68,
+          "label": "连续加载与 metadata 检查"
+        }
+      ]
+    },
+    {
+      "id": "selector",
+      "type": "backend",
+      "label": "共用取数与选择",
+      "sublabel": "Dense K 步 / Sparse K÷2 步",
+      "pos": [
+        750,
+        160
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 85,
+          "end_line": 91,
+          "label": "计算步数"
+        },
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 134,
+          "end_line": 169,
+          "label": "权重与位置选择"
+        }
+      ]
+    },
+    {
+      "id": "mac",
+      "type": "backend",
+      "label": "唯一 32×16 MAC 阵列",
+      "sublabel": "512 个展开位置 · INT32 累加",
+      "pos": [
+        1110,
+        160
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 172,
+          "end_line": 187,
+          "label": "唯一乘法表达式"
+        },
+        {
+          "path": "hls/include/model_gemm_config.hpp",
+          "line": 23,
+          "end_line": 30,
+          "label": "32×16 配置"
+        }
+      ]
+    },
+    {
+      "id": "xbank",
+      "type": "database",
+      "label": "X 行缓存与四元组",
+      "sublabel": "每行读取 · 按列选择 INT8",
+      "pos": [
+        750,
+        410
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 77,
+          "end_line": 106,
+          "label": "X 行缓存与加载"
+        },
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 174,
+          "end_line": 184,
+          "label": "按列选择激活"
+        }
+      ]
+    },
+    {
+      "id": "blocks",
+      "type": "messagebus",
+      "label": "结果块缓冲",
+      "sublabel": "16 行 slab · 队列深度 2",
+      "pos": [
+        1110,
+        410
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 8,
+          "end_line": 11,
+          "label": "stream_of_blocks"
+        },
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 189,
+          "end_line": 215,
+          "label": "打包及上下半块"
+        }
+      ]
+    },
+    {
+      "id": "writer",
+      "type": "backend",
+      "label": "独立 Burst writer",
+      "sublabel": "DATAFLOW：计算与写回重叠",
+      "pos": [
+        750,
+        650
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 218,
+          "end_line": 258,
+          "label": "结果写回与 DATAFLOW"
+        }
+      ]
+    },
+    {
+      "id": "y",
+      "type": "database",
+      "label": "DDR 中的 Y",
+      "sublabel": "紧凑 row-major INT32",
+      "pos": [
+        390,
+        650
+      ],
+      "size": [
+        230,
+        76
+      ],
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_core.hpp",
+          "line": 228,
+          "end_line": 242,
+          "label": "按有效行写 Y"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "dense-load",
+      "from": "dense",
+      "to": "weights",
+      "label": "选定模式",
+      "variant": "emphasis"
+    },
+    {
+      "id": "sparse-load",
+      "from": "sparse",
+      "to": "weights",
+      "label": "先验码",
+      "variant": "emphasis"
+    },
+    {
+      "id": "weights-select",
+      "from": "weights",
+      "to": "selector",
+      "label": "W / 位置",
+      "variant": "emphasis"
+    },
+    {
+      "id": "select-mac",
+      "from": "selector",
+      "to": "mac",
+      "label": "选中权重",
+      "variant": "emphasis"
+    },
+    {
+      "id": "x-select",
+      "from": "xbank",
+      "to": "selector",
+      "label": "X 四元组",
+      "variant": "default"
+    },
+    {
+      "id": "mac-blocks",
+      "from": "mac",
+      "to": "blocks",
+      "label": "打包结果",
+      "variant": "emphasis"
+    },
+    {
+      "id": "blocks-writer",
+      "from": "blocks",
+      "to": "writer",
+      "label": "块交接",
+      "variant": "emphasis"
+    },
+    {
+      "id": "writer-y",
+      "from": "writer",
+      "to": "y",
+      "label": "128 bit",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "同一套计算硬件",
+      "items": [
+        "mode 决定步数和取数，乘法与累加源位置仅一处。",
+        "Dense / Sparse 是互斥权重格式；权重缓存和 32×16 阵列共用。"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "2:4 的准确含义",
+      "items": [
+        "对每个输出列，在 K 方向每 4 个权重保留 2 个及其位置。",
+        "Sparse 的 MAC 步数为 K/2；整网耗时还包含 PS、访存和校验，不能直接称整网快两倍。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "流水范围",
+      "items": [
+        "权重装载和 metadata 验证先完成，随后进入计算 / 写回 DATAFLOW。",
+        "这里是单层内部重叠；当前未实现跨视频帧流水。"
+      ]
+    }
+  ]
+}

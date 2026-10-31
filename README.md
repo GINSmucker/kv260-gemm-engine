@@ -67,6 +67,7 @@ pwsh -File ./start-workbench.ps1
 
 ### 代码与数据入口
 
+- [系统架构与技术实现](docs/architecture.md)：当前 OPT50 的系统整体、硬件通路、软件流程及 Dense／Sparse 共用阵列；[交互图阅读入口](docs/diagrams/opt50/index.html)支持源码追踪和导出。
 - [快速开始](docs/quickstart.md)：离线源码检查、还原受检运行包、CPU 自测和板端使用前提。
 - [共同接口](docs/interface.md)：Dense/Sparse 数值、布局、尺寸和寄存器约定。
 - [模型与训练](model/README.md)：24 层掩码、原始模型身份、训练来源和外部数据。
