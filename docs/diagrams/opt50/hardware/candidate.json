@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "OPT50 · PS / DDR / PL 硬件模块与通路",
+    "title": "OPT50 · 硬件通路（据设计资料整理，非新 Vivado 截图）",
     "locale": "zh-CN",
     "quality_profile": "showcase",
     "output": "hardware/hardware.html",

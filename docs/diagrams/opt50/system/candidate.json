@@ -207,7 +207,7 @@
       "id": "engine",
       "type": "backend",
       "label": "PL 共享计算引擎",
-      "sublabel": "OPT50 · 12 Dense + 24 Sparse",
+      "sublabel": "Sparse24：12D + 24S；Dense：36D",
       "pos": [
         40,
         280
@@ -323,7 +323,7 @@
       "dot": "cyan",
       "title": "整网分工",
       "items": [
-        "12 个 QKV 为 Dense；24 个 MLP Linear 为 Sparse。",
+        "Sparse24：12 个 QKV 为 Dense、24 个 MLP 为 Sparse；原始 Dense：36D。",
         "proj/head 共 13 层及 attention、非线性运算在 PS；PL 只计算整数 GEMM。"
       ]
     },

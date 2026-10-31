@@ -49,7 +49,11 @@
     },
     {
       "id": "verify",
-      "label": "正确性与结果输出"
+      "label": "每图检查 · 会话保持常驻"
+    },
+    {
+      "id": "batch",
+      "label": "批次结束 · 关闭与最终提交"
     }
   ],
   "nodes": [
@@ -240,60 +244,60 @@
     {
       "id": "info",
       "lane": "verify",
-      "col": 5,
+      "col": 4,
       "type": "security",
-      "label": "INFO 与关闭证明",
-      "sublabel": "保护区 / 静态权重 / 计数",
+      "label": "每图 INFO 检查",
+      "sublabel": "保护区 / 权重 / 计数 · 会话保留",
       "sources": [
         {
-          "path": "board/runtime/snapshots/sparse24/source/owner.cpp",
-          "line": 172,
-          "end_line": 180,
-          "label": "INFO 后允许下一图"
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 494,
+          "end_line": 508,
+          "label": "INFO 与 pending，不关闭设备"
         },
         {
           "path": "board/runtime/snapshots/sparse24/source/kernel.cpp",
-          "line": 159,
+          "line": 157,
           "end_line": 173,
-          "label": "图后完整校验"
+          "label": "图后检查"
         }
       ]
     },
     {
       "id": "compare",
       "lane": "verify",
-      "col": 4,
+      "col": 5,
       "type": "backend",
-      "label": "逐位比对 logits",
-      "sublabel": "同输入、同权重 CPU 参考",
+      "label": "生成比对结果",
+      "sublabel": "计时外 · 尚待批次验收提交",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/model_worker.py",
-          "line": 218,
-          "end_line": 231,
-          "label": "FP32 bitwise 比较"
+          "line": 393,
+          "end_line": 434,
+          "label": "先生成并保存比对结果"
         },
         {
-          "path": "board/runtime/snapshots/sparse24/model_worker.py",
-          "line": 393,
-          "end_line": 405,
-          "label": "保存输出与比较"
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 484,
+          "end_line": 493,
+          "label": "INFO 前复核保存输出"
         }
       ]
     },
     {
       "id": "output",
-      "lane": "verify",
-      "col": 3,
+      "lane": "batch",
+      "col": 5,
       "type": "frontend",
-      "label": "分类与验收记录",
-      "sublabel": "Top1 / Top5 · 每图结果",
+      "label": "最终验收提交",
+      "sublabel": "本批关闭证明 + 每图结果",
       "sources": [
         {
-          "path": "board/runtime/snapshots/sparse24/model_worker.py",
-          "line": 405,
-          "end_line": 434,
-          "label": "输出结果记录"
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 534,
+          "end_line": 543,
+          "label": "关闭后写 accuracy 与 commit"
         }
       ]
     },
@@ -316,6 +320,55 @@
           "line": 17,
           "end_line": 31,
           "label": "未知执行不得重放"
+        }
+      ]
+    },
+    {
+      "id": "pending",
+      "lane": "verify",
+      "col": 3,
+      "type": "security",
+      "label": "本图待最终提交",
+      "sublabel": "有下一图且门禁通过？",
+      "icon": "decision",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 476,
+          "end_line": 509,
+          "label": "逐图循环与 pending 结果"
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "lane": "batch",
+      "col": 3,
+      "type": "backend",
+      "label": "批次关闭会话",
+      "sublabel": "CPU session / Runner",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 510,
+          "end_line": 517,
+          "label": "批末关闭 worker 会话"
+        }
+      ]
+    },
+    {
+      "id": "stop",
+      "lane": "batch",
+      "col": 4,
+      "type": "security",
+      "label": "STOP 与设备关闭",
+      "sublabel": "owner 正常退出与证明",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 518,
+          "end_line": 531,
+          "label": "STOP、退出及关闭证明"
         }
       ]
     }
@@ -393,35 +446,64 @@
       "role": "return"
     },
     {
-      "id": "end-info",
-      "from": "end",
-      "to": "info",
-      "label": "图后检查",
-      "variant": "default"
-    },
-    {
-      "id": "info-compare",
-      "from": "info",
-      "to": "compare",
-      "label": "提交验收",
-      "variant": "default",
-      "role": "return"
-    },
-    {
-      "id": "compare-output",
-      "from": "compare",
-      "to": "output",
-      "label": "比较结果",
-      "variant": "default",
-      "role": "return"
-    },
-    {
       "id": "launch-fault",
       "from": "launch",
       "to": "fault",
       "label": "执行未知",
       "variant": "default",
       "role": "error"
+    },
+    {
+      "id": "end-compare",
+      "from": "end",
+      "to": "compare",
+      "label": "生成结果",
+      "variant": "default"
+    },
+    {
+      "id": "compare-info",
+      "from": "compare",
+      "to": "info",
+      "label": "保存后检查",
+      "variant": "default",
+      "role": "return"
+    },
+    {
+      "id": "info-pending",
+      "from": "info",
+      "to": "pending",
+      "label": "INFO 通过",
+      "variant": "default",
+      "role": "return"
+    },
+    {
+      "id": "pending-next",
+      "from": "pending",
+      "to": "input",
+      "label": "是：下一图",
+      "variant": "default",
+      "role": "return"
+    },
+    {
+      "id": "pending-close",
+      "from": "pending",
+      "to": "close",
+      "label": "否：结束本批",
+      "variant": "default"
+    },
+    {
+      "id": "close-stop",
+      "from": "close",
+      "to": "stop",
+      "label": "会话已关闭",
+      "variant": "default"
+    },
+    {
+      "id": "stop-output",
+      "from": "stop",
+      "to": "output",
+      "label": "关闭证明通过",
+      "variant": "default"
     }
   ],
   "mainPath": [
@@ -432,7 +514,7 @@
     "begin",
     "model",
     "end",
-    "info"
+    "compare"
   ],
   "cards": [
     {
@@ -447,17 +529,56 @@
       "dot": "emerald",
       "title": "验收与计时边界",
       "items": [
-        "CPU 参考和完整后验检查在 Runner.run 计时外；比较结果可在 INFO 前生成。",
-        "图中 INFO→比对表示验收提交条件，不限定并行回执的生成先后。"
+        "每图先生成并保存比对 / 排名结果，再执行 INFO；这些结果尚待批次提交。",
+        "最终验收提交需要本批会话关闭、owner STOP 和设备关闭证明。"
       ]
     },
     {
       "dot": "amber",
       "title": "会话与异常",
       "items": [
-        "当前会话最多 50 图、900 秒预算；下一 BEGIN 需要上一图 INFO 已验证。",
-        "完成未知时保留资源与现场；终止当前会话，不自动重放 RUN。"
+        "同一会话可处理多图；每图 INFO 检查后可进入下一图，批次结束才关闭。",
+        "最多 50 图 / 900 秒；执行未知时保留现场，不重放请求。"
       ]
     }
-  ]
+  ],
+  "semanticChecks": {
+    "allowedRoots": [
+      "restore"
+    ],
+    "allowedTerminals": [
+      "fault",
+      "output"
+    ],
+    "requiredEdges": [
+      {
+        "from": "end",
+        "to": "compare"
+      },
+      {
+        "from": "compare",
+        "to": "info"
+      },
+      {
+        "from": "info",
+        "to": "pending"
+      },
+      {
+        "from": "pending",
+        "to": "input"
+      },
+      {
+        "from": "pending",
+        "to": "close"
+      },
+      {
+        "from": "close",
+        "to": "stop"
+      },
+      {
+        "from": "stop",
+        "to": "output"
+      }
+    ]
+  }
 }

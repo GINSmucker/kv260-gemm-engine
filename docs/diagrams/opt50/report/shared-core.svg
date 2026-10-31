@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="745" viewBox="0 0 1000 745" role="img"><title>共享阵列：Dense 与 2:4 Sparse 复用同一套 MAC</title>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#344b60"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#152d42}path{fill:none;stroke:#344b60;stroke-width:2.5;marker-end:url(#arrow)}</style>
+<rect width="1000" height="745" fill="white"/>
+<text x="36" y="45" font-size="30" text-anchor="start" font-weight="600">共享阵列：Dense 与 2:4 Sparse 复用同一套 MAC</text>
+<text x="36" y="77" font-size="18" text-anchor="start">源码 bd5d8cc · 报告精简框图</text>
+<rect x="30" y="125" width="280" height="90" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="170.0" y="170.0" font-size="24" text-anchor="middle" font-weight="600">Dense 权重</text>
+<text x="170.0" y="202.0" font-size="20" text-anchor="middle">mode=0：完整 W</text>
+<rect x="30" y="285" width="280" height="90" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="170.0" y="330.0" font-size="24" text-anchor="middle" font-weight="600">2:4 Sparse 权重</text>
+<text x="170.0" y="362.0" font-size="20" text-anchor="middle">mode=1：保留值 + 位置码</text>
+<rect x="410" y="205" width="260" height="100" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="540.0" y="255.0" font-size="24" text-anchor="middle" font-weight="600">共用取数与选择</text>
+<text x="540.0" y="287.0" font-size="20" text-anchor="middle">步数：K / K÷2</text>
+<rect x="760" y="205" width="210" height="100" rx="10" fill="#e4f4ee" stroke="#59798f" stroke-width="1.8"/>
+<text x="865.0" y="255.0" font-size="24" text-anchor="middle" font-weight="600">32×16 MAC</text>
+<text x="865.0" y="287.0" font-size="20" text-anchor="middle">共享 512 路</text>
+<rect x="410" y="405" width="260" height="90" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="540.0" y="450.0" font-size="24" text-anchor="middle" font-weight="600">X 行缓存</text>
+<text x="540.0" y="482.0" font-size="20" text-anchor="middle">按每列位置选取激活</text>
+<rect x="760" y="405" width="210" height="90" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="865.0" y="450.0" font-size="24" text-anchor="middle" font-weight="600">结果块缓冲</text>
+<text x="865.0" y="482.0" font-size="20" text-anchor="middle">计算 / 写回交接</text>
+<rect x="410" y="585" width="260" height="90" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="540.0" y="630.0" font-size="24" text-anchor="middle" font-weight="600">Burst 写回</text>
+<text x="540.0" y="662.0" font-size="20" text-anchor="middle">128 bit</text>
+<rect x="30" y="585" width="280" height="90" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="170.0" y="630.0" font-size="24" text-anchor="middle" font-weight="600">DDR 输出 Y</text>
+<text x="170.0" y="662.0" font-size="20" text-anchor="middle">INT32</text>
+<path d="M310 170 L355 170 L355 230 L410 230"/>
+<path d="M310 330 L355 330 L355 280 L410 280"/>
+<path d="M670 255 L760 255"/>
+<path d="M540 405 L540 305"/>
+<path d="M865 305 L865 405"/>
+<path d="M865 495 L865 630 L670 630"/>
+<path d="M410 630 L310 630"/>
+<text x="40" y="720" font-size="22" text-anchor="start">mode 改变计算路径；权重选择、乘加阵列与写回硬件共用。</text>
+</svg>

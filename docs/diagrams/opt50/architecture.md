@@ -6,27 +6,27 @@ H576 的完整模型运行在 ARM PS，36 个 Linear 调用同一个 OPT50 FPGA 
 
 ## 系统整体框图
 
-[交互图](system/system.html) · [JSON 源](system/candidate.json)
+[交互图](system/system.html) · [报告精简 SVG](report/system.svg) · [JSON 源](system/candidate.json)
 
-![系统整体框图](system/system.svg)
+![系统整体框图](report/system.svg)
 
 ## 硬件模块与主要数据通路
 
-[交互图](hardware/hardware.html) · [JSON 源](hardware/candidate.json)
+[交互图](hardware/hardware.html) · [报告精简 SVG](report/hardware.svg) · [JSON 源](hardware/candidate.json)
 
-![硬件模块与主要数据通路](hardware/hardware.svg)
+![硬件模块与主要数据通路](report/hardware.svg)
 
 ## 软件执行与正确性验收流程
 
-[交互图](software/software.html) · [JSON 源](software/candidate.json)
+[交互图](software/software.html) · [报告精简 SVG](report/software.svg) · [JSON 源](software/candidate.json)
 
-![软件执行与正确性验收流程](software/software.svg)
+![软件执行与正确性验收流程](report/software.svg)
 
 ## Dense / 2:4 Sparse 共用阵列
 
-[交互图](shared-core/shared-core.html) · [JSON 源](shared-core/candidate.json)
+[交互图](shared-core/shared-core.html) · [报告精简 SVG](report/shared-core.svg) · [JSON 源](shared-core/candidate.json)
 
-![Dense / 2:4 Sparse 共用阵列](shared-core/shared-core.svg)
+![Dense / 2:4 Sparse 共用阵列](report/shared-core.svg)
 
 ## 主要技术实现
 
@@ -82,9 +82,9 @@ PS HPM0 经控制 SmartConnect 访问 GEMM 和 observer。GEMM 的 gmem0 读 X�
 
 每次执行前核验层序、地址、形状和 mode，写寄存器后完整读回，再进行 START。Done 为读清语义，由状态机锁存观察结果；还必须满足 Idle、Start/auto_restart 清除、observer 无在途事务及返回/AXI 错误为零，才允许结果提交。
 
-BEGIN/END 约束每图恰好 36 次有序 PL 调用。完整保护区与静态权重检查由图后 INFO 完成，下一 BEGIN 要求上一 INFO 已验证。受检常驻会话最多 50 图、900 秒；完成未知时保留 owner、client 和 BO，不重放请求。
+BEGIN/END 约束每图恰好 36 次有序 PL 调用。每图先生成并保存比对结果，再由 INFO 完成保护区、静态权重与计数检查；结果保持 pending，下一 BEGIN 要求上一 INFO 已验证。同一会话可处理多图，最多 50 图、900 秒。批次结束才关闭 CPU/Runner、执行 owner STOP 并取得设备关闭证明，然后写入每图 accuracy 和 commit。完成未知时保留现场，不重放请求。
 
-源码：[board/runtime/snapshots/sparse24/source/model_core.hpp:120](https://github.com/GINSmucker/kv260-gemm-engine/blob/bd5d8cc056a12b19f757949324986079ea675b59/board/runtime/snapshots/sparse24/source/model_core.hpp#L120-L168) · [board/runtime/snapshots/sparse24/source/kernel.cpp:157](https://github.com/GINSmucker/kv260-gemm-engine/blob/bd5d8cc056a12b19f757949324986079ea675b59/board/runtime/snapshots/sparse24/source/kernel.cpp#L157-L173) · [board/runtime/snapshots/sparse24/model_worker.py:199](https://github.com/GINSmucker/kv260-gemm-engine/blob/bd5d8cc056a12b19f757949324986079ea675b59/board/runtime/snapshots/sparse24/model_worker.py#L199-L215)
+源码：[board/runtime/snapshots/sparse24/source/model_core.hpp:120](https://github.com/GINSmucker/kv260-gemm-engine/blob/bd5d8cc056a12b19f757949324986079ea675b59/board/runtime/snapshots/sparse24/source/model_core.hpp#L120-L168) · [board/runtime/snapshots/sparse24/run_model.py:484](https://github.com/GINSmucker/kv260-gemm-engine/blob/bd5d8cc056a12b19f757949324986079ea675b59/board/runtime/snapshots/sparse24/run_model.py#L484-L509) · [board/runtime/snapshots/sparse24/run_model.py:510](https://github.com/GINSmucker/kv260-gemm-engine/blob/bd5d8cc056a12b19f757949324986079ea675b59/board/runtime/snapshots/sparse24/run_model.py#L510-L542)
 
 ### 正确性与性能证据：同模型比较，区分测量边界
 
@@ -108,7 +108,7 @@ BEGIN/END 约束每图恰好 36 次有序 PL 调用。完整保护区与静态�
 
 ## 使用与复现
 
-[统一阅读入口](index.html)。点击图中节点查看源码卡片；在图右上角导出 PNG、SVG 或其他支持格式。SVG 文件是从已验证 HTML 抽取的浅色静态快照。
+[统一阅读入口](index.html)。点击图中节点查看源码卡片；在图右上角导出 PNG、SVG 或其他支持格式。详细 SVG 是交互图的浅色静态快照，附关键说明；报告版 SVG 依据同一源码事实精简排版，保留每图检查、批末关闭及模型范围的限定。
 
 使用本机已安装的 Archify 和 Node.js：
 

@@ -5357,15 +5357,15 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="context" x="450" y="332" class="t-muted" font-size="9" text-anchor="middle">控制 CU · 持有四个 BO</text>
         </g>
 
-        <g id="node-engine" data-node-id="engine" data-node-label="PL 共享计算引擎" tabindex="0" role="button" aria-label="聚焦PL 共享计算引擎，OPT50 · 12 Dense + 24 Sparse, 架构组件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="OPT50 · 12 Dense + 24 Sparse" data-node-context="架构组件">
-          <title>PL 共享计算引擎 · OPT50 · 12 Dense + 24 Sparse · 架构组件</title>
+        <g id="node-engine" data-node-id="engine" data-node-label="PL 共享计算引擎" tabindex="0" role="button" aria-label="聚焦PL 共享计算引擎，Sparse24：12D + 24S；Dense：36D, 架构组件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Sparse24：12D + 24S；Dense：36D" data-node-context="架构组件">
+          <title>PL 共享计算引擎 · Sparse24：12D + 24S；Dense：36D · 架构组件</title>
           <rect x="40" y="280" width="230" height="76" rx="8" class="c-mask"/>
           <rect x="40" y="280" width="230" height="76" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 286) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="155" y="316" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">PL 共享计算引擎</text>
-        <text data-detail="context" x="155" y="332" class="t-muted" font-size="9" text-anchor="middle">OPT50 · 12 Dense + 24 Sparse</text>
+        <text data-detail="context" x="155" y="332" class="t-muted" font-size="9" text-anchor="middle">Sparse24：12D + 24S；Dense：36D</text>
         </g>
 
         <g id="node-dequant" data-node-id="dequant" data-node-label="PS 反量化与偏置" tabindex="0" role="button" aria-label="聚焦PS 反量化与偏置，INT32 Y → FP32 激活, 架构组件" aria-pressed="false" data-node-kind="backend" data-node-sublabel="INT32 Y → FP32 激活" data-node-context="架构组件">
@@ -5615,7 +5615,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>整网分工</h3>
         </div>
         <ul>
-          <li>12 个 QKV 为 Dense；24 个 MLP Linear 为 Sparse。</li>
+          <li>Sparse24：12 个 QKV 为 Dense、24 个 MLP 为 Sparse；原始 Dense：36D。</li>
           <li>proj/head 共 13 层及 attention、非线性运算在 PS；PL 只计算整数 GEMM。</li>
         </ul>
       </div>

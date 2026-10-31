@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" data-theme="light" viewBox="0 0 991 652" data-reader-fit="width-first" data-layout-contract="readable-v2" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui=""><style><![CDATA[
+<svg xmlns="http://www.w3.org/2000/svg" data-theme="light" viewBox="0 0 1048 864" data-reader-fit="width-first" data-layout-contract="readable-v2" role="img" lang="zh-CN" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui=""><style><![CDATA[
 /*
 JetBrains Mono variable WOFF2 subsets from Google Fonts service revision v24.
 These fixed bytes are shared by the viewer and its SVG/raster exports.
@@ -5116,17 +5116,20 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Swimlanes -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="902" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="980" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="74" class="t-muted" font-size="10" font-weight="600">01 / 模型与输入准备</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="176" width="902" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="176" width="980" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="198" class="t-muted" font-size="10" font-weight="600">02 / ARM 模型与调度</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="300" width="902" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="300" width="980" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="322" class="t-muted" font-size="10" font-weight="600">03 / PL 执行与完成</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-3" x="40" y="424" width="902" height="104" rx="10" class="c-lane" stroke-width="1"/>
-        <text x="54" y="446" class="t-muted" font-size="10" font-weight="600">04 / 正确性与结果输出</text>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-3" x="40" y="424" width="980" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <text x="54" y="446" class="t-muted" font-size="10" font-weight="600">04 / 每图检查 · 会话保持常驻</text>
+
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-4" x="40" y="548" width="980" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <text x="54" y="570" class="t-muted" font-size="10" font-weight="600">05 / 批次结束 · 关闭与最终提交</text>
 
         <!-- Phase headers -->
 
@@ -5135,20 +5138,24 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 
         <!-- Edge paths -->
-        <path data-edge-from="begin" data-edge-to="model" data-edge-label="ORT 执行" data-edge-key="0" data-edge-id="begin-model" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="594.4,243;650.8,243" d="M 594.4 243 L 650.8 243" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="compare" data-edge-to="output" data-edge-label="比较结果" data-edge-key="1" data-edge-id="compare-output" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="662.8,491;594.4,491" d="M 662.8 491 L 594.4 491" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="complete" data-edge-to="model" data-edge-label="同步 Y / 反量化" data-edge-key="2" data-edge-id="complete-model" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="882,341;882,290;712.8,290;712.8,269" d="M 882 341 L 882 298 Q 882 290 874 290 L 720.8 290 Q 712.8 290 712.8 282 L 712.8 269" class="a-default" data-animate="edge" style="--step:10" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="compute" data-edge-to="complete" data-edge-label="本层返回" data-edge-key="3" data-edge-id="compute-complete" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="758.8,367;834,367" d="M 758.8 367 L 834 367" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="end" data-edge-to="info" data-edge-label="图后检查" data-edge-key="4" data-edge-id="end-info" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="928,243;972.4,243;972.4,491;934,491" d="M 928 243 L 964.4 243 Q 972.4 243 972.4 251 L 972.4 483 Q 972.4 491 964.4 491 L 934 491" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="info" data-edge-to="compare" data-edge-label="提交验收" data-edge-key="5" data-edge-id="info-compare" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="830,491;762.8,491" d="M 830 491 L 762.8 491" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="input" data-edge-to="reference" data-edge-label="同一输入" data-edge-key="6" data-edge-id="input-reference" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="444,119;500.4,119" d="M 444 119 L 500.4 119" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="launch" data-edge-to="compute" data-edge-label="参数就绪" data-edge-key="7" data-edge-id="launch-compute" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="594.4,367;666.8,367" d="M 594.4 367 L 666.8 367" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="launch" data-edge-to="fault" data-edge-label="执行未知" data-edge-key="8" data-edge-id="launch-fault" data-composition-routing="workflow-v2-auto" data-edge-role="error" data-composition-points="498.4,367;268,367;268,465" d="M 498.4 367 L 276 367 Q 268 367 268 375 L 268 465" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="model" data-edge-to="end" data-edge-label="49 层完成" data-edge-key="9" data-edge-id="model-end" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="774.8,243;836,243" d="M 774.8 243 L 836 243" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="model" data-edge-to="launch" data-edge-label="PL 层" data-edge-key="10" data-edge-id="model-launch" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="688.8,269;688.8,290;546.4,290;546.4,341" d="M 688.8 269 L 688.8 282 Q 688.8 290 680.8 290 L 554.4 290 Q 546.4 290 546.4 298 L 546.4 341" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="reference" data-edge-to="begin" data-edge-label="准备完毕" data-edge-key="11" data-edge-id="reference-begin" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="546.4,145;546.4,217" d="M 546.4 145 L 546.4 217" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="restore" data-edge-to="verify" data-edge-label="身份" data-edge-key="12" data-edge-id="restore-verify" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="184,119;222,119" d="M 184 119 L 222 119" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="verify" data-edge-to="input" data-edge-label="通过" data-edge-key="13" data-edge-id="verify-input" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="314,119;352,119" d="M 314 119 L 352 119" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="begin" data-edge-to="model" data-edge-label="ORT 执行" data-edge-key="0" data-edge-id="begin-model" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="600.4,243;675.5999999999999,243" d="M 600.4 243 L 675.5999999999999 243" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="close" data-edge-to="stop" data-edge-label="会话已关闭" data-edge-key="1" data-edge-id="close-stop" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="596.4,615;689.5999999999999,615" d="M 596.4 615 L 689.5999999999999 615" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="compare" data-edge-to="info" data-edge-label="保存后检查" data-edge-key="2" data-edge-id="compare-info" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="883.5999999999999,491;817.5999999999999,491" d="M 883.5999999999999 491 L 817.5999999999999 491" class="a-default" data-animate="edge" style="--step:10" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="complete" data-edge-to="model" data-edge-label="同步 Y / 反量化" data-edge-key="3" data-edge-id="complete-model" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="947.5999999999999,341;947.5999999999999,290;737.5999999999999,290;737.5999999999999,269" d="M 947.5999999999999 341 L 947.5999999999999 298 Q 947.5999999999999 290 939.5999999999999 290 L 745.5999999999999 290 Q 737.5999999999999 290 737.5999999999999 282 L 737.5999999999999 269" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="compute" data-edge-to="complete" data-edge-label="本层返回" data-edge-key="4" data-edge-id="compute-complete" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="783.5999999999999,367;897.5999999999999,367" d="M 783.5999999999999 367 L 897.5999999999999 367" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="end" data-edge-to="compare" data-edge-label="生成结果" data-edge-key="5" data-edge-id="end-compare" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="955.5999999999999,269;955.5999999999999,328;1027.6,328;1027.6,491;1011.5999999999999,491" d="M 955.5999999999999 269 L 955.5999999999999 320 Q 955.5999999999999 328 963.5999999999999 328 L 1019.5999999999999 328 Q 1027.6 328 1027.6 336 L 1027.6 483 Q 1027.6 491 1019.5999999999999 491 L 1011.5999999999999 491" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="info" data-edge-to="pending" data-edge-label="INFO 通过" data-edge-key="6" data-edge-id="info-pending" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="657.5999999999999,491;596.4,491" d="M 657.5999999999999 491 L 596.4 491" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="input" data-edge-to="reference" data-edge-label="同一输入" data-edge-key="7" data-edge-id="input-reference" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="448,119;504.4,119" d="M 448 119 L 504.4 119" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="launch" data-edge-to="compute" data-edge-label="参数就绪" data-edge-key="8" data-edge-id="launch-compute" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="600.4,367;691.5999999999999,367" d="M 600.4 367 L 691.5999999999999 367" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="launch" data-edge-to="fault" data-edge-label="执行未知" data-edge-key="9" data-edge-id="launch-fault" data-composition-routing="workflow-v2-auto" data-edge-role="error" data-composition-points="500.4,367;270,367;270,465" d="M 500.4 367 L 278 367 Q 270 367 270 375 L 270 465" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="model" data-edge-to="end" data-edge-label="49 层完成" data-edge-key="10" data-edge-id="model-end" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="799.5999999999999,243;901.5999999999999,243" d="M 799.5999999999999 243 L 901.5999999999999 243" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="model" data-edge-to="launch" data-edge-label="PL 层" data-edge-key="11" data-edge-id="model-launch" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="713.5999999999999,269;713.5999999999999,290;550.4,290;550.4,341" d="M 713.5999999999999 269 L 713.5999999999999 282 Q 713.5999999999999 290 705.5999999999999 290 L 558.4 290 Q 550.4 290 550.4 298 L 550.4 341" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="pending" data-edge-to="close" data-edge-label="否：结束本批" data-edge-key="12" data-edge-id="pending-close" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="550.4,517;550.4,589" d="M 550.4 517 L 550.4 589" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="pending" data-edge-to="input" data-edge-label="是：下一图" data-edge-key="13" data-edge-id="pending-next" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="574.4,517;574.4,533;1032,533;1032,77;402,77;402,93" d="M 574.4 517 L 574.4 525 Q 574.4 533 582.4 533 L 1024 533 Q 1032 533 1032 525 L 1032 85 Q 1032 77 1024 77 L 410 77 Q 402 77 402 85 L 402 93" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="reference" data-edge-to="begin" data-edge-label="准备完毕" data-edge-key="14" data-edge-id="reference-begin" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="550.4,145;550.4,217" d="M 550.4 145 L 550.4 217" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="restore" data-edge-to="verify" data-edge-label="身份" data-edge-key="15" data-edge-id="restore-verify" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="184,119;222,119" d="M 184 119 L 222 119" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="stop" data-edge-to="output" data-edge-label="关闭证明通过" data-edge-key="16" data-edge-id="stop-output" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="785.5999999999999,615;895.5999999999999,615" d="M 785.5999999999999 615 L 895.5999999999999 615" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="verify" data-edge-to="input" data-edge-label="通过" data-edge-key="17" data-edge-id="verify-input" data-composition-routing="workflow-v2-auto" data-edge-role="" data-composition-points="318,119;356,119" d="M 318 119 L 356 119" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.4" marker-end="url(#arrowhead)"/>
 
         <!-- Nodes -->
         <g id="node-restore" data-node-id="restore" data-node-label="还原模型包" tabindex="0" role="button" aria-label="聚焦还原模型包，固定 Sparse24 / Dense 身份, 模型与输入准备" aria-pressed="false" data-node-kind="database" data-node-sublabel="固定 Sparse24 / Dense 身份" data-node-context="模型与输入准备">
@@ -5165,230 +5172,280 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
         <g id="node-verify" data-node-id="verify" data-node-label="校验模型与平台" tabindex="0" role="button" aria-label="聚焦校验模型与平台，SHA / 路由 / 当前启动, 模型与输入准备" aria-pressed="false" data-node-kind="security" data-node-sublabel="SHA / 路由 / 当前启动" data-node-context="模型与输入准备">
           <title>校验模型与平台 · SHA / 路由 / 当前启动 · 模型与输入准备</title>
-          <rect x="222" y="93" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="222" y="93" width="92" height="52" rx="8" class="c-security" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <rect x="222" y="93" width="96" height="52" rx="8" class="c-mask"/>
+          <rect x="222" y="93" width="96" height="52" rx="8" class="c-security" data-animate="node" style="--step:1" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(228 99) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="268" y="126" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">校验模型与平台</text>
-          <text data-detail="context" x="268" y="139" class="t-muted" font-size="6.6" text-anchor="middle">SHA / 路由 / 当前启动</text>
+          <text data-node-label="" data-detail-anchor="" x="270" y="126.5" class="t-primary" font-size="10.4" font-weight="600" text-anchor="middle">校验模型与平台</text>
+          <text data-detail="context" x="270" y="139.9" class="t-muted" font-size="6.9" text-anchor="middle">SHA / 路由 / 当前启动</text>
         </g>
 
         <g id="node-input" data-node-id="input" data-node-label="预处理图片" tabindex="0" role="button" aria-label="聚焦预处理图片，FP32 [1,3,224,224], 模型与输入准备" aria-pressed="false" data-node-kind="backend" data-node-sublabel="FP32 [1,3,224,224]" data-node-context="模型与输入准备">
           <title>预处理图片 · FP32 [1,3,224,224] · 模型与输入准备</title>
-          <rect x="352" y="93" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="352" y="93" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(358 99) scale(0.6875)">
+          <rect x="356" y="93" width="92" height="52" rx="8" class="c-mask"/>
+          <rect x="356" y="93" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(362 99) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="398" y="125" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">预处理图片</text>
-          <text data-detail="context" x="398" y="137" class="t-muted" font-size="7.7" text-anchor="middle">FP32 [1,3,224,224]</text>
+          <text data-node-label="" data-detail-anchor="" x="402" y="125" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">预处理图片</text>
+          <text data-detail="context" x="402" y="137" class="t-muted" font-size="7.7" text-anchor="middle">FP32 [1,3,224,224]</text>
         </g>
 
         <g id="node-reference" data-node-id="reference" data-node-label="CPU 数值参考" tabindex="0" role="button" aria-label="聚焦CPU 数值参考，验收时：计时外执行, 模型与输入准备" aria-pressed="false" data-node-kind="backend" data-node-sublabel="验收时：计时外执行" data-node-context="模型与输入准备">
           <title>CPU 数值参考 · 验收时：计时外执行 · 模型与输入准备</title>
-          <rect x="500.4" y="93" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="500.4" y="93" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(506.4 99) scale(0.6875)">
+          <rect x="504.4" y="93" width="92" height="52" rx="8" class="c-mask"/>
+          <rect x="504.4" y="93" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(510.4 99) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="546.4" y="125" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">CPU 数值参考</text>
-          <text data-detail="context" x="546.4" y="137" class="t-muted" font-size="7.7" text-anchor="middle">验收时：计时外执行</text>
+          <text data-node-label="" data-detail-anchor="" x="550.4" y="125" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">CPU 数值参考</text>
+          <text data-detail="context" x="550.4" y="137" class="t-muted" font-size="7.7" text-anchor="middle">验收时：计时外执行</text>
         </g>
 
         <g id="node-begin" data-node-id="begin" data-node-label="BEGIN 图" tabindex="0" role="button" aria-label="聚焦BEGIN 图，递增 run_id / 有界会话, ARM 模型与调度" aria-pressed="false" data-node-kind="backend" data-node-sublabel="递增 run_id / 有界会话" data-node-context="ARM 模型与调度">
           <title>BEGIN 图 · 递增 run_id / 有界会话 · ARM 模型与调度</title>
-          <rect x="498.4" y="217" width="96" height="52" rx="8" class="c-mask"/>
-          <rect x="498.4" y="217" width="96" height="52" rx="8" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(504.4 223) scale(0.6875)">
+          <rect x="500.4" y="217" width="100" height="52" rx="8" class="c-mask"/>
+          <rect x="500.4" y="217" width="100" height="52" rx="8" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(506.4 223) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="546.4" y="251.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">BEGIN 图</text>
-          <text data-detail="context" x="546.4" y="264.5" class="t-muted" font-size="6.6" text-anchor="middle">递增 run_id / 有界会话</text>
+          <text data-node-label="" data-detail-anchor="" x="550.4" y="251.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">BEGIN 图</text>
+          <text data-detail="context" x="550.4" y="264.8" class="t-muted" font-size="6.9" text-anchor="middle">递增 run_id / 有界会话</text>
         </g>
 
         <g id="node-model" data-node-id="model" data-node-label="逐层模型执行" tabindex="0" role="button" aria-label="聚焦逐层模型执行，36 PL / 13 PS · 量化适配, ARM 模型与调度" aria-pressed="false" data-node-kind="backend" data-node-sublabel="36 PL / 13 PS · 量化适配" data-node-context="ARM 模型与调度">
           <title>逐层模型执行 · 36 PL / 13 PS · 量化适配 · ARM 模型与调度</title>
-          <rect x="650.8" y="217" width="124" height="52" rx="8" class="c-mask"/>
-          <rect x="650.8" y="217" width="124" height="52" rx="8" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(656.8 223) scale(0.6875)">
+          <rect x="675.5999999999999" y="217" width="124" height="52" rx="8" class="c-mask"/>
+          <rect x="675.5999999999999" y="217" width="124" height="52" rx="8" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(681.5999999999999 223) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="712.8" y="249" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">逐层模型执行</text>
-          <text data-detail="context" x="712.8" y="261.3" class="t-muted" font-size="8" text-anchor="middle">36 PL / 13 PS · 量化适配</text>
+          <text data-node-label="" data-detail-anchor="" x="737.5999999999999" y="249" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">逐层模型执行</text>
+          <text data-detail="context" x="737.5999999999999" y="261.3" class="t-muted" font-size="8" text-anchor="middle">36 PL / 13 PS · 量化适配</text>
         </g>
 
         <g id="node-end" data-node-id="end" data-node-label="END 图" tabindex="0" role="button" aria-label="聚焦END 图，完成全部 49 Linear, ARM 模型与调度" aria-pressed="false" data-node-kind="backend" data-node-sublabel="完成全部 49 Linear" data-node-context="ARM 模型与调度">
           <title>END 图 · 完成全部 49 Linear · ARM 模型与调度</title>
-          <rect x="836" y="217" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="836" y="217" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(842 223) scale(0.6875)">
+          <rect x="901.5999999999999" y="217" width="92" height="52" rx="8" class="c-mask"/>
+          <rect x="901.5999999999999" y="217" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(907.5999999999999 223) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="882" y="249" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">END 图</text>
-          <text data-detail="context" x="882" y="261" class="t-muted" font-size="7.7" text-anchor="middle">完成全部 49 Linear</text>
+          <text data-node-label="" data-detail-anchor="" x="947.5999999999999" y="249" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">END 图</text>
+          <text data-detail="context" x="947.5999999999999" y="261" class="t-muted" font-size="7.7" text-anchor="middle">完成全部 49 Linear</text>
         </g>
 
         <g id="node-launch" data-node-id="launch" data-node-label="同步 X / RUN" tabindex="0" role="button" aria-label="聚焦同步 X / RUN，owner 校验参数并 START, PL 执行与完成" aria-pressed="false" data-node-kind="backend" data-node-sublabel="owner 校验参数并 START" data-node-context="PL 执行与完成">
           <title>同步 X / RUN · owner 校验参数并 START · PL 执行与完成</title>
-          <rect x="498.4" y="341" width="96" height="52" rx="8" class="c-mask"/>
-          <rect x="498.4" y="341" width="96" height="52" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(504.4 347) scale(0.6875)">
+          <rect x="500.4" y="341" width="100" height="52" rx="8" class="c-mask"/>
+          <rect x="500.4" y="341" width="100" height="52" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(506.4 347) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="546.4" y="375.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">同步 X / RUN</text>
-          <text data-detail="context" x="546.4" y="388.5" class="t-muted" font-size="6.6" text-anchor="middle">owner 校验参数并 START</text>
+          <text data-node-label="" data-detail-anchor="" x="550.4" y="375.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">同步 X / RUN</text>
+          <text data-detail="context" x="550.4" y="388.8" class="t-muted" font-size="6.9" text-anchor="middle">owner 校验参数并 START</text>
         </g>
 
         <g id="node-compute" data-node-id="compute" data-node-label="Dense / Sparse" tabindex="0" role="button" aria-label="聚焦Dense / Sparse，共享 OPT50 执行本层, PL 执行与完成" aria-pressed="false" data-node-kind="backend" data-node-sublabel="共享 OPT50 执行本层" data-node-context="PL 执行与完成">
           <title>Dense / Sparse · 共享 OPT50 执行本层 · PL 执行与完成</title>
-          <rect x="666.8" y="341" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="666.8" y="341" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(672.8 347) scale(0.6875)">
+          <rect x="691.5999999999999" y="341" width="92" height="52" rx="8" class="c-mask"/>
+          <rect x="691.5999999999999" y="341" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(697.5999999999999 347) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="712.8" y="374" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">Dense / Sparse</text>
-          <text data-detail="context" x="712.8" y="387.8" class="t-muted" font-size="7.3" text-anchor="middle">共享 OPT50 执行本层</text>
+          <text data-node-label="" data-detail-anchor="" x="737.5999999999999" y="374" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">Dense / Sparse</text>
+          <text data-detail="context" x="737.5999999999999" y="387.8" class="t-muted" font-size="7.3" text-anchor="middle">共享 OPT50 执行本层</text>
         </g>
 
         <g id="node-complete" data-node-id="complete" data-node-label="证明完成" tabindex="0" role="button" aria-label="聚焦证明完成，Done + Idle + AXI 排空, PL 执行与完成" aria-pressed="false" data-node-kind="security" data-node-sublabel="Done + Idle + AXI 排空" data-node-context="PL 执行与完成">
           <title>证明完成 · Done + Idle + AXI 排空 · PL 执行与完成</title>
-          <rect x="834" y="341" width="96" height="52" rx="8" class="c-mask"/>
-          <rect x="834" y="341" width="96" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(840 347) scale(0.6875)">
+          <rect x="897.5999999999999" y="341" width="100" height="52" rx="8" class="c-mask"/>
+          <rect x="897.5999999999999" y="341" width="100" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(903.5999999999999 347) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="882" y="375.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">证明完成</text>
-          <text data-detail="context" x="882" y="388.5" class="t-muted" font-size="6.6" text-anchor="middle">Done + Idle + AXI 排空</text>
+          <text data-node-label="" data-detail-anchor="" x="947.5999999999999" y="375.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">证明完成</text>
+          <text data-detail="context" x="947.5999999999999" y="388.8" class="t-muted" font-size="6.9" text-anchor="middle">Done + Idle + AXI 排空</text>
         </g>
 
-        <g id="node-fault" data-node-id="fault" data-node-label="保留现场并报错" tabindex="0" role="button" aria-label="聚焦保留现场并报错，完成未知时不重放请求, 正确性与结果输出" aria-pressed="false" data-node-kind="security" data-node-sublabel="完成未知时不重放请求" data-node-context="正确性与结果输出">
-          <title>保留现场并报错 · 完成未知时不重放请求 · 正确性与结果输出</title>
-          <rect x="222" y="465" width="92" height="52" rx="8" class="c-mask"/>
-          <rect x="222" y="465" width="92" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(228 471) scale(0.6875)">
+        <g id="node-fault" data-node-id="fault" data-node-label="保留现场并报错" tabindex="0" role="button" aria-label="聚焦保留现场并报错，完成未知时不重放请求, 每图检查 · 会话保持常驻" aria-pressed="false" data-node-kind="security" data-node-sublabel="完成未知时不重放请求" data-node-context="每图检查 · 会话保持常驻">
+          <title>保留现场并报错 · 完成未知时不重放请求 · 每图检查 · 会话保持常驻</title>
+          <rect x="224" y="465" width="92" height="52" rx="8" class="c-mask"/>
+          <rect x="224" y="465" width="92" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(230 471) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="268" y="498" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">保留现场并报错</text>
-          <text data-detail="context" x="268" y="511.4" class="t-muted" font-size="7" text-anchor="middle">完成未知时不重放请求</text>
+          <text data-node-label="" data-detail-anchor="" x="270" y="498" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">保留现场并报错</text>
+          <text data-detail="context" x="270" y="511.4" class="t-muted" font-size="7" text-anchor="middle">完成未知时不重放请求</text>
         </g>
 
-        <g id="node-output" data-node-id="output" data-node-label="分类与验收记录" tabindex="0" role="button" aria-label="聚焦分类与验收记录，Top1 / Top5 · 每图结果, 正确性与结果输出" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="Top1 / Top5 · 每图结果" data-node-context="正确性与结果输出">
-          <title>分类与验收记录 · Top1 / Top5 · 每图结果 · 正确性与结果输出</title>
-          <rect x="498.4" y="465" width="96" height="52" rx="8" class="c-mask"/>
-          <rect x="498.4" y="465" width="96" height="52" rx="8" class="c-frontend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="frontend" class="semantic-sigil s-frontend" transform="translate(504.4 471) scale(0.6875)">
+        <g id="node-pending" data-node-id="pending" data-node-label="本图待最终提交" tabindex="0" role="button" aria-label="聚焦本图待最终提交，有下一图且门禁通过？, 每图检查 · 会话保持常驻" aria-pressed="false" data-node-kind="security" data-node-sublabel="有下一图且门禁通过？" data-node-context="每图检查 · 会话保持常驻">
+          <title>本图待最终提交 · 有下一图且门禁通过？ · 每图检查 · 会话保持常驻</title>
+          <rect x="504.4" y="465" width="92" height="52" rx="8" class="c-mask"/>
+          <rect x="504.4" y="465" width="92" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="decision" class="semantic-sigil s-security" transform="translate(510.4 471) scale(0.6875)">
+            <path d="M8 2.2 13.8 8 8 13.8 2.2 8Z"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="550.4" y="498" class="t-primary" font-size="10" font-weight="600" text-anchor="middle">本图待最终提交</text>
+          <text data-detail="context" x="550.4" y="511.4" class="t-muted" font-size="7" text-anchor="middle">有下一图且门禁通过？</text>
+        </g>
+
+        <g id="node-info" data-node-id="info" data-node-label="每图 INFO 检查" tabindex="0" role="button" aria-label="聚焦每图 INFO 检查，保护区 / 权重 / 计数 · 会话保留, 每图检查 · 会话保持常驻" aria-pressed="false" data-node-kind="security" data-node-sublabel="保护区 / 权重 / 计数 · 会话保留" data-node-context="每图检查 · 会话保持常驻">
+          <title>每图 INFO 检查 · 保护区 / 权重 / 计数 · 会话保留 · 每图检查 · 会话保持常驻</title>
+          <rect x="657.5999999999999" y="465" width="160" height="52" rx="8" class="c-mask"/>
+          <rect x="657.5999999999999" y="465" width="160" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(663.5999999999999 471) scale(0.6875)">
+            <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
+            <path d="m5.8 8 1.5 1.5 3-3"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="729.3999999999999" y="486" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">每图 INFO 检查</text>
+          <text data-detail="context" x="737.5999999999999" y="503" class="t-muted" font-size="8" text-anchor="middle">保护区 / 权重 / 计数 · 会话保留</text>
+        </g>
+
+        <g id="node-compare" data-node-id="compare" data-node-label="生成比对结果" tabindex="0" role="button" aria-label="聚焦生成比对结果，计时外 · 尚待批次验收提交, 每图检查 · 会话保持常驻" aria-pressed="false" data-node-kind="backend" data-node-sublabel="计时外 · 尚待批次验收提交" data-node-context="每图检查 · 会话保持常驻">
+          <title>生成比对结果 · 计时外 · 尚待批次验收提交 · 每图检查 · 会话保持常驻</title>
+          <rect x="883.5999999999999" y="465" width="128" height="52" rx="8" class="c-mask"/>
+          <rect x="883.5999999999999" y="465" width="128" height="52" rx="8" class="c-backend" data-animate="node" style="--step:7" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(889.5999999999999 471) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="947.5999999999999" y="497" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">生成比对结果</text>
+          <text data-detail="context" x="947.5999999999999" y="509.3" class="t-muted" font-size="8" text-anchor="middle">计时外 · 尚待批次验收提交</text>
+        </g>
+
+        <g id="node-close" data-node-id="close" data-node-label="批次关闭会话" tabindex="0" role="button" aria-label="聚焦批次关闭会话，CPU session / Runner, 批次结束 · 关闭与最终提交" aria-pressed="false" data-node-kind="backend" data-node-sublabel="CPU session / Runner" data-node-context="批次结束 · 关闭与最终提交">
+          <title>批次关闭会话 · CPU session / Runner · 批次结束 · 关闭与最终提交</title>
+          <rect x="504.4" y="589" width="92" height="52" rx="8" class="c-mask"/>
+          <rect x="504.4" y="589" width="92" height="52" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(510.4 595) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="550.4" y="623.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">批次关闭会话</text>
+          <text data-detail="context" x="550.4" y="636.9" class="t-muted" font-size="7" text-anchor="middle">CPU session / Runner</text>
+        </g>
+
+        <g id="node-stop" data-node-id="stop" data-node-label="STOP 与设备关闭" tabindex="0" role="button" aria-label="聚焦STOP 与设备关闭，owner 正常退出与证明, 批次结束 · 关闭与最终提交" aria-pressed="false" data-node-kind="security" data-node-sublabel="owner 正常退出与证明" data-node-context="批次结束 · 关闭与最终提交">
+          <title>STOP 与设备关闭 · owner 正常退出与证明 · 批次结束 · 关闭与最终提交</title>
+          <rect x="689.5999999999999" y="589" width="96" height="52" rx="8" class="c-mask"/>
+          <rect x="689.5999999999999" y="589" width="96" height="52" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(695.5999999999999 595) scale(0.6875)">
+            <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
+            <path d="m5.8 8 1.5 1.5 3-3"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="737.5999999999999" y="621.7" class="t-primary" font-size="9.7" font-weight="600" text-anchor="middle">STOP 与设备关闭</text>
+          <text data-detail="context" x="737.5999999999999" y="635.4" class="t-muted" font-size="7.3" text-anchor="middle">owner 正常退出与证明</text>
+        </g>
+
+        <g id="node-output" data-node-id="output" data-node-label="最终验收提交" tabindex="0" role="button" aria-label="聚焦最终验收提交，本批关闭证明 + 每图结果, 批次结束 · 关闭与最终提交" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="本批关闭证明 + 每图结果" data-node-context="批次结束 · 关闭与最终提交">
+          <title>最终验收提交 · 本批关闭证明 + 每图结果 · 批次结束 · 关闭与最终提交</title>
+          <rect x="895.5999999999999" y="589" width="104" height="52" rx="8" class="c-mask"/>
+          <rect x="895.5999999999999" y="589" width="104" height="52" rx="8" class="c-frontend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="frontend" class="semantic-sigil s-frontend" transform="translate(901.5999999999999 595) scale(0.6875)">
             <rect x="2" y="3" width="12" height="10" rx="2"/>
             <path d="M2 6.5h12"/>
             <circle cx="4.1" cy="4.8" r=".7" class="sigil-fill"/>
             <circle cx="6.3" cy="4.8" r=".7" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="546.4" y="498.5" class="t-primary" font-size="10.4" font-weight="600" text-anchor="middle">分类与验收记录</text>
-          <text data-detail="context" x="546.4" y="511.6" class="t-muted" font-size="6.6" text-anchor="middle">Top1 / Top5 · 每图结果</text>
-        </g>
-
-        <g id="node-compare" data-node-id="compare" data-node-label="逐位比对 logits" tabindex="0" role="button" aria-label="聚焦逐位比对 logits，同输入、同权重 CPU 参考, 正确性与结果输出" aria-pressed="false" data-node-kind="backend" data-node-sublabel="同输入、同权重 CPU 参考" data-node-context="正确性与结果输出">
-          <title>逐位比对 logits · 同输入、同权重 CPU 参考 · 正确性与结果输出</title>
-          <rect x="662.8" y="465" width="100" height="52" rx="8" class="c-mask"/>
-          <rect x="662.8" y="465" width="100" height="52" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(668.8 471) scale(0.6875)">
-            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="712.8" y="498.3" class="t-primary" font-size="10.2" font-weight="600" text-anchor="middle">逐位比对 logits</text>
-          <text data-detail="context" x="712.8" y="511.3" class="t-muted" font-size="6.6" text-anchor="middle">同输入、同权重 CPU 参考</text>
-        </g>
-
-        <g id="node-info" data-node-id="info" data-node-label="INFO 与关闭证明" tabindex="0" role="button" aria-label="聚焦INFO 与关闭证明，保护区 / 静态权重 / 计数, 正确性与结果输出" aria-pressed="false" data-node-kind="security" data-node-sublabel="保护区 / 静态权重 / 计数" data-node-context="正确性与结果输出">
-          <title>INFO 与关闭证明 · 保护区 / 静态权重 / 计数 · 正确性与结果输出</title>
-          <rect x="830" y="465" width="104" height="52" rx="8" class="c-mask"/>
-          <rect x="830" y="465" width="104" height="52" rx="8" class="c-security" data-animate="node" style="--step:7" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(836 471) scale(0.6875)">
-            <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
-            <path d="m5.8 8 1.5 1.5 3-3"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="882" y="498.8" class="t-primary" font-size="10.6" font-weight="600" text-anchor="middle">INFO 与关闭证明</text>
-          <text data-detail="context" x="882" y="511.9" class="t-muted" font-size="6.6" text-anchor="middle">保护区 / 静态权重 / 计数</text>
+          <text data-node-label="" data-detail-anchor="" x="947.5999999999999" y="623.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">最终验收提交</text>
+          <text data-detail="context" x="947.5999999999999" y="636.8" class="t-muted" font-size="6.9" text-anchor="middle">本批关闭证明 + 每图结果</text>
         </g>
 
         <!-- Edge labels -->
         <g data-detail="context" data-edge-from="begin" data-edge-to="model" data-edge-label="ORT 执行" data-edge-key="0" data-edge-id="begin-model">
-          <rect x="598.3999999999999" y="223" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="622.5999999999999" y="233" class="t-muted" font-size="8" text-anchor="middle">ORT 执行</text>
+          <rect x="613.8" y="223" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="638" y="233" class="t-muted" font-size="8" text-anchor="middle">ORT 执行</text>
         </g>
-        <g data-detail="context" data-edge-from="compare" data-edge-to="output" data-edge-label="比较结果" data-edge-key="1" data-edge-id="compare-output">
-          <rect x="604.3999999999999" y="471" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="628.5999999999999" y="481" class="t-muted" font-size="8" text-anchor="middle">比较结果</text>
+        <g data-detail="context" data-edge-from="close" data-edge-to="stop" data-edge-label="会话已关闭" data-edge-key="1" data-edge-id="close-stop">
+          <rect x="614" y="595" width="58" height="14" rx="3" class="c-mask"/>
+          <text x="643" y="605" class="t-muted" font-size="8" text-anchor="middle">会话已关闭</text>
         </g>
-        <g data-detail="context" data-edge-from="complete" data-edge-to="model" data-edge-label="同步 Y / 反量化" data-edge-key="2" data-edge-id="complete-model">
-          <rect x="756.4" y="270" width="82" height="14" rx="3" class="c-mask"/>
-          <text x="797.4" y="280" class="t-muted" font-size="8" text-anchor="middle">同步 Y / 反量化</text>
+        <g data-detail="context" data-edge-from="compare" data-edge-to="info" data-edge-label="保存后检查" data-edge-key="2" data-edge-id="compare-info">
+          <rect x="821.5999999999999" y="471" width="58" height="14" rx="3" class="c-mask"/>
+          <text x="850.5999999999999" y="481" class="t-muted" font-size="8" text-anchor="middle">保存后检查</text>
         </g>
-        <g data-detail="context" data-edge-from="compute" data-edge-to="complete" data-edge-label="本层返回" data-edge-key="3" data-edge-id="compute-complete">
-          <rect x="772.1999999999999" y="347" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="796.4" y="357" class="t-muted" font-size="8" text-anchor="middle">本层返回</text>
+        <g data-detail="context" data-edge-from="complete" data-edge-to="model" data-edge-label="同步 Y / 反量化" data-edge-key="3" data-edge-id="complete-model">
+          <rect x="801.5999999999999" y="270" width="82" height="14" rx="3" class="c-mask"/>
+          <text x="842.5999999999999" y="280" class="t-muted" font-size="8" text-anchor="middle">同步 Y / 反量化</text>
         </g>
-        <g data-detail="context" data-edge-from="end" data-edge-to="info" data-edge-label="图后检查" data-edge-key="4" data-edge-id="end-info">
-          <rect x="926" y="223" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="950.2" y="233" class="t-muted" font-size="8" text-anchor="middle">图后检查</text>
+        <g data-detail="context" data-edge-from="compute" data-edge-to="complete" data-edge-label="本层返回" data-edge-key="4" data-edge-id="compute-complete">
+          <rect x="816.3999999999999" y="347" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="840.5999999999999" y="357" class="t-muted" font-size="8" text-anchor="middle">本层返回</text>
         </g>
-        <g data-detail="context" data-edge-from="info" data-edge-to="compare" data-edge-label="提交验收" data-edge-key="5" data-edge-id="info-compare">
-          <rect x="772.1999999999999" y="471" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="796.4" y="481" class="t-muted" font-size="8" text-anchor="middle">提交验收</text>
+        <g data-detail="context" data-edge-from="end" data-edge-to="compare" data-edge-label="生成结果" data-edge-key="5" data-edge-id="end-compare">
+          <rect x="967.3999999999999" y="308" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="991.5999999999999" y="318" class="t-muted" font-size="8" text-anchor="middle">生成结果</text>
         </g>
-        <g data-detail="context" data-edge-from="input" data-edge-to="reference" data-edge-label="同一输入" data-edge-key="6" data-edge-id="input-reference">
-          <rect x="448" y="99" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="472.2" y="109" class="t-muted" font-size="8" text-anchor="middle">同一输入</text>
+        <g data-detail="context" data-edge-from="info" data-edge-to="pending" data-edge-label="INFO 通过" data-edge-key="6" data-edge-id="info-pending">
+          <rect x="600.4" y="471" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+          <text x="627" y="481" class="t-muted" font-size="8" text-anchor="middle">INFO 通过</text>
         </g>
-        <g data-detail="context" data-edge-from="launch" data-edge-to="compute" data-edge-label="参数就绪" data-edge-key="7" data-edge-id="launch-compute">
-          <rect x="606.3999999999999" y="347" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="630.5999999999999" y="357" class="t-muted" font-size="8" text-anchor="middle">参数就绪</text>
+        <g data-detail="context" data-edge-from="input" data-edge-to="reference" data-edge-label="同一输入" data-edge-key="7" data-edge-id="input-reference">
+          <rect x="452" y="99" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="476.2" y="109" class="t-muted" font-size="8" text-anchor="middle">同一输入</text>
         </g>
-        <g data-detail="context" data-edge-from="launch" data-edge-to="fault" data-edge-label="执行未知" data-edge-key="8" data-edge-id="launch-fault">
-          <rect x="359" y="347" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="383.2" y="357" class="t-muted" font-size="8" text-anchor="middle">执行未知</text>
+        <g data-detail="context" data-edge-from="launch" data-edge-to="compute" data-edge-label="参数就绪" data-edge-key="8" data-edge-id="launch-compute">
+          <rect x="621.8" y="347" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="646" y="357" class="t-muted" font-size="8" text-anchor="middle">参数就绪</text>
         </g>
-        <g data-detail="context" data-edge-from="model" data-edge-to="end" data-edge-label="49 层完成" data-edge-key="9" data-edge-id="model-end">
-          <rect x="778.8" y="223" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-          <text x="805.4" y="233" class="t-muted" font-size="8" text-anchor="middle">49 层完成</text>
+        <g data-detail="context" data-edge-from="launch" data-edge-to="fault" data-edge-label="执行未知" data-edge-key="9" data-edge-id="launch-fault">
+          <rect x="361" y="347" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="385.2" y="357" class="t-muted" font-size="8" text-anchor="middle">执行未知</text>
         </g>
-        <g data-detail="context" data-edge-from="model" data-edge-to="launch" data-edge-label="PL 层" data-edge-key="10" data-edge-id="model-launch">
-          <rect x="600.5999999999999" y="270" width="34" height="14" rx="3" class="c-mask"/>
-          <text x="617.5999999999999" y="280" class="t-muted" font-size="8" text-anchor="middle">PL 层</text>
+        <g data-detail="context" data-edge-from="model" data-edge-to="end" data-edge-label="49 层完成" data-edge-key="10" data-edge-id="model-end">
+          <rect x="823.9999999999999" y="223" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+          <text x="850.5999999999999" y="233" class="t-muted" font-size="8" text-anchor="middle">49 层完成</text>
         </g>
-        <g data-detail="context" data-edge-from="reference" data-edge-to="begin" data-edge-label="准备完毕" data-edge-key="11" data-edge-id="reference-begin">
-          <rect x="522.1999999999999" y="171" width="48.4" height="14" rx="3" class="c-mask"/>
-          <text x="546.4" y="181" class="t-muted" font-size="8" text-anchor="middle">准备完毕</text>
+        <g data-detail="context" data-edge-from="model" data-edge-to="launch" data-edge-label="PL 层" data-edge-key="11" data-edge-id="model-launch">
+          <rect x="615" y="270" width="34" height="14" rx="3" class="c-mask"/>
+          <text x="632" y="280" class="t-muted" font-size="8" text-anchor="middle">PL 层</text>
         </g>
-        <g data-detail="context" data-edge-from="restore" data-edge-to="verify" data-edge-label="身份" data-edge-key="12" data-edge-id="restore-verify">
+        <g data-detail="context" data-edge-from="pending" data-edge-to="close" data-edge-label="否：结束本批" data-edge-key="12" data-edge-id="pending-close">
+          <rect x="516.6" y="543" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="550.4" y="553" class="t-muted" font-size="8" text-anchor="middle">否：结束本批</text>
+        </g>
+        <g data-detail="context" data-edge-from="pending" data-edge-to="input" data-edge-label="是：下一图" data-edge-key="13" data-edge-id="pending-next">
+          <rect x="688" y="57" width="58" height="14" rx="3" class="c-mask"/>
+          <text x="717" y="67" class="t-muted" font-size="8" text-anchor="middle">是：下一图</text>
+        </g>
+        <g data-detail="context" data-edge-from="reference" data-edge-to="begin" data-edge-label="准备完毕" data-edge-key="14" data-edge-id="reference-begin">
+          <rect x="526.1999999999999" y="171" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="550.4" y="181" class="t-muted" font-size="8" text-anchor="middle">准备完毕</text>
+        </g>
+        <g data-detail="context" data-edge-from="restore" data-edge-to="verify" data-edge-label="身份" data-edge-key="15" data-edge-id="restore-verify">
           <rect x="188" y="99" width="30" height="14" rx="3" class="c-mask"/>
           <text x="203" y="109" class="t-muted" font-size="8" text-anchor="middle">身份</text>
         </g>
-        <g data-detail="context" data-edge-from="verify" data-edge-to="input" data-edge-label="通过" data-edge-key="13" data-edge-id="verify-input">
-          <rect x="318" y="99" width="30" height="14" rx="3" class="c-mask"/>
-          <text x="333" y="109" class="t-muted" font-size="8" text-anchor="middle">通过</text>
+        <g data-detail="context" data-edge-from="stop" data-edge-to="output" data-edge-label="关闭证明通过" data-edge-key="16" data-edge-id="stop-output">
+          <rect x="806.8" y="595" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="840.5999999999999" y="605" class="t-muted" font-size="8" text-anchor="middle">关闭证明通过</text>
+        </g>
+        <g data-detail="context" data-edge-from="verify" data-edge-to="input" data-edge-label="通过" data-edge-key="17" data-edge-id="verify-input">
+          <rect x="322" y="99" width="30" height="14" rx="3" class="c-mask"/>
+          <text x="337" y="109" class="t-muted" font-size="8" text-anchor="middle">通过</text>
         </g>
 
         <!-- Legend -->
         <g data-legend="" data-legend-bridge="">
-          <text x="20" y="552" class="t-primary" font-size="12" font-weight="650">图例</text>
-          <g data-legend-semantic-kind="frontend" data-legend-kind="frontend" data-legend-label="结果与输出" data-legend-x="20" data-legend-baseline="572" data-legend-width="90">
-            <rect x="20" y="564" width="14" height="9" rx="2" class="c-frontend" stroke-width="1"/>
-            <text x="42" y="572" class="t-muted" font-size="7.5" font-weight="500">结果与输出</text>
+          <text x="20" y="676" class="t-primary" font-size="12" font-weight="650">图例</text>
+          <g data-legend-semantic-kind="frontend" data-legend-kind="frontend" data-legend-label="结果与输出" data-legend-x="20" data-legend-baseline="696" data-legend-width="90">
+            <rect x="20" y="688" width="14" height="9" rx="2" class="c-frontend" stroke-width="1"/>
+            <text x="42" y="696" class="t-muted" font-size="7.5" font-weight="500">结果与输出</text>
           </g>
-          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="计算与控制" data-legend-x="117" data-legend-baseline="572" data-legend-width="90">
-            <rect x="117" y="564" width="14" height="9" rx="2" class="c-backend" stroke-width="1"/>
-            <text x="139" y="572" class="t-muted" font-size="7.5" font-weight="500">计算与控制</text>
+          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="计算与控制" data-legend-x="117" data-legend-baseline="696" data-legend-width="90">
+            <rect x="117" y="688" width="14" height="9" rx="2" class="c-backend" stroke-width="1"/>
+            <text x="139" y="696" class="t-muted" font-size="7.5" font-weight="500">计算与控制</text>
           </g>
-          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="校验与生命周期" data-legend-x="214" data-legend-baseline="572" data-legend-width="109">
-            <rect x="214" y="564" width="14" height="9" rx="2" class="c-security" stroke-width="1"/>
-            <text x="236" y="572" class="t-muted" font-size="7.5" font-weight="500">校验与生命周期</text>
+          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="校验与生命周期" data-legend-x="214" data-legend-baseline="696" data-legend-width="109">
+            <rect x="214" y="688" width="14" height="9" rx="2" class="c-security" stroke-width="1"/>
+            <text x="236" y="696" class="t-muted" font-size="7.5" font-weight="500">校验与生命周期</text>
           </g>
-          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="存储与缓冲" data-legend-x="330" data-legend-baseline="572" data-legend-width="90">
-            <rect x="330" y="564" width="14" height="9" rx="2" class="c-database" stroke-width="1"/>
-            <text x="352" y="572" class="t-muted" font-size="7.5" font-weight="500">存储与缓冲</text>
+          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="存储与缓冲" data-legend-x="330" data-legend-baseline="696" data-legend-width="90">
+            <rect x="330" y="688" width="14" height="9" rx="2" class="c-database" stroke-width="1"/>
+            <text x="352" y="696" class="t-muted" font-size="7.5" font-weight="500">存储与缓冲</text>
           </g>
         </g>
-      </svg>
+      <text x="24" y="806" font-family="Microsoft YaHei, sans-serif" font-size="18" fill="#243d50">每图先生成比对结果，再完成 INFO；结果仍待批次验收提交。</text><text x="24" y="834" font-family="Microsoft YaHei, sans-serif" font-size="18" fill="#243d50">同一会话处理多图；会话关闭、owner STOP 与最终提交均在批末。</text></svg>
