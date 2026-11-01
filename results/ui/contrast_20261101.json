@@ -1,0 +1,130 @@
+{
+  "desktop": {
+    "overflowX": false,
+    "styles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(32, 49, 45)",
+        "font": "16px",
+        "opacity": "1",
+        "selector": ".winner"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(54, 72, 63)",
+        "font": "16px",
+        "opacity": "1",
+        "selector": ".winner .tiny-label"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(82, 99, 91)",
+        "font": "16px",
+        "opacity": "1",
+        "selector": ".winner .english-label"
+      },
+      {
+        "background": "rgb(22, 88, 63)",
+        "color": "rgb(255, 255, 255)",
+        "font": "28px",
+        "opacity": "1",
+        "selector": ".winner-score"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(54, 72, 63)",
+        "font": "16px",
+        "opacity": "1",
+        "selector": ".top5-title"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(32, 49, 45)",
+        "font": "16px",
+        "opacity": "1",
+        "selector": ".prediction-label em"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(82, 99, 91)",
+        "font": "16px",
+        "opacity": "1",
+        "selector": ".result-meta label"
+      },
+      {
+        "background": "rgb(22, 88, 63)",
+        "color": "rgb(255, 255, 255)",
+        "font": "16px",
+        "opacity": "1",
+        "selector": ".badge-success"
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "mobile": {
+    "overflowX": false,
+    "score": {
+      "bottom": 248.578125,
+      "height": 42,
+      "left": 237.75,
+      "right": 318,
+      "top": 206.578125,
+      "width": 80.25,
+      "x": 237.75,
+      "y": 206.578125
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "winner": {
+      "bottom": 310.96875,
+      "height": 166.78125,
+      "left": 37,
+      "right": 338,
+      "top": 144.1875,
+      "width": 301,
+      "x": 37,
+      "y": 144.1875
+    }
+  },
+  "hardware_accessed": false,
+  "source": "Previously saved local receipt; no application initialization or device requests",
+  "schema": "kv260_ui_contrast_v1",
+  "status": "PASS",
+  "scope": "Local saved-receipt render only; no board connection or device requests",
+  "contrast": [
+    {
+      "foreground": "#52635b",
+      "background": "#ffffff",
+      "contrast_ratio": 6.374
+    },
+    {
+      "foreground": "#36483f",
+      "background": "#ffffff",
+      "contrast_ratio": 9.742
+    },
+    {
+      "foreground": "#ffffff",
+      "background": "#16583f",
+      "contrast_ratio": 8.394
+    },
+    {
+      "foreground": "#20312d",
+      "background": "#ffffff",
+      "contrast_ratio": 13.648
+    },
+    {
+      "foreground": "#286b54",
+      "background": "#e1e6e2",
+      "contrast_ratio": 5.004
+    }
+  ],
+  "files": {
+    "board/ui/public/styles.css": "35919dfe7cfdca82d4448f12e1b029748ed510bc88784e85ac3fe6c652b82eb4",
+    "board/ui/public/tokens.css": "e2c150f815b01c8ccc58b513f78e7f6f92904c495c77a37429084b1e0e182fdd"
+  }
+}

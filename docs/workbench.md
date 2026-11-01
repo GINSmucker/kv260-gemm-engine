@@ -39,6 +39,32 @@ pwsh -File ./start-final.ps1
 
 CPU／PL逐位比较由板端报告，客户端未取得全部1000个logits，只核对输出摘要相等、Top5合法性和完成字段。现场图无人工标签，不计算准确率；Native调用计数不等于独立测得的物理START次数。Runner.run不包括预处理、CPU参考和INFO，也不是纯PL时间。设备是否关闭以回执`device_closed`为准。网页显示的完整往返另含上传、查询等待等开销；查询间隔为100 ms，计算仍只提交一次。原图完整请求对照见“性能与耗时”和[服务实测说明](live-latency.md)。
 
+## SSH 与板端调试
+
+板卡连接地址为 `ubuntu@192.168.137.2`，Sparse24 HTTP 服务为 `http://192.168.137.2:8080`。电脑直连网口应使用同一子网内的不同地址，例如 `192.168.137.1/24`。先检查本机网口，避免电脑与板卡使用相同 IP；无需改动无线网络或已有正常网络配置。
+
+在 Windows PowerShell 7 中检查端口并登录；以下操作用于需要连接板卡时，不是网页配色验证的一部分：
+
+```powershell
+Test-NetConnection 192.168.137.2 -Port 22
+Test-NetConnection 192.168.137.2 -Port 8080
+ssh ubuntu@192.168.137.2
+```
+
+SSH 登录使用已有密码。进入板端 Linux 后，以下命令只读取状态和日志，不启动推理：
+
+```sh
+cat /proc/sys/kernel/random/boot_id
+cat /run/opt50-demo/status.json
+systemctl status opt50-demo-hardware.service --no-pager
+systemctl show opt50-demo-hardware.service -p ActiveState -p MainPID -p ExecStart
+sudo journalctl -b -u opt50-demo-hardware.service -n 80 --no-pager
+```
+
+`/opt/opt50-demo-v1/private` 为服务程序目录，`/var/lib/opt50-demo-v1` 保存模型、会话与运行回执，`/run/opt50-demo/status.json` 是当前启动状态。当前 Python 解释器为 `/home/ubuntu/fpga_project/model_b/.venv/bin/python`，调试时沿用该环境。
+
+需要网页推理时，按上节连接服务；确认 `READY`、未忙碌、启动自检通过后，再上传 JPEG 并单次提交。记录 `boot_id`、`request_id`、图片 SHA256 和完整 JSON，结合日志定位预处理、CPU 参考、`Runner.run`、INFO 和请求总耗时。每图检查和批次结束的关闭证明分开核对。完成状态未知时保留现场并查询原请求，不重复提交；服务重启和重新加载平台会改变运行状态，不属于只读检查。
+
 ## 界面字号
 
 主站的11个页面使用四个字号变量，统一由 `board/ui/public/tokens.css` 定义。装饰性英文栏目、重复说明、页脚和侧栏项目图卡不参与主要内容展示；必要的来源、状态、单位、数据范围和错误信息保留为可读正文。
