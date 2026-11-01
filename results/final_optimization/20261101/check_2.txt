@@ -1,0 +1,22 @@
+test_accuracy_counters_and_historical_scope (test_final_metrics.FinalMetricsTests.test_accuracy_counters_and_historical_scope) ... ok
+test_same195_rows_and_four_timing_distributions (test_final_metrics.FinalMetricsTests.test_same195_rows_and_four_timing_distributions) ... ok
+test_changed_source_anchor_refused (test_final_optimization.FinalOptimizationTests.test_changed_source_anchor_refused) ... ok
+test_disjoint_closure_and_native_parent (test_final_optimization.FinalOptimizationTests.test_disjoint_closure_and_native_parent) ... ok
+test_nested_ort_erf_and_integer_matmul_not_double_counted (test_final_optimization.FinalOptimizationTests.test_nested_ort_erf_and_integer_matmul_not_double_counted) ... ok
+test_overlap_bad_route_and_failed_comparison_refused (test_final_optimization.FinalOptimizationTests.test_overlap_bad_route_and_failed_comparison_refused) ... ok
+test_source_transforms_preserve_arithmetic_and_guards (test_final_optimization.FinalOptimizationTests.test_source_transforms_preserve_arithmetic_and_guards) ... ok
+test_member_path_rejections (test_restoration_boundaries.RestorationBoundaryTests.test_member_path_rejections) ... ok
+test_wrong_asset_refused_without_partial_output (test_restoration_boundaries.RestorationBoundaryTests.test_wrong_asset_refused_without_partial_output) ... ok
+test_changed_report_cannot_be_reauthorized_by_new_manifest_hash (test_supplemental_sources.SupplementalSourceTests.test_changed_report_cannot_be_reauthorized_by_new_manifest_hash) ... ok
+test_dropped_display_data_is_rejected_even_if_removed_from_manifest (test_supplemental_sources.SupplementalSourceTests.test_dropped_display_data_is_rejected_even_if_removed_from_manifest) ... ok
+test_dropped_testbench_is_rejected_even_if_removed_from_manifest (test_supplemental_sources.SupplementalSourceTests.test_dropped_testbench_is_rejected_even_if_removed_from_manifest) ... ok
+test_new_local_import_requires_a_declared_file (test_supplemental_sources.SupplementalSourceTests.test_new_local_import_requires_a_declared_file) ... ok
+test_original_sources_and_consumer_dependencies (test_supplemental_sources.SupplementalSourceTests.test_original_sources_and_consumer_dependencies) ... ok
+test_disjoint_intervals_close_to_runner (test_timing_breakdown.TimingTests.test_disjoint_intervals_close_to_runner) ... ok
+test_native_window_cannot_exceed_runner (test_timing_breakdown.TimingTests.test_native_window_cannot_exceed_runner) ... ok
+test_reordered_or_wrong_mode_receipt_is_rejected (test_timing_breakdown.TimingTests.test_reordered_or_wrong_mode_receipt_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.360s
+
+OK

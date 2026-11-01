@@ -33,4 +33,7 @@ results/model_planning/v5_h576_fair_20261016_02/** -text -whitespace
 results/model_planning/v5_h576_quality_20261016_01/** -text -whitespace
 results/model_planning/v5_h576_ui_20261017_01/** -text -whitespace
 results/C/h576/c_h576_endurance_20261016_02/** -text -whitespace
+
+# Candidate manifests retain the exact bytes used by the recorded ARM builds.
+results/final_optimization/20261101/*_manifest.json -text -whitespace
 docs/diagrams/** -text -whitespace

@@ -1,0 +1,526 @@
+{
+  "status": "PASS",
+  "verified_evidence": {
+    "bytes": 4204,
+    "sha256": "9582936ce55df0433cc4455ff70c278ca48aae31367c17678ed295226c06547c"
+  },
+  "archive": {
+    "bytes": 121616596,
+    "sha256": "2b691783bc9f9fb892817444417ef0463ceacd52392a0c8d7035b5fa8ee582a6"
+  },
+  "boot_id": "2a9a0ac1-395a-4135-9504-31144e2aa56a",
+  "roots": [
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_692ebc1cb956",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_b6c62b0e9412",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_870e3a90af30",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_6304071b987d",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_3fb96522d8e4",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_498eac0a43c7",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_0636f02f3a32",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_b1b416de2f88",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_7b0c05ddca2d",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_4323fa7943eb",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_93b7ab0957ca",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_0a41c5d51983",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_7075723d51cd",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_e269fbc99f96",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_16babcd4c2c9",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_b2fe8509275f",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_2b4d80b47702",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_09edc22d7a1e",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_6d9197e9616a",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_5f21233b9751",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_acb132160661",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_7082d3565ec1",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_d4c21a18e5bc",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_c6f8210457e6",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_8fb933b63eda",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_df857183bf09",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_317a15b499d6",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_2eaf48cb730b",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_f1062ad94a1c",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_03e8647bc5a7",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_0d36e4ed9dad",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_4c06e21d2954",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_d45ef32f5591",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_7ad435f7f22c",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_3b7346422f1d",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_687fa51e3fca",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_514e5c974e23",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_a26aff74c40f",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_705b606b6be2",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_9cc76529eaa6",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_1c2e78f1b736",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_e946ec44f622",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_12e5c313f38a",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_cb8f33f7c8f0",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_dabe05f66c4c",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_7e93acc1cf5f",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_9394c26d9883",
+      "files": 117,
+      "bytes": 69696382
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_b79b26887edf",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_9766957624ba",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_ce271675a1f2",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_323b4b2b7720",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_7d4438b7a001",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_f2cea8677c9a",
+      "files": 68,
+      "bytes": 40186622
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_a73978365774",
+      "files": 79,
+      "bytes": 46811262
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_fea67cac0488",
+      "files": 79,
+      "bytes": 46811262
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_78c39815bbf6",
+      "files": 79,
+      "bytes": 46811262
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_1ec5f18719cd",
+      "files": 79,
+      "bytes": 46811262
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_71c8eec6974f",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_440388cef950",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_8b7056fd661e",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_3466b7e7ee04",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_13be341a925e",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_2501f3dfcff6",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_4c40fe5bb850",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_daf58e1cff26",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_53569cbb8724",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_aec7a29f1c82",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_ef0857997499",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_690371df96c5",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_d007616af26f",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_2052ab216ba1",
+      "files": 106,
+      "bytes": 63071742
+    },
+    {
+      "root": "/var/lib/opt50-b24-model-v1/plan_64bcdb514436",
+      "files": 106,
+      "bytes": 63071742
+    }
+  ],
+  "targets": [
+    "/var/lib/opt50-b24-model-v1/plan_692ebc1cb956/model",
+    "/var/lib/opt50-b24-model-v1/plan_692ebc1cb956/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_b6c62b0e9412/model",
+    "/var/lib/opt50-b24-model-v1/plan_b6c62b0e9412/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_870e3a90af30/model",
+    "/var/lib/opt50-b24-model-v1/plan_870e3a90af30/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_6304071b987d/model",
+    "/var/lib/opt50-b24-model-v1/plan_6304071b987d/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_3fb96522d8e4/model",
+    "/var/lib/opt50-b24-model-v1/plan_3fb96522d8e4/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_498eac0a43c7/model",
+    "/var/lib/opt50-b24-model-v1/plan_498eac0a43c7/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_0636f02f3a32/model",
+    "/var/lib/opt50-b24-model-v1/plan_0636f02f3a32/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_b1b416de2f88/model",
+    "/var/lib/opt50-b24-model-v1/plan_b1b416de2f88/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_7b0c05ddca2d/model",
+    "/var/lib/opt50-b24-model-v1/plan_7b0c05ddca2d/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_4323fa7943eb/model",
+    "/var/lib/opt50-b24-model-v1/plan_4323fa7943eb/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_93b7ab0957ca/model",
+    "/var/lib/opt50-b24-model-v1/plan_93b7ab0957ca/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_0a41c5d51983/model",
+    "/var/lib/opt50-b24-model-v1/plan_0a41c5d51983/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_7075723d51cd/model",
+    "/var/lib/opt50-b24-model-v1/plan_7075723d51cd/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_e269fbc99f96/model",
+    "/var/lib/opt50-b24-model-v1/plan_e269fbc99f96/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_16babcd4c2c9/model",
+    "/var/lib/opt50-b24-model-v1/plan_16babcd4c2c9/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_b2fe8509275f/model",
+    "/var/lib/opt50-b24-model-v1/plan_b2fe8509275f/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_2b4d80b47702/model",
+    "/var/lib/opt50-b24-model-v1/plan_2b4d80b47702/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_09edc22d7a1e/model",
+    "/var/lib/opt50-b24-model-v1/plan_09edc22d7a1e/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_6d9197e9616a/model",
+    "/var/lib/opt50-b24-model-v1/plan_6d9197e9616a/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_5f21233b9751/model",
+    "/var/lib/opt50-b24-model-v1/plan_5f21233b9751/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_acb132160661/model",
+    "/var/lib/opt50-b24-model-v1/plan_acb132160661/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_7082d3565ec1/model",
+    "/var/lib/opt50-b24-model-v1/plan_7082d3565ec1/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_d4c21a18e5bc/model",
+    "/var/lib/opt50-b24-model-v1/plan_d4c21a18e5bc/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_c6f8210457e6/model",
+    "/var/lib/opt50-b24-model-v1/plan_c6f8210457e6/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_8fb933b63eda/model",
+    "/var/lib/opt50-b24-model-v1/plan_8fb933b63eda/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_df857183bf09/model",
+    "/var/lib/opt50-b24-model-v1/plan_df857183bf09/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_317a15b499d6/model",
+    "/var/lib/opt50-b24-model-v1/plan_317a15b499d6/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_2eaf48cb730b/model",
+    "/var/lib/opt50-b24-model-v1/plan_2eaf48cb730b/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_f1062ad94a1c/model",
+    "/var/lib/opt50-b24-model-v1/plan_f1062ad94a1c/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_03e8647bc5a7/model",
+    "/var/lib/opt50-b24-model-v1/plan_03e8647bc5a7/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_0d36e4ed9dad/model",
+    "/var/lib/opt50-b24-model-v1/plan_0d36e4ed9dad/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_4c06e21d2954/model",
+    "/var/lib/opt50-b24-model-v1/plan_4c06e21d2954/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_d45ef32f5591/model",
+    "/var/lib/opt50-b24-model-v1/plan_d45ef32f5591/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_7ad435f7f22c/model",
+    "/var/lib/opt50-b24-model-v1/plan_7ad435f7f22c/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_3b7346422f1d/model",
+    "/var/lib/opt50-b24-model-v1/plan_3b7346422f1d/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_687fa51e3fca/model",
+    "/var/lib/opt50-b24-model-v1/plan_687fa51e3fca/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_514e5c974e23/model",
+    "/var/lib/opt50-b24-model-v1/plan_514e5c974e23/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_a26aff74c40f/model",
+    "/var/lib/opt50-b24-model-v1/plan_a26aff74c40f/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_705b606b6be2/model",
+    "/var/lib/opt50-b24-model-v1/plan_705b606b6be2/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_9cc76529eaa6/model",
+    "/var/lib/opt50-b24-model-v1/plan_9cc76529eaa6/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_1c2e78f1b736/model",
+    "/var/lib/opt50-b24-model-v1/plan_1c2e78f1b736/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_e946ec44f622/model",
+    "/var/lib/opt50-b24-model-v1/plan_e946ec44f622/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_12e5c313f38a/model",
+    "/var/lib/opt50-b24-model-v1/plan_12e5c313f38a/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_cb8f33f7c8f0/model",
+    "/var/lib/opt50-b24-model-v1/plan_cb8f33f7c8f0/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_dabe05f66c4c/model",
+    "/var/lib/opt50-b24-model-v1/plan_dabe05f66c4c/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_7e93acc1cf5f/model",
+    "/var/lib/opt50-b24-model-v1/plan_7e93acc1cf5f/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_9394c26d9883/model",
+    "/var/lib/opt50-b24-model-v1/plan_9394c26d9883/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_b79b26887edf/model",
+    "/var/lib/opt50-b24-model-v1/plan_b79b26887edf/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_9766957624ba/model",
+    "/var/lib/opt50-b24-model-v1/plan_9766957624ba/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_ce271675a1f2/model",
+    "/var/lib/opt50-b24-model-v1/plan_ce271675a1f2/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_323b4b2b7720/model",
+    "/var/lib/opt50-b24-model-v1/plan_323b4b2b7720/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_7d4438b7a001/model",
+    "/var/lib/opt50-b24-model-v1/plan_7d4438b7a001/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_f2cea8677c9a/model",
+    "/var/lib/opt50-b24-model-v1/plan_f2cea8677c9a/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_a73978365774/model",
+    "/var/lib/opt50-b24-model-v1/plan_a73978365774/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_fea67cac0488/model",
+    "/var/lib/opt50-b24-model-v1/plan_fea67cac0488/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_78c39815bbf6/model",
+    "/var/lib/opt50-b24-model-v1/plan_78c39815bbf6/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_1ec5f18719cd/model",
+    "/var/lib/opt50-b24-model-v1/plan_1ec5f18719cd/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_71c8eec6974f/model",
+    "/var/lib/opt50-b24-model-v1/plan_71c8eec6974f/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_440388cef950/model",
+    "/var/lib/opt50-b24-model-v1/plan_440388cef950/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_8b7056fd661e/model",
+    "/var/lib/opt50-b24-model-v1/plan_8b7056fd661e/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_3466b7e7ee04/model",
+    "/var/lib/opt50-b24-model-v1/plan_3466b7e7ee04/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_13be341a925e/model",
+    "/var/lib/opt50-b24-model-v1/plan_13be341a925e/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_2501f3dfcff6/model",
+    "/var/lib/opt50-b24-model-v1/plan_2501f3dfcff6/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_4c40fe5bb850/model",
+    "/var/lib/opt50-b24-model-v1/plan_4c40fe5bb850/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_daf58e1cff26/model",
+    "/var/lib/opt50-b24-model-v1/plan_daf58e1cff26/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_53569cbb8724/model",
+    "/var/lib/opt50-b24-model-v1/plan_53569cbb8724/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_aec7a29f1c82/model",
+    "/var/lib/opt50-b24-model-v1/plan_aec7a29f1c82/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_ef0857997499/model",
+    "/var/lib/opt50-b24-model-v1/plan_ef0857997499/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_690371df96c5/model",
+    "/var/lib/opt50-b24-model-v1/plan_690371df96c5/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_d007616af26f/model",
+    "/var/lib/opt50-b24-model-v1/plan_d007616af26f/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_2052ab216ba1/model",
+    "/var/lib/opt50-b24-model-v1/plan_2052ab216ba1/inputs",
+    "/var/lib/opt50-b24-model-v1/plan_64bcdb514436/model",
+    "/var/lib/opt50-b24-model-v1/plan_64bcdb514436/inputs"
+  ],
+  "files": 7250,
+  "copy_bytes": 4311109744,
+  "retained": "All plans, tools, binaries, raw outputs, close events, source model assets and original input paths",
+  "free_before_bytes": 1598451712,
+  "free_after_bytes": 5924433920,
+  "hardware_modified": false
+}

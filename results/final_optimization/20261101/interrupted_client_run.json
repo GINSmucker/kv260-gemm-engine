@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scope": "One completed request before measurement client rejected transient busy; not a6-request comparison",
+  "performance_comparison_status": "NOT RUN",
+  "requests": 1,
+  "FP32_logits_compared": 1000,
+  "bitwise_mismatches": 0,
+  "archive": {
+    "bytes": 4546094,
+    "sha256": "53edf20e67d263fa277e2b357994591692534eaed17f9fe81ea5033db5a960dd"
+  },
+  "client_complete_ms": 10941.0629,
+  "reason": "PASS result became readable while directory fsync was still finishing; no second POST was attempted; all data retained",
+  "fix": "Read-only bounded READY/idle polling before each new UUID; explicit regression test also proves uncertain POST is never retried"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "frozen_files_checked": 330,
+  "archived_main_files_checked": 35,
+  "frozen_bundles": 6,
+  "supplemental": {
+    "files_checked": 55,
+    "website_modules_checked": 17,
+    "platform_testbenches_checked": 2,
+    "historical_reports_checked": 6
+  },
+  "external_payload_files": 125,
+  "external_payloads_present": false,
+  "hardware_accessed": false,
+  "scope": "Git source identities,layout and declared metrics; no asset restoration,HLS or board execution"
+}

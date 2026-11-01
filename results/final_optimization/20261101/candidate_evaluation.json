@@ -1,0 +1,435 @@
+{
+  "status": "PASS",
+  "scope": "Candidate admission reasoning; no new48-call route, HLS, RTL, resource, timing or hardware speed claim",
+  "proj_PL": {
+    "status": "NOT RUN",
+    "deployed": false,
+    "measured_PS_proj_integer_ms": 8.032215333333333,
+    "estimated12_call_control_plus_IPC_other_ms": 3.5785672222222216,
+    "illustrative_input_sync_ms": 0.2643165,
+    "illustrative_output_sync_ms": 0.24682916666666666,
+    "zero_PL_compute_conditional_gain_ms": 3.9425024444444454,
+    "limits": "Sync sizes estimated from existing equal/similar-size paths. Additional PL execution, weight loads and shape-specific costs are excluded. This is not a complete48-call Runner comparison; original36PL/13PS route remains deployed. Head N1000 violates the current16-aligned N contract. An additional purely illustrative N-scaling uses one-third of measured QKV wait; wait includes software/MMIO/drain and need not scale linearly. It is not an implemented proj result. Dense peak-array illustration uses ceil197/32 *192/16 *192 K cycles per call,12 calls,125MHz; no DDR/store/control overlap measurement. It is a conditional admission estimate, not48-call board performance.",
+    "measured12_QKV_completion_wait_ms": 9.378022,
+    "linear_N_scaling_illustration_PL_wait_ms": 3.1260073333333334,
+    "linear_N_scaling_illustration_net_gain_ms": 0.8164951111111121,
+    "ideal_dense_array_cycles_for12_proj": 193536,
+    "ideal_dense_array_ms_at125MHz": 1.548288,
+    "conditional_gain_after_ideal_array_compute_ms": 2.3942144444444455
+  },
+  "cross_operator_hardware": {
+    "status": "NOT RUN",
+    "deployed": false,
+    "evidence": "GELU16.933ms and attention QK+AV32.532ms are profiler diagnostics. MLP197x576 FP32 materialization453888bytes per tensor. Exact Erf, row maxima and two-multiply-one-add dequantization must be retained. Static weights2986048bytes (data+meta) require a separate capacity/port plan.",
+    "limits": "No compatible implemented cross-operator block, new implementation report or full-board quality proof. No hardware fusion, approximation or cross-frame pipeline is credited."
+  },
+  "frequency_array_AXI": {
+    "status": "NOT RUN",
+    "deployed": false,
+    "evidence": "All new measurements use unchanged fd96539d firmware, existing32x16 array and125MHz design. Existing HP0 convergence and BRAM use limit extrapolation.",
+    "limits": "No new clock, placement, WNS, utilization, power or pure-PL-cycle measurement. Saved resource reports retain their historical scope."
+  },
+  "retained_negative_evidence": [
+    "First spinning attempt emitted duplicate-config warning and retained the coordinator after genuine owner close; reconciled with independent proof, no graph replay.",
+    "First paired195 candidate showed445.334ms maximum. Exact SSH login/PAM startup overlaps5slow graphs; full raw samples retained as contaminated diagnostics, clean campaign uses one established SSH connection.",
+    "ORT profiler adds observed16.981ms; low-perturbation diagnostic cost cannot be resolved below measured baseline noise.",
+    "INFO fsync latency still has multi-second tails; OpenSSL does not remove durable writes."
+  ],
+  "selected_thread_policy": {
+    "status": "PASS",
+    "adoption": "PASS; model-only final installed pair validated on fixed195 actual service requests; original Native and RGB preprocessing retained",
+    "policy": {
+      "intra_threads": 4,
+      "inter_threads": 1,
+      "intra_spinning": 1,
+      "force_spinning_stop": 1,
+      "dynamic_block_base": 0
+    },
+    "model_comparison": {
+      "images_per_arm": 195,
+      "graphs": 585,
+      "FP32_logits_compared": 585000,
+      "bitwise_mismatches": 0,
+      "campaign": "latency_campaign_three_arm",
+      "selected_candidate_arm": "scoped",
+      "groups": [
+        {
+          "group": 0,
+          "order": [
+            "original",
+            "scoped",
+            "dynamic"
+          ],
+          "Runner_run_ms": {
+            "original": {
+              "n": 39,
+              "mean_ms": 133.8774485128205,
+              "median_ms": 133.801138,
+              "P95_ms": 135.2212153,
+              "max_ms": 140.466395
+            },
+            "scoped": {
+              "n": 39,
+              "mean_ms": 122.57136641025642,
+              "median_ms": 122.312663,
+              "P95_ms": 123.8909103,
+              "max_ms": 125.444305
+            },
+            "dynamic": {
+              "n": 39,
+              "mean_ms": 123.45739297435897,
+              "median_ms": 122.581196,
+              "P95_ms": 124.7926491,
+              "max_ms": 145.428484
+            }
+          },
+          "median_gain_ms": 11.488475000000008
+        },
+        {
+          "group": 1,
+          "order": [
+            "scoped",
+            "dynamic",
+            "original"
+          ],
+          "Runner_run_ms": {
+            "original": {
+              "n": 39,
+              "mean_ms": 134.60748128205128,
+              "median_ms": 134.311633,
+              "P95_ms": 139.0553984,
+              "max_ms": 145.368494
+            },
+            "scoped": {
+              "n": 39,
+              "mean_ms": 123.1329126923077,
+              "median_ms": 122.604416,
+              "P95_ms": 125.55378449999999,
+              "max_ms": 130.9945
+            },
+            "dynamic": {
+              "n": 39,
+              "mean_ms": 123.18480341025641,
+              "median_ms": 122.553276,
+              "P95_ms": 125.834888,
+              "max_ms": 137.329384
+            }
+          },
+          "median_gain_ms": 11.707217
+        },
+        {
+          "group": 2,
+          "order": [
+            "dynamic",
+            "original",
+            "scoped"
+          ],
+          "Runner_run_ms": {
+            "original": {
+              "n": 39,
+              "mean_ms": 133.65968248717948,
+              "median_ms": 133.275583,
+              "P95_ms": 135.50662780000002,
+              "max_ms": 138.841479
+            },
+            "scoped": {
+              "n": 39,
+              "mean_ms": 123.981215,
+              "median_ms": 122.96177,
+              "P95_ms": 127.50884260000001,
+              "max_ms": 143.177622
+            },
+            "dynamic": {
+              "n": 39,
+              "mean_ms": 123.82631615384615,
+              "median_ms": 122.912429,
+              "P95_ms": 126.783862,
+              "max_ms": 145.043101
+            }
+          },
+          "median_gain_ms": 10.31381300000001
+        },
+        {
+          "group": 3,
+          "order": [
+            "original",
+            "dynamic",
+            "scoped"
+          ],
+          "Runner_run_ms": {
+            "original": {
+              "n": 39,
+              "mean_ms": 134.23958466666667,
+              "median_ms": 133.779558,
+              "P95_ms": 138.5655477,
+              "max_ms": 140.872919
+            },
+            "scoped": {
+              "n": 39,
+              "mean_ms": 123.25263707692308,
+              "median_ms": 122.552466,
+              "P95_ms": 125.5966423,
+              "max_ms": 140.589276
+            },
+            "dynamic": {
+              "n": 39,
+              "mean_ms": 123.67064148717948,
+              "median_ms": 122.677617,
+              "P95_ms": 128.6617995,
+              "max_ms": 139.911069
+            }
+          },
+          "median_gain_ms": 11.227092000000013
+        },
+        {
+          "group": 4,
+          "order": [
+            "dynamic",
+            "scoped",
+            "original"
+          ],
+          "Runner_run_ms": {
+            "original": {
+              "n": 39,
+              "mean_ms": 133.81238476923076,
+              "median_ms": 133.512585,
+              "P95_ms": 135.6493828,
+              "max_ms": 139.850888
+            },
+            "scoped": {
+              "n": 39,
+              "mean_ms": 123.36604525641026,
+              "median_ms": 122.452634,
+              "P95_ms": 126.1865758,
+              "max_ms": 140.077981
+            },
+            "dynamic": {
+              "n": 39,
+              "mean_ms": 123.48168725641025,
+              "median_ms": 122.503955,
+              "P95_ms": 126.53148030000003,
+              "max_ms": 139.099211
+            }
+          },
+          "median_gain_ms": 11.059950999999998
+        }
+      ],
+      "same_boot": true,
+      "source_model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+      "statistics": {
+        "original": {
+          "Runner_run_ms": {
+            "n": 195,
+            "mean_ms": 134.03931634358975,
+            "median_ms": 133.741217,
+            "P95_ms": 137.4050995,
+            "max_ms": 145.368494
+          },
+          "CPU_reference_ms": {
+            "n": 195,
+            "mean_ms": 295.5252842974359,
+            "median_ms": 295.195153,
+            "P95_ms": 300.9954858,
+            "max_ms": 304.208182
+          },
+          "INFO_ms": {
+            "n": 195,
+            "mean_ms": 806.8143549179487,
+            "median_ms": 252.96584,
+            "P95_ms": 2430.390305399999,
+            "max_ms": 15284.406228
+          },
+          "Runner_main_CPU_ms": {
+            "n": 195,
+            "mean_ms": 105.11461995897436,
+            "median_ms": 104.767775,
+            "P95_ms": 108.53479589999999,
+            "max_ms": 113.994833
+          },
+          "Runner_process_CPU_ms": {
+            "n": 195,
+            "mean_ms": 306.0167833179487,
+            "median_ms": 305.637519,
+            "P95_ms": 310.3997489,
+            "max_ms": 314.557479
+          }
+        },
+        "scoped": {
+          "Runner_run_ms": {
+            "n": 195,
+            "mean_ms": 123.26083528717949,
+            "median_ms": 122.591396,
+            "P95_ms": 125.57824,
+            "max_ms": 143.177622
+          },
+          "CPU_reference_ms": {
+            "n": 195,
+            "mean_ms": 296.3660951538462,
+            "median_ms": 295.681337,
+            "P95_ms": 301.57927060000003,
+            "max_ms": 323.024711
+          },
+          "INFO_ms": {
+            "n": 195,
+            "mean_ms": 763.2337056051282,
+            "median_ms": 144.753268,
+            "P95_ms": 2369.9404819999954,
+            "max_ms": 19243.944069
+          },
+          "Runner_main_CPU_ms": {
+            "n": 195,
+            "mean_ms": 93.32748712307692,
+            "median_ms": 92.966127,
+            "P95_ms": 95.2151248,
+            "max_ms": 103.614074
+          },
+          "Runner_process_CPU_ms": {
+            "n": 195,
+            "mean_ms": 457.1689166,
+            "median_ms": 455.242219,
+            "P95_ms": 466.3230537,
+            "max_ms": 513.840149
+          }
+        },
+        "dynamic": {
+          "Runner_run_ms": {
+            "n": 195,
+            "mean_ms": 123.52416825641026,
+            "median_ms": 122.630536,
+            "P95_ms": 126.48584019999998,
+            "max_ms": 145.428484
+          },
+          "CPU_reference_ms": {
+            "n": 195,
+            "mean_ms": 295.84026435897437,
+            "median_ms": 295.223863,
+            "P95_ms": 300.8057339,
+            "max_ms": 322.397954
+          },
+          "INFO_ms": {
+            "n": 195,
+            "mean_ms": 774.0219506205128,
+            "median_ms": 144.461855,
+            "P95_ms": 2298.511787699998,
+            "max_ms": 20090.256984
+          },
+          "Runner_main_CPU_ms": {
+            "n": 195,
+            "mean_ms": 93.43687251794871,
+            "median_ms": 93.003324,
+            "P95_ms": 95.7539094,
+            "max_ms": 106.576879
+          },
+          "Runner_process_CPU_ms": {
+            "n": 195,
+            "mean_ms": 457.9332374205128,
+            "median_ms": 455.455432,
+            "P95_ms": 467.8548224,
+            "max_ms": 517.877832
+          }
+        }
+      },
+      "median_Runner_gain_ms": 11.149821000000003,
+      "median_Runner_reduction_percent": 8.336862225502255,
+      "threshold_2ms_and_3percent": true,
+      "paired_gain": {
+        "n": 195,
+        "mean_ms": 10.778481056410255,
+        "median_ms": 11.039710999999997,
+        "P95_ms": 13.584603799999996,
+        "max_ms": 22.521525999999994
+      },
+      "scope": "Each image measured once per arm in balanced39-image owner groups; not long-term tail guarantees"
+    },
+    "cost": "Runner process CPU-time mean306.017 to457.169ms; not wall time or power",
+    "prior_tail_ms": 233.872899,
+    "tail_scope": "Latest195 scoped max143.178 vs original145.368ms; earlier233.873ms remains in the report, with scheduler wait observed and trigger unknown",
+    "actual_service_review": "service_quality_review.json",
+    "adoption_receipt": "adoption_receipt.json"
+  },
+  "dynamic_block4": {
+    "status": "PASS",
+    "adopted": false,
+    "reason": "No incremental net benefit over scoped spinning in same585-graph comparison",
+    "statistics": {
+      "Runner_run_ms": {
+        "n": 195,
+        "mean_ms": 123.52416825641026,
+        "median_ms": 122.630536,
+        "P95_ms": 126.48584019999998,
+        "max_ms": 145.428484
+      },
+      "CPU_reference_ms": {
+        "n": 195,
+        "mean_ms": 295.84026435897437,
+        "median_ms": 295.223863,
+        "P95_ms": 300.8057339,
+        "max_ms": 322.397954
+      },
+      "INFO_ms": {
+        "n": 195,
+        "mean_ms": 774.0219506205128,
+        "median_ms": 144.461855,
+        "P95_ms": 2298.511787699998,
+        "max_ms": 20090.256984
+      },
+      "Runner_main_CPU_ms": {
+        "n": 195,
+        "mean_ms": 93.43687251794871,
+        "median_ms": 93.003324,
+        "P95_ms": 95.7539094,
+        "max_ms": 106.576879
+      },
+      "Runner_process_CPU_ms": {
+        "n": 195,
+        "mean_ms": 457.9332374205128,
+        "median_ms": 455.455432,
+        "P95_ms": 467.8548224,
+        "max_ms": 517.877832
+      }
+    },
+    "control": {
+      "Runner_run_ms": {
+        "n": 195,
+        "mean_ms": 123.26083528717949,
+        "median_ms": 122.591396,
+        "P95_ms": 125.57824,
+        "max_ms": 143.177622
+      },
+      "CPU_reference_ms": {
+        "n": 195,
+        "mean_ms": 296.3660951538462,
+        "median_ms": 295.681337,
+        "P95_ms": 301.57927060000003,
+        "max_ms": 323.024711
+      },
+      "INFO_ms": {
+        "n": 195,
+        "mean_ms": 763.2337056051282,
+        "median_ms": 144.753268,
+        "P95_ms": 2369.9404819999954,
+        "max_ms": 19243.944069
+      },
+      "Runner_main_CPU_ms": {
+        "n": 195,
+        "mean_ms": 93.32748712307692,
+        "median_ms": 92.966127,
+        "P95_ms": 95.2151248,
+        "max_ms": 103.614074
+      },
+      "Runner_process_CPU_ms": {
+        "n": 195,
+        "mean_ms": 457.1689166,
+        "median_ms": 455.242219,
+        "P95_ms": 466.3230537,
+        "max_ms": 513.840149
+      }
+    }
+  },
+  "outside_Runner_candidates": {
+    "numerical_status": "PASS",
+    "adoption_status": "FAIL",
+    "adopted": false,
+    "report": "complete_request_review.json"
+  }
+}
