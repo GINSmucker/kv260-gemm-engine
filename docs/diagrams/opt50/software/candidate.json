@@ -31,7 +31,8 @@
         "external": {
           "label": "输入来源"
         }
-      }
+      },
+      "mode": "hidden"
     }
   },
   "lanes": [
@@ -63,7 +64,6 @@
       "col": 0,
       "type": "database",
       "label": "还原模型包",
-      "sublabel": "固定 Sparse24 / Dense 身份",
       "sources": [
         {
           "path": "tools/restore_bundle.py",
@@ -71,7 +71,9 @@
           "end_line": 37,
           "label": "按资产身份还原"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "verify",
@@ -79,7 +81,6 @@
       "col": 1,
       "type": "security",
       "label": "校验模型与平台",
-      "sublabel": "SHA / 路由 / 当前启动",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/model_runtime.py",
@@ -93,7 +94,9 @@
           "end_line": 144,
           "label": "平台与 BO 准备"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "input",
@@ -101,7 +104,6 @@
       "col": 2,
       "type": "backend",
       "label": "预处理图片",
-      "sublabel": "FP32 [1,3,224,224]",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/dataset.py",
@@ -109,7 +111,9 @@
           "end_line": 157,
           "label": "JPEG 转张量"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "reference",
@@ -117,7 +121,6 @@
       "col": 3,
       "type": "backend",
       "label": "CPU 数值参考",
-      "sublabel": "验收时：计时外执行",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/model_worker.py",
@@ -125,15 +128,16 @@
           "end_line": 378,
           "label": "先参考，再 Runner"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "begin",
       "lane": "runtime",
-      "col": 3,
+      "col": 0,
       "type": "backend",
       "label": "BEGIN 图",
-      "sublabel": "递增 run_id / 有界会话",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/model_runtime.py",
@@ -141,15 +145,16 @@
           "end_line": 451,
           "label": "BEGIN 与 ORT 调用"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "model",
       "lane": "runtime",
-      "col": 4,
+      "col": 1,
       "type": "backend",
       "label": "逐层模型执行",
-      "sublabel": "36 PL / 13 PS · 量化适配",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/source/b_plugin.cpp",
@@ -163,15 +168,16 @@
           "end_line": 8,
           "label": "固定层路由"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "end",
       "lane": "runtime",
-      "col": 5,
+      "col": 2,
       "type": "backend",
       "label": "END 图",
-      "sublabel": "完成全部 49 Linear",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/model_runtime.py",
@@ -185,15 +191,16 @@
           "end_line": 146,
           "label": "36 次 PL 完成条件"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "launch",
       "lane": "fabric",
-      "col": 3,
+      "col": 0,
       "type": "backend",
       "label": "同步 X / RUN",
-      "sublabel": "owner 校验参数并 START",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/source/b_plugin.cpp",
@@ -207,15 +214,16 @@
           "end_line": 163,
           "label": "寄存器读回和 START"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "compute",
       "lane": "fabric",
-      "col": 4,
+      "col": 1,
       "type": "backend",
       "label": "Dense / Sparse",
-      "sublabel": "共享 OPT50 执行本层",
       "sources": [
         {
           "path": "hls/src/model_gemm_top.cpp",
@@ -223,15 +231,16 @@
           "end_line": 46,
           "label": "模式校验和执行"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "complete",
       "lane": "fabric",
-      "col": 5,
+      "col": 2,
       "type": "security",
       "label": "证明完成",
-      "sublabel": "Done + Idle + AXI 排空",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/source/model_core.hpp",
@@ -239,15 +248,16 @@
           "end_line": 168,
           "label": "完成与错误条件"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "info",
       "lane": "verify",
-      "col": 4,
+      "col": 2,
       "type": "security",
       "label": "每图 INFO 检查",
-      "sublabel": "保护区 / 权重 / 计数 · 会话保留",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/run_model.py",
@@ -261,15 +271,16 @@
           "end_line": 173,
           "label": "图后检查"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "compare",
       "lane": "verify",
-      "col": 5,
+      "col": 3,
       "type": "backend",
       "label": "生成比对结果",
-      "sublabel": "计时外 · 尚待批次验收提交",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/model_worker.py",
@@ -283,15 +294,16 @@
           "end_line": 493,
           "label": "INFO 前复核保存输出"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "output",
       "lane": "batch",
-      "col": 5,
+      "col": 3,
       "type": "frontend",
       "label": "最终验收提交",
-      "sublabel": "本批关闭证明 + 每图结果",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/run_model.py",
@@ -299,15 +311,16 @@
           "end_line": 543,
           "label": "关闭后写 accuracy 与 commit"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "fault",
       "lane": "verify",
-      "col": 1,
+      "col": 0,
       "type": "security",
       "label": "保留现场并报错",
-      "sublabel": "完成未知时不重放请求",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/model_worker.py",
@@ -321,15 +334,16 @@
           "end_line": 31,
           "label": "未知执行不得重放"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "pending",
       "lane": "verify",
-      "col": 3,
+      "col": 1,
       "type": "security",
       "label": "本图待最终提交",
-      "sublabel": "有下一图且门禁通过？",
       "icon": "decision",
       "sources": [
         {
@@ -338,15 +352,16 @@
           "end_line": 509,
           "label": "逐图循环与 pending 结果"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "close",
       "lane": "batch",
-      "col": 3,
+      "col": 1,
       "type": "backend",
       "label": "批次关闭会话",
-      "sublabel": "CPU session / Runner",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/run_model.py",
@@ -354,15 +369,16 @@
           "end_line": 517,
           "label": "批末关闭 worker 会话"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     },
     {
       "id": "stop",
       "lane": "batch",
-      "col": 4,
+      "col": 2,
       "type": "security",
       "label": "STOP 与设备关闭",
-      "sublabel": "owner 正常退出与证明",
       "sources": [
         {
           "path": "board/runtime/snapshots/sparse24/run_model.py",
@@ -370,7 +386,9 @@
           "end_line": 531,
           "label": "STOP、退出及关闭证明"
         }
-      ]
+      ],
+      "width": 190,
+      "height": 60
     }
   ],
   "edges": [
@@ -378,72 +396,72 @@
       "id": "restore-verify",
       "from": "restore",
       "to": "verify",
-      "label": "身份",
-      "variant": "default"
+      "variant": "default",
+      "label": "身份"
     },
     {
       "id": "verify-input",
       "from": "verify",
       "to": "input",
-      "label": "通过",
-      "variant": "default"
+      "variant": "default",
+      "label": "通过"
     },
     {
       "id": "input-reference",
       "from": "input",
       "to": "reference",
-      "label": "同一输入",
-      "variant": "default"
+      "variant": "default",
+      "label": "同一输入"
     },
     {
       "id": "reference-begin",
       "from": "reference",
       "to": "begin",
-      "label": "准备完毕",
-      "variant": "default"
+      "variant": "default",
+      "label": "准备完毕"
     },
     {
       "id": "begin-model",
       "from": "begin",
       "to": "model",
-      "label": "ORT 执行",
-      "variant": "default"
+      "variant": "default",
+      "label": "ORT 执行"
     },
     {
       "id": "model-end",
       "from": "model",
       "to": "end",
-      "label": "49 层完成",
-      "variant": "default"
+      "variant": "default",
+      "label": "49 层完成"
     },
     {
       "id": "model-launch",
       "from": "model",
       "to": "launch",
-      "label": "PL 层",
-      "variant": "default"
+      "variant": "default",
+      "label": "PL 层"
     },
     {
       "id": "launch-compute",
       "from": "launch",
       "to": "compute",
-      "label": "参数就绪",
-      "variant": "default"
+      "variant": "default",
+      "label": "参数就绪"
     },
     {
       "id": "compute-complete",
       "from": "compute",
       "to": "complete",
-      "label": "本层返回",
-      "variant": "default"
+      "variant": "default",
+      "label": "本层返回"
     },
     {
       "id": "complete-model",
       "from": "complete",
       "to": "model",
-      "label": "同步 Y / 反量化",
       "variant": "default",
-      "role": "return"
+      "role": "return",
+      "label": "同步 Y / 反量化"
     },
     {
       "id": "launch-fault",
@@ -457,30 +475,30 @@
       "id": "end-compare",
       "from": "end",
       "to": "compare",
-      "label": "生成结果",
-      "variant": "default"
+      "variant": "default",
+      "label": "生成结果"
     },
     {
       "id": "compare-info",
       "from": "compare",
       "to": "info",
-      "label": "保存后检查",
       "variant": "default",
-      "role": "return"
+      "role": "return",
+      "label": "保存后检查"
     },
     {
       "id": "info-pending",
       "from": "info",
       "to": "pending",
-      "label": "INFO 通过",
       "variant": "default",
-      "role": "return"
+      "role": "return",
+      "label": "INFO 通过"
     },
     {
       "id": "pending-next",
       "from": "pending",
       "to": "input",
-      "label": "是：下一图",
+      "label": "下一图",
       "variant": "default",
       "role": "return"
     },
@@ -488,33 +506,30 @@
       "id": "pending-close",
       "from": "pending",
       "to": "close",
-      "label": "否：结束本批",
-      "variant": "default"
+      "label": "结束本批",
+      "variant": "default",
+      "labelDy": 28
     },
     {
       "id": "close-stop",
       "from": "close",
       "to": "stop",
-      "label": "会话已关闭",
-      "variant": "default"
+      "variant": "default",
+      "label": "会话已关闭"
     },
     {
       "id": "stop-output",
       "from": "stop",
       "to": "output",
-      "label": "关闭证明通过",
-      "variant": "default"
+      "variant": "default",
+      "label": "关闭证明通过"
     }
   ],
   "mainPath": [
     "restore",
     "verify",
     "input",
-    "reference",
-    "begin",
-    "model",
-    "end",
-    "compare"
+    "reference"
   ],
   "cards": [
     {
@@ -530,7 +545,8 @@
       "title": "验收与计时边界",
       "items": [
         "每图先生成并保存比对 / 排名结果，再执行 INFO；这些结果尚待批次提交。",
-        "最终验收提交需要本批会话关闭、owner STOP 和设备关闭证明。"
+        "最终验收提交需要本批会话关闭、owner STOP 和设备关闭证明。",
+        "CPU 数值参考和逐位比对均在 Runner.run 计时之外执行。"
       ]
     },
     {

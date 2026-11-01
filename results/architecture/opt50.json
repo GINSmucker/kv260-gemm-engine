@@ -4,6 +4,18 @@
   "scope": "SOURCE_DIAGRAM_ARTIFACTS_AND_AUTOMATED_BROWSER_ONLY",
   "source_revision": "bd5d8cc056a12b19f757949324986079ea675b59",
   "archify_version": "3.2.0",
+  "presentation": {
+    "profile": "kv260-readable-16-20-28",
+    "renderer_adapter": {
+      "bytes": 3246,
+      "sha256": "ac80879c452c3a18a9c1f85182ec06c4dac9256f943c9cbee84a90ce20dee9d2"
+    },
+    "stylesheet": {
+      "bytes": 1845,
+      "sha256": "e4b694cee7376fd7d2903af5e14935047d99cdb43d61a60e35bd4ac021b54e70"
+    },
+    "isolated_renderer": true
+  },
   "hardware_accessed": false,
   "HLS_RTL_Vivado_board": "NOT RUN",
   "diagrams": [
@@ -16,18 +28,18 @@
         "browser-check": "pass"
       },
       "html": {
-        "bytes": 844353,
-        "sha256": "6ce89477f1759bf3a917780d951f9ae646cab3f5726f47c860108632526c44f2"
+        "bytes": 843473,
+        "sha256": "051a076e5a0056ead63fe610588b90a8be8d1375c462d4b76666a3138217d091"
       },
       "svg": {
-        "bytes": 327492,
-        "sha256": "af295d77e9526139651a3415c830d373ff97ea52918796611baed83ea85f0d61"
+        "bytes": 327017,
+        "sha256": "0bdba10800630971b2a5ca683be1e2fb98ae00d0942e294112217733fca44ea2"
       },
       "candidate": {
-        "bytes": 7974,
-        "sha256": "217341bd8bcccd7009c7e3df30423e2df228f12926ef7f6e2133e5ac80b24760"
+        "bytes": 7582,
+        "sha256": "c4f3b3d5c41337a8a0cd5430e66c219fada7fa09ff175f4277c527394bff5a8e"
       },
-      "receipt": ".test_build/.archify/architecture-opt50-20261101-142352-358914/system/system.finalize.json"
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-163904-380833/system/system.finalize.json"
     },
     {
       "diagram": "hardware",
@@ -38,18 +50,18 @@
         "browser-check": "pass"
       },
       "html": {
-        "bytes": 840815,
-        "sha256": "841ab3cba27ac4a7be65c76497116337da83592ca491dd7455ba99d9e7acabc1"
+        "bytes": 841158,
+        "sha256": "f44543631157e8e9d159b866ea9273150be768470cb89744b405baa08287e46f"
       },
       "svg": {
-        "bytes": 324314,
-        "sha256": "bea1efdff69401b78cfecf216b5d1a070dacc95285872d28ea83a428719d9f22"
+        "bytes": 324657,
+        "sha256": "f1407e73fe9c7b25a0066632b202d599f356099e3778c01310735c84ec0ec73f"
       },
       "candidate": {
-        "bytes": 6915,
-        "sha256": "c82cc51447b329978b4c8d269cc287356baf462f607a42985365878e4ed53e43"
+        "bytes": 6894,
+        "sha256": "770a46201e072798fd1a34a526c784bf3debd8066a4e3898df37d10a93f1cff6"
       },
-      "receipt": ".test_build/.archify/architecture-opt50-20261101-142352-358914/hardware/hardware.finalize.json"
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-163904-380833/hardware/hardware.finalize.json"
     },
     {
       "diagram": "software",
@@ -60,18 +72,18 @@
         "browser-check": "pass"
       },
       "html": {
-        "bytes": 865638,
-        "sha256": "c123cf348e37fcb1db9224c06ac7c7e0d40995b62864b54762202b2a83a86f00"
+        "bytes": 859719,
+        "sha256": "f1a3ae4d39511cb6a6150c798ddc0f8fb6be6a761bc240a354cdcca6ff664dfc"
       },
       "svg": {
-        "bytes": 347814,
-        "sha256": "9a9b7e455c5615d795e0e30d717363b676da486aa56c48bc5534d11e8a05b056"
+        "bytes": 341805,
+        "sha256": "230edea271f907c3d78f4d34a56de0d2d8373dd5c972ddd97a2c5dc1943ae702"
       },
       "candidate": {
-        "bytes": 13759,
-        "sha256": "513c633aec1fcec8093fe05c745cfe322e3bf281ef3a57f7c3dcb7eb3a47df67"
+        "bytes": 13651,
+        "sha256": "0d0d3c6e4532e1afd854d24ab57f43d40088ed1600dd72015528988ad876d9ba"
       },
-      "receipt": ".test_build/.archify/architecture-opt50-20261101-142352-358914/software/software.finalize.json"
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-163904-380833/software/software.finalize.json"
     },
     {
       "diagram": "shared-core",
@@ -82,18 +94,18 @@
         "browser-check": "pass"
       },
       "html": {
-        "bytes": 845594,
-        "sha256": "444e32dc293057a6ec7ad15a20f00db4777eada80d73e6b07298a9cd0f43a04e"
+        "bytes": 843356,
+        "sha256": "baf861ede768435958db8374a978116cc9906e93636943c6fcf132a4f4832000"
       },
       "svg": {
-        "bytes": 329084,
-        "sha256": "aecccde9f3cb4ecc7a3b0591cd6cf04693d7ea3dcc4b4ed49fabf69b9f395f3f"
+        "bytes": 326734,
+        "sha256": "1c359fcfbaa3fbb02262bc5c485c6456fcf9f4edab0e23e56413750a14d576c0"
       },
       "candidate": {
-        "bytes": 7817,
-        "sha256": "1286d12771fe88ec7558fb9d67782f9db4fb3d2260375de0f9937fce60f1189b"
+        "bytes": 7493,
+        "sha256": "52d017b448019798848d375051fd41e060d2f54ba1940462464491507a956c9f"
       },
-      "receipt": ".test_build/.archify/architecture-opt50-20261101-142352-358914/shared-core/shared-core.finalize.json"
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-163904-380833/shared-core/shared-core.finalize.json"
     }
   ],
   "report_figures": [
@@ -101,33 +113,33 @@
       "diagram": "system",
       "svg": {
         "bytes": 2989,
-        "sha256": "beff7c32ddf03ad9b696f15bd40019bca439e5ed982a63666278486b85f2bc5f"
+        "sha256": "7189eeb82130abea4dec7a30546947f7bf84c0ba308a6c3b7be63088c3a0fb2f"
       }
     },
     {
       "diagram": "hardware",
       "svg": {
         "bytes": 3534,
-        "sha256": "9d88bcb3f84a84d6cf4cf5ba5361051c358df7696889ec181f86995ef6c2c91e"
+        "sha256": "a4688896ee7a405a6a9b777f0d4ed46c7446f9ce73b63623e8c3a530486a09b4"
       }
     },
     {
       "diagram": "software",
       "svg": {
         "bytes": 4622,
-        "sha256": "53d6dd8ed010c6433a8c6429895bb815101a68bb9c9277a985e018223c728d5f"
+        "sha256": "663db963f5d2b0723e8940cc645074dbc938d7e3a785196d232b5dfd35b40ef2"
       }
     },
     {
       "diagram": "shared-core",
       "svg": {
         "bytes": 3533,
-        "sha256": "0939c1b047a7b32dbcd86ceb99f37b8561650680e246a8140a350cd1b44b3ff4"
+        "sha256": "0f60d2ff5f07aef8a17ff805c41f15cebe894d99b66e8aa26186ff90dbfc2dd6"
       }
     }
   ],
   "entry": {
-    "bytes": 20343,
-    "sha256": "c74e28551075cc4fd20d9f737233531de8c96e3b8ccc819d3bcb1f3689e11de5"
+    "bytes": 20335,
+    "sha256": "f0dde9de0cadaef84d58af9857c24f367e59d3bb160853db507c44177fa18211"
   }
 }

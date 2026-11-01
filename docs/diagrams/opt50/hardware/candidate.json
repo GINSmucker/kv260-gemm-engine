@@ -31,7 +31,8 @@
         "external": {
           "label": "输入来源"
         }
-      }
+      },
+      "mode": "hidden"
     }
   },
   "components": [
@@ -67,7 +68,7 @@
       "id": "ctrl",
       "type": "backend",
       "label": "控制 SmartConnect",
-      "sublabel": "HPM0 → GEMM / observer",
+      "sublabel": "HPM0 控制通路",
       "pos": [
         430,
         40
@@ -89,7 +90,7 @@
       "id": "gemm",
       "type": "backend",
       "label": "单一 OPT50 IP",
-      "sublabel": "Dense / Sparse · 共享阵列",
+      "sublabel": "Dense / Sparse 共用",
       "pos": [
         820,
         40
@@ -117,7 +118,7 @@
       "id": "observer",
       "type": "backend",
       "label": "AXI observer",
-      "sublabel": "完成、错误与排空观测",
+      "sublabel": "完成 · 排空观察",
       "pos": [
         430,
         250
@@ -145,7 +146,7 @@
       "id": "data",
       "type": "backend",
       "label": "数据 SmartConnect",
-      "sublabel": "gmem0 / 1 / 2 → 1 路",
+      "sublabel": "三个 AXI master",
       "pos": [
         820,
         460
@@ -173,7 +174,7 @@
       "id": "hp0",
       "type": "backend",
       "label": "PS HP0 端口",
-      "sublabel": "128 bit · DDR 访问入口",
+      "sublabel": "128 bit · 共享 DDR",
       "pos": [
         430,
         460
@@ -201,7 +202,7 @@
       "id": "ddr",
       "type": "database",
       "label": "DDR / 四个持久 BO",
-      "sublabel": "X · W_data · W_meta · Y",
+      "sublabel": "X/W_data/W_meta/Y",
       "pos": [
         40,
         460

@@ -31,7 +31,8 @@
         "external": {
           "label": "输入来源"
         }
-      }
+      },
+      "mode": "hidden"
     }
   },
   "components": [
@@ -39,7 +40,6 @@
       "id": "dense",
       "type": "database",
       "label": "mode=0 · Dense",
-      "sublabel": "完整 W · 不读取 W_meta",
       "pos": [
         40,
         40
@@ -60,8 +60,7 @@
     {
       "id": "sparse",
       "type": "database",
-      "label": "mode=1 · 2:4 Sparse",
-      "sublabel": "两值 + 每列位置码",
+      "label": "mode=1 · Sparse24",
       "pos": [
         40,
         280
@@ -88,8 +87,7 @@
     {
       "id": "weights",
       "type": "database",
-      "label": "片上权重与元数据",
-      "sublabel": "16 byte banks · BRAM",
+      "label": "权重与位置码缓存",
       "pos": [
         390,
         160
@@ -116,8 +114,7 @@
     {
       "id": "selector",
       "type": "backend",
-      "label": "共用取数与选择",
-      "sublabel": "Dense K 步 / Sparse K÷2 步",
+      "label": "共享取数与位置选择",
       "pos": [
         750,
         160
@@ -144,8 +141,7 @@
     {
       "id": "mac",
       "type": "backend",
-      "label": "唯一 32×16 MAC 阵列",
-      "sublabel": "512 个展开位置 · INT32 累加",
+      "label": "512 MAC（32×16）",
       "pos": [
         1110,
         160
@@ -173,7 +169,6 @@
       "id": "xbank",
       "type": "database",
       "label": "X 行缓存与四元组",
-      "sublabel": "每行读取 · 按列选择 INT8",
       "pos": [
         750,
         410
@@ -200,8 +195,7 @@
     {
       "id": "blocks",
       "type": "messagebus",
-      "label": "结果块缓冲",
-      "sublabel": "16 行 slab · 队列深度 2",
+      "label": "结果块缓存",
       "pos": [
         1110,
         410
@@ -228,8 +222,7 @@
     {
       "id": "writer",
       "type": "backend",
-      "label": "独立 Burst writer",
-      "sublabel": "DATAFLOW：计算与写回重叠",
+      "label": "共享 Burst 写回",
       "pos": [
         750,
         650
@@ -250,8 +243,7 @@
     {
       "id": "y",
       "type": "database",
-      "label": "DDR 中的 Y",
-      "sublabel": "紧凑 row-major INT32",
+      "label": "DDR 结果 Y",
       "pos": [
         390,
         650
@@ -334,7 +326,8 @@
       "title": "同一套计算硬件",
       "items": [
         "mode 决定步数和取数，乘法与累加源位置仅一处。",
-        "Dense / Sparse 是互斥权重格式；权重缓存和 32×16 阵列共用。"
+        "Dense / Sparse 是互斥权重格式；权重缓存和 32×16 阵列共用。",
+        "权重与位置码使用 16 banks BRAM；结果按 16 行 slab、深度 2 缓冲后写回。"
       ]
     },
     {

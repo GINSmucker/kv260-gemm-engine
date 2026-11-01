@@ -31,7 +31,8 @@
         "external": {
           "label": "输入来源"
         }
-      }
+      },
+      "mode": "hidden"
     }
   },
   "components": [
@@ -39,10 +40,10 @@
       "id": "image",
       "type": "external",
       "label": "图片输入",
-      "sublabel": "JPEG · 固定输入身份",
+      "sublabel": "JPEG 原图",
       "pos": [
-        40,
-        40
+        24,
+        24
       ],
       "size": [
         180,
@@ -61,10 +62,10 @@
       "id": "preprocess",
       "type": "backend",
       "label": "PS 图像预处理",
-      "sublabel": "RGB → 224×224 → NCHW",
+      "sublabel": "RGB → 224×224 张量",
       "pos": [
-        345,
-        40
+        280,
+        24
       ],
       "size": [
         210,
@@ -89,10 +90,10 @@
       "id": "ort",
       "type": "backend",
       "label": "PS 完整模型",
-      "sublabel": "49 Linear · 36 PL / 13 PS",
+      "sublabel": "36 PL / 13 PS",
       "pos": [
-        700,
-        40
+        580,
+        24
       ],
       "size": [
         220,
@@ -123,10 +124,10 @@
       "id": "classification",
       "type": "frontend",
       "label": "分类输出",
-      "sublabel": "1000 logits → Top1 / Top5",
+      "sublabel": "Top1 / Top5",
       "pos": [
-        1050,
-        40
+        890,
+        24
       ],
       "size": [
         190,
@@ -151,10 +152,10 @@
       "id": "plugin",
       "type": "backend",
       "label": "PS 量化与 PL 适配",
-      "sublabel": "逐行 INT8 · 36 次调用",
+      "sublabel": "INT8 · 36 次调用",
       "pos": [
-        700,
-        280
+        580,
+        210
       ],
       "size": [
         220,
@@ -179,10 +180,10 @@
       "id": "owner",
       "type": "backend",
       "label": "唯一 Native owner",
-      "sublabel": "控制 CU · 持有四个 BO",
+      "sublabel": "控制 CU · 四个 BO",
       "pos": [
-        345,
-        280
+        280,
+        210
       ],
       "size": [
         210,
@@ -207,13 +208,13 @@
       "id": "engine",
       "type": "backend",
       "label": "PL 共享计算引擎",
-      "sublabel": "Sparse24：12D + 24S；Dense：36D",
+      "sublabel": "Sparse24：12D+24S",
       "pos": [
-        40,
-        280
+        24,
+        210
       ],
       "size": [
-        230,
+        200,
         76
       ],
       "sources": [
@@ -235,10 +236,10 @@
       "id": "dequant",
       "type": "backend",
       "label": "PS 反量化与偏置",
-      "sublabel": "INT32 Y → FP32 激活",
+      "sublabel": "INT32 → FP32",
       "pos": [
-        1050,
-        520
+        890,
+        400
       ],
       "size": [
         230,
@@ -279,7 +280,7 @@
       "id": "ort-classify",
       "from": "ort",
       "to": "classification",
-      "label": "整图完成",
+      "label": "完成",
       "variant": "emphasis"
     },
     {
@@ -293,14 +294,13 @@
       "id": "plugin-owner",
       "from": "plugin",
       "to": "owner",
-      "label": "RUN 控制",
+      "label": "RUN",
       "variant": "emphasis"
     },
     {
       "id": "owner-engine",
       "from": "owner",
       "to": "engine",
-      "label": "MMIO 启动",
       "variant": "emphasis"
     },
     {
@@ -333,14 +333,6 @@
       "items": [
         "Y 经 DDR 共享 BO 返回；client 在完成响应后执行 FROM_DEVICE 同步。",
         "图中的返回箭头是逻辑数据依赖；不表示由 PL 直接输出分类。"
-      ]
-    },
-    {
-      "dot": "amber",
-      "title": "当前展示边界",
-      "items": [
-        "旧 H576 网页展示历史 Dense 数据；未接入当前 Sparse24 实时运行包。",
-        "当前实现为同步 batch=1 图片推理；摄像头和跨帧流水未接入。"
       ]
     }
   ]

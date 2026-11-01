@@ -14,6 +14,7 @@ class Figure:
         self.text(36, 77, f'源码 {revision[:7]} · 报告精简框图', 18)
 
     def text(self, x, y, value, size=24, anchor='start', bold=False):
+        size = 28 if size >= 30 else 20
         units = sum(1 if unicodedata.east_asian_width(c) in 'WF' else 0.58 for c in value)
         width = units*size
         left = x-width/2 if anchor == 'middle' else x
