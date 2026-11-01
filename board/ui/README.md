@@ -1,4 +1,10 @@
-# C 的 H576 可视化工作台
+# OPT50 最终成果与 H576 历史工作台
+
+在仓库根目录运行`pwsh -File ./start-final.ps1`，访问 **http://127.0.0.1:4179/**，可查看当前Dense/Sparse24的500张精度、195张性能曲线、原始事件耗时分解和四张架构图，下载逐图数据及报告SVG。该服务仅读取存档证据，不发送板端命令。需要已有PowerShell 7、Node.js 24或更高版本，无需安装依赖。
+
+`final-server.mjs`提供最终成果入口，`final-data.mjs`核对统计和逐图计时区间；历史工作台可通过`/legacy/#overview`访问。
+
+## H576 历史工作台
 
 在仓库根目录用PowerShell 7运行`pwsh -File ./start-workbench.ps1`，然后访问 **http://127.0.0.1:4178/#overview**。需要已有Node.js 24或更高版本，无需安装前端依赖。
 

@@ -2,6 +2,16 @@
 
 本页首先支持**无硬件的源码／证据复核和精确运行包还原**。板端快照保留原环境及历史门禁，不能把clone成功或文件PASS当成新设备可以直接START。
 
+已有下载资产时，可将下述核对和还原流程集中执行到一个新目录：
+
+```text
+python -B tools/rehearse_submission.py --assets /path/to/downloads --out .test_build/submission-rehearsal
+```
+
+资产目录须包含Sparse24、Dense36、layer02三个payload和paired500证据归档；输出父目录须存在，输出目录须尚不存在。脚本保留各检查日志和`result.json`，不会访问板卡。可通过`--compiler`指定已有、支持C++17及`<filesystem>`的编译器执行模拟后端自测；未提供时该项单列为`NOT RUN`。Vitis HLS 2020.2自带GCC 6.2不满足此要求。
+
+最终成果页使用`pwsh -File ./start-final.ps1`启动，默认地址http://127.0.0.1:4179/；见[网页使用指南](workbench.md)。
+
 ## 1. 检查源码与统计
 
 使用现有Python3.12，无需安装XRT或访问设备：

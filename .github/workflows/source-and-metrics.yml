@@ -17,4 +17,4 @@ jobs:
       - run: python -B tools/check_release.py
       - run: python -B tools/check_docs.py
       - run: python -B -m unittest discover -s tests -v
-      - run: node --test --test-isolation=none board/ui/tests/workbench.test.mjs board/ui/tests/charts.test.mjs
+      - run: node --test --test-isolation=none board/ui/tests/workbench.test.mjs board/ui/tests/charts.test.mjs board/ui/tests/final.test.mjs
