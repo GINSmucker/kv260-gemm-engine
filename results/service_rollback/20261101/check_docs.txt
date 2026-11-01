@@ -1,0 +1,1 @@
+{"status": "PASS", "local_links_checked": 117, "scope": "Current documentation only; original frozen snapshot docs retain historical paths", "hardware_accessed": false}

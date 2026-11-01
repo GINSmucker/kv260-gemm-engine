@@ -1,7 +1,7 @@
 {
   "schema": "opt50_supplemental_sources_v1",
   "base_main_commit": "10c8e6a9030f64cd9e2a100d48861643467f24bc",
-  "scope": "Source/evidence identities for historical assets, current KV260 LAB UI and separately validated model-only service policy; frozen HLS/C++ runtime/model and original recorded metrics retain their identities.",
+  "scope": "Source/evidence identities for historical assets, KV260 LAB UI, isolated optimization candidates and the restored original no-spinning service; frozen model/hardware and original metrics retain their identities.",
   "files": {
     "board/platform/input/observer/tb_f8_status.sv": {
       "bytes": 4466,
@@ -354,11 +354,11 @@
       "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
     },
     "board/service/backend.py": {
-      "bytes": 23205,
-      "sha256": "6c4cb424cc9c3899a5e91a2c81c5bce4b3f27886ef1f27ee258538e30639a620",
-      "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
+      "bytes": 21137,
+      "sha256": "2ab0d2080cf0e501f8e3f6eff63c0d051c64560eb6395c28ca6de088d5e51ce5",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
       "source_path": "board/service/backend.py",
-      "role": "Current Sparse24 supervisor: exact run-scoped PL worker spinning, original CPU reference/Native/preprocessing and external timing fields"
+      "role": "Current original Sparse24 supervisor with original no-spinning CPU4/PL4 runtime settings, preprocessing, Native owner and checks"
     },
     "board/service/cpu_optimizations.py": {
       "bytes": 4075,
@@ -389,11 +389,11 @@
       "role": "Main-site font inventory and browser validation at two viewports"
     },
     "board/runtime/candidates/final_opt/README.md": {
-      "bytes": 9320,
-      "sha256": "cf6dffed1faa72bcd8036ace786a77d162174effe97109eff1835976f4cb2e19",
-      "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
+      "bytes": 9433,
+      "sha256": "b21673a20992e7312247aed5296e5536319c0b9c71c54c26aee2081b8941364f",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
       "source_path": "board/runtime/candidates/final_opt/README.md",
-      "role": "Current model-only service policy, measurement boundaries and reproduction constraints"
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
     },
     "board/runtime/candidates/final_opt/adopt.py": {
       "bytes": 3619,
@@ -563,33 +563,26 @@
       "source_path": "board/runtime/candidates/final_opt/worker.py",
       "role": "Model-only final policy, isolated diagnostics or unadopted candidates; frozen model and hardware unchanged"
     },
-    "board/service/runtime_options.py": {
-      "bytes": 904,
-      "sha256": "2a44030109b4f858251141f2f484712dbed20f2556cf6ef9f102a55e275dfefa",
-      "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
-      "source_path": "board/service/runtime_options.py",
-      "role": "Model-only final policy, isolated diagnostics or unadopted candidates; frozen model and hardware unchanged"
-    },
     "docs/live-latency.md": {
-      "bytes": 6514,
-      "sha256": "7e5d5a75e85b02c112fc336a1325964616c82dddd12f04ba9b92633f4d20c8d3",
-      "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
+      "bytes": 6563,
+      "sha256": "928292d6e22a3f411e970639119f95952fa46f7f62c36b0d8285bf935ad46d90",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
       "source_path": "docs/live-latency.md",
-      "role": "Current model-only service policy, measurement boundaries and reproduction constraints"
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
     },
     "docs/measurement.md": {
-      "bytes": 6306,
-      "sha256": "45f88e5b1afe350149bfb071a83438fbed157973c175a5e530347bf5337d86a5",
-      "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
+      "bytes": 6485,
+      "sha256": "e1ebba4bd85e2a6559af8881463021097311415e45396213bed46f2a0f55ee28",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
       "source_path": "docs/measurement.md",
-      "role": "Current model-only service policy, measurement boundaries and reproduction constraints"
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
     },
     "docs/verification.md": {
-      "bytes": 4267,
-      "sha256": "286c50c18dc357846781e5e210ff0733b70ad6d12513ec2be0d63599bbc9fc27",
-      "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
+      "bytes": 4568,
+      "sha256": "a6faa5739d3bc4c2bf0678f0588970bbf3e705fa3f88064b26ebf39fed11d15f",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
       "source_path": "docs/verification.md",
-      "role": "Current model-only service policy, measurement boundaries and reproduction constraints"
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
     },
     "results/final_optimization/20261101/adoption_receipt.json": {
       "bytes": 481,
@@ -613,11 +606,11 @@
       "role": "Independent final-optimization evidence or original-source fixture; measurement and binary scopes remain explicit in each record"
     },
     "results/final_optimization/20261101/candidate_evaluation.json": {
-      "bytes": 14843,
-      "sha256": "6a1e0372d2b5dda355dae77b248b7f0b099079824672d865561dea1346f0e7fa",
-      "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
+      "bytes": 14896,
+      "sha256": "e6e5c6592b4bacb5980a85693f0f809f9dc99dedb54ce3043cdc33a01fa69efa",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
       "source_path": "results/final_optimization/20261101/candidate_evaluation.json",
-      "role": "Independent final-optimization evidence or original-source fixture; measurement and binary scopes remain explicit in each record"
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
     },
     "results/final_optimization/20261101/complete_request_review.json": {
       "bytes": 53828,
@@ -949,11 +942,11 @@
       "role": "Model-only final policy, isolated diagnostics or unadopted candidates; frozen model and hardware unchanged"
     },
     "tools/package_final_optimization.py": {
-      "bytes": 5043,
-      "sha256": "4fb603be7a2c47e944d9637141b92c7e6b9f35c44295dc0f0b1dd19c0bbcaf5f",
-      "source_commit": "2fb613b7c80dceb0462753d9b8196acbe4d994a5",
+      "bytes": 5350,
+      "sha256": "dd5fed238bc049d5f69e4b25d9d8c1d653929a1512b41e58aa518016b96b84b1",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
       "source_path": "tools/package_final_optimization.py",
-      "role": "Model-only final policy, isolated diagnostics or unadopted candidates; frozen model and hardware unchanged"
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
     },
     "board/runtime/candidates/final_opt/check_dynamic_cpu.py": {
       "bytes": 2117,
@@ -982,6 +975,48 @@
       "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
       "source_path": "board/runtime/candidates/final_opt/check_service_quality.py",
       "role": "Bounded candidate validation, actual deployed-pair quality or host CPU checks; hardware scope explicitly separated"
+    },
+    "results/service_rollback/20261101/after.json": {
+      "bytes": 14716,
+      "sha256": "6e2c5ee1c490247ca1cc984ddd50939e17e886d9ba6cf70dd532c717777f33a2",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
+      "source_path": "results/service_rollback/20261101/after.json",
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
+    },
+    "results/service_rollback/20261101/before.json": {
+      "bytes": 16144,
+      "sha256": "6660d086381ddda0cf90a6733346abb342b6fb771f8a42fdf400f03bf7dbfb3f",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
+      "source_path": "results/service_rollback/20261101/before.json",
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
+    },
+    "results/service_rollback/20261101/restore.json": {
+      "bytes": 651,
+      "sha256": "1c6ea5b6bdcecc3e58051cbef95e374340c2b3e252e65ffe067cf66082c6f356",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
+      "source_path": "results/service_rollback/20261101/restore.json",
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
+    },
+    "results/service_rollback/20261101/restored-before-reboot.json": {
+      "bytes": 13886,
+      "sha256": "59766cdfd6bf1f4f5d6cc552a094a688d3c6ce7c5c719c2aa7b907156e79e7de",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
+      "source_path": "results/service_rollback/20261101/restored-before-reboot.json",
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
+    },
+    "results/service_rollback/20261101/stop.json": {
+      "bytes": 17433,
+      "sha256": "0e7559a8b87d0e73875ef110d2f5893b705c7eb9b9cd8ca9261d83616502d38e",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
+      "source_path": "results/service_rollback/20261101/stop.json",
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
+    },
+    "results/service_rollback/20261101/ui-connect.json": {
+      "bytes": 496,
+      "sha256": "32b4d8741596e89f19b4619c7501167aa62b64f8fed0b647c9ae6a3139f8c5b6",
+      "source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
+      "source_path": "results/service_rollback/20261101/ui-connect.json",
+      "role": "Original no-spinning service, explicit non-default experimental records, restoration proof or matching current documentation"
     }
   }
 }

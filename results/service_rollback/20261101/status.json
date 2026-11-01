@@ -267,5 +267,21 @@
       "bytes": 496,
       "sha256": "32b4d8741596e89f19b4619c7501167aa62b64f8fed0b647c9ae6a3139f8c5b6"
     }
+  },
+  "implementation_source_commit": "9e161496edd7cb713e476662b8e758602f3637cb",
+  "checks": {
+    "source_release": "PASS",
+    "frozen_files_checked": 330,
+    "supplemental_files_checked": 145,
+    "documentation_links": "PASS",
+    "local_links_checked": 117,
+    "unit_tests": "PASS",
+    "tests_run": 22,
+    "withdrawn_candidate_package_guard": "PASS",
+    "logs": [
+      "check_release.txt",
+      "check_docs.txt",
+      "check_tests.txt"
+    ]
   }
 }
