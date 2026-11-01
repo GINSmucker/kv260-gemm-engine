@@ -51,6 +51,6 @@ with zipfile.ZipFile(a.out) as z:
  assert z.testzip() is None
  for name,wanted in manifest['files'].items():assert pin(z.read(name))==wanted
 raw=a.out.read_bytes();digest=hashlib.sha256(raw).hexdigest()
-a.out.with_suffix(a.out.suffix+'.sha256').write_text(digest+'  '+a.out.name+'\n',encoding='ascii')
-a.out.with_suffix('.verification.json').write_text(json.dumps({'status':'PASS','archive':pin(raw),'members_verified':len(manifest['files']),'source_commit':head,'runtime_profile':manifest['default_profile'],'hardware_accessed':False},indent=2)+'\n',encoding='utf-8')
+a.out.with_suffix(a.out.suffix+'.sha256').write_text(digest+'  '+a.out.name+'\n',encoding='utf-8',newline='\n')
+a.out.with_suffix('.verification.json').write_text(json.dumps({'status':'PASS','archive':pin(raw),'members_verified':len(manifest['files']),'source_commit':head,'runtime_profile':manifest['default_profile'],'hardware_accessed':False},indent=2)+'\n',encoding='utf-8',newline='\n')
 print(json.dumps({'status':'PASS','archive':str(a.out),'bytes':len(raw),'sha256':digest,'verified_members':len(manifest['files'])}))
