@@ -8,7 +8,8 @@ const mime={'.html':'text/html; charset=utf-8','.svg':'image/svg+xml','.json':'a
 const downloads={
   '/api/final/paired.csv':'results/board500/paired195_cpu_pl.csv',
   '/api/final/comparison.csv':'results/board500/per_image_comparison.csv',
-  '/api/final/timing.json':'results/board500/timing_breakdown.json'
+  '/api/final/timing.json':'results/board500/timing_breakdown.json',
+  '/api/final/live-latency.json':'results/live_demo/python_service_20261101.json'
 };
 
 export async function serveFinal(req,res,route) {

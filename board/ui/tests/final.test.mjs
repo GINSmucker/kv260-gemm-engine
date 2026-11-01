@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {finalData,validateFinalData} from '../final-data.mjs';
 import {createFinalServer} from '../final-server.mjs';
-import {finalOverview,finalPerformance,finalArchitecture,pairedChart} from '../public/final-lab.js';
+import {finalOverview,finalPerformance,finalArchitecture,pairedChart,liveServicePerformance} from '../public/final-lab.js';
 
 const csv=await readFile(new URL('../../../results/board500/paired195_cpu_pl.csv',import.meta.url),'utf8');
 
@@ -31,7 +31,7 @@ test('LAB entry aliases share the final dashboard and serve verified downloads',
   const index=await (await fetch(origin+'/')).text();
   assert.match(index,/KV260 LAB/);assert.match(index,/\/final-lab.css/);assert.match(index,/\/app.js/);
   for(const path of ['/legacy/','/legacy','/index.html','/final.html']) assert.equal(await (await fetch(origin+path)).text(),index,path);
-  for(const path of ['/app.js','/final-lab.js','/final-lab.css','/api/final','/api/final/paired.csv','/api/final/timing.json','/api/final/comparison.csv','/architecture/report/software.svg','/architecture/software/software.html']) {
+  for(const path of ['/app.js','/final-lab.js','/final-lab.css','/api/final','/api/final/paired.csv','/api/final/timing.json','/api/final/comparison.csv','/api/final/live-latency.json','/architecture/report/software.svg','/architecture/software/software.html']) {
     const response=await fetch(origin+path);assert.equal(response.status,200,path);assert.ok((await response.text()).length>100,path);
   }
   assert.equal((await fetch(origin+'/api/final',{method:'POST'})).status,405);
@@ -39,6 +39,18 @@ test('LAB entry aliases share the final dashboard and serve verified downloads',
   assert.equal((await fetch(origin+'/api/board/health')).status,423);
   assert.equal((await fetch(origin+'/architecture/%2e%2e%2f%2e%2e%2fREADME.md')).status,404);
   assert.match((await fetch(origin+'/architecture/software/software.html')).headers.get('content-security-policy'),/script-src 'self' 'unsafe-inline'/);
+});
+
+test('live request comparison retains original dimensions, complete latency and the slower first request',async()=>{
+  const report=JSON.parse(await readFile(new URL('../../../results/live_demo/python_service_20261101.json',import.meta.url),'utf8'));
+  const html=liveServicePerformance(report);
+  assert.equal(report.image.resized_before_upload,false);
+  assert.equal(report.comparison.warm_samples_per_phase,5);
+  assert.equal(report.validation.cross_version_inputs_and_all_outputs_byte_identical,true);
+  assert.match(html,/完整请求（本机往返）/);assert.match(html,/固定 100 ms 查询/);
+  assert.match(html,/首张含初始化/);assert.match(html,/未改善/);
+  assert.match(html,/Native \/ 配置不变/);
+  assert.equal(liveServicePerformance(null),'');
 });
 
 test('LAB final views retain all 195 points and distinguish historical evidence and timing boundaries',async()=>{
