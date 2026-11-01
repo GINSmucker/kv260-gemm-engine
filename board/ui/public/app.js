@@ -3,6 +3,7 @@ import { boardPrediction, boardProgress, boardLayer, boardBenchmark } from './li
 import {overview} from './presentation.js';
 import {routeMap} from './charts.js';
 import {finalOverview,finalPerformance,finalArchitecture,bindFinalPerformance} from './final-lab.js';
+import {createSparse24Live} from './sparse24-live.js';
 
 const paths = {
   image: '<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 16 5-5 4 4 3-3 6 6"/>',
@@ -17,7 +18,7 @@ const paths = {
   terminal: '<path d="m4 6 5 5-5 5m8 1h8"/>', network: '<rect x="8" y="2" width="8" height="6" rx="1"/><path d="M12 8v5M4 13h16M4 13v3m8-3v3m8-3v3"/><rect x="1" y="16" width="6" height="5" rx="1"/><rect x="9" y="16" width="6" height="5" rx="1"/><rect x="17" y="16" width="6" height="5" rx="1"/>',
 };
 const icon = (name) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] ?? paths.box}</svg>`;
-const pages = [['overview', '成果总览', 'chart'], ['performance', '性能与耗时', 'clock'], ['architecture', '系统架构', 'box'], ['inference', '推理工作台', 'image'], ['layer', '线性层实验', 'layers'], ['benchmark', '测评演示', 'chart'], ['history', '运行记录', 'history'], ['archive', '历史实测', 'history'], ['connection', '连接与诊断', 'plug']];
+const pages = [['overview', '成果总览', 'chart'], ['performance', '性能与耗时', 'clock'], ['architecture', '系统架构', 'box'], ['inference', '推理工作台', 'image'], ['board-history', '板端记录', 'history'], ['demo', '样例演示', 'image'], ['layer', '线性层实验', 'layers'], ['benchmark', '测评演示', 'chart'], ['history', '本机记录', 'history'], ['archive', '历史实测', 'history'], ['connection', '连接与诊断', 'plug']];
 const samples = [['bridge', '建筑图卡'], ['dog', '动物图卡'], ['pattern', '结构图卡']];
 const statusNames = { VALIDATING: '校验输入', PREPROCESSING: '预处理', RUNNING: '执行中', POSTPROCESSING: '组织结果', SUCCEEDED: '已完成', FAILED: '执行失败', CANCELLING: '正在停止', CANCELLED: '已停止', IMPORTED: '已导入' };
 const backendNames = { fp32: 'FP32 参考演示', w8a8: 'W8A8 参考演示', pl49: '49 层 PL 演示' };
@@ -30,6 +31,8 @@ state.source = 'DEMO'; state.boardHealth = null; state.boardConfigured = false; 
 document.documentElement.dataset.reducedMotion = String(state.motionReduced);
 try { const saved = JSON.parse(localStorage.getItem('kv260-ui-profiles') ?? '{}'); Object.assign(state, { endpoint: saved.endpoint ?? state.endpoint, port: saved.port ?? state.port, baud: saved.baud ?? state.baud }); } catch { /* corrupt preferences are not executable */ }
 const screen = document.querySelector('#screen');
+const sparsePage=()=>['inference','board-history'].includes(state.page)||state.page==='connection'&&!state.boardConfigured;
+const sparseLive=createSparse24Live(()=>{if(sparsePage())render();});
 const isBusy = () => Boolean(state.active || state.submitting);
 const currentJob = (type) => state.jobs.find(x => x.id === state.selected[type]);
 const allRecords = () => [...state.imports, ...state.jobs];
@@ -91,7 +94,7 @@ function boardConnectionPage() {
 function connectionPage() {
   if (state.source==='BOARD') return boardConnectionPage();
   const serial = state.connectionTab === 'serial';
-  return pageHead('DEVICE / 05', '连接与诊断', '配置下一次连接，查看本机状态与受控诊断记录。') + demoStrip() + `<div class="connection-grid"><section class="card"><div class="card-head"><span class="card-title">连接配置</span><span class="badge badge-demo">HARDWARE LOCKED</span></div><div class="tabs" role="tablist" aria-label="连接方式"><button class="tab ${!serial ? 'active' : ''}" data-action="tab-network" role="tab" aria-selected="${!serial}">网口连接</button><button class="tab ${serial ? 'active' : ''}" data-action="tab-serial" role="tab" aria-selected="${serial}">USB 串口</button></div><div class="card-body"><div class="lock-panel">${icon('shield')}<div><strong>真实连接暂未启用</strong>B 会话正在使用板卡。此页只保存配置，不执行 DNS、SSH、网口探测或串口打开。</div></div>${serial ? `<div class="field"><label for="serial-port">串口名称</label><input id="serial-port" value="${e(state.port)}" placeholder="COM11" data-field="port"><small>手动配置；未枚举或占用任何COM口。</small></div><div class="form-grid"><div class="field"><label for="baud">波特率</label><select id="baud" data-field="baud">${[9600,57600,115200,230400].map(x => `<option ${Number(state.baud) === x ? 'selected' : ''}>${x}</option>`).join('')}</select></div><div class="field"><label>帧格式</label><input value="8N1 · 无流控" disabled></div></div><div class="field"><label>应用协议</label><input value="NDJSON · 待板端代理验证" disabled><small>Linux UART控制台不是模型API；后续需要独立代理。</small></div>` : `<div class="field"><label for="endpoint">板端服务地址</label><input id="endpoint" value="${e(state.endpoint)}" placeholder="http://kv260:8080" data-field="endpoint"><small>HTTP应用服务地址。保存不访问该主机。</small></div><div class="field"><label>设备状态</label><input value="NOT_CONNECTED / NOT_QUERIED" disabled></div><div class="field"><label>传输用途</label><span class="subtle">图片、任务与结果的主通道；C 后端就绪后再接入。</span></div>`}<div class="button-row">${btn('save-profile','保存配置','check','btn-primary')}${btn('protected-connect','验证保护锁','shield')}</div><p class="input-hint">不保存密码。界面操作不能解除本轮设备保护。</p></div></section><section class="card"><div class="card-head"><span class="card-title">诊断日志</span><span class="badge">LOCAL ONLY</span></div><div class="card-body"><div class="diagnostic-actions">${btn('diag-snapshot','本机快照','refresh','btn-sm')}${btn('diag-model_identity','模型身份示例','box','btn-sm')}${btn('diag-owner_status','Owner状态示例','shield','btn-sm')}</div><div class="terminal-toolbar"><select data-field="logLevel" aria-label="日志级别">${['ALL','INFO','WARN','ERROR'].map(v => `<option ${v === state.logLevel ? 'selected' : ''}>${v}</option>`).join('')}</select><div class="button-row">${btn('clear-logs','清空视图','x','btn-sm btn-quiet')}${btn('export-logs','导出','download','btn-sm')}</div></div><div class="terminal" id="terminal" role="log" aria-label="本机演示日志">${logsMarkup()}</div><div class="diagnostic-summary"><div>板卡连接<strong>NOT_CONNECTED</strong></div><div>Owner真实查询<strong>NOT_QUERIED</strong></div><div>设备访问<strong>0</strong></div></div></div></section></div>`;
+  return pageHead('DEVICE / 05', '连接与诊断', '配置下一次连接，查看本机状态与受控诊断记录。') + demoStrip() + `<div class="connection-grid"><section class="card"><div class="card-head"><span class="card-title">连接配置</span><span class="badge badge-demo">HARDWARE LOCKED</span></div><div class="tabs" role="tablist" aria-label="连接方式"><button class="tab ${!serial ? 'active' : ''}" data-action="tab-network" role="tab" aria-selected="${!serial}">网口连接</button><button class="tab ${serial ? 'active' : ''}" data-action="tab-serial" role="tab" aria-selected="${serial}">USB 串口</button></div><div class="card-body"><div class="lock-panel">${icon('shield')}<div><strong>真实连接暂未启用</strong>当前是旧协议样例配置。此页只保存参数，不执行 DNS、SSH、网口探测或串口打开。</div></div>${serial ? `<div class="field"><label for="serial-port">串口名称</label><input id="serial-port" value="${e(state.port)}" placeholder="COM11" data-field="port"><small>手动配置；未枚举或占用任何COM口。</small></div><div class="form-grid"><div class="field"><label for="baud">波特率</label><select id="baud" data-field="baud">${[9600,57600,115200,230400].map(x => `<option ${Number(state.baud) === x ? 'selected' : ''}>${x}</option>`).join('')}</select></div><div class="field"><label>帧格式</label><input value="8N1 · 无流控" disabled></div></div><div class="field"><label>应用协议</label><input value="NDJSON · 待板端代理验证" disabled><small>Linux UART控制台不是模型API；后续需要独立代理。</small></div>` : `<div class="field"><label for="endpoint">板端服务地址</label><input id="endpoint" value="${e(state.endpoint)}" placeholder="http://kv260:8080" data-field="endpoint"><small>HTTP应用服务地址。保存不访问该主机。</small></div><div class="field"><label>设备状态</label><input value="NOT_CONNECTED / NOT_QUERIED" disabled></div><div class="field"><label>传输用途</label><span class="subtle">图片、任务与结果的主通道；C 后端就绪后再接入。</span></div>`}<div class="button-row">${btn('save-profile','保存配置','check','btn-primary')}${btn('protected-connect','验证保护锁','shield')}</div><p class="input-hint">不保存密码。界面操作不能解除本轮设备保护。</p></div></section><section class="card"><div class="card-head"><span class="card-title">诊断日志</span><span class="badge">LOCAL ONLY</span></div><div class="card-body"><div class="diagnostic-actions">${btn('diag-snapshot','本机快照','refresh','btn-sm')}${btn('diag-model_identity','模型身份示例','box','btn-sm')}${btn('diag-owner_status','Owner状态示例','shield','btn-sm')}</div><div class="terminal-toolbar"><select data-field="logLevel" aria-label="日志级别">${['ALL','INFO','WARN','ERROR'].map(v => `<option ${v === state.logLevel ? 'selected' : ''}>${v}</option>`).join('')}</select><div class="button-row">${btn('clear-logs','清空视图','x','btn-sm btn-quiet')}${btn('export-logs','导出','download','btn-sm')}</div></div><div class="terminal" id="terminal" role="log" aria-label="本机演示日志">${logsMarkup()}</div><div class="diagnostic-summary"><div>板卡连接<strong>NOT_CONNECTED</strong></div><div>Owner真实查询<strong>NOT_QUERIED</strong></div><div>设备访问<strong>0</strong></div></div></div></section></div>`;
 }
 function render() {
   if(state.boardHealth?.model_protocol==='h576_v5'&&state.catalog?.layers[state.layerIndex]?.backend==='CPU')state.layerBackend='cpu';
@@ -100,9 +103,10 @@ function render() {
   const caret = focused && document.activeElement.tagName === 'INPUT' ? document.activeElement.selectionStart : null;
   document.querySelector('#page-name').textContent = pages.find(x => x[0] === state.page)[1];
   document.querySelector('#navigation').innerHTML = pages.map(([id,name,glyph]) => `<a href="#${id}" aria-label="${name}" title="${name}" class="nav-link ${state.page === id ? 'active' : ''}" ${state.page === id ? 'aria-current="page"' : ''}>${icon(glyph)}<span>${name}</span>${id === 'history' && allRecords().length ? `<span class="nav-count">${allRecords().length}</span>` : ''}</a>`).join('');
-  screen.innerHTML = ({overview:()=>finalOverview(state.finalData), performance:()=>finalPerformance(state.finalData), architecture:()=>finalArchitecture(state.finalData), archive:()=>'<div class="lab-history-note">历史 H576 Dense 实测 · 本页的 3925 张、5000 次调用及三点曲线属于历史记录。当前交付结果见“成果总览”和“性能与耗时”。</div>'+overview(state.presentation,state), inference: inferencePage, layer: layerPage, benchmark: benchmarkPage, history: historyPage, connection: connectionPage })[state.page]();
+  screen.innerHTML = ({overview:()=>finalOverview(state.finalData), performance:()=>finalPerformance(state.finalData), architecture:()=>finalArchitecture(state.finalData), archive:()=>'<div class="lab-history-note">历史 H576 Dense 实测 · 本页的 3925 张、5000 次调用及三点曲线属于历史记录。当前交付结果见“成果总览”和“性能与耗时”。</div>'+overview(state.presentation,state), inference:()=>sparseLive.inferenceView(), 'board-history':()=>sparseLive.historyView(), demo:inferencePage, layer: layerPage, benchmark: benchmarkPage, history: historyPage, connection:()=>state.boardConfigured?connectionPage():sparseLive.connectionView() })[state.page]();
+  if(sparsePage())sparseLive.bind(screen);
   if(state.page==='performance' && state.finalData)bindFinalPerformance(screen,state.finalData,state);
-  if(!['overview','performance','architecture','archive'].includes(state.page))screen.insertAdjacentHTML('afterbegin', `<div class="mode-bar"><strong>运行来源</strong><button class="btn btn-sm ${state.source==='BOARD'?'btn-primary':''}" data-action="source-board" ${isBusy()||!state.boardConfigured?'disabled':''}>真实板端</button><button class="btn btn-sm ${state.source==='DEMO'?'btn-primary':''}" data-action="source-demo" ${isBusy()?'disabled':''}>界面演示 · 固定样例</button><span>${state.source==='BOARD'?(state.boardHealth?.pl_ready?'BOARD / ARM+PL':'BOARD / ARM'):'DEMO / 不运行模型'}</span></div>`);
+  if(!['overview','performance','architecture','archive'].includes(state.page)&&!sparsePage())screen.insertAdjacentHTML('afterbegin', `<div class="mode-bar"><strong>运行来源</strong><button class="btn btn-sm ${state.source==='BOARD'?'btn-primary':''}" data-action="source-board" ${isBusy()||!state.boardConfigured?'disabled':''}>真实板端</button><button class="btn btn-sm ${state.source==='DEMO'?'btn-primary':''}" data-action="source-demo" ${isBusy()?'disabled':''}>界面演示 · 固定样例</button><span>${state.source==='BOARD'?(state.boardHealth?.pl_ready?'BOARD / ARM+PL':'BOARD / ARM'):'DEMO / 不运行模型'}</span></div>`);
   document.querySelector('.source-badge').innerHTML = `<i></i> ${state.source==='BOARD'?'BOARD':'DEMO'}`;
   document.querySelector('.device-caption').textContent = state.boardHealth ? (state.boardHealth.pl_ready?'KV260 已连接 / ARM+PL':'KV260 已连接 / ARM') : 'KV260 未连接';
   document.querySelector('.side-bottom strong').textContent = state.boardHealth ? '网口SSH通道已连接' : '板端通道未连接';
@@ -115,8 +119,16 @@ function render() {
     document.querySelector('.side-bottom strong').textContent=state.page==='archive'?'H576 历史实测':'OPT50 最终实测归档';
     document.querySelector('.side-bottom span').textContent='只读展示 · 不发送板端命令';
   }
-  if(state.page==='inference'&&currentJob('inference')?.result?.route_manifest)screen.insertAdjacentHTML('beforeend',routeMap(currentJob('inference').result.route_manifest));
-  if (state.source==='BOARD' && state.page==='inference') {
+  if(sparsePage()) {
+    const live=sparseLive.snapshot();
+    document.querySelector('.source-badge').innerHTML='<i></i> BOARD / Sparse24';
+    document.querySelector('.device-caption').textContent=live.connected?`板卡 ${live.status?.stage??'状态待刷新'}`:'请先连接板卡';
+    document.querySelector('.side-bottom strong').textContent='Sparse24 实测通道';
+    document.querySelector('.side-bottom span').textContent=live.pending?'查询原请求 · 不重发':live.connected?'已连接现有板端服务':'等待显式连接';
+    document.querySelector('.app-footer span:last-child').textContent='真实结果来自板端回执 / 不回退到样例';
+  }
+  if(state.page==='demo'&&currentJob('inference')?.result?.route_manifest)screen.insertAdjacentHTML('beforeend',routeMap(currentJob('inference').result.route_manifest));
+  if (state.source==='BOARD' && state.page==='demo') {
     screen.querySelector('[aria-label="演示后端"]').setAttribute('aria-label','实际板端后端');
     screen.querySelector('.stats-grid .stat-card:last-child label').textContent='真实推理回执';
     screen.querySelector('.stats-grid .stat-card:last-child .stat-value').innerHTML=`${state.jobs.filter(x=>x.source==='BOARD'&&x.type==='inference'&&x.status==='SUCCEEDED').length}<small>BOARD</small>`;
@@ -179,7 +191,7 @@ async function poll() {
       if (state.active !== id) break;
       const index = state.jobs.findIndex(x => x.id === id); if (index >= 0) state.jobs[index] = job;
       if (terminal.has(job.status)) { state.active = null; toast(job.status === 'SUCCEEDED' ? (job.source==='BOARD'?'实际板端计算完成，已收到模型回执。':'固定样例播放完成。') : job.status === 'CANCELLED' ? '停止已确认，未生成完成结果。' : job.error?.message ?? '任务失败', job.status === 'FAILED' ? 'error' : ''); }
-      if (['inference','layer','benchmark','history'].includes(state.page)) render();
+      if (['demo','layer','benchmark','history'].includes(state.page)) render();
       if (state.active) await new Promise(resolve => setTimeout(resolve, 320));
     }
   } catch (err) { state.error = { code: err.code ?? 'LOCAL_SERVICE_UNREACHABLE', message: '服务连接中断，实际完成状态未知。未重发或回退；恢复连接后刷新记录。' }; if (state.source==='BOARD') state.boardHealth=null; state.active = null; toast(state.error.message, 'error'); render(); }
@@ -288,5 +300,5 @@ try {
   if (state.boardConfigured) { try { state.boardHealth=await api('/api/board/health'); } catch(err) { state.error={code:err.code,message:err.message}; } }
   const active = state.jobs.find(x => !terminal.has(x.status));
   if (active) { state.active = active.id; state.selected[active.type] = active.id; if (active.type === 'inference') { const sample = samples.find(x => x[0] === active.options.sample); state.input = { ...active.options.input, sample: sample?.[0], url: sample ? `/assets/${sample[0]}.svg` : '/assets/pattern.svg' }; state.backend = active.options.backend; } }
-  changePage(); poll();
+  changePage(); poll(); sparseLive.init();
 } catch (err) { screen.innerHTML = `<div class="alert"><strong>本机服务未就绪</strong>${e(err.message)}<p>请启动 ui/server.mjs，再重新加载页面。没有设备访问。</p></div>`; }

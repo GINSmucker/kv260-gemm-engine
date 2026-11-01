@@ -68,7 +68,7 @@ def main():
         command('python_tests', [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-v'])
         command('web_tests', ['node', '--test', '--test-isolation=none',
                              'board/ui/tests/workbench.test.mjs', 'board/ui/tests/charts.test.mjs',
-                             'board/ui/tests/final.test.mjs'])
+                             'board/ui/tests/final.test.mjs', 'board/ui/tests/sparse24.test.mjs'])
         if args.compiler:
             for name in ('sparse24','dense36'):
                 command(name+'_cpu_selftests', [sys.executable, '-B', 'tools/run_runtime_selftests.py',

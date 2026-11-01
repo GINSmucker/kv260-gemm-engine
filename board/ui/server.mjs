@@ -6,6 +6,8 @@ import { AppError, JobStore, POLICY, MODEL, LAYERS, validateProfile } from './do
 import { BoardClient } from './board-client.mjs';
 import { presentationData } from './presentation.mjs';
 import { serveFinal } from './final-api.mjs';
+import { Sparse24Client } from './sparse24-client.mjs';
+import { serveSparse24 } from './sparse24-api.mjs';
 
 const PUBLIC = path.resolve(fileURLToPath(new URL('./public/', import.meta.url)));
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json; charset=utf-8' };
@@ -18,6 +20,7 @@ async function body(req) {
 export function createWorkbenchServer({ clock, boardUrl } = {}) {
   const store = new JobStore(clock); const profiles = {};
   const board = boardUrl ? new BoardClient(boardUrl) : null;
+  const sparse24 = new Sparse24Client();
   const server = http.createServer(async (req, res) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Cache-Control', 'no-store');
@@ -29,6 +32,7 @@ export function createWorkbenchServer({ clock, boardUrl } = {}) {
       const host = (req.headers.host ?? '').split(':')[0];
       if (!['127.0.0.1', 'localhost'].includes(host)) throw new AppError('HOST_BLOCKED', '本服务仅支持loopback地址。', 403);
       const url = new URL(req.url, 'http://127.0.0.1'); const p = url.pathname;
+      if (await serveSparse24(req,res,url,sparse24,body)) return;
       if (await serveFinal(req,res,p)) return;
       if (p === '/api/presentation' && req.method === 'GET') {
         try { return json(200,await presentationData()); }
@@ -86,7 +90,10 @@ export function createWorkbenchServer({ clock, boardUrl } = {}) {
       if (!full.startsWith(PUBLIC + path.sep) || !MIME[path.extname(full)]) throw new AppError('NOT_FOUND', '页面不存在。', 404);
       let data; try { data = await readFile(full); } catch { throw new AppError('NOT_FOUND', '页面不存在。', 404); }
       res.writeHead(200, { 'Content-Type': MIME[path.extname(full)] }); res.end(data);
-    } catch (error) { json(error.status ?? 500, { error: { code: error.code ?? 'INTERNAL_ERROR', message: error.status ? error.message : '本机服务内部错误。' }, source: 'DEMO', hardwareContacted: false }); }
+    } catch (error) {
+      const sparse=String(req.url).startsWith('/api/sparse24/');
+      json(error.status ?? 500, { error: { code: error.code ?? 'INTERNAL_ERROR', message: error.status ? error.message : '本机服务内部错误。' }, ...(sparse?{source:'BOARD',automaticReplay:false,submission_not_sent:error.noGraphSubmitted===true}:{source:'DEMO',hardwareContacted:false}) });
+    }
   });
   return { server, store };
 }

@@ -1,0 +1,67 @@
+{
+  "CPU_logits_sha256": "b372af12d84ca376339645e074a5751211deedd987698452e32fc287a6a88f7b",
+  "CPU_reference_ms": 292.95031,
+  "PL_logits_sha256": "b372af12d84ca376339645e074a5751211deedd987698452e32fc287a6a88f7b",
+  "Runner_run_ms": 137.97128,
+  "accuracy_for_uploaded_image": "UNLABELED_NOT_MEASURED",
+  "bitwise_mismatches": 0,
+  "boot_id": "17031257-09a3-4577-a2f8-a0df216c4d07",
+  "decoded_RGB_sha256": "7ea597e8e074804953cb53370d84f951f1ea86a80e76c361fdd1ac2424ec9963",
+  "device_closed": false,
+  "execution_source": "REAL_FPGA_OPT50_SPARSE24",
+  "image_sha256": "97ccc7d357a48349484124b1c9d59ac87938d7cac3cce19c24a141721a2d911c",
+  "input_sha256": "d3c4f9ef2ef642505ded2f205cfaaf6664c3ad6786ed6b9909016e3cca464bf7",
+  "native": {
+    "PL_dense": 12,
+    "PL_sparse": 24,
+    "START_commands_issued": 36,
+    "completed_PL_calls": 36,
+    "device_closed": false,
+    "native_END_verified": true,
+    "physical_PL_starts": "NOT_INDEPENDENTLY_MEASURED",
+    "postrun_buffer_checks_verified": true,
+    "run_id": 1
+  },
+  "native_proof_sha256": "1c3681a198e0db83dc33e3e10295f0b2c429dee63c8af711052d638e7fcab9f8",
+  "preprocessing_ms": 170.302854,
+  "probability_scope": "Stable softmax over all 1000 logits; not calibrated confidence",
+  "request_id": "b35cbe68ce68fa1279b7272d4c1f2435",
+  "request_work_ms": 5106.956598,
+  "run_id": 1,
+  "scope": "Runner.run includes PS work, BEGIN/END and client sync; excludes preprocessing, setup, CPU reference and INFO; not pure PL latency",
+  "session": "19dac452f549",
+  "source_model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+  "stage": "PASS",
+  "top5": [
+    {
+      "index": 0,
+      "logit": 9.487064361572266,
+      "name": "tench, Tinca tinca",
+      "probability": 0.9030088191299365
+    },
+    {
+      "index": 389,
+      "logit": 3.6230804920196533,
+      "name": "barracouta, snoek",
+      "probability": 0.0025644613339089566
+    },
+    {
+      "index": 955,
+      "logit": 3.2452309131622314,
+      "name": "jackfruit, jak, jack",
+      "probability": 0.0017575114707740404
+    },
+    {
+      "index": 997,
+      "logit": 2.568760633468628,
+      "name": "bolete",
+      "probability": 0.0008935335391586187
+    },
+    {
+      "index": 1,
+      "logit": 2.5580217838287354,
+      "name": "goldfish, Carassius auratus",
+      "probability": 0.0008839893553326447
+    }
+  ]
+}
