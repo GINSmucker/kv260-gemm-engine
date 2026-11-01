@@ -27,7 +27,7 @@
         "bytes": 7974,
         "sha256": "217341bd8bcccd7009c7e3df30423e2df228f12926ef7f6e2133e5ac80b24760"
       },
-      "receipt": ".test_build/.archify/architecture-opt50-20261031-141754-633468/system/system.finalize.json"
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-142352-358914/system/system.finalize.json"
     },
     {
       "diagram": "hardware",
@@ -49,7 +49,7 @@
         "bytes": 6915,
         "sha256": "c82cc51447b329978b4c8d269cc287356baf462f607a42985365878e4ed53e43"
       },
-      "receipt": ".test_build/.archify/architecture-opt50-20261031-141754-633468/hardware/hardware.finalize.json"
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-142352-358914/hardware/hardware.finalize.json"
     },
     {
       "diagram": "software",
@@ -71,7 +71,7 @@
         "bytes": 13759,
         "sha256": "513c633aec1fcec8093fe05c745cfe322e3bf281ef3a57f7c3dcb7eb3a47df67"
       },
-      "receipt": ".test_build/.archify/architecture-opt50-20261031-141754-633468/software/software.finalize.json"
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-142352-358914/software/software.finalize.json"
     },
     {
       "diagram": "shared-core",
@@ -93,7 +93,7 @@
         "bytes": 7817,
         "sha256": "1286d12771fe88ec7558fb9d67782f9db4fb3d2260375de0f9937fce60f1189b"
       },
-      "receipt": ".test_build/.archify/architecture-opt50-20261031-141754-633468/shared-core/shared-core.finalize.json"
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-142352-358914/shared-core/shared-core.finalize.json"
     }
   ],
   "report_figures": [
@@ -127,7 +127,7 @@
     }
   ],
   "entry": {
-    "bytes": 20284,
-    "sha256": "113a4019d5672ba5acc2b3cb5e07c0ea32406f15ab70525500d13c1ffc8240a2"
+    "bytes": 20343,
+    "sha256": "c74e28551075cc4fd20d9f737233531de8c96e3b8ccc819d3bcb1f3689e11de5"
   }
 }

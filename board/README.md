@@ -4,7 +4,7 @@
 
 `runtime/snapshots/`保存实际受检源码；模型／case二进制由外部资产补齐。原清单不因移入Git而改写，详见 [运行包索引](runtime/README.md)。
 
-[ui/](ui/README.md)提供KV260 LAB统一展示入口，包含当前Dense/Sparse24成果、耗时分解、系统架构及H576历史数据；[使用指南](../docs/workbench.md)说明启动、下载与演示边界。本机工作台的实时协议未接入当前Sparse24运行包。
+[ui/](ui/README.md)提供KV260 LAB统一展示入口，包含当前Dense/Sparse24成果、耗时分解、系统架构及H576历史数据，并通过独立HTTP适配层连接已有Sparse24服务进行JPEG推理；[使用指南](../docs/workbench.md)说明连接、上传、结果校验和演示边界。该接入不修改板端程序、计算核或固件。
 
 `platform/tests/tb_opt50_board_logic.sv`与`platform/input/observer/tb_f8_status.sv`保留原平台脚本引用的两份测试台；[原实现报告](../results/README.md#原opt50硬件实现报告)提供配对时序和资源证据。新目录中未重跑仿真或实现，仍需原配方声明的外部输入。
 

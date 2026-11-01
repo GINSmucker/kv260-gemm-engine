@@ -25,11 +25,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/domain.mjs": {
-      "bytes": 11202,
-      "sha256": "b1aed28f6dffbb70a6e50097409b87dc351511e76831c3f797bf0403ced81061",
-      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "bytes": 11245,
+      "sha256": "984d374828c7999e331731e9a7804176b3ed0e0c30b532c1c5ed53640438dab6",
+      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
       "source_path": "board/ui/domain.mjs",
-      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
     },
     "board/ui/h576-contract.mjs": {
       "bytes": 2562,
@@ -60,11 +60,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/app.js": {
-      "bytes": 55354,
-      "sha256": "912ce5833d8b303f3d34c7858c28599084e743891cb84b4d4ecd780b80760f20",
-      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "bytes": 56572,
+      "sha256": "73b59972adbe4ff78b127dfa791be0cb17b147cc03dfad9b73ac7deb1ff2a356",
+      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
       "source_path": "board/ui/public/app.js",
-      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
     },
     "board/ui/public/assets/bridge.svg": {
       "bytes": 1669,
@@ -95,11 +95,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/index.html": {
-      "bytes": 2137,
-      "sha256": "33e648f536d7cd064dcbcb13c80f094b48eb50a05ec76ab47931bf75d747c4dc",
-      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "bytes": 2186,
+      "sha256": "24c5bb3ccc4213aa112a3376259d92d564c197987935c122866a001758396e18",
+      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
       "source_path": "board/ui/public/index.html",
-      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
     },
     "board/ui/public/live-view.js": {
       "bytes": 10008,
@@ -130,11 +130,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/server.mjs": {
-      "bytes": 10626,
-      "sha256": "3cf9f1f1e553aac2d6082dd177456cfc146ef5cb6821eb0f49a8c0918f9c28d6",
-      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "bytes": 11016,
+      "sha256": "9f19ced01959a7c078d0d60a9050d799efe50af95cafa721bf24c6f99cf55368",
+      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
       "source_path": "board/ui/server.mjs",
-      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
     },
     "board/ui/tests/charts.test.mjs": {
       "bytes": 4276,
@@ -324,6 +324,34 @@
       "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
       "source_path": "start-final.ps1",
       "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+    },
+    "board/ui/sparse24-api.mjs": {
+      "bytes": 1861,
+      "sha256": "d7d9a622231ed65d558efad3d3bb7cd7f84146dc84f8245dce12313674ebe6cb",
+      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
+      "source_path": "board/ui/sparse24-api.mjs",
+      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
+    },
+    "board/ui/sparse24-client.mjs": {
+      "bytes": 8485,
+      "sha256": "fa2dc2be677345753e464c79f2c2e25eab341e8a4dc4051bf6aa7e8a56510189",
+      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
+      "source_path": "board/ui/sparse24-client.mjs",
+      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
+    },
+    "board/ui/public/sparse24-live.js": {
+      "bytes": 18622,
+      "sha256": "30b9db0d12d29bf3a29b5176280f1ca36d3b777177f179a949405b28984ab22e",
+      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
+      "source_path": "board/ui/public/sparse24-live.js",
+      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
+    },
+    "board/ui/public/sparse24-live.css": {
+      "bytes": 516,
+      "sha256": "1de671b9ce9482bce4f204fa14919510622e06437f7f13f232e23e5312428545",
+      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
+      "source_path": "board/ui/public/sparse24-live.css",
+      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
     }
   }
 }
