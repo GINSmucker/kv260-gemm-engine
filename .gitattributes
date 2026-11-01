@@ -25,6 +25,7 @@ docs/provenance/** -text -whitespace
 
 # Preserve source bytes for KV260 LAB and SHA-bound historical display receipts.
 /start-workbench.ps1 -text
+/start-final.ps1 -text
 board/ui/** -text -whitespace
 results/model_planning/h576_closeout_20261016_01/** -text -whitespace
 results/model_planning/v5_h576_fair_20261016_02/** -text -whitespace
