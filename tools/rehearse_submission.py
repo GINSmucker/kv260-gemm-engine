@@ -22,9 +22,15 @@ def main():
     need(not out.exists() and out.parent.is_dir(), 'exclusive new output under an existing parent required')
     out.mkdir()
     records = []
+    revision = None
+    if (ROOT/'.git').exists() and shutil.which('git'):
+        git = subprocess.run(['git','rev-parse','HEAD'], cwd=ROOT, capture_output=True, text=True)
+        if git.returncode == 0:
+            revision = git.stdout.strip()
     result = {'schema': 'opt50_submission_rehearsal_v1', 'status': 'FAIL', 'steps': records,
               'hardware_accessed': False, 'HLS_RTL_Vivado_PL': 'NOT RUN',
-              'source_commit': subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()}
+              'source_commit': revision,
+              'source_identity': 'Git revision when available; frozen file identities are independently checked.'}
 
     def command(name, argv):
         run = subprocess.run(argv, cwd=ROOT, capture_output=True, timeout=240)

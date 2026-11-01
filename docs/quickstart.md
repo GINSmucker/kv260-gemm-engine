@@ -5,6 +5,7 @@
 已有下载资产时，可将下述核对和还原流程集中执行到一个新目录：
 
 ```text
+python -c "from pathlib import Path; Path('.test_build').mkdir(exist_ok=True)"
 python -B tools/rehearse_submission.py --assets /path/to/downloads --out .test_build/submission-rehearsal
 ```
 
