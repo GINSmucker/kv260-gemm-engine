@@ -1,0 +1,236 @@
+{
+  "schema": "opt50_submission_verification_v1",
+  "client_date": "2026-11-01",
+  "status": "PASS",
+  "scope": "Clean-checkout software/assets rehearsal and ARM device-free tests; current board service observed read-only.",
+  "source_commit": "14ba7daa1c82e5df1c44b3215489d2b557defd9f",
+  "clean_checkout_rehearsal": {
+    "schema": "opt50_submission_rehearsal_v1",
+    "status": "PASS",
+    "steps": [
+      {
+        "name": "restore_sparse24",
+        "status": "PASS",
+        "files": 159
+      },
+      {
+        "name": "restore_dense36",
+        "status": "PASS",
+        "files": 116
+      },
+      {
+        "name": "restore_layer02",
+        "status": "PASS",
+        "files": 29
+      },
+      {
+        "name": "390_native_timing_receipts",
+        "status": "PASS"
+      },
+      {
+        "name": "docs",
+        "status": "PASS",
+        "exit_code": 0
+      },
+      {
+        "name": "python_tests",
+        "status": "PASS",
+        "exit_code": 0
+      },
+      {
+        "name": "web_tests",
+        "status": "PASS",
+        "exit_code": 0
+      },
+      {
+        "name": "compiled_cpu_selftests",
+        "status": "NOT RUN",
+        "reason": "No C++17 compiler specified; device-free compiled tests are separate."
+      }
+    ],
+    "hardware_accessed": false,
+    "HLS_RTL_Vivado_PL": "NOT RUN",
+    "source_commit": "14ba7daa1c82e5df1c44b3215489d2b557defd9f",
+    "source_checks": {
+      "status": "PASS",
+      "frozen_files_checked": 330,
+      "archived_main_files_checked": 35,
+      "frozen_bundles": 6,
+      "supplemental": {
+        "files_checked": 40,
+        "website_modules_checked": 11,
+        "platform_testbenches_checked": 2,
+        "historical_reports_checked": 6
+      },
+      "external_payload_files": 125,
+      "external_payloads_present": false,
+      "hardware_accessed": false,
+      "scope": "Git source identities,layout and declared metrics; no asset restoration,HLS or board execution"
+    },
+    "assets": {
+      "sparse24-payload.tar.gz": {
+        "bytes": 20895756,
+        "sha256": "42426becdb78ad90698f2402a02cc86b340434f25abec7efd4ec324ff52cee06"
+      },
+      "dense36-payload.tar.gz": {
+        "bytes": 24724030,
+        "sha256": "120050090eb0e4c013fedfaf1419bdec447cd71a591b376dc7752d0533516285"
+      },
+      "layer02-payload.tar.gz": {
+        "bytes": 483811,
+        "sha256": "e56d6adf2acb41ce12e9698a0568c9e154f006efcd983a99e8dbad16c43dc8a3"
+      },
+      "paired500-evidence.tar.gz": {
+        "bytes": 21246214,
+        "sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b"
+      }
+    },
+    "saved_logits_review": {
+      "status": "LOCAL_INDEPENDENT_SAVED_LOGITS_AND_PAIRED_METRICS_PASS",
+      "archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+      "images": 500,
+      "CPU_PL_bitwise_mismatches": {
+        "Dense": 0,
+        "Sparse": 0
+      },
+      "FP32_values_compared_per_model": 500000,
+      "labeled_correct_counts": {
+        "Dense": {
+          "top1": 353,
+          "top5": 452
+        },
+        "Sparse": {
+          "top1": 357,
+          "top5": 461
+        }
+      },
+      "same_scheduler195_latency": {
+        "Dense_PS_PL": {
+          "samples": 195,
+          "mean_ms": 143.49397835897435,
+          "median_ms": 140.687517,
+          "p95_ms": 163.4353736,
+          "min_ms": 138.804299,
+          "max_ms": 173.090981
+        },
+        "Sparse_PS_PL": {
+          "samples": 195,
+          "mean_ms": 136.5884096974359,
+          "median_ms": 133.127861,
+          "p95_ms": 160.2989576,
+          "min_ms": 130.571686,
+          "max_ms": 162.95879
+        }
+      },
+      "Dense_mean_over_Sparse_mean": 1.0505575010122405,
+      "Dense_full500_CPU_reference": {
+        "samples": 500,
+        "mean_ms": 307.74455281,
+        "median_ms": 299.9249595,
+        "p95_ms": 363.44402905000004,
+        "min_ms": 292.117992,
+        "max_ms": 384.402595
+      },
+      "hardware_accessed": false,
+      "scope": "Independent standard-library saved-tensor ranking and metric recomputation. Native execution/closure evidence remains the original board acceptance program proof."
+    }
+  },
+  "ARM_device_free_tests": {
+    "architecture": "aarch64",
+    "compiler": "g++-13 (Ubuntu 13.2.0-23ubuntu4) 13.2.0",
+    "bundles": {
+      "sparse24": {
+        "status": "PASS",
+        "tests": [
+          {
+            "name": "model_core",
+            "status": "PASS",
+            "source": {
+              "bytes": 9808,
+              "sha256": "ee412d2ae02f15528979958b3c1b25462722c0bab9c7277c1af4998cc446f239"
+            },
+            "stdout": "PACK_HASH_AND_ALL49_CANONICAL_WQ_EQUIVALENCE_PASS\nRESIDENT_NATIVE_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\nMODEL_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\n"
+          },
+          {
+            "name": "performance_core",
+            "status": "PASS",
+            "source": {
+              "bytes": 6616,
+              "sha256": "b2d4ca7a1e1c6f2a43a9f1d523ac33b63e6dda6919bb2fb721ec9639a057b199"
+            },
+            "stdout": "PERFORMANCE_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\n"
+          }
+        ],
+        "model_manifest": {
+          "bytes": 80704,
+          "sha256": "91ed1cd0a8b55cfde7e1a82403f879f1e225ae4c96cc47272f8dd92304a19f60"
+        },
+        "hardware_accessed": false,
+        "scope": "Native x86/host fake-backend tests of restored source,all49 canonical weights and bounded owner protocol; not ARM compilation or board execution"
+      },
+      "dense36": {
+        "status": "PASS",
+        "tests": [
+          {
+            "name": "model_core",
+            "status": "PASS",
+            "source": {
+              "bytes": 9790,
+              "sha256": "8216de2500e7c3d8b2d828f41942403867b4d093ffda5728dc0f7e7d4e5bf698"
+            },
+            "stdout": "PACK_HASH_AND_ALL49_CANONICAL_WQ_EQUIVALENCE_PASS\nRESIDENT_NATIVE_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\nMODEL_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\n"
+          },
+          {
+            "name": "performance_core",
+            "status": "PASS",
+            "source": {
+              "bytes": 6699,
+              "sha256": "a9fab00d10bd4b9640f285d9318d0385510e002d3c4cf24b97c1737171645fe7"
+            },
+            "stdout": "PERFORMANCE_CORE_SELF_TEST_PASS_NO_HARDWARE_ACCESS\n"
+          }
+        ],
+        "model_manifest": {
+          "bytes": 41420,
+          "sha256": "f86d25186f583c54fa7739af93756c229dd35047b044ebb3ecf2fd43a107d384"
+        },
+        "hardware_accessed": false,
+        "scope": "Native x86/host fake-backend tests of restored source,all49 canonical weights and bounded owner protocol; not ARM compilation or board execution"
+      }
+    },
+    "scope": "Freshly compiled model_core/performance_core CPU mock tests only; no owner, XRT or PL access."
+  },
+  "windows_cpp17_attempt": {
+    "status": "FAIL",
+    "compiler": "Vitis HLS 2020.2 GCC 6.2.0",
+    "error": "fatal error: filesystem: No such file or directory",
+    "resolution": "Required compiled device-free tests completed on existing ARM GCC13; Windows compiler and runtime sources unchanged."
+  },
+  "board_read_only_observation": {
+    "status": "PASS",
+    "hostname": "kria",
+    "boot_id": "204d7ef0-847c-46fb-8759-055f282bf895",
+    "stage": "READY",
+    "reported_selftest_PL_calls": 36,
+    "reported_selftest_bitwise_mismatches": 0,
+    "reported_source_model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+    "scope": "Existing service status, not a PL run initiated by this rehearsal.",
+    "observed_board_wall_clock": "2025-03-17T15:31:19+00:00",
+    "wall_clock_matches_client": false
+  },
+  "new_PL_START_commands": 0,
+  "HLS_RTL_Vivado_or_new_PL_execution": "NOT RUN",
+  "kernel_and_frozen_runtime_bytes": "PASS",
+  "python_tests": 12,
+  "web_tests": 19,
+  "browser_checks": {
+    "status": "PASS",
+    "curve_switch": true,
+    "sample500": true,
+    "actual_csv_download_sha256": "74393f19fe5637b412bee4936108dc03a3b69eec152c6d73472591292fdfa7c3"
+  },
+  "platform_asset_identity": {
+    "bytes": 7811233,
+    "sha256": "1aac145bd43508a6c91d7d6d922ecd229386f7e2db4a69900a06a349206a6700"
+  }
+}
