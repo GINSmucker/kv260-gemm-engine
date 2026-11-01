@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "mode": "original",
+  "trial_only": true,
+  "requires_new_boot": true,
+  "service_started": false,
+  "changed_files": {
+    "backend.py": {
+      "bytes": 21137,
+      "sha256": "2ab0d2080cf0e501f8e3f6eff63c0d051c64560eb6395c28ca6de088d5e51ce5"
+    },
+    "source/kernel.cpp": {
+      "bytes": 21745,
+      "sha256": "091fd1ff85d0c4778a6e2bf703061f1758668be85248a7f523f62829a95f3bdf"
+    },
+    "build/opt50_model_owner": {
+      "bytes": 466312,
+      "sha256": "558ee34bd2e86e0fa1d9399a801181687c01b58ca2b5b5cb0e300b9a7d521d36"
+    }
+  },
+  "rollback_pairing": "/var/lib/opt50-final-20261101/original_service/pairing.json"
+}

@@ -3,7 +3,7 @@
   "date": "2026-11-01",
   "timezone": "Asia/Shanghai",
   "status": "PASS",
-  "scope": "Model-only thread policy adopted and actual deployed195 raw-output review passed; outside-Runner candidates not adopted",
+  "scope": "Archived candidate diagnostics and trials; spinning adoption withdrawn by user, current service restored to original for demonstration",
   "source_at_start": "7959a2566dc9e18df7f829a676ea2198c14b2268",
   "source_before_optimization_commit": "81fc346d5af176de0abaaaece4a729cd74700c11",
   "branch": "codex/opt50-final-optimization-20261101",
@@ -13,21 +13,7 @@
   ],
   "user_UI_files_changed_by_this_task": false,
   "current_default_installation_status": "PASS",
-  "final_adoption_status": "PASS",
-  "runtime_identity": {
-    "backend_sha256": "6c4cb424cc9c3899a5e91a2c81c5bce4b3f27886ef1f27ee258538e30639a620",
-    "runtime_options_sha256": "2a44030109b4f858251141f2f484712dbed20f2556cf6ef9f102a55e275dfefa",
-    "native_owner_sha256": "558ee34bd2e86e0fa1d9399a801181687c01b58ca2b5b5cb0e300b9a7d521d36",
-    "plugin_sha256": "f9db657924ddd757394deb105d743f4fc9ae6650799ddc45a64d1f40a246168a",
-    "kernel_sha256": "091fd1ff85d0c4778a6e2bf703061f1758668be85248a7f523f62829a95f3bdf",
-    "model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
-    "model_manifest_sha256": "91ed1cd0a8b55cfde7e1a82403f879f1e225ae4c96cc47272f8dd92304a19f60",
-    "firmware_uuid": "fd96539d-4cbc-f732-7694-0f0236ca1cf3",
-    "metadata_sha256": "715688e666adf813d0bd087c2dd385f571927d22ec9fae9967db20de3d2b8551",
-    "design_MHz": 125,
-    "CPU_kHz": 1333333,
-    "current_boot_id": "bb645378-c52f-4a4d-b857-6bc2c8235d2a"
-  },
+  "final_adoption_status": "FAIL",
   "environment": {
     "ARM_OS": "Ubuntu24.04 aarch64 kernel6.8.0-1015-xilinx",
     "compiler": "g++13.2.0",
@@ -59,23 +45,6 @@
     "parallel_preprocessing_equivalent_images": 500,
     "status": "PASS",
     "report": "model_review.json"
-  },
-  "actual_service_regression": {
-    "status": "PASS",
-    "images": 195,
-    "original_ordinals_1based": "306..500",
-    "classes": 98,
-    "FP32_logits_compared": 195000,
-    "bitwise_mismatches": 0,
-    "preprocessing_equivalent_images": 195,
-    "closed_service_sessions": 4,
-    "boot_id": "bb645378-c52f-4a4d-b857-6bc2c8235d2a",
-    "service_quality_receipt": {
-      "bytes": 53162,
-      "sha256": "0afd4f4e59651af8924bfcdd7f129e418536b901db0138a797be09f8364d2e32"
-    },
-    "report": "service_quality_review.json",
-    "scope": "Actual deployed original service owner/plugin, distinct from model-window binaries; fixed500 model validation remains separate"
   },
   "complete_request_comparison": {
     "status": "PASS",
@@ -145,7 +114,7 @@
     }
   },
   "rollback": "Complete original pair at /var/lib/opt50-final-20261101/original_service; normal service stop, zero device users, paired restore and new normal boot required",
-  "default_profile": "exact-run-scoped-spin-model-only-v1",
+  "default_profile": "original-cpu4-pl4-no-spinning",
   "adoption_receipt": {
     "bytes": 481,
     "sha256": "1de99e3cc0f0b98e49520675527b11bf4b73b238f30d021e784f310afa03d4ee"
@@ -163,5 +132,48 @@
     "bitwise_mismatches": 0,
     "complete_request_gain_claimed": false
   },
-  "implementation_source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02"
+  "implementation_source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
+  "final_adoption_reason": "Withdrawn by user: increased CPU time and no established full-request net benefit",
+  "evaluated_candidate_runtime_identity": {
+    "backend_sha256": "6c4cb424cc9c3899a5e91a2c81c5bce4b3f27886ef1f27ee258538e30639a620",
+    "runtime_options_sha256": "2a44030109b4f858251141f2f484712dbed20f2556cf6ef9f102a55e275dfefa",
+    "native_owner_sha256": "558ee34bd2e86e0fa1d9399a801181687c01b58ca2b5b5cb0e300b9a7d521d36",
+    "plugin_sha256": "f9db657924ddd757394deb105d743f4fc9ae6650799ddc45a64d1f40a246168a",
+    "kernel_sha256": "091fd1ff85d0c4778a6e2bf703061f1758668be85248a7f523f62829a95f3bdf",
+    "model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+    "model_manifest_sha256": "91ed1cd0a8b55cfde7e1a82403f879f1e225ae4c96cc47272f8dd92304a19f60",
+    "firmware_uuid": "fd96539d-4cbc-f732-7694-0f0236ca1cf3",
+    "metadata_sha256": "715688e666adf813d0bd087c2dd385f571927d22ec9fae9967db20de3d2b8551",
+    "design_MHz": 125,
+    "CPU_kHz": 1333333,
+    "current_boot_id": "bb645378-c52f-4a4d-b857-6bc2c8235d2a"
+  },
+  "evaluated_candidate_actual_service_regression": {
+    "status": "PASS",
+    "images": 195,
+    "original_ordinals_1based": "306..500",
+    "classes": 98,
+    "FP32_logits_compared": 195000,
+    "bitwise_mismatches": 0,
+    "preprocessing_equivalent_images": 195,
+    "closed_service_sessions": 4,
+    "boot_id": "bb645378-c52f-4a4d-b857-6bc2c8235d2a",
+    "service_quality_receipt": {
+      "bytes": 53162,
+      "sha256": "0afd4f4e59651af8924bfcdd7f129e418536b901db0138a797be09f8364d2e32"
+    },
+    "report": "service_quality_review.json",
+    "scope": "Actual deployed original service owner/plugin, distinct from model-window binaries; fixed500 model validation remains separate"
+  },
+  "current_deployment": {
+    "status": "PASS",
+    "report": "../../service_rollback/20261101/status.json",
+    "boot_id": "fbd3b4e5-d4fe-4ba0-81b2-6816d187d718",
+    "profile": "original-cpu4-pl4-no-spinning",
+    "installation_receipt": {
+      "bytes": 10051,
+      "sha256": "3e77658a879425a7165d563df43703fe255a02915bf267eae529c0dbd514eb75"
+    },
+    "stage": "READY"
+  }
 }

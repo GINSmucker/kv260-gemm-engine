@@ -47,6 +47,8 @@ python -B tools/analyze_timing.py --archive /path/to/paired500-evidence.tar.gz
 
 ## 同模型线程策略的独立对照
 
+以下为非默认自旋候选的实验结果。当前展示服务使用原关闭自旋的配置；这些模型收益不代表当前默认配置或完整请求的加速成绩。
+
 [模型验证](../results/final_optimization/20261101/model_review.json)使用固定第306–500张输入、同一个Sparse24模型和未改变的fd96539d固件。原设置、Run后停止自旋、动态分块三臂共585图；每张每臂一次，分五个39图组并调整顺序。CPU参考与INFO逐图保留，初始化和INFO位于Runner之外；不启用新增C++诊断或ORT profiler。线程数保持4/1，主线程CPU0、工作线程CPU1–3，图优化关闭。
 
 | Runner.run，ms | 原设置 | 运行后停止自旋 |

@@ -37,7 +37,7 @@
   ],
   "selected_thread_policy": {
     "status": "PASS",
-    "adoption": "PASS; model-only final installed pair validated on fixed195 actual service requests; original Native and RGB preprocessing retained",
+    "adoption": "Withdrawn by user; non-default experimental candidate. Original no-spinning service restored for demonstration.",
     "policy": {
       "intra_threads": 4,
       "inter_threads": 1,
@@ -345,7 +345,8 @@
     "prior_tail_ms": 233.872899,
     "tail_scope": "Latest195 scoped max143.178 vs original145.368ms; earlier233.873ms remains in the report, with scheduler wait observed and trigger unknown",
     "actual_service_review": "service_quality_review.json",
-    "adoption_receipt": "adoption_receipt.json"
+    "adoption_receipt": "adoption_receipt.json",
+    "current_deployment": "../../service_rollback/20261101/status.json"
   },
   "dynamic_block4": {
     "status": "PASS",

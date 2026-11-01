@@ -23,7 +23,6 @@ import time
 from common import APP, STATE, RUN, VENV, MODEL_SHA, Ledger, create, encoded, need, pin, replace, receive, send
 from management import Admin
 from cpu_optimizations import ExactBundleAudit, preprocess as exact_preprocess
-from runtime_options import pl_options
 
 STOP = threading.Event()
 
@@ -83,7 +82,7 @@ class Session:
         self.plan = {'schema': 'opt50_demo_session_v1', 'token': self.token, 'boot_id': service.boot,
                      'created_monotonic_ns': self.created, 'sample_count': 50,
                      'total_START_budget': 1800, 'source_model_sha256': MODEL_SHA,
-                     'measurement_profile': 'demo-live-exact-runscoped-v1', 'ORT_intra_spinning': 1, 'ORT_force_spinning_stop': 1, 'ORT_dynamic_block_base': 0}
+                     'measurement_profile': 'demo-live-cpu4-pl4-v1'}
         create(self.root / 'plan.json', encoded(self.plan))
 
     def initialize(self):
@@ -124,7 +123,7 @@ class Session:
         # Retain the object even if initialization makes an ambiguous owner contact.
         self.runner = s.runtime.ResidentRunner.__new__(s.runtime.ResidentRunner)
         self.runner.__init__(model, APP / 'build/libopt50_model.so', self.ex / 'runtime.sock',
-                             max_runs=50, checked_bundle=s.bundle, options=pl_options(s.runtime.dependencies()[1],1,force_stop=True))
+                             max_runs=50, checked_bundle=s.bundle)
         create(self.root / 'ready.json', encoded({'owner_pid': self.owner.pid, 'boot_id': s.boot}))
 
     def admission(self):
@@ -142,57 +141,41 @@ class Session:
 
     def infer(self, image, folder):
         s = self.service
-        infer_started = time.perf_counter_ns()
-        admission_started = infer_started
         self.admission()
-        admission_ms = (time.perf_counter_ns()-admission_started)/1e6
         run = self.completed + 1
         cpu_start = time.perf_counter_ns()
         cpu = s.cpu.run(None, {'image': image})[0]
         cpu_ms = (time.perf_counter_ns()-cpu_start)/1e6
-        admission_started = time.perf_counter_ns()
         self.admission()
-        admission_ms += (time.perf_counter_ns()-admission_started)/1e6
-        intent_started = time.perf_counter_ns()
         create(folder / 'graph_intent.json', encoded({'session': self.token, 'run_id': run,
                'boot_id': s.boot, 'expected_PL_calls': 36}))
-        intent_ms = (time.perf_counter_ns()-intent_started)/1e6
         began = time.perf_counter_ns()
         actual = self.runner.run(image, run_id=run).copy()
         latency = (time.perf_counter_ns()-began)/1e6
         if self.admin is None:
             self.admin = Admin(self.ex / 'runtime.sock.ctl', self.owner.pid, s.bundle['manifest']['logical_weights_sha256'])
-        info_started = time.perf_counter_ns()
         self.admin.call(8)
-        info_ms = (time.perf_counter_ns()-info_started)/1e6
         proof_path = self.ex / ('performance_native_%06d.json' % run)
         proof = s.proof.performance(json.loads(proof_path.read_bytes()), self.plan, run)
         need(cpu.shape == actual.shape == (1, 1000) and cpu.dtype == actual.dtype == s.np.float32
              and s.np.isfinite(cpu).all() and s.np.isfinite(actual).all(), 'invalid logits')
         mismatch = int(s.np.count_nonzero(cpu.view(s.np.uint32) != actual.view(s.np.uint32)))
         need(mismatch == 0, 'CPU/FPGA logits differ; no next graph')
-        persistence_started = time.perf_counter_ns()
         for name, value in [('cpu_logits.npy', cpu), ('pl_logits.npy', actual)]:
             out = io.BytesIO(); s.np.save(out, value, allow_pickle=False)
             create(folder / name, out.getvalue())
-        persistence_ms = (time.perf_counter_ns()-persistence_started)/1e6
         self.completed = run
         self.last_activity = time.monotonic_ns()
         result = {'stage': 'PASS', 'execution_source': 'REAL_FPGA_OPT50_SPARSE24', 'session': self.token,
                   'run_id': run, 'boot_id': s.boot, 'source_model_sha256': MODEL_SHA,
                   'Runner_run_ms': latency, 'CPU_reference_ms': cpu_ms, 'bitwise_mismatches': mismatch,
-                  'python_profile': 'exact-rgb-path-audit-v1', 'measurement_profile': 'demo-live-exact-runscoped-v1', 'ORT_intra_spinning': 1, 'ORT_force_spinning_stop': 1, 'ORT_dynamic_block_base': 0,
+                  'python_profile': 'exact-rgb-path-audit-v1',
                   'CPU_logits_sha256': pin(cpu.tobytes())['sha256'], 'PL_logits_sha256': pin(actual.tobytes())['sha256'],
                   'native_proof_sha256': pin(proof_path.read_bytes())['sha256'], 'native': proof,
                   'top5': display_top5(s.np, actual, s.labels),
                   'probability_scope': 'Stable softmax over all 1000 logits; not calibrated confidence',
                   'accuracy_for_uploaded_image': 'UNLABELED_NOT_MEASURED', 'device_closed': False,
                   'scope': 'Runner.run includes PS work, BEGIN/END and client sync; excludes preprocessing, setup, CPU reference and INFO; not pure PL latency'}
-        infer_total_ms = (time.perf_counter_ns()-infer_started)/1e6
-        result.update(INFO_ms=info_ms, bundle_admission_ms=admission_ms,
-                      graph_intent_persistence_ms=intent_ms, logit_persistence_ms=persistence_ms,
-                      Session_infer_ms=infer_total_ms,
-                      inference_other_ms=infer_total_ms-admission_ms-cpu_ms-intent_ms-latency-info_ms-persistence_ms)
         return result
 
     def close(self):
@@ -242,7 +225,7 @@ class Service:
     def update(self, stage, **details):
         self.status = {'schema': 'opt50_live_demo_status_v1', 'stage': stage, 'boot_id': self.boot,
                        'heartbeat_monotonic': time.monotonic(), 'source_model_sha256': MODEL_SHA,
-                       'python_profile': 'exact-rgb-path-audit-v1', 'measurement_profile': 'demo-live-exact-runscoped-v1', 'ORT_intra_spinning': 1, 'ORT_force_spinning_stop': 1, 'ORT_dynamic_block_base': 0,
+                       'python_profile': 'exact-rgb-path-audit-v1',
                        'automatic_replay': False, **details}
         replace(RUN / 'status.json', self.status, 0o644)
         replace(self.boot_folder / 'status.json', self.status)
@@ -317,22 +300,16 @@ class Service:
                     create(folder / 'result.json', encoded({**self.ledger.get(token), 'stage': 'REJECTED_IMAGE_NO_GRAPH', 'reason': str(error)}))
                     continue
                 preprocessing = (time.perf_counter_ns()-began)/1e6
-                input_persistence_started = time.perf_counter_ns()
                 create(folder / 'input.npy', tensor)
-                input_persistence_ms = (time.perf_counter_ns()-input_persistence_started)/1e6
-                lifecycle_started = time.perf_counter_ns()
                 if self.session and self.session.rotation_due():
                     self.session.close(); self.session = None
                 if self.session is None:
                     self.session = Session(self)
                     self.session.initialize()
-                lifecycle_ms = (time.perf_counter_ns()-lifecycle_started)/1e6
                 result = self.session.infer(image, folder)
                 result.update(request_id=token, image_sha256=pin(raw)['sha256'], input_sha256=pin(tensor)['sha256'],
                               decoded_RGB_sha256=rgb_sha, preprocessing_ms=preprocessing,
                               request_work_ms=(time.perf_counter_ns()-began)/1e6)
-                result.update(input_persistence_ms=input_persistence_ms, session_lifecycle_ms=lifecycle_ms,
-                              request_other_ms=result['request_work_ms']-preprocessing-input_persistence_ms-lifecycle_ms-result['Session_infer_ms'])
                 create(folder / 'result.json', encoded(result))
             except BaseException as error:
                 try:

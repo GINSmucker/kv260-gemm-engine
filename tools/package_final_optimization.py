@@ -3,6 +3,8 @@ import argparse,hashlib,json,subprocess,tarfile,zipfile
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);a=p.parse_args()
 repo=Path.cwd();work=repo/'.test_build/final-opt-20261101'
+policy=json.loads((repo/'results/final_optimization/20261101/status.json').read_bytes())
+assert policy['final_adoption_status']=='PASS' and policy['default_profile']=='exact-run-scoped-spin-model-only-v1','candidate is not the current adopted default; retain existing package only as experimental evidence'
 assert not a.out.exists()
 assert subprocess.check_output(['git','status','--porcelain']).strip()==b''
 head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()

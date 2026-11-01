@@ -10,19 +10,21 @@ KV260 LAB 的 `Runner.run` 是完整 PS＋PL 模型计算时间。上传、图�
 
 ## 服务实现
 
-[板端服务](../board/service/backend.py)使用[等价CPU实现](../board/service/cpu_optimizations.py)及[PL会话配置](../board/service/runtime_options.py)：
+[板端服务](../board/service/backend.py)使用[等价CPU实现](../board/service/cpu_optimizations.py)及原运行包的会话配置：
+
+[当前服务身份](../results/service_rollback/20261101/status.json)绑定原配对安装回执、新boot及READY启动自检；展示入口为`http://127.0.0.1:4179/#overview`。
 
 - 预处理复用已解码的 RGB 图像，按原始扫描行顺序分块更新 RGB SHA，避免完整 RGB 复制和大块字节拼接。完整解码、原图像素、短边248、BICUBIC、中心224裁剪、归一化和 EXIF 处理保持原规则。
 - 模型包核对仍执行每次内存 SHA、文件清单、文件属性和逐级路径／符号链接检查；缓存的是固定路径字符串，不缓存文件校验结论，不跳过图后 INFO。
-- CPU参考保留原4/1配置及关闭自旋的设置。PL会话保持4/1、顺序执行、关闭图优化，主线程在CPU0，三个ORT工作线程在CPU1–3；仅在Run期间允许自旋，最后一个Run返回时停止自旋。动态分块保持关闭。配置含义见[ORT1.22.1定义](https://github.com/microsoft/onnxruntime/blob/v1.22.1/include/onnxruntime/core/session/onnxruntime_session_options_config_keys.h#L144-L158)。
+- CPU参考与PL会话均保留原4/1配置，关闭自旋。PL会话顺序执行、关闭图优化，主线程在CPU0，三个ORT工作线程在CPU1–3；不设置Run结束停止自旋或动态分块候选选项。
 - 原Native owner、插件、模型、固件、36次PL调用、50图／900秒预算及不重放规则保持有效。每图仍运行CPU参考、完整INFO、保护区及静态权重检查，保留原文件与目录fsync。
-- INFO、模型包核对、输入／logits持久化和会话生命周期计时均在Runner之外。`request_work_ms`结束于最终结果JSON持久化之前；客户端完整耗时还包含上传、接收落盘、结果发布及查询等待。查询与板端处理重叠，不能相加。
+- 原服务的`request_work_ms`结束于最终结果JSON持久化之前；客户端完整耗时还包含上传、接收落盘、结果发布及查询等待。候选中的新增细分字段不属于当前原服务回执。查询与板端处理重叠，不能相加。
 
-相同195张的Runner中位数为133.741→122.591ms，均值134.039→123.261ms；P95为137.405→125.578ms。该记录每图每臂测一次，分五个39图组，初始化在Runner之外。进程CPU时间均值306.017→457.169ms，增加约49%；CPU时间不能与墙钟相加，也不是功耗测量。另一轮相同线程配置曾出现233.873ms调度长尾，触发进程尚未确定，不能承诺长期尾延迟上界。
+自旋策略仅作为实验候选保留。相同195张的Runner中位数为133.741→122.591ms，均值134.039→123.261ms；P95为137.405→125.578ms。该记录每图每臂测一次，分五个39图组，初始化在Runner之外。进程CPU时间均值306.017→457.169ms，增加约49%；CPU时间不能与墙钟相加，也不是功耗测量。另一轮相同线程配置曾出现233.873ms调度长尾，触发进程尚未确定，不能承诺长期尾延迟上界。默认服务使用原设置；模型局部收益不足以证明完整请求收益。
 
 OpenSSL静态权重摘要及并行RGB摘要不在默认路径启用。两轮完整请求的暖中位数分别为2509.035→2223.533ms和4357.898→2117.185ms，但原版重复中位波动1848.863ms，大于较小的一轮收益285.502ms；第二轮首请求8719.869→13015.827ms退化。必要持久化仍有秒级长尾，证据不足以将完整请求改善归因于这些候选。[原始CPU优化归档](../results/live_demo/python_service_20261101.json)、[分项归档](../results/live_demo/latency_diagnostics_20261101.json)与新对照分别保留，不替代当前配置成绩。
 
-当前默认配对的[六次吉他原图请求](../results/final_optimization/20261101/final_request_review.json)保留新PL会话首请求6600.362ms、随后五次中位2688.376ms、最大4810.402ms；全部6000个输出逐位差异0。这是最终配置的描述性验证，不是完整请求加速的受控对照，也不用于抵消前述波动和冷请求回退。
+自旋候选的[六次吉他原图请求](../results/final_optimization/20261101/final_request_review.json)保留新PL会话首请求6600.362ms、随后五次中位2688.376ms、最大4810.402ms；全部6000个输出逐位差异0。这是该候选的描述性验证，不是当前原配置成绩或完整请求加速对照，也不用于抵消前述波动和冷请求回退。
 
 [配对切换工具](../board/runtime/candidates/final_opt/install_trial.py)的`model-only`配置只改变Python会话策略及计时，保留原Native二进制和预处理。它要求正常停服务、设备用户为零、两个独占锁及完整配对备份；备份位于`/var/lib/opt50-final-20261101/original_service`。`original`模式恢复原配对。服务禁止同一boot重新进入，切换经正常重启生效。新现场不能照搬归档boot、job或token。
 
