@@ -949,9 +949,9 @@
       "role": "Model-only final policy, isolated diagnostics or unadopted candidates; frozen model and hardware unchanged"
     },
     "tools/package_final_optimization.py": {
-      "bytes": 5017,
-      "sha256": "9ac962f5594de66d21d48754e9f909f0ad30ca254df05209f067696f1fc70eb7",
-      "source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02",
+      "bytes": 5043,
+      "sha256": "4fb603be7a2c47e944d9637141b92c7e6b9f35c44295dc0f0b1dd19c0bbcaf5f",
+      "source_commit": "2fb613b7c80dceb0462753d9b8196acbe4d994a5",
       "source_path": "tools/package_final_optimization.py",
       "role": "Model-only final policy, isolated diagnostics or unadopted candidates; frozen model and hardware unchanged"
     },
