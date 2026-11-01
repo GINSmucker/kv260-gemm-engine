@@ -291,9 +291,9 @@
       "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
     },
     "board/ui/public/final-lab.css": {
-      "bytes": 6555,
-      "sha256": "2b543f52443ed0a8bdd483aeb07448b0be5e51be2e4951ad0c66b59d3df30451",
-      "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
+      "bytes": 6577,
+      "sha256": "20b198cacd453417dd502216dd37e2c7eb5db712ff5891910e96635fb21b47fa",
+      "source_commit": "46afd30cfe0034b21f6d80641bd4abad10e70827",
       "source_path": "board/ui/public/final-lab.css",
       "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
     },
