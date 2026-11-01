@@ -119,10 +119,30 @@
     "copy_compaction.json"
   ],
   "checks": {
-    "release": "NOT RUN",
+    "release": "PASS",
+    "frozen_files_checked": 330,
+    "supplemental_identities_checked": 140,
     "documentation_links": "PASS",
+    "local_links_checked": 116,
     "candidate_unit_tests": "PASS",
-    "complete_unit_suite": "NOT RUN"
+    "complete_unit_suite": "PASS",
+    "tests_run": 22,
+    "local_Python": "3.12.7",
+    "hardware_accessed_by_local_checks": false,
+    "logs": {
+      "check_0.txt": {
+        "bytes": 485,
+        "sha256": "30fe102ad25e905148e3722420f087349feacf9c25517255ba6cdc94cb0933d0"
+      },
+      "check_1.txt": {
+        "bytes": 169,
+        "sha256": "d921fdd95bae0b4cb07663f1f23c91247016d83b20e708c287d4ad7a1e495290"
+      },
+      "check_2.txt": {
+        "bytes": 3557,
+        "sha256": "68bea0bcc63e4a61fff8c449cb44b859fe2429543afee21c1e1f226ae0337fb1"
+      }
+    }
   },
   "rollback": "Complete original pair at /var/lib/opt50-final-20261101/original_service; normal service stop, zero device users, paired restore and new normal boot required",
   "default_profile": "exact-run-scoped-spin-model-only-v1",
@@ -142,5 +162,6 @@
     "requests": 6,
     "bitwise_mismatches": 0,
     "complete_request_gain_claimed": false
-  }
+  },
+  "implementation_source_commit": "b2246e879800bf9cc5b54a94db7dfb7a547c1d02"
 }

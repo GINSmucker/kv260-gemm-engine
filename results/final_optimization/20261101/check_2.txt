@@ -4,7 +4,12 @@ test_changed_source_anchor_refused (test_final_optimization.FinalOptimizationTes
 test_disjoint_closure_and_native_parent (test_final_optimization.FinalOptimizationTests.test_disjoint_closure_and_native_parent) ... ok
 test_nested_ort_erf_and_integer_matmul_not_double_counted (test_final_optimization.FinalOptimizationTests.test_nested_ort_erf_and_integer_matmul_not_double_counted) ... ok
 test_overlap_bad_route_and_failed_comparison_refused (test_final_optimization.FinalOptimizationTests.test_overlap_bad_route_and_failed_comparison_refused) ... ok
+test_preprocessing_thread_failure_propagates_and_joins (test_final_optimization.FinalOptimizationTests.test_preprocessing_thread_failure_propagates_and_joins) ... ok
+test_profiled_non_linear_intervals_close_without_linear_parent_sum (test_final_optimization.FinalOptimizationTests.test_profiled_non_linear_intervals_close_without_linear_parent_sum) ... ok
+test_request_measurement_waits_for_commit_and_never_retries_post (test_final_optimization.FinalOptimizationTests.test_request_measurement_waits_for_commit_and_never_retries_post) ... ok
+test_service_transform_keeps_cpu_reference_info_and_budgets (test_final_optimization.FinalOptimizationTests.test_service_transform_keeps_cpu_reference_info_and_budgets) ... ok
 test_source_transforms_preserve_arithmetic_and_guards (test_final_optimization.FinalOptimizationTests.test_source_transforms_preserve_arithmetic_and_guards) ... ok
+test_spinning_options_change_only_the_selected_entry (test_final_optimization.FinalOptimizationTests.test_spinning_options_change_only_the_selected_entry) ... ok
 test_member_path_rejections (test_restoration_boundaries.RestorationBoundaryTests.test_member_path_rejections) ... ok
 test_wrong_asset_refused_without_partial_output (test_restoration_boundaries.RestorationBoundaryTests.test_wrong_asset_refused_without_partial_output) ... ok
 test_changed_report_cannot_be_reauthorized_by_new_manifest_hash (test_supplemental_sources.SupplementalSourceTests.test_changed_report_cannot_be_reauthorized_by_new_manifest_hash) ... ok
@@ -17,6 +22,6 @@ test_native_window_cannot_exceed_runner (test_timing_breakdown.TimingTests.test_
 test_reordered_or_wrong_mode_receipt_is_rejected (test_timing_breakdown.TimingTests.test_reordered_or_wrong_mode_receipt_is_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 17 tests in 0.360s
+Ran 22 tests in 0.906s
 
 OK

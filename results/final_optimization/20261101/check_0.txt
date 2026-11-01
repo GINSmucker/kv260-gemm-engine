@@ -4,7 +4,7 @@
   "archived_main_files_checked": 35,
   "frozen_bundles": 6,
   "supplemental": {
-    "files_checked": 55,
+    "files_checked": 140,
     "website_modules_checked": 17,
     "platform_testbenches_checked": 2,
     "historical_reports_checked": 6

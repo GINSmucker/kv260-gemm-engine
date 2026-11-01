@@ -36,4 +36,5 @@ results/C/h576/c_h576_endurance_20261016_02/** -text -whitespace
 
 # Candidate manifests retain the exact bytes used by the recorded ARM builds.
 results/final_optimization/20261101/*_manifest.json -text -whitespace
+results/final_optimization/20261101/*.txt text eol=lf
 docs/diagrams/** -text -whitespace
