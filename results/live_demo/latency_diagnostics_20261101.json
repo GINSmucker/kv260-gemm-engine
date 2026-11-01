@@ -1,0 +1,467 @@
+{
+  "schema": "kv260_live_latency_diagnostics_v1",
+  "status": "PASS",
+  "client_date": "2026-11-01",
+  "source_revision": "5898c4fa86f17af3925518a1ac57a5cfe1774916",
+  "source_scope": "Baseline checkout; additional isolated diagnostic tools pinned separately below",
+  "board": {
+    "endpoint": "http://192.168.137.2:8080",
+    "boot_id": "204d7ef0-847c-46fb-8759-055f282bf895",
+    "source_model_sha256": "ea5017791e47dbefe2b06178767f1cf59c9eb75b8cf0871f3173fb2cc4ff4d43",
+    "Pillow": "12.3.0",
+    "NumPy": "1.26.4",
+    "ORT": "1.22.1",
+    "compiler": "g++-13 13.2.0 -O2",
+    "CPU_only_bench_affinity": [
+      0
+    ],
+    "compute_configuration": "Unchanged ORT4/1, no spinning, no optimizer, existing affinity and Native lifecycle",
+    "FPGA_configuration": "Unchanged deployed OPT50; 125 MHz design setting; no clock or frequency changes; frequency not independently measured here",
+    "clock_note": "Board wall clock is not synchronized to client date; duration measurements use monotonic/performance clocks. Clock not modified."
+  },
+  "measurement_scope": {
+    "CPU_candidate_benchmarks": "Uninstrumented alternating original/candidate; five repetitions per original JPEG, seven per bundle check; separate from instrumented stage profiling",
+    "SHA_benchmarks": "Five repetitions per packed static-weight file and implementation; sum of per-file medians, not measured whole INFO",
+    "traced_requests": "Three FPGA requests with strace; diagnostic only, excluded from performance comparison",
+    "untraced_requests": "Three fresh FPGA requests without strace; original service only",
+    "request_work_ms": "Worker admission to pre-result-JSON publication; excludes upload/admission and browser polling",
+    "residual_ms": "Arithmetic difference, not an independently timed stage"
+  },
+  "preprocessing": {
+    "status": "PASS",
+    "JPEGs_original_dimensions_preserved": true,
+    "tensor_and_RGB_digest_byte_identical_cases": 31,
+    "invalid_JPEG_rejection_cases": 3,
+    "results": [
+      {
+        "file": "01_golden_retriever.jpg",
+        "samples": {
+          "original": [
+            54.227633,
+            54.822228,
+            55.075001,
+            52.592526,
+            52.783888
+          ],
+          "candidate": [
+            52.568666,
+            52.487745,
+            52.648676,
+            52.562015,
+            52.478685
+          ]
+        },
+        "median_ms": {
+          "original": 54.227633,
+          "candidate": 52.562015
+        }
+      },
+      {
+        "file": "02_cat.jpg",
+        "samples": {
+          "original": [
+            27.426764,
+            27.424575,
+            27.809688,
+            27.756948,
+            27.347663
+          ],
+          "candidate": [
+            27.606957,
+            27.352443,
+            29.033131,
+            27.489985,
+            27.556006
+          ]
+        },
+        "median_ms": {
+          "original": 27.426764,
+          "candidate": 27.556006
+        }
+      },
+      {
+        "file": "03_tiger.jpg",
+        "samples": {
+          "original": [
+            226.353104,
+            189.283423,
+            190.541996,
+            189.289313,
+            189.392584
+          ],
+          "candidate": [
+            189.891109,
+            189.538206,
+            189.352324,
+            189.999101,
+            190.133051
+          ]
+        },
+        "median_ms": {
+          "original": 189.392584,
+          "candidate": 189.891109
+        }
+      },
+      {
+        "file": "04_coffee.jpg",
+        "samples": {
+          "original": [
+            39.393194,
+            39.565476,
+            40.065121,
+            39.684897,
+            39.414124
+          ],
+          "candidate": [
+            39.564156,
+            39.823248,
+            39.497465,
+            39.500936,
+            39.608946
+          ]
+        },
+        "median_ms": {
+          "original": 39.565476,
+          "candidate": 39.564156
+        }
+      },
+      {
+        "file": "05_acoustic_guitar.jpg",
+        "samples": {
+          "original": [
+            1213.155413,
+            1168.644308,
+            1170.746169,
+            1169.451647,
+            1164.679488
+          ],
+          "candidate": [
+            953.91483,
+            895.149272,
+            889.956621,
+            890.185203,
+            900.659778
+          ]
+        },
+        "median_ms": {
+          "original": 1169.451647,
+          "candidate": 895.149272
+        }
+      },
+      {
+        "file": "06_rocket.jpg",
+        "samples": {
+          "original": [
+            54.536165,
+            40.255703,
+            41.01273,
+            40.456114,
+            40.499745
+          ],
+          "candidate": [
+            42.659787,
+            40.785408,
+            40.606656,
+            40.747767,
+            40.670276
+          ]
+        },
+        "median_ms": {
+          "original": 40.499745,
+          "candidate": 40.747767
+        }
+      },
+      {
+        "file": "07_astronaut.jpg",
+        "samples": {
+          "original": [
+            39.364054,
+            38.487785,
+            38.709867,
+            38.753088,
+            38.371174
+          ],
+          "candidate": [
+            38.640296,
+            38.546615,
+            39.02599,
+            38.832279,
+            38.707117
+          ]
+        },
+        "median_ms": {
+          "original": 38.709867,
+          "candidate": 38.707117
+        }
+      }
+    ]
+  },
+  "bundle_check": {
+    "status": "PASS",
+    "candidate": "Cached path strings and string-based inventory; no cached validation verdict",
+    "retained_checks": [
+      "Each in-memory graph/reference SHA",
+      "Manifest SHA",
+      "Complete file inventory",
+      "Every ancestor lstat and symlink/reparse rejection",
+      "Every file metadata comparison"
+    ],
+    "median_ms": {
+      "original": 113.084261,
+      "candidate": 63.944539
+    },
+    "samples_ms": {
+      "original": [
+        113.189272,
+        113.084261,
+        112.798738,
+        113.306444,
+        112.432904,
+        113.260223,
+        112.640526
+      ],
+      "candidate": [
+        64.218492,
+        63.256033,
+        63.394875,
+        63.944539,
+        64.05613,
+        64.514725,
+        63.924719
+      ]
+    },
+    "behavior_checks": [
+      {
+        "case": "valid",
+        "original": "ACCEPT",
+        "candidate": "ACCEPT"
+      },
+      {
+        "case": "extra",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "missing",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "mode",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "mtime",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "content",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "graph_memory",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "reference_memory",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "manifest",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "file_symlink",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "directory_symlink",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "hardlink",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      },
+      {
+        "case": "fifo",
+        "original": "REJECT",
+        "candidate": "REJECT"
+      }
+    ]
+  },
+  "static_weight_SHA": {
+    "status": "PASS",
+    "all_30_digests_equal": true,
+    "sum_per_file_medians_ms": {
+      "software_SHA_with_copy": 126.3281,
+      "OpenSSL_with_copy": 6.723177,
+      "OpenSSL_without_copy": 5.412506
+    },
+    "hardware_accessed": false,
+    "Native_binary_replaced": false
+  },
+  "durable_logging": {
+    "fsync_calls": 471,
+    "observed_median_ms": 5.465,
+    "observed_max_ms": 355.695,
+    "scope": "All traced threads and owner initialization over 35 seconds, three requests; tracing overhead applies; not a per-image count",
+    "native_postrun_read_and_sync_events": 20,
+    "fsync_calls_for_those_events": 40,
+    "durability_semantics_changed": false
+  },
+  "untraced_original_service_results": [
+    {
+      "file": "04_coffee.jpg",
+      "POST_admission_ms": 45.3980999882333,
+      "observed_client_ms": 6030.195500003174,
+      "request_id": "592b106eb846447896a197d104d09d1b",
+      "Runner_run_ms": 137.996001,
+      "CPU_reference_ms": 306.438285,
+      "preprocessing_ms": 43.926729,
+      "request_work_ms": 5778.243852,
+      "session": "ba1d3ebfec2d",
+      "run_id": 1,
+      "postrun_checks_ms": 265.483925,
+      "unpartitioned_request_residual_ms": 5024.398912
+    },
+    {
+      "file": "05_acoustic_guitar.jpg",
+      "POST_admission_ms": 476.5426999947522,
+      "observed_client_ms": 2825.686800002586,
+      "request_id": "a775e8a466054b83abaf76a5775f958a",
+      "Runner_run_ms": 135.93301,
+      "CPU_reference_ms": 294.719417,
+      "preprocessing_ms": 1174.672349,
+      "request_work_ms": 2196.461048,
+      "session": "ba1d3ebfec2d",
+      "run_id": 2,
+      "postrun_checks_ms": 236.340144,
+      "unpartitioned_request_residual_ms": 354.7961280000002
+    },
+    {
+      "file": "05_acoustic_guitar.jpg",
+      "POST_admission_ms": 472.21810001065023,
+      "observed_client_ms": 2605.9610999946017,
+      "request_id": "10d425085f614fffabe62404af38671d",
+      "Runner_run_ms": 136.957429,
+      "CPU_reference_ms": 299.185772,
+      "preprocessing_ms": 1037.087973,
+      "request_work_ms": 2052.5995,
+      "session": "ba1d3ebfec2d",
+      "run_id": 3,
+      "postrun_checks_ms": 232.856099,
+      "unpartitioned_request_residual_ms": 346.51222699999994
+    }
+  ],
+  "traced_original_service_results": [
+    {
+      "file": "04_coffee.jpg",
+      "observed_client_ms": 6704.118199995719,
+      "request_id": "7941205b58334b8082f8100aa82c200c",
+      "Runner_run_ms": 216.990491,
+      "CPU_reference_ms": 395.298333,
+      "preprocessing_ms": 44.512865,
+      "request_work_ms": 6443.00166,
+      "session": "6fe2f82384e8",
+      "run_id": 1
+    },
+    {
+      "file": "05_acoustic_guitar.jpg",
+      "observed_client_ms": 3235.9031999949366,
+      "request_id": "b2437ddd82bb4cb799aa4a943d9f9770",
+      "Runner_run_ms": 215.325643,
+      "CPU_reference_ms": 385.432535,
+      "preprocessing_ms": 1257.627598,
+      "request_work_ms": 2682.65721,
+      "session": "6fe2f82384e8",
+      "run_id": 2
+    },
+    {
+      "file": "05_acoustic_guitar.jpg",
+      "observed_client_ms": 3234.3477999966126,
+      "request_id": "a6dcde21159741a38661b3e5847f9fdf",
+      "Runner_run_ms": 215.675317,
+      "CPU_reference_ms": 387.985011,
+      "preprocessing_ms": 1258.974972,
+      "request_work_ms": 2681.868203,
+      "session": "6fe2f82384e8",
+      "run_id": 3
+    }
+  ],
+  "independent_full_logits_check": {
+    "status": "PASS",
+    "requests": [
+      {
+        "request_id": "592b106eb846447896a197d104d09d1b",
+        "compared_logits": 1000,
+        "FP32_bitwise_mismatches": 0,
+        "input_NPY_digest_bound": true
+      },
+      {
+        "request_id": "a775e8a466054b83abaf76a5775f958a",
+        "compared_logits": 1000,
+        "FP32_bitwise_mismatches": 0,
+        "input_NPY_digest_bound": true
+      },
+      {
+        "request_id": "10d425085f614fffabe62404af38671d",
+        "compared_logits": 1000,
+        "FP32_bitwise_mismatches": 0,
+        "input_NPY_digest_bound": true
+      },
+      {
+        "request_id": "7941205b58334b8082f8100aa82c200c",
+        "compared_logits": 1000,
+        "FP32_bitwise_mismatches": 0,
+        "input_NPY_digest_bound": true
+      },
+      {
+        "request_id": "b2437ddd82bb4cb799aa4a943d9f9770",
+        "compared_logits": 1000,
+        "FP32_bitwise_mismatches": 0,
+        "input_NPY_digest_bound": true
+      },
+      {
+        "request_id": "a6dcde21159741a38661b3e5847f9fdf",
+        "compared_logits": 1000,
+        "FP32_bitwise_mismatches": 0,
+        "input_NPY_digest_bound": true
+      }
+    ],
+    "compared_FP32_logits": 6000,
+    "total_bitwise_mismatches": 0
+  },
+  "service_file_verification": {
+    "status": "PASS",
+    "files_verified": 52,
+    "hardware_accessed": false,
+    "service_source_unchanged": true
+  },
+  "frozen_kernel_or_configuration_changes": false,
+  "reboot_or_service_restart": false,
+  "candidate_deployed": false,
+  "optimized_end_to_end_performance": "NOT RUN",
+  "limitations": [
+    "Small JPEGs are approximately unchanged; some sub-millisecond regressions occur",
+    "Candidate microbenchmark savings must not be added and presented as measured end-to-end speedup",
+    "Historical 1415 ms postrun outlier was not reproduced identically; its event gaps and fresh fsync trace support storage blocking as the main suspect",
+    "Replacing the Native SHA implementation requires a separately built and validated host owner, even though HLS/RTL and compute settings can remain unchanged",
+    "The installed backend forbids same-boot re-entry; candidates were not hot-patched into the running process"
+  ],
+  "tool_sha256": {
+    "tools/latency_diagnostics/exact_candidates.py": "24452f26321f0339c046c5afe86a4869f4acde689c247c600ed446a0f630ae4c",
+    "tools/latency_diagnostics/hash_bench.cpp": "1524606621fab16021cf4946b03b5a2fd9de2393820b9600f4055cef27ea5811",
+    "tools/latency_diagnostics/profile_checks.py": "6f3e193f9d3a58686dbcea8a2b08765646b23bf717668b6fc68ca15db77fd98f",
+    "tools/latency_diagnostics/profile_preprocess.py": "c52de37e434b1fd2727bac595ed0b73cc24fac217cefa785cf8bde07e6b9f075",
+    "tools/latency_diagnostics/validate_candidates.py": "7a712a758ebd9df33adce3160ad6bacd1cf327bee7c7dc2aebadec624d4d4224"
+  }
+}
