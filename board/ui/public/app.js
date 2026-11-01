@@ -2,6 +2,7 @@ import { api, ProtectedTransport, download, escape as e } from './api-client.js'
 import { boardPrediction, boardProgress, boardLayer, boardBenchmark } from './live-view.js';
 import {overview} from './presentation.js';
 import {routeMap} from './charts.js';
+import {finalOverview,finalPerformance,finalArchitecture,bindFinalPerformance} from './final-lab.js';
 
 const paths = {
   image: '<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 16 5-5 4 4 3-3 6 6"/>',
@@ -16,7 +17,7 @@ const paths = {
   terminal: '<path d="m4 6 5 5-5 5m8 1h8"/>', network: '<rect x="8" y="2" width="8" height="6" rx="1"/><path d="M12 8v5M4 13h16M4 13v3m8-3v3m8-3v3"/><rect x="1" y="16" width="6" height="5" rx="1"/><rect x="9" y="16" width="6" height="5" rx="1"/><rect x="17" y="16" width="6" height="5" rx="1"/>',
 };
 const icon = (name) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] ?? paths.box}</svg>`;
-const pages = [['overview', '成果总览', 'chart'], ['inference', '推理工作台', 'image'], ['layer', '线性层实验', 'layers'], ['benchmark', '测评对照', 'chart'], ['history', '运行记录', 'history'], ['connection', '连接与诊断', 'plug']];
+const pages = [['overview', '成果总览', 'chart'], ['performance', '性能与耗时', 'clock'], ['architecture', '系统架构', 'box'], ['inference', '推理工作台', 'image'], ['layer', '线性层实验', 'layers'], ['benchmark', '测评演示', 'chart'], ['history', '运行记录', 'history'], ['archive', '历史实测', 'history'], ['connection', '连接与诊断', 'plug']];
 const samples = [['bridge', '建筑图卡'], ['dog', '动物图卡'], ['pattern', '结构图卡']];
 const statusNames = { VALIDATING: '校验输入', PREPROCESSING: '预处理', RUNNING: '执行中', POSTPROCESSING: '组织结果', SUCCEEDED: '已完成', FAILED: '执行失败', CANCELLING: '正在停止', CANCELLED: '已停止', IMPORTED: '已导入' };
 const backendNames = { fp32: 'FP32 参考演示', w8a8: 'W8A8 参考演示', pl49: '49 层 PL 演示' };
@@ -99,17 +100,20 @@ function render() {
   const caret = focused && document.activeElement.tagName === 'INPUT' ? document.activeElement.selectionStart : null;
   document.querySelector('#page-name').textContent = pages.find(x => x[0] === state.page)[1];
   document.querySelector('#navigation').innerHTML = pages.map(([id,name,glyph]) => `<a href="#${id}" aria-label="${name}" title="${name}" class="nav-link ${state.page === id ? 'active' : ''}" ${state.page === id ? 'aria-current="page"' : ''}>${icon(glyph)}<span>${name}</span>${id === 'history' && allRecords().length ? `<span class="nav-count">${allRecords().length}</span>` : ''}</a>`).join('');
-  screen.innerHTML = ({overview:()=>overview(state.presentation,state), inference: inferencePage, layer: layerPage, benchmark: benchmarkPage, history: historyPage, connection: connectionPage })[state.page]();
-  if(state.page!=='overview')screen.insertAdjacentHTML('afterbegin', `<div class="mode-bar"><strong>运行来源</strong><button class="btn btn-sm ${state.source==='BOARD'?'btn-primary':''}" data-action="source-board" ${isBusy()||!state.boardConfigured?'disabled':''}>真实板端</button><button class="btn btn-sm ${state.source==='DEMO'?'btn-primary':''}" data-action="source-demo" ${isBusy()?'disabled':''}>界面演示 · 固定样例</button><span>${state.source==='BOARD'?(state.boardHealth?.pl_ready?'BOARD / ARM+PL':'BOARD / ARM'):'DEMO / 不运行模型'}</span></div>`);
+  screen.innerHTML = ({overview:()=>finalOverview(state.finalData), performance:()=>finalPerformance(state.finalData), architecture:()=>finalArchitecture(state.finalData), archive:()=>'<div class="lab-history-note">历史 H576 Dense 实测 · 本页的 3925 张、5000 次调用及三点曲线属于历史记录。当前交付结果见“成果总览”和“性能与耗时”。</div>'+overview(state.presentation,state), inference: inferencePage, layer: layerPage, benchmark: benchmarkPage, history: historyPage, connection: connectionPage })[state.page]();
+  if(state.page==='performance' && state.finalData)bindFinalPerformance(screen,state.finalData,state);
+  if(!['overview','performance','architecture','archive'].includes(state.page))screen.insertAdjacentHTML('afterbegin', `<div class="mode-bar"><strong>运行来源</strong><button class="btn btn-sm ${state.source==='BOARD'?'btn-primary':''}" data-action="source-board" ${isBusy()||!state.boardConfigured?'disabled':''}>真实板端</button><button class="btn btn-sm ${state.source==='DEMO'?'btn-primary':''}" data-action="source-demo" ${isBusy()?'disabled':''}>界面演示 · 固定样例</button><span>${state.source==='BOARD'?(state.boardHealth?.pl_ready?'BOARD / ARM+PL':'BOARD / ARM'):'DEMO / 不运行模型'}</span></div>`);
   document.querySelector('.source-badge').innerHTML = `<i></i> ${state.source==='BOARD'?'BOARD':'DEMO'}`;
   document.querySelector('.device-caption').textContent = state.boardHealth ? (state.boardHealth.pl_ready?'KV260 已连接 / ARM+PL':'KV260 已连接 / ARM') : 'KV260 未连接';
   document.querySelector('.side-bottom strong').textContent = state.boardHealth ? '网口SSH通道已连接' : '板端通道未连接';
   document.querySelector('.side-bottom span').textContent = state.source==='BOARD'?(state.boardHealth?.pl_ready?`真实ARM / ${plLabel()}就绪`:'真实ARM / 当前PL未就绪'):'仅界面样例 · 无模型';
   document.querySelector('.app-footer span:last-child').textContent = `${state.source==='BOARD'?(currentJob(state.page)?.realPLStarts>0?'KV260 PS/PL实际计算':'KV260 ARM实际计算'):'固定样例 · 不运行模型'} / PL starts ${currentJob(state.page)?.realPLStarts??0}`;
-  if(state.page==='overview') {
+  if(['overview','performance','architecture','archive'].includes(state.page)) {
     document.querySelector('.source-badge').innerHTML='<i></i> 实测归档';
     document.querySelector('.device-caption').textContent='只读展示 · 不访问板卡';
     document.querySelector('.app-footer span:last-child').textContent='已保存的实板回执 / 本页不启动PL';
+    document.querySelector('.side-bottom strong').textContent=state.page==='archive'?'H576 历史实测':'OPT50 最终实测归档';
+    document.querySelector('.side-bottom span').textContent='只读展示 · 不发送板端命令';
   }
   if(state.page==='inference'&&currentJob('inference')?.result?.route_manifest)screen.insertAdjacentHTML('beforeend',routeMap(currentJob('inference').result.route_manifest));
   if (state.source==='BOARD' && state.page==='inference') {
@@ -138,7 +142,7 @@ function render() {
   if (focused) { const target = screen.querySelector(`[data-focus="${CSS.escape(focused)}"]`); if (target && !target.disabled) { target.focus({ preventScroll: true }); if (caret !== null && ['text','search'].includes(target.type)) target.setSelectionRange(caret, caret); } }
 }
 function toast(message, type = '') { const el = document.createElement('div'); el.className = `toast ${type}`; el.textContent = message; document.querySelector('#toast-stack').append(el); setTimeout(() => el.remove(), 4200); }
-function changePage() { const candidate = location.hash.slice(1); state.page = pages.some(x => x[0] === candidate) ? candidate : 'overview'; state.error = null; render(); screen.classList.remove('screen-enter'); requestAnimationFrame(() => screen.classList.add('screen-enter')); if (state.page === 'connection') refreshLogs(); }
+function changePage() { const candidate = location.hash.slice(1); state.page = pages.some(x => x[0] === candidate) ? candidate : 'overview'; state.error = null; render(); window.scrollTo(0,0); screen.classList.remove('screen-enter'); requestAnimationFrame(() => screen.classList.add('screen-enter')); if (state.page === 'connection') refreshLogs(); }
 async function refreshLogs() { try { state.logs = (await api(state.source==='BOARD'?'/api/board/logs':'/api/logs')).logs; if (state.page === 'connection') { const term = document.querySelector('#terminal'); if (term) { term.innerHTML = logsMarkup(); term.scrollTop = term.scrollHeight; } } } catch (err) { toast(err.message, 'error'); } }
 async function connectBoard() {
   try { state.boardHealth=await new ProtectedTransport('network').connect(); state.error=null; state.jobs=(await api('/api/jobs')).jobs; const active=state.jobs.find(x=>!terminal.has(x.status)); if(active) {state.active=active.id;state.selected[active.type]=active.id;poll();} state.logs=(await api('/api/board/logs')).logs; toast(state.boardHealth.pl_ready ? `KV260已连接，模型身份核验通过。ARM参考与${plLabel()}可用。` : 'KV260已连接，模型身份核验通过。当前提供ARM参考。'); }
@@ -275,8 +279,9 @@ document.querySelector('#details-dialog').addEventListener('close', () => { if (
 window.addEventListener('hashchange', changePage);
 document.querySelector('#settings-button').innerHTML = icon('plug');
 try {
-  const [policy, catalog, records, presentation] = await Promise.all([api('/api/policy'), api('/api/catalog'), api('/api/jobs'),api('/api/presentation').catch(()=>null)]);
+  const [policy, catalog, records, presentation, final] = await Promise.all([api('/api/policy'), api('/api/catalog'), api('/api/jobs'),api('/api/presentation').catch(()=>null),api('/api/final').catch(()=>null)]);
   state.presentation=presentation;
+  state.finalData=final;
   if (!['BOARD','DEMO'].includes(policy.source)) throw new Error('未知服务来源。');
   state.boardConfigured=policy.source==='BOARD'; state.source=policy.source; state.backend=state.boardConfigured?'fp32':'pl49';
   state.catalog = catalog; state.jobs = records.jobs;

@@ -5,6 +5,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { AppError, JobStore, POLICY, MODEL, LAYERS, validateProfile } from './domain.mjs';
 import { BoardClient } from './board-client.mjs';
 import { presentationData } from './presentation.mjs';
+import { serveFinal } from './final-api.mjs';
 
 const PUBLIC = path.resolve(fileURLToPath(new URL('./public/', import.meta.url)));
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json; charset=utf-8' };
@@ -28,6 +29,7 @@ export function createWorkbenchServer({ clock, boardUrl } = {}) {
       const host = (req.headers.host ?? '').split(':')[0];
       if (!['127.0.0.1', 'localhost'].includes(host)) throw new AppError('HOST_BLOCKED', '本服务仅支持loopback地址。', 403);
       const url = new URL(req.url, 'http://127.0.0.1'); const p = url.pathname;
+      if (await serveFinal(req,res,p)) return;
       if (p === '/api/presentation' && req.method === 'GET') {
         try { return json(200,await presentationData()); }
         catch { throw new AppError('PRESENTATION_UNAVAILABLE','已保存的实测展示资料缺失或身份不匹配。',503); }
@@ -79,7 +81,7 @@ export function createWorkbenchServer({ clock, boardUrl } = {}) {
       if (p === '/api/logs' && req.method === 'GET') return json(200, { logs: store.audit });
       if (p.startsWith('/api/')) throw new AppError('NOT_FOUND', '接口不存在。', 404);
       if (req.method !== 'GET') throw new AppError('METHOD_NOT_ALLOWED', '方法不支持。', 405);
-      const filename = p === '/' ? 'index.html' : decodeURIComponent(p).slice(1);
+      const filename = ['/', '/index.html', '/legacy', '/legacy/', '/final.html'].includes(p) ? 'index.html' : decodeURIComponent(p).slice(1);
       const full = path.resolve(PUBLIC, filename);
       if (!full.startsWith(PUBLIC + path.sep) || !MIME[path.extname(full)]) throw new AppError('NOT_FOUND', '页面不存在。', 404);
       let data; try { data = await readFile(full); } catch { throw new AppError('NOT_FOUND', '页面不存在。', 404); }
@@ -92,6 +94,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
   const port = Number(process.env.KV260_UI_PORT ?? 4173);
   if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('KV260_UI_PORT must be 1024..65535');
   const { server } = createWorkbenchServer({boardUrl:process.env.KV260_UI_BOARD_URL});
-  server.listen(port, '127.0.0.1', () => process.stdout.write(`KV260 local workbench http://127.0.0.1:${port}\n${process.env.KV260_UI_BOARD_URL ? 'BOARD via SSH tunnel; capabilities come from current board health.' : 'DEMO only. Hardware I/O locked.'}\n`));
+  server.listen(port, '127.0.0.1', () => process.stdout.write(`KV260 LAB http://127.0.0.1:${port}/#overview\n${process.env.KV260_UI_BOARD_URL ? 'BOARD via SSH tunnel; capabilities come from current board health.' : 'Saved final results and labeled demonstrations. Hardware I/O locked.'}\n`));
   server.on('error', e => { process.stderr.write(e.message + '\n'); process.exitCode = 1; });
 }
