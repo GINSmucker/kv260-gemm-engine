@@ -116,16 +116,16 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/styles.css": {
-      "bytes": 41537,
-      "sha256": "0260c11325d8d4c6d10b165354e734175c0ca6eec0c27fcc246f04ff4b267b04",
-      "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
+      "bytes": 41792,
+      "sha256": "35919dfe7cfdca82d4448f12e1b029748ed510bc88784e85ac3fe6c652b82eb4",
+      "source_commit": "df5bc8e3855275e0051927f298d4cb61f54843b3",
       "source_path": "board/ui/public/styles.css",
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/tokens.css": {
       "bytes": 311,
-      "sha256": "8d1ef7e5f24eeffb423e4d206a27ea41c05abb9fe3171c20ecff1a1ce82ba6bf",
-      "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
+      "sha256": "e2c150f815b01c8ccc58b513f78e7f6f92904c495c77a37429084b1e0e182fdd",
+      "source_commit": "df5bc8e3855275e0051927f298d4cb61f54843b3",
       "source_path": "board/ui/public/tokens.css",
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
