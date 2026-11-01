@@ -1,85 +1,46 @@
-# 最终成果页与 H576 历史工作台
+# KV260 LAB：统一展示与使用
 
-## OPT50 最终成果页
+KV260 LAB在同一界面内提供OPT50最终成果、性能与耗时、系统架构、交互演示和H576历史实测。默认首页展示原始Dense与Sparse24的500张分类结果，性能统一采用同调度第306～500张的195张记录。成果页面只读取保存证据，不发送板端命令。
 
-最终成果页展示原始Dense和Sparse24的500张分类结果、同调度195张性能曲线、原始事件回执耗时分解，以及四张带源码引用的架构图。它只读取已保存证据，不连接板卡或发送推理请求。
+## 启动与关闭
 
-使用已有PowerShell 7与Node.js 24或更高版本，在仓库根目录运行：
+使用已有PowerShell 7和Node.js 24或更高版本，在仓库根目录执行：
 
 ```powershell
 pwsh -File ./start-final.ps1
 ```
 
-打开 **http://127.0.0.1:4179/**。保持终端运行，按Ctrl+C关闭。端口被占用时可指定`-Port 4180`；无需安装npm依赖。页面提供195张逐图CSV、500张预测CSV和耗时分解JSON下载；鼠标移动或键盘调整图片滑块可查看每个性能样本。
+打开 **http://127.0.0.1:4179/#overview**。也可使用`pwsh -File ./start-workbench.ps1`，默认地址为 **http://127.0.0.1:4178/#overview**。两个命令运行同一套KV260 LAB界面，默认端口不同；无需安装npm依赖或下载模型／固件。
 
-服务启动及读取数据时核对CSV统计、主结果与分解区间。数据缺失或不一致时拒绝展示结果。默认首页是最终成果页，`/legacy/#overview`保留下述历史工作台，原有`start-workbench.ps1`也可独立启动历史页面。
+保持终端运行，按Ctrl+C关闭。端口被占用时可指定`-Port 4180`。根地址、`/legacy/#overview`和`/final.html#overview`均打开统一工作台。
 
-## C 的 H576 历史网站
+## 页面与数据
 
-这是 C 为 H576 Dense 制作的本机可视化工作台。默认可浏览已保存的实板成果、CPU／PS+PL 两条性能曲线、49 层静态路由，并下载 JSON／CSV；浏览存档不需要板卡或模型权重。
+- **成果总览**：当前Dense／Sparse24的精度、整网耗时、模型路由、CPU／PL逐位一致性和证据范围。
+- **性能与耗时**：全部195张Dense／Sparse24双曲线，可切换ARM＋FPGA或CPU参考。鼠标移动或键盘调整图片滑块查看对应样本；页面还提供390份原始事件回执的计时分解、计时外验收成本与数据下载。
+- **系统架构**：系统整体、硬件模块、软件流程和共享计算阵列四张图，支持交互源码卡片与报告SVG下载。硬件图根据设计资料整理，不是新生成的Vivado截图。
+- **历史实测**：H576 Dense的3925张质量结果、5000次有限连续调用、两轮正式性能和三点交互曲线；这些数据保持原身份，不作为当前Sparse24结果。
+- **推理工作台、线性层实验、测评演示**：未配置匹配板端通道时使用明确标识的DEMO合成数据，实际PL调用为0。上传图片不会使固定样例成为真实分类结果。
+- **运行记录、连接与诊断**：查看本机任务、导入报告和保存连接配置；保存配置不执行设备探测或硬件计算。
 
-**网站保留原 H576 Dense 的数据和标识。** 页面中的 3,925 张质量结果、三点交互性能曲线和 5,000 次有限连续调用，属于原 H576 记录。当前 Sparse24 的 500 张精度和同调度195张耗时请看[首页结果表](../README.md#已取得的结果)与[最终数据](../results/README.md)，本网站尚未接入这些新数据。
+统计服务核对主结果、逐图CSV与耗时分解。最终证据缺失或不一致时，成果页面显示不可用，不使用历史数字或样例补位。测量边界见[测量口径](measurement.md)，当前数据见[最终结果](../results/README.md)。
 
-## 启动与关闭
+## 文件与来源
 
-本机使用现有的 PowerShell 7、Node.js 24 或更高版本，以及浏览器。不需要 `npm install`，也不需要下载 Release 中的模型／固件。
+`board/ui/server.mjs`提供统一HTTP服务，`final-api.mjs`提供最终数据、下载和架构文件，`final-data.mjs`核对统计。`public/app.js`管理导航与任务视图，`public/final-lab.js`和`final-lab.css`渲染当前成果。`final-server.mjs`提供4179启动入口。
 
-在仓库根目录打开 PowerShell 7，执行：
+当前网页源文件身份见[补充来源清单](../supplemental_sources.json)。H576历史数据来自`codex/v2-h576-dense`提交`71651c3`，保留原路径和内容；存档读取器校验其SHA256。其[来源索引](../results/model_planning/h576_closeout_20261016_01/delivery_index.json)、[正式性能](../results/model_planning/v5_h576_fair_20261016_02/analysis.json)、[质量记录](../results/model_planning/v5_h576_quality_20261016_01/quality_recount.json)和[有限连续调用](../results/C/h576/c_h576_endurance_20261016_02/C_ENDURANCE_RECEIPT.json)分别保留。
 
-```powershell
-pwsh -File ./start-workbench.ps1
-```
+## 板端运行边界
 
-浏览器打开 **http://127.0.0.1:4178/#overview**。保持终端运行；按 Ctrl+C 可关闭本机网站。若端口被占用，指定其他端口：
+`start-workbench.ps1`的`-BoardUrl`参数仅接受维护者提供的、匹配旧H576协议的本机SSH转发地址。它不能直接连接当前Sparse24 owner或替代其启动、固件和会话门禁。本机网页整合不修改计算核、固件和已验收运行配置。
 
-```powershell
-pwsh -File ./start-workbench.ps1 -Port 4180
-```
+板卡上独立部署的服务拥有自己的地址、程序和当前启动状态；本机归档页面不是它的实时回执。新的硬件运行按[快速开始](quickstart.md)与原运行包约束单独核验。
 
-此时打开 http://127.0.0.1:4180/#overview。无需修改全局执行策略；若本机策略阻止脚本，可在同一仓库根目录用已有 Node 直接启动：
-
-```powershell
-node --input-type=module -e 'import {createWorkbenchServer} from "./board/ui/server.mjs"; createWorkbenchServer().server.listen(4178,"127.0.0.1",()=>console.log("http://127.0.0.1:4178/#overview"));'
-```
-
-## 页面怎么用
-
-- **成果总览**：查看 H576 历史模型、两轮正式性能、质量和有限稳定性。CPU参考可切换；曲线只有原先保存的3个正式交互样本，不能理解成完整500张分布。
-- **路由图**：点击各层查看静态分工。qkv、fc1、fc2共36层在PL，proj和head共13层在CPU；颜色不表示实时进度或逐层耗时。
-- **下载**：使用成果总览中的“下载该实测JSON”和“下载逐次CSV”，导出保存的交互记录，来源为`SAVED_MEASUREMENTS`。
-- **演示交互**：未配置板端通道时，图片、单层和性能任务使用明确标注的`DEMO`合成数据，真实PL调用为0。它们用于展示操作流程，不构成新推理或精度证据。
-
-![H576性能曲线预览](provenance/pre-final-main/docs/images/performance_card.jpg)
-
-## 本次保留的必要文件
-
-| 文件 | 用途 |
-|---|---|
-| [start-workbench.ps1](../start-workbench.ps1) | 默认4178端口的本机启动入口 |
-| [board/ui/](../board/ui/README.md)中的7个服务模块／配置文件 | HTTP服务、任务模型、存档读取和原H576响应校验 |
-| `board/ui/public/`中的11个文件 | HTML、脚本、样式和3张SVG演示图 |
-| `board/ui/tests/workbench.test.mjs`、`charts.test.mjs` | 原有本机功能、数据读取和下载检查 |
-| [delivery_index.json](../results/model_planning/h576_closeout_20261016_01/delivery_index.json) | 原H576模型身份和展示来源索引 |
-| [analysis.json](../results/model_planning/v5_h576_fair_20261016_02/analysis.json) | 原两轮正式性能 |
-| [quality_recount.json](../results/model_planning/v5_h576_quality_20261016_01/quality_recount.json) | 原既有质量结果 |
-| [C_ENDURANCE_RECEIPT.json](../results/C/h576/c_h576_endurance_20261016_02/C_ENDURANCE_RECEIPT.json) | 原有限连续调用证明 |
-| [chrome_recount.json](../results/model_planning/v5_h576_ui_20261017_01/chrome_recount.json) | 原浏览器交互与下载记录 |
-| [benchmark.json](../results/model_planning/v5_h576_ui_20261017_01/local_chrome/benchmark.json)、[pl.json](../results/model_planning/v5_h576_ui_20261017_01/local_chrome/pl.json) | 双曲线和49层路由实际读取的数据 |
-
-以上28个原文件按字节取自`codex/v2-h576-dense`提交`71651c3`，沿用C的H576工作台。7个数据文件保持原路径和内容，存档读取器会校验其中引用的SHA256；缺文件或摘要不一致时会拒绝显示存档。
-
-## 真实板端推理的前提
-
-原H576还附有[可交互架构图](diagrams/architecture.html)，下载到本机后可由浏览器打开，支持缩放、关系追踪和主题切换。[版本说明](version-history.md)列出图、说明JSON、原验证记录和许可证的来源。
-
-启动脚本原有`-BoardUrl`参数只用于维护者建立的、匹配旧H576运行包的本机SSH转发地址。旧网页的板端协议和身份校验不能直接接入当前OPT50 Sparse24 owner。本次没有迁入板端agent、旧固件、模型大文件，也不提供用旧网页启动当前Sparse24硬件的命令。
-
-如需重现旧H576的实时图片功能，取得[原H576完整交付](https://github.com/GINSmucker/kv260-gemm-engine/tree/codex/v2-h576-dense)并按该分支的模型、平台和窗口要求操作。原Chrome证据覆盖内置图片路径；本机JPEG自动上传仍按原记录保留为待验证。
-
-本次离线检查可在仓库根目录执行：
+## 离线检查
 
 ```powershell
-node --test --test-isolation=none board/ui/tests/workbench.test.mjs board/ui/tests/charts.test.mjs
+node --test --test-isolation=none board/ui/tests/workbench.test.mjs board/ui/tests/charts.test.mjs board/ui/tests/final.test.mjs
 ```
 
-这只运行本机模拟／存档与HTTP检查，不连接板卡，不等于重新完成了浏览器实板验收。
+检查覆盖本机任务、统计、HTTP、数据下载和静态成果渲染，不访问板卡，也不构成新的实板验收。

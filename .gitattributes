@@ -23,7 +23,7 @@ results/board500/** -text -whitespace
 results/platform_history/** -text -whitespace
 docs/provenance/** -text -whitespace
 
-# C's H576 workbench and SHA-bound historical display receipts.
+# Preserve source bytes for KV260 LAB and SHA-bound historical display receipts.
 /start-workbench.ps1 -text
 board/ui/** -text -whitespace
 results/model_planning/h576_closeout_20261016_01/** -text -whitespace

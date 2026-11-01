@@ -1,0 +1,34 @@
+{
+  "schema": "kv260_lab_unified_verification_v1",
+  "client_date": "2026-11-01",
+  "status": "PASS",
+  "frontend_source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+  "scope": "Unified local KV260 LAB presentation, saved data, browser interactions and downloads; no board execution.",
+  "python_tests": 12,
+  "web_tests": 20,
+  "documentation_links": 96,
+  "frozen_source_files": 330,
+  "supplemental_files": 46,
+  "website_modules": 14,
+  "browser": {
+    "status": "PASS",
+    "default_latest_overview": true,
+    "cpu_curve_switch": true,
+    "image500": true,
+    "selection_retained_across_navigation": true,
+    "architecture_figures": 4,
+    "historical_scope_label": true,
+    "inference_demo_label": true,
+    "csv_download_sha256": "74393f19fe5637b412bee4936108dc03a3b69eec152c6d73472591292fdfa7c3"
+  },
+  "entry_aliases": [
+    "/",
+    "/index.html",
+    "/legacy/",
+    "/legacy",
+    "/final.html"
+  ],
+  "kernel_platform_and_runtime_changes": false,
+  "new_PL_START_commands": 0,
+  "new_board_execution": "NOT RUN"
+}

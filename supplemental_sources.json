@@ -1,7 +1,7 @@
 {
   "schema": "opt50_supplemental_sources_v1",
   "base_main_commit": "10c8e6a9030f64cd9e2a100d48861643467f24bc",
-  "scope": "Original branch source/evidence bytes restored without changing current HLS,runtime,model or recorded image metrics",
+  "scope": "Source/evidence identities for historical assets and current KV260 LAB UI; HLS, runtime, model and recorded image metrics retain their frozen identities.",
   "files": {
     "board/platform/input/observer/tb_f8_status.sv": {
       "bytes": 4466,
@@ -60,11 +60,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/app.js": {
-      "bytes": 54245,
-      "sha256": "ad38056a5036b77985dc574bd53a414b8208f6388275c489d761d570437a8d62",
-      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "bytes": 55354,
+      "sha256": "912ce5833d8b303f3d34c7858c28599084e743891cb84b4d4ecd780b80760f20",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
       "source_path": "board/ui/public/app.js",
-      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
     },
     "board/ui/public/assets/bridge.svg": {
       "bytes": 1669,
@@ -95,11 +95,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/index.html": {
-      "bytes": 2058,
-      "sha256": "ac97bcdccd8f74876831d29cce3dc1ae0c27584914facd75293dddf59d4d69c6",
-      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "bytes": 2137,
+      "sha256": "33e648f536d7cd064dcbcb13c80f094b48eb50a05ec76ab47931bf75d747c4dc",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
       "source_path": "board/ui/public/index.html",
-      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
     },
     "board/ui/public/live-view.js": {
       "bytes": 10008,
@@ -130,11 +130,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/server.mjs": {
-      "bytes": 10437,
-      "sha256": "ee014bae6d98447e4c6f273901498e454f946b35abfbf76e94f83c48b00c1247",
-      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "bytes": 10626,
+      "sha256": "3cf9f1f1e553aac2d6082dd177456cfc146ef5cb6821eb0f49a8c0918f9c28d6",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
       "source_path": "board/ui/server.mjs",
-      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
     },
     "board/ui/tests/charts.test.mjs": {
       "bytes": 4276,
@@ -282,6 +282,48 @@
       "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
       "source_path": "start-workbench.ps1",
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+    },
+    "board/ui/public/final-lab.js": {
+      "bytes": 14560,
+      "sha256": "5a51e4a22968eb8b6d123c20707d311853f4ccf204a15bb6c39725798d3d272d",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "source_path": "board/ui/public/final-lab.js",
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+    },
+    "board/ui/public/final-lab.css": {
+      "bytes": 4552,
+      "sha256": "c03289ebf03357d4cddf522854091fb992dde93a772f588b8a8a07719f0b0715",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "source_path": "board/ui/public/final-lab.css",
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+    },
+    "board/ui/final-api.mjs": {
+      "bytes": 2651,
+      "sha256": "69cda599ec22baf73a418baa878b3620c4507cceac570ecc0ab0aec69c1a7456",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "source_path": "board/ui/final-api.mjs",
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+    },
+    "board/ui/final-data.mjs": {
+      "bytes": 3347,
+      "sha256": "793980e50924a176f07d6b9d0ee09824f7a1de10a4dbe6b94c60ad200a434804",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "source_path": "board/ui/final-data.mjs",
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+    },
+    "board/ui/final-server.mjs": {
+      "bytes": 829,
+      "sha256": "92aace083b6af57cfe1332b938fd6bddf49c326e50f15fd4dadf166903556fa7",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "source_path": "board/ui/final-server.mjs",
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+    },
+    "start-final.ps1": {
+      "bytes": 697,
+      "sha256": "6d89aecf38df31997ba86e0a21d8dd3335852dcc40067ee107e6371aed846e1e",
+      "source_commit": "df97a3397850c2901e8ac178d6cd85751598c518",
+      "source_path": "start-final.ps1",
+      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
     }
   }
 }
