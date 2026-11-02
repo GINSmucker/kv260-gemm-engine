@@ -39,11 +39,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/package.json": {
-      "bytes": 543,
-      "sha256": "3fbc33cbd04d110a0b39a1d07fa0ea0d239b177eb18e36acf6113c4556a7d69e",
-      "source_commit": "71651c35062871262ff67d6ee26527c86e0fce2d",
+      "bytes": 641,
+      "sha256": "ab57478700b5d066dab70f5a56c637c91abc6f72fd1069bb57f2bc0b66abcaed",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
       "source_path": "board/ui/package.json",
-      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
     },
     "board/ui/presentation.mjs": {
       "bytes": 2704,
@@ -60,11 +60,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/app.js": {
-      "bytes": 56214,
-      "sha256": "f6a6e8f45121de5c23e783d8b495da9a357f6c47f92251b9e1499991d421b98c",
-      "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
+      "bytes": 57685,
+      "sha256": "491fd6759c2b392f0673e78225de574a89cc4223e1ad63a6519fc0720ab21376",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
       "source_path": "board/ui/public/app.js",
-      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
     },
     "board/ui/public/assets/bridge.svg": {
       "bytes": 1669,
@@ -95,11 +95,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/index.html": {
-      "bytes": 1678,
-      "sha256": "ccb3d8c3a4a0f59598a49d07311b984877b7bd20243672976d8d4091877176d7",
-      "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
+      "bytes": 1724,
+      "sha256": "9eaf7991ec4da43ad7f26c9bde6f707c148f4bc72ab40925b9466624b7e06b1b",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
       "source_path": "board/ui/public/index.html",
-      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
     },
     "board/ui/public/live-view.js": {
       "bytes": 9710,
@@ -130,11 +130,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/server.mjs": {
-      "bytes": 11016,
-      "sha256": "9f19ced01959a7c078d0d60a9050d799efe50af95cafa721bf24c6f99cf55368",
-      "source_commit": "273632332e594489a80b76bf03eb5b91741f9a2d",
+      "bytes": 11109,
+      "sha256": "7d47e73e8c48de5761b1a6c7d5ff26467244316359157f530982c28c63dc01e1",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
       "source_path": "board/ui/server.mjs",
-      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
     },
     "board/ui/tests/charts.test.mjs": {
       "bytes": 4263,
@@ -387,6 +387,139 @@
       "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
       "source_path": "results/ui/typography_20261101.json",
       "role": "Main-site font inventory and browser validation at two viewports"
+    },
+    "board/ui/public/saved-view.css": {
+      "bytes": 2852,
+      "sha256": "fdc828c8ed25b325cffa5235c89c2e57af386809ec677409220ddd209f76b368",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "board/ui/public/saved-view.css",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "board/ui/public/saved-view.js": {
+      "bytes": 13988,
+      "sha256": "d203c0dc383f95861dbe563a55e5a9afacefa9aca12dc676ee634582ef80d035",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "board/ui/public/saved-view.js",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "board/ui/saved-api.mjs": {
+      "bytes": 1414,
+      "sha256": "13cb19991ff0827d28f702568fc1ce7b35f310b73931ef5702e3a65d84d8856b",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "board/ui/saved-api.mjs",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "board/ui/saved-data.mjs": {
+      "bytes": 6409,
+      "sha256": "f2ac138fd405e0fcd620c07375f37ad066b742867094417f61640b8086a9592a",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "board/ui/saved-data.mjs",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "board/ui/tests/saved.test.mjs": {
+      "bytes": 4439,
+      "sha256": "6a2ae4f3b662d3aa5939785a091f96ffafaf1340550f34a944080be2566a0ce7",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "board/ui/tests/saved.test.mjs",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "docs/workbench.md": {
+      "bytes": 12369,
+      "sha256": "4f68f39f545c5942902eb5866737fdcc1758e1c78537c0c1fd3199c3132c3e80",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "docs/workbench.md",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/.gitattributes": {
+      "bytes": 20,
+      "sha256": "e97602ab9cac70102245345c5ab0fc9830df8b17f1072b188265a662a3a547ae",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/.gitattributes",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/Dense-306-accuracy.json": {
+      "bytes": 1224,
+      "sha256": "18be3cc298d58b92eafcad170f432e99df6f88075dcbd0b8f6be1b23836a44e8",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/Dense-306-accuracy.json",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/Dense-306-commit.json": {
+      "bytes": 1310,
+      "sha256": "d92ce3c9c46a3bcef357f5f1d0d1c05afd13da95ee00d0c4e293276868adc8f0",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/Dense-306-commit.json",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/Dense-306-pending.json": {
+      "bytes": 3465,
+      "sha256": "fd4c71717ddbbbfe163fe02e2495b2b54fd1918ca436234a37f8cd162a787592",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/Dense-306-pending.json",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/Sparse24-306-accuracy.json": {
+      "bytes": 1222,
+      "sha256": "77f660ce448e182f40dabd4be3084c58346b960134fed7bd57efb253fe051a53",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/Sparse24-306-accuracy.json",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/Sparse24-306-commit.json": {
+      "bytes": 1308,
+      "sha256": "ccdc47c4594256bab0e45b3e8cd09f61836e1086c8c48e7cdc6728e309774a83",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/Sparse24-306-commit.json",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/Sparse24-306-pending.json": {
+      "bytes": 3470,
+      "sha256": "4bd5494fb1f239c75b0c2c57047c8daee0a02cab808f3573c2cd712f93ce9867",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/Sparse24-306-pending.json",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/guitar-image.jpg": {
+      "bytes": 3847938,
+      "sha256": "2e184303f9e8bffaab99fe69e642c6d48cd95facb6369003d4ab65ed4a1076b5",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/guitar-image.jpg",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/guitar-report.json": {
+      "bytes": 2404,
+      "sha256": "86d983fbacdabfbf3969716e65aa18c5f9e9ace085df3bb48e0ca58c473a40ee",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/guitar-report.json",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/manifest.json": {
+      "bytes": 5772,
+      "sha256": "c62700ff9cc2123e190f3914c3fe002f2da9e387a154da45f57b7b948298b690",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/manifest.json",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/portrait-image.jpg": {
+      "bytes": 61306,
+      "sha256": "a8ca6d734765703b09728ab47fe59f473d93ae3967fc24c7c0288c3c7adb7130",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/portrait-image.jpg",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "results/roadshow/verification.md": {
+      "bytes": 3423,
+      "sha256": "127ac51d8dafffb2db86b4ecd31d7a345b1cb13b07f48abfa640d31a81235995",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "results/roadshow/verification.md",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+    },
+    "tools/prepare_roadshow_evidence.py": {
+      "bytes": 4770,
+      "sha256": "d3dd54040bbac6ea4c8c97e1a939611b5c04d4614cb043155e83afa2673f3288",
+      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "source_path": "tools/prepare_roadshow_evidence.py",
+      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
     }
   }
 }
