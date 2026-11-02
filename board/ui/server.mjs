@@ -8,6 +8,7 @@ import { presentationData } from './presentation.mjs';
 import { serveFinal } from './final-api.mjs';
 import { Sparse24Client } from './sparse24-client.mjs';
 import { serveSparse24 } from './sparse24-api.mjs';
+import { serveSaved } from './saved-api.mjs';
 
 const PUBLIC = path.resolve(fileURLToPath(new URL('./public/', import.meta.url)));
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json; charset=utf-8' };
@@ -32,6 +33,7 @@ export function createWorkbenchServer({ clock, boardUrl } = {}) {
       const host = (req.headers.host ?? '').split(':')[0];
       if (!['127.0.0.1', 'localhost'].includes(host)) throw new AppError('HOST_BLOCKED', '本服务仅支持loopback地址。', 403);
       const url = new URL(req.url, 'http://127.0.0.1'); const p = url.pathname;
+      if (await serveSaved(req,res,p)) return;
       if (await serveSparse24(req,res,url,sparse24,body)) return;
       if (await serveFinal(req,res,p)) return;
       if (p === '/api/presentation' && req.method === 'GET') {
