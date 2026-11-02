@@ -44,31 +44,3 @@ python -B tools/analyze_timing.py --archive /path/to/paired500-evidence.tar.gz
 ```
 
 该操作只读取已保存回执，不访问板卡，也不产生新的性能实测。
-
-## 同模型线程策略的独立对照
-
-以下为非默认自旋候选的实验结果。当前展示服务使用原关闭自旋的配置；这些模型收益不代表当前默认配置或完整请求的加速成绩。
-
-[模型验证](../results/final_optimization/20261101/model_review.json)使用固定第306–500张输入、同一个Sparse24模型和未改变的fd96539d固件。原设置、Run后停止自旋、动态分块三臂共585图；每张每臂一次，分五个39图组并调整顺序。CPU参考与INFO逐图保留，初始化和INFO位于Runner之外；不启用新增C++诊断或ORT profiler。线程数保持4/1，主线程CPU0、工作线程CPU1–3，图优化关闭。
-
-| Runner.run，ms | 原设置 | 运行后停止自旋 |
-|---|---:|---:|
-| 样本数 | 195 | 195 |
-| 均值 | 134.039316 | 123.260835 |
-| 中位数 | 133.741217 | 122.591396 |
-| P95 | 137.405100 | 125.578240 |
-| 最大值 | 145.368494 | 143.177622 |
-
-中位下降8.336862%，均值下降8.041283%。动态分块没有带来额外净收益，默认关闭。相同线程策略的另一轮195张中保留一次233.872899ms长尾：主线程与owner的调度等待显著增加，具体触发进程未确定。进程CPU时间均值增加约49%，这不等于墙钟或功耗变化；上述分位数只描述这些样本。
-
-[诊断细分](../results/final_optimization/20261101/diagnostic_summary.json)保留同一输入的6图低扰动记录，Runner均值133.862896ms，Linear外75.833440ms；量化6.485851、后处理8.969143、输入同步1.282443、IPC31.645017、输出同步1.188912、PS整数矩阵8.410426、setup0.047664ms。互斥区间逐图闭合。IPC内部的完整启动控制5.585006、START返回至完成20.642699、完成后控制0.266616和IPC其余5.150696ms是子区间，不能重复加到总计。
-
-ORT profiler下均值150.844050ms，相比低扰动记录多16.981155ms。其互斥算子分解与时钟对齐边界单独保留；attention、GELU、LayerNorm等带profiler耗时不能按比例移植成133.863ms图的实测分项。新增低扰动计时的开销低于所观察对照噪声，不能据此宣称零开销。
-
-固定500张的500,000个新FP32输出逐位差异0，Top1/Top5为357/461；500张原图预处理结果与原清单一致。这个验证使用独立模型窗口的构建身份。服务入口的原owner／插件身份及实际部署回归另行记录，不将不同入口编译出的owner视为同一个二进制。原历史Dense／Sparse195张表和500张记录保持独立。
-
-[完整请求](live-latency.md)及[逐图表](../results/final_optimization/20261101/paired195.csv)分别报告；新工具只复算归档，不产生新的板端成绩：
-
-```text
-python -B tools/analyze_final_optimization.py --evidence /path/to/resident-final-evidence.tar.gz --out /path/to/new-review --campaign latency_campaign_three_arm --candidate-arm scoped --quality-campaign quality_campaign_run_scoped
-```
