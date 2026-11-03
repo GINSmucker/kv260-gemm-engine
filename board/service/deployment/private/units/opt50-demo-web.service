@@ -1,0 +1,23 @@
+[Unit]
+Description=OPT50 Sparse24 demonstration website
+After=network.target opt50-demo-hardware.service
+Wants=opt50-demo-hardware.service
+
+[Service]
+Type=exec
+User=opt50demo
+Group=opt50demo
+WorkingDirectory=/opt/opt50-demo-v1/web
+ExecStart=/usr/bin/python3 -B /opt/opt50-demo-v1/web/web.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+RestrictAddressFamilies=AF_INET AF_UNIX
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

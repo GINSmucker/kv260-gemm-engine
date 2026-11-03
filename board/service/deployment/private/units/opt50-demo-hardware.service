@@ -1,0 +1,28 @@
+[Unit]
+Description=OPT50 Sparse24 current-boot inference supervisor
+Requires=dfx-mgr.service
+After=dfx-mgr.service local-fs.target
+ConditionPathExists=/opt/opt50-demo-v1/private/install_receipt.json
+
+[Service]
+Type=exec
+User=root
+Group=root
+WorkingDirectory=/opt/opt50-demo-v1/private
+ExecStart=/home/ubuntu/fpga_project/model_b/.venv/bin/python -B /opt/opt50-demo-v1/private/backend.py serve
+RuntimeDirectory=opt50-demo
+RuntimeDirectoryMode=0755
+UMask=0077
+ExitType=cgroup
+KillMode=process
+SendSIGKILL=no
+TimeoutStartSec=infinity
+TimeoutStopSec=infinity
+RuntimeMaxSec=infinity
+Restart=no
+OOMPolicy=continue
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

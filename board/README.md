@@ -6,6 +6,8 @@
 
 [ui/](ui/README.md)提供KV260 LAB统一展示入口，包含当前Dense/Sparse24成果、耗时分解、系统架构及H576历史数据，并通过独立HTTP适配层连接已有Sparse24服务进行JPEG推理；[使用指南](../docs/workbench.md)说明连接、上传、结果校验和演示边界。该接入不修改板端程序、计算核或固件。
 
+[service/](service/README.md)保存板端实际部署的监督进程、模型运行支持、非特权HTTP服务、静态页面及systemd单元；[板端使用指南](../docs/boot-demo.md)说明电脑网口、现场推理和维护操作。
+
 `platform/tests/tb_opt50_board_logic.sv`与`platform/input/observer/tb_f8_status.sv`保存两份平台测试台；[实现报告](../results/README.md#原opt50硬件实现报告)提供配对时序和资源证据。
 
 参考环境：Ubuntu24.04.2/aarch64，kernel6.8.0-1015-xilinx，匹配XRT2.18/zocl、g++13及XRT/UUID开发头库；ORT1.22.1、NumPy1.26.4。编译器及运行依赖受原收据约束。
