@@ -48,9 +48,9 @@
     },
     "verification": {
       "path": "results/roadshow/verification.md",
-      "bytes": 3423,
-      "sha256": "127ac51d8dafffb2db86b4ecd31d7a345b1cb13b07f48abfa640d31a81235995",
-      "origin": "Snapshot of docs/verification.md acceptance summary; original standalone layer02 result JSON is not included"
+      "bytes": 2948,
+      "sha256": "de3dd7e836348df6052fa2021624c5a5f4b38cbc6f97355264fe2b7c95deace9",
+      "origin": "Acceptance summary; numeric claims retain the recorded evidence scope"
     },
     "Dense-accuracy": {
       "path": "results/roadshow/Dense-306-accuracy.json",
