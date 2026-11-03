@@ -31,5 +31,3 @@ H576旧500张与本次500张来自不同资料，不能因数量相同而视为�
 - 网站及H576架构资料来自v2提交`71651c35062871262ff67d6ee26527c86e0fce2d`，网站使用见[指南](workbench.md)。
 - 两个OPT50 SystemVerilog测试台及六份历史实现报告来自v3提交`c5739fc7d9dd70130521ac9376e8c80ee726b0d2`。测试台身份与原平台配方匹配；报告身份与原实现核查清单匹配。
 - [交互式架构图](diagrams/architecture.html)下载后在本机浏览器打开；GitHub预览不执行HTML。其[说明数据](diagrams/architecture.json)、[原验证记录](diagrams/verification.json)与[Archify许可证](diagrams/LICENSE.archify.txt)一并保留。图描述原H576 Dense；字体链接可能访问Google Fonts，不连接板卡。
-
-复制原始文件只补齐资料和本地依赖，不构成本轮重新运行HLS、RTL、Vivado或板端推理。平台重建仍需匹配的外部IP、board preset、VIP和测试数据，不因补回两个测试台而宣称全新系统可直接构建。
