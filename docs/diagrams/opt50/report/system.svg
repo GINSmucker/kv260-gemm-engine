@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="790" viewBox="0 0 1000 790" role="img"><title>系统整体：图片、PS 模型与 FPGA 协同推理</title>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#344b60"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#152d42}path{fill:none;stroke:#344b60;stroke-width:2.5;marker-end:url(#arrow)}</style>
+<rect width="1000" height="790" fill="white"/>
+<text x="36" y="45" font-size="28" text-anchor="start" font-weight="600">系统整体：图片、PS 模型与 FPGA 协同推理</text>
+<text x="36" y="77" font-size="20" text-anchor="start">源码 bd5d8cc · 报告精简框图</text>
+<rect x="30" y="130" width="220" height="100" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="140.0" y="180.0" font-size="20" text-anchor="middle" font-weight="600">图片输入</text>
+<text x="140.0" y="212.0" font-size="20" text-anchor="middle">JPEG → 张量</text>
+<rect x="355" y="130" width="290" height="100" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="500.0" y="180.0" font-size="20" text-anchor="middle" font-weight="600">PS 模型：49 Linear</text>
+<text x="500.0" y="212.0" font-size="20" text-anchor="middle">36 PL + 13 PS</text>
+<rect x="750" y="130" width="220" height="100" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="860.0" y="180.0" font-size="20" text-anchor="middle" font-weight="600">1000 类分类</text>
+<text x="860.0" y="212.0" font-size="20" text-anchor="middle">Top1 / Top5</text>
+<rect x="355" y="340" width="290" height="100" rx="10" fill="#eef6fa" stroke="#59798f" stroke-width="1.8"/>
+<text x="500.0" y="390.0" font-size="20" text-anchor="middle" font-weight="600">PS / PL 适配</text>
+<text x="500.0" y="422.0" font-size="20" text-anchor="middle">量化 · 同步 · 调度</text>
+<rect x="355" y="550" width="290" height="100" rx="10" fill="#e4f4ee" stroke="#59798f" stroke-width="1.8"/>
+<text x="500.0" y="600.0" font-size="20" text-anchor="middle" font-weight="600">OPT50 共享引擎</text>
+<text x="500.0" y="632.0" font-size="20" text-anchor="middle">512 MAC · 125 MHz</text>
+<path d="M250 180 L355 180"/>
+<path d="M645 180 L750 180"/>
+<path d="M420 230 L420 340"/>
+<text x="340" y="290" font-size="20" text-anchor="middle">调用</text>
+<path d="M580 340 L580 230"/>
+<text x="690" y="290" font-size="20" text-anchor="middle">FP32 返回</text>
+<path d="M420 440 L420 550"/>
+<text x="300" y="500" font-size="20" text-anchor="middle">INT8 X / W</text>
+<path d="M580 550 L580 440"/>
+<text x="705" y="500" font-size="20" text-anchor="middle">INT32 Y</text>
+<text x="40" y="708" font-size="20" text-anchor="start" font-weight="600">Sparse24 模型：每图 12 Dense + 24 Sparse。</text>
+<text x="40" y="748" font-size="20" text-anchor="start" font-weight="600">原始 Dense 模型：每图 36 Dense。</text>
+</svg>

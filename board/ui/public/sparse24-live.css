@@ -1,0 +1,6 @@
+.s24-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);background:#eff3eb}.s24-placeholder strong{font-size:var(--type-heading)}.s24-placeholder p{font-size:var(--type-body)}.s24-receipt{font:var(--type-body)/1.8 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;max-height:60vh;overflow:auto;background:#f2f4ed;padding:18px;border-radius:8px}.result-note{overflow-wrap:anywhere}#s24-endpoint:disabled{opacity:.65}.demo-strip .btn{margin-left:auto;white-space:nowrap}
+.s24-inference-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.s24-inference-grid .input-preview{height:320px}
+.s24-inference-grid .input-preview img{object-fit:contain}
+.s24-inference-grid .result-actions{margin-top:20px}
+@media(max-width:900px){.s24-inference-grid{grid-template-columns:1fr}}

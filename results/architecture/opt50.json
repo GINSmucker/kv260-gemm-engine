@@ -1,0 +1,145 @@
+{
+  "schema": "opt50_architecture_artifacts_v1",
+  "status": "PASS",
+  "scope": "SOURCE_DIAGRAM_ARTIFACTS_AND_AUTOMATED_BROWSER_ONLY",
+  "source_revision": "bd5d8cc056a12b19f757949324986079ea675b59",
+  "archify_version": "3.2.0",
+  "presentation": {
+    "profile": "kv260-readable-16-20-28",
+    "renderer_adapter": {
+      "bytes": 3246,
+      "sha256": "ac80879c452c3a18a9c1f85182ec06c4dac9256f943c9cbee84a90ce20dee9d2"
+    },
+    "stylesheet": {
+      "bytes": 1845,
+      "sha256": "e4b694cee7376fd7d2903af5e14935047d99cdb43d61a60e35bd4ac021b54e70"
+    },
+    "isolated_renderer": true
+  },
+  "hardware_accessed": false,
+  "HLS_RTL_Vivado_board": "NOT RUN",
+  "diagrams": [
+    {
+      "diagram": "system",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "html": {
+        "bytes": 843473,
+        "sha256": "051a076e5a0056ead63fe610588b90a8be8d1375c462d4b76666a3138217d091"
+      },
+      "svg": {
+        "bytes": 327017,
+        "sha256": "0bdba10800630971b2a5ca683be1e2fb98ae00d0942e294112217733fca44ea2"
+      },
+      "candidate": {
+        "bytes": 7582,
+        "sha256": "c4f3b3d5c41337a8a0cd5430e66c219fada7fa09ff175f4277c527394bff5a8e"
+      },
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-163904-380833/system/system.finalize.json"
+    },
+    {
+      "diagram": "hardware",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "html": {
+        "bytes": 841158,
+        "sha256": "f44543631157e8e9d159b866ea9273150be768470cb89744b405baa08287e46f"
+      },
+      "svg": {
+        "bytes": 324657,
+        "sha256": "f1407e73fe9c7b25a0066632b202d599f356099e3778c01310735c84ec0ec73f"
+      },
+      "candidate": {
+        "bytes": 6894,
+        "sha256": "770a46201e072798fd1a34a526c784bf3debd8066a4e3898df37d10a93f1cff6"
+      },
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-163904-380833/hardware/hardware.finalize.json"
+    },
+    {
+      "diagram": "software",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "html": {
+        "bytes": 859719,
+        "sha256": "f1a3ae4d39511cb6a6150c798ddc0f8fb6be6a761bc240a354cdcca6ff664dfc"
+      },
+      "svg": {
+        "bytes": 341805,
+        "sha256": "230edea271f907c3d78f4d34a56de0d2d8373dd5c972ddd97a2c5dc1943ae702"
+      },
+      "candidate": {
+        "bytes": 13651,
+        "sha256": "0d0d3c6e4532e1afd854d24ab57f43d40088ed1600dd72015528988ad876d9ba"
+      },
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-163904-380833/software/software.finalize.json"
+    },
+    {
+      "diagram": "shared-core",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "html": {
+        "bytes": 843356,
+        "sha256": "baf861ede768435958db8374a978116cc9906e93636943c6fcf132a4f4832000"
+      },
+      "svg": {
+        "bytes": 326734,
+        "sha256": "1c359fcfbaa3fbb02262bc5c485c6456fcf9f4edab0e23e56413750a14d576c0"
+      },
+      "candidate": {
+        "bytes": 7493,
+        "sha256": "52d017b448019798848d375051fd41e060d2f54ba1940462464491507a956c9f"
+      },
+      "receipt": ".test_build/.archify/architecture-opt50-20261101-163904-380833/shared-core/shared-core.finalize.json"
+    }
+  ],
+  "report_figures": [
+    {
+      "diagram": "system",
+      "svg": {
+        "bytes": 2989,
+        "sha256": "7189eeb82130abea4dec7a30546947f7bf84c0ba308a6c3b7be63088c3a0fb2f"
+      }
+    },
+    {
+      "diagram": "hardware",
+      "svg": {
+        "bytes": 3534,
+        "sha256": "a4688896ee7a405a6a9b777f0d4ed46c7446f9ce73b63623e8c3a530486a09b4"
+      }
+    },
+    {
+      "diagram": "software",
+      "svg": {
+        "bytes": 4622,
+        "sha256": "663db963f5d2b0723e8940cc645074dbc938d7e3a785196d232b5dfd35b40ef2"
+      }
+    },
+    {
+      "diagram": "shared-core",
+      "svg": {
+        "bytes": 3533,
+        "sha256": "0f60d2ff5f07aef8a17ff805c41f15cebe894d99b66e8aa26186ff90dbfc2dd6"
+      }
+    }
+  ],
+  "entry": {
+    "bytes": 20335,
+    "sha256": "f0dde9de0cadaef84d58af9857c24f367e59d3bb160853db507c44177fa18211"
+  }
+}

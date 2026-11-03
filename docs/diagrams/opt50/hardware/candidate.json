@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "OPT50 · 硬件通路（据设计资料整理，非新 Vivado 截图）",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": "hardware/hardware.html",
+    "repository": {
+      "url": "git@github.com:GINSmucker/kv260-gemm-engine.git",
+      "revision": "bd5d8cc056a12b19f757949324986079ea675b59",
+      "link_mode": "local-only"
+    },
+    "legend": {
+      "entries": {
+        "backend": {
+          "label": "计算与控制"
+        },
+        "database": {
+          "label": "存储与缓冲"
+        },
+        "frontend": {
+          "label": "结果与输出"
+        },
+        "security": {
+          "label": "校验与生命周期"
+        },
+        "messagebus": {
+          "label": "块缓冲交接"
+        },
+        "external": {
+          "label": "输入来源"
+        }
+      },
+      "mode": "hidden"
+    }
+  },
+  "components": [
+    {
+      "id": "ps",
+      "type": "backend",
+      "label": "ARM PS",
+      "sublabel": "模型执行 · MMIO 控制",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ],
+      "sources": [
+        {
+          "path": "board/platform/scripts/create_system.tcl",
+          "line": 133,
+          "end_line": 148,
+          "label": "PS 配置与 125 MHz"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/model_core.hpp",
+          "line": 153,
+          "end_line": 168,
+          "label": "寄存器操作"
+        }
+      ]
+    },
+    {
+      "id": "ctrl",
+      "type": "backend",
+      "label": "控制 SmartConnect",
+      "sublabel": "HPM0 控制通路",
+      "pos": [
+        430,
+        40
+      ],
+      "size": [
+        220,
+        76
+      ],
+      "sources": [
+        {
+          "path": "board/platform/scripts/create_system.tcl",
+          "line": 153,
+          "end_line": 173,
+          "label": "控制互连与地址访问"
+        }
+      ]
+    },
+    {
+      "id": "gemm",
+      "type": "backend",
+      "label": "单一 OPT50 IP",
+      "sublabel": "Dense / Sparse 共用",
+      "pos": [
+        820,
+        40
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "sources": [
+        {
+          "path": "board/platform/scripts/create_system.tcl",
+          "line": 150,
+          "end_line": 159,
+          "label": "唯一 GEMM IP"
+        },
+        {
+          "path": "hls/src/model_gemm_top.cpp",
+          "line": 3,
+          "end_line": 21,
+          "label": "三路 AXI 数据 master"
+        }
+      ]
+    },
+    {
+      "id": "observer",
+      "type": "backend",
+      "label": "AXI observer",
+      "sublabel": "完成 · 排空观察",
+      "pos": [
+        430,
+        250
+      ],
+      "size": [
+        220,
+        76
+      ],
+      "sources": [
+        {
+          "path": "board/platform/scripts/create_system.tcl",
+          "line": 174,
+          "end_line": 190,
+          "label": "X / W / Y 观测线"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/model_core.hpp",
+          "line": 141,
+          "end_line": 168,
+          "label": "完成和排空条件"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "type": "backend",
+      "label": "数据 SmartConnect",
+      "sublabel": "三个 AXI master",
+      "pos": [
+        820,
+        460
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "sources": [
+        {
+          "path": "board/platform/scripts/create_system.tcl",
+          "line": 157,
+          "end_line": 159,
+          "label": "3 入 1 出配置"
+        },
+        {
+          "path": "board/platform/scripts/create_system.tcl",
+          "line": 174,
+          "end_line": 190,
+          "label": "三路 AXI 数据连接"
+        }
+      ]
+    },
+    {
+      "id": "hp0",
+      "type": "backend",
+      "label": "PS HP0 端口",
+      "sublabel": "128 bit · 共享 DDR",
+      "pos": [
+        430,
+        460
+      ],
+      "size": [
+        220,
+        76
+      ],
+      "sources": [
+        {
+          "path": "board/platform/scripts/create_system.tcl",
+          "line": 142,
+          "end_line": 146,
+          "label": "HP0 128 bit 配置"
+        },
+        {
+          "path": "board/platform/scripts/create_system.tcl",
+          "line": 191,
+          "end_line": 211,
+          "label": "HP0 与 DDR 地址映射"
+        }
+      ]
+    },
+    {
+      "id": "ddr",
+      "type": "database",
+      "label": "DDR / 四个持久 BO",
+      "sublabel": "X/W_data/W_meta/Y",
+      "pos": [
+        40,
+        460
+      ],
+      "size": [
+        220,
+        76
+      ],
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/source/kernel.cpp",
+          "line": 142,
+          "end_line": 144,
+          "label": "四个 BO 与静态权重"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/model_core.hpp",
+          "line": 53,
+          "end_line": 68,
+          "label": "载荷容量与身份"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "ps-ctrl",
+      "from": "ps",
+      "to": "ctrl",
+      "label": "HPM0",
+      "variant": "emphasis"
+    },
+    {
+      "id": "ctrl-gemm",
+      "from": "ctrl",
+      "to": "gemm",
+      "label": "AXI-Lite",
+      "variant": "emphasis"
+    },
+    {
+      "id": "ctrl-observer",
+      "from": "ctrl",
+      "to": "observer",
+      "label": "观测寄存器",
+      "variant": "default"
+    },
+    {
+      "id": "gemm-observer",
+      "from": "gemm",
+      "to": "observer",
+      "label": "握手信号",
+      "variant": "default"
+    },
+    {
+      "id": "gemm-data",
+      "from": "gemm",
+      "to": "data",
+      "label": "3 路 AXI",
+      "variant": "emphasis"
+    },
+    {
+      "id": "data-hp0",
+      "from": "data",
+      "to": "hp0",
+      "label": "128 bit",
+      "variant": "emphasis"
+    },
+    {
+      "id": "hp0-ddr",
+      "from": "hp0",
+      "to": "ddr",
+      "label": "DDR 读写",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "数据与控制分开",
+      "items": [
+        "gmem0 读 X；gmem1 共用 W_data / W_meta；gmem2 写 Y。",
+        "数据箭头按 AXI master 请求方向；读响应沿同一连接返回。"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "时钟与控制地址",
+      "items": [
+        "PL0 目标 125 MHz，受检系统 OS 记录 124,999,999 Hz。",
+        "GEMM 0xA0000000；observer 0xA0010000；四个指针为 64 位字节地址。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "存储与实现身份",
+      "items": [
+        "owner 初始化同步两份静态权重 BO；每层仅 client 同步 X / Y。",
+        "框图据平台 Tcl 整理；不是本机重新生成的 Vivado 截图或新布线证明。"
+      ]
+    }
+  ]
+}

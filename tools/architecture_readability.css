@@ -1,0 +1,24 @@
+/* Readable diagram text is retained in SVG and image exports. */
+svg [data-node-label] { font-size: 20px; }
+svg text[data-detail="context"], svg text[data-detail="fine"] { font-size: 16px; }
+svg[data-layout-contract="readable-v2"] g[data-edge-id]:not([data-edge-id="pending-next"]):not([data-edge-id="pending-close"]):not([data-edge-id="launch-fault"]) { display: none; }
+svg[data-layout-contract="readable-v2"] g[data-edge-id] text { font-size: 20px; }
+svg[data-layout-contract="readable-v2"] g[data-edge-id] rect { fill: none; }
+svg:has([data-node-id="mac"]) g[data-edge-id] { display: none; }
+.focus-chip { width: min(460px, calc(100% - 32px)); max-width: calc(100% - 32px); max-height: calc(100% - 100px); overflow-y: auto; }
+.focus-chip *, .card *, .node-outline * { font-size: 16px; line-height: 1.5; }
+.focus-chip .relationship-lens-title, .card h3 { font-size: 20px; }
+.relationship-lens-eyebrow, .semantic-passport-meta, .semantic-passport-reach,
+.relationship-lens-topology, .node-outline { display: none !important; }
+.semantic-passport-source { display: flex; flex-wrap: wrap; gap: 6px 12px; padding: 12px; }
+.semantic-passport-source code { white-space: normal; overflow-wrap: anywhere; }
+.semantic-passport-source small { flex-basis: 100%; width: 100%; min-width: 0; white-space: normal; word-break: break-all; margin: 0; }
+.semantic-passport-evidence-head { flex-wrap: wrap; gap: 8px; }
+.semantic-passport-repository { overflow-wrap: anywhere; white-space: normal; }
+svg[data-focus-active] [data-node-id], svg[data-focus-active] [data-edge-from],
+svg[data-focus-active] [data-graph-role="automatic-crossover"] > [data-graph-role="automatic-crossover-underlay"] { opacity: .75; }
+svg[data-focus-active] [data-focus-match] { opacity: 1; }
+@media (max-width: 720px) {
+  .focus-chip { max-height: 65vh; }
+  h1 { font-size: 20px; }
+}

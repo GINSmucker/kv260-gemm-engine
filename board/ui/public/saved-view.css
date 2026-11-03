@@ -1,0 +1,24 @@
+.saved-tabs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}.saved-source{padding:12px 18px;background:#eaf2e9;border:1px solid #cbdcc8;border-radius:8px;color:var(--green);margin-bottom:20px;font-size:var(--type-body)}.saved-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px}.saved-stats article{display:flex;flex-direction:column;gap:10px;background:white;border:1px solid var(--line);border-radius:12px;padding:20px}.saved-stats strong{font-size:var(--type-metric);color:var(--green);overflow-wrap:anywhere;line-height:1.3}.saved-stats label,.saved-stats span{font-size:var(--type-body);color:var(--muted)}.saved-inference-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px}.saved-photo{display:block;width:100%;height:300px;object-fit:contain;background:#f3f3ee;margin:16px 0;border-radius:8px}.saved-inference-grid select,.task-grid select{width:100%;max-width:100%}.saved-winner{display:grid;grid-template-columns:1fr auto;gap:10px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}.saved-winner span{grid-column:1/-1;color:var(--muted)}.saved-winner strong,.saved-winner b{font-size:var(--type-metric);line-height:1.3;color:var(--green)}.saved-checks{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;color:var(--green)}.saved-boundary{font-size:var(--type-body);color:var(--muted);line-height:1.8;margin:18px 0}.saved-section,.saved-sources{margin-top:22px}.saved-hash{display:block;overflow-wrap:anywhere}.saved-layer-result+.saved-layer-result{border-top:1px solid var(--line);margin-top:16px;padding-top:16px}.saved-layer-result h2{margin:0 0 10px}.saved-stats article:first-child strong{word-break:normal}.saved-inference-grid .numeric-table td:first-child{width:40%}.saved-section code{overflow-wrap:anywhere}#saved-pair-detail{margin-top:18px}#saved-pair-detail .numeric-table{font-size:var(--type-body)}@media(max-width:1050px){.saved-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:680px){.saved-stats,.saved-inference-grid{grid-template-columns:1fr}.saved-photo{height:250px}.saved-winner{grid-template-columns:1fr}.saved-stats strong{font-size:var(--type-metric)}}
+.saved-layer-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.saved-layer-results .saved-layer-result+.saved-layer-result{border-top:0;border-left:1px solid var(--line);margin:0;padding:0 0 0 22px}.saved-inference-grid .card-head,.saved-section .card-head,.task-grid .card-head{flex-wrap:wrap;gap:12px}.saved-inference-grid .card-title,.task-grid .card-title{flex-shrink:0}@media(max-width:900px){.saved-inference-grid,.saved-layer-results{grid-template-columns:1fr}.saved-layer-results .saved-layer-result+.saved-layer-result{border-left:0;border-top:1px solid var(--line);padding:16px 0 0;margin-top:16px}}
+.saved-stats article{border:2px solid var(--line);border-top:4px solid var(--green);padding:22px 24px;gap:12px}
+.saved-stats label{font-size:18px;color:var(--ink);font-weight:600}
+.saved-stats strong{font-size:36px;letter-spacing:-.8px}
+.saved-stats span:empty{display:none}
+.saved-stats article:first-child strong{overflow-wrap:anywhere}
+.saved-photo{height:330px;background:#f4f5f0;border:1px solid var(--line)}
+.saved-winner strong,.saved-winner b{font-size:38px}
+.saved-winner span{font-size:18px;font-weight:600;color:var(--ink)}
+.saved-tabs{margin-bottom:14px}
+.saved-tabs .btn{font-size:17px}
+.saved-inference-grid .card-body>label{display:block;margin-bottom:8px;font-weight:600}
+.saved-section summary,.saved-sources summary{font-size:18px}
+.saved-layer-result .numeric-table td:last-child{font-weight:600}
+.task-grid .dimension{border:1px solid var(--line)}
+.task-grid .dimension strong{font-size:30px;color:var(--green);font-weight:700}
+.task-grid .dimension small{color:var(--ink)}
+@media(max-width:1100px){.saved-stats strong{font-size:30px}.saved-winner strong,.saved-winner b{font-size:30px}}
+.performance-summary .performance-primary{background:var(--green);border-color:var(--green)}
+.performance-summary .performance-primary strong{color:white;font-size:42px}
+.performance-summary .performance-primary label,.performance-summary .performance-primary span{color:#e2eee4}
+.performance-secondary{margin:-4px 0 22px;color:var(--muted);font-size:var(--type-body)}
+@media(max-width:1100px){.performance-summary .performance-primary strong{font-size:34px}}
