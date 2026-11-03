@@ -1,0 +1,258 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 9286,
+      "sha256": "137628ad0b2e7b7a982236c6e27458c8b3eb0aca8bfdbcc717b8c1299c6ba593"
+    },
+    "common.py": {
+      "bytes": 4885,
+      "sha256": "c0e2a43e6408851b9b4d8606d914326a68c12d6484b0893156b122f4e6696247"
+    },
+    "prepare.py": {
+      "bytes": 7989,
+      "sha256": "493f52c08fbfd5aa6b5cb2fe16bc3d527063cd6ba21865a3e075f5cf656519d4"
+    },
+    "private/activate.py": {
+      "bytes": 3150,
+      "sha256": "cbfe669d8c57bb6b4e381555c77f41508631c650e4171e593a68e6fa6fead84c"
+    },
+    "private/backend.py": {
+      "bytes": 20847,
+      "sha256": "1c2ea52e51a996267f0c469e56fd3f0f65561beef6907ab936e673620fa680be"
+    },
+    "private/common.py": {
+      "bytes": 4885,
+      "sha256": "c0e2a43e6408851b9b4d8606d914326a68c12d6484b0893156b122f4e6696247"
+    },
+    "private/dataset.py": {
+      "bytes": 17108,
+      "sha256": "e014891983691c8709e59eec8773ddc93c098c0c05ad5b0f91a457fb7a43cf1e"
+    },
+    "private/labels_imagenet1k.json": {
+      "bytes": 87568,
+      "sha256": "f055ac68521110b153dda9296caf033aa1bdb98584e0e0485fe6125cbc8e2641"
+    },
+    "private/loader.py": {
+      "bytes": 4989,
+      "sha256": "2a87f9236e576b1eeda3d4905754e0ba9f59bb027943a8f052fa513aa5c2ad71"
+    },
+    "private/loader_source/artifacts.py": {
+      "bytes": 25661,
+      "sha256": "ddf608c2fcdbc95a43e900875fc91db22917762dd1b6107e773b5d084f14e52c"
+    },
+    "private/loader_source/board.py": {
+      "bytes": 13289,
+      "sha256": "647c67a3294b53e3ea4122ceed1227520acc8098eab035b7c3fa843185395190"
+    },
+    "private/loader_source/board_snapshot.py": {
+      "bytes": 14059,
+      "sha256": "1f4f955608ede7ead9e8bd064011449627485a2045356b53defb2766dc6ff59e"
+    },
+    "private/loader_source/firmware.py": {
+      "bytes": 6618,
+      "sha256": "e1b7bdc5f4652cc79a8cb9041f5f853badc85f9c4bd4bd876bbdbc16e3d2e1a2"
+    },
+    "private/management.py": {
+      "bytes": 1718,
+      "sha256": "c6331c92693e3261d9a9b24605e5468e074e01ed78600c99c5bc754f35a10505"
+    },
+    "private/model_runtime.py": {
+      "bytes": 25001,
+      "sha256": "8933fe84b2c55e57754f47612e5d0392d354112f886143680fd79133693ca304"
+    },
+    "private/resident_proof.py": {
+      "bytes": 9568,
+      "sha256": "fb4396271d0c6ce9d86584f69c526dee216bcbfd321b52b96efa0ed5bcb8fd02"
+    },
+    "private/source/b_plugin.cpp": {
+      "bytes": 19091,
+      "sha256": "ad67f0ad4e0537f9c53ef3438a602b571d9a567e13b18e663d067795b41c802d"
+    },
+    "private/source/client.cpp": {
+      "bytes": 7407,
+      "sha256": "7032973503edc4feade9abe0e0e432796e00e0571cbbe12bac4b161928fb6fb8"
+    },
+    "private/source/client.h": {
+      "bytes": 701,
+      "sha256": "0c0da46e40bc04deb6ec95317ed08104d8a75ae1dddf8dc713d052d9390685f5"
+    },
+    "private/source/gelu4.h": {
+      "bytes": 4240,
+      "sha256": "19c042ee5734b034d184813267532f96ac6722f48f886457118874dd0f7ec6e4"
+    },
+    "private/source/headers/headers_manifest.json": {
+      "bytes": 541,
+      "sha256": "e3c7fa1d124d00e37b17ff2fa4193f553d2b5c7a0daebe8ba3244497081e7ab6"
+    },
+    "private/source/headers/onnxruntime_c_api.h": {
+      "bytes": 275409,
+      "sha256": "d683537d0fdc29e977b5520f7f15d87a0ac212ae6d94fa9be8893a52655621ae"
+    },
+    "private/source/headers/onnxruntime_cxx_api.h": {
+      "bytes": 128360,
+      "sha256": "28b21dfc371fb53d1ba67356adeb124f36643ee5ab6f1ad2e9afbf09eb4bf305"
+    },
+    "private/source/headers/onnxruntime_cxx_inline.h": {
+      "bytes": 104233,
+      "sha256": "c41b9a11aac46851f68f4bd888bb2444a0e1eb6b37eadb41bf15f5154b48ea31"
+    },
+    "private/source/headers/onnxruntime_float16.h": {
+      "bytes": 17860,
+      "sha256": "6c4db3d1954b266c4febe413351af86cac922e3448538e7e452e51d646e56a4a"
+    },
+    "private/source/headers/picosha2.h": {
+      "bytes": 13810,
+      "sha256": "ae5613548dbd3ff1028b136af97d8bb409036566febc5c0fd9b48099f9c55b8d"
+    },
+    "private/source/headers/sha256_crypto.h": {
+      "bytes": 791,
+      "sha256": "adcbda7981d824fa5baf7e69e25d0ccd6514462da243f0fd3b9b20577de9b754"
+    },
+    "private/source/kernel.cpp": {
+      "bytes": 21745,
+      "sha256": "091fd1ff85d0c4778a6e2bf703061f1758668be85248a7f523f62829a95f3bdf"
+    },
+    "private/source/kernel.h": {
+      "bytes": 975,
+      "sha256": "a218b898d6c551a24f9dfc6b2d34ddfc19614d042d005e8e19171c140b4545be"
+    },
+    "private/source/layout4.h": {
+      "bytes": 2518,
+      "sha256": "9b4b2ed6c49cfd7687c14de24528eb53ff9d888175855170cc8ed9fd5bf29dc5"
+    },
+    "private/source/model_core.hpp": {
+      "bytes": 14124,
+      "sha256": "5028aebf5f34f02111c2dfa499a6884e1efe04e7a9d27bd9ecdfc6d12e47b042"
+    },
+    "private/source/native_gate.hpp": {
+      "bytes": 11919,
+      "sha256": "93cdb0ec910120d16f4bdde92d6a5d88dd5e7df20aa1de44bb6068771cf2edaa"
+    },
+    "private/source/owner.cpp": {
+      "bytes": 14054,
+      "sha256": "e280c70c6473d350b47a79aa67108e5ddf2cd9e2d8f77cf850e4ed753fb8918c"
+    },
+    "private/source/performance_trace.hpp": {
+      "bytes": 10261,
+      "sha256": "b907a665ee8a5eb83a8fa225ea31b1e36440c6eddd1ce368f85c82f2626eda44"
+    },
+    "private/source/picosha2.h": {
+      "bytes": 13422,
+      "sha256": "b13c180161ffac8d0adc81e033e493c409457c4d1258ab9781ac80579ba3bdd8"
+    },
+    "private/source/protocol.h": {
+      "bytes": 2800,
+      "sha256": "558b986e5936999a43240e72660b347ef84d5527d8d9a6fe9f7e6b1776dce440"
+    },
+    "private/source/qkv_dequant.h": {
+      "bytes": 977,
+      "sha256": "6a6c428ba19164296b0f264a1a03f9d76d41ef84cdb30f71bd58db003240e864"
+    },
+    "private/source/quant_neon.h": {
+      "bytes": 2784,
+      "sha256": "9dc4467440058740b034d386baeebcd24173c4fa2df2533551102452198a6cc6"
+    },
+    "private/source/route.h": {
+      "bytes": 372,
+      "sha256": "d5aaf98aa2945158d9210cae4d3a4441328bf11d02b1636c8224ad2022e0cb1c"
+    },
+    "private/test_model_core.cpp": {
+      "bytes": 9808,
+      "sha256": "ee412d2ae02f15528979958b3c1b25462722c0bab9c7277c1af4998cc446f239"
+    },
+    "private/test_performance_core.cpp": {
+      "bytes": 6616,
+      "sha256": "b2d4ca7a1e1c6f2a43a9f1d523ac33b63e6dda6919bb2fb721ec9639a057b199"
+    },
+    "provenance.json": {
+      "bytes": 21715,
+      "sha256": "da4d87db568731d5640c6dc37b6b769f2de1bbfbf857ddb5a0e92b63c9228e91"
+    },
+    "units/opt50-demo-hardware.service": {
+      "bytes": 691,
+      "sha256": "87e886e1cb4f7929dead7162dc9c1e6963be6cc52f5ca2f71323df7a7fb3e615"
+    },
+    "units/opt50-demo-web.service": {
+      "bytes": 503,
+      "sha256": "e4a255f26fa6ac87290f391eba388945cb41b9a34c980479baaf46fbbec124c7"
+    },
+    "web/common.py": {
+      "bytes": 4885,
+      "sha256": "c0e2a43e6408851b9b4d8606d914326a68c12d6484b0893156b122f4e6696247"
+    },
+    "web/static/api-client.js": {
+      "bytes": 1396,
+      "sha256": "07178ed19bc1c1f4776b3d8feda5a9464a1b8e55b9cbf20da33cea2474f912f5"
+    },
+    "web/static/app.js": {
+      "bytes": 19157,
+      "sha256": "5aec6a2bc0bf0e0dde1547b03143709463dad78d206414de28c7b5a3d6c5d93f"
+    },
+    "web/static/assets/bridge.svg": {
+      "bytes": 1669,
+      "sha256": "035bbdd4843263f07ecd652603e95c17061a1e6f4243a67f8c115fa35d6885b6"
+    },
+    "web/static/assets/dog.svg": {
+      "bytes": 1458,
+      "sha256": "4e378a1936cd60d73d42894bf36ab4a215b80e451e9ee07116f643994b16e352"
+    },
+    "web/static/assets/pattern.svg": {
+      "bytes": 1246,
+      "sha256": "1d650b7f090b0b0b29f27abee0a110894d123bf01eebc00bd14b351b516c3540"
+    },
+    "web/static/board500.json": {
+      "bytes": 94385,
+      "sha256": "0eee26e7d211329d27a994f362afbfd07c8fb2d488f0ccd907eb61173e4b8826"
+    },
+    "web/static/charts.js": {
+      "bytes": 6153,
+      "sha256": "c309c37fed8b512e9a5a91249dc826112a83a7b55a668396241acf758864e5c3"
+    },
+    "web/static/index.html": {
+      "bytes": 2114,
+      "sha256": "3feb6693c2c237219d7d41fae1f364412ac9bb56e2f10ac85d12a49ea1005fcd"
+    },
+    "web/static/live-view.js": {
+      "bytes": 4792,
+      "sha256": "039bb5c61942a6d426a121d37149c7266c51a18fc050c9840f5d52139272deda"
+    },
+    "web/static/metrics.json": {
+      "bytes": 3937,
+      "sha256": "695143f978493554678392050bed977f08d4d3420639f59b98c6dccc21aa4437"
+    },
+    "web/static/paired195_cpu_pl.csv": {
+      "bytes": 38046,
+      "sha256": "74393f19fe5637b412bee4936108dc03a3b69eec152c6d73472591292fdfa7c3"
+    },
+    "web/static/presentation.js": {
+      "bytes": 6256,
+      "sha256": "257061dedd2c3fdec5f14f731e14770949f311c4e452435a0fb7750902917ca3"
+    },
+    "web/static/sparse24-api.js": {
+      "bytes": 1320,
+      "sha256": "fbe2a83a7365bd2d4acc6fb791edfe065d5c7fc7d941fb7b0b22f401b2fd0cb7"
+    },
+    "web/static/sparse24.css": {
+      "bytes": 1611,
+      "sha256": "f2c8a3873df3670e30bd7587c295471a80db28fae3bd547cd7de94248a16343e"
+    },
+    "web/static/styles.css": {
+      "bytes": 39264,
+      "sha256": "b4575ed404e560d0a080dae8ef8ab656ca781e740e7b91068a34949c73912aee"
+    },
+    "web/static/tokens.css": {
+      "bytes": 231,
+      "sha256": "3cf70405c89f0ceba12b07904a8f13dc512674dae67f9865e013535800e2c55c"
+    },
+    "web/static/ui_provenance.json": {
+      "bytes": 5219,
+      "sha256": "0ec433029700bc37646018a9bd1261bd95967c8bb51f6eaf28bbeb3ad7158f81"
+    },
+    "web/web.py": {
+      "bytes": 5986,
+      "sha256": "c9e3a18ed7c898adabc969a7ba8037698d4d717c59d52243253b48959afd5007"
+    }
+  },
+  "hardware_test": "NOT RUN",
+  "schema": "opt50_boot_demo_package_v1"
+}

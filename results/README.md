@@ -2,6 +2,8 @@
 
 主结果为 [metrics.json](board500/metrics.json)。[paired195_cpu_pl.csv](board500/paired195_cpu_pl.csv)给出同195张的两模型CPU和PS/PL四组时间；[per_image_comparison.csv](board500/per_image_comparison.csv)给出完整500张预测、真实标签、输入SHA和原始记录时间。
 
+[timing_breakdown.json](board500/timing_breakdown.json)由同195张的390份Native回执与worker记录复算，给出互不重叠的Runner区间、逐层均值及回执SHA。START至完成证明包含轮询和完成检查，不是纯PL周期；详细边界见[测量口径](../docs/measurement.md)。
+
 [原始板端摘要](board500/board_summary.json)按原字节保存，不改写其中多软件版本500张总体统计；主性能只采用195张同调度范围。[独立复核](board500/local_independent_review.json)使用Python标准库重新读取两模型共2000个保存tensor，比较各自CPU/PL原始位、重排全部1000类并核对统计。
 
 完整21,246,214字节证据归档SHA为`3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b`，作为外部资产保存。原始归档中的摘要SHA与Git中`board_summary.json`一致；Git不是完整原始归档目录，原SHA清单仅作为来源记录。

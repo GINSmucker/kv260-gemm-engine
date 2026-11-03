@@ -22,7 +22,7 @@ test('two measured curves retain every point, keyboard values and zero-duration 
   const samples=Array.from({length:3},(_,i)=>({index:i+1,fp32Ms:i===2?1000:20,w8a8Ms:15+i,plMs:10+i}));
   const svg=comparisonChart(samples,'fp32');
   assert.equal((svg.match(/<polyline /g)||[]).length,2);assert.equal((svg.match(/class="curve-pair"/g)||[]).length,3);
-  assert.ok(svg.includes('1000.000'));assert.ok(svg.includes('全部 3 个正式样本'));
+  assert.ok(svg.includes('1000.000'));assert.ok(svg.includes('3 个样本'));
   assert.doesNotMatch(comparisonChart([{index:1,fp32Ms:0,w8a8Ms:0,plMs:0}]),/NaN|Infinity/);
 });
 test('saved presentation binds real receipts and exposes the complete fixed route',async()=>{

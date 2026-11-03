@@ -1,0 +1,127 @@
+{
+  "schema": "kv260_diagram_readability_v1",
+  "status": "PASS",
+  "scope": "Local presentation only; no board or kernel changes",
+  "diagrams": [
+    {
+      "diagram": "system",
+      "viewport": [
+        1280,
+        720
+      ],
+      "fonts": [
+        "16px",
+        "28px",
+        "20px"
+      ],
+      "pageOverflowX": false,
+      "viewBox": "0 0 1160 544",
+      "minimumPrimaryGlyphHeightPx": 23.99999237060547
+    },
+    {
+      "diagram": "hardware",
+      "viewport": [
+        1280,
+        720
+      ],
+      "fonts": [
+        "16px",
+        "28px",
+        "20px"
+      ],
+      "pageOverflowX": false,
+      "viewBox": "0 0 1100 604",
+      "minimumPrimaryGlyphHeightPx": 25
+    },
+    {
+      "diagram": "software",
+      "viewport": [
+        1280,
+        720
+      ],
+      "fonts": [
+        "16px",
+        "28px",
+        "20px"
+      ],
+      "pageOverflowX": false,
+      "viewBox": "0 0 1387 776",
+      "minimumPrimaryGlyphHeightPx": 20
+    },
+    {
+      "diagram": "shared-core",
+      "viewport": [
+        1280,
+        720
+      ],
+      "fonts": [
+        "16px",
+        "28px",
+        "20px"
+      ],
+      "pageOverflowX": false,
+      "viewBox": "0 0 1400 794",
+      "minimumPrimaryGlyphHeightPx": 18.999969482421875
+    }
+  ],
+  "lab": [
+    {
+      "figures": [
+        {
+          "h": 790,
+          "parent": 975,
+          "w": 1000
+        },
+        {
+          "h": 735,
+          "parent": 975,
+          "w": 1000
+        },
+        {
+          "h": 1110,
+          "parent": 975,
+          "w": 1000
+        },
+        {
+          "h": 745,
+          "parent": 975,
+          "w": 1000
+        }
+      ],
+      "fonts": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "overflow": false,
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "fonts": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "overflow": false,
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "detailPanel": {
+    "titleFontPx": 20,
+    "bodyFontPx": 16,
+    "sourcePathsWrap": true,
+    "sourcePathOverflow": false
+  },
+  "export": {
+    "format": "SVG",
+    "theme": "light",
+    "download": "opt50-light.svg",
+    "browserDownloadCompleted": true
+  }
+}

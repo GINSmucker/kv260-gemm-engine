@@ -19,7 +19,7 @@ def safe(root,name):
         need(not p.is_symlink() and not getattr(p.lstat(),'st_file_attributes',0)&0x400,'linked release path')
     return path
 def verify_supplemental(root=ROOT):
-    """Check copied sources and the local dependencies that their consumers use."""
+    """Check declared source identities and the local dependencies of their consumers."""
     root = Path(root)
     manifest = json.loads((root / 'supplemental_sources.json').read_bytes())
     need(manifest['schema'] == 'opt50_supplemental_sources_v1', 'supplemental schema')

@@ -1,8 +1,8 @@
 {
   "files": {
     "README.md": {
-      "bytes": 5699,
-      "sha256": "24198c504b2b9d2bb4e6fcae15e2acaf273bbb5a099045bbb75bd32117056865"
+      "bytes": 5666,
+      "sha256": "3d0c73e12e371f5246e885f7ba8fdf3e83064dc4f4e9bd0612bbdf371fa39768"
     },
     "board/README.md": {
       "bytes": 697,
@@ -36,11 +36,11 @@
       "bytes": 123650,
       "sha256": "7fb7a9ba981505c09cdaaea7c9da8fd6509d2b615844fdc060435def244d263c"
     },
-    "docs/history/KV260_\u4e09\u4eba\u534f\u4f5c\u89c4\u8303\u4e0e\u516d\u5468\u8ba1\u5212_v0.1.md": {
+    "docs/history/KV260_三人协作规范与六周计划_v0.1.md": {
       "bytes": 43815,
       "sha256": "0f3e79a21f53cfd67766553e1ca692cb928b1c5075bde5b59df1d4ce509e2db1"
     },
-    "docs/history/KV260_\u8fde\u63a5\u4e0e\u4f7f\u7528\u6307\u5357_\u542bFPGA\u8fd0\u884c\u73af\u5883\u72b6\u6001.md": {
+    "docs/history/KV260_连接与使用指南_含FPGA运行环境状态.md": {
       "bytes": 13516,
       "sha256": "0754243c9f445c546013658c1ac2049d4f545f85cd14248f4b45ff2344020bc3"
     },
@@ -141,5 +141,11 @@
       "sha256": "de5a56d75f8b05f1a768c6d2f90d8407766a5f37ea9e7ef256ee775d5596f736"
     }
   },
-  "source_commit": "becf9337915ecd855d91a8e7450c26945889a449"
+  "source_commit": "becf9337915ecd855d91a8e7450c26945889a449",
+  "original_document_identities": {
+    "README.md": {
+      "bytes": 5699,
+      "sha256": "24198c504b2b9d2bb4e6fcae15e2acaf273bbb5a099045bbb75bd32117056865"
+    }
+  }
 }

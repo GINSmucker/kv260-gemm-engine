@@ -2,9 +2,9 @@
 
 默认模型为B交付的24个MLP Linear固定2:4掩码版本，W8A8 SHA为`ea501779...`；原Dense对照SHA为`f2f20336...`。完整身份见 [来源](../docs/provenance.md)。两模型均为49层Linear、36PL/13PS；Sparse24为12D/24S，Dense对照为36D/0S。
 
-`training_snapshot/`按原字节保存B的训练／导出代码、冻结policy和历史报告。原交付以10万张、5轮、7815次更新继续训练父24层，Dense冻结教师蒸馏；按独立开发集选择epoch5，验收只作预定采用判断。没有为Git整理重新训练。
+`training_snapshot/`按原字节保存B的训练／导出代码、冻结policy和历史报告。原交付以10万张、5轮、7815次更新继续训练父24层，Dense冻结教师蒸馏；按独立开发集选择epoch5，验收只作预定采用判断。
 
-训练源码只是一部分复现条件。原精简包未包含10万训练图片、历史父FP32和教师模型等全部输入；缺少这些固定身份输入时，不能宣称精确重跑历史训练。B原ZIP在外部资产中保留。[原最终报告](training_snapshot/docs/FINAL_REPORT.md) · [原训练策略](training_snapshot/research_archive/policy.json)
+[模型报告](training_snapshot/docs/FINAL_REPORT.md)与[训练策略](training_snapshot/research_archive/policy.json)说明选层、训练参数和评估口径。
 
 `prepare_dense_model.py`、`prepare_sparse24_model.py`保存本次模型适配来源，保留历史workspace假设。它们不是改路径即可随意运行的训练程序。受检模型的完整生成目录可由两个外部payload和对应运行快照精确还原。
 

@@ -2,7 +2,7 @@
 
 本页用于移交已经配置好展示服务的 KV260 和现有系统卡。网站由板卡提供，Windows 浏览器访问 **http://192.168.137.2:8080/#overview**；现场图片通过 HTTP 提交，由板端执行真实 Sparse24 推理。日常演示不需要 SSH、Node.js 或本机启动网站。
 
-展示部署程序和本轮网页验证证据尚未随仓库发布。本页是现有板卡的使用说明，不是新系统卡的安装教程。仓库原有的 `start-workbench.ps1` 仍启动旧 H576 本机工作台，使用方式见[历史网站说明](workbench.md)。
+板端应用、静态网页、Native支持源码及配套systemd单元位于[board/service/deployment](../board/service/README.md)，逐文件身份见部署目录的source_manifest.json。本机使用`start-workbench.ps1`或`start-final.ps1`启动KV260 LAB，操作见[工作台说明](workbench.md)。
 
 ## Windows 首次设置以太网
 

@@ -1,7 +1,8 @@
 # 文档入口
 
 - [快速开始](quickstart.md)：离线复核、受检包还原、CPU自测和板端前提。
-- [C的H576展示网站](workbench.md)：本机启动、存档曲线、路由、JSON／CSV下载和必要文件。
+- [KV260 LAB统一展示入口](workbench.md)：本机启动、Dense/Sparse24曲线、耗时分解、架构图、历史实测及数据下载。
+- [板端网站与以太网连接](boot-demo.md)：直接访问板卡、JPEG推理、状态检查与关机；部署源码见board/service/。
 - [接口](interface.md)：唯一8参数OPT50 ABI及数值契约。
 - [测量](measurement.md)：500张精度与195张性能口径、CPU参考含义。
 - [验证](verification.md)：已通过内容、历史报告和未验证项。

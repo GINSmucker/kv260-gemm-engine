@@ -1,0 +1,151 @@
+{
+  "schema": "opt50_c_workbench_frontend_derivation_v1",
+  "source_tree": "main_final_sparse24_20261030",
+  "files": {
+    "index.html": {
+      "source": "board/ui/public/index.html",
+      "source_pin": {
+        "bytes": 2058,
+        "sha256": "ac97bcdccd8f74876831d29cce3dc1ae0c27584914facd75293dddf59d4d69c6"
+      },
+      "origin": "C original H576 workbench",
+      "adapted": true,
+      "deployed_pin": {
+        "bytes": 2114,
+        "sha256": "3feb6693c2c237219d7d41fae1f364412ac9bb56e2f10ac85d12a49ea1005fcd"
+      }
+    },
+    "styles.css": {
+      "source": "board/ui/public/styles.css",
+      "source_pin": {
+        "bytes": 39264,
+        "sha256": "b4575ed404e560d0a080dae8ef8ab656ca781e740e7b91068a34949c73912aee"
+      },
+      "origin": "C original H576 workbench",
+      "adapted": false,
+      "deployed_pin": {
+        "bytes": 39264,
+        "sha256": "b4575ed404e560d0a080dae8ef8ab656ca781e740e7b91068a34949c73912aee"
+      }
+    },
+    "tokens.css": {
+      "source": "board/ui/public/tokens.css",
+      "source_pin": {
+        "bytes": 231,
+        "sha256": "3cf70405c89f0ceba12b07904a8f13dc512674dae67f9865e013535800e2c55c"
+      },
+      "origin": "C original H576 workbench",
+      "adapted": false,
+      "deployed_pin": {
+        "bytes": 231,
+        "sha256": "3cf70405c89f0ceba12b07904a8f13dc512674dae67f9865e013535800e2c55c"
+      }
+    },
+    "charts.js": {
+      "source": "board/ui/public/charts.js",
+      "source_pin": {
+        "bytes": 7671,
+        "sha256": "dde4ba79c33b82ad7f493869a11baf9e26b8e9e7f8f4dadacac44cd33f9c2b95"
+      },
+      "origin": "C original H576 workbench",
+      "adapted": true,
+      "deployed_pin": {
+        "bytes": 6153,
+        "sha256": "c309c37fed8b512e9a5a91249dc826112a83a7b55a668396241acf758864e5c3"
+      }
+    },
+    "api-client.js": {
+      "source": "board/ui/public/api-client.js",
+      "source_pin": {
+        "bytes": 1396,
+        "sha256": "07178ed19bc1c1f4776b3d8feda5a9464a1b8e55b9cbf20da33cea2474f912f5"
+      },
+      "origin": "C original H576 workbench",
+      "adapted": false,
+      "deployed_pin": {
+        "bytes": 1396,
+        "sha256": "07178ed19bc1c1f4776b3d8feda5a9464a1b8e55b9cbf20da33cea2474f912f5"
+      }
+    },
+    "assets/bridge.svg": {
+      "source": "board/ui/public/assets/bridge.svg",
+      "source_pin": {
+        "bytes": 1669,
+        "sha256": "035bbdd4843263f07ecd652603e95c17061a1e6f4243a67f8c115fa35d6885b6"
+      },
+      "origin": "C original H576 workbench",
+      "adapted": false,
+      "deployed_pin": {
+        "bytes": 1669,
+        "sha256": "035bbdd4843263f07ecd652603e95c17061a1e6f4243a67f8c115fa35d6885b6"
+      }
+    },
+    "assets/dog.svg": {
+      "source": "board/ui/public/assets/dog.svg",
+      "source_pin": {
+        "bytes": 1458,
+        "sha256": "4e378a1936cd60d73d42894bf36ab4a215b80e451e9ee07116f643994b16e352"
+      },
+      "origin": "C original H576 workbench",
+      "adapted": false,
+      "deployed_pin": {
+        "bytes": 1458,
+        "sha256": "4e378a1936cd60d73d42894bf36ab4a215b80e451e9ee07116f643994b16e352"
+      }
+    },
+    "assets/pattern.svg": {
+      "source": "board/ui/public/assets/pattern.svg",
+      "source_pin": {
+        "bytes": 1246,
+        "sha256": "1d650b7f090b0b0b29f27abee0a110894d123bf01eebc00bd14b351b516c3540"
+      },
+      "origin": "C original H576 workbench",
+      "adapted": false,
+      "deployed_pin": {
+        "bytes": 1246,
+        "sha256": "1d650b7f090b0b0b29f27abee0a110894d123bf01eebc00bd14b351b516c3540"
+      }
+    },
+    "app.js": {
+      "source": "board/ui/public/app.js",
+      "source_pin": {
+        "bytes": 54245,
+        "sha256": "ad38056a5036b77985dc574bd53a414b8208f6388275c489d761d570437a8d62"
+      },
+      "origin": "C page structure/navigation/icons adapted to Sparse24 controller",
+      "adapted": true,
+      "deployed_pin": {
+        "bytes": 19157,
+        "sha256": "5aec6a2bc0bf0e0dde1547b03143709463dad78d206414de28c7b5a3d6c5d93f"
+      }
+    },
+    "presentation.js": {
+      "source": "board/ui/public/presentation.js",
+      "source_pin": {
+        "bytes": 6390,
+        "sha256": "7058ecdea1a2b111ab55a65c187b1d25c9b716fc50094e793b04e88762aa0cdf"
+      },
+      "origin": "C overview components adapted to current board500 evidence",
+      "adapted": true,
+      "deployed_pin": {
+        "bytes": 6256,
+        "sha256": "257061dedd2c3fdec5f14f731e14770949f311c4e452435a0fb7750902917ca3"
+      }
+    },
+    "live-view.js": {
+      "source": "board/ui/public/live-view.js",
+      "source_pin": {
+        "bytes": 10008,
+        "sha256": "6b04b19dded7145f5e4527cc2fca8cf46af4b3a949a720c88a2d6bef8598ee9e"
+      },
+      "origin": "C prediction/progress/route cards adapted to actual Sparse24 receipts",
+      "adapted": true,
+      "deployed_pin": {
+        "bytes": 4792,
+        "sha256": "039bb5c61942a6d426a121d37149c7266c51a18fc050c9840f5d52139272deda"
+      }
+    }
+  },
+  "source_commit": "bd5d8cc056a12b19f757949324986079ea675b59",
+  "source_commit_scope": "Merged main tree containing the byte-preserved C workbench"
+}

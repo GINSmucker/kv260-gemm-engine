@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 
-export const POLICY = Object.freeze({ schema: 'kv260_ui_policy_v1', source: 'DEMO', hardwareIOEnabled: false, boardContacted: false, realPLStarts: 0, networkConnection: 'LOCKED', serialConnection: 'LOCKED', reason: 'B 会话正在使用板卡。本阶段只运行本机演示，不访问网络设备或串口。' });
+export const POLICY = Object.freeze({ schema: 'kv260_ui_policy_v1', source: 'DEMO', hardwareIOEnabled: false, boardContacted: false, realPLStarts: 0, networkConnection: 'LOCKED', serialConnection: 'LOCKED', reason: '样例任务不访问硬件。Sparse24 实测通过独立连接与推理接口显式提交；串口和旧 H576 通道保持各自限制。' });
 export const MODEL = { name: 'DeiT Tiny', id: 'deit_tiny_patch16_224.fb_in1k', blocks: 12, tokens: 197, embedding: 192, heads: 3, classes: 1000, input: '224 × 224', parameters: 5717416, quantization: 'W8 per-channel / A8 per-row', source: 'DEMO_CONFIGURATION', identity: 'UI_DEMO_FIXTURE_V1' };
 export const LAYERS = [];
 for (let i = 0; i < 12; i++) for (const [family, suffix, K, N] of [['qkv', 'attn.qkv', 192, 576], ['proj', 'attn.proj', 192, 192], ['fc1', 'mlp.fc1', 192, 768], ['fc2', 'mlp.fc2', 768, 192]]) LAYERS.push({ index: LAYERS.length, id: `blocks.${i}.${suffix}`, family, M: 197, K, N });

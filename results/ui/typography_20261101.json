@@ -1,0 +1,566 @@
+{
+  "schema": "kv260_lab_typography_audit_v1",
+  "status": "PASS",
+  "client_date": "2026-11-01",
+  "scope": "KV260 LAB 11 main routes and receipt dialog; standalone architecture exports retain independent graphic typography",
+  "before_runtime_observed_sizes_px": [
+    7.0,
+    8.0,
+    9.0,
+    10.0,
+    11.0,
+    12.0,
+    13.0,
+    14.0,
+    16.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    21.0,
+    23.0,
+    24.0,
+    25.0,
+    26.88,
+    29.0,
+    30.0,
+    32.0,
+    34.56,
+    36.0
+  ],
+  "before_source_declarations": {
+    "declarations": {
+      "final-lab.css": {
+        "font_size": [
+          "10px",
+          "11px",
+          "12px",
+          "13px",
+          "16px",
+          "17px",
+          "30px",
+          "31px",
+          "36px"
+        ],
+        "font_shorthand": [
+          "11px var(--mono)",
+          "12px var(--mono)",
+          "13px var(--mono)"
+        ]
+      },
+      "sparse24-live.css": {
+        "font_size": [
+          "12px",
+          "18px"
+        ],
+        "font_shorthand": [
+          "11px/1.8 var(--mono)"
+        ]
+      },
+      "styles.css": {
+        "font_size": [
+          "10px",
+          "11px",
+          "12px",
+          "13px",
+          "14px",
+          "15px",
+          "16px",
+          "18px",
+          "19px",
+          "20px",
+          "21px",
+          "22px",
+          "23px",
+          "24px",
+          "26px",
+          "27px",
+          "29px",
+          "30px",
+          "32px",
+          "33px",
+          "8px",
+          "9px",
+          "clamp(26px,2.5vw,43px)"
+        ],
+        "font_shorthand": [
+          "10px var(--mono)",
+          "10px/1.7 var(--mono)",
+          "10px/1.9 var(--mono)",
+          "11px var(--font)",
+          "11px var(--mono)",
+          "12px var(--mono)",
+          "14px/1.6 var(--font)",
+          "20px var(--mono)",
+          "23px var(--mono)",
+          "24px var(--mono)",
+          "25px var(--mono)",
+          "30px var(--mono)",
+          "500 18px var(--mono)",
+          "700 19px var(--mono)",
+          "7px var(--mono)",
+          "8px var(--mono)",
+          "9px var(--mono)",
+          "9px/1.8 var(--mono)",
+          "clamp(20px,2.1vw,31px) var(--mono)",
+          "clamp(23px,2.7vw,45px) var(--mono)",
+          "inherit",
+          "normal 10px var(--mono)"
+        ]
+      },
+      "tokens.css": {
+        "font_size": [],
+        "font_shorthand": []
+      }
+    },
+    "removed_secondary_blocks": {
+      "app.js": 1,
+      "final-lab.js": 14,
+      "presentation.js": 11,
+      "charts.js": 2,
+      "live-view.js": 5,
+      "sparse24-live.js": 1
+    }
+  },
+  "type_scale_px": {
+    "body": 16,
+    "heading": 20,
+    "metric": 28,
+    "display": 40
+  },
+  "before_routes": [
+    {
+      "page": "成果总览",
+      "sizes": {
+        "10px": 11,
+        "11px": 20,
+        "12px": 41,
+        "13px": 1,
+        "14px": 13,
+        "17px": 2,
+        "19px": 1,
+        "21px": 1,
+        "23px": 1,
+        "26.88px": 4,
+        "34.56px": 1,
+        "36px": 2,
+        "8px": 9,
+        "9px": 21
+      }
+    },
+    {
+      "page": "性能与耗时",
+      "sizes": {
+        "10px": 19,
+        "11px": 16,
+        "12px": 73,
+        "13px": 5,
+        "14px": 17,
+        "19px": 1,
+        "21px": 1,
+        "29px": 1,
+        "9px": 11
+      }
+    },
+    {
+      "page": "系统架构",
+      "sizes": {
+        "10px": 10,
+        "11px": 17,
+        "12px": 8,
+        "14px": 13,
+        "16px": 4,
+        "19px": 1,
+        "29px": 1,
+        "9px": 10
+      }
+    },
+    {
+      "page": "推理工作台",
+      "sizes": {
+        "10px": 14,
+        "11px": 11,
+        "12px": 7,
+        "13px": 1,
+        "14px": 15,
+        "18px": 5,
+        "19px": 1,
+        "29px": 1,
+        "8px": 2,
+        "9px": 7
+      }
+    },
+    {
+      "page": "板端记录",
+      "sizes": {
+        "10px": 36,
+        "11px": 141,
+        "12px": 5,
+        "14px": 14,
+        "19px": 1,
+        "29px": 1,
+        "9px": 4
+      }
+    },
+    {
+      "page": "样例演示",
+      "sizes": {
+        "10px": 22,
+        "11px": 16,
+        "12px": 7,
+        "13px": 1,
+        "14px": 15,
+        "18px": 4,
+        "19px": 1,
+        "29px": 1,
+        "8px": 3,
+        "9px": 5
+      }
+    },
+    {
+      "page": "线性层实验",
+      "sizes": {
+        "10px": 6,
+        "11px": 13,
+        "12px": 6,
+        "13px": 1,
+        "14px": 15,
+        "19px": 1,
+        "20px": 3,
+        "29px": 1,
+        "9px": 8
+      }
+    },
+    {
+      "page": "测评演示",
+      "sizes": {
+        "10px": 7,
+        "11px": 15,
+        "12px": 6,
+        "13px": 1,
+        "14px": 15,
+        "19px": 1,
+        "29px": 1,
+        "9px": 5
+      }
+    },
+    {
+      "page": "本机记录",
+      "sizes": {
+        "10px": 21,
+        "11px": 19,
+        "12px": 7,
+        "14px": 13,
+        "19px": 1,
+        "29px": 1,
+        "9px": 11
+      }
+    },
+    {
+      "page": "历史实测",
+      "sizes": {
+        "10px": 56,
+        "11px": 18,
+        "12px": 18,
+        "13px": 1,
+        "14px": 18,
+        "19px": 1,
+        "21px": 2,
+        "23px": 1,
+        "24px": 4,
+        "25px": 4,
+        "26.88px": 4,
+        "30px": 2,
+        "32px": 2,
+        "34.56px": 1,
+        "7px": 49,
+        "8px": 36,
+        "9px": 90
+      }
+    },
+    {
+      "page": "连接与诊断",
+      "sizes": {
+        "10px": 4,
+        "11px": 20,
+        "12px": 9,
+        "14px": 15,
+        "19px": 1,
+        "29px": 1,
+        "9px": 5
+      }
+    }
+  ],
+  "after_desktop": [
+    {
+      "page": "成果总览",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "性能与耗时",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "系统架构",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "推理工作台",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "板端记录",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "样例演示",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "线性层实验",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "测评演示",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "本机记录",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "历史实测",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    },
+    {
+      "page": "连接与诊断",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 1280
+    }
+  ],
+  "after_mobile": [
+    {
+      "page": "成果总览",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "性能与耗时",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "系统架构",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "推理工作台",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "板端记录",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "样例演示",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "线性层实验",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "测评演示",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "本机记录",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "历史实测",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "28px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    },
+    {
+      "page": "连接与诊断",
+      "pageOverflow": false,
+      "sizes": [
+        "16px",
+        "20px",
+        "40px"
+      ],
+      "unintendedWide": [],
+      "width": 390
+    }
+  ],
+  "receipt_dialog_sizes_px": [
+    16
+  ],
+  "removed_content": [
+    "Decorative English section kickers and numbered labels",
+    "Repeated page introductions",
+    "Redundant helper paragraphs",
+    "Footer and decorative sidebar project card",
+    "Long result digest descriptions from primary view; full receipt remains downloadable"
+  ],
+  "preserved_and_enlarged": [
+    "Source and connection state",
+    "Input dimensions and upload limits",
+    "Measured latency boundaries and sample scope",
+    "Model output and CPU/PL check",
+    "Units, table headings, error messages and receipt details"
+  ]
+}

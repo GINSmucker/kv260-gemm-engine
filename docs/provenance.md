@@ -1,6 +1,6 @@
 # 来源、身份与证据
 
-本次以main提交`becf9337915ecd855d91a8e7450c26945889a449`为基础。旧main的35个源码／文档／图片文件按字节保存在 [历史目录](provenance/pre-final-main/README.md)，原始清单见`source_manifest.json`。
+项目以main提交`becf9337915ecd855d91a8e7450c26945889a449`为基础。旧main的35个源码／文档／图片文件保存在[历史目录](provenance/pre-final-main/README.md)，当前文件身份见`source_manifest.json`，源代码保持原字节。
 
 HLS活动源码来自`codex/v3-opt50-sparse`的OPT50。逐文件SHA、冻结运行包和模型来源列在 [release_sources.json](../release_sources.json)。当前Git归档提交在板测之后创建；板测时源码由原始包SHA固定，不能把后来Git提交写成当时已经存在的运行提交。
 

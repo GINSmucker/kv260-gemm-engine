@@ -1,0 +1,134 @@
+{
+  "schema": "kv260_roadshow_saved_evidence_v1",
+  "source": "SAVED_BOARD_EVIDENCE",
+  "live": false,
+  "new_board_execution": false,
+  "source_revision": "bd5d8cc056a12b19f757949324986079ea675b59",
+  "paired_archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+  "files": {
+    "portrait-image": {
+      "path": "results/roadshow/portrait-image.jpg",
+      "bytes": 61306,
+      "sha256": "a8ca6d734765703b09728ab47fe59f473d93ae3967fc24c7c0288c3c7adb7130",
+      "origin": "Matplotlib sample_data/grace_hopper.jpg; original JPEG bytes"
+    },
+    "guitar-image": {
+      "path": "results/roadshow/guitar-image.jpg",
+      "bytes": 3847938,
+      "sha256": "2e184303f9e8bffaab99fe69e642c6d48cd95facb6369003d4ab65ed4a1076b5",
+      "origin": "Original 05_acoustic_guitar.jpg used by the saved board receipt"
+    },
+    "portrait-report": {
+      "path": "results/live_demo/sparse24_lab_20261101.json",
+      "bytes": 3853,
+      "sha256": "33bdd54bdf8014313584be1e87b5bb71fa5d8c678fca643e0b832bf555ec6c11",
+      "origin": "Saved local LAB check; receipt field is the original board result"
+    },
+    "guitar-report": {
+      "path": "results/roadshow/guitar-report.json",
+      "bytes": 2404,
+      "sha256": "86d983fbacdabfbf3969716e65aa18c5f9e9ace085df3bb48e0ca58c473a40ee",
+      "origin": {
+        "source_commit": "725616b",
+        "source_path": "results/final_optimization/20261101/request_receipts/2208aa8276a44814a845093c3357fd6d.result.json",
+        "scope": "Historical completed board request; not a claim about current deployed software"
+      }
+    },
+    "layers": {
+      "path": "board/runtime/snapshots/sparse24/model/source/B_LAYERS.json",
+      "bytes": 38684,
+      "sha256": "4b24f55010f802bf8d53c184f1252a2e96175975026f834d19a284d6eb8b4f88",
+      "origin": "Frozen Sparse24 model layer specification"
+    },
+    "layer-case": {
+      "path": "board/runtime/snapshots/layer02/data/manifest.json",
+      "bytes": 4348,
+      "sha256": "a6a24ae921c2ace6443861479312989d5a8f51ca93f1fbda082322e82ef83e1f",
+      "origin": "Original layer02 input identity; not itself a board result"
+    },
+    "verification": {
+      "path": "results/roadshow/verification.md",
+      "bytes": 2948,
+      "sha256": "de3dd7e836348df6052fa2021624c5a5f4b38cbc6f97355264fe2b7c95deace9",
+      "origin": "Acceptance summary; numeric claims retain the recorded evidence scope"
+    },
+    "Dense-accuracy": {
+      "path": "results/roadshow/Dense-306-accuracy.json",
+      "bytes": 1224,
+      "sha256": "18be3cc298d58b92eafcad170f432e99df6f88075dcbd0b8f6be1b23836a44e8",
+      "origin": {
+        "archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+        "member": "dense/plan_7d24db46cfcd/samples/000305/accuracy.json",
+        "nested_archive_sha256": null
+      }
+    },
+    "Dense-pending": {
+      "path": "results/roadshow/Dense-306-pending.json",
+      "bytes": 3465,
+      "sha256": "fd4c71717ddbbbfe163fe02e2495b2b54fd1918ca436234a37f8cd162a787592",
+      "origin": {
+        "archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+        "member": "dense/plan_7d24db46cfcd/samples/000305/pending.json",
+        "nested_archive_sha256": null
+      }
+    },
+    "Dense-commit": {
+      "path": "results/roadshow/Dense-306-commit.json",
+      "bytes": 1310,
+      "sha256": "d92ce3c9c46a3bcef357f5f1d0d1c05afd13da95ee00d0c4e293276868adc8f0",
+      "origin": {
+        "archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+        "member": "dense/plan_7d24db46cfcd/samples/000305/commit.json",
+        "nested_archive_sha256": null
+      }
+    },
+    "Sparse24-accuracy": {
+      "path": "results/roadshow/Sparse24-306-accuracy.json",
+      "bytes": 1222,
+      "sha256": "77f660ce448e182f40dabd4be3084c58346b960134fed7bd57efb253fe051a53",
+      "origin": {
+        "archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+        "member": "original/plan_1ada8590dfec/samples/000305/accuracy.json",
+        "nested_archive_sha256": "f14b1a7e3ec26fd7205e4b32ca57b0ae5ab55972cbcb353fbcb406003bc182fb"
+      }
+    },
+    "Sparse24-pending": {
+      "path": "results/roadshow/Sparse24-306-pending.json",
+      "bytes": 3470,
+      "sha256": "4bd5494fb1f239c75b0c2c57047c8daee0a02cab808f3573c2cd712f93ce9867",
+      "origin": {
+        "archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+        "member": "original/plan_1ada8590dfec/samples/000305/pending.json",
+        "nested_archive_sha256": "f14b1a7e3ec26fd7205e4b32ca57b0ae5ab55972cbcb353fbcb406003bc182fb"
+      }
+    },
+    "Sparse24-commit": {
+      "path": "results/roadshow/Sparse24-306-commit.json",
+      "bytes": 1308,
+      "sha256": "ccdc47c4594256bab0e45b3e8cd09f61836e1086c8c48e7cdc6728e309774a83",
+      "origin": {
+        "archive_sha256": "3dd66ac7e784153ce6d479be2017f54d678870cbc02d4f02dbdc681d366f591b",
+        "member": "original/plan_1ada8590dfec/samples/000305/commit.json",
+        "nested_archive_sha256": "f14b1a7e3ec26fd7205e4b32ca57b0ae5ab55972cbcb353fbcb406003bc182fb"
+      }
+    }
+  },
+  "inference": [
+    {
+      "id": "guitar",
+      "title": "吉他照片",
+      "image": "guitar-image",
+      "report": "guitar-report",
+      "receipt_field": null
+    },
+    {
+      "id": "portrait",
+      "title": "人物照片",
+      "image": "portrait-image",
+      "report": "portrait-report",
+      "receipt_field": "receipt"
+    }
+  ],
+  "layer_sample_1based": 306,
+  "standalone_layer_receipt_available": false
+}

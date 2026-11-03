@@ -1,0 +1,600 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "OPT50 · 模型准备、板端计算与验收流程",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": "software/software.html",
+    "repository": {
+      "url": "git@github.com:GINSmucker/kv260-gemm-engine.git",
+      "revision": "bd5d8cc056a12b19f757949324986079ea675b59",
+      "link_mode": "local-only"
+    },
+    "legend": {
+      "entries": {
+        "backend": {
+          "label": "计算与控制"
+        },
+        "database": {
+          "label": "存储与缓冲"
+        },
+        "frontend": {
+          "label": "结果与输出"
+        },
+        "security": {
+          "label": "校验与生命周期"
+        },
+        "messagebus": {
+          "label": "块缓冲交接"
+        },
+        "external": {
+          "label": "输入来源"
+        }
+      },
+      "mode": "hidden"
+    }
+  },
+  "lanes": [
+    {
+      "id": "prepare",
+      "label": "模型与输入准备"
+    },
+    {
+      "id": "runtime",
+      "label": "ARM 模型与调度"
+    },
+    {
+      "id": "fabric",
+      "label": "PL 执行与完成"
+    },
+    {
+      "id": "verify",
+      "label": "每图检查 · 会话保持常驻"
+    },
+    {
+      "id": "batch",
+      "label": "批次结束 · 关闭与最终提交"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "restore",
+      "lane": "prepare",
+      "col": 0,
+      "type": "database",
+      "label": "还原模型包",
+      "sources": [
+        {
+          "path": "tools/restore_bundle.py",
+          "line": 1,
+          "end_line": 37,
+          "label": "按资产身份还原"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "verify",
+      "lane": "prepare",
+      "col": 1,
+      "type": "security",
+      "label": "校验模型与平台",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/model_runtime.py",
+          "line": 238,
+          "end_line": 268,
+          "label": "模型包校验"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/kernel.cpp",
+          "line": 125,
+          "end_line": 144,
+          "label": "平台与 BO 准备"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "input",
+      "lane": "prepare",
+      "col": 2,
+      "type": "backend",
+      "label": "预处理图片",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/dataset.py",
+          "line": 135,
+          "end_line": 157,
+          "label": "JPEG 转张量"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "reference",
+      "lane": "prepare",
+      "col": 3,
+      "type": "backend",
+      "label": "CPU 数值参考",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/model_worker.py",
+          "line": 365,
+          "end_line": 378,
+          "label": "先参考，再 Runner"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "begin",
+      "lane": "runtime",
+      "col": 0,
+      "type": "backend",
+      "label": "BEGIN 图",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/model_runtime.py",
+          "line": 438,
+          "end_line": 451,
+          "label": "BEGIN 与 ORT 调用"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "model",
+      "lane": "runtime",
+      "col": 1,
+      "type": "backend",
+      "label": "逐层模型执行",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/source/b_plugin.cpp",
+          "line": 130,
+          "end_line": 176,
+          "label": "路由、量化及反量化"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/route.h",
+          "line": 1,
+          "end_line": 8,
+          "label": "固定层路由"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "end",
+      "lane": "runtime",
+      "col": 2,
+      "type": "backend",
+      "label": "END 图",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/model_runtime.py",
+          "line": 450,
+          "end_line": 455,
+          "label": "返回整图 logits"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/model_core.hpp",
+          "line": 144,
+          "end_line": 146,
+          "label": "36 次 PL 完成条件"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "launch",
+      "lane": "fabric",
+      "col": 0,
+      "type": "backend",
+      "label": "同步 X / RUN",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/source/b_plugin.cpp",
+          "line": 152,
+          "end_line": 157,
+          "label": "X 同步与 RUN"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/model_core.hpp",
+          "line": 153,
+          "end_line": 163,
+          "label": "寄存器读回和 START"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "compute",
+      "lane": "fabric",
+      "col": 1,
+      "type": "backend",
+      "label": "Dense / Sparse",
+      "sources": [
+        {
+          "path": "hls/src/model_gemm_top.cpp",
+          "line": 24,
+          "end_line": 46,
+          "label": "模式校验和执行"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "complete",
+      "lane": "fabric",
+      "col": 2,
+      "type": "security",
+      "label": "证明完成",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/source/model_core.hpp",
+          "line": 141,
+          "end_line": 168,
+          "label": "完成与错误条件"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "info",
+      "lane": "verify",
+      "col": 2,
+      "type": "security",
+      "label": "每图 INFO 检查",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 494,
+          "end_line": 508,
+          "label": "INFO 与 pending，不关闭设备"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/kernel.cpp",
+          "line": 157,
+          "end_line": 173,
+          "label": "图后检查"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "compare",
+      "lane": "verify",
+      "col": 3,
+      "type": "backend",
+      "label": "生成比对结果",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/model_worker.py",
+          "line": 393,
+          "end_line": 434,
+          "label": "先生成并保存比对结果"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 484,
+          "end_line": 493,
+          "label": "INFO 前复核保存输出"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "output",
+      "lane": "batch",
+      "col": 3,
+      "type": "frontend",
+      "label": "最终验收提交",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 534,
+          "end_line": 543,
+          "label": "关闭后写 accuracy 与 commit"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "fault",
+      "lane": "verify",
+      "col": 0,
+      "type": "security",
+      "label": "保留现场并报错",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/model_worker.py",
+          "line": 199,
+          "end_line": 215,
+          "label": "保留未知执行生命周期"
+        },
+        {
+          "path": "board/runtime/snapshots/sparse24/source/client.cpp",
+          "line": 17,
+          "end_line": 31,
+          "label": "未知执行不得重放"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "pending",
+      "lane": "verify",
+      "col": 1,
+      "type": "security",
+      "label": "本图待最终提交",
+      "icon": "decision",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 476,
+          "end_line": 509,
+          "label": "逐图循环与 pending 结果"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "close",
+      "lane": "batch",
+      "col": 1,
+      "type": "backend",
+      "label": "批次关闭会话",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 510,
+          "end_line": 517,
+          "label": "批末关闭 worker 会话"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    },
+    {
+      "id": "stop",
+      "lane": "batch",
+      "col": 2,
+      "type": "security",
+      "label": "STOP 与设备关闭",
+      "sources": [
+        {
+          "path": "board/runtime/snapshots/sparse24/run_model.py",
+          "line": 518,
+          "end_line": 531,
+          "label": "STOP、退出及关闭证明"
+        }
+      ],
+      "width": 190,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "restore-verify",
+      "from": "restore",
+      "to": "verify",
+      "variant": "default",
+      "label": "身份"
+    },
+    {
+      "id": "verify-input",
+      "from": "verify",
+      "to": "input",
+      "variant": "default",
+      "label": "通过"
+    },
+    {
+      "id": "input-reference",
+      "from": "input",
+      "to": "reference",
+      "variant": "default",
+      "label": "同一输入"
+    },
+    {
+      "id": "reference-begin",
+      "from": "reference",
+      "to": "begin",
+      "variant": "default",
+      "label": "准备完毕"
+    },
+    {
+      "id": "begin-model",
+      "from": "begin",
+      "to": "model",
+      "variant": "default",
+      "label": "ORT 执行"
+    },
+    {
+      "id": "model-end",
+      "from": "model",
+      "to": "end",
+      "variant": "default",
+      "label": "49 层完成"
+    },
+    {
+      "id": "model-launch",
+      "from": "model",
+      "to": "launch",
+      "variant": "default",
+      "label": "PL 层"
+    },
+    {
+      "id": "launch-compute",
+      "from": "launch",
+      "to": "compute",
+      "variant": "default",
+      "label": "参数就绪"
+    },
+    {
+      "id": "compute-complete",
+      "from": "compute",
+      "to": "complete",
+      "variant": "default",
+      "label": "本层返回"
+    },
+    {
+      "id": "complete-model",
+      "from": "complete",
+      "to": "model",
+      "variant": "default",
+      "role": "return",
+      "label": "同步 Y / 反量化"
+    },
+    {
+      "id": "launch-fault",
+      "from": "launch",
+      "to": "fault",
+      "label": "执行未知",
+      "variant": "default",
+      "role": "error"
+    },
+    {
+      "id": "end-compare",
+      "from": "end",
+      "to": "compare",
+      "variant": "default",
+      "label": "生成结果"
+    },
+    {
+      "id": "compare-info",
+      "from": "compare",
+      "to": "info",
+      "variant": "default",
+      "role": "return",
+      "label": "保存后检查"
+    },
+    {
+      "id": "info-pending",
+      "from": "info",
+      "to": "pending",
+      "variant": "default",
+      "role": "return",
+      "label": "INFO 通过"
+    },
+    {
+      "id": "pending-next",
+      "from": "pending",
+      "to": "input",
+      "label": "下一图",
+      "variant": "default",
+      "role": "return"
+    },
+    {
+      "id": "pending-close",
+      "from": "pending",
+      "to": "close",
+      "label": "结束本批",
+      "variant": "default",
+      "labelDy": 28
+    },
+    {
+      "id": "close-stop",
+      "from": "close",
+      "to": "stop",
+      "variant": "default",
+      "label": "会话已关闭"
+    },
+    {
+      "id": "stop-output",
+      "from": "stop",
+      "to": "output",
+      "variant": "default",
+      "label": "关闭证明通过"
+    }
+  ],
+  "mainPath": [
+    "restore",
+    "verify",
+    "input",
+    "reference"
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "重复的 PL 子流程",
+      "items": [
+        "每个 PL 层：量化 → 同步 X → RUN → 完成与排空 → 同步 Y → 反量化。",
+        "Sparse24 每图重复 36 次；其余 PS 算子由模型顺序执行。"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "验收与计时边界",
+      "items": [
+        "每图先生成并保存比对 / 排名结果，再执行 INFO；这些结果尚待批次提交。",
+        "最终验收提交需要本批会话关闭、owner STOP 和设备关闭证明。",
+        "CPU 数值参考和逐位比对均在 Runner.run 计时之外执行。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "会话与异常",
+      "items": [
+        "同一会话可处理多图；每图 INFO 检查后可进入下一图，批次结束才关闭。",
+        "最多 50 图 / 900 秒；执行未知时保留现场，不重放请求。"
+      ]
+    }
+  ],
+  "semanticChecks": {
+    "allowedRoots": [
+      "restore"
+    ],
+    "allowedTerminals": [
+      "fault",
+      "output"
+    ],
+    "requiredEdges": [
+      {
+        "from": "end",
+        "to": "compare"
+      },
+      {
+        "from": "compare",
+        "to": "info"
+      },
+      {
+        "from": "info",
+        "to": "pending"
+      },
+      {
+        "from": "pending",
+        "to": "input"
+      },
+      {
+        "from": "pending",
+        "to": "close"
+      },
+      {
+        "from": "close",
+        "to": "stop"
+      },
+      {
+        "from": "stop",
+        "to": "output"
+      }
+    ]
+  }
+}
