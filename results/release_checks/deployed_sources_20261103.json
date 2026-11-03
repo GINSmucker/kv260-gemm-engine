@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-11-03T10:17:42.642305+00:00",
+  "tested_source_commit": "f1c0b3079e2f4f7880f7994a233c7fef17ce4bda",
+  "deployed_source_files": 62,
+  "deployed_sources_match_installed_bytes": true,
+  "frozen_files_checked": 330,
+  "repository_doc_links_checked": 114,
+  "python_tests": 18,
+  "web_tests": 32,
+  "scope": "Read-only installed source capture, identity checks and local software tests",
+  "ssh_source_read": true,
+  "hardware_execution_triggered": false
+}
