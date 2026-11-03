@@ -508,9 +508,9 @@
       "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
     },
     "results/roadshow/verification.md": {
-      "bytes": 3423,
-      "sha256": "127ac51d8dafffb2db86b4ecd31d7a345b1cb13b07f48abfa640d31a81235995",
-      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "bytes": 2948,
+      "sha256": "de3dd7e836348df6052fa2021624c5a5f4b38cbc6f97355264fe2b7c95deace9",
+      "source_commit": "8e7c21d534e6a54c0d7cc118332b2e0d2bc7a736",
       "source_path": "results/roadshow/verification.md",
       "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
     },
