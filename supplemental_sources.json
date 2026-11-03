@@ -60,11 +60,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/app.js": {
-      "bytes": 57685,
-      "sha256": "491fd6759c2b392f0673e78225de574a89cc4223e1ad63a6519fc0720ab21376",
-      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "bytes": 57367,
+      "sha256": "77d92b9f780a2581cb1956573ec405dade8e295598a3883f9f1f278f22b73632",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/public/app.js",
-      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "board/ui/public/assets/bridge.svg": {
       "bytes": 1669,
@@ -116,18 +116,18 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/styles.css": {
-      "bytes": 41792,
-      "sha256": "35919dfe7cfdca82d4448f12e1b029748ed510bc88784e85ac3fe6c652b82eb4",
-      "source_commit": "df5bc8e3855275e0051927f298d4cb61f54843b3",
+      "bytes": 42329,
+      "sha256": "b84e23baa4fd1a70311e167aa4fcc2973f5768ec91222be43c38629e3bf7cf17",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/public/styles.css",
-      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "board/ui/public/tokens.css": {
       "bytes": 311,
-      "sha256": "e2c150f815b01c8ccc58b513f78e7f6f92904c495c77a37429084b1e0e182fdd",
-      "source_commit": "df5bc8e3855275e0051927f298d4cb61f54843b3",
+      "sha256": "deb4ff802ee7ea27225a7e0532fdfad461726f0cce40870bb837e40dbcd55ef7",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/public/tokens.css",
-      "role": "H576 Dense historical workbench; offline display or labeled DEMO"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "board/ui/server.mjs": {
       "bytes": 11109,
@@ -284,11 +284,11 @@
       "role": "H576 Dense historical workbench; offline display or labeled DEMO"
     },
     "board/ui/public/final-lab.js": {
-      "bytes": 15028,
-      "sha256": "0a818f7ce1de3a3eb9f52e40819eb611fc4aac4a5b508629ff3fc03d55d1f878",
-      "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
+      "bytes": 15957,
+      "sha256": "ea162d8d64d51da294267e219062bf2fed5be5c26730b8d09461297ded8dcfdf",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/public/final-lab.js",
-      "role": "KV260 LAB final results and current local UI; saved evidence and labeled demonstrations"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "board/ui/public/final-lab.css": {
       "bytes": 6577,
@@ -340,18 +340,18 @@
       "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
     },
     "board/ui/public/sparse24-live.js": {
-      "bytes": 18074,
-      "sha256": "512837d5a3cc4949740a33619874c6268b94d25d026a3e431f327576ba748c7b",
-      "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
+      "bytes": 17418,
+      "sha256": "43e727b49fc203bd234dae31608e6a9b6eb2723b806ac2fb1ba356ba3340eb7e",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/public/sparse24-live.js",
-      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "board/ui/public/sparse24-live.css": {
-      "bytes": 555,
-      "sha256": "21efe9aa4b519f710b976405f116109d904894b3ef67cc31ae3b25cfb108f68f",
-      "source_commit": "ab89c4682c5f8e35ebe3c2589a3214b6f3df9854",
+      "bytes": 864,
+      "sha256": "2a5cfb4caaff10cdb01c87d7bb7382a6f3f6088c97eda34913bdf2013ef62018",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/public/sparse24-live.css",
-      "role": "KV260 LAB current UI and explicit Sparse24 HTTP connection/inference adapter; frozen board program unchanged"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "board/service/backend.py": {
       "bytes": 21137,
@@ -389,18 +389,18 @@
       "role": "Main-site font inventory and browser validation at two viewports"
     },
     "board/ui/public/saved-view.css": {
-      "bytes": 2852,
-      "sha256": "fdc828c8ed25b325cffa5235c89c2e57af386809ec677409220ddd209f76b368",
-      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "bytes": 4420,
+      "sha256": "98d49cb956e871a0c717f2768bb48baa5085d8d2c8153441c34259ebece4ca23",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/public/saved-view.css",
-      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "board/ui/public/saved-view.js": {
-      "bytes": 13988,
-      "sha256": "d203c0dc383f95861dbe563a55e5a9afacefa9aca12dc676ee634582ef80d035",
-      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "bytes": 12405,
+      "sha256": "a4665d030f981beb4c20528014ed8e249133bebc5ae32f6a45c1b5830aba78d6",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/public/saved-view.js",
-      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "board/ui/saved-api.mjs": {
       "bytes": 1414,
@@ -417,18 +417,18 @@
       "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
     },
     "board/ui/tests/saved.test.mjs": {
-      "bytes": 4439,
-      "sha256": "6a2ae4f3b662d3aa5939785a091f96ffafaf1340550f34a944080be2566a0ce7",
-      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "bytes": 4469,
+      "sha256": "10dd614ff6c72a88f577f901dd98464ef04b777a7164a2d578aa197a6aa7c26d",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "board/ui/tests/saved.test.mjs",
-      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "docs/workbench.md": {
-      "bytes": 12369,
-      "sha256": "4f68f39f545c5942902eb5866737fdcc1758e1c78537c0c1fd3199c3132c3e80",
-      "source_commit": "814c071b9d622dbe9bce504cef268006eed298b8",
+      "bytes": 12530,
+      "sha256": "a340b2171b6729c2a826ab6e79ba4cd30bcf25d12277de745c7ba7f2bb937771",
+      "source_commit": "eb99a125b66eacb81610a653c25dd9fd1fa1d60c",
       "source_path": "docs/workbench.md",
-      "role": "Read-only roadshow workbench: saved real board outputs, input identity and provenance; no new hardware execution"
+      "role": "KV260 LAB workbench presentation and real/saved inference views"
     },
     "results/roadshow/.gitattributes": {
       "bytes": 20,
